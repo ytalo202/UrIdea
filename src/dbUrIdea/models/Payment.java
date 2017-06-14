@@ -6,4 +6,5 @@ package dbUrIdea.models;
 public class Payment {
     int id;
     String id_typ_pay;
+    String id_company;
 }
