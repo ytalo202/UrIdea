@@ -1,5 +1,8 @@
 package dbUrIdea.models;
 
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 /**
  * Created by UrIdea on 14/06/2017.
  */
@@ -97,5 +100,25 @@ public class Company {
     public Company setEmailAdress(EmailAddress emailAdress) {
         this.emailAdress = emailAdress;
         return this;
+    }
+
+    public static Company build(ResultSet rs, StateCompanyEntity stateCompanyEntity,
+                                EmailAddressEntity emailAddressEntit) {
+        try {
+            return (new Company())
+                    .setId(rs.getString("id"))
+                    .setPassword(rs.getString("password"))
+                    .setNameCompany(rs.getString("name_company"))
+                    .setDescription(rs.getString("description"))
+                    .setStateCompany(stateCompanyEntity.findById
+                            (rs.getString("id_state_company")))
+                    .setEmailAdress(emailAddressEntit.findById(
+                            rs.getInt("id_email_address")))
+                    .setAddress(rs.getString("address"))
+                    .setPhoneNumber(rs.getInt("phone_number"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
