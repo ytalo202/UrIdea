@@ -15,7 +15,6 @@ public class Evaluation {
 
     public Evaluation() {
     }
-
     public Evaluation(String id, Employee idEmployee, Employee idUserEmployee, Company company, Date date, float grade) {
         this.id = id;
         this.idEmployee = idEmployee;

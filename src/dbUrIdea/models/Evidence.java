@@ -14,8 +14,7 @@ public class Evidence {
     public Evidence(String id, EvidencesType evidencesType, Evaluation evaluation) {
         this.setId(id);
         this.setEvidencesType(evidencesType);
-        this.setEvaluation(evaluation);
-    }
+        this.setEvaluation(evaluation);    }
 
     public String getId() {
         return id;

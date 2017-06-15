@@ -128,8 +128,7 @@ public class Payment {
 
     public Payment setCountry(String country) {
         this.country = country;
-        return this;
-    }
+        return this;    }
 
     public String getCodeZip() {
         return codeZip;
