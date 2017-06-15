@@ -1,6 +1,7 @@
 package dbUrIdea.models;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 /**
  * Created by Yoshinon on 15/06/2017.
  */
@@ -49,6 +50,16 @@ public class BaseEntity {
 
     public String getDefaultQuery() {
         return BASE_QUERY + getTableName();
+    }
+
+    public boolean change(String sql) {
+        try {
+            int result = getConnection().createStatement().executeUpdate(sql);
+            return result > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
 

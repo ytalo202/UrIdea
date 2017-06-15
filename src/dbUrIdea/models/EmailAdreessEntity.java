@@ -32,9 +32,9 @@ public class EmailAdreessEntity extends BaseEntity {
     }
 
 
-    public EmailAddress findByEmailData(String name) {
+    public EmailAddress findByEmailData(String email) {
         String criteria = " email_name = '" +
-                name + "'";
+                email + "'";
         return findByCriteria(criteria).get(0);
     }
 
@@ -63,6 +63,31 @@ public class EmailAdreessEntity extends BaseEntity {
         }
         return null;
     }
+
+    public boolean add(EmailAddress emailAddress) {
+        String sql = "INSERT INTO emails_addresses(id, email_name) " +
+                "VALUES(" + emailAddress.getId() + ", " +
+                emailAddress.getEmailData() + ")";
+        return change(sql);
+    }
+
+    public boolean delete(EmailAddress emailAddress) {
+        String sql = "DELETE FROM emails_addresses WHERE id = " + emailAddress.getIdAsString();
+        return change(sql);
+    }
+    public boolean delete(String email) {
+        return change("DELETE FROM emails_addresses WHERE email_data = " +
+                "'" + email + "'");
+    }
+
+    public boolean update(EmailAddress emailAddress) {
+        String sql = "UPDATE emails_addresses SET email_data = " +
+                emailAddress.getEmailData() +
+                " WHERE id = " + emailAddress.getIdAsString();
+        return change(sql);
+    }
+
+
 
 
 }
