@@ -6,6 +6,8 @@ package dbUrIdea.models;
 public class Company {
     private String id;
     private String password;
+    private String nameCompany;
+    private EmailAddress emailAdress;
     private String description;
     private String address;
     private int phoneNumber;
@@ -14,15 +16,16 @@ public class Company {
     public Company() {
     }
 
-    public Company(String id, String password, String description, String address, int phoneNumber, StateCompany stateCompany) {
-        this.setId(id);
-        this.setPassword(password);
-        this.setDescription(description);
-        this.setAddress(address);
-        this.setPhoneNumber(phoneNumber);
-        this.setStateCompany(stateCompany);
+    public Company(String id, String password, String nameCompany, EmailAddress emailAdress, String description, String address, int phoneNumber, StateCompany stateCompany) {
+        this.id = id;
+        this.password = password;
+        this.nameCompany = nameCompany;
+        this.emailAdress = emailAdress;
+        this.description = description;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.stateCompany = stateCompany;
     }
-
 
     public String getId() {
         return id;
@@ -75,6 +78,24 @@ public class Company {
 
     public Company setStateCompany(StateCompany stateCompany) {
         this.stateCompany = stateCompany;
+        return this;
+    }
+
+    public String getNameCompany() {
+        return nameCompany;
+    }
+
+    public Company setNameCompany(String nameCompany) {
+        this.nameCompany = nameCompany;
+        return this;
+    }
+
+    public EmailAddress getEmailAdress() {
+        return emailAdress;
+    }
+
+    public Company setEmailAdress(EmailAddress emailAdress) {
+        this.emailAdress = emailAdress;
         return this;
     }
 }
