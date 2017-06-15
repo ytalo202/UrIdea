@@ -1,7 +1,7 @@
 package dbUrIdea.models;
 
 /**
- * Created by Usuario on 15/06/2017.
+ * Created by UrIdea on 15/06/2017.
  */
 public class Evidence {
     String id;

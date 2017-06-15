@@ -1,7 +1,7 @@
 package dbUrIdea.models;
 
 /**
- * Created by Ytalo Tuesta on 14/06/2017.
+ * Created by UrIdea on 14/06/2017.
  */
 public class UserType {
     private int id;

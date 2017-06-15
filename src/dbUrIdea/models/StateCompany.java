@@ -1,7 +1,7 @@
 package dbUrIdea.models;
 
 /**
- * Created by Yoshinon on 14/06/2017.
+ * Created by UrIdea on 14/06/2017.
  */
 public class StateCompany {
 

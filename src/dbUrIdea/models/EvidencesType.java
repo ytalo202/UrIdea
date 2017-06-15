@@ -1,7 +1,7 @@
 package dbUrIdea.models;
 
 /**
- * Created by Yoshinon on 15/06/2017.
+ * Created by UrIdea on 15/06/2017.
  */
 public class EvidencesType {
     private int id;
