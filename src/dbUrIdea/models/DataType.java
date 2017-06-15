@@ -1,5 +1,8 @@
 package dbUrIdea.models;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  * Created by UrIdea on 15/06/2017.
  */
@@ -32,5 +35,16 @@ public class DataType {
     public DataType setName(String name) {
         this.name = name;
         return this;
+    }
+
+    public static DataType build(ResultSet resultSet) {
+        try {
+            return (new DataType())
+                    .setId(resultSet.getString("id"))
+                    .setName(resultSet.getString("data_type_name"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
