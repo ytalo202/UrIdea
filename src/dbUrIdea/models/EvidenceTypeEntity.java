@@ -61,22 +61,28 @@ public class EvidenceTypeEntity extends BaseEntity{
     }
 
     public boolean add(EvidencesType evidencesType) {
-        String sql = "INSERT INTO emails_addresses(id, name, description) " +
-                "VALUES(" + evidencesType.getId() + ", " +
-                evidencesType.getName()+", " + evidencesType.getDescription()+ ")";
+        String sql = "INSERT INTO evidences_types(id, name, description) " +
+                "VALUES(" + evidencesType.getIdAsString() + ", " +
+                evidencesType.getNameAsValue()+", " + evidencesType.getDescriptionAsValue()+ ")";
         return change(sql);
     }
 
     public boolean delete(EvidencesType evidencesType) {
-        String sql = "DELETE FROM emails_addresses WHERE id = " + evidencesType.getIdAsString();
+        String sql = "DELETE FROM evidences_types WHERE id = " + evidencesType.getIdAsString();
         return change(sql);
     }
-    public boolean delete(String email) {
-        return change("DELETE FROM emails_addresses WHERE email_data = " +
-                "'" + email + "'");
+    public boolean delete(String name) {
+        return change("DELETE FROM evidences_types WHERE name = " +
+                "'" + name + "'");
     }
 
 
+    public boolean update(EvidencesType evidencesType) {
+        String sql = "UPDATE evidences_types SET name = " +
+                evidencesType.getName() +
+                " WHERE id = " + evidencesType.getIdAsString();
+        return change(sql);
+    }
 
 
 }
