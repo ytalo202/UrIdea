@@ -16,30 +16,29 @@ public class Employee {
     private String address;
     private String department;
     private Date birthdate;
-    private String cv;
     private Company company;
     private UserType userType;
-
+    private EmailAddress emailAddress;
 
     public Employee() {
     }
 
-    public Employee(String id, String password, String name, String firstLastName, String secondLastName, int phoneNumber, int cellPhoneNumber, String address, String department, Date birthdate, String cv, Company company, UserType userType) {
-
-        this.setId(id);
-        this.setPassword(password);
-        this.setName(name);
-        this.setFirstLastName(firstLastName);
-        setSecondLastName(secondLastName);
-        this.setPhoneNumber(phoneNumber);
-        this.setCellPhoneNumber(cellPhoneNumber);
-        this.setAddress(address);
-        this.setDepartment(department);
-        this.setBirthdate(birthdate);
-        this.setCv(cv);
-        this.setCompany(company);
-        this.setUserType(userType);
+    public Employee(String id, String password, String name, String firstLastName, String secondLastName, int phoneNumber, int cellPhoneNumber, String address, String department, Date birthdate, Company company, UserType userType, EmailAddress emailAddress) {
+        this.id = id;
+        this.password = password;
+        this.name = name;
+        this.firstLastName = firstLastName;
+        SecondLastName = secondLastName;
+        this.phoneNumber = phoneNumber;
+        this.cellPhoneNumber = cellPhoneNumber;
+        this.address = address;
+        this.department = department;
+        this.birthdate = birthdate;
+        this.company = company;
+        this.userType = userType;
+        this.emailAddress = emailAddress;
     }
+
 
     public String getId() {
         return id;
@@ -122,23 +121,6 @@ public class Employee {
         return this;
     }
 
-    public Date getBirthdate() {
-        return birthdate;
-    }
-
-    public Employee setBirthdate(Date birthdate) {
-        this.birthdate = birthdate;
-        return this;
-    }
-
-    public String getCv() {
-        return cv;
-    }
-
-    public Employee setCv(String cv) {
-        this.cv = cv;
-        return this;
-    }
 
     public Company getCompany() {
         return company;
@@ -155,6 +137,24 @@ public class Employee {
 
     public Employee setUserType(UserType userType) {
         this.userType = userType;
+        return this;
+    }
+
+    public EmailAddress getEmailAddress() {
+        return emailAddress;
+    }
+
+    public Employee setEmailAddress(EmailAddress emailAddress) {
+        this.emailAddress = emailAddress;
+        return this;
+    }
+
+    public Date getBirthdate() {
+        return birthdate;
+    }
+
+    public Employee setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
         return this;
     }
 }
