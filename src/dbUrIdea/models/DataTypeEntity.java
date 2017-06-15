@@ -1,5 +1,7 @@
 package dbUrIdea.models;
 
+import javax.xml.crypto.Data;
+import javax.xml.datatype.DatatypeConfigurationException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,53 +24,53 @@ public class DataTypeEntity extends BaseEntity {
         super(connection, "data_types");
     }
 
-    List<UserType> findAll() {
+    List<DataType> findAll() {
         return findByCriteria("");
     }
 
-    public UserType findById(String id) {
+    public DataType findById(String id) {
         String criteria = " id = '" +
                 id +"'";
         return findByCriteria(criteria).get(0);
     }
-    public UserType findByName(String name) {
-        String criteria = " user_type_name = '" +
+    public DataType findByName(String name) {
+        String criteria = " data_type_name = '" +
                 name + "'";
         return findByCriteria(criteria).get(0);
     }
 
-    public List<UserType> findAllOrderedByName() {
-        String criteria = " true ORDER BY user_type_name";
+    public List<DataType> findAllOrderedByName() {
+        String criteria = " true ORDER BY data_type_name";
         return findByCriteria(criteria);
     }
-    public List<UserType> findByCriteria(String criteria) {
+    public List<DataType> findByCriteria(String criteria) {
         String sql = getDefaultQuery() +
                 criteria == "" ? "" : " WHERE " + criteria;
-        List<UserType> user_types = new ArrayList<>();
+        List<DataType> data_types = new ArrayList<>();
         try {
             ResultSet resultSet = getConnection()
                     .createStatement()
                     .executeQuery(sql);
             if(resultSet == null) return null;
             while(resultSet.next()) {
-                user_types.add(UserType.build(resultSet));
+                data_types.add(DataType.build(resultSet));
             }
-            return user_types;
+            return data_types;
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
     }
 
-    public boolean add(UserType userType) {
+    public boolean add(DataType dataType) {
         String sql = " INSERT INTO user_types(id, user_type_name) " +
-                "VALUES(" + userType.getIdAsString() + ", " +
-                userType.getNameAsValue() + ")";
+                "VALUES(" + dataType.getIdAsValue() + ", " +
+                dataType.getNameAsValue() + ")";
         return change(sql);
     }
 
-    public boolean delete(UserType userType) {
-        String sql = " DELETE FROM user_types WHERE id = " + userType.getIdAsString();
+    public boolean delete(DataType dataType) {
+        String sql = " DELETE FROM user_types WHERE id = " + dataType.getIdAsValue();
         return change(sql);
     }
 
@@ -77,9 +79,9 @@ public class DataTypeEntity extends BaseEntity {
                 "'" + name + "'");
     }
 
-    public boolean update(UserType userType) {
-        String sql = " UPDATE user_types SET user_type_name = " + userType.getNameAsValue() +
-                " WHERE id = " + userType.getIdAsString();
+    public boolean update(DataType dataType) {
+        String sql = " UPDATE user_types SET user_type_name = " + dataType.getNameAsValue() +
+                " WHERE id = " + dataType.getIdAsValue();
         return change(sql);
     }
 
