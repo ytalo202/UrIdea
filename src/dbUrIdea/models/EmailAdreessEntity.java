@@ -13,7 +13,7 @@ public class EmailAdreessEntity extends BaseEntity {
 
     public EmailAdreessEntity(Connection connection) {
 
-        super(connection,"emails_address");
+        super(connection,"emails_addresses");
     }
 
     public EmailAdreessEntity() {
@@ -53,9 +53,7 @@ public class EmailAdreessEntity extends BaseEntity {
                     .executeQuery(sql);
             if(resultSet == null) return null;
             while(resultSet.next()) {
-                emails_addreses.add((new EmailAddress())
-                        .setId(resultSet.getInt("id"))
-                        .setEmailData(resultSet.getString("email_name")));
+                emails_addreses.add(EmailAddress.build(resultSet));
             }
             return emails_addreses;
         } catch (SQLException e) {

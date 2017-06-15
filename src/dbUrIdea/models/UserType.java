@@ -1,5 +1,8 @@
 package dbUrIdea.models;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  * Created by UrIdea on 14/06/2017.
  */
@@ -11,6 +14,16 @@ public class UserType {
 
     public UserType() {
     }
+    public String getIdAsString()
+    {
+        return String.valueOf(getId());
+    }
+
+    public String getNameAsValue() {
+        return "'" + getUserTypeName() + "'";
+    }
+
+
 
     public UserType(int id, String userTypeName, String description) {
         this.id = id;
@@ -45,5 +58,17 @@ public class UserType {
         this.description = description;
         return this;
 
+    }
+
+    public static UserType build(ResultSet resultSet) {
+        try {
+            return (new UserType())
+                    .setId(resultSet.getInt("id"))
+                    .setUserTypeName(resultSet.getString("user_type_name"))
+                    .setDescription(resultSet.getString("description"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
