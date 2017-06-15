@@ -11,8 +11,18 @@ public class DataType {
     private String name;
 
 
+
     public DataType() {
     }
+
+    public String getIdAsValue() {
+        return "'" + getId() + "'";
+    }
+
+    public String getNameAsValue() {
+        return "'" + getName() + "'";
+    }
+
 
     public DataType(String id, String name) {
         this.setId(id);

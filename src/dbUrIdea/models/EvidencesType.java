@@ -1,5 +1,8 @@
 package dbUrIdea.models;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  * Created by UrIdea on 15/06/2017.
  */
@@ -10,6 +13,20 @@ public class EvidencesType {
 
     public EvidencesType() {
     }
+
+    public String getIdAsString() {
+        return String.valueOf(getId());
+    }
+
+    public String getNameAsValue() {
+        return "'" + getName() + "'";
+    }
+
+    public String getDescriptionAsValue() {
+        return "'" + getDescription() + "'";
+    }
+
+
 
     public EvidencesType(int id, String name, String description) {
         this.setId(id);
@@ -43,4 +60,17 @@ public class EvidencesType {
         this.description = description;
         return this;
     }
+
+    public static EvidencesType build(ResultSet resultSet) {
+        try {
+            return (new EvidencesType())
+                    .setId(resultSet.getInt("id"))
+                    .setName(resultSet.getString("name"))
+                    .setDescription(resultSet.getString("description"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }

@@ -46,16 +46,16 @@ public class EmailAddressEntity extends BaseEntity {
     public List<EmailAddress> findByCriteria(String criteria) {
         String sql = getDefaultQuery() +
                 criteria == "" ? "" : " WHERE " + criteria;
-        List<EmailAddress> emails_addreses = new ArrayList<>();
+        List<EmailAddress> emails_addresses = new ArrayList<>();
         try {
             ResultSet resultSet = getConnection()
                     .createStatement()
                     .executeQuery(sql);
             if(resultSet == null) return null;
             while(resultSet.next()) {
-                emails_addreses.add(EmailAddress.build(resultSet));
+                emails_addresses.add(EmailAddress.build(resultSet));
             }
-            return emails_addreses;
+            return emails_addresses;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -64,7 +64,7 @@ public class EmailAddressEntity extends BaseEntity {
 
     public boolean add(EmailAddress emailAddress) {
         String sql = "INSERT INTO emails_addresses(id, email_name) " +
-                "VALUES(" + emailAddress.getId() + ", " +
+                "VALUES(" + emailAddress.getIdAsString() + ", " +
                 emailAddress.getEmailData() + ")";
         return change(sql);
     }
