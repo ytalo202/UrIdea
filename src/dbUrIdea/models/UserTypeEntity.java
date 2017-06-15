@@ -33,7 +33,7 @@ public class UserTypeEntity extends BaseEntity{
     }
 
     public List<UserType> findAllOrderedByName() {
-        String criteria = "true ORDER BY user_type_name";
+        String criteria = " true ORDER BY user_type_name";
         return findByCriteria(criteria);
     }
     public List<UserType> findByCriteria(String criteria) {
