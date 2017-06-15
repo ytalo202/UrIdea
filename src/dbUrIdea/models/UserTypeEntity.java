@@ -55,4 +55,27 @@ public class UserTypeEntity extends BaseEntity{
         return null;
     }
 
+    public boolean add(UserType userType) {
+        String sql = "INSERT INTO regions(id, user_type_name) " +
+                "VALUES(" + userType.getIdAsString() + ", " +
+                userType.getNameAsValue() + ")";
+        return change(sql);
+    }
+
+    public boolean delete(UserType userType) {
+        String sql = "DELETE FROM regions WHERE id = " + userType.getIdAsString();
+        return change(sql);
+    }
+
+    public boolean delete(String name) {
+        return change("DELETE FROM regions WHERE user_type_name = " +
+                "'" + name + "'");
+    }
+
+    public boolean update(UserType userType) {
+        String sql = "UPDATE regions SET user_type_name = " + userType.getNameAsValue() +
+                " WHERE id = " + userType.getIdAsString();
+        return change(sql);
+    }
+
 }
