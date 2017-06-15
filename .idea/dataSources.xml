@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="evadb@localhost" uuid="5e82833e-cfa1-445c-a9dd-fbe7dfc59406">
+    <data-source source="LOCAL" name="evadb@localhost" uuid="cefcb963-ce46-4ac1-8f8e-a59a5a64dd9f">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
