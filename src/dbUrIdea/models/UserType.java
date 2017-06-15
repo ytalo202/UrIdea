@@ -5,16 +5,17 @@ package dbUrIdea.models;
  */
 public class UserType {
     private int id;
-    private String userTipeName;
-    private String descripcion;
+    private String userTypeName;
+    private String description;
+
 
     public UserType() {
     }
 
-    public UserType(int id, String userTipeName, String descripcion) {
-        this.setId(id);
-        this.setUserTipeName(userTipeName);
-        this.setDescripcion(descripcion);
+    public UserType(int id, String userTypeName, String description) {
+        this.id = id;
+        this.userTypeName = userTypeName;
+        this.description = description;
     }
 
     public int getId() {
@@ -26,21 +27,23 @@ public class UserType {
         return this;
     }
 
-    public String getUserTipeName() {
-        return userTipeName;
+    public String getUserTypeName() {
+        return userTypeName;
     }
 
-    public UserType setUserTipeName(String userTipeName) {
-        this.userTipeName = userTipeName;
+    public UserType setUserTypeName(String userTypeName) {
+        this.userTypeName = userTypeName;
         return this;
+
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescription() {
+        return description;
     }
 
-    public UserType setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public UserType setDescription(String description) {
+        this.description = description;
         return this;
+        
     }
 }
