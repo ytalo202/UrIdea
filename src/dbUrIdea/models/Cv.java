@@ -1,6 +1,9 @@
 package dbUrIdea.models;
 
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Cv {
  private String id;
  private Employee employee;
@@ -17,7 +20,15 @@ public class Cv {
   this.setDescription(description);
  }
 
- public String getId() {
+    public String getIdAsValue() {
+        return "'" + getId() + "'";
+    }
+    public String getDescriptionAsValue() {
+        return "'" + getDescription() + "'";
+    }
+
+
+    public String getId() {
   return id;
  }
 
@@ -52,4 +63,19 @@ public class Cv {
   this.description = description;
   return this;
  }
+
+
+    public static Cv build(ResultSet rs,
+                           EmployeeEntity employeeEntity,DataTypeEntity dataTypeEntity) {
+        try {
+            return (new Cv())
+                    .setId(rs.getString("id"));
+                    //.setEmployee(employeeEntity.getString("country_name"))
+                    //.setDataType(dataTypeEntity.findById(rs.getInt("region_id")));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }
