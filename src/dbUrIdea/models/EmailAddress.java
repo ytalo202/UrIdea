@@ -1,5 +1,7 @@
 package dbUrIdea.models;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 /**
  * Created by Magnus on 6/15/2017.
  */
@@ -40,5 +42,16 @@ public class EmailAddress {
     public EmailAddress setEmailData(String emailData) {
         this.emailData = emailData;
         return this;
+    }
+
+    public static EmailAddress build(ResultSet resultSet) {
+        try {
+            return (new EmailAddress())
+                    .setId(resultSet.getInt("id"))
+                    .setEmailData(resultSet.getString("email_data"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
