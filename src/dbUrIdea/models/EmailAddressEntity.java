@@ -9,14 +9,14 @@ import java.util.List;
 /**
  * Created by Yoshinon on 15/06/2017.
  */
-public class EmailAdreessEntity extends BaseEntity {
+public class EmailAddressEntity extends BaseEntity {
 
-    public EmailAdreessEntity(Connection connection) {
+    public EmailAddressEntity(Connection connection) {
 
         super(connection,"emails_addresses");
     }
 
-    public EmailAdreessEntity() {
+    public EmailAddressEntity() {
 
         super();
     }
