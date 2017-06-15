@@ -17,11 +17,14 @@ public class EmailAdreessEntity extends BaseEntity {
     }
 
     public EmailAdreessEntity() {
+
         super();
     }
-    List<EmailAdreessEntity> findAll() {
+    List<EmailAddress> findAll() {
         return findByCriteria("");
     }
+
+
     public EmailAddress findById(int id) {
         String criteria = " id = " +
                 String.valueOf(id);
