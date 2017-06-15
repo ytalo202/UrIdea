@@ -1,5 +1,7 @@
 package dbUrIdea.models;
 
+import java.util.Date;
+
 /**
  * Created by UrIdea on 14/06/2017.
  */
@@ -8,19 +10,19 @@ public class Evaluation {
     private Employee idEmployee;
    private Employee idUserEmployee;
     private Company company;
-    private String date;
+    private Date date;
     private float grade;
 
     public Evaluation() {
     }
 
-    public Evaluation(String id, Employee idEmployee, Employee idUserEmployee, Company company, String date, float grade) {
-        this.setId(id);
-        this.setIdEmployee(idEmployee);
-        this.setIdUserEmployee(idUserEmployee);
-        this.setCompany(company);
-        this.setDate(date);
-        this.setGrade(grade);
+    public Evaluation(String id, Employee idEmployee, Employee idUserEmployee, Company company, Date date, float grade) {
+        this.id = id;
+        this.idEmployee = idEmployee;
+        this.idUserEmployee = idUserEmployee;
+        this.company = company;
+        this.date = date;
+        this.grade = grade;
     }
 
     public String getId() {
@@ -59,11 +61,11 @@ public class Evaluation {
         return this;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public Evaluation setDate(String date) {
+    public Evaluation setDate(Date date) {
         this.date = date;
         return this;
     }

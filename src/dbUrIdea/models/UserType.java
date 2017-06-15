@@ -44,6 +44,6 @@ public class UserType {
     public UserType setDescription(String description) {
         this.description = description;
         return this;
-        
+
     }
 }
