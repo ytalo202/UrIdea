@@ -19,10 +19,11 @@ public class UserType {
         return String.valueOf(getId());
     }
 
-    public String getNameAsValue() {
+    public String getUserTypeNameAsValue() {
         return "'" + getUserTypeName() + "'";
     }
 
+    public String getDescriptionAsValue(){ return "'" + getDescription()+"'";  }
 
 
     public UserType(int id, String userTypeName, String description) {

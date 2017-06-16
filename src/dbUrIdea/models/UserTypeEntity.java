@@ -33,7 +33,7 @@ public class UserTypeEntity extends BaseEntity{
     }
 
     public List<UserType> findAllOrderedByName() {
-        String criteria = "true ORDER BY user_type_name";
+        String criteria = " true ORDER BY user_type_name";
         return findByCriteria(criteria);
     }
     public List<UserType> findByCriteria(String criteria) {
@@ -56,9 +56,9 @@ public class UserTypeEntity extends BaseEntity{
     }
 
     public boolean add(UserType userType) {
-        String sql = "INSERT INTO user_types(id, user_type_name) " +
+        String sql = "INSERT INTO user_types(id, user_type_name,description) " +
                 "VALUES(" + userType.getIdAsString() + ", " +
-                userType.getNameAsValue() + ")";
+                userType.getUserTypeNameAsValue() +","+userType.getDescriptionAsValue() +")";
         return change(sql);
     }
 
@@ -67,13 +67,13 @@ public class UserTypeEntity extends BaseEntity{
         return change(sql);
     }
 
-    public boolean delete(String name) {
+    public boolean delete(String user_type_name) {
         return change("DELETE FROM user_types WHERE user_type_name = " +
-                "'" + name + "'");
+                "'" + user_type_name + "'");
     }
 
     public boolean update(UserType userType) {
-        String sql = "UPDATE user_types SET user_type_name = " + userType.getNameAsValue() +
+        String sql = "UPDATE user_types SET user_type_name = " + userType.getUserTypeNameAsValue()+
                 " WHERE id = " + userType.getIdAsString();
         return change(sql);
     }
