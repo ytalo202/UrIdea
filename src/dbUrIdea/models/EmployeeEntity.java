@@ -27,10 +27,64 @@ public class EmployeeEntity extends BaseEntity {
         return findByCriteria("", companyEntity, userTypeEntity, emailAddressEntity,stateCompanyEntity);
     }
     public Employee findById(String id,
-                             CompanyEntity companyEntity,UserTypeEntity userTypeEntity,
-                             EmailAddressEntity emailAddressEntity,StateCompanyEntity stateCompanyEntity) {
+                             CompanyEntity companyEntity,
+                             UserTypeEntity userTypeEntity,
+                             EmailAddressEntity emailAddressEntity,
+                             StateCompanyEntity stateCompanyEntity) {
         String criteria = "id = " + "'" + id + "'";
-        return findByCriteria(criteria, companyEntity, userTypeEntity, emailAddressEntity,stateCompanyEntity).get(0);
+        return findByCriteria(criteria, companyEntity, userTypeEntity,
+                emailAddressEntity,stateCompanyEntity).get(0);
+    }
+
+    public Employee findByName(String name,
+                              CompanyEntity companyEntity,
+                              UserTypeEntity userTypeEntity,
+                              EmailAddressEntity emailAddressEntity,
+                              StateCompanyEntity stateCompanyEntity) {
+        String criteria = "employee_name = " + "'" + name + "'";
+        return findByCriteria(criteria,companyEntity,userTypeEntity,
+                emailAddressEntity,stateCompanyEntity).get(0);
+    }
+
+    public Employee findByFirstLastName(String firstLastName,
+                                         CompanyEntity companyEntity,
+                                         UserTypeEntity userTypeEntity,
+                                         EmailAddressEntity emailAddressEntity,
+                                         StateCompanyEntity stateCompanyEntity) {
+        String criteria = "employee_first_last_name = " + "'" + firstLastName + "'";
+        return findByCriteria(criteria,companyEntity,userTypeEntity,
+                emailAddressEntity,stateCompanyEntity).get(0);
+    }
+
+    public Employee findByIdCompany(String id,
+                                        CompanyEntity companyEntity,
+                                        UserTypeEntity userTypeEntity,
+                                        EmailAddressEntity emailAddressEntity,
+                                        StateCompanyEntity stateCompanyEntity) {
+        String criteria = "id_company = " + String.valueOf(id);
+        return findByCriteria(criteria,companyEntity,userTypeEntity,
+                emailAddressEntity,stateCompanyEntity).get(0);
+    }
+
+    public Employee findByIdUserType(String id,
+                                    CompanyEntity companyEntity,
+                                    UserTypeEntity userTypeEntity,
+                                    EmailAddressEntity emailAddressEntity,
+                                    StateCompanyEntity stateCompanyEntity) {
+        String criteria = "id_user_type = " + String.valueOf(id);
+        return findByCriteria(criteria,companyEntity,userTypeEntity,
+                emailAddressEntity,stateCompanyEntity).get(0);
+    }
+
+
+    public Employee findBySecondLastName(String secondLastName,
+                                        CompanyEntity companyEntity,
+                                        UserTypeEntity userTypeEntity,
+                                        EmailAddressEntity emailAddressEntity,
+                                        StateCompanyEntity stateCompanyEntity) {
+        String criteria = "employee_second_last_name = " + "'" + secondLastName + "'";
+        return findByCriteria(criteria, companyEntity, userTypeEntity,
+                emailAddressEntity, stateCompanyEntity).get(0);
     }
 
     public List<Employee> findByCriteria(String criteria, CompanyEntity companyEntity,UserTypeEntity userTypeEntity,
