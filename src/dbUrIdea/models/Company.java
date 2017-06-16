@@ -30,6 +30,28 @@ public class Company {
         this.stateCompany = stateCompany;
     }
 
+    public String getIdAsValue() {
+        return "'" + getId() + "'";
+    }
+    public String getPasswordAsValue() {
+        return "'" + getPassword() + "'";
+    }
+    public String getNameCompanyAsValue() {
+        return "'" + getNameCompany() + "'";
+    }
+    public String getDescriptionAsValue() {
+        return "'" + getDescription() + "'";
+    }
+
+    public String getAddressAsValue() {
+        return "'" + getAddress() + "'";
+    }
+    public String getPhoneNumberAsString()
+    {
+        return String.valueOf(getPhoneNumber());
+    }
+
+
     public String getId() {
         return id;
     }

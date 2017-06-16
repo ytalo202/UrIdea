@@ -56,6 +56,51 @@ public class CompanyEntity extends BaseEntity {
         return companies;
     }
 
+    public List<Company> findAllOrderByName(StateCompanyEntity stateCompanyEntity,
+                                            EmailAddressEntity emailAddressEntit, boolean isAscending) {
+        return findByCriteria("true ORDER BY name_company" +
+                (isAscending ? "" : " DESC"), stateCompanyEntity,emailAddressEntit );
+    }
+
+    public boolean add(Company company) {
+        String sql = "INSERT INTO companies" +
+                "(id, password, name_company, description, id_state_company, id_state_company" +
+                ", id_email_address, address, phone_number ) VALUES(" +
+                company.getIdAsValue() + ", " +
+                company.getPasswordAsValue() + ", " +
+                company.getNameCompany()+ ", " +
+                company.getDescription()+ ", " +
+                company.getStateCompany().getIdAsValue()+ ", " +
+                company.getEmailAdress().getIdAsString()+ ", " +
+                company.getAddressAsValue()+ ", " +
+                company.getPhoneNumberAsString()
+                + ")";
+        return change(sql);
+    }
+    public boolean update(Company company) {
+        String sql = "UPDATE companies SET " +
+                "password = " + company.getPasswordAsValue() + ", " +
+                "name_company = " + company.getNameCompanyAsValue() + ", " +
+                "description = " + company.getNameCompanyAsValue() + ", " +
+                "address = "+company.getAddressAsValue()+ ", " +
+                "phone_number = "+company.getPhoneNumberAsString()+ ", " +
+                " WHERE country_id = " + company.getIdAsValue();
+        return change(sql);
+    }
+
+    public boolean delete(Company company) {
+        String sql = "DELETE FROM companies WHERE id = " +
+                company.getIdAsValue();
+        return change(sql);
+    }
+    public boolean delete(String id) {
+        String sql = "DELETE FROM companies WHERE id = " +
+                "'" + id + "'";
+        return change(sql);
+    }
+
+
+
 
 
 
