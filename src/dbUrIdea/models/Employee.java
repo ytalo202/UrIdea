@@ -1,5 +1,7 @@
 package dbUrIdea.models;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 
 /**
@@ -156,5 +158,39 @@ public class Employee {
     public Employee setBirthdate(Date birthdate) {
         this.birthdate = birthdate;
         return this;
+    }
+
+    public static Employee build(ResultSet rs, CompanyEntity companyEntity,UserTypeEntity userTypeEntity,
+                                 EmailAddressEntity emailAddressEntity,StateCompanyEntity stateCompanyEntity) {
+        try {
+            return (new Employee())
+                    .setId(rs.getString("id"))
+                    .setName(rs.getString("employee_name"))
+
+                    .setCompany(companyEntity.findById(rs.getString("id_company"),
+                            stateCompanyEntity,emailAddressEntity))
+
+                    .setUserType(userTypeEntity.findById(rs.getInt("id_user_type")))
+
+                    .setEmailAddress(emailAddressEntity.findById(
+                            rs.getInt("id_email_address")))
+                    .setPassword(rs.getString("password"))
+                    .setName(rs.getString("employee_name"))
+                    .setFirstLastName(rs.getString("employee_first_last_name"))
+                    .setSecondLastName(rs.getString("employee_second_last_name"))
+                    .setPhoneNumber(rs.getInt("phone_number"))
+                    .setCellPhoneNumber(rs.getInt("cell_phone_number"))
+                    .setAddress(rs.getString("address"))
+                    .setDepartment(rs.getString("department"))
+                    .setBirthdate(rs.getDate("birthdate"));
+
+
+
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
