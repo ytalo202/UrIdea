@@ -53,6 +53,50 @@ public class Employee {
         return this;
     }
 
+    public String getIdAsValue() {
+        return "'" + getId() + "'";
+    }
+
+    public String getPasswordAsValue() {
+        return "'" + getPassword() + "'";
+    }
+
+    public String getNameAsValue() {
+        return "'" + getName() + "'";
+    }
+
+    public String getFirstLastNameAsValue() {
+        return "'" + getFirstLastName() + "'";
+    }
+    public String getSecondLastNameAsValue() {
+        return "'" + getSecondLastName() + "'";
+    }
+
+    public String getPhoneNumberAsString()
+    {
+        return String.valueOf(getPhoneNumber());
+    }
+
+    public String getCellPhoneNumberAsString()
+    {
+        return String.valueOf(getCellPhoneNumber());
+    }
+
+    public String getAddressAsValue() {
+        return "'" + getAddress() + "'";
+    }
+
+    public String getDepartmentAsValue() {
+        return "'" + getDepartment() + "'";
+    }
+    //date ? lo vemos luego  --- lo vemos abajoo
+
+
+    public String getBirthdateAsString()
+    {
+        return String.valueOf(getBirthdate());
+    }
+
     public String getPassword() {
         return password;
     }

@@ -105,16 +105,16 @@ public class EmployeeEntity extends BaseEntity {
     }
     public boolean update(Employee employee) {
         String sql = "UPDATE companies SET " +
-                "password = " + employee.getPassword() + ", " +
-                "employee_name = " + employee.getName() + ", " +
-                "employee_first_last_name = " + employee.getFirstLastName() + ", " +
-                "employee_second_last_name = "+ employee.getSecondLastName()+ ", " +
-                "phone_number = "+ employee.getPhoneNumber()+ ", " +
-                "cell_phone_number=" + employee.getCellPhoneNumber()+","+
-                "address="+ employee.getAddress()+","+
-                "department="+employee.getDepartment()+", "+
-                "birthdate="+employee.getBirthdate()+","+
-                " WHERE id = " + employee.getId();
+                "password = "+employee.getPasswordAsValue()+ ", " +
+                "employee_name = " +employee.getNameAsValue()+ ", " +
+                "employee_first_last_name = " + employee.getFirstLastNameAsValue()+ ", " +
+                "employee_second_last_name = "+ employee.getSecondLastNameAsValue()+ ", " +
+                "phone_number = "+ employee.getPhoneNumberAsString()+ ", " +
+                "cell_phone_number = " + employee.getCellPhoneNumberAsString()+ ", " +
+                "address = "+ employee.getAddressAsValue()+ ", " +
+                "department = "+employee.getDepartmentAsValue()+ ", " +
+                "birthdate = "+employee.getBirthdateAsString()+ ", " +
+                " WHERE id = " + employee.getIdAsValue();
 
         return change(sql);
     }
