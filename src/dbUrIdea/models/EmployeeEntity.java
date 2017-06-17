@@ -103,5 +103,20 @@ public class EmployeeEntity extends BaseEntity {
         }
         return employees;
     }
+    public boolean update(Employee employee) {
+        String sql = "UPDATE companies SET " +
+                "password = " + employee.getPassword() + ", " +
+                "employee_name = " + employee.getName() + ", " +
+                "employee_first_last_name = " + employee.getFirstLastName() + ", " +
+                "employee_second_last_name = "+ employee.getSecondLastName()+ ", " +
+                "phone_number = "+ employee.getPhoneNumber()+ ", " +
+                "cell_phone_number=" + employee.getCellPhoneNumber()+","+
+                "address="+ employee.getAddress()+","+
+                "department="+employee.getDepartment()+", "+
+                "birthdate="+employee.getBirthdate()+","+
+                " WHERE id = " + employee.getId();
 
+        return change(sql);
+    }
+ 
 }
