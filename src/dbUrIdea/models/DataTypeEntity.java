@@ -17,7 +17,7 @@ public class DataTypeEntity extends BaseEntity {
     }
 
     public DataTypeEntity(Connection connection) {
-        super(connection);
+        super(connection,"data_types");
     }
 
     public DataTypeEntity(Connection connection, String tableName) {

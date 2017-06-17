@@ -58,7 +58,7 @@ public class UserTypeEntity extends BaseEntity{
     public boolean add(UserType userType) {
         String sql = "INSERT INTO user_types(id, user_type_name,description) " +
                 "VALUES(" + userType.getIdAsString() + ", " +
-                userType.getUserTypeNameAsValue() +","+userType.getDescriptionAsValue() +")";
+                userType.getUserTypeNameAsValue() +", "+userType.getDescriptionAsValue() +")";
         return change(sql);
     }
 

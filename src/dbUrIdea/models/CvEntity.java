@@ -18,24 +18,41 @@ public class CvEntity extends BaseEntity {
         super(connection,"cvs");
     }
 
-    public List<Cv> findAll(EmployeeEntity employeeEntity,DataTypeEntity dataTypeEntity) {
-        return findByCriteria("", employeeEntity,dataTypeEntity);
+    public List<Cv> findAll(EmployeeEntity employeeEntity,
+                            DataTypeEntity dataTypeEntity,
+                            CompanyEntity companyEntity,
+                            UserTypeEntity userTypeEntity,
+                            EmailAddressEntity emailAddressEntity,
+                            StateCompanyEntity stateCompanyEntity) {
+        return findByCriteria("",employeeEntity,dataTypeEntity,companyEntity,userTypeEntity,emailAddressEntity
+                ,stateCompanyEntity);
     }
 
     public Cv findById(String id,
-                       EmployeeEntity employeeEntity,DataTypeEntity dataTypeEntity) {
+                       EmployeeEntity employeeEntity,
+                       DataTypeEntity dataTypeEntity,
+                       CompanyEntity companyEntity,
+                       UserTypeEntity userTypeEntity,
+                       EmailAddressEntity emailAddressEntity,
+                       StateCompanyEntity stateCompanyEntity) {
         String criteria = "id = " + "'" + id + "'";
-        return findByCriteria(criteria, employeeEntity,dataTypeEntity).get(0);
+        return findByCriteria(criteria,employeeEntity,dataTypeEntity,companyEntity,userTypeEntity,emailAddressEntity
+                ,stateCompanyEntity).get(0);
     }
 
     public List<Cv> findByCriteria(String criteria, EmployeeEntity employeeEntity,
-                                   DataTypeEntity dataTypeEntity) {
+                                   DataTypeEntity dataTypeEntity,
+                                   CompanyEntity companyEntity,
+                                   UserTypeEntity userTypeEntity,
+                                   EmailAddressEntity emailAddressEntity,
+                                   StateCompanyEntity stateCompanyEntity) {
         String sql = getDefaultQuery() + (criteria.isEmpty() ? "" : " WHERE " + criteria);
         List<Cv> cvs = new ArrayList<>();
         try {
             ResultSet rs = getConnection().createStatement().executeQuery(sql);
             if(rs == null) return null;
-            while(rs.next()) cvs.add(Cv.build(rs, employeeEntity,dataTypeEntity));
+            while(rs.next()) cvs.add(Cv.build(rs, employeeEntity,dataTypeEntity,companyEntity,userTypeEntity,emailAddressEntity
+            ,stateCompanyEntity));
             return cvs;
         } catch(SQLException e) {
             e.printStackTrace();
@@ -43,14 +60,21 @@ public class CvEntity extends BaseEntity {
         return cvs;
     }
 
-    public List<Cv> findAllOrderByName(EmployeeEntity employeeEntity,DataTypeEntity dataTypeEntity, boolean isAscending) {
+    public List<Cv> findAllOrderByName(EmployeeEntity employeeEntity,
+                                       DataTypeEntity dataTypeEntity,
+                                       CompanyEntity companyEntity,
+                                       UserTypeEntity userTypeEntity,
+                                       EmailAddressEntity emailAddressEntity,
+                                       StateCompanyEntity stateCompanyEntity, boolean isAscending) {
         return findByCriteria("true ORDER BY id" +
-                (isAscending ? "" : " DESC"), employeeEntity,dataTypeEntity );
+                (isAscending ? "" : " DESC"), employeeEntity,dataTypeEntity,companyEntity,userTypeEntity,emailAddressEntity
+                ,stateCompanyEntity);
     }
 
     public boolean add(Cv cv) {
         String sql = "INSERT INTO cvs(id, id_employee, id_data_type, description) VALUES(" +
                 cv.getIdAsValue() + ", " +
+                cv.getEmployee().getIdAsValue()+", " +
                 //cv.getNameAsValue() + ", " + "aqui tuviera mi  employer si tuviera unoo !! :c"
                 cv.getDataType().getIdAsValue() + ", " +
                 cv.getDescriptionAsValue()+

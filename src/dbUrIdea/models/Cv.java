@@ -66,12 +66,25 @@ public class Cv {
 
 
     public static Cv build(ResultSet rs,
-                           EmployeeEntity employeeEntity,DataTypeEntity dataTypeEntity) {
+                           EmployeeEntity employeeEntity,
+                           DataTypeEntity dataTypeEntity,
+                           CompanyEntity companyEntity,
+                           UserTypeEntity userTypeEntity,
+                           EmailAddressEntity emailAddressEntity,
+                           StateCompanyEntity stateCompanyEntity
+                            ) {
         try {
             return (new Cv())
-                    .setId(rs.getString("id"));
-                    //.setEmployee(employeeEntity.getString("country_name"))
-                    //.setDataType(dataTypeEntity.findById(rs.getInt("region_id")));
+                    .setId(rs.getString("id"))
+                    .setEmployee(employeeEntity.findById(
+                            rs.getString("id_employee")
+                            ,companyEntity,userTypeEntity,emailAddressEntity
+                            ,stateCompanyEntity))
+                    .setDataType(dataTypeEntity.findById(rs.getString(
+                            "id_data_type")))
+                    .setDescription(rs.getString("description"));
+
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -16,6 +16,7 @@ public class StateCompanyEntity extends BaseEntity{
     }
 
     public StateCompanyEntity(Connection connection) {
+
         super(connection,"states_companies");
     }
 
