@@ -118,5 +118,16 @@ public class EmployeeEntity extends BaseEntity {
 
         return change(sql);
     }
+
+    public boolean delete(Employee employee) {
+        String sql = "DELETE FROM employees WHERE id = " +
+                employee.getIdAsValue();
+        return change(sql);
+    }
+    public boolean delete(String id) {
+        String sql = "DELETE FROM employees WHERE id = " +
+                "'" + id + "'";
+        return change(sql);
+    }
  
 }
