@@ -1,5 +1,7 @@
 package dbUrIdea.models;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 
 /**
@@ -128,7 +130,8 @@ public class Payment {
 
     public Payment setCountry(String country) {
         this.country = country;
-        return this;    }
+        return this;
+    }
 
     public String getCodeZip() {
         return codeZip;
@@ -165,4 +168,42 @@ public class Payment {
         this.amount = amount;
         return this;
     }
+
+
+  public static Payment build(ResultSet rs,
+                           CompanyEntity companyEntity,
+                           PaymentsTypeEntity paymentsTypeEntity,
+                                StateCompanyEntity stateCompanyEntity,
+                                EmailAddressEntity emailAddressEntity) {
+     try {
+            return (new Payment())
+                   .setId(rs.getInt("id"))
+                    .setCompany(companyEntity.findById(
+                       rs.getString("id_companies"),stateCompanyEntity,emailAddressEntity))
+                   .setPaymentsType(paymentsTypeEntity.findById(rs.getInt(
+                           "id_data_type")))
+                    .setCardNumber(rs.getString("card_number"))
+                    .setName(rs.getString("name"))
+                    .setLastNameF(rs.getString("last_name"))
+                    .setFirstAddressF(rs.getString("first_address"))
+                    .setSecondAddressF(rs.getString("second_address"))
+                    .setDate(rs.getDate("date"))
+                    .setLocation(rs.getString("location"))
+                    .setCountry(rs.getString("country"))
+                    .setCodeZip(rs.getString("code_zip"))
+                    .setCellPhoneNumber(rs.getString("cell_phone_number"))
+                    .setAmount(rs.getFloat("payment_amount"))
+
+                    ;
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+
+
 }

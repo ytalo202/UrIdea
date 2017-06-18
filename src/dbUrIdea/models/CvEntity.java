@@ -70,7 +70,7 @@ public class CvEntity extends BaseEntity {
                 (isAscending ? "" : " DESC"), employeeEntity,dataTypeEntity,companyEntity,userTypeEntity,emailAddressEntity
                 ,stateCompanyEntity);
     }
-
+//ponerlo al resto de enititys
     public boolean add(Cv cv) {
         String sql = "INSERT INTO cvs(id, id_employee, id_data_type, description) VALUES(" +
                 cv.getIdAsValue() + ", " +

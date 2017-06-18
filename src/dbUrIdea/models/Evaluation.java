@@ -1,5 +1,7 @@
 package dbUrIdea.models;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 
 /**
@@ -23,6 +25,23 @@ public class Evaluation {
         this.date = date;
         this.grade = grade;
     }
+    public String getIdAsValue() {
+        return "'" + getId() + "'";
+    }
+
+    public String getDateAsString()
+    {
+        return String.valueOf(getDate());
+    }
+
+    public String getGradeAsString()
+    {
+        return String.valueOf(getGrade());
+    }
+
+
+
+
 
     public String getId() {
         return id;
@@ -76,5 +95,38 @@ public class Evaluation {
     public Evaluation setGrade(float grade) {
         this.grade = grade;
         return this;
+    }
+
+    public static Evaluation build(ResultSet rs,
+                           EmployeeEntity employeeEntity,
+                           CompanyEntity companyEntity,
+                           UserTypeEntity userTypeEntity,
+                           EmailAddressEntity emailAddressEntity,
+                           StateCompanyEntity stateCompanyEntity
+    ) {
+        try {
+            return (new Evaluation())
+                    .setId(rs.getString("id"))
+                    .setIdEmployee(employeeEntity.findById(
+                            rs.getString("id_evaluator")
+                            ,companyEntity,userTypeEntity,emailAddressEntity
+                            ,stateCompanyEntity))
+                    .setIdUserEmployee(employeeEntity.findById(
+                            rs.getString("id_user_employee")
+                            ,companyEntity,userTypeEntity,emailAddressEntity
+                            ,stateCompanyEntity))
+                    .setCompany(companyEntity.findById(
+                            rs.getString("id_company"),stateCompanyEntity,
+                            emailAddressEntity))
+                    .setDate(rs.getDate("date"))
+                    .setGrade(rs.getFloat("grade"));
+
+
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

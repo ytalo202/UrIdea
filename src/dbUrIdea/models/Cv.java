@@ -78,8 +78,8 @@ public class Cv {
                     .setId(rs.getString("id"))
                     .setEmployee(employeeEntity.findById(
                             rs.getString("id_employee")
-                            ,companyEntity,userTypeEntity,emailAddressEntity
-                            ,stateCompanyEntity))
+                            ,companyEntity,userTypeEntity,emailAddressEntity,
+                            stateCompanyEntity))
                     .setDataType(dataTypeEntity.findById(rs.getString(
                             "id_data_type")))
                     .setDescription(rs.getString("description"));

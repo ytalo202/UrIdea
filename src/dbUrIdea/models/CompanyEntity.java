@@ -24,7 +24,8 @@ public class CompanyEntity extends BaseEntity {
         return findByCriteria("", stateCompanyEntity,emailAddressEntity);
     }
 
-    public Company findById(String id, StateCompanyEntity stateCompanyEntity,
+    public Company findById(String id,
+                            StateCompanyEntity stateCompanyEntity,
                             EmailAddressEntity emailAddressEntit) {
         String criteria = "id = " + "'" + id + "'";
         return findByCriteria(criteria, stateCompanyEntity,emailAddressEntit).get(0);

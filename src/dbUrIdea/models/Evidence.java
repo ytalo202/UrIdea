@@ -25,6 +25,12 @@ public class Evidence {
         return this;
     }
 
+    public String getIdAsValue() {
+        return "'" + getId() + "'";
+    }
+
+
+
     public EvidencesType getEvidencesType() {
         return evidencesType;
     }
