@@ -64,8 +64,10 @@ public class DataTypesEntity extends BaseEntity {
 
     public boolean add(DataType dataType) {
         String sql = " INSERT INTO user_types(id, user_type_name) " +
-                "VALUES(" + dataType.getIdAsValue() + ", " +
-                dataType.getNameAsValue() + ")";
+                "VALUES(" +
+                dataType.getIdAsValue() + ", " +
+                dataType.getNameAsValue() +
+                ")";
         return change(sql);
     }
 

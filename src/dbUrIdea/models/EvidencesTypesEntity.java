@@ -62,13 +62,16 @@ public class EvidencesTypesEntity extends BaseEntity{
 
     public boolean add(EvidencesType evidencesType) {
         String sql = "INSERT INTO evidences_types(id, name, description) " +
-                "VALUES(" + evidencesType.getIdAsString() + ", " +
-                evidencesType.getNameAsValue()+", " + evidencesType.getDescriptionAsValue()+ ")";
+                "VALUES("
+                + evidencesType.getIdAsString() + ", "
+                + evidencesType.getNameAsValue()+", "
+                + evidencesType.getDescriptionAsValue()+ ")";
         return change(sql);
     }
 
     public boolean delete(EvidencesType evidencesType) {
-        String sql = "DELETE FROM evidences_types WHERE id = " + evidencesType.getIdAsString();
+        String sql = "DELETE FROM evidences_types WHERE id = "
+                + evidencesType.getIdAsString();
         return change(sql);
     }
     public boolean delete(String name) {

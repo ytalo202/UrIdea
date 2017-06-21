@@ -155,5 +155,37 @@ public class HRDataStore {
     public boolean createCompany(Company company) {
         return getCompaniesEntity().add(company);
     }
+
+    public List<Cv> findAllCvs() {
+        return getCvsEntity().findAll(getEmployeesEntity()
+                                    ,getDataTypesEntity()
+                                    ,getCompaniesEntity()
+                                    ,getUserTypesEntity()
+                                    ,getEmailAddressesEntity()
+                                    ,getStatesCompaniesEntity());
+    }
+
+    public boolean createCv(Cv cv) {
+        return getCvsEntity().add(cv);
+    }
+
+    public List<DataType> findAllDataTypes() {
+        return getDataTypesEntity().findAll();
+    }
+
+    public boolean createDataType(DataType dataType) {
+        return getDataTypesEntity().add(dataType);
+    }
+
+    public List<EmailAddress> findAllEmailAdresses() {
+        return getEmailAddressesEntity().findAll();
+    }
+
+    public boolean createEmailAddress(EmailAddress emailAddress) {
+        return getEmailAddressesEntity().add(emailAddress);
+    }
+
+
+
 }
 

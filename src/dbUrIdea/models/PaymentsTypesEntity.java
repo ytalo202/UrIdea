@@ -75,7 +75,8 @@ public class PaymentsTypesEntity extends BaseEntity{
     }
 
     public boolean update(PaymentsType paymentsType) {
-        String sql = "UPDATE payment_types SET payment_type_name = " + paymentsType.getNameAsValue() +
+        String sql = "UPDATE payment_types SET payment_type_name = "
+                + paymentsType.getNameAsValue() +
                 " WHERE id = " + paymentsType.getIdAsString();
         return change(sql);
     }
