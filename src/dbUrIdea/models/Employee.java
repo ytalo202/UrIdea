@@ -207,14 +207,14 @@ public class Employee {
     }
 
     public static Employee build(ResultSet rs, CompaniesEntity companiesEntity, UserTypesEntity userTypesEntity,
-                                 EmailAddressesEntity emailAddressesEntity, StateCompaniesEntity stateCompaniesEntity) {
+                                 EmailAddressesEntity emailAddressesEntity, StatesCompaniesEntity statesCompaniesEntity) {
         try {
             return (new Employee())
                     .setId(rs.getString("id"))
                     .setName(rs.getString("employee_name"))
 
                     .setCompany(companiesEntity.findById(rs.getString("id_company"),
-                            stateCompaniesEntity, emailAddressesEntity))
+                            statesCompaniesEntity, emailAddressesEntity))
 
                     .setUserType(userTypesEntity.findById(rs.getInt("id_user_type")))
 

@@ -9,48 +9,48 @@ import java.util.List;
 /**
  * Created by Yoshinon on 15/06/2017.
  */
-public class StateCompaniesEntity extends BaseEntity{
+public class StatesCompaniesEntity extends BaseEntity{
 
-    public StateCompaniesEntity() {
+    public StatesCompaniesEntity() {
         super();
     }
 
-    public StateCompaniesEntity(Connection connection) {
+    public StatesCompaniesEntity(Connection connection) {
 
         super(connection,"states_companies");
     }
 
-    List<StateCompany> findAll() {
+    List<StatesCompany> findAll() {
         return findByCriteria("");
     }
 
-    public StateCompany findById(String id) {
+    public StatesCompany findById(String id) {
         String criteria = " id = '" +
                 id + "'";
         return findByCriteria(criteria).get(0);
     }
-    public StateCompany findByDescription(String description) {
+    public StatesCompany findByDescription(String description) {
         String criteria = " description = '" +
                 description + "'";
         return findByCriteria(criteria).get(0);
     }
 
-    public List<StateCompany> findAllOrderedByDescription() {
+    public List<StatesCompany> findAllOrderedByDescription() {
         String criteria = "true ORDER BY description";
         return findByCriteria(criteria);
     }
 
-    public List<StateCompany> findByCriteria(String criteria) {
+    public List<StatesCompany> findByCriteria(String criteria) {
         String sql = getDefaultQuery() +
                 criteria == "" ? "" : " WHERE " + criteria;
-        List<StateCompany> states_companies = new ArrayList<>();
+        List<StatesCompany> states_companies = new ArrayList<>();
         try {
             ResultSet resultSet = getConnection()
                     .createStatement()
                     .executeQuery(sql);
             if(resultSet == null) return null;
             while(resultSet.next()) {
-                states_companies.add(StateCompany.build(resultSet));
+                states_companies.add(StatesCompany.build(resultSet));
             }
             return states_companies;
         } catch (SQLException e) {
@@ -59,16 +59,16 @@ public class StateCompaniesEntity extends BaseEntity{
         return null;
     }
 
-    public boolean add(StateCompany stateCompany) {
+    public boolean add(StatesCompany statesCompany) {
         String sql = "INSERT INTO states_companies(id, description) " +
-                "VALUES(" + stateCompany.getIdAsValue() + ", " +
-                stateCompany.getDescriptionAsValue() + ")";
+                "VALUES(" + statesCompany.getIdAsValue() + ", " +
+                statesCompany.getDescriptionAsValue() + ")";
         return change(sql);
     }
 
-    public boolean delete(StateCompany stateCompany) {
+    public boolean delete(StatesCompany statesCompany) {
         String sql = "DELETE FROM states_companies WHERE id = "
-                + stateCompany.getIdAsValue();
+                + statesCompany.getIdAsValue();
         return change(sql);
     }
 
@@ -77,9 +77,9 @@ public class StateCompaniesEntity extends BaseEntity{
                 "'" + description + "'");
     }
 
-    public boolean update(StateCompany stateCompany) {
-        String sql = "UPDATE states_companie SET description = " + stateCompany.getDescriptionAsValue() +
-                " WHERE id = " + stateCompany.getIdAsValue();
+    public boolean update(StatesCompany statesCompany) {
+        String sql = "UPDATE states_companie SET description = " + statesCompany.getDescriptionAsValue() +
+                " WHERE id = " + statesCompany.getIdAsValue();
         return change(sql);
     }
 

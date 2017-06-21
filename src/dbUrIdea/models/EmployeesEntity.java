@@ -23,57 +23,57 @@ public class EmployeesEntity extends BaseEntity {
     }
 
     public List<Employee> findAll(CompaniesEntity companiesEntity, UserTypesEntity userTypesEntity,
-                                  EmailAddressesEntity emailAddressesEntity, StateCompaniesEntity stateCompaniesEntity) {
-        return findByCriteria("", companiesEntity, userTypesEntity, emailAddressesEntity, stateCompaniesEntity);
+                                  EmailAddressesEntity emailAddressesEntity, StatesCompaniesEntity statesCompaniesEntity) {
+        return findByCriteria("", companiesEntity, userTypesEntity, emailAddressesEntity, statesCompaniesEntity);
     }
     public Employee findById(String id,
                              CompaniesEntity companiesEntity,
                              UserTypesEntity userTypesEntity,
                              EmailAddressesEntity emailAddressesEntity,
-                             StateCompaniesEntity stateCompaniesEntity) {
+                             StatesCompaniesEntity statesCompaniesEntity) {
         String criteria = "id = " + "'" + id + "'";
         return findByCriteria(criteria, companiesEntity, userTypesEntity,
-                emailAddressesEntity, stateCompaniesEntity).get(0);
+                emailAddressesEntity, statesCompaniesEntity).get(0);
     }
 
     public Employee findByName(String name,
                               CompaniesEntity companiesEntity,
                               UserTypesEntity userTypesEntity,
                               EmailAddressesEntity emailAddressesEntity,
-                              StateCompaniesEntity stateCompaniesEntity) {
+                              StatesCompaniesEntity statesCompaniesEntity) {
         String criteria = "employee_name = " + "'" + name + "'";
         return findByCriteria(criteria, companiesEntity, userTypesEntity,
-                emailAddressesEntity, stateCompaniesEntity).get(0);
+                emailAddressesEntity, statesCompaniesEntity).get(0);
     }
 
     public Employee findByFirstLastName(String firstLastName,
                                          CompaniesEntity companiesEntity,
                                          UserTypesEntity userTypesEntity,
                                          EmailAddressesEntity emailAddressesEntity,
-                                         StateCompaniesEntity stateCompaniesEntity) {
+                                         StatesCompaniesEntity statesCompaniesEntity) {
         String criteria = "employee_first_last_name = " + "'" + firstLastName + "'";
         return findByCriteria(criteria, companiesEntity, userTypesEntity,
-                emailAddressesEntity, stateCompaniesEntity).get(0);
+                emailAddressesEntity, statesCompaniesEntity).get(0);
     }
 
     public Employee findByIdCompany(String id,
                                         CompaniesEntity companiesEntity,
                                         UserTypesEntity userTypesEntity,
                                         EmailAddressesEntity emailAddressesEntity,
-                                        StateCompaniesEntity stateCompaniesEntity) {
+                                        StatesCompaniesEntity statesCompaniesEntity) {
         String criteria = "id_company = " + String.valueOf(id);
         return findByCriteria(criteria, companiesEntity, userTypesEntity,
-                emailAddressesEntity, stateCompaniesEntity).get(0);
+                emailAddressesEntity, statesCompaniesEntity).get(0);
     }
 
     public Employee findByIdUserType(String id,
                                     CompaniesEntity companiesEntity,
                                     UserTypesEntity userTypesEntity,
                                     EmailAddressesEntity emailAddressesEntity,
-                                    StateCompaniesEntity stateCompaniesEntity) {
+                                    StatesCompaniesEntity statesCompaniesEntity) {
         String criteria = "id_user_type = " + String.valueOf(id);
         return findByCriteria(criteria, companiesEntity, userTypesEntity,
-                emailAddressesEntity, stateCompaniesEntity).get(0);
+                emailAddressesEntity, statesCompaniesEntity).get(0);
     }
 
 
@@ -81,14 +81,14 @@ public class EmployeesEntity extends BaseEntity {
                                         CompaniesEntity companiesEntity,
                                         UserTypesEntity userTypesEntity,
                                         EmailAddressesEntity emailAddressesEntity,
-                                        StateCompaniesEntity stateCompaniesEntity) {
+                                        StatesCompaniesEntity statesCompaniesEntity) {
         String criteria = "employee_second_last_name = " + "'" + secondLastName + "'";
         return findByCriteria(criteria, companiesEntity, userTypesEntity,
-                emailAddressesEntity, stateCompaniesEntity).get(0);
+                emailAddressesEntity, statesCompaniesEntity).get(0);
     }
 
     public List<Employee> findByCriteria(String criteria, CompaniesEntity companiesEntity, UserTypesEntity userTypesEntity,
-                                         EmailAddressesEntity emailAddressesEntity, StateCompaniesEntity stateCompaniesEntity) {
+                                         EmailAddressesEntity emailAddressesEntity, StatesCompaniesEntity statesCompaniesEntity) {
 
         String sql = getDefaultQuery() + (criteria.isEmpty() ? "" : " WHERE " + criteria);
         List<Employee> employees = new ArrayList<>();
@@ -96,7 +96,7 @@ public class EmployeesEntity extends BaseEntity {
             ResultSet rs = getConnection().createStatement().executeQuery(sql);
             if(rs == null) return null;
             while(rs.next()) employees.add(Employee.build(rs, companiesEntity,
-                    userTypesEntity, emailAddressesEntity, stateCompaniesEntity));
+                    userTypesEntity, emailAddressesEntity, statesCompaniesEntity));
             return employees;
         } catch(SQLException e) {
             e.printStackTrace();

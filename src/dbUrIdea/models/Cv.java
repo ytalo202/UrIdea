@@ -71,7 +71,7 @@ public class Cv {
                            CompaniesEntity companiesEntity,
                            UserTypesEntity userTypesEntity,
                            EmailAddressesEntity emailAddressesEntity,
-                           StateCompaniesEntity stateCompaniesEntity
+                           StatesCompaniesEntity statesCompaniesEntity
                             ) {
         try {
             return (new Cv())
@@ -79,7 +79,7 @@ public class Cv {
                     .setEmployee(employeesEntity.findById(
                             rs.getString("id_employee")
                             , companiesEntity, userTypesEntity, emailAddressesEntity,
-                            stateCompaniesEntity))
+                            statesCompaniesEntity))
                     .setDataType(dataTypesEntity.findById(rs.getString(
                             "id_data_type")))
                     .setDescription(rs.getString("description"));

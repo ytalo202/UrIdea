@@ -102,7 +102,7 @@ public class Evaluation {
                            CompaniesEntity companiesEntity,
                            UserTypesEntity userTypesEntity,
                            EmailAddressesEntity emailAddressesEntity,
-                           StateCompaniesEntity stateCompaniesEntity
+                           StatesCompaniesEntity statesCompaniesEntity
     ) {
         try {
             return (new Evaluation())
@@ -110,13 +110,13 @@ public class Evaluation {
                     .setIdEmployee(employeesEntity.findById(
                             rs.getString("id_evaluator")
                             , companiesEntity, userTypesEntity, emailAddressesEntity
-                            , stateCompaniesEntity))
+                            , statesCompaniesEntity))
                     .setIdUserEmployee(employeesEntity.findById(
                             rs.getString("id_user_employee")
                             , companiesEntity, userTypesEntity, emailAddressesEntity
-                            , stateCompaniesEntity))
+                            , statesCompaniesEntity))
                     .setCompany(companiesEntity.findById(
-                            rs.getString("id_company"), stateCompaniesEntity,
+                            rs.getString("id_company"), statesCompaniesEntity,
                             emailAddressesEntity))
                     .setDate(rs.getDate("date"))
                     .setGrade(rs.getFloat("grade"));

@@ -23,9 +23,9 @@ public class CvsEntity extends BaseEntity {
                             CompaniesEntity companiesEntity,
                             UserTypesEntity userTypesEntity,
                             EmailAddressesEntity emailAddressesEntity,
-                            StateCompaniesEntity stateCompaniesEntity) {
+                            StatesCompaniesEntity statesCompaniesEntity) {
         return findByCriteria("", employeesEntity, dataTypesEntity, companiesEntity, userTypesEntity, emailAddressesEntity
-                , stateCompaniesEntity);
+                , statesCompaniesEntity);
     }
 
     public Cv findById(String id,
@@ -34,10 +34,10 @@ public class CvsEntity extends BaseEntity {
                        CompaniesEntity companiesEntity,
                        UserTypesEntity userTypesEntity,
                        EmailAddressesEntity emailAddressesEntity,
-                       StateCompaniesEntity stateCompaniesEntity) {
+                       StatesCompaniesEntity statesCompaniesEntity) {
         String criteria = "id = " + "'" + id + "'";
         return findByCriteria(criteria, employeesEntity, dataTypesEntity, companiesEntity, userTypesEntity, emailAddressesEntity
-                , stateCompaniesEntity).get(0);
+                , statesCompaniesEntity).get(0);
     }
 
     public List<Cv> findByCriteria(String criteria, EmployeesEntity employeesEntity,
@@ -45,14 +45,14 @@ public class CvsEntity extends BaseEntity {
                                    CompaniesEntity companiesEntity,
                                    UserTypesEntity userTypesEntity,
                                    EmailAddressesEntity emailAddressesEntity,
-                                   StateCompaniesEntity stateCompaniesEntity) {
+                                   StatesCompaniesEntity statesCompaniesEntity) {
         String sql = getDefaultQuery() + (criteria.isEmpty() ? "" : " WHERE " + criteria);
         List<Cv> cvs = new ArrayList<>();
         try {
             ResultSet rs = getConnection().createStatement().executeQuery(sql);
             if(rs == null) return null;
             while(rs.next()) cvs.add(Cv.build(rs, employeesEntity, dataTypesEntity, companiesEntity, userTypesEntity, emailAddressesEntity
-            , stateCompaniesEntity));
+            , statesCompaniesEntity));
             return cvs;
         } catch(SQLException e) {
             e.printStackTrace();
@@ -65,10 +65,10 @@ public class CvsEntity extends BaseEntity {
                                        CompaniesEntity companiesEntity,
                                        UserTypesEntity userTypesEntity,
                                        EmailAddressesEntity emailAddressesEntity,
-                                       StateCompaniesEntity stateCompaniesEntity, boolean isAscending) {
+                                       StatesCompaniesEntity statesCompaniesEntity, boolean isAscending) {
         return findByCriteria("true ORDER BY id" +
                 (isAscending ? "" : " DESC"), employeesEntity, dataTypesEntity, companiesEntity, userTypesEntity, emailAddressesEntity
-                , stateCompaniesEntity);
+                , statesCompaniesEntity);
     }
 //ponerlo al resto de enititys
     public boolean add(Cv cv) {

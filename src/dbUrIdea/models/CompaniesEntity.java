@@ -19,37 +19,38 @@ public class CompaniesEntity extends BaseEntity {
     public CompaniesEntity(Connection connection) {
         super(connection,"companies");
     }
-    public List<Company> findAll(StateCompaniesEntity stateCompaniesEntity,
+
+    public List<Company> findAll(StatesCompaniesEntity statesCompaniesEntity,
                                 EmailAddressesEntity emailAddressesEntity) {
-        return findByCriteria("", stateCompaniesEntity, emailAddressesEntity);
+        return findByCriteria("", statesCompaniesEntity, emailAddressesEntity);
     }
 
     public Company findById(String id,
-                            StateCompaniesEntity stateCompaniesEntity,
+                            StatesCompaniesEntity statesCompaniesEntity,
                             EmailAddressesEntity emailAddressEntit) {
         String criteria = "id = " + "'" + id + "'";
-        return findByCriteria(criteria, stateCompaniesEntity,emailAddressEntit).get(0);
+        return findByCriteria(criteria, statesCompaniesEntity,emailAddressEntit).get(0);
     }
-    public Company findByName(String name, StateCompaniesEntity stateCompaniesEntity,
+    public Company findByName(String name, StatesCompaniesEntity statesCompaniesEntity,
                             EmailAddressesEntity emailAddressEntit) {
         String criteria = "name_company = " + "'" + name + "'";
-        return findByCriteria(criteria, stateCompaniesEntity,emailAddressEntit).get(0);
+        return findByCriteria(criteria, statesCompaniesEntity,emailAddressEntit).get(0);
     }
 
-    public Company findByState(String state, StateCompaniesEntity stateCompaniesEntity,
+    public Company findByState(String state, StatesCompaniesEntity statesCompaniesEntity,
                               EmailAddressesEntity emailAddressEntit) {
         String criteria = "id_state_company = " + "'" + state + "'";
-        return findByCriteria(criteria, stateCompaniesEntity,emailAddressEntit).get(0);
+        return findByCriteria(criteria, statesCompaniesEntity,emailAddressEntit).get(0);
     }
 
-    public List<Company> findByCriteria(String criteria, StateCompaniesEntity stateCompaniesEntity,
+    public List<Company> findByCriteria(String criteria, StatesCompaniesEntity statesCompaniesEntity,
                                         EmailAddressesEntity emailAddressEntit) {
         String sql = getDefaultQuery() + (criteria.isEmpty() ? "" : " WHERE " + criteria);
         List<Company> companies = new ArrayList<>();
         try {
             ResultSet rs = getConnection().createStatement().executeQuery(sql);
             if(rs == null) return null;
-            while(rs.next()) companies.add(Company.build(rs, stateCompaniesEntity,emailAddressEntit));
+            while(rs.next()) companies.add(Company.build(rs, statesCompaniesEntity,emailAddressEntit));
             return companies;
         } catch(SQLException e) {
             e.printStackTrace();
@@ -57,10 +58,10 @@ public class CompaniesEntity extends BaseEntity {
         return companies;
     }
 
-    public List<Company> findAllOrderByName(StateCompaniesEntity stateCompaniesEntity,
+    public List<Company> findAllOrderByName(StatesCompaniesEntity statesCompaniesEntity,
                                             EmailAddressesEntity emailAddressEntit, boolean isAscending) {
         return findByCriteria("true ORDER BY name_company" +
-                (isAscending ? "" : " DESC"), stateCompaniesEntity,emailAddressEntit );
+                (isAscending ? "" : " DESC"), statesCompaniesEntity,emailAddressEntit );
     }
 
     public boolean add(Company company) {
@@ -71,7 +72,7 @@ public class CompaniesEntity extends BaseEntity {
                 company.getPasswordAsValue() + ", " +
                 company.getNameCompany()+ ", " +
                 company.getDescription()+ ", " +
-                company.getStateCompany().getIdAsValue()+ ", " +
+                company.getStatesCompany().getIdAsValue()+ ", " +
                 company.getEmailAdress().getIdAsString()+ ", " +
                 company.getAddressAsValue()+ ", " +
                 company.getPhoneNumberAsString()

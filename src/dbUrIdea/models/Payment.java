@@ -173,13 +173,13 @@ public class Payment {
   public static Payment build(ResultSet rs,
                            CompaniesEntity companiesEntity,
                            PaymentsTypesEntity paymentsTypesEntity,
-                                StateCompaniesEntity stateCompaniesEntity,
+                                StatesCompaniesEntity statesCompaniesEntity,
                                 EmailAddressesEntity emailAddressesEntity) {
      try {
             return (new Payment())
                    .setId(rs.getInt("id"))
                     .setCompany(companiesEntity.findById(
-                       rs.getString("id_companies"), stateCompaniesEntity, emailAddressesEntity))
+                       rs.getString("id_companies"), statesCompaniesEntity, emailAddressesEntity))
                    .setPaymentsType(paymentsTypesEntity.findById(rs.getInt(
                            "id_data_type")))
                     .setCardNumber(rs.getString("card_number"))

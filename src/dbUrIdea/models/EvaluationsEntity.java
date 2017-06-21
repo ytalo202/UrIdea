@@ -23,19 +23,19 @@ public class EvaluationsEntity extends BaseEntity{
                                     CompaniesEntity companiesEntity,
                                     UserTypesEntity userTypesEntity,
                                     EmailAddressesEntity emailAddressesEntity,
-                                    StateCompaniesEntity stateCompaniesEntity) {
+                                    StatesCompaniesEntity statesCompaniesEntity) {
         return findByCriteria("", employeesEntity, companiesEntity, userTypesEntity,
-                emailAddressesEntity, stateCompaniesEntity);
+                emailAddressesEntity, statesCompaniesEntity);
     }
     public Evaluation findById(String id,
                              EmployeesEntity employeesEntity,
                              CompaniesEntity companiesEntity,
                              UserTypesEntity userTypesEntity,
                              EmailAddressesEntity emailAddressesEntity,
-                             StateCompaniesEntity stateCompaniesEntity) {
+                             StatesCompaniesEntity statesCompaniesEntity) {
         String criteria = "id = " + "'" + id + "'";
         return findByCriteria(criteria, employeesEntity, companiesEntity, userTypesEntity,
-                emailAddressesEntity, stateCompaniesEntity).get(0);
+                emailAddressesEntity, statesCompaniesEntity).get(0);
     }
 
     public Evaluation findByIdEvaluator(String id,
@@ -43,10 +43,10 @@ public class EvaluationsEntity extends BaseEntity{
                                       CompaniesEntity companiesEntity,
                                       UserTypesEntity userTypesEntity,
                                       EmailAddressesEntity emailAddressesEntity,
-                                      StateCompaniesEntity stateCompaniesEntity) {
+                                      StatesCompaniesEntity statesCompaniesEntity) {
         String criteria = "id_evaluator = " + "'" + id + "'";
         return findByCriteria(criteria, employeesEntity, companiesEntity, userTypesEntity,
-                emailAddressesEntity, stateCompaniesEntity).get(0);
+                emailAddressesEntity, statesCompaniesEntity).get(0);
     }
 
 
@@ -56,10 +56,10 @@ public class EvaluationsEntity extends BaseEntity{
                                         CompaniesEntity companiesEntity,
                                         UserTypesEntity userTypesEntity,
                                         EmailAddressesEntity emailAddressesEntity,
-                                        StateCompaniesEntity stateCompaniesEntity) {
+                                        StatesCompaniesEntity statesCompaniesEntity) {
         String criteria = "id_user_employee = " + "'" + userEmployee + "'";
         return findByCriteria(criteria, employeesEntity, companiesEntity, userTypesEntity,
-                emailAddressesEntity, stateCompaniesEntity).get(0);
+                emailAddressesEntity, statesCompaniesEntity).get(0);
     }
 
 
@@ -68,7 +68,7 @@ public class EvaluationsEntity extends BaseEntity{
                                            CompaniesEntity companiesEntity,
                                            UserTypesEntity userTypesEntity,
                                            EmailAddressesEntity emailAddressesEntity,
-                                           StateCompaniesEntity stateCompaniesEntity) {
+                                           StatesCompaniesEntity statesCompaniesEntity) {
 
         String sql = getDefaultQuery() + (criteria.isEmpty() ? "" : " WHERE " + criteria);
         List<Evaluation> evaluations = new ArrayList<>();
@@ -77,7 +77,7 @@ public class EvaluationsEntity extends BaseEntity{
             if(rs == null) return null;
             while(rs.next()) evaluations.add(Evaluation.build(rs,
                     employeesEntity, companiesEntity,
-                    userTypesEntity, emailAddressesEntity, stateCompaniesEntity));
+                    userTypesEntity, emailAddressesEntity, statesCompaniesEntity));
 
             return evaluations;
         } catch(SQLException e) {

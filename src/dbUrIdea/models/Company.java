@@ -14,12 +14,12 @@ public class Company {
     private String description;
     private String address;
     private int phoneNumber;
-    private StateCompany stateCompany;
+    private StatesCompany statesCompany;
 
     public Company() {
     }
 
-    public Company(String id, String password, String nameCompany, EmailAddress emailAdress, String description, String address, int phoneNumber, StateCompany stateCompany) {
+    public Company(String id, String password, String nameCompany, EmailAddress emailAdress, String description, String address, int phoneNumber, StatesCompany statesCompany) {
         this.id = id;
         this.password = password;
         this.nameCompany = nameCompany;
@@ -27,7 +27,7 @@ public class Company {
         this.description = description;
         this.address = address;
         this.phoneNumber = phoneNumber;
-        this.stateCompany = stateCompany;
+        this.statesCompany = statesCompany;
     }
 
     public String getIdAsValue() {
@@ -97,12 +97,12 @@ public class Company {
         return this;
     }
 
-    public StateCompany getStateCompany() {
-        return stateCompany;
+    public StatesCompany getStatesCompany() {
+        return statesCompany;
     }
 
-    public Company setStateCompany(StateCompany stateCompany) {
-        this.stateCompany = stateCompany;
+    public Company setStatesCompany(StatesCompany statesCompany) {
+        this.statesCompany = statesCompany;
         return this;
     }
 
@@ -124,7 +124,7 @@ public class Company {
         return this;
     }
 
-    public static Company build(ResultSet rs, StateCompaniesEntity stateCompaniesEntity,
+    public static Company build(ResultSet rs, StatesCompaniesEntity statesCompaniesEntity,
                                 EmailAddressesEntity emailAddressEntit) {
         try {
             return (new Company())
@@ -132,7 +132,7 @@ public class Company {
                     .setPassword(rs.getString("password"))
                     .setNameCompany(rs.getString("name_company"))
                     .setDescription(rs.getString("description"))
-                    .setStateCompany(stateCompaniesEntity.findById
+                    .setStatesCompany(statesCompaniesEntity.findById
                             (rs.getString("id_state_company")))
                     .setEmailAdress(emailAddressEntit.findById(
                             rs.getInt("id_email_address")))

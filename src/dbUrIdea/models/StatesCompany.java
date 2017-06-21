@@ -6,12 +6,12 @@ import java.sql.SQLException;
 /**
  * Created by UrIdea on 14/06/2017.
  */
-public class StateCompany {
+public class StatesCompany {
 
     private String id;
     private String description;
 
-    public StateCompany() {
+    public StatesCompany() {
     }
     public String getIdAsValue() {
         return "'" + getId() + "'";
@@ -20,7 +20,7 @@ public class StateCompany {
         return "'" + getDescription() + "'";
     }
 
-    public StateCompany(String id, String description) {
+    public StatesCompany(String id, String description) {
         this.id = id;
         this.description = description;
     }
@@ -29,7 +29,7 @@ public class StateCompany {
         return id;
     }
 
-    public StateCompany setId(String id) {
+    public StatesCompany setId(String id) {
         this.id = id;
         return this;
     }
@@ -38,13 +38,13 @@ public class StateCompany {
         return description;
     }
 
-    public StateCompany setDescription(String description) {
+    public StatesCompany setDescription(String description) {
         this.description = description;
         return this;
     }
-    public static StateCompany build(ResultSet resultSet) {
+    public static StatesCompany build(ResultSet resultSet) {
         try {
-            return (new StateCompany())
+            return (new StatesCompany())
                     .setId(resultSet.getString("id"))
                     .setDescription(resultSet.getString("description"));
 
