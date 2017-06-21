@@ -206,19 +206,19 @@ public class Employee {
         return this;
     }
 
-    public static Employee build(ResultSet rs, CompanyEntity companyEntity,UserTypeEntity userTypeEntity,
-                                 EmailAddressEntity emailAddressEntity,StateCompanyEntity stateCompanyEntity) {
+    public static Employee build(ResultSet rs, CompaniesEntity companiesEntity, UserTypesEntity userTypesEntity,
+                                 EmailAddressesEntity emailAddressesEntity, StateCompaniesEntity stateCompaniesEntity) {
         try {
             return (new Employee())
                     .setId(rs.getString("id"))
                     .setName(rs.getString("employee_name"))
 
-                    .setCompany(companyEntity.findById(rs.getString("id_company"),
-                            stateCompanyEntity,emailAddressEntity))
+                    .setCompany(companiesEntity.findById(rs.getString("id_company"),
+                            stateCompaniesEntity, emailAddressesEntity))
 
-                    .setUserType(userTypeEntity.findById(rs.getInt("id_user_type")))
+                    .setUserType(userTypesEntity.findById(rs.getInt("id_user_type")))
 
-                    .setEmailAddress(emailAddressEntity.findById(
+                    .setEmailAddress(emailAddressesEntity.findById(
                             rs.getInt("id_email_address")))
                     .setPassword(rs.getString("password"))
                     .setName(rs.getString("employee_name"))

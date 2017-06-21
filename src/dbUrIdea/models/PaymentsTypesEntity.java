@@ -8,12 +8,12 @@ import java.util.List;
 /**
  * Created by Yoshinon on 17/06/2017.
  */
-public class PaymentsTypeEntity extends BaseEntity{
+public class PaymentsTypesEntity extends BaseEntity{
 
-    public PaymentsTypeEntity() {
+    public PaymentsTypesEntity() {
     }
 
-    public PaymentsTypeEntity(Connection connection) {
+    public PaymentsTypesEntity(Connection connection) {
         super(connection,"payment_types");
     }
     List<PaymentsType> findAll() {

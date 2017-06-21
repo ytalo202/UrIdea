@@ -9,14 +9,14 @@ import java.util.List;
 /**
  * Created by Magnus on 6/15/2017.
  */
-public class EvidenceTypeEntity extends BaseEntity{
+public class EvidenceTypesEntity extends BaseEntity{
 
-    public EvidenceTypeEntity(Connection connection) {
+    public EvidenceTypesEntity(Connection connection) {
 
         super(connection,"evidences_types");
     }
 
-    public EvidenceTypeEntity() {
+    public EvidenceTypesEntity() {
 
         super();
     }

@@ -5,12 +5,12 @@ import java.sql.Connection;
 /**
  * Created by Yoshinon on 17/06/2017.
  */
-public class EvidenceEntity extends BaseEntity {
-    public EvidenceEntity() {
+public class EvidencesEntity extends BaseEntity {
+    public EvidencesEntity() {
         super();
     }
 
-    public EvidenceEntity(Connection connection) {
+    public EvidencesEntity(Connection connection) {
         super(connection,"evidences");
     }
 }

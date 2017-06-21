@@ -9,13 +9,13 @@ import java.util.List;
 /**
  * Created by Yoshinon on 15/06/2017.
  */
-public class StateCompanyEntity extends BaseEntity{
+public class StateCompaniesEntity extends BaseEntity{
 
-    public StateCompanyEntity() {
+    public StateCompaniesEntity() {
         super();
     }
 
-    public StateCompanyEntity(Connection connection) {
+    public StateCompaniesEntity(Connection connection) {
 
         super(connection,"states_companies");
     }

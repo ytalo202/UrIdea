@@ -124,15 +124,15 @@ public class Company {
         return this;
     }
 
-    public static Company build(ResultSet rs, StateCompanyEntity stateCompanyEntity,
-                                EmailAddressEntity emailAddressEntit) {
+    public static Company build(ResultSet rs, StateCompaniesEntity stateCompaniesEntity,
+                                EmailAddressesEntity emailAddressEntit) {
         try {
             return (new Company())
                     .setId(rs.getString("id"))
                     .setPassword(rs.getString("password"))
                     .setNameCompany(rs.getString("name_company"))
                     .setDescription(rs.getString("description"))
-                    .setStateCompany(stateCompanyEntity.findById
+                    .setStateCompany(stateCompaniesEntity.findById
                             (rs.getString("id_state_company")))
                     .setEmailAdress(emailAddressEntit.findById(
                             rs.getInt("id_email_address")))

@@ -66,21 +66,21 @@ public class Cv {
 
 
     public static Cv build(ResultSet rs,
-                           EmployeeEntity employeeEntity,
-                           DataTypeEntity dataTypeEntity,
-                           CompanyEntity companyEntity,
-                           UserTypeEntity userTypeEntity,
-                           EmailAddressEntity emailAddressEntity,
-                           StateCompanyEntity stateCompanyEntity
+                           EmployeesEntity employeesEntity,
+                           DataTypesEntity dataTypesEntity,
+                           CompaniesEntity companiesEntity,
+                           UserTypesEntity userTypesEntity,
+                           EmailAddressesEntity emailAddressesEntity,
+                           StateCompaniesEntity stateCompaniesEntity
                             ) {
         try {
             return (new Cv())
                     .setId(rs.getString("id"))
-                    .setEmployee(employeeEntity.findById(
+                    .setEmployee(employeesEntity.findById(
                             rs.getString("id_employee")
-                            ,companyEntity,userTypeEntity,emailAddressEntity,
-                            stateCompanyEntity))
-                    .setDataType(dataTypeEntity.findById(rs.getString(
+                            , companiesEntity, userTypesEntity, emailAddressesEntity,
+                            stateCompaniesEntity))
+                    .setDataType(dataTypesEntity.findById(rs.getString(
                             "id_data_type")))
                     .setDescription(rs.getString("description"));
 

@@ -9,12 +9,12 @@ import java.util.List;
 /**
  * Created by Yoshinon on 15/06/2017.
  */
-public class UserTypeEntity extends BaseEntity{
-    public UserTypeEntity() {
+public class UserTypesEntity extends BaseEntity{
+    public UserTypesEntity() {
         super();
     }
 
-    public UserTypeEntity(Connection connection) {
+    public UserTypesEntity(Connection connection) {
         super(connection,"user_types");
     }
     List<UserType> findAll() {

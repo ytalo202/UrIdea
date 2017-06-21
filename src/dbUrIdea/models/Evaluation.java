@@ -98,26 +98,26 @@ public class Evaluation {
     }
 
     public static Evaluation build(ResultSet rs,
-                           EmployeeEntity employeeEntity,
-                           CompanyEntity companyEntity,
-                           UserTypeEntity userTypeEntity,
-                           EmailAddressEntity emailAddressEntity,
-                           StateCompanyEntity stateCompanyEntity
+                           EmployeesEntity employeesEntity,
+                           CompaniesEntity companiesEntity,
+                           UserTypesEntity userTypesEntity,
+                           EmailAddressesEntity emailAddressesEntity,
+                           StateCompaniesEntity stateCompaniesEntity
     ) {
         try {
             return (new Evaluation())
                     .setId(rs.getString("id"))
-                    .setIdEmployee(employeeEntity.findById(
+                    .setIdEmployee(employeesEntity.findById(
                             rs.getString("id_evaluator")
-                            ,companyEntity,userTypeEntity,emailAddressEntity
-                            ,stateCompanyEntity))
-                    .setIdUserEmployee(employeeEntity.findById(
+                            , companiesEntity, userTypesEntity, emailAddressesEntity
+                            , stateCompaniesEntity))
+                    .setIdUserEmployee(employeesEntity.findById(
                             rs.getString("id_user_employee")
-                            ,companyEntity,userTypeEntity,emailAddressEntity
-                            ,stateCompanyEntity))
-                    .setCompany(companyEntity.findById(
-                            rs.getString("id_company"),stateCompanyEntity,
-                            emailAddressEntity))
+                            , companiesEntity, userTypesEntity, emailAddressesEntity
+                            , stateCompaniesEntity))
+                    .setCompany(companiesEntity.findById(
+                            rs.getString("id_company"), stateCompaniesEntity,
+                            emailAddressesEntity))
                     .setDate(rs.getDate("date"))
                     .setGrade(rs.getFloat("grade"));
 

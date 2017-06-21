@@ -11,16 +11,16 @@ import java.util.List;
 /**
  * Created by Magnus on 6/15/2017.
  */
-public class DataTypeEntity extends BaseEntity {
+public class DataTypesEntity extends BaseEntity {
 
-    public DataTypeEntity() {
+    public DataTypesEntity() {
     }
 
-    public DataTypeEntity(Connection connection) {
+    public DataTypesEntity(Connection connection) {
         super(connection,"data_types");
     }
 
-    public DataTypeEntity(Connection connection, String tableName) {
+    public DataTypesEntity(Connection connection, String tableName) {
         super(connection, "data_types");
     }
 
