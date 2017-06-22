@@ -148,7 +148,8 @@ public class HRDataStore {
     }
 
     public List<Company> findAllCompanies() {
-        return getCompaniesEntity().findAll(getStatesCompaniesEntity(),
+        return getCompaniesEntity().findAll(
+                getStatesCompaniesEntity(),
                 getEmailAddressesEntity());
     }
 
@@ -157,12 +158,13 @@ public class HRDataStore {
     }
 
     public List<Cv> findAllCvs() {
-        return getCvsEntity().findAll(getEmployeesEntity()
-                                    ,getDataTypesEntity()
-                                    ,getCompaniesEntity()
-                                    ,getUserTypesEntity()
-                                    ,getEmailAddressesEntity()
-                                    ,getStatesCompaniesEntity());
+        return getCvsEntity().findAll(
+                getEmployeesEntity(),
+                getDataTypesEntity(),
+                getCompaniesEntity(),
+                getUserTypesEntity(),
+                getEmailAddressesEntity(),
+                getStatesCompaniesEntity());
     }
 
     public boolean createCv(Cv cv) {
@@ -183,6 +185,19 @@ public class HRDataStore {
 
     public boolean createEmailAddress(EmailAddress emailAddress) {
         return getEmailAddressesEntity().add(emailAddress);
+    }
+
+    public List<Employee> findAllEmployees() {
+
+        return getEmployeesEntity().findAll(
+                getCompaniesEntity(),
+                getUserTypesEntity(),
+                getEmailAddressesEntity(),
+                getStatesCompaniesEntity());
+    }
+
+    public boolean createEmployee(Employee employee) {
+        return getEmployeesEntity().add(employee);
     }
 
 
