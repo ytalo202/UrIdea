@@ -42,6 +42,21 @@ public class Payment {
         this.cellPhoneNumber = cellPhoneNumber;
         this.amount = amount;
     }
+    public String getCardNumberAsValue() {return "'" + getCardNumber() + "'"; }
+    public String getIdAsString() {
+        return String.valueOf(getId());
+    }
+    public String getNameAsValue() {return "'" + getName() + "'"; }
+    public String getLastNameFAsValue() {return "'" + getLastNameF() + "'"; }
+    public String getFirstAddressFAsValue(){return "'"+getFirstAddressF()+"'";}
+    public  String getSecondAddressFAsValue(){return"'"+getSecondAddressF()+"'";}
+    public String getDateAsValue(){return String.valueOf(getDate());}
+    public String getLocationAsValue(){return "'"+getLocation()+"'";}
+    public String getCountryAsValue(){return "'"+getCountry()+"'";}
+    public String getCodeZipAsValue(){return "'"+getCodeZip()+"'";}
+    public String getCellPhoneNumberAsValue(){return "'"+getCellPhoneNumber()+"'";}
+    public String getAmountAsValue(){return String.valueOf(getAmount());}
+
 
     public int getId() {
         return id;

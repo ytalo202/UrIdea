@@ -59,6 +59,42 @@ public class PaymentsEntity extends BaseEntity {
         }
         return payments;
     }
+    public boolean add(Payment payment) {
+        String sql = "INSERT INTO payments(id, id_companies, id_payments_type,card_number,name," +
+                "last_name,first_addressF,,second_addressF,date,location,country,code_zip" +
+                ",cell_phone_number,payment_amount) " +
+                "VALUES("
+                + payment.getIdAsString() + ", "
+                + payment.getCompany().getIdAsValue()+", "
+                + payment.getPaymentsType().getIdAsString()+","
+                +payment.getCardNumberAsValue()+","
+                +payment.getNameAsValue()+","
+                +payment.getLastNameFAsValue()+","
+                +payment.getFirstAddressFAsValue()+","
+                +payment.getSecondAddressFAsValue()+","
+                +payment.getDateAsValue()+","
+                +payment.getLocationAsValue()+","
+                +payment.getCountryAsValue()+","
+                +payment.getCodeZipAsValue()+","
+                +payment.getCellPhoneNumberAsValue()+","
+                +payment.getAmountAsValue()+
+
+                ")";
+        return change(sql);
+    }
+
+    public boolean delete(Payment payment) {
+        String sql = "DELETE FROM payments WHERE id = "
+                + payment.getId();
+        return change(sql);
+    }
+    public boolean delete(String id) {
+        return change("DELETE FROM payments WHERE id = " +
+                "'" + id+ "'");
+    }
+
+
+
 
 
 
