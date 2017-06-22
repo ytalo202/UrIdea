@@ -105,7 +105,18 @@ public class EvaluationsEntity extends BaseEntity{
         return change(sql);
     }
 
+    public boolean add(Evaluation evaluation) {
+        String sql = "INSERT INTO evaluations(id, id_evaluator,id_user_employee,id_company,date,grade) " +
+                "VALUES("
+                +evaluation.getIdAsValue() + ", "
+                +evaluation.getIdEmployee().getIdAsValue()+ ", "
+                +evaluation.getIdUserEmployee().getIdAsValue()+ ", "
+                +evaluation.getCompany().getIdAsValue()+ ", "
+                +evaluation.getDateAsString()+ ", "
+                +evaluation.getDateAsString()+ ") ";
 
+        return change(sql);
+    }
 
 
 
