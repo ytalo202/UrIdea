@@ -20,6 +20,7 @@ public class Evidence {
         this.setEvaluation(evaluation);
     }
 
+
     public String getId() {
         return id;
     }

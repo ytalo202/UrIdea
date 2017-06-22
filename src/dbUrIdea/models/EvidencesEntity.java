@@ -68,6 +68,25 @@ public class EvidencesEntity extends BaseEntity {
         }
         return evidences;
     }
+    public boolean delete(Evidence evidence) {
+        String sql = "DELETE FROM evidence WHERE id = " +
+                evidence.getIdAsValue();
+        return change(sql);
+    }
+    public boolean delete(String id) {
+        String sql = "DELETE FROM evidence WHERE id = " +
+                "'" + id + "'";
+        return change(sql);
+    }
 
+    public boolean add(Evidence evidence) {
+        String sql = "INSERT INTO evidences(id, id_evidence_type,id_evaluation) " +
+                "VALUES("
+                +evidence.getIdAsValue() + ", "
+                +evidence.getEvidencesType().getIdAsString()+ ", "
+                +evidence.getEvaluation().getIdAsValue()+ ") ";
+
+        return change(sql);
+    }
 
 }
