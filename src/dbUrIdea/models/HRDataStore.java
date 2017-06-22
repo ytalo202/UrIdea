@@ -200,7 +200,85 @@ public class HRDataStore {
         return getEmployeesEntity().add(employee);
     }
 
+    public List<Evaluation> findAllEvaluations() {
 
+        return getEvaluationsEntity().findAll(
+                getEmployeesEntity(),
+                getCompaniesEntity(),
+                getUserTypesEntity(),
+                getEmailAddressesEntity(),
+                getStatesCompaniesEntity());
+    }
+
+    public boolean createEvaluation(Evaluation evaluation) {
+        return getEvaluationsEntity().add(evaluation);
+    }
+
+    public List<Evidence> findAllEvidences() {
+
+        return getEvidencesEntity().findAll(
+         getEvidencesTypesEntity()
+                ,getEvaluationsEntity()
+                ,getCompaniesEntity()
+                ,getEmployeesEntity()
+                ,getEmailAddressesEntity()
+                ,getUserTypesEntity()
+                ,getStatesCompaniesEntity()
+                );
+    }
+
+    public boolean createEvidencce(Evidence evidence) {
+        return getEvidencesEntity().add(evidence);
+    }
+
+    public List<EvidencesType> findAllEvidenceTypes() {
+
+        return getEvidencesTypesEntity().findAll();
+    }
+
+    public boolean createEvidencesType(EvidencesType evidencesType) {
+        return getEvidencesTypesEntity().add(evidencesType);
+    }
+
+    public List<Payment> findAllPayments() {
+
+        return getPaymentsEntity().findAll(
+                getCompaniesEntity()
+                ,getPaymentsTypesEntity()
+                ,getStatesCompaniesEntity()
+                ,getEmailAddressesEntity()
+        );
+    }
+
+    public boolean createPayment(Payment payment) {
+        return getPaymentsEntity().add(payment);
+    }
+
+    public List<PaymentsType> findAllPaymentsType() {
+
+        return getPaymentsTypesEntity().findAll();
+    }
+
+    public boolean createPaymentType(PaymentsType paymentsType) {
+        return getPaymentsTypesEntity().add(paymentsType);
+    }
+
+    public List<StatesCompany> findAllStateCompany() {
+
+        return getStatesCompaniesEntity().findAll();
+    }
+
+    public boolean createStatesCompany(StatesCompany statesCompany) {
+        return getStatesCompaniesEntity().add(statesCompany);
+    }
+    public List<UserType> findAllUserType() {
+
+        return getUserTypesEntity().findAll();
+    }
+
+    public boolean createUserType(UserType userType) {
+        return getUserTypesEntity().add(userType);
+    }
 
 }
 
