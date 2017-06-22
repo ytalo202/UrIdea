@@ -119,6 +119,27 @@ public class EmployeesEntity extends BaseEntity {
         return change(sql);
     }
 
+    public boolean add(Employee employee) {
+        String sql = "INSERT INTO employees(id, id_company, id_user_type, id_email_address, password, employee_name, employee_first_last_name, employee_second_last_name, phone_number, address, department, birthdate) " +
+                "VALUES("
+                +employee.getIdAsValue() + ", "
+                +employee.getCompany().getIdAsValue()+ ", "
+                +employee.getUserType().getIdAsString()+ ", "
+                +employee.getEmailAddress().getIdAsString()+ ", "
+                +employee.getPasswordAsValue()+ ", "
+                +employee.getNameAsValue()+ ", "
+                +employee.getFirstLastNameAsValue()+ ", "
+                +employee.getSecondLastNameAsValue()+ ", "
+                +employee.getPhoneNumberAsString()+ ", "
+                +employee.getCellPhoneNumberAsString()+ ", "
+                +employee.getAddressAsValue()+ ", "
+                +employee.getDepartmentAsValue()+ ", "
+                +employee.getBirthdateAsString()+ ")";
+        return change(sql);
+    }
+
+
+
     public boolean delete(Employee employee) {
         String sql = "DELETE FROM employees WHERE id = " +
                 employee.getIdAsValue();
