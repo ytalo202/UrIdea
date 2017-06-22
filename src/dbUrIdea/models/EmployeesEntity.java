@@ -1,5 +1,6 @@
 package dbUrIdea.models;
 
+import dbUrIdea.models.*;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -37,40 +38,40 @@ public class EmployeesEntity extends BaseEntity {
     }
 
     public Employee findByName(String name,
-                              CompaniesEntity companiesEntity,
-                              UserTypesEntity userTypesEntity,
-                              EmailAddressesEntity emailAddressesEntity,
-                              StatesCompaniesEntity statesCompaniesEntity) {
+                               CompaniesEntity companiesEntity,
+                               UserTypesEntity userTypesEntity,
+                               EmailAddressesEntity emailAddressesEntity,
+                               StatesCompaniesEntity statesCompaniesEntity) {
         String criteria = "employee_name = " + "'" + name + "'";
         return findByCriteria(criteria, companiesEntity, userTypesEntity,
                 emailAddressesEntity, statesCompaniesEntity).get(0);
     }
 
     public Employee findByFirstLastName(String firstLastName,
-                                         CompaniesEntity companiesEntity,
-                                         UserTypesEntity userTypesEntity,
-                                         EmailAddressesEntity emailAddressesEntity,
-                                         StatesCompaniesEntity statesCompaniesEntity) {
+                                        CompaniesEntity companiesEntity,
+                                        UserTypesEntity userTypesEntity,
+                                        EmailAddressesEntity emailAddressesEntity,
+                                        StatesCompaniesEntity statesCompaniesEntity) {
         String criteria = "employee_first_last_name = " + "'" + firstLastName + "'";
         return findByCriteria(criteria, companiesEntity, userTypesEntity,
                 emailAddressesEntity, statesCompaniesEntity).get(0);
     }
 
     public Employee findByIdCompany(String id,
-                                        CompaniesEntity companiesEntity,
-                                        UserTypesEntity userTypesEntity,
-                                        EmailAddressesEntity emailAddressesEntity,
-                                        StatesCompaniesEntity statesCompaniesEntity) {
+                                    CompaniesEntity companiesEntity,
+                                    UserTypesEntity userTypesEntity,
+                                    EmailAddressesEntity emailAddressesEntity,
+                                    StatesCompaniesEntity statesCompaniesEntity) {
         String criteria = "id_company = " + String.valueOf(id);
         return findByCriteria(criteria, companiesEntity, userTypesEntity,
                 emailAddressesEntity, statesCompaniesEntity).get(0);
     }
 
     public Employee findByIdUserType(String id,
-                                    CompaniesEntity companiesEntity,
-                                    UserTypesEntity userTypesEntity,
-                                    EmailAddressesEntity emailAddressesEntity,
-                                    StatesCompaniesEntity statesCompaniesEntity) {
+                                     CompaniesEntity companiesEntity,
+                                     UserTypesEntity userTypesEntity,
+                                     EmailAddressesEntity emailAddressesEntity,
+                                     StatesCompaniesEntity statesCompaniesEntity) {
         String criteria = "id_user_type = " + String.valueOf(id);
         return findByCriteria(criteria, companiesEntity, userTypesEntity,
                 emailAddressesEntity, statesCompaniesEntity).get(0);
@@ -78,10 +79,10 @@ public class EmployeesEntity extends BaseEntity {
 
 
     public Employee findBySecondLastName(String secondLastName,
-                                        CompaniesEntity companiesEntity,
-                                        UserTypesEntity userTypesEntity,
-                                        EmailAddressesEntity emailAddressesEntity,
-                                        StatesCompaniesEntity statesCompaniesEntity) {
+                                         CompaniesEntity companiesEntity,
+                                         UserTypesEntity userTypesEntity,
+                                         EmailAddressesEntity emailAddressesEntity,
+                                         StatesCompaniesEntity statesCompaniesEntity) {
         String criteria = "employee_second_last_name = " + "'" + secondLastName + "'";
         return findByCriteria(criteria, companiesEntity, userTypesEntity,
                 emailAddressesEntity, statesCompaniesEntity).get(0);
@@ -129,5 +130,5 @@ public class EmployeesEntity extends BaseEntity {
                 "'" + id + "'";
         return change(sql);
     }
- 
+
 }
