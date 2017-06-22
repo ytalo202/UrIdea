@@ -147,6 +147,8 @@ public class HRDataStore {
         return this;
     }
 
+
+
     public List<Company> findAllCompanies() {
         return getCompaniesEntity().findAll(
                 getStatesCompaniesEntity(),
@@ -154,6 +156,7 @@ public class HRDataStore {
     }
 
     public boolean createCompany(Company company) {
+
         return getCompaniesEntity().add(company);
     }
 
@@ -176,10 +179,12 @@ public class HRDataStore {
     }
 
     public boolean createDataType(DataType dataType) {
+
         return getDataTypesEntity().add(dataType);
     }
 
     public List<EmailAddress> findAllEmailAdresses() {
+
         return getEmailAddressesEntity().findAll();
     }
 
