@@ -16,7 +16,7 @@ public class Payment {
     private String lastNameF;
     private String firstAddressF;
     private String secondAddressF;
-    private Date date;
+    private Date paymentDate;
     private String location;
     private String country;
     private String codeZip;
@@ -26,7 +26,7 @@ public class Payment {
     public Payment() {
     }
 
-    public Payment(int id, Company company, PaymentsType paymentsType, String cardNumber, String name, String lastNameF, String firstAddressF, String secondAddressF, Date date, String location, String country, String codeZip, String cellPhoneNumber, float amount) {
+    public Payment(int id, Company company, PaymentsType paymentsType, String cardNumber, String name, String lastNameF, String firstAddressF, String secondAddressF, Date paymentDate, String location, String country, String codeZip, String cellPhoneNumber, float amount) {
         this.id = id;
         this.company = company;
         this.paymentsType = paymentsType;
@@ -35,7 +35,7 @@ public class Payment {
         this.lastNameF = lastNameF;
         this.firstAddressF = firstAddressF;
         this.secondAddressF = secondAddressF;
-        this.date = date;
+        this.paymentDate = paymentDate;
         this.location = location;
         this.country = country;
         this.codeZip = codeZip;
@@ -43,14 +43,12 @@ public class Payment {
         this.amount = amount;
     }
     public String getCardNumberAsValue() {return "'" + getCardNumber() + "'"; }
-    public String getIdAsString() {
-        return String.valueOf(getId());
-    }
+    public String getIdAsString() { return String.valueOf(getId());  }
     public String getNameAsValue() {return "'" + getName() + "'"; }
     public String getLastNameFAsValue() {return "'" + getLastNameF() + "'"; }
     public String getFirstAddressFAsValue(){return "'"+getFirstAddressF()+"'";}
     public  String getSecondAddressFAsValue(){return"'"+getSecondAddressF()+"'";}
-    public String getDateAsValue(){return String.valueOf(getDate());}
+    public String getDateAsValue(){return String.valueOf(getPaymentDate());}
     public String getLocationAsValue(){return "'"+getLocation()+"'";}
     public String getCountryAsValue(){return "'"+getCountry()+"'";}
     public String getCodeZipAsValue(){return "'"+getCodeZip()+"'";}
@@ -121,12 +119,12 @@ public class Payment {
         return this;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getPaymentDate() {
+        return paymentDate;
     }
 
-    public Payment setDate(Date date) {
-        this.date = date;
+    public Payment setPaymentDate(Date paymentDate) {
+        this.paymentDate = paymentDate;
         return this;
     }
 
@@ -188,29 +186,26 @@ public class Payment {
   public static Payment build(ResultSet rs,
                            CompaniesEntity companiesEntity,
                            PaymentsTypesEntity paymentsTypesEntity,
-                                StatesCompaniesEntity statesCompaniesEntity,
                                 EmailAddressesEntity emailAddressesEntity) {
-     try {
+
+        try {
             return (new Payment())
                    .setId(rs.getInt("id"))
-                    .setCompany(companiesEntity.findById(
-                       rs.getString("id_companies"), statesCompaniesEntity, emailAddressesEntity))
-                   .setPaymentsType(paymentsTypesEntity.findById(rs.getInt(
-                           "id_data_type")))
-                    .setCardNumber(rs.getString("card_number"))
-                    .setName(rs.getString("name"))
-                    .setLastNameF(rs.getString("last_name"))
-                    .setFirstAddressF(rs.getString("first_address"))
-                    .setSecondAddressF(rs.getString("second_address"))
-                    .setDate(rs.getDate("date"))
-                    .setLocation(rs.getString("location"))
-                    .setCountry(rs.getString("country"))
-                    .setCodeZip(rs.getString("code_zip"))
-                    .setCellPhoneNumber(rs.getString("cell_phone_number"))
-                    .setAmount(rs.getFloat("payment_amount"))
+                   .setCompany(companiesEntity.findById(rs.getString("id_companies"), emailAddressesEntity))
+                   .setPaymentsType(paymentsTypesEntity.findById(rs.getInt("id_data_type")))
+                   .setCardNumber(rs.getString("card_number"))
+                   .setName(rs.getString("name"))
+                   .setLastNameF(rs.getString("last_name"))
+                   .setFirstAddressF(rs.getString("first_address"))
+                   .setSecondAddressF(rs.getString("second_address"))
+                   .setPaymentDate(rs.getDate("paymentDate"))
+                   .setLocation(rs.getString("location"))
+                   .setCountry(rs.getString("country"))
+                   .setCodeZip(rs.getString("code_zip"))
+                   .setCellPhoneNumber(rs.getString("cell_phone_number"))
+                   .setAmount(rs.getFloat("payment_amount"))
 
                     ;
-
 
         } catch (SQLException e) {
             e.printStackTrace();

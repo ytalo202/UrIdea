@@ -14,12 +14,12 @@ public class Company {
     private String description;
     private String address;
     private int phoneNumber;
-    private StatesCompany statesCompany;
+    private int companyState;
 
     public Company() {
     }
 
-    public Company(String id, String password, String nameCompany, EmailAddress emailAdress, String description, String address, int phoneNumber, StatesCompany statesCompany) {
+    public Company(String id, String password, String nameCompany, EmailAddress emailAdress, String description, String address, int phoneNumber, int companyState) {
         this.id = id;
         this.password = password;
         this.nameCompany = nameCompany;
@@ -27,7 +27,7 @@ public class Company {
         this.description = description;
         this.address = address;
         this.phoneNumber = phoneNumber;
-        this.statesCompany = statesCompany;
+        this.companyState = companyState;
     }
 
     public String getIdAsValue() {
@@ -42,7 +42,6 @@ public class Company {
     public String getDescriptionAsValue() {
         return "'" + getDescription() + "'";
     }
-
     public String getAddressAsValue() {
         return "'" + getAddress() + "'";
     }
@@ -50,7 +49,7 @@ public class Company {
     {
         return String.valueOf(getPhoneNumber());
     }
-
+    public String getCompanyStateAsString(){return String.valueOf(getCompanyState());}
 
     public String getId() {
         return id;
@@ -97,12 +96,12 @@ public class Company {
         return this;
     }
 
-    public StatesCompany getStatesCompany() {
-        return statesCompany;
+    public int getCompanyState() {
+        return companyState;
     }
 
-    public Company setStatesCompany(StatesCompany statesCompany) {
-        this.statesCompany = statesCompany;
+    public Company setCompanyState(int companyState) {
+        this.companyState = companyState;
         return this;
     }
 
@@ -124,16 +123,14 @@ public class Company {
         return this;
     }
 
-    public static Company build(ResultSet rs, StatesCompaniesEntity statesCompaniesEntity,
-                                EmailAddressesEntity emailAddressEntit) {
+    public static Company build(ResultSet rs, EmailAddressesEntity emailAddressEntit) {
         try {
             return (new Company())
                     .setId(rs.getString("id"))
                     .setPassword(rs.getString("password"))
                     .setNameCompany(rs.getString("name_company"))
                     .setDescription(rs.getString("description"))
-                    .setStatesCompany(statesCompaniesEntity.findById
-                            (rs.getString("id_state_company")))
+                    .setCompanyState(rs.getInt("company_state"))
                     .setEmailAdress(emailAddressEntit.findById(
                             rs.getInt("id_email_address")))
                     .setAddress(rs.getString("address"))

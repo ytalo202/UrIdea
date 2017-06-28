@@ -19,40 +19,33 @@ public class CvsEntity extends BaseEntity {
     }
 
     public List<Cv> findAll(EmployeesEntity employeesEntity,
-                            DataTypesEntity dataTypesEntity,
                             CompaniesEntity companiesEntity,
-                            UserTypesEntity userTypesEntity,
-                            EmailAddressesEntity emailAddressesEntity,
-                            StatesCompaniesEntity statesCompaniesEntity) {
-        return findByCriteria("", employeesEntity, dataTypesEntity, companiesEntity, userTypesEntity, emailAddressesEntity
-                , statesCompaniesEntity);
+                            EmailAddressesEntity emailAddressesEntity
+                            ) {
+        return findByCriteria("", employeesEntity,companiesEntity, emailAddressesEntity
+                );
     }
 
     public Cv findById(String id,
                        EmployeesEntity employeesEntity,
-                       DataTypesEntity dataTypesEntity,
                        CompaniesEntity companiesEntity,
-                       UserTypesEntity userTypesEntity,
-                       EmailAddressesEntity emailAddressesEntity,
-                       StatesCompaniesEntity statesCompaniesEntity) {
+                       EmailAddressesEntity emailAddressesEntity
+                       ) {
         String criteria = "id = " + "'" + id + "'";
-        return findByCriteria(criteria, employeesEntity, dataTypesEntity, companiesEntity, userTypesEntity, emailAddressesEntity
-                , statesCompaniesEntity).get(0);
+        return findByCriteria(criteria, employeesEntity, companiesEntity,  emailAddressesEntity).get(0);
     }
 
     public List<Cv> findByCriteria(String criteria, EmployeesEntity employeesEntity,
-                                   DataTypesEntity dataTypesEntity,
                                    CompaniesEntity companiesEntity,
-                                   UserTypesEntity userTypesEntity,
-                                   EmailAddressesEntity emailAddressesEntity,
-                                   StatesCompaniesEntity statesCompaniesEntity) {
+                                   EmailAddressesEntity emailAddressesEntity
+                                   ) {
         String sql = getDefaultQuery() + (criteria.isEmpty() ? "" : " WHERE " + criteria);
         List<Cv> cvs = new ArrayList<>();
         try {
             ResultSet rs = getConnection().createStatement().executeQuery(sql);
             if(rs == null) return null;
-            while(rs.next()) cvs.add(Cv.build(rs, employeesEntity, dataTypesEntity, companiesEntity, userTypesEntity, emailAddressesEntity
-            , statesCompaniesEntity));
+            while(rs.next()) cvs.add(Cv.build(rs, employeesEntity, companiesEntity,  emailAddressesEntity
+            ));
             return cvs;
         } catch(SQLException e) {
             e.printStackTrace();
@@ -61,22 +54,19 @@ public class CvsEntity extends BaseEntity {
     }
 
     public List<Cv> findAllOrderByName(EmployeesEntity employeesEntity,
-                                       DataTypesEntity dataTypesEntity,
                                        CompaniesEntity companiesEntity,
-                                       UserTypesEntity userTypesEntity,
                                        EmailAddressesEntity emailAddressesEntity,
-                                       StatesCompaniesEntity statesCompaniesEntity, boolean isAscending) {
+                                       boolean isAscending) {
         return findByCriteria("true ORDER BY id" +
-                (isAscending ? "" : " DESC"), employeesEntity, dataTypesEntity, companiesEntity, userTypesEntity, emailAddressesEntity
-                , statesCompaniesEntity);
+                (isAscending ? "" : " DESC"), employeesEntity, companiesEntity, emailAddressesEntity
+                );
     }
 //ponerlo al resto de enititys
     public boolean add(Cv cv) {
-        String sql = "INSERT INTO cvs(id, id_employee, id_data_type, description) VALUES(" +
+        String sql = "INSERT INTO cvs(id, id_employee, cv_type, description) VALUES(" +
                 cv.getIdAsValue() + ", " +
                 cv.getEmployee().getIdAsValue()+", " +
-                //cv.getNameAsValue() + ", " + "aqui tuviera mi  employer si tuviera unoo !! :c"
-                cv.getDataType().getIdAsValue() + ", " +
+                cv.getcvTypeAsString()+ ", " +
                 cv.getDescriptionAsValue()+
                 ")";
         return change(sql);

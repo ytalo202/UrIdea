@@ -4,23 +4,20 @@ import java.sql.Connection;
 import java.util.List;
 
 /**
- * Created by Yoshinon on 21/06/2017.
+ * Created by Magnus on 21/06/2017.
  */
 public class HRDataStore {
 
     private Connection connection;
     private CompaniesEntity companiesEntity;
     private CvsEntity cvsEntity;
-    private DataTypesEntity dataTypesEntity;
     private EmailAddressesEntity emailAddressesEntity;
     private EmployeesEntity employeesEntity;
     private EvaluationsEntity evaluationsEntity;
-    private EvidencesEntity evidencesEntity;
-    private EvidencesTypesEntity evidencesTypesEntity;
+    private CommentsEntity commentsEntity;
     private PaymentsEntity paymentsEntity;
     private PaymentsTypesEntity paymentsTypesEntity;
-    private StatesCompaniesEntity statesCompaniesEntity;
-    private UserTypesEntity userTypesEntity;
+
 
 
     public HRDataStore(Connection connection) {
@@ -58,14 +55,7 @@ public class HRDataStore {
         return this;
     }
 
-    public DataTypesEntity getDataTypesEntity() {
-        return dataTypesEntity;
-    }
 
-    public HRDataStore setDataTypesEntity(DataTypesEntity dataTypesEntity) {
-        this.dataTypesEntity = dataTypesEntity;
-        return this;
-    }
     public EmailAddressesEntity getEmailAddressesEntity() {
         return emailAddressesEntity;
     }
@@ -93,23 +83,15 @@ public class HRDataStore {
         return this;
     }
 
-    public EvidencesEntity getEvidencesEntity() {
-        return evidencesEntity;
+    public CommentsEntity getCommentsEntity() {
+        return commentsEntity;
     }
 
-    public HRDataStore setEvidencesEntity(EvidencesEntity evidencesEntity) {
-        this.evidencesEntity = evidencesEntity;
+    public HRDataStore setCommentsEntity(CommentsEntity commentsEntity) {
+        this.commentsEntity = commentsEntity;
         return this;
     }
 
-    public EvidencesTypesEntity getEvidencesTypesEntity() {
-        return evidencesTypesEntity;
-    }
-
-    public HRDataStore setEvidencesTypesEntity(EvidencesTypesEntity evidencesTypesEntity) {
-        this.evidencesTypesEntity = evidencesTypesEntity;
-        return this;
-    }
 
     public PaymentsEntity getPaymentsEntity() {
         return paymentsEntity;
@@ -129,29 +111,8 @@ public class HRDataStore {
         return this;
     }
 
-    public StatesCompaniesEntity getStatesCompaniesEntity() {
-        return statesCompaniesEntity;
-    }
-
-    public HRDataStore setStatesCompaniesEntity(StatesCompaniesEntity statesCompaniesEntity) {
-        this.statesCompaniesEntity = statesCompaniesEntity;
-        return this;
-    }
-
-    public UserTypesEntity getUserTypesEntity() {
-        return userTypesEntity;
-    }
-
-    public HRDataStore setUserTypesEntity(UserTypesEntity userTypesEntity) {
-        this.userTypesEntity = userTypesEntity;
-        return this;
-    }
-
-
-
     public List<Company> findAllCompanies() {
         return getCompaniesEntity().findAll(
-                getStatesCompaniesEntity(),
                 getEmailAddressesEntity());
     }
 
@@ -163,25 +124,14 @@ public class HRDataStore {
     public List<Cv> findAllCvs() {
         return getCvsEntity().findAll(
                 getEmployeesEntity(),
-                getDataTypesEntity(),
                 getCompaniesEntity(),
-                getUserTypesEntity(),
-                getEmailAddressesEntity(),
-                getStatesCompaniesEntity());
+                getEmailAddressesEntity());
     }
 
     public boolean createCv(Cv cv) {
         return getCvsEntity().add(cv);
     }
 
-    public List<DataType> findAllDataTypes() {
-        return getDataTypesEntity().findAll();
-    }
-
-    public boolean createDataType(DataType dataType) {
-
-        return getDataTypesEntity().add(dataType);
-    }
 
     public List<EmailAddress> findAllEmailAdresses() {
 
@@ -196,9 +146,8 @@ public class HRDataStore {
 
         return getEmployeesEntity().findAll(
                 getCompaniesEntity(),
-                getUserTypesEntity(),
-                getEmailAddressesEntity(),
-                getStatesCompaniesEntity());
+                getEmailAddressesEntity()
+               );
     }
 
     public boolean createEmployee(Employee employee) {
@@ -210,47 +159,35 @@ public class HRDataStore {
         return getEvaluationsEntity().findAll(
                 getEmployeesEntity(),
                 getCompaniesEntity(),
-                getUserTypesEntity(),
-                getEmailAddressesEntity(),
-                getStatesCompaniesEntity());
+                getEmailAddressesEntity())
+               ;
     }
 
     public boolean createEvaluation(Evaluation evaluation) {
         return getEvaluationsEntity().add(evaluation);
     }
 
-    public List<Evidence> findAllEvidences() {
+    public List<Commentary> findAllEvidences() {
 
-        return getEvidencesEntity().findAll(
-         getEvidencesTypesEntity()
-                ,getEvaluationsEntity()
-                ,getCompaniesEntity()
-                ,getEmployeesEntity()
-                ,getEmailAddressesEntity()
-                ,getUserTypesEntity()
-                ,getStatesCompaniesEntity()
-                );
+        return getCommentsEntity().findAll(
+                getEvaluationsEntity(),
+                getCompaniesEntity(),
+                getEmployeesEntity(),
+                getEmailAddressesEntity());
     }
 
-    public boolean createEvidencce(Evidence evidence) {
-        return getEvidencesEntity().add(evidence);
+    public boolean createEvidencce(Commentary commentary) {
+        return getCommentsEntity().add(commentary);
     }
 
-    public List<EvidencesType> findAllEvidenceTypes() {
 
-        return getEvidencesTypesEntity().findAll();
-    }
 
-    public boolean createEvidencesType(EvidencesType evidencesType) {
-        return getEvidencesTypesEntity().add(evidencesType);
-    }
 
     public List<Payment> findAllPayments() {
 
         return getPaymentsEntity().findAll(
                 getCompaniesEntity()
                 ,getPaymentsTypesEntity()
-                ,getStatesCompaniesEntity()
                 ,getEmailAddressesEntity()
         );
     }
@@ -268,22 +205,7 @@ public class HRDataStore {
         return getPaymentsTypesEntity().add(paymentsType);
     }
 
-    public List<StatesCompany> findAllStateCompany() {
 
-        return getStatesCompaniesEntity().findAll();
-    }
-
-    public boolean createStatesCompany(StatesCompany statesCompany) {
-        return getStatesCompaniesEntity().add(statesCompany);
-    }
-    public List<UserType> findAllUserType() {
-
-        return getUserTypesEntity().findAll();
-    }
-
-    public boolean createUserType(UserType userType) {
-        return getUserTypesEntity().add(userType);
-    }
 
 }
 

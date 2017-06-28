@@ -21,32 +21,30 @@ public class EvaluationsEntity extends BaseEntity{
 
     public List<Evaluation> findAll(EmployeesEntity employeesEntity,
                                     CompaniesEntity companiesEntity,
-                                    UserTypesEntity userTypesEntity,
-                                    EmailAddressesEntity emailAddressesEntity,
-                                    StatesCompaniesEntity statesCompaniesEntity) {
-        return findByCriteria("", employeesEntity, companiesEntity, userTypesEntity,
-                emailAddressesEntity, statesCompaniesEntity);
+
+                                    EmailAddressesEntity emailAddressesEntity
+                                    ) {
+        return findByCriteria("", employeesEntity, companiesEntity,
+                emailAddressesEntity);
     }
     public Evaluation findById(String id,
                              EmployeesEntity employeesEntity,
                              CompaniesEntity companiesEntity,
-                             UserTypesEntity userTypesEntity,
-                             EmailAddressesEntity emailAddressesEntity,
-                             StatesCompaniesEntity statesCompaniesEntity) {
+                             EmailAddressesEntity emailAddressesEntity
+                             ) {
         String criteria = "id = " + "'" + id + "'";
-        return findByCriteria(criteria, employeesEntity, companiesEntity, userTypesEntity,
-                emailAddressesEntity, statesCompaniesEntity).get(0);
+        return findByCriteria(criteria, employeesEntity, companiesEntity,
+                emailAddressesEntity).get(0);
     }
 
     public Evaluation findByIdEvaluator(String id,
                                       EmployeesEntity employeesEntity,
                                       CompaniesEntity companiesEntity,
-                                      UserTypesEntity userTypesEntity,
-                                      EmailAddressesEntity emailAddressesEntity,
-                                      StatesCompaniesEntity statesCompaniesEntity) {
+                                      EmailAddressesEntity emailAddressesEntity
+                                      ) {
         String criteria = "id_evaluator = " + "'" + id + "'";
-        return findByCriteria(criteria, employeesEntity, companiesEntity, userTypesEntity,
-                emailAddressesEntity, statesCompaniesEntity).get(0);
+        return findByCriteria(criteria, employeesEntity, companiesEntity,
+                emailAddressesEntity).get(0);
     }
 
 
@@ -54,21 +52,19 @@ public class EvaluationsEntity extends BaseEntity{
     public Evaluation findByFirstLastName(String userEmployee,
                                         EmployeesEntity employeesEntity,
                                         CompaniesEntity companiesEntity,
-                                        UserTypesEntity userTypesEntity,
-                                        EmailAddressesEntity emailAddressesEntity,
-                                        StatesCompaniesEntity statesCompaniesEntity) {
+                                        EmailAddressesEntity emailAddressesEntity
+                                       ) {
         String criteria = "id_user_employee = " + "'" + userEmployee + "'";
-        return findByCriteria(criteria, employeesEntity, companiesEntity, userTypesEntity,
-                emailAddressesEntity, statesCompaniesEntity).get(0);
+        return findByCriteria(criteria, employeesEntity, companiesEntity,
+                emailAddressesEntity).get(0);
     }
 
 
     public List<Evaluation> findByCriteria(String criteria,
                                            EmployeesEntity employeesEntity,
                                            CompaniesEntity companiesEntity,
-                                           UserTypesEntity userTypesEntity,
-                                           EmailAddressesEntity emailAddressesEntity,
-                                           StatesCompaniesEntity statesCompaniesEntity) {
+                                           EmailAddressesEntity emailAddressesEntity
+                                          ) {
 
         String sql = getDefaultQuery() + (criteria.isEmpty() ? "" : " WHERE " + criteria);
         List<Evaluation> evaluations = new ArrayList<>();
@@ -77,7 +73,7 @@ public class EvaluationsEntity extends BaseEntity{
             if(rs == null) return null;
             while(rs.next()) evaluations.add(Evaluation.build(rs,
                     employeesEntity, companiesEntity,
-                    userTypesEntity, emailAddressesEntity, statesCompaniesEntity));
+                    emailAddressesEntity));
 
             return evaluations;
         } catch(SQLException e) {
@@ -106,14 +102,14 @@ public class EvaluationsEntity extends BaseEntity{
     }
 
     public boolean add(Evaluation evaluation) {
-        String sql = "INSERT INTO evaluations(id, id_evaluator,id_user_employee,id_company,date,grade) " +
+        String sql = "INSERT INTO evaluations(id, id_evaluator,id_user_employee,id_company,evaluation_date,grade) " +
                 "VALUES("
                 +evaluation.getIdAsValue() + ", "
                 +evaluation.getIdEmployee().getIdAsValue()+ ", "
                 +evaluation.getIdUserEmployee().getIdAsValue()+ ", "
                 +evaluation.getCompany().getIdAsValue()+ ", "
                 +evaluation.getDateAsString()+ ", "
-                +evaluation.getDateAsString()+ ") ";
+                +evaluation.getGradeAsString()+ ") ";
 
         return change(sql);
     }

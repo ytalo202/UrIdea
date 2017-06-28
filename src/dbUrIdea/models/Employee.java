@@ -19,13 +19,13 @@ public class Employee {
     private String department;
     private Date birthdate;
     private Company company;
-    private UserType userType;
+    private int employeeType;
     private EmailAddress emailAddress;
 
     public Employee() {
     }
 
-    public Employee(String id, String password, String name, String firstLastName, String secondLastName, int phoneNumber, int cellPhoneNumber, String address, String department, Date birthdate, Company company, UserType userType, EmailAddress emailAddress) {
+    public Employee(String id, String password, String name, String firstLastName, String secondLastName, int phoneNumber, int cellPhoneNumber, String address, String department, Date birthdate, Company company, int employeeType, EmailAddress emailAddress) {
         this.id = id;
         this.password = password;
         this.name = name;
@@ -37,7 +37,7 @@ public class Employee {
         this.department = department;
         this.birthdate = birthdate;
         this.company = company;
-        this.userType = userType;
+        this.employeeType = employeeType;
         this.emailAddress = emailAddress;
     }
 
@@ -85,7 +85,7 @@ public class Employee {
     public String getAddressAsValue() {
         return "'" + getAddress() + "'";
     }
-
+    public String getEmployeeTypeAsString(){return String.valueOf(getEmployeeType());}
     public String getDepartmentAsValue() {
         return "'" + getDepartment() + "'";
     }
@@ -179,12 +179,12 @@ public class Employee {
         return this;
     }
 
-    public UserType getUserType() {
-        return userType;
+    public int getEmployeeType() {
+        return employeeType;
     }
 
-    public Employee setUserType(UserType userType) {
-        this.userType = userType;
+    public Employee setEmployeeType(int employeeType) {
+        this.employeeType = employeeType;
         return this;
     }
 
@@ -206,18 +206,16 @@ public class Employee {
         return this;
     }
 
-    public static Employee build(ResultSet rs, CompaniesEntity companiesEntity, UserTypesEntity userTypesEntity,
-                                 EmailAddressesEntity emailAddressesEntity, StatesCompaniesEntity statesCompaniesEntity) {
+    public static Employee build(ResultSet rs, CompaniesEntity companiesEntity,
+                                 EmailAddressesEntity emailAddressesEntity) {
         try {
             return (new Employee())
                     .setId(rs.getString("id"))
                     .setName(rs.getString("employee_name"))
 
                     .setCompany(companiesEntity.findById(rs.getString("id_company"),
-                            statesCompaniesEntity, emailAddressesEntity))
-
-                    .setUserType(userTypesEntity.findById(rs.getInt("id_user_type")))
-
+                             emailAddressesEntity))
+                    .setEmployeeType(rs.getInt("id_user_type"))
                     .setEmailAddress(emailAddressesEntity.findById(
                             rs.getInt("id_email_address")))
                     .setPassword(rs.getString("password"))
@@ -229,10 +227,6 @@ public class Employee {
                     .setAddress(rs.getString("address"))
                     .setDepartment(rs.getString("department"))
                     .setBirthdate(rs.getDate("birthdate"));
-
-
-
-
 
         } catch (SQLException e) {
             e.printStackTrace();

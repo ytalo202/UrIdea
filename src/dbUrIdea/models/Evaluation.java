@@ -100,23 +100,21 @@ public class Evaluation {
     public static Evaluation build(ResultSet rs,
                            EmployeesEntity employeesEntity,
                            CompaniesEntity companiesEntity,
-                           UserTypesEntity userTypesEntity,
-                           EmailAddressesEntity emailAddressesEntity,
-                           StatesCompaniesEntity statesCompaniesEntity
+                           EmailAddressesEntity emailAddressesEntity
     ) {
         try {
             return (new Evaluation())
                     .setId(rs.getString("id"))
                     .setIdEmployee(employeesEntity.findById(
                             rs.getString("id_evaluator")
-                            , companiesEntity, userTypesEntity, emailAddressesEntity
-                            , statesCompaniesEntity))
+                            , companiesEntity, emailAddressesEntity
+                            ))
                     .setIdUserEmployee(employeesEntity.findById(
                             rs.getString("id_user_employee")
-                            , companiesEntity, userTypesEntity, emailAddressesEntity
-                            , statesCompaniesEntity))
+                            , companiesEntity, emailAddressesEntity
+                           ))
                     .setCompany(companiesEntity.findById(
-                            rs.getString("id_company"), statesCompaniesEntity,
+                            rs.getString("id_company"),
                             emailAddressesEntity))
                     .setDate(rs.getDate("date"))
                     .setGrade(rs.getFloat("grade"));
