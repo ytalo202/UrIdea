@@ -14,10 +14,17 @@
 <body>
 <jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
 <h1>Desordenado</h1>
-<c:forEach var="emaillAdress" items="${service.emailAddresses}">
+<c:forEach var="emailAddress" items="${service.emailAddresses}">
 
-    <p><c:out value="${emaillAdress.id}  ----> "/><c:out value=" ${emaillAdress.emailData}"/> </p>
 
+    <p><c:out value="${emailAddress.emailData}"/>
+        <a href="email?action=edit&id=<c:out value="${emailAddress.id}"/>">
+            Edit
+        </a>
+    </p>
 </c:forEach>
+<a href="email?action=add">Add Email</a>
+
+
 </body>
 </html>
