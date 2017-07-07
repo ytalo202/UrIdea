@@ -42,7 +42,7 @@ public class EmailAddressesEntity extends BaseEntity {
     }
 
     public List<EmailAddress> findAllOrderedByEmail() {
-        String criteria = "true ORDER BY email_name";
+        String criteria = "true ORDER BY email_data";
         return findByCriteria(criteria);
     }
 
@@ -75,25 +75,25 @@ public class EmailAddressesEntity extends BaseEntity {
     }
 
     public boolean add(EmailAddress emailAddress) {
-        String sql = "INSERT INTO emails_addresses(id, email_name) " +
+        String sql = "INSERT INTO email_addresses(id, email_name) " +
                 "VALUES(" + emailAddress.getIdAsString() + ", " +
-                emailAddress.getEmailData() + ")";
+                emailAddress.getEmailDataAsValue() + ")";
         return change(sql);
     }
 
     public boolean delete(EmailAddress emailAddress) {
-        String sql = "DELETE FROM emails_addresses WHERE id = " + emailAddress.getIdAsString();
+        String sql = "DELETE FROM email_addresses WHERE id = " + emailAddress.getIdAsString();
         return change(sql);
     }
     public boolean delete(String email) {
-        return change("DELETE FROM emails_addresses WHERE email_data = " +
+        return change("DELETE FROM email_addresses WHERE email_data = " +
                 "'" + email + "'");
     }
 
     public boolean update(EmailAddress emailAddress) {
-        String sql = "UPDATE emails_addresses SET email_data = " +
-                emailAddress.getEmailData() +
-                " WHERE id = " + emailAddress.getIdAsString();
+        String sql = "update email_addresses set email_data = "
+                +emailAddress.getEmailDataAsValue()+
+                " where id = "+ emailAddress.getIdAsString();
         return change(sql);
     }
 

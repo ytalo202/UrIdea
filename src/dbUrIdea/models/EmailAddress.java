@@ -17,6 +17,11 @@ public class EmailAddress {
         this.setEmailData(emailData);
     }
 
+
+
+
+
+
     public String getIdAsString() {
         return String.valueOf(getId());
     }

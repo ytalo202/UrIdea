@@ -273,6 +273,21 @@ public class HRDataStore {
 
 
 
+    public PaymentsType findPaymentsTypeById(int id) {
+        return getPaymentsTypesEntity().findById(id);
+    }
+
+    public boolean updatePaymentsType(PaymentsType paymentsType) {
+        return getPaymentsTypesEntity().update(paymentsType);
+    }
+
+    public boolean addPaymentsType(PaymentsType paymentsType){
+        return getPaymentsTypesEntity().add(paymentsType);
+    }
+
+
+
+
 
 }
 

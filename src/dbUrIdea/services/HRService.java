@@ -102,6 +102,8 @@ public class HRService {
                 Integer.parseInt(id));
     }
 
+
+
     public boolean updateEmail(EmailAddress emailAddress) {
 
         return getDataStore().updateEmail(emailAddress);
@@ -109,6 +111,27 @@ public class HRService {
 
     public boolean addEmail(EmailAddress emailAddress) {
         return getDataStore().addEmail(emailAddress);
+
+    }
+
+    public PaymentsType getPaymentsTypeById(String id) {
+        return getDataStore().findPaymentsTypeById(
+                Integer.parseInt(id));
+    }
+
+    public PaymentsType getPaymentsTypeById(int id) {
+        return getDataStore().findPaymentsTypeById(id);
+    }
+
+
+
+    public boolean updatePaymentsType(PaymentsType paymentsType) {
+
+        return getDataStore().updatePaymentsType(paymentsType);
+    }
+
+    public boolean addPaymentsType(PaymentsType paymentsType) {
+        return getDataStore().addPaymentsType(paymentsType);
 
     }
 }
