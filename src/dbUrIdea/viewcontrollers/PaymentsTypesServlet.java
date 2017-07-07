@@ -10,8 +10,8 @@ import java.io.IOException;
 /**
  * Created by Yoshinon on 7/07/2017.
  */
-@WebServlet(name = "PaymentsTypeServlet")
-public class PaymentsTypeServlet extends HttpServlet {
+@WebServlet(name = "PaymentsTypesServlet")
+public class PaymentsTypesServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }

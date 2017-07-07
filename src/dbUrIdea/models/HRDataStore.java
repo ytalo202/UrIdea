@@ -258,6 +258,18 @@ public class HRDataStore {
 
 
 
+    public EmailAddress findEmailById(int id) {
+        return getEmailAddressesEntity().findById(id);
+    }
+
+    public boolean updateEmail(EmailAddress emailAddress) {
+        return getEmailAddressesEntity().update(emailAddress);
+    }
+
+    public boolean addEmail(EmailAddress emailAddress){
+        return getEmailAddressesEntity().add(emailAddress);
+    }
+
 
 
 

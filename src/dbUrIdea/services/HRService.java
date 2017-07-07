@@ -5,6 +5,7 @@ import dbUrIdea.models.*;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.persistence.Id;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -41,12 +42,13 @@ public class HRService {
         }
 
     }
+
     private Connection getConnection() {
         return connection;
     }
 
     private HRDataStore getDataStore() {
-        if(dataStore == null) {
+        if (dataStore == null) {
             dataStore = new HRDataStore(getConnection());
         }
         return dataStore;
@@ -61,7 +63,7 @@ public class HRService {
         return getDataStore().findAllEmail();
     }
 
-    public List<PaymentsType> getPaymentsTypes(){
+    public List<PaymentsType> getPaymentsTypes() {
         return getDataStore().findAllPaymentsType();
     }
 
@@ -78,17 +80,35 @@ public class HRService {
         return getDataStore().findAllCvs();
     }
 
-    public List<Evaluation> getEvaluations(){
+    public List<Evaluation> getEvaluations() {
 
         return getDataStore().findAllEvaluations();
     }
 
-    public  List<Employee> getEmployees(){
+    public List<Employee> getEmployees() {
         return getDataStore().findAllEmployees();
     }
-    public  List<Payment> getAllPayments(){
+
+    public List<Payment> getAllPayments() {
         return getDataStore().findAllPayments();
     }
 
+    public EmailAddress getEmailAddressById(int id) {
+        return getDataStore().findEmailById(id);
+    }
 
+    public EmailAddress getEmailAddressById(String id) {
+        return getDataStore().findEmailById(
+                Integer.parseInt(id));
+    }
+
+    public boolean updateEmail(EmailAddress emailAddress) {
+
+        return getDataStore().updateEmail(emailAddress);
+    }
+
+    public boolean addEmail(EmailAddress emailAddress) {
+        return getDataStore().addEmail(emailAddress);
+
+    }
 }
