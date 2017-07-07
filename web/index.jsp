@@ -9,7 +9,7 @@
 <html>
   <head>
     <title>$Title$</title>
-  </head>z
+  </head>
   <body>
   <p><a href="listEmail.jsp">List Email</a></p>
   <p><a href="listPaymentsType.jsp">List PaymentType</a></p>
