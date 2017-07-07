@@ -9,7 +9,7 @@
 <html>
   <head>
     <title>$Title$</title>
-  </head>
+  </head>z
   <body>
   <p><a href="listEmail.jsp">List Email</a></p>
   <p><a href="listPaymentsType.jsp">List PaymentType</a></p>
@@ -20,5 +20,7 @@
   <p><a href="listEvaluation.jsp">List Evaluation</a></p>
   <p><a href="listEmployee.jsp">List Employee</a></p>
   <p><a href="listPayment.jsp">List Payment</a></p>
+  <p><a href="listPaymentEdit.jsp">List Payment Edit</a></p>
+  
   </body>
 </html>
