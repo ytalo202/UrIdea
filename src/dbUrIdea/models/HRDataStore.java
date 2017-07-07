@@ -24,9 +24,9 @@ public class HRDataStore {
         this.setConnection(connection);
     }
 
+
     public HRDataStore() {
     }
-
 
     public Connection getConnection() {
         return connection;
@@ -37,77 +37,18 @@ public class HRDataStore {
         return this;
     }
 
+
+    //-----------------Company
     public CompaniesEntity getCompaniesEntity() {
+        if (companiesEntity == null) {
+            companiesEntity = new CompaniesEntity(getConnection());
+        }
         return companiesEntity;
+
     }
 
     public HRDataStore setCompaniesEntity(CompaniesEntity companiesEntity) {
         this.companiesEntity = companiesEntity;
-        return this;
-    }
-
-    public CvsEntity getCvsEntity() {
-        return cvsEntity;
-    }
-
-    public HRDataStore setCvsEntity(CvsEntity cvsEntity) {
-        this.cvsEntity = cvsEntity;
-        return this;
-    }
-
-
-    public EmailAddressesEntity getEmailAddressesEntity() {
-        return emailAddressesEntity;
-    }
-
-    public HRDataStore setEmailAddressesEntity(EmailAddressesEntity emailAddressesEntity) {
-        this.emailAddressesEntity = emailAddressesEntity;
-        return this;
-    }
-
-    public EmployeesEntity getEmployeesEntity() {
-        return employeesEntity;
-    }
-
-    public HRDataStore setEmployeesEntity(EmployeesEntity employeesEntity) {
-        this.employeesEntity = employeesEntity;
-        return this;
-    }
-
-    public EvaluationsEntity getEvaluationsEntity() {
-        return evaluationsEntity;
-    }
-
-    public HRDataStore setEvaluationsEntity(EvaluationsEntity evaluationsEntity) {
-        this.evaluationsEntity = evaluationsEntity;
-        return this;
-    }
-
-    public CommentsEntity getCommentsEntity() {
-        return commentsEntity;
-    }
-
-    public HRDataStore setCommentsEntity(CommentsEntity commentsEntity) {
-        this.commentsEntity = commentsEntity;
-        return this;
-    }
-
-
-    public PaymentsEntity getPaymentsEntity() {
-        return paymentsEntity;
-    }
-
-    public HRDataStore setPaymentsEntity(PaymentsEntity paymentsEntity) {
-        this.paymentsEntity = paymentsEntity;
-        return this;
-    }
-
-    public PaymentsTypesEntity getPaymentsTypesEntity() {
-        return paymentsTypesEntity;
-    }
-
-    public HRDataStore setPaymentsTypesEntity(PaymentsTypesEntity paymentsTypesEntity) {
-        this.paymentsTypesEntity = paymentsTypesEntity;
         return this;
     }
 
@@ -119,6 +60,21 @@ public class HRDataStore {
     public boolean createCompany(Company company) {
 
         return getCompaniesEntity().add(company);
+    }
+
+    //-------------------Cv
+    public CvsEntity getCvsEntity() {
+        if (cvsEntity == null) {
+            cvsEntity = new CvsEntity(getConnection());
+        }
+        return cvsEntity;
+
+
+    }
+
+    public HRDataStore setCvsEntity(CvsEntity cvsEntity) {
+        this.cvsEntity = cvsEntity;
+        return this;
     }
 
     public List<Cv> findAllCvs() {
@@ -133,25 +89,74 @@ public class HRDataStore {
     }
 
 
-    public List<EmailAddress> findAllEmailAdresses() {
+//-------------------EmailAddress
+
+    public EmailAddressesEntity getEmailAddressesEntity() {
+
+
+        if (emailAddressesEntity == null) {
+            emailAddressesEntity = new EmailAddressesEntity(getConnection());
+        }
+        return emailAddressesEntity;
+    }
+
+
+    public HRDataStore setEmailAddressesEntity(EmailAddressesEntity emailAddressesEntity) {
+        this.emailAddressesEntity = emailAddressesEntity;
+        return this;
+    }
+
+    public List<EmailAddress> findAllEmail() {
 
         return getEmailAddressesEntity().findAll();
     }
 
     public boolean createEmailAddress(EmailAddress emailAddress) {
+
         return getEmailAddressesEntity().add(emailAddress);
+    }
+
+    public List<EmailAddress> findAllEmailsOrderById() {
+
+        return getEmailAddressesEntity().findAllOrderById(true);
+    }
+
+    //-------------------Employee
+    public EmployeesEntity getEmployeesEntity() {
+        if (employeesEntity == null) {
+            employeesEntity = new EmployeesEntity(getConnection());
+        }
+        return employeesEntity;
+    }
+
+    public HRDataStore setEmployeesEntity(EmployeesEntity employeesEntity) {
+        this.employeesEntity = employeesEntity;
+        return this;
     }
 
     public List<Employee> findAllEmployees() {
 
         return getEmployeesEntity().findAll(
-                getCompaniesEntity(),
-                getEmailAddressesEntity()
-               );
+                getCompaniesEntity(), getEmailAddressesEntity()
+        );
     }
 
     public boolean createEmployee(Employee employee) {
+
         return getEmployeesEntity().add(employee);
+    }
+
+    //------------------Evaluation
+    public EvaluationsEntity getEvaluationsEntity() {
+        if (evaluationsEntity == null) {
+            evaluationsEntity = new EvaluationsEntity(getConnection());
+        }
+        return evaluationsEntity;
+    }
+
+    public HRDataStore setEvaluationsEntity(EvaluationsEntity evaluationsEntity) {
+        this.evaluationsEntity = evaluationsEntity;
+        return this;
     }
 
     public List<Evaluation> findAllEvaluations() {
@@ -159,15 +164,31 @@ public class HRDataStore {
         return getEvaluationsEntity().findAll(
                 getEmployeesEntity(),
                 getCompaniesEntity(),
-                getEmailAddressesEntity())
-               ;
+                getEmailAddressesEntity());
     }
 
     public boolean createEvaluation(Evaluation evaluation) {
+
         return getEvaluationsEntity().add(evaluation);
     }
 
-    public List<Commentary> findAllEvidences() {
+
+    //------------Comments
+
+    public CommentsEntity getCommentsEntity() {
+        if (commentsEntity == null) {
+            commentsEntity = new CommentsEntity(getConnection());
+        }
+
+        return commentsEntity;
+    }
+
+    public HRDataStore setCommentsEntity(CommentsEntity commentsEntity) {
+        this.commentsEntity = commentsEntity;
+        return this;
+    }
+
+    public List<Commentary> findAllCommentaries() {
 
         return getCommentsEntity().findAll(
                 getEvaluationsEntity(),
@@ -176,24 +197,52 @@ public class HRDataStore {
                 getEmailAddressesEntity());
     }
 
-    public boolean createEvidencce(Commentary commentary) {
+    public boolean createCommentary(Commentary commentary) {
+
         return getCommentsEntity().add(commentary);
     }
 
+    //---------------------Payments
+    public PaymentsEntity getPaymentsEntity() {
+        if (paymentsEntity == null) {
+            paymentsEntity = new PaymentsEntity(getConnection());
+        }
 
+        return paymentsEntity;
+    }
 
+    public HRDataStore setPaymentsEntity(PaymentsEntity paymentsEntity) {
+        this.paymentsEntity = paymentsEntity;
+        return this;
+    }
 
     public List<Payment> findAllPayments() {
 
         return getPaymentsEntity().findAll(
-                getCompaniesEntity()
-                ,getPaymentsTypesEntity()
-                ,getEmailAddressesEntity()
-        );
+                getCompaniesEntity(), getPaymentsTypesEntity(), getEmailAddressesEntity());
+
+
     }
 
     public boolean createPayment(Payment payment) {
+
         return getPaymentsEntity().add(payment);
+    }
+
+    //-------------------PaymentType
+
+    public PaymentsTypesEntity getPaymentsTypesEntity() {
+
+        if (paymentsTypesEntity == null) {
+            paymentsTypesEntity = new PaymentsTypesEntity(getConnection());
+        }
+
+        return paymentsTypesEntity;
+    }
+
+    public HRDataStore setPaymentsTypesEntity(PaymentsTypesEntity paymentsTypesEntity) {
+        this.paymentsTypesEntity = paymentsTypesEntity;
+        return this;
     }
 
     public List<PaymentsType> findAllPaymentsType() {
@@ -202,10 +251,14 @@ public class HRDataStore {
     }
 
     public boolean createPaymentType(PaymentsType paymentsType) {
+
         return getPaymentsTypesEntity().add(paymentsType);
     }
 
 
 
-}
 
+
+
+
+}

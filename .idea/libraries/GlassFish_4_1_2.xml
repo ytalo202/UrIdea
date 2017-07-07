@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="GlassFish 4.1.2">
+    <CLASSES>
+      <root url="jar://C:/Program Files/glassfish-4.1.2/glassfish4/glassfish/modules/javax.transaction-api.jar!/" />
+      <root url="jar://C:/Program Files/glassfish-4.1.2/glassfish4/glassfish/modules/javax.servlet.jsp.jstl-api.jar!/" />
+      <root url="jar://C:/Program Files/glassfish-4.1.2/glassfish4/glassfish/modules/javax.servlet.jsp.jstl.jar!/" />
+      <root url="jar://C:/Program Files/glassfish-4.1.2/glassfish4/glassfish/modules/javax.servlet.jsp.jar!/" />
+      <root url="jar://C:/Program Files/glassfish-4.1.2/glassfish4/glassfish/modules/javax.servlet-api.jar!/" />
+      <root url="jar://C:/Program Files/glassfish-4.1.2/glassfish4/glassfish/modules/javax.servlet.jsp-api.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

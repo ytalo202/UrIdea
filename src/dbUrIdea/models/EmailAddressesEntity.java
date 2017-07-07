@@ -13,14 +13,17 @@ public class EmailAddressesEntity extends BaseEntity {
 
     public EmailAddressesEntity(Connection connection) {
 
-        super(connection,"emails_addresses");
+        super(connection,"email_addresses");
     }
 
     public EmailAddressesEntity() {
 
         super();
     }
+
+    //+++++++++++++++++++++++++++++
     List<EmailAddress> findAll() {
+
         return findByCriteria("");
     }
 
@@ -43,23 +46,32 @@ public class EmailAddressesEntity extends BaseEntity {
         return findByCriteria(criteria);
     }
 
+    public List<EmailAddress> findAllOrderById( boolean isAscending) {
+        return findByCriteria("true ORDER BY id" +
+                (isAscending ? "" : " DESC"));
+    }
+
+
     public List<EmailAddress> findByCriteria(String criteria) {
         String sql = getDefaultQuery() +
-                criteria == "" ? "" : " WHERE " + criteria;
+                (criteria.equalsIgnoreCase("") ? "" : " WHERE " + criteria);
         List<EmailAddress> emails_addresses = new ArrayList<>();
         try {
-            ResultSet resultSet = getConnection()
+            ResultSet rs = getConnection()
                     .createStatement()
                     .executeQuery(sql);
-            if(resultSet == null) return null;
-            while(resultSet.next()) {
-                emails_addresses.add(EmailAddress.build(resultSet));
+            if(rs == null) return null;
+            while(rs.next()) {
+                emails_addresses.add(EmailAddress.build(rs));
+               /*emails_addresses.add((new EmailAddress())
+                        .setId(resultSet.getInt("id"))
+                        .setEmailData(resultSet.getString("email_data")));*/
             }
             return emails_addresses;
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+        return emails_addresses;
     }
 
     public boolean add(EmailAddress emailAddress) {
@@ -91,3 +103,4 @@ public class EmailAddressesEntity extends BaseEntity {
 
 
 }
+
