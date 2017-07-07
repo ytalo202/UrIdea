@@ -14,7 +14,7 @@
   <p><a href="listEmail.jsp">List Email</a></p>
   <p><a href="listPaymentsType.jsp">List PaymentType</a></p>
   <p><a href="listEmailsOrderById.jsp">List Email Ordenado por Id</a></p>
-  <p><a href="listCommetary.jsp">List Comentary</a></p>
+  <p><a href="listCommentary.jsp">List Comentary</a></p>
   <p><a href="listCv.jsp">List Cv</a></p>
   <p><a href="listCompany.jsp">List Company</a></p>
   <p><a href="listEvaluation.jsp">List Evaluation</a></p>
