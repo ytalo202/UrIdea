@@ -1,6 +1,6 @@
 package dbUrIdea.viewcontrollers;
 
-import dbUrIdea.models.EmailAddress;
+import dbUrIdea.models.Payment;
 import dbUrIdea.services.HRService;
 
 import javax.servlet.RequestDispatcher;
@@ -12,61 +12,59 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by Yoshinon on 7/07/2017.
+ * Created by Usuario on 07/07/2017.
  */
-@WebServlet(name = "EmailAddressesServlet",urlPatterns = "/email")
-public class EmailAddressesServlet extends HttpServlet {
-    // Service Layer access object
-    HRService service = new HRService();
-    // Action View Paths
-    public static String EMAILS_EDIT_URI = "/editEmail.jsp";
-    public static String EMAILS_ADD_URI = "/newEmail.jsp";
-    public static String EMAILS_INDEX_URI = "/listEmail.jsp";
+@WebServlet(name = "paymentServlet",urlPatterns = "/payments")
+public class paymentServlet extends HttpServlet {
 
+    HRService service=new HRService();
+    public static String PAYMENTS_EDIT_URI="/editPayment.jsp";
+    public  static  String PAYMENTS_ADD_URI="/newPayment.jsp";
+    public  static  String PAYMENTS_INDEX_URI="/listPaymentEdit.jsp";
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String action = request.getParameter("action");
         switch(action) {
-            case "update": {
-                EmailAddress emailAddress = service.getEmailAddressById(request.getParameter("id"));
-                emailAddress.setEmailData(request.getParameter("emailData"));
-                String message = service.updateEmail(emailAddress) ?
+            case  "update": {
+                Payment payment = service.getPaymentById(request.getParameter("id"));
+
+                payment.setName(request.getParameter("name"));
+
+
+
+                String message = service.updatePayment(payment) ?
                         "Update success" :
                         "Error while updating";
                 log(message);
-            }
 
-        }
+            }}
         RequestDispatcher dispatcher =
-                request.getRequestDispatcher(EMAILS_INDEX_URI);
+                request.getRequestDispatcher(PAYMENTS_INDEX_URI);
         dispatcher.forward(request, response);
-
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         String action = request.getParameter("action");
         String actionUri;
         switch(action) {
             case "add": {
-                actionUri = EMAILS_ADD_URI;
+                actionUri = PAYMENTS_ADD_URI;
                 request.setAttribute("action", "add");
                 break;
             }
             case "edit": {
-                EmailAddress emailAddress = service.getEmailAddressById(request.getParameter("id"));
-                request.setAttribute("emailAddress", emailAddress);
+                Payment payment = service.getPaymentById(request.getParameter("id"));
+                request.setAttribute("payment", payment);
                 request.setAttribute("action", "edit");
-                actionUri = EMAILS_EDIT_URI;
+                actionUri = PAYMENTS_EDIT_URI;
                 break;
             }
             default:
-                actionUri = EMAILS_INDEX_URI;
+                actionUri = PAYMENTS_INDEX_URI;
         }
         RequestDispatcher dispatcher = request.getRequestDispatcher(actionUri);
         dispatcher.forward(request, response);
+
     }
 }

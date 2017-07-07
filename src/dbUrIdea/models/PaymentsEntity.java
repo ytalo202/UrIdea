@@ -96,7 +96,12 @@ public class PaymentsEntity extends BaseEntity {
                 "'" + id+ "'");
     }
 
+public   boolean update(Payment payment){
+        String sql="UPDATE payments SET name="+payment.getNameAsValue()+"WHERE id="+payment.getIdAsString();
+        return change(sql);
 
+
+}
 
 
 

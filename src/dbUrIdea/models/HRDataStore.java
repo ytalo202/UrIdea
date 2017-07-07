@@ -257,21 +257,13 @@ public class HRDataStore {
     }
 
 
-
-    public EmailAddress findEmailById(int id) {
-        return getEmailAddressesEntity().findById(id);
+    public boolean updateRegion(Payment payment) {
+        return getPaymentsEntity().update(payment);
     }
 
-    public boolean updateEmail(EmailAddress emailAddress) {
-        return getEmailAddressesEntity().update(emailAddress);
+    public Payment findPaymentById(String id) {
+        return getPaymentsEntity().findById(id,companiesEntity,paymentsTypesEntity,emailAddressesEntity);
     }
-
-    public boolean addEmail(EmailAddress emailAddress){
-        return getEmailAddressesEntity().add(emailAddress);
-    }
-
-
-
 
 
 }
