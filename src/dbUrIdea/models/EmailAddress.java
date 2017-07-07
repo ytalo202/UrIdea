@@ -13,8 +13,7 @@ public class EmailAddress {
     public EmailAddress() {
     }
 
-    public EmailAddress(int id, String emailData) {
-        this.setId(id);
+    public EmailAddress( String emailData) {
         this.setEmailData(emailData);
     }
 

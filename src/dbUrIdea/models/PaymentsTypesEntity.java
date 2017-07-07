@@ -16,6 +16,8 @@ public class PaymentsTypesEntity extends BaseEntity{
     public PaymentsTypesEntity(Connection connection) {
         super(connection,"payment_types");
     }
+
+
     List<PaymentsType> findAll() {
         return findByCriteria("");
     }
@@ -40,7 +42,7 @@ public class PaymentsTypesEntity extends BaseEntity{
 
     public List<PaymentsType> findByCriteria(String criteria) {
         String sql = getDefaultQuery() +
-                criteria == "" ? "" : " WHERE " + criteria;
+                (criteria.equalsIgnoreCase("") ? "" : " WHERE " + criteria);
         List<PaymentsType> payment_types = new ArrayList<>();
         try {
             ResultSet resultSet = getConnection()

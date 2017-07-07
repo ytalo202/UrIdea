@@ -39,7 +39,8 @@ public class CvsEntity extends BaseEntity {
                                    CompaniesEntity companiesEntity,
                                    EmailAddressesEntity emailAddressesEntity
                                    ) {
-        String sql = getDefaultQuery() + (criteria.isEmpty() ? "" : " WHERE " + criteria);
+        String sql = getDefaultQuery() +
+                (criteria.equalsIgnoreCase("") ? "" : " WHERE " + criteria);
         List<Cv> cvs = new ArrayList<>();
         try {
             ResultSet rs = getConnection().createStatement().executeQuery(sql);

@@ -116,7 +116,7 @@ public class Evaluation {
                     .setCompany(companiesEntity.findById(
                             rs.getString("id_company"),
                             emailAddressesEntity))
-                    .setDate(rs.getDate("date"))
+                    .setDate(rs.getDate("evaluation_date"))
                     .setGrade(rs.getFloat("grade"));
 
 

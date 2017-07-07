@@ -10,7 +10,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-
 /**
  * Created by Yoshinon on 21/06/2017.
  */
@@ -62,13 +61,17 @@ public class HRService {
         return getDataStore().findAllEmail();
     }
 
-    public List<PaymentsType> getPaymentsTypes(){ return getDataStore().findAllPaymentsType(); }
+    public List<PaymentsType> getPaymentsTypes(){
+        return getDataStore().findAllPaymentsType();
+    }
 
     public List<EmailAddress> getEmailsOrderById() {
         return getDataStore().findAllEmailsOrderById();
     }
 
-    public List<Commentary> getComments() { return getDataStore().findAllCommentaries();
+    public List<Commentary> getComments() {
+
+        return getDataStore().findAllCommentaries();
     }
 
     public List<Cv> getCvs() {
@@ -83,7 +86,7 @@ public class HRService {
     public  List<Employee> getEmployees(){
         return getDataStore().findAllEmployees();
     }
-    public  List<Payment> getPayments(){
+    public  List<Payment> getAllPayments(){
         return getDataStore().findAllPayments();
     }
 

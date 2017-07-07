@@ -16,6 +16,7 @@ public class EvaluationsEntity extends BaseEntity{
     }
 
     public EvaluationsEntity(Connection connection) {
+
         super(connection,"evaluations");
     }
 
@@ -66,7 +67,8 @@ public class EvaluationsEntity extends BaseEntity{
                                            EmailAddressesEntity emailAddressesEntity
                                           ) {
 
-        String sql = getDefaultQuery() + (criteria.isEmpty() ? "" : " WHERE " + criteria);
+        String sql = getDefaultQuery() +
+                (criteria.equalsIgnoreCase("") ? "" : " WHERE " + criteria);
         List<Evaluation> evaluations = new ArrayList<>();
         try {
             ResultSet rs = getConnection().createStatement().executeQuery(sql);

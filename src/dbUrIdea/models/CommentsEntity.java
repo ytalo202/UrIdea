@@ -10,16 +10,19 @@ import java.util.List;
  * Created by Yoshinon on 17/06/2017.
  */
 public class CommentsEntity extends BaseEntity {
+
     public CommentsEntity() {
         super();
     }
 
     public CommentsEntity(Connection connection) {
-        super(connection,"evidences");
+        super(connection,"comments");
     }
-    public List<Commentary> findAll(EvaluationsEntity evaluationsEntity,CompaniesEntity companiesEntity,
+
+    public List<Commentary>
+    findAll(EvaluationsEntity evaluationsEntity,CompaniesEntity companiesEntity,
                                     EmployeesEntity employeesEntity,
-                                    EmailAddressesEntity emailAddressesEntity  )
+                                    EmailAddressesEntity emailAddressesEntity )
     {
         return findByCriteria("", evaluationsEntity,
                 companiesEntity,employeesEntity,emailAddressesEntity);
@@ -41,21 +44,21 @@ public class CommentsEntity extends BaseEntity {
                                            EvaluationsEntity evaluationsEntity,
                                            CompaniesEntity companiesEntity,
                                            EmployeesEntity employeesEntity,
-                                           EmailAddressesEntity emailAddressesEntity
-
-    ) {
-        String sql = getDefaultQuery() + (criteria.isEmpty() ? "" : " WHERE " + criteria);
-        List<Commentary> commentaries = new ArrayList<>();
+                                           EmailAddressesEntity emailAddressesEntity)
+    {
+        String sql = getDefaultQuery() +
+                (criteria.equalsIgnoreCase("") ? "" : " WHERE " + criteria);
+        List<Commentary> comments = new ArrayList<>();
         try {
             ResultSet rs = getConnection().createStatement().executeQuery(sql);
             if(rs == null) return null;
-            while(rs.next()) commentaries.add(Commentary.build(
+            while(rs.next()) comments.add(Commentary.build(
                     rs,evaluationsEntity,companiesEntity,employeesEntity,emailAddressesEntity));
-            return commentaries;
+            return comments;
         } catch(SQLException e) {
             e.printStackTrace();
         }
-        return commentaries;
+        return comments;
     }
     public boolean delete(Commentary commentary) {
         String sql = "DELETE FROM commentary WHERE id = " +

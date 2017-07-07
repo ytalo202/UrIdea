@@ -15,6 +15,7 @@ public class Employee {
     private String SecondLastName;
     private int phoneNumber;
     private int cellPhoneNumber;
+    private int dni;
     private String address;
     private String department;
     private Date birthdate;
@@ -25,7 +26,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(String id, String password, String name, String firstLastName, String secondLastName, int phoneNumber, int cellPhoneNumber, String address, String department, Date birthdate, Company company, int employeeType, EmailAddress emailAddress) {
+    public Employee(String id, String password, String name, String firstLastName, String secondLastName, int phoneNumber, int cellPhoneNumber, int dni, String address, String department, Date birthdate, Company company, int employeeType, EmailAddress emailAddress) {
         this.id = id;
         this.password = password;
         this.name = name;
@@ -33,6 +34,7 @@ public class Employee {
         SecondLastName = secondLastName;
         this.phoneNumber = phoneNumber;
         this.cellPhoneNumber = cellPhoneNumber;
+        this.setDni(dni);
         this.address = address;
         this.department = department;
         this.birthdate = birthdate;
@@ -40,8 +42,6 @@ public class Employee {
         this.employeeType = employeeType;
         this.emailAddress = emailAddress;
     }
-
-
 
 
     public String getId() {
@@ -86,6 +86,7 @@ public class Employee {
         return "'" + getAddress() + "'";
     }
     public String getEmployeeTypeAsString(){return String.valueOf(getEmployeeType());}
+    public String getDniAsString(){return String.valueOf(getDni());}
     public String getDepartmentAsValue() {
         return "'" + getDepartment() + "'";
     }
@@ -211,17 +212,17 @@ public class Employee {
         try {
             return (new Employee())
                     .setId(rs.getString("id"))
-                    .setName(rs.getString("employee_name"))
-
-                    .setCompany(companiesEntity.findById(rs.getString("id_company"),
+                    .setCompany(companiesEntity.findById(
+                            rs.getString("id_company"),
                              emailAddressesEntity))
-                    .setEmployeeType(rs.getInt("id_user_type"))
                     .setEmailAddress(emailAddressesEntity.findById(
                             rs.getInt("id_email_address")))
+                    .setEmployeeType(rs.getInt("employee_type"))
                     .setPassword(rs.getString("password"))
                     .setName(rs.getString("employee_name"))
                     .setFirstLastName(rs.getString("employee_first_last_name"))
                     .setSecondLastName(rs.getString("employee_second_last_name"))
+                    .setDni(rs.getInt("dni"))
                     .setPhoneNumber(rs.getInt("phone_number"))
                     .setCellPhoneNumber(rs.getInt("cell_phone_number"))
                     .setAddress(rs.getString("address"))
@@ -232,5 +233,14 @@ public class Employee {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public int getDni() {
+        return dni;
+    }
+
+    public Employee setDni(int dni) {
+        this.dni = dni;
+        return this;
     }
 }

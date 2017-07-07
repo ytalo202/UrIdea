@@ -123,7 +123,7 @@ public class Company {
         return this;
     }
 
-    public static Company build(ResultSet rs, EmailAddressesEntity emailAddressEntit) {
+    public static Company build(ResultSet rs, EmailAddressesEntity emailAddressEntity) {
         try {
             return (new Company())
                     .setId(rs.getString("id"))
@@ -131,7 +131,7 @@ public class Company {
                     .setNameCompany(rs.getString("name_company"))
                     .setDescription(rs.getString("description"))
                     .setCompanyState(rs.getInt("company_state"))
-                    .setEmailAdress(emailAddressEntit.findById(
+                    .setEmailAdress(emailAddressEntity.findById(
                             rs.getInt("id_email_address")))
                     .setAddress(rs.getString("address"))
                     .setPhoneNumber(rs.getInt("phone_number"));

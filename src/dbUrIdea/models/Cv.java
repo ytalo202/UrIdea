@@ -81,7 +81,8 @@ public class Cv {
         try {
             return (new Cv())
                     .setId(rs.getString("id"))
-                    .setEmployee(employeesEntity.findById(rs.getString("id_employee"), companiesEntity, emailAddressesEntity))
+                    .setEmployee(employeesEntity.findById(rs.getString("id_employee")
+                            , companiesEntity, emailAddressesEntity))
                     .setCvType(rs.getInt("cv_type"))
                     .setDescription(rs.getString("description"));
 

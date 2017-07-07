@@ -32,6 +32,8 @@ import java.sql.SQLException;
     }
 
     public String getCommentaryAsString(){return String.valueOf(getCommentaryType());}
+
+
     public String getDetailAsValue(){return "'"+ getDetail()+"'";}
     public String getIdAsValue() {
         return "'" + getId() + "'";
@@ -50,7 +52,8 @@ import java.sql.SQLException;
         return detail;
     }
 
-        public Commentary setDetail(String detail) {
+
+    public Commentary setDetail(String detail) {
         this.detail = detail;
         return this;
     }
@@ -65,15 +68,19 @@ import java.sql.SQLException;
     }
 
 
+
     public static Commentary build(ResultSet rs, EvaluationsEntity evaluationsEntity,
                                    CompaniesEntity companiesEntity
             , EmployeesEntity employeesEntity, EmailAddressesEntity emailAddressesEntity) {
         try {
             return (new Commentary())
                     .setId(rs.getString("id"))
-                    .setCommentaryType(rs.getInt("commentary_type"))
                     .setEvaluation(evaluationsEntity.findById
-                            (rs.getString("id_evaluation"),employeesEntity,companiesEntity,emailAddressesEntity));
+                            (rs.getString("id_evaluation"),
+                                    employeesEntity,companiesEntity,emailAddressesEntity))
+                    .setCommentaryType(rs.getInt("comment_type"))
+                    .setDetail(rs.getString("detail"))
+                    ;
 
         } catch (SQLException e) {
             e.printStackTrace();

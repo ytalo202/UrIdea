@@ -1,9 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
-  User: Magnus
-  Date: 7/7/2017
-  Time: 11:58 AM
+  User: Yoshinon
+  Date: 5/07/2017
+  Time: 12:43
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -14,9 +14,9 @@
 <body>
 <jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
 <h1>Desordenado</h1>
-<c:forEach var="emailAddress" items="${service.emailAddresses}">
+<c:forEach var="emaillAdress" items="${service.emailAddresses}">
 
-    <p><c:out value="${emailAddress.id}  ----> "/><c:out value=" ${emailAddress.emailData}"/> </p>
+    <p><c:out value="${emaillAdress.id}  ----> "/><c:out value=" ${emaillAdress.emailData}"/> </p>
 
 </c:forEach>
 </body>

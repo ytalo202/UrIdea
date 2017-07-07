@@ -62,7 +62,7 @@ public class EmailAddressesEntity extends BaseEntity {
                     .executeQuery(sql);
             if(rs == null) return null;
             while(rs.next()) {
-                emails_addresses.add(EmailAddress.build(rs));
+            emails_addresses.add(EmailAddress.build(rs));
                /*emails_addresses.add((new EmailAddress())
                         .setId(resultSet.getInt("id"))
                         .setEmailData(resultSet.getString("email_data")));*/
@@ -103,4 +103,3 @@ public class EmailAddressesEntity extends BaseEntity {
 
 
 }
-

@@ -17,14 +17,14 @@ public class PaymentsEntity extends BaseEntity {
 
 
     public PaymentsEntity(Connection connection) {
+
         super(connection,"payments");
     }
 
     public List<Payment> findAll(CompaniesEntity companiesEntity,
                                  PaymentsTypesEntity paymentsTypesEntity,
-
-                                 EmailAddressesEntity emailAddressesEntity
-    ) {
+                                 EmailAddressesEntity emailAddressesEntity)
+    {
         return findByCriteria("", companiesEntity, paymentsTypesEntity,emailAddressesEntity);
     }
 
@@ -44,19 +44,24 @@ public class PaymentsEntity extends BaseEntity {
     public List<Payment> findByCriteria(String criteria,CompaniesEntity companiesEntity,
                                         PaymentsTypesEntity paymentsTypesEntity,
                                         EmailAddressesEntity emailAddressesEntity) {
-        String sql = getDefaultQuery() + (criteria.isEmpty() ? "" : " WHERE " + criteria);
+
+        String sql = getDefaultQuery() +
+                (criteria.equalsIgnoreCase("") ? "" : " WHERE " + criteria);
+
         List<Payment> payments = new ArrayList<>();
         try {
             ResultSet rs = getConnection().createStatement().executeQuery(sql);
             if(rs == null) return null;
-            while(rs.next()) payments.add(Payment.build(rs,companiesEntity,paymentsTypesEntity,
-                    emailAddressesEntity));
+            while(rs.next()) payments.add(Payment.build(
+                    rs,companiesEntity,paymentsTypesEntity,emailAddressesEntity));
             return payments;
         } catch(SQLException e) {
             e.printStackTrace();
         }
         return payments;
     }
+
+
     public boolean add(Payment payment) {
         String sql = "INSERT INTO payments(id, id_companies, id_payments_type,card_number,name," +
                 "last_name,first_addressF,,second_addressF,date,location,country,code_zip" +

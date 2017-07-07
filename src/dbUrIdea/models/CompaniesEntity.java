@@ -40,7 +40,8 @@ public class CompaniesEntity extends BaseEntity {
 
     public List<Company> findByCriteria(String criteria,
                                         EmailAddressesEntity emailAddressEntit) {
-        String sql = getDefaultQuery() + (criteria.isEmpty() ? "" : " WHERE " + criteria);
+        String sql = getDefaultQuery() +
+                (criteria.equalsIgnoreCase("") ? "" : " WHERE " + criteria);
         List<Company> companies = new ArrayList<>();
         try {
             ResultSet rs = getConnection().createStatement().executeQuery(sql);

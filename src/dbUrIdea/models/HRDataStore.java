@@ -19,7 +19,6 @@ public class HRDataStore {
     private PaymentsTypesEntity paymentsTypesEntity;
 
 
-
     public HRDataStore(Connection connection) {
         this.setConnection(connection);
     }
@@ -89,7 +88,7 @@ public class HRDataStore {
     }
 
 
-//-------------------EmailAddress
+//-------------------EmailAddres
 
     public EmailAddressesEntity getEmailAddressesEntity() {
 
@@ -219,7 +218,9 @@ public class HRDataStore {
     public List<Payment> findAllPayments() {
 
         return getPaymentsEntity().findAll(
-                getCompaniesEntity(), getPaymentsTypesEntity(), getEmailAddressesEntity());
+                getCompaniesEntity(),
+                getPaymentsTypesEntity(),
+                getEmailAddressesEntity());
 
 
     }
@@ -262,3 +263,4 @@ public class HRDataStore {
 
 
 }
+

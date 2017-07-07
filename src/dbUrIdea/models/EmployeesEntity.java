@@ -14,10 +14,11 @@ public class EmployeesEntity extends BaseEntity {
 
     public EmployeesEntity() {
         super();
-        setTableName("employees");
+
     }
 
     public EmployeesEntity(Connection connection) {
+
         super(connection,"employees");
     }
 
@@ -89,7 +90,9 @@ public class EmployeesEntity extends BaseEntity {
     public List<Employee> findByCriteria(String criteria, CompaniesEntity companiesEntity,
                                          EmailAddressesEntity emailAddressesEntity) {
 
-        String sql = getDefaultQuery() + (criteria.isEmpty() ? "" : " WHERE " + criteria);
+        String sql = getDefaultQuery() +
+                (criteria.equalsIgnoreCase("") ? "" : " WHERE " + criteria);
+
         List<Employee> employees = new ArrayList<>();
         try {
             ResultSet rs = getConnection().createStatement().executeQuery(sql);
