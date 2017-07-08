@@ -257,7 +257,13 @@ public class HRDataStore {
     }
 
 
+    public boolean updatePayment(Payment payment) {
+        return getPaymentsEntity().update(payment);
+    }
 
+    public Payment findPaymentById(String id) {
+        return getPaymentsEntity().findById(id,companiesEntity,paymentsTypesEntity,emailAddressesEntity);
+    }
     public EmailAddress findEmailById(int id) {
         return getEmailAddressesEntity().findById(id);
     }
@@ -265,14 +271,6 @@ public class HRDataStore {
     public boolean updateEmail(EmailAddress emailAddress) {
         return getEmailAddressesEntity().update(emailAddress);
     }
-
-    public boolean addEmail(EmailAddress emailAddress){
-        return getEmailAddressesEntity().add(emailAddress);
-    }
-
-
-
-
     public PaymentsType findPaymentsTypeById(int id) {
         return getPaymentsTypesEntity().findById(id);
     }
@@ -280,14 +278,5 @@ public class HRDataStore {
     public boolean updatePaymentsType(PaymentsType paymentsType) {
         return getPaymentsTypesEntity().update(paymentsType);
     }
-
-    public boolean addPaymentsType(PaymentsType paymentsType){
-        return getPaymentsTypesEntity().add(paymentsType);
-    }
-
-
-
-
-
 }
 
