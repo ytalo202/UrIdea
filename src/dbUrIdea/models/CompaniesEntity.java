@@ -81,7 +81,7 @@ public class CompaniesEntity extends BaseEntity {
                 "description = " + company.getNameCompanyAsValue() + ", " +
                 "address = "+company.getAddressAsValue()+ ", " +
                 "phone_number = "+company.getPhoneNumberAsString()+ ", " +
-                " WHERE country_id = " + company.getIdAsValue();
+                " WHERE id = " + company.getIdAsValue();
         return change(sql);
     }
 

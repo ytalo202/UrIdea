@@ -1,16 +1,16 @@
 <%--
   Created by IntelliJ IDEA.
-  User: GrupoUTP
-  Date: 01/07/2017
-  Time: 21:41
+  User: Yoshinon
+  Date: 8/07/2017
+  Time: 17:16
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Edit Email</title>
+    <title>Title</title>
 </head>
 <body>
-<jsp:include page="_EmailsForm.jsp"/>
+
 </body>
 </html>

@@ -1,6 +1,7 @@
 package dbUrIdea.viewcontrollers;
 
-import dbUrIdea.models.Payment;
+import dbUrIdea.models.Commentary;
+import dbUrIdea.models.EmailAddress;
 import dbUrIdea.services.HRService;
 
 import javax.servlet.RequestDispatcher;
@@ -12,60 +13,62 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by Usuario on 07/07/2017.
+ * Created by Yoshinon on 8/07/2017.
  */
-@WebServlet(name = "paymentServlet",urlPatterns = "/payments")
-public class paymentServlet extends HttpServlet {
+@WebServlet(name = "CommentsServlet",urlPatterns ="/com")
+public class CommentsServlet extends HttpServlet {
+
     HRService service = new HRService();
     // Action View Paths
-    public static String REGIONS_EDIT_URI = "/editPayment.jsp";
-    public static String REGIONS_ADD_URI = "/newPayment.jsp";
-    public static String REGIONS_INDEX_URI = "/lisPaymentEdit.jsp";
+    public static String COMMS_EDIT_URI = "/editCommentary.jsp";
+    public static String COMMS_ADD_URI = "/newCommentary.jsp";
+    public static String COMMS_INDEX_URI = "/listCommentary.jsp";
 
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException,  IOException {
 
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         switch(action) {
-            case  "update": {
-                Payment payment = service.getPaymentById(request.getParameter("id"));
-                payment.setName(request.getParameter("name"));
-                String message = service.updatePayment(payment) ?
+            case "update": {
+                Commentary commentary = service.getCommentaryById(request.getParameter("id"));
+                commentary.setCommentaryType(Integer.parseInt(request.getParameter("commentaryType")));
+                commentary.setDetail(request.getParameter("detail"));
+                String message = service.updateCommentary(commentary) ?
                         "Update success" :
                         "Error while updating";
                 log(message);
-
-
             }
 
-
         }
+
         RequestDispatcher dispatcher =
-                request.getRequestDispatcher(REGIONS_INDEX_URI);
+                request.getRequestDispatcher(COMMS_INDEX_URI);
         dispatcher.forward(request, response);
+
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         String action = request.getParameter("action");
         String actionUri;
         switch(action) {
             case "add": {
-                actionUri = REGIONS_ADD_URI;
+                actionUri = COMMS_ADD_URI;
                 request.setAttribute("action", "add");
                 break;
             }
             case "edit": {
-                Payment payment = service.getPaymentById(request.getParameter("id"));
-                request.setAttribute("payment", payment);
+                Commentary commentary = service.getCommentaryById(request.getParameter("id"));
+                request.setAttribute("commentary", commentary);
                 request.setAttribute("action", "edit");
-                actionUri = REGIONS_EDIT_URI;
+                actionUri = COMMS_EDIT_URI;
                 break;
             }
             default:
-                actionUri = REGIONS_INDEX_URI;
+                actionUri = COMMS_INDEX_URI;
         }
         RequestDispatcher dispatcher = request.getRequestDispatcher(actionUri);
         dispatcher.forward(request, response);
     }
-    }
-
+}

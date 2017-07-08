@@ -11,7 +11,7 @@
     <input type="text" name="id" value="${emailAddress.id}"
             <c:out value="${action == 'edit' ? 'readonly=\"readonly\"' : '' }"/>
     />
-    <input type="text" name="name" value="${emailAddress.emailData}"/>
+    <input type="text" name="emailData" value="${emailAddress.emailData}"/>
     <input type="hidden" value="update" name="action"/>
     <input type="submit"/>
 </form>

@@ -76,9 +76,16 @@ public class CommentsEntity extends BaseEntity {
                 "VALUES("
                 + commentary.getIdAsValue() + ", "
                 + commentary.getEvaluation().getIdAsValue()+", "
-                + commentary.getCommentaryAsString()+", "
+                + commentary.getCommentaryTypeAsString()+", "
                 + commentary.getDetailAsValue()+") ";
 
+        return change(sql);
+    }
+    public boolean update(Commentary commentary) {
+        String sql = "UPDATE comments SET comment_type = "
+                + commentary.getCommentaryTypeAsString() +",detail = "
+                + commentary.getDetailAsValue()
+                + " WHERE id = " + commentary.getIdAsValue();
         return change(sql);
     }
 

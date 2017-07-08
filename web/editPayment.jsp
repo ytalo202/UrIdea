@@ -12,6 +12,6 @@
     <title>Edit Region</title>
 </head>
 <body>
-<jsp:include page="_paymentForm.jsp"/>
+<jsp:include page="_paymentsForm.jsp"/>
 </body>
 </html>

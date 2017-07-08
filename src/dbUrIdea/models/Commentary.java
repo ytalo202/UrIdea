@@ -31,7 +31,7 @@ import java.sql.SQLException;
         return this;
     }
 
-    public String getCommentaryAsString(){return String.valueOf(getCommentaryType());}
+    public String getCommentaryTypeAsString(){return String.valueOf(getCommentaryType());}
 
 
     public String getDetailAsValue(){return "'"+ getDetail()+"'";}

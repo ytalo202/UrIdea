@@ -130,4 +130,36 @@ public class HRService {
         return getDataStore().updatePaymentsType(paymentsType);
     }
 
+
+
+    //----------------
+
+    public Commentary getCommentaryById(String id) {
+        return getDataStore().findCommentaryById(id);
+    }
+
+   /* public Commentary getCommentaryById(int id) {
+        return getDataStore().findPaymentsTypeById(" "+id);
+
+    }*/
+
+
+
+
+
+    public boolean updateCommentary(Commentary commentary) {
+
+        return getDataStore().updateCommentary(commentary);
+    }
+
+
+    public Company getCompanyById(String id) {
+
+        return getDataStore().findCompanyById(id);
+    }
+
+    public boolean updateCompany(Company company) {
+
+        return getDataStore().updateCompany(company);
+    }
 }

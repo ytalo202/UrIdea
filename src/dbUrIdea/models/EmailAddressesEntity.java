@@ -31,6 +31,7 @@ public class EmailAddressesEntity extends BaseEntity {
     public EmailAddress findById(int id) {
         String criteria = " id = " +
                 String.valueOf(id);
+
         return findByCriteria(criteria).get(0);
     }
 
@@ -63,9 +64,7 @@ public class EmailAddressesEntity extends BaseEntity {
             if(rs == null) return null;
             while(rs.next()) {
             emails_addresses.add(EmailAddress.build(rs));
-               /*emails_addresses.add((new EmailAddress())
-                        .setId(resultSet.getInt("id"))
-                        .setEmailData(resultSet.getString("email_data")));*/
+
             }
             return emails_addresses;
         } catch (SQLException e) {
@@ -91,9 +90,9 @@ public class EmailAddressesEntity extends BaseEntity {
     }
 
     public boolean update(EmailAddress emailAddress) {
-        String sql = "update email_addresses set email_data = "
-                +emailAddress.getEmailDataAsValue()+
-                " where id = "+ emailAddress.getIdAsString();
+        String sql = "UPDATE email_addresses SET email_data = "
+                + emailAddress.getEmailDataAsValue() +
+                " WHERE id = " + emailAddress.getIdAsString();
         return change(sql);
     }
 

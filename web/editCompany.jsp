@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Edit Email</title>
+    <title>Edit Comentary</title>
 </head>
 <body>
-<jsp:include page="_EmailsForm.jsp"/>
+<jsp:include page="_CompaniesForm.jsp"/>
 </body>
 </html>

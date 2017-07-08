@@ -11,6 +11,6 @@
     <title>Add Email</title>
 </head>
 <body>
-<jsp:include page="_EmailForm.jsp"/>
+<jsp:include page="_EmailsForm.jsp"/>
 </body>
 </html>

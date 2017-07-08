@@ -264,11 +264,14 @@ public class HRDataStore {
     public Payment findPaymentById(String id) {
         return getPaymentsEntity().findById(id,companiesEntity,paymentsTypesEntity,emailAddressesEntity);
     }
+
+
     public EmailAddress findEmailById(int id) {
         return getEmailAddressesEntity().findById(id);
     }
 
     public boolean updateEmail(EmailAddress emailAddress) {
+
         return getEmailAddressesEntity().update(emailAddress);
     }
     public PaymentsType findPaymentsTypeById(int id) {
@@ -278,5 +281,28 @@ public class HRDataStore {
     public boolean updatePaymentsType(PaymentsType paymentsType) {
         return getPaymentsTypesEntity().update(paymentsType);
     }
+
+
+
+    public Commentary findCommentaryById(String id) {
+        return getCommentsEntity().findById(id,
+                getEvaluationsEntity(),getCompaniesEntity(),getEmployeesEntity(),getEmailAddressesEntity());
+    }
+
+    public boolean updateCommentary(Commentary commentary) {
+
+        return getCommentsEntity().update(commentary);
+    }
+
+    public Company findCompanyById(String id) {
+        return getCompaniesEntity().findById(id,getEmailAddressesEntity());}
+
+    public boolean updateCompany(Company company) {
+
+        return getCompaniesEntity().update(company);
+    }
+
+
+
 }
 
