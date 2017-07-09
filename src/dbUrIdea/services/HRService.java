@@ -162,4 +162,17 @@ public class HRService {
 
         return getDataStore().updateCompany(company);
     }
+
+    public boolean createEmail(EmailAddress emailAddress) {
+
+        return getDataStore().createEmail(emailAddress);
+    }
+    public boolean deleteEmailById(EmailAddress emailAddress) {
+
+        return getDataStore().deleteEmailById(emailAddress);
+    }
+    public EmailAddress getEmailByName(String email) {
+
+        return getDataStore().findEmailTypeByData(email);
+    }
 }

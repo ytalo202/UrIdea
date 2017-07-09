@@ -302,6 +302,18 @@ public class HRDataStore {
         return getCompaniesEntity().update(company);
     }
 
+       public boolean createEmail(EmailAddress emailAddress) {
+        return getEmailAddressesEntity().add(emailAddress);
+    }
+
+    public boolean deleteEmailById(EmailAddress emailAddress) {
+        return getEmailAddressesEntity().deleteById(emailAddress);
+    }
+
+    public EmailAddress findEmailTypeByData(String email) {
+        return getEmailAddressesEntity().findByEmailData(email);
+    }
+
 
 
 }

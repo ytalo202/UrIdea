@@ -37,6 +37,26 @@ public class EmailAddreessServlet extends HttpServlet {
                         "Update success" :
                         "Error while updating";
                 log(message);
+                break;
+            }
+
+            case "create": {
+                EmailAddress emailAddress= new EmailAddress();
+                emailAddress.setEmailData(request.getParameter("emailData"));
+                String message = service.createEmail(emailAddress) ?
+                        "Create success" :
+                        "Error while creating";
+                log(message);
+                break;
+            }
+            case "delete": {
+
+                EmailAddress emailAddress = service.getEmailAddressById(request.getParameter("id"));
+                String message = service.deleteEmailById(emailAddress) ?
+                        "Delete success" :
+                        "Error while deleting";
+                log(message);
+                break;
             }
 
         }
@@ -54,12 +74,14 @@ public class EmailAddreessServlet extends HttpServlet {
         String actionUri;
         switch(action) {
             case "add": {
-                actionUri = EMAILS_ADD_URI;
+
                 request.setAttribute("action", "add");
+                actionUri = EMAILS_ADD_URI;
                 break;
             }
             case "edit": {
-                EmailAddress emailAddress = service.getEmailAddressById(request.getParameter("id"));
+                EmailAddress emailAddress = service.getEmailAddressById
+                        (request.getParameter("id"));
                 request.setAttribute("emailAddress", emailAddress);
                 request.setAttribute("action", "edit");
                 actionUri = EMAILS_EDIT_URI;

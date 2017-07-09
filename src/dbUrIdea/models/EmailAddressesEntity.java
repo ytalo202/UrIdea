@@ -74,13 +74,12 @@ public class EmailAddressesEntity extends BaseEntity {
     }
 
     public boolean add(EmailAddress emailAddress) {
-        String sql = "INSERT INTO email_addresses(id, email_name) " +
-                "VALUES(" + emailAddress.getIdAsString() + ", " +
-                emailAddress.getEmailDataAsValue() + ")";
+        String sql = "INSERT email_addresses (email_data) " +
+                "VALUES ("+ emailAddress.getEmailDataAsValue() + ")";
         return change(sql);
     }
 
-    public boolean delete(EmailAddress emailAddress) {
+    public boolean deleteById(EmailAddress emailAddress) {
         String sql = "DELETE FROM email_addresses WHERE id = " + emailAddress.getIdAsString();
         return change(sql);
     }
