@@ -34,9 +34,9 @@ public class CompaniesServlet extends HttpServlet {
                 company.setPassword(request.getParameter("password"));
                 company.setNameCompany(request.getParameter("nameCompany"));
                 company.setDescription(request.getParameter("description"));
-                company.setCompanyState(Integer.parseInt(request.getParameter("address")));
-                company.setAddress(request.getParameter("phoneNumber"));
-                company.setPhoneNumber(Integer.parseInt(request.getParameter("companyState")));
+                company.setCompanyState(Integer.parseInt(request.getParameter("companyState")));
+                company.setAddress(request.getParameter("address"));
+                company.setPhoneNumber(Integer.parseInt(request.getParameter("phoneNumber")));
                 String message = service.updateCompany(company) ?
                         "Update success" :
                         "Error while updating";

@@ -75,12 +75,12 @@ public class CompaniesEntity extends BaseEntity {
         return change(sql);
     }
     public boolean update(Company company) {
-        String sql = "UPDATE companies SET " +
-                "password = " + company.getPasswordAsValue() + ", " +
+        String sql = "UPDATE companies SET password = " + company.getPasswordAsValue() + ", " +
                 "name_company = " + company.getNameCompanyAsValue() + ", " +
                 "description = " + company.getNameCompanyAsValue() + ", " +
+                "company_state = " + company.getCompanyStateAsString() + ", " +
                 "address = "+company.getAddressAsValue()+ ", " +
-                "phone_number = "+company.getPhoneNumberAsString()+ ", " +
+                "phone_number = "+company.getPhoneNumberAsString()+
                 " WHERE id = " + company.getIdAsValue();
         return change(sql);
     }

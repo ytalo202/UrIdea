@@ -27,7 +27,7 @@
         <c:out value="${company.address} -> "/>
         <c:out value="${company.phoneNumber} -> "/>
 
-        <a href="com?action=edit&id=<c:out value="${company.id}"/>">
+        <a href="comp?action=edit&id=<c:out value="${company.id}"/>">
             Edit
         </a>
     </p>
