@@ -11,6 +11,7 @@
     <title>Title</title>
 </head>
 <body>
+<jsp:include page="_NComp.jsp"/>
 
 </body>
 </html>

@@ -17,6 +17,7 @@
             <c:out value="${action == 'edit' ? 'readonly=\"readonly\"' : '' }"/>
     />
 
+    <input type="text" name="password" value="${company.password}"/>
     <input type="text" name="nameCompany" value="${company.nameCompany}"/>
     <input type="text" name="description" value="${company.description}"/>
     <input type="text" name="companyState" value="${company.companyState}"/>

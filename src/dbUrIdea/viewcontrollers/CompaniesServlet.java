@@ -2,6 +2,7 @@ package dbUrIdea.viewcontrollers;
 
 import dbUrIdea.models.Commentary;
 import dbUrIdea.models.Company;
+import dbUrIdea.models.EmailAddress;
 import dbUrIdea.services.HRService;
 
 import javax.servlet.RequestDispatcher;
@@ -30,17 +31,53 @@ public class CompaniesServlet extends HttpServlet {
         String action = request.getParameter("action");
         switch(action) {
             case "update": {
-                Company company = service.getCompanyById(request.getParameter("id"));
+                //Company company = service.getCompanyById(request.getParameter("id"));
+
+                Company company= new Company();
+                company.setId(request.getParameter("id"));
                 company.setPassword(request.getParameter("password"));
                 company.setNameCompany(request.getParameter("nameCompany"));
                 company.setDescription(request.getParameter("description"));
-                company.setCompanyState(Integer.parseInt(request.getParameter("companyState")));
+                company.setCompanyState(Integer.parseInt
+                        (request.getParameter("companyState")));
                 company.setAddress(request.getParameter("address"));
-                company.setPhoneNumber(Integer.parseInt(request.getParameter("phoneNumber")));
+                company.setPhoneNumber(Integer.parseInt
+                        (request.getParameter("phoneNumber")));
                 String message = service.updateCompany(company) ?
                         "Update success" :
                         "Error while updating";
                 log(message);
+                break;
+            }
+            case "create": {
+
+
+                //Company company= service.getComanyByEmailId(Integer.parseInt(request.getParameter("EmailId")));
+               EmailAddress emailAddress =new EmailAddress();
+                Company company =new Company();
+                company.setId(request.getParameter("id"));
+                company.setPassword(request.getParameter("password"));
+                company.setNameCompany(request.getParameter("nameCompany"));
+                company.setDescription(request.getParameter("description"));
+                company.setCompanyState
+                        (Integer.parseInt(request.getParameter("companyState")));
+
+
+                ///-------------------Probando
+              company.setEmailAdress(emailAddress.setId(Integer.parseInt(request.getParameter("EmailId"))));
+
+                //
+                company.setAddress(request.getParameter("address"));
+                company.setPhoneNumber(Integer.parseInt(request.getParameter("phoneNumber")));
+
+
+                String message = service.createComp(company) ?
+                        "Create success" :
+                        "Error while creating";
+                log(message);
+                break;
+
+
             }
 
         }

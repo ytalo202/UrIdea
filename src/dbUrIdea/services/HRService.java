@@ -171,8 +171,14 @@ public class HRService {
 
         return getDataStore().deleteEmailById(emailAddress);
     }
-    public EmailAddress getEmailByName(String email) {
 
-        return getDataStore().findEmailTypeByData(email);
+    public boolean createComp(Company company) {
+
+        return getDataStore().createCompany(company);
     }
+
+    public Company getComanyByEmailId(int id) {
+        return getDataStore().findCompanyByEmailId(id);
+    }
+
 }

@@ -316,5 +316,9 @@ public class HRDataStore {
 
 
 
+    public Company findCompanyByEmailId(int id) {
+        return getCompaniesEntity().findByEmailId(id,getEmailAddressesEntity());}
+
+
 }
 

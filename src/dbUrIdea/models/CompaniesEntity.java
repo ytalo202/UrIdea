@@ -33,6 +33,15 @@ public class CompaniesEntity extends BaseEntity {
         return findByCriteria(criteria,emailAddressEntit).get(0);
     }
 
+
+
+    public Company findByEmailId(int idE, EmailAddressesEntity emailAddressEntit) {
+        String criteria = "id_email_address = " +
+                String.valueOf(idE);
+
+        return findByCriteria(criteria,emailAddressEntit).get(0);
+    }
+
     public Company findByState(String state, EmailAddressesEntity emailAddressEntit) {
         String criteria = "id_state_company = " + "'" + state + "'";
         return findByCriteria(criteria, emailAddressEntit).get(0);
@@ -60,9 +69,10 @@ public class CompaniesEntity extends BaseEntity {
     }
 
     public boolean add(Company company) {
-        String sql = "INSERT INTO companies" +
-                "(id, password, name_company, description, id_state_company, id_state_company" +
-                ", id_email_address, address, phone_number ) VALUES(" +
+        String sql = "INSERT companies (id, " +
+                "password, name_company, description, company_state," +
+                "id_email_address, address, phone_number ) " +
+                "VALUES(" +
                 company.getIdAsValue() + ", " +
                 company.getPasswordAsValue() + ", " +
                 company.getNameCompanyAsValue()+ ", " +
@@ -77,7 +87,7 @@ public class CompaniesEntity extends BaseEntity {
     public boolean update(Company company) {
         String sql = "UPDATE companies SET password = " + company.getPasswordAsValue() + ", " +
                 "name_company = " + company.getNameCompanyAsValue() + ", " +
-                "description = " + company.getNameCompanyAsValue() + ", " +
+                "description = " + company.getDescriptionAsValue() + ", " +
                 "company_state = " + company.getCompanyStateAsString() + ", " +
                 "address = "+company.getAddressAsValue()+ ", " +
                 "phone_number = "+company.getPhoneNumberAsString()+
