@@ -179,6 +179,17 @@ public class HRDataStore {
         return getEvaluationsEntity().add(evaluation);
     }
 
+    public boolean updateEvaluation(Evaluation evaluation) {
+
+        return getEvaluationsEntity().update(evaluation);
+    }
+
+    public Evaluation findEvaluationById(String id) {
+        return getEvaluationsEntity().findById(
+                id,getEmployeesEntity(),getCompaniesEntity(),getEmailAddressesEntity());
+    }
+
+
 
     //------------Comments
 

@@ -2,6 +2,7 @@ package dbUrIdea.viewcontrollers;
 
 import dbUrIdea.models.Commentary;
 import dbUrIdea.models.EmailAddress;
+import dbUrIdea.models.Evaluation;
 import dbUrIdea.services.HRService;
 
 import javax.servlet.RequestDispatcher;
@@ -30,13 +31,33 @@ public class CommentsServlet extends HttpServlet {
         String action = request.getParameter("action");
         switch(action) {
             case "update": {
-                Commentary commentary = service.getCommentaryById(request.getParameter("id"));
+                //Commentary commentary = service.getCommentaryById(request.getParameter("id"));
+                Commentary commentary = new Commentary();
+                commentary.setId(request.getParameter("id"));
                 commentary.setCommentaryType(Integer.parseInt(request.getParameter("commentaryType")));
                 commentary.setDetail(request.getParameter("detail"));
                 String message = service.updateCommentary(commentary) ?
                         "Update success" :
                         "Error while updating";
                 log(message);
+            }
+            case "create": {
+
+
+                //Company company= service.getComanyByEmailId(Integer.parseInt(request.getParameter("EmailId")));
+                Evaluation evaluation =new Evaluation();
+                Commentary commentary = new Commentary();
+                commentary.setEvaluation(evaluation.setId(request.getParameter("id_evaluation")));
+                commentary.setId(request.getParameter("id"));
+                commentary.setCommentaryType(Integer.parseInt(request.getParameter("commentaryType")));
+                commentary.setDetail(request.getParameter("detail"));
+                String message = service.createComentary(commentary) ?
+                        "Create success" :
+                        "Error while creating";
+                log(message);
+                break;
+
+
             }
 
         }

@@ -195,4 +195,24 @@ public class HRService {
         return getDataStore().updateEmployee(employee);
     }
 
+    public boolean createComentary(Commentary commentary) {
+
+        return getDataStore().createCommentary(commentary);
+    }
+
+
+    public Evaluation getEvaluationById(String id) {
+
+        return getDataStore().findEvaluationById(id);
+    }
+
+    public boolean updateEvaluation(Evaluation evaluation) {
+
+        return getDataStore().updateEvaluation(evaluation);
+    }
+
+    public boolean createEvaluation(Evaluation evaluation) {
+
+        return getDataStore().createEvaluation(evaluation);
+    }
 }

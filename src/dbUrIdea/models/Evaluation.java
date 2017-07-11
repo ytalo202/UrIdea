@@ -29,9 +29,9 @@ public class Evaluation {
         return "'" + getId() + "'";
     }
 
-    public String getDateAsString()
+    public String getDateAsValue()
     {
-        return String.valueOf(getDate());
+        return "'" +String.valueOf(getDate())+ "'";
     }
 
     public String getGradeAsString()

@@ -85,8 +85,9 @@ public class EvaluationsEntity extends BaseEntity{
     }
 
     public boolean update(Evaluation evaluation) {
-        String sql = "UPDATE evaluations SET " +
-                "password = "+evaluation.getGradeAsString()+
+        String sql = "UPDATE evaluations SET evaluation_date = "
+                +evaluation.getDateAsValue()+", "+
+                "grade = "+evaluation.getGradeAsString()+
                 " WHERE id = " + evaluation.getIdAsValue();
 
         return change(sql);
@@ -104,13 +105,14 @@ public class EvaluationsEntity extends BaseEntity{
     }
 
     public boolean add(Evaluation evaluation) {
-        String sql = "INSERT INTO evaluations(id, id_evaluator,id_user_employee,id_company,evaluation_date,grade) " +
+        String sql = "INSERT evaluations(id, id_evaluator, id_user_employee," +
+                " id_company, evaluation_date, grade) " +
                 "VALUES("
                 +evaluation.getIdAsValue() + ", "
                 +evaluation.getIdEmployee().getIdAsValue()+ ", "
                 +evaluation.getIdUserEmployee().getIdAsValue()+ ", "
                 +evaluation.getCompany().getIdAsValue()+ ", "
-                +evaluation.getDateAsString()+ ", "
+                +evaluation.getDateAsValue()+ ", "
                 +evaluation.getGradeAsString()+ ") ";
 
         return change(sql);

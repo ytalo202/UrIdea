@@ -13,17 +13,23 @@
 </head>
 <body>
 <jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
-<h1>Desordenado</h1>
+
 <c:forEach var="evaluation" items="${service.evaluations}">
 
-    <p>
-        <c:out value=" ${evaluation.id}  ----> "/>
-        <c:out value=" ${evaluation.company.nameCompany} ---> "/>
-        <c:out value=" ${evaluation.idEmployee.name} ---> "/>
+    <p><c:out value=" ${evaluation.company.nameCompany} ---> "/>
+        <c:out value=" Evaluador ${evaluation.idEmployee.name} ---> "/>
+        <c:out value=" Evaluado ${evaluation.idUserEmployee.name} ---> "/>
         <c:out value=" ${evaluation.date} ---> "/>
         <c:out value=" ${evaluation.grade}"/>
-    </p>
 
+        <a href="eval?action=edit&id=<c:out value="${evaluation.id}"/>">
+            Edit
+        </a>
+    </p>
 </c:forEach>
+<a href="eval?action=add">Add Evaluation</a>
+
+
+
 </body>
 </html>

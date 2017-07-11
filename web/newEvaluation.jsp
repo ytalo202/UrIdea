@@ -1,17 +1,16 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Yoshinon
-  Date: 8/07/2017
-  Time: 18:29
+  User: GrupoUTP
+  Date: 01/07/2017
+  Time: 21:40
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Add Employee</title>
 </head>
 <body>
-<jsp:include page="_NComentary.jsp"/>
-
+<jsp:include page="_NEvaluation.jsp"/>
 </body>
 </html>
