@@ -93,9 +93,9 @@ public class Employee {
     //date ? lo vemos luego  --- lo vemos abajoo
 
 
-    public String getBirthdateAsString()
+    public String getBirthdateAsValue()
     {
-        return String.valueOf(getBirthdate());
+        return  "'"+String.valueOf(getBirthdate())+"'";
     }
 
     public String getPassword() {

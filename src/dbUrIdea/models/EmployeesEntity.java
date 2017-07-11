@@ -105,37 +105,44 @@ public class EmployeesEntity extends BaseEntity {
         return employees;
     }
     public boolean update(Employee employee) {
-        String sql = "UPDATE companies SET " +
+        String sql = "UPDATE employees SET " +
+                "employee_type = "+employee.getEmployeeTypeAsString()+ ", " +
                 "password = "+employee.getPasswordAsValue()+ ", " +
                 "employee_name = " +employee.getNameAsValue()+ ", " +
                 "employee_first_last_name = " + employee.getFirstLastNameAsValue()+ ", " +
                 "employee_second_last_name = "+ employee.getSecondLastNameAsValue()+ ", " +
+                "dni = "+ employee.getDniAsString()+ ", " +
                 "phone_number = "+ employee.getPhoneNumberAsString()+ ", " +
                 "cell_phone_number = " + employee.getCellPhoneNumberAsString()+ ", " +
                 "address = "+ employee.getAddressAsValue()+ ", " +
                 "department = "+employee.getDepartmentAsValue()+ ", " +
-                "birthdate = "+employee.getBirthdateAsString()+ ", " +
+               "birthdate = "+employee.getBirthdateAsValue()+
                 " WHERE id = " + employee.getIdAsValue();
 
         return change(sql);
     }
 
     public boolean add(Employee employee) {
-        String sql = "INSERT INTO employees(id, id_company, id_user_type, id_email_address, password, employee_name, employee_first_last_name, employee_second_last_name, phone_number, address, department, birthdate) " +
+        String sql = "INSERT employees(" +
+                "id, id_company, id_email_address, employee_type, password, " +
+                "employee_name, employee_first_last_name, employee_second_last_name," +
+                " dni, phone_number, cell_phone_number, address, department, birthdate) " +
                 "VALUES("
                 +employee.getIdAsValue() + ", "
                 +employee.getCompany().getIdAsValue()+ ", "
-                +employee.getEmployeeTypeAsString()+ ", "
                 +employee.getEmailAddress().getIdAsString()+ ", "
+                +employee.getEmployeeTypeAsString()+ ", "
                 +employee.getPasswordAsValue()+ ", "
                 +employee.getNameAsValue()+ ", "
                 +employee.getFirstLastNameAsValue()+ ", "
                 +employee.getSecondLastNameAsValue()+ ", "
+                +employee.getDniAsString()+", "
                 +employee.getPhoneNumberAsString()+ ", "
                 +employee.getCellPhoneNumberAsString()+ ", "
                 +employee.getAddressAsValue()+ ", "
                 +employee.getDepartmentAsValue()+ ", "
-                +employee.getBirthdateAsString()+ ")";
+                 +employee.getBirthdateAsValue()
+                + ")";
         return change(sql);
     }
 

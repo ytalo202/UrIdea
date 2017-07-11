@@ -181,4 +181,18 @@ public class HRService {
         return getDataStore().findCompanyByEmailId(id);
     }
 
+    public boolean createEmployee(Employee employee) {
+
+        return getDataStore().createEmployee(employee);
+    }
+    public Employee getEmployeeById(String id) {
+
+        return getDataStore().findEmployeeById(id);
+    }
+
+    public boolean updateEmployee(Employee employee) {
+
+        return getDataStore().updateEmployee(employee);
+    }
+
 }

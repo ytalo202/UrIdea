@@ -139,10 +139,18 @@ public class HRDataStore {
                 getCompaniesEntity(), getEmailAddressesEntity()
         );
     }
+    public Employee findEmployeeById(String  id){
+        return getEmployeesEntity().findById(id ,getCompaniesEntity(),getEmailAddressesEntity());
+    }
 
     public boolean createEmployee(Employee employee) {
 
         return getEmployeesEntity().add(employee);
+    }
+
+    public boolean updateEmployee(Employee employee) {
+
+        return getEmployeesEntity().update(employee);
     }
 
     //------------------Evaluation
