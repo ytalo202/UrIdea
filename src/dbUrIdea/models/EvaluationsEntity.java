@@ -85,8 +85,8 @@ public class EvaluationsEntity extends BaseEntity{
     }
 
     public boolean update(Evaluation evaluation) {
-        String sql = "UPDATE evaluations SET evaluation_date = "
-                +evaluation.getDateAsValue()+", "+
+        String sql = "UPDATE evaluations SET" +
+                 "evaluation_date = "+evaluation.getDateAsValue()+ ", "+
                 "grade = "+evaluation.getGradeAsString()+
                 " WHERE id = " + evaluation.getIdAsValue();
 

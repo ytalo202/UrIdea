@@ -47,9 +47,11 @@ public class CommentsServlet extends HttpServlet {
                 //Company company= service.getComanyByEmailId(Integer.parseInt(request.getParameter("EmailId")));
                 Evaluation evaluation =new Evaluation();
                 Commentary commentary = new Commentary();
-                commentary.setEvaluation(evaluation.setId(request.getParameter("id_evaluation")));
+                commentary.setEvaluation(evaluation.setId(request.getParameter
+                        ("id_evaluation")));
                 commentary.setId(request.getParameter("id"));
-                commentary.setCommentaryType(Integer.parseInt(request.getParameter("commentaryType")));
+                commentary.setCommentaryType(Integer.parseInt
+                        (request.getParameter("commentaryType")));
                 commentary.setDetail(request.getParameter("detail"));
                 String message = service.createComentary(commentary) ?
                         "Create success" :

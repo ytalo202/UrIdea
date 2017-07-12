@@ -13,11 +13,16 @@ public class Evaluation {
    private Employee idUserEmployee;
     private Company company;
     private Date date;
-    private float grade;
+    private double grade;
+
+
 
     public Evaluation() {
     }
-    public Evaluation(String id, Employee idEmployee, Employee idUserEmployee, Company company, Date date, float grade) {
+
+    public Evaluation(
+            String id, Employee idEmployee, Employee idUserEmployee,
+            Company company, Date date, double grade) {
         this.id = id;
         this.idEmployee = idEmployee;
         this.idUserEmployee = idUserEmployee;
@@ -25,13 +30,17 @@ public class Evaluation {
         this.date = date;
         this.grade = grade;
     }
+
+
     public String getIdAsValue() {
         return "'" + getId() + "'";
     }
 
     public String getDateAsValue()
     {
-        return "'" +String.valueOf(getDate())+ "'";
+
+
+        return  "'"+String.valueOf(getDate())+"'";
     }
 
     public String getGradeAsString()
@@ -88,11 +97,11 @@ public class Evaluation {
         return this;
     }
 
-    public float getGrade() {
+    public double getGrade() {
         return grade;
     }
 
-    public Evaluation setGrade(float grade) {
+    public Evaluation setGrade(double grade) {
         this.grade = grade;
         return this;
     }
@@ -117,7 +126,7 @@ public class Evaluation {
                             rs.getString("id_company"),
                             emailAddressesEntity))
                     .setDate(rs.getDate("evaluation_date"))
-                    .setGrade(rs.getFloat("grade"));
+                    .setGrade(rs.getDouble("grade"));
 
 
 

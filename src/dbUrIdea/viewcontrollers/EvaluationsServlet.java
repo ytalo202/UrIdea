@@ -18,14 +18,14 @@ import java.sql.Date;
 /**
  * Created by Yoshinon on 11/07/2017.
  */
-@WebServlet(name = "EvaluationsServlet",urlPatterns = "/eval")
+@WebServlet(name = "EvaluationsServlet",urlPatterns = "/eva")
 public class EvaluationsServlet extends HttpServlet {
 
     HRService service = new HRService();
     // Action View Paths
-    public static String EVALS_EDIT_URI = "/editEvaluation.jsp";
-    public static String EVALS_ADD_URI = "/newEvaluation.jsp";
-    public static String EVALS_INDEX_URI = "/listEvaluation.jsp";
+    public static String EVAL_EDIT_URI = "/editEvaluation.jsp";
+    public static String EVAL_ADD_URI = "/newEvaluation.jsp";
+    public static String EVAL_INDEX_URI = "/listEvaluation.jsp";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException,  IOException {
@@ -35,15 +35,15 @@ public class EvaluationsServlet extends HttpServlet {
             case "update": {
                 //Company company = service.getCompanyById(request.getParameter("id"));
 
-                Evaluation evaluation = new Evaluation();
-                evaluation.setId(request.getParameter("id"));
+                Evaluation evaluation = service.getEvaluationById(request.getParameter("id"));
+                //Evaluation evaluation = new Evaluation();
+                //evaluation.setId(request.getParameter("id"));
                 evaluation.setDate(Date.valueOf(request.getParameter("evaluation_date")));
-                evaluation.setGrade(Float.parseFloat(request.getParameter("grade")));
+                evaluation.setGrade(Double.parseDouble(request.getParameter("grade")));
                 String message = service.updateEvaluation(evaluation) ?
                         "Update success" :
                         "Error while updating";
                 log(message);
-                break;
             }
             case "create": {
 
@@ -58,7 +58,7 @@ public class EvaluationsServlet extends HttpServlet {
                 evaluation.setIdUserEmployee(employee.setId(request.getParameter("id_user_employee")));
                 evaluation.setId(request.getParameter("id"));
                 evaluation.setDate(Date.valueOf(request.getParameter("evaluation_date")));
-                evaluation.setGrade(Float.parseFloat(request.getParameter("grade")));
+                evaluation.setGrade(Integer.parseInt(request.getParameter("grade")));
                 String message = service.createEvaluation(evaluation) ?
                         "Create success" :
                         "Error while creating";
@@ -71,7 +71,7 @@ public class EvaluationsServlet extends HttpServlet {
         }
 
         RequestDispatcher dispatcher =
-                request.getRequestDispatcher(EVALS_INDEX_URI);
+                request.getRequestDispatcher(EVAL_INDEX_URI);
         dispatcher.forward(request, response);
 
 
@@ -83,7 +83,7 @@ public class EvaluationsServlet extends HttpServlet {
         String actionUri;
         switch(action) {
             case "add": {
-                actionUri = EVALS_ADD_URI;
+                actionUri = EVAL_ADD_URI;
                 request.setAttribute("action", "add");
                 break;
             }
@@ -91,11 +91,11 @@ public class EvaluationsServlet extends HttpServlet {
                 Evaluation evaluation = service.getEvaluationById(request.getParameter("id"));
                 request.setAttribute("evaluation", evaluation);
                 request.setAttribute("action", "edit");
-                actionUri = EVALS_EDIT_URI;
+                actionUri = EVAL_EDIT_URI;
                 break;
             }
             default:
-                actionUri = EVALS_INDEX_URI;
+                actionUri = EVAL_INDEX_URI;
         }
         RequestDispatcher dispatcher = request.getRequestDispatcher(actionUri);
         dispatcher.forward(request, response);

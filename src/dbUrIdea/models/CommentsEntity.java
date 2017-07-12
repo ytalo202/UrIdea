@@ -72,7 +72,7 @@ public class CommentsEntity extends BaseEntity {
     }
 
     public boolean add(Commentary commentary) {
-        String sql = "INSERT comments(id, id_evaluation,commentary_type,detail) " +
+        String sql = "INSERT comments(id, id_evaluation, comment_type, detail) " +
                 "VALUES("
                 + commentary.getIdAsValue() + ", "
                 + commentary.getEvaluation().getIdAsValue()+", "

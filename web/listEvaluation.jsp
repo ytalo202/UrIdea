@@ -17,17 +17,17 @@
 <c:forEach var="evaluation" items="${service.evaluations}">
 
     <p><c:out value=" ${evaluation.company.nameCompany} ---> "/>
-        <c:out value=" Evaluador ${evaluation.idEmployee.name} ---> "/>
-        <c:out value=" Evaluado ${evaluation.idUserEmployee.name} ---> "/>
+        <c:out value=" ${evaluation.idEmployee.name} ---> "/>
+        <c:out value=" ${evaluation.idUserEmployee.name} ---> "/>
         <c:out value=" ${evaluation.date} ---> "/>
         <c:out value=" ${evaluation.grade}"/>
 
-        <a href="eval?action=edit&id=<c:out value="${evaluation.id}"/>">
+        <a href="eva?action=edit&id=<c:out value="${evaluation.id}"/>">
             Edit
         </a>
     </p>
 </c:forEach>
-<a href="eval?action=add">Add Evaluation</a>
+<a href="eva?action=add">Add Evaluation</a>
 
 
 
