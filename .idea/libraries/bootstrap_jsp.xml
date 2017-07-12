@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="bootstrap.jsp">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/bootstrap.jsp.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
