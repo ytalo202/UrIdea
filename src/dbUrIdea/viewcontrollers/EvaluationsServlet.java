@@ -44,6 +44,7 @@ public class EvaluationsServlet extends HttpServlet {
                         "Update success" :
                         "Error while updating";
                 log(message);
+            break;
             }
             case "create": {
 
