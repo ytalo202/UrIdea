@@ -200,4 +200,11 @@ public class HRService {
 
         return getDataStore().createEvaluation(evaluation);
     }
+
+
+
+    public boolean createPayment(Payment payment) {
+
+        return getDataStore().createPayment(payment);
+    }
 }

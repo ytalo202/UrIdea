@@ -88,7 +88,7 @@ public class HRDataStore {
     }
 
 
-//-------------------EmailAddres
+//-------------------EmailAddress
 
     public EmailAddressesEntity getEmailAddressesEntity() {
 
@@ -240,14 +240,18 @@ public class HRDataStore {
                 getCompaniesEntity(),
                 getPaymentsTypesEntity(),
                 getEmailAddressesEntity());
-
-
     }
 
     public boolean createPayment(Payment payment) {
 
         return getPaymentsEntity().add(payment);
     }
+
+
+
+
+
+
 
     //-------------------PaymentType
 
@@ -281,7 +285,9 @@ public class HRDataStore {
     }
 
     public Payment findPaymentById(int id) {
-        return getPaymentsEntity().findById(id,companiesEntity,paymentsTypesEntity,emailAddressesEntity);
+
+        return getPaymentsEntity().findById(id,
+                getCompaniesEntity(),getPaymentsTypesEntity(),getEmailAddressesEntity());
     }
 
 
@@ -321,7 +327,7 @@ public class HRDataStore {
         return getCompaniesEntity().update(company);
     }
 
-       public boolean createEmail(EmailAddress emailAddress) {
+    public boolean createEmail(EmailAddress emailAddress) {
         return getEmailAddressesEntity().add(emailAddress);
     }
 
@@ -331,4 +337,3 @@ public class HRDataStore {
 
 
 }
-

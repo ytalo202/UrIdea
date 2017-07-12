@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Yoshinon on 17/06/2017.
+ * Created by Magnus on 17/06/2017.
  */
 public class PaymentsEntity extends BaseEntity {
 
@@ -25,7 +25,7 @@ public class PaymentsEntity extends BaseEntity {
                                  PaymentsTypesEntity paymentsTypesEntity,
                                  EmailAddressesEntity emailAddressesEntity)
     {
-        return findByCriteria("", companiesEntity, paymentsTypesEntity,emailAddressesEntity);
+        return findByCriteria("", companiesEntity, paymentsTypesEntity, emailAddressesEntity);
     }
 
     public Payment findById(int id,
@@ -63,24 +63,30 @@ public class PaymentsEntity extends BaseEntity {
 
 
     public boolean add(Payment payment) {
-        String sql = "INSERT INTO payments(id_companies, id_payments_type,card_number,name," +
-                "last_name,first_addressF,,second_addressF,date,location,country,code_zip" +
-                ",cell_phone_number,payment_amount) " +
+        String sql = "INSERT payments(" +
+                "id_companies,id_payment_type," +
+                "card_number,name, " +
+                "last_name,first_address,second_address,payment_date,location,country,code_zip, " +
+                "cell_phone_number," +
+                "payment_amount, " +
+                "expiry_month, expiry_day, security_code) " +
                 "VALUES("
-                + payment.getCompany().getIdAsString()+", "
-                + payment.getPaymentsType().getIdAsString()+", "
-                +payment.getCardNumberAsValue()+","
+                +payment.getCompany().getIdAsString()+", "
+                +payment.getPaymentsType().getIdAsString()+", "
+                +payment.getCardNumberAsValue()+", "
                 +payment.getNameAsValue()+", "
-                +payment.getLastNameFAsValue()+", "
-                +payment.getFirstAddressFAsValue()+", "
-                +payment.getSecondAddressFAsValue()+", "
+                +payment.getLastNameAsValue()+", "
+                +payment.getFirstAddressAsValue()+", "
+                +payment.getSecondAddressAsValue()+", "
                 +payment.getDateAsValue()+", "
                 +payment.getLocationAsValue()+", "
                 +payment.getCountryAsValue()+", "
                 +payment.getCodeZipAsValue()+", "
                 +payment.getCellPhoneNumberAsValue()+", "
-                +payment.getAmountAsValue()+
-
+                +payment.getAmountAsValue()+", "
+                +payment.getExpiryMonthAsString()+", "
+                +payment.getExpiryDayAsString()+", "
+                +payment.getSecurityCodeAsString()+
                 ")";
         return change(sql);
     }
@@ -95,14 +101,37 @@ public class PaymentsEntity extends BaseEntity {
                 "'" + id+ "'");
     }
 
-public   boolean update(Payment payment){
-        String sql="UPDATE payments SET name="+payment.getNameAsValue()+"" +
-                "WHERE id="+payment.getIdAsString();
+    public boolean update(Payment payment){
+        String sql="UPDATE payments SET " +
+                //"id_companies="+payment.getCompany().getIdAsString()+", " +
+                //"id_payment_type="+payment.getPaymentsType().getIdAsString()+", " +
+                "card_number = "+payment.getCardNumberAsValue()
+                +", " +
+                "name = "+payment.getNameAsValue()+", " +
+                "last_name = "+payment.getLastNameAsValue()+", " +
+                "first_address = "+payment.getFirstAddressAsValue()+", " +
+                "second_address = "+payment.getSecondAddressAsValue()+", " +
+                "payment_date = "+payment.getDateAsValue()+", " +
+                "location = "+payment.getLocationAsValue()+", " +
+                "country = "+payment.getCountryAsValue()+", " +
+                "code_zip = "+payment.getCodeZipAsValue()+", " +
+                "cell_phone_number = "+payment.getCellPhoneNumberAsValue()+", " +
+                "payment_amount = "+payment.getAmountAsValue()+", " +
+                "expiry_month = "+payment.getExpiryDayAsString()+", " +
+                "expiry_day = "+payment.getExpiryMonthAsString()+", " +
+                "security_code = "+payment.getSecurityCodeAsString()+
+                " WHERE id = "+payment.getIdAsString();
         return change(sql);
+    }
 
+    public boolean update(Evaluation evaluation) {
+        String sql = "UPDATE evaluations SET " +
+                "evaluation_date = "+evaluation.getDateAsValue()+ ", "+
+                "grade = "+evaluation.getGradeAsString()+
+                " WHERE id = " + evaluation.getIdAsString();
 
-}
-
+        return change(sql);
+    }
 
 
 
