@@ -9,7 +9,7 @@
 
 <form action="comp" method="post">
 
-<p>CodString<input type="text" name="id" /></p>
+
     <p>contraseña<input type="text" name="password" /></p>
     <p>Correo<input type="text" name="EmailId" /></p>
     <p>descrip<input type="text" name="description" /></p>

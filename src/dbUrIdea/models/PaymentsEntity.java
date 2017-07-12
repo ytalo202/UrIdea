@@ -28,12 +28,12 @@ public class PaymentsEntity extends BaseEntity {
         return findByCriteria("", companiesEntity, paymentsTypesEntity,emailAddressesEntity);
     }
 
-    public Payment findById(String id,
+    public Payment findById(int id,
                             CompaniesEntity companiesEntity,
                             PaymentsTypesEntity paymentsTypesEntity,
 
                             EmailAddressesEntity emailAddressesEntity) {
-        String criteria = "id = " + "'" + id + "'";
+        String criteria = "id = " + String.valueOf(id);
         return findByCriteria(criteria, companiesEntity,
                 paymentsTypesEntity,emailAddressesEntity).get(0);
     }
@@ -63,12 +63,11 @@ public class PaymentsEntity extends BaseEntity {
 
 
     public boolean add(Payment payment) {
-        String sql = "INSERT INTO payments(id, id_companies, id_payments_type,card_number,name," +
+        String sql = "INSERT INTO payments(id_companies, id_payments_type,card_number,name," +
                 "last_name,first_addressF,,second_addressF,date,location,country,code_zip" +
                 ",cell_phone_number,payment_amount) " +
                 "VALUES("
-                + payment.getIdAsString() + ", "
-                + payment.getCompany().getIdAsValue()+", "
+                + payment.getCompany().getIdAsString()+", "
                 + payment.getPaymentsType().getIdAsString()+", "
                 +payment.getCardNumberAsValue()+","
                 +payment.getNameAsValue()+", "
@@ -97,7 +96,8 @@ public class PaymentsEntity extends BaseEntity {
     }
 
 public   boolean update(Payment payment){
-        String sql="UPDATE payments SET name="+payment.getNameAsValue()+"WHERE id="+payment.getIdAsString();
+        String sql="UPDATE payments SET name="+payment.getNameAsValue()+"" +
+                "WHERE id="+payment.getIdAsString();
         return change(sql);
 
 

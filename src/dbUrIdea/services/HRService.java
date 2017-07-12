@@ -96,7 +96,7 @@ public class HRService {
     }
 
 
-    public Payment getPaymentById(String id) {
+    public Payment getPaymentById(int id) {
         return getDataStore().findPaymentById(
                 id);
 
@@ -110,16 +110,11 @@ public class HRService {
         return getDataStore().findEmailById(id);
     }
 
-    public EmailAddress getEmailAddressById(String id) {
-        return getDataStore().findEmailById(
-                Integer.parseInt(id));
-    }
-    public PaymentsType getPaymentsTypeById(String id) {
-        return getDataStore().findPaymentsTypeById(
-                Integer.parseInt(id));
-    }
+
+
 
     public PaymentsType getPaymentsTypeById(int id) {
+
         return getDataStore().findPaymentsTypeById(id);
     }
 
@@ -134,17 +129,9 @@ public class HRService {
 
     //----------------
 
-    public Commentary getCommentaryById(String id) {
+    public Commentary getCommentaryById(int id) {
         return getDataStore().findCommentaryById(id);
     }
-
-   /* public Commentary getCommentaryById(int id) {
-        return getDataStore().findPaymentsTypeById(" "+id);
-
-    }*/
-
-
-
 
 
     public boolean updateCommentary(Commentary commentary) {
@@ -153,7 +140,7 @@ public class HRService {
     }
 
 
-    public Company getCompanyById(String id) {
+    public Company getCompanyById(int id) {
 
         return getDataStore().findCompanyById(id);
     }
@@ -176,16 +163,14 @@ public class HRService {
 
         return getDataStore().createCompany(company);
     }
+//---------------------------------
 
-    public Company getComanyByEmailId(int id) {
-        return getDataStore().findCompanyByEmailId(id);
-    }
 
     public boolean createEmployee(Employee employee) {
 
         return getDataStore().createEmployee(employee);
     }
-    public Employee getEmployeeById(String id) {
+    public Employee getEmployeeById(int id) {
 
         return getDataStore().findEmployeeById(id);
     }
@@ -201,7 +186,7 @@ public class HRService {
     }
 
 
-    public Evaluation getEvaluationById(String id) {
+    public Evaluation getEvaluationById(int id) {
 
         return getDataStore().findEvaluationById(id);
     }

@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Cv {
- private String id;
+ private int id;
  private Employee employee;
  private int cvType;
  private String description;
@@ -18,7 +18,7 @@ public class Cv {
     public Cv() {
  }
 
-    public Cv(String id, Employee employee, int cvType, String description) {
+    public Cv(int id, Employee employee, int cvType, String description) {
         this.id = id;
         this.employee = employee;
         this.cvType = cvType;
@@ -26,19 +26,19 @@ public class Cv {
 
     }
 
-    public String getIdAsValue() {
-        return "'" + getId() + "'";
+    public String getIdAsString() {
+        return String.valueOf(getId());
     }
     public String getDescriptionAsValue() {
         return "'" + getDescription() + "'";
     }
     public String getcvTypeAsString(){return String.valueOf(getCvType());}
 
-    public String getId() {
+    public int getId() {
   return id;
  }
 
- public Cv setId(String id) {
+ public Cv setId(int id) {
   this.id = id;
   return this;
  }
@@ -80,8 +80,8 @@ public class Cv {
                            ) {
         try {
             return (new Cv())
-                    .setId(rs.getString("id"))
-                    .setEmployee(employeesEntity.findById(rs.getString("id_employee")
+                    .setId(rs.getInt("id"))
+                    .setEmployee(employeesEntity.findById(rs.getInt("id_employee")
                             , companiesEntity, emailAddressesEntity))
                     .setCvType(rs.getInt("cv_type"))
                     .setDescription(rs.getString("description"));

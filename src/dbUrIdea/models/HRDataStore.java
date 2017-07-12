@@ -139,7 +139,7 @@ public class HRDataStore {
                 getCompaniesEntity(), getEmailAddressesEntity()
         );
     }
-    public Employee findEmployeeById(String  id){
+    public Employee findEmployeeById(int  id){
         return getEmployeesEntity().findById(id ,getCompaniesEntity(),getEmailAddressesEntity());
     }
 
@@ -184,7 +184,7 @@ public class HRDataStore {
         return getEvaluationsEntity().update(evaluation);
     }
 
-    public Evaluation findEvaluationById(String id) {
+    public Evaluation findEvaluationById(int id) {
         return getEvaluationsEntity().findById(
                 id,getEmployeesEntity(),getCompaniesEntity(),getEmailAddressesEntity());
     }
@@ -280,7 +280,7 @@ public class HRDataStore {
         return getPaymentsEntity().update(payment);
     }
 
-    public Payment findPaymentById(String id) {
+    public Payment findPaymentById(int id) {
         return getPaymentsEntity().findById(id,companiesEntity,paymentsTypesEntity,emailAddressesEntity);
     }
 
@@ -303,7 +303,7 @@ public class HRDataStore {
 
 
 
-    public Commentary findCommentaryById(String id) {
+    public Commentary findCommentaryById(int id) {
         return getCommentsEntity().findById(id,
                 getEvaluationsEntity(),getCompaniesEntity(),getEmployeesEntity(),getEmailAddressesEntity());
     }
@@ -313,7 +313,7 @@ public class HRDataStore {
         return getCommentsEntity().update(commentary);
     }
 
-    public Company findCompanyById(String id) {
+    public Company findCompanyById(int id) {
         return getCompaniesEntity().findById(id,getEmailAddressesEntity());}
 
     public boolean updateCompany(Company company) {
@@ -328,15 +328,6 @@ public class HRDataStore {
     public boolean deleteEmailById(EmailAddress emailAddress) {
         return getEmailAddressesEntity().deleteById(emailAddress);
     }
-
-    public EmailAddress findEmailTypeByData(String email) {
-        return getEmailAddressesEntity().findByEmailData(email);
-    }
-
-
-
-    public Company findCompanyByEmailId(int id) {
-        return getCompaniesEntity().findByEmailId(id,getEmailAddressesEntity());}
 
 
 }

@@ -7,7 +7,7 @@ import java.sql.SQLException;
  * Created by UrIdea on 15/06/2017.
  */
     public class Commentary {
-    private String id;
+    private int id;
     private int commentaryType;
     private Evaluation evaluation;
     private String detail;
@@ -15,18 +15,18 @@ import java.sql.SQLException;
     public Commentary() {
     }
 
-    public Commentary(String id, int commentaryType, Evaluation evaluation, String detail) {
+    public Commentary(int id, int commentaryType, Evaluation evaluation, String detail) {
         this.id = id;
         this.commentaryType = commentaryType;
         this.evaluation = evaluation;
         this.detail = detail;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public Commentary setId(String id) {
+    public Commentary setId(int id) {
         this.id = id;
         return this;
     }
@@ -35,8 +35,8 @@ import java.sql.SQLException;
 
 
     public String getDetailAsValue(){return "'"+ getDetail()+"'";}
-    public String getIdAsValue() {
-        return "'" + getId() + "'";
+    public String getIdAsString() {
+        return String.valueOf(getId());
     }
 
     public int getCommentaryType() {
@@ -74,9 +74,9 @@ import java.sql.SQLException;
             , EmployeesEntity employeesEntity, EmailAddressesEntity emailAddressesEntity) {
         try {
             return (new Commentary())
-                    .setId(rs.getString("id"))
+                    .setId(rs.getInt("id"))
                     .setEvaluation(evaluationsEntity.findById
-                            (rs.getString("id_evaluation"),
+                            (rs.getInt("id_evaluation"),
                                     employeesEntity,companiesEntity,emailAddressesEntity))
                     .setCommentaryType(rs.getInt("comment_type"))
                     .setDetail(rs.getString("detail"))

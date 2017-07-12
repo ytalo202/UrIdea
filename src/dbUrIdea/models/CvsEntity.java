@@ -26,12 +26,12 @@ public class CvsEntity extends BaseEntity {
                 );
     }
 
-    public Cv findById(String id,
+    public Cv findById(int id,
                        EmployeesEntity employeesEntity,
                        CompaniesEntity companiesEntity,
                        EmailAddressesEntity emailAddressesEntity
                        ) {
-        String criteria = "id = " + "'" + id + "'";
+        String criteria = "id = " + String.valueOf(id);
         return findByCriteria(criteria, employeesEntity, companiesEntity,  emailAddressesEntity).get(0);
     }
 
@@ -64,9 +64,8 @@ public class CvsEntity extends BaseEntity {
     }
 //ponerlo al resto de enititys
     public boolean add(Cv cv) {
-        String sql = "INSERT INTO cvs(id, id_employee, cv_type, description) VALUES(" +
-                cv.getIdAsValue() + ", " +
-                cv.getEmployee().getIdAsValue()+", " +
+        String sql = "INSERT cvs(id_employee, cv_type, description) VALUES(" +
+                cv.getEmployee().getIdAsString()+", " +
                 cv.getcvTypeAsString()+ ", " +
                 cv.getDescriptionAsValue()+
                 ")";
@@ -76,13 +75,13 @@ public class CvsEntity extends BaseEntity {
     public boolean update(Cv cv) {
         String sql = "UPDATE cvs SET " +
                 "description = " + cv.getDescriptionAsValue() +
-                " WHERE id = " + cv.getIdAsValue();
+                " WHERE id = " + cv.getIdAsString();
         return change(sql);
     }
 
     public boolean delete(Cv cv) {
         String sql = "DELETE FROM cvs WHERE id = " +
-                cv.getIdAsValue();
+                cv.getIdAsString();
         return change(sql);
     }
 

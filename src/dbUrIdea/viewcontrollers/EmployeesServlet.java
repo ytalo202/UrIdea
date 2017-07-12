@@ -35,7 +35,7 @@ public class EmployeesServlet  extends HttpServlet {
                 //Company company = service.getCompanyById(request.getParameter("id"));
 
                 Employee employee= new Employee();
-                employee.setId(request.getParameter("id"));
+                employee.setId(Integer.parseInt(request.getParameter("id")));
                 employee.setEmployeeType(Integer.parseInt(request.getParameter("employee_type")));
                 employee.setPassword(request.getParameter("password"));
                 employee.setName(request.getParameter("employee_name"));
@@ -61,11 +61,12 @@ public class EmployeesServlet  extends HttpServlet {
                 EmailAddress emailAddress =new EmailAddress();
                 Company company =new Company();
 
-                employee.setCompany(company.setId(request.getParameter("id_company")));
+                employee.setCompany(company.setId(Integer.parseInt(
+                        request.getParameter("id_company"))));
                 employee.setEmailAddress(emailAddress.setId
                         (Integer.parseInt(request.getParameter("id_email_address"))));
 
-                employee.setId(request.getParameter("id"));
+               // employee.setId(Integer.parseInt(request.getParameter("id")));
                 employee.setEmployeeType(Integer.parseInt(request.getParameter("employee_type")));
                 employee.setPassword(request.getParameter("password"));
                 employee.setName(request.getParameter("employee_name"));
@@ -106,7 +107,7 @@ public class EmployeesServlet  extends HttpServlet {
                 break;
             }
             case "edit": {
-                Employee employee = service.getEmployeeById(request.getParameter("id"));
+                Employee employee = service.getEmployeeById(Integer.parseInt(request.getParameter("id")));
                 request.setAttribute("employee", employee);
                 request.setAttribute("action", "edit");
                 actionUri = EMP_EDIT_URI;

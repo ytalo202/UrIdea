@@ -24,8 +24,8 @@ public class CompaniesEntity extends BaseEntity {
         return findByCriteria("", emailAddressesEntity);
     }
 
-    public Company findById(String id, EmailAddressesEntity emailAddressEntit) {
-        String criteria = "id = " + "'" + id + "'";
+    public Company findById(int id, EmailAddressesEntity emailAddressEntit) {
+        String criteria = "id = " + String.valueOf(id);
         return findByCriteria(criteria,emailAddressEntit).get(0);
     }
     public Company findByName(String name, EmailAddressesEntity emailAddressEntit) {
@@ -69,11 +69,10 @@ public class CompaniesEntity extends BaseEntity {
     }
 
     public boolean add(Company company) {
-        String sql = "INSERT companies (id, " +
+        String sql = "INSERT companies ("+
                 "password, name_company, description, company_state," +
                 "id_email_address, address, phone_number ) " +
                 "VALUES(" +
-                company.getIdAsValue() + ", " +
                 company.getPasswordAsValue() + ", " +
                 company.getNameCompanyAsValue()+ ", " +
                 company.getDescriptionAsValue()+ ", " +
@@ -91,13 +90,13 @@ public class CompaniesEntity extends BaseEntity {
                 "company_state = " + company.getCompanyStateAsString() + ", " +
                 "address = "+company.getAddressAsValue()+ ", " +
                 "phone_number = "+company.getPhoneNumberAsString()+
-                " WHERE id = " + company.getIdAsValue();
+                " WHERE id = " + company.getIdAsString();
         return change(sql);
     }
 
     public boolean delete(Company company) {
         String sql = "DELETE FROM companies WHERE id = " +
-                company.getIdAsValue();
+                company.getIdAsString();
         return change(sql);
     }
     public boolean delete(String id) {

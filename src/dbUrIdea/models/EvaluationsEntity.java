@@ -28,12 +28,12 @@ public class EvaluationsEntity extends BaseEntity{
         return findByCriteria("", employeesEntity, companiesEntity,
                 emailAddressesEntity);
     }
-    public Evaluation findById(String id,
+    public Evaluation findById(int id,
                              EmployeesEntity employeesEntity,
                              CompaniesEntity companiesEntity,
                              EmailAddressesEntity emailAddressesEntity
                              ) {
-        String criteria = "id = " + "'" + id + "'";
+        String criteria = "id = " + String.valueOf(id);
         return findByCriteria(criteria, employeesEntity, companiesEntity,
                 emailAddressesEntity).get(0);
     }
@@ -85,17 +85,17 @@ public class EvaluationsEntity extends BaseEntity{
     }
 
     public boolean update(Evaluation evaluation) {
-        String sql = "UPDATE evaluations SET" +
+        String sql = "UPDATE evaluations SET " +
                  "evaluation_date = "+evaluation.getDateAsValue()+ ", "+
                 "grade = "+evaluation.getGradeAsString()+
-                " WHERE id = " + evaluation.getIdAsValue();
+                " WHERE id = " + evaluation.getIdAsString();
 
         return change(sql);
     }
 
     public boolean delete(Evaluation evaluation) {
         String sql = "DELETE FROM evaluations WHERE id = " +
-                evaluation.getIdAsValue();
+                evaluation.getIdAsString();
         return change(sql);
     }
     public boolean delete(String id) {
@@ -105,13 +105,12 @@ public class EvaluationsEntity extends BaseEntity{
     }
 
     public boolean add(Evaluation evaluation) {
-        String sql = "INSERT evaluations(id, id_evaluator, id_user_employee," +
+        String sql = "INSERT evaluations(id_evaluator, id_user_employee," +
                 " id_company, evaluation_date, grade) " +
                 "VALUES("
-                +evaluation.getIdAsValue() + ", "
-                +evaluation.getIdEmployee().getIdAsValue()+ ", "
-                +evaluation.getIdUserEmployee().getIdAsValue()+ ", "
-                +evaluation.getCompany().getIdAsValue()+ ", "
+                +evaluation.getIdEmployee().getIdAsString()+ ", "
+                +evaluation.getIdUserEmployee().getIdAsString()+ ", "
+                +evaluation.getCompany().getIdAsString()+ ", "
                 +evaluation.getDateAsValue()+ ", "
                 +evaluation.getGradeAsString()+ ") ";
 

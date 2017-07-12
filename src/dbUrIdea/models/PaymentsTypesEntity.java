@@ -60,8 +60,8 @@ public class PaymentsTypesEntity extends BaseEntity{
     }
 
     public boolean add(PaymentsType paymentsType) {
-        String sql = "INSERT INTO payment_types(id, payment_type_name) " +
-                "VALUES(" + paymentsType.getIdAsString() + ", " +
+        String sql = "INSERT INTO payment_types(payment_type_name) " +
+                "VALUES("+
                 paymentsType.getNameAsValue() + ")";
         return change(sql);
     }

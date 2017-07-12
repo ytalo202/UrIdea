@@ -28,13 +28,13 @@ public class CommentsEntity extends BaseEntity {
                 companiesEntity,employeesEntity,emailAddressesEntity);
     }
 
-    public Commentary findById(String id,
+    public Commentary findById(int id,
                                EvaluationsEntity evaluationsEntity,
                                CompaniesEntity companiesEntity,
                                EmployeesEntity employeesEntity,
                                EmailAddressesEntity emailAddressesEntity
     ) {
-        String criteria = "id = " + "'" + id + "'";
+        String criteria = "id = " + String.valueOf(id);
         return findByCriteria(criteria,evaluationsEntity,
                 companiesEntity,employeesEntity,emailAddressesEntity).get(0);
     }
@@ -62,7 +62,7 @@ public class CommentsEntity extends BaseEntity {
     }
     public boolean delete(Commentary commentary) {
         String sql = "DELETE FROM commentary WHERE id = " +
-                commentary.getIdAsValue();
+                commentary.getIdAsString();
         return change(sql);
     }
     public boolean delete(String id) {
@@ -72,10 +72,9 @@ public class CommentsEntity extends BaseEntity {
     }
 
     public boolean add(Commentary commentary) {
-        String sql = "INSERT comments(id, id_evaluation, comment_type, detail) " +
+        String sql = "INSERT comments(id_evaluation, comment_type, detail) " +
                 "VALUES("
-                + commentary.getIdAsValue() + ", "
-                + commentary.getEvaluation().getIdAsValue()+", "
+                + commentary.getEvaluation().getIdAsString()+", "
                 + commentary.getCommentaryTypeAsString()+", "
                 + commentary.getDetailAsValue()+") ";
 
@@ -85,7 +84,7 @@ public class CommentsEntity extends BaseEntity {
         String sql = "UPDATE comments SET comment_type = "
                 + commentary.getCommentaryTypeAsString() +",detail = "
                 + commentary.getDetailAsValue()
-                + " WHERE id = " + commentary.getIdAsValue();
+                + " WHERE id = " + commentary.getIdAsString();
         return change(sql);
     }
 

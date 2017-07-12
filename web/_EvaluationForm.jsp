@@ -19,8 +19,8 @@
             <c:out value="${action == 'edit' ? 'readonly=\"readonly\"' : '' }"/>
     />
 
-    <input type="text" name="date" value="${evaluation.date} "/>
-    <input type="text" name="note" value="${evaluation.grade}"/>
+    <input type="text" name="evaluation_date" value="${evaluation.date} "/>
+    <input type="text" name="grade" value="${evaluation.grade}"/>
 
     <input type="hidden" value="update" name="action"/>
     <input type="submit"/>

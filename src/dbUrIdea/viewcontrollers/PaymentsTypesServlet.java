@@ -31,7 +31,8 @@ public class PaymentsTypesServlet  extends HttpServlet {
         String action = request.getParameter("action");
         switch(action) {
             case "update": {
-                PaymentsType paymentsType = service.getPaymentsTypeById(request.getParameter("id"));
+                PaymentsType paymentsType = service.getPaymentsTypeById(
+                        Integer.parseInt(request.getParameter("id")));
 
                 paymentsType.setName(request.getParameter("name"));
                 String message = service.updatePaymentsType(paymentsType) ?
@@ -59,7 +60,8 @@ public class PaymentsTypesServlet  extends HttpServlet {
                 break;
             }
             case "edit": {
-                PaymentsType paymentsType = service.getPaymentsTypeById(request.getParameter("id"));
+                PaymentsType paymentsType = service.getPaymentsTypeById(Integer.parseInt(
+                        request.getParameter("id")));
                 request.setAttribute("paymentsType", paymentsType);
                 request.setAttribute("action", "edit");
                 actionUri = PAYMENTSTYPE_EDIT_URI;

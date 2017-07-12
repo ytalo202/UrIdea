@@ -28,7 +28,8 @@ public class paymentServlet extends HttpServlet {
         String action = request.getParameter("action");
         switch(action) {
             case  "update": {
-                Payment payment = service.getPaymentById(request.getParameter("id"));
+                Payment payment = service.getPaymentById(Integer.parseInt(
+                        request.getParameter("id")));
                 payment.setName(request.getParameter("name"));
                 String message = service.updatePayment(payment) ?
                         "Update success" :
@@ -55,7 +56,8 @@ public class paymentServlet extends HttpServlet {
                 break;
             }
             case "edit": {
-                Payment payment = service.getPaymentById(request.getParameter("id"));
+                Payment payment = service.getPaymentById(Integer.parseInt(
+                        request.getParameter("id")));
                 request.setAttribute("payment", payment);
                 request.setAttribute("action", "edit");
                 actionUri = REGIONS_EDIT_URI;

@@ -33,7 +33,7 @@ public class CommentsServlet extends HttpServlet {
             case "update": {
                 //Commentary commentary = service.getCommentaryById(request.getParameter("id"));
                 Commentary commentary = new Commentary();
-                commentary.setId(request.getParameter("id"));
+                commentary.setId(Integer.parseInt(request.getParameter("id")));
                 commentary.setCommentaryType(Integer.parseInt(request.getParameter("commentaryType")));
                 commentary.setDetail(request.getParameter("detail"));
                 String message = service.updateCommentary(commentary) ?
@@ -47,9 +47,9 @@ public class CommentsServlet extends HttpServlet {
                 //Company company= service.getComanyByEmailId(Integer.parseInt(request.getParameter("EmailId")));
                 Evaluation evaluation =new Evaluation();
                 Commentary commentary = new Commentary();
-                commentary.setEvaluation(evaluation.setId(request.getParameter
-                        ("id_evaluation")));
-                commentary.setId(request.getParameter("id"));
+                commentary.setEvaluation(evaluation.setId(Integer.parseInt(request.getParameter("id_evaluation"))));
+
+               // commentary.setId(Integer.parseInt(request.getParameter("id")));
                 commentary.setCommentaryType(Integer.parseInt
                         (request.getParameter("commentaryType")));
                 commentary.setDetail(request.getParameter("detail"));
@@ -82,7 +82,8 @@ public class CommentsServlet extends HttpServlet {
                 break;
             }
             case "edit": {
-                Commentary commentary = service.getCommentaryById(request.getParameter("id"));
+                Commentary commentary = service.getCommentaryById(Integer.parseInt(
+                        request.getParameter("id")));
                 request.setAttribute("commentary", commentary);
                 request.setAttribute("action", "edit");
                 actionUri = COMMS_EDIT_URI;

@@ -33,10 +33,9 @@ public class EmailAddreessServlet extends HttpServlet {
             case "update": {
 
                 EmailAddress emailAddress= new EmailAddress();
-                //EmailAddress emailAddress = service.getEmailAddressById
-                // (request.getParameter("idE"));
+               //EmailAddress emailAddress = service.getEmailAddressById(Integer.parseInt(request.getParameter("id")));
 
-                emailAddress.setId(Integer.parseInt(request.getParameter("idE")));
+               emailAddress.setId(Integer.parseInt(request.getParameter("id")));
                 emailAddress.setEmailData(request.getParameter("emailData"));
                 String message = service.updateEmail(emailAddress) ?
                         "Update success" :
@@ -58,7 +57,7 @@ public class EmailAddreessServlet extends HttpServlet {
 
                 EmailAddress emailAddress= new EmailAddress();
                 //EmailAddress emailAddress = service.getEmailAddressById(request.getParameter("idE"));
-                emailAddress.setId(Integer.parseInt(request.getParameter("idE")));
+                emailAddress.setId(Integer.parseInt(request.getParameter("id")));
 
 
                 String message = service.deleteEmailById(emailAddress) ?
@@ -90,7 +89,7 @@ public class EmailAddreessServlet extends HttpServlet {
             }
             case "edit": {
                 EmailAddress emailAddress = service.getEmailAddressById
-                        (request.getParameter("idE"));
+                        (Integer.parseInt(request.getParameter("id")));
                 request.setAttribute("emailAddress", emailAddress);
                 request.setAttribute("action", "edit");
                 actionUri = EMAILS_EDIT_URI;

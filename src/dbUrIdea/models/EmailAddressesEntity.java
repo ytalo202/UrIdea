@@ -29,8 +29,7 @@ public class EmailAddressesEntity extends BaseEntity {
 
 
     public EmailAddress findById(int id) {
-        String criteria = " id = " +
-                String.valueOf(id);
+        String criteria = " id = " + String.valueOf(id);
 
         return findByCriteria(criteria).get(0);
     }

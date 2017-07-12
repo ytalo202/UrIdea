@@ -8,7 +8,7 @@ import java.util.Date;
  * Created by UrIdea on 14/06/2017.
  */
 public class Employee {
-    private String id;
+    private int id;
     private String password;
     private String name;
     private String firstLastName;
@@ -26,7 +26,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(String id, String password, String name, String firstLastName, String secondLastName, int phoneNumber, int cellPhoneNumber, int dni, String address, String department, Date birthdate, Company company, int employeeType, EmailAddress emailAddress) {
+    public Employee(int id, String password, String name, String firstLastName, String secondLastName, int phoneNumber, int cellPhoneNumber, int dni, String address, String department, Date birthdate, Company company, int employeeType, EmailAddress emailAddress) {
         this.id = id;
         this.password = password;
         this.name = name;
@@ -44,17 +44,17 @@ public class Employee {
     }
 
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public Employee setId(String id) {
+    public Employee setId(int id) {
         this.id = id;
         return this;
     }
 
-    public String getIdAsValue() {
-        return "'" + getId() + "'";
+    public String getIdAsString() {
+        return String.valueOf(getId());
     }
 
     public String getPasswordAsValue() {
@@ -211,9 +211,9 @@ public class Employee {
                                  EmailAddressesEntity emailAddressesEntity) {
         try {
             return (new Employee())
-                    .setId(rs.getString("id"))
+                    .setId(rs.getInt("id"))
                     .setCompany(companiesEntity.findById(
-                            rs.getString("id_company"),
+                            rs.getInt("id_company"),
                              emailAddressesEntity))
                     .setEmailAddress(emailAddressesEntity.findById(
                             rs.getInt("id_email_address")))

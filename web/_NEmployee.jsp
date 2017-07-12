@@ -10,7 +10,7 @@
 <form action="emp" method="post">
 
 
-    <p>id  String<input type="text" name="id" value="${employee.id}"/></p>
+
     <p>id_company<input type="text" name="id_company" value="${employee.company.nameCompany}"/></p>
     <p>id_email_address int<input type="text" name="id_email_address" value="${employee.emailAddress.emailData}"/></p>
    <p>employee_type int <input type="text" name="employee_type" value="${employee.employeeType}"/></p>

@@ -26,12 +26,12 @@ public class EmployeesEntity extends BaseEntity {
                                   EmailAddressesEntity emailAddressesEntity) {
         return findByCriteria("", companiesEntity, emailAddressesEntity);
     }
-    public Employee findById(String id,
+    public Employee findById(int id,
                              CompaniesEntity companiesEntity,
 
                              EmailAddressesEntity emailAddressesEntity
                             ) {
-        String criteria = "id = " + "'" + id + "'";
+        String criteria = "id = " + String.valueOf(id);
         return findByCriteria(criteria, companiesEntity,
                 emailAddressesEntity ).get(0);
     }
@@ -117,19 +117,18 @@ public class EmployeesEntity extends BaseEntity {
                 "address = "+ employee.getAddressAsValue()+ ", " +
                 "department = "+employee.getDepartmentAsValue()+ ", " +
                "birthdate = "+employee.getBirthdateAsValue()+
-                " WHERE id = " + employee.getIdAsValue();
+                " WHERE id = " + employee.getIdAsString();
 
         return change(sql);
     }
 
     public boolean add(Employee employee) {
         String sql = "INSERT employees(" +
-                "id, id_company, id_email_address, employee_type, password, " +
+                "id_company, id_email_address, employee_type, password, " +
                 "employee_name, employee_first_last_name, employee_second_last_name," +
                 " dni, phone_number, cell_phone_number, address, department, birthdate) " +
                 "VALUES("
-                +employee.getIdAsValue() + ", "
-                +employee.getCompany().getIdAsValue()+ ", "
+                +employee.getCompany().getIdAsString()+ ", "
                 +employee.getEmailAddress().getIdAsString()+ ", "
                 +employee.getEmployeeTypeAsString()+ ", "
                 +employee.getPasswordAsValue()+ ", "
@@ -150,7 +149,7 @@ public class EmployeesEntity extends BaseEntity {
 
     public boolean delete(Employee employee) {
         String sql = "DELETE FROM employees WHERE id = " +
-                employee.getIdAsValue();
+                employee.getIdAsString();
         return change(sql);
     }
     public boolean delete(String id) {

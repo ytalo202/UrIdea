@@ -7,7 +7,7 @@ import java.sql.SQLException;
  * Created by UrIdea on 14/06/2017.
  */
 public class Company {
-    private String id;
+    private int id;
     private String password;
     private String nameCompany;
     private EmailAddress emailAdress;
@@ -19,7 +19,7 @@ public class Company {
     public Company() {
     }
 
-    public Company(String id, String password, String nameCompany, EmailAddress emailAdress, String description, String address, int phoneNumber, int companyState) {
+    public Company(int id, String password, String nameCompany, EmailAddress emailAdress, String description, String address, int phoneNumber, int companyState) {
         this.id = id;
         this.password = password;
         this.nameCompany = nameCompany;
@@ -30,8 +30,8 @@ public class Company {
         this.companyState = companyState;
     }
 
-    public String getIdAsValue() {
-        return "'" + getId() + "'";
+    public String getIdAsString() {
+        return String.valueOf(getId());
     }
     public String getPasswordAsValue() {
         return "'" + getPassword() + "'";
@@ -51,11 +51,11 @@ public class Company {
     }
     public String getCompanyStateAsString(){return String.valueOf(getCompanyState());}
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public Company setId(String id) {
+    public Company setId(int id) {
         this.id = id;
         return this;
     }
@@ -126,7 +126,7 @@ public class Company {
     public static Company build(ResultSet rs, EmailAddressesEntity emailAddressEntity) {
         try {
             return (new Company())
-                    .setId(rs.getString("id"))
+                    .setId(rs.getInt("id"))
                     .setPassword(rs.getString("password"))
                     .setNameCompany(rs.getString("name_company"))
                     .setDescription(rs.getString("description"))

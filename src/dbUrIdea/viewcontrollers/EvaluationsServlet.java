@@ -35,11 +35,11 @@ public class EvaluationsServlet extends HttpServlet {
             case "update": {
                 //Company company = service.getCompanyById(request.getParameter("id"));
 
-                Evaluation evaluation = service.getEvaluationById(request.getParameter("id"));
-                //Evaluation evaluation = new Evaluation();
-                //evaluation.setId(request.getParameter("id"));
+                //Evaluation evaluation = service.getEvaluationById(Integer.parseInt(request.getParameter("id")));
+                Evaluation evaluation = new Evaluation();
+                evaluation.setId(Integer.parseInt(request.getParameter("id")));
                 evaluation.setDate(Date.valueOf(request.getParameter("evaluation_date")));
-                evaluation.setGrade(Double.parseDouble(request.getParameter("grade")));
+                evaluation.setGrade(Integer.parseInt(request.getParameter("grade")));
                 String message = service.updateEvaluation(evaluation) ?
                         "Update success" :
                         "Error while updating";
@@ -53,10 +53,11 @@ public class EvaluationsServlet extends HttpServlet {
                 Company company =new Company();
                 Evaluation evaluation = new Evaluation();
                 Employee employee =new Employee();
-                evaluation.setCompany(company.setId(request.getParameter("id_company")));
-                evaluation.setIdEmployee(employee.setId(request.getParameter("id_evaluator")));
-                evaluation.setIdUserEmployee(employee.setId(request.getParameter("id_user_employee")));
-                evaluation.setId(request.getParameter("id"));
+                evaluation.setCompany(company.setId(Integer.parseInt(request.getParameter("id_company"))));
+                evaluation.setIdEmployee(employee.setId(Integer.parseInt(request.getParameter("id_evaluator"))));
+                evaluation.setIdUserEmployee(employee.setId(Integer.parseInt(
+                        request.getParameter("id_user_employee"))));
+               // evaluation.setId(Integer.parseInt(request.getParameter("id")));
                 evaluation.setDate(Date.valueOf(request.getParameter("evaluation_date")));
                 evaluation.setGrade(Integer.parseInt(request.getParameter("grade")));
                 String message = service.createEvaluation(evaluation) ?
@@ -88,7 +89,8 @@ public class EvaluationsServlet extends HttpServlet {
                 break;
             }
             case "edit": {
-                Evaluation evaluation = service.getEvaluationById(request.getParameter("id"));
+                Evaluation evaluation = service.getEvaluationById(
+                        Integer.parseInt(request.getParameter("id")));
                 request.setAttribute("evaluation", evaluation);
                 request.setAttribute("action", "edit");
                 actionUri = EVAL_EDIT_URI;

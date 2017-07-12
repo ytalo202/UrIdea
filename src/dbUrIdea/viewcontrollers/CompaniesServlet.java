@@ -34,7 +34,7 @@ public class CompaniesServlet extends HttpServlet {
                 //Company company = service.getCompanyById(request.getParameter("id"));
 
                 Company company= new Company();
-                company.setId(request.getParameter("id"));
+                company.setId(Integer.parseInt(request.getParameter("id")));
                 company.setPassword(request.getParameter("password"));
                 company.setNameCompany(request.getParameter("nameCompany"));
                 company.setDescription(request.getParameter("description"));
@@ -55,7 +55,7 @@ public class CompaniesServlet extends HttpServlet {
                 //Company company= service.getComanyByEmailId(Integer.parseInt(request.getParameter("EmailId")));
                EmailAddress emailAddress =new EmailAddress();
                 Company company =new Company();
-                company.setId(request.getParameter("id"));
+                //company.setId(Integer.parseInt(request.getParameter("id")));
                 company.setPassword(request.getParameter("password"));
                 company.setNameCompany(request.getParameter("nameCompany"));
                 company.setDescription(request.getParameter("description"));
@@ -100,7 +100,8 @@ public class CompaniesServlet extends HttpServlet {
                 break;
             }
             case "edit": {
-                Company company = service.getCompanyById(request.getParameter("id"));
+                Company company = service.getCompanyById(Integer.parseInt(
+                        request.getParameter("id")));
                 request.setAttribute("company", company);
                 request.setAttribute("action", "edit");
                 actionUri = COMPS_EDIT_URI;

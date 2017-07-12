@@ -8,12 +8,12 @@ import java.util.Date;
  * Created by UrIdea on 14/06/2017.
  */
 public class Evaluation {
-    private String id;
+    private int id;
     private Employee idEmployee;
    private Employee idUserEmployee;
     private Company company;
     private Date date;
-    private double grade;
+    private int grade;
 
 
 
@@ -21,8 +21,8 @@ public class Evaluation {
     }
 
     public Evaluation(
-            String id, Employee idEmployee, Employee idUserEmployee,
-            Company company, Date date, double grade) {
+            int id, Employee idEmployee, Employee idUserEmployee,
+            Company company, Date date, int grade) {
         this.id = id;
         this.idEmployee = idEmployee;
         this.idUserEmployee = idUserEmployee;
@@ -32,8 +32,8 @@ public class Evaluation {
     }
 
 
-    public String getIdAsValue() {
-        return "'" + getId() + "'";
+    public String getIdAsString() {
+        return String.valueOf(getId());
     }
 
     public String getDateAsValue()
@@ -52,11 +52,11 @@ public class Evaluation {
 
 
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public Evaluation setId(String id) {
+    public Evaluation setId(int id) {
         this.id = id;
         return this;
     }
@@ -97,11 +97,11 @@ public class Evaluation {
         return this;
     }
 
-    public double getGrade() {
+    public int getGrade() {
         return grade;
     }
 
-    public Evaluation setGrade(double grade) {
+    public Evaluation setGrade(int grade) {
         this.grade = grade;
         return this;
     }
@@ -113,20 +113,20 @@ public class Evaluation {
     ) {
         try {
             return (new Evaluation())
-                    .setId(rs.getString("id"))
+                    .setId(rs.getInt("id"))
                     .setIdEmployee(employeesEntity.findById(
-                            rs.getString("id_evaluator")
+                            rs.getInt("id_evaluator")
                             , companiesEntity, emailAddressesEntity
                             ))
                     .setIdUserEmployee(employeesEntity.findById(
-                            rs.getString("id_user_employee")
+                            rs.getInt("id_user_employee")
                             , companiesEntity, emailAddressesEntity
                            ))
                     .setCompany(companiesEntity.findById(
-                            rs.getString("id_company"),
+                            rs.getInt("id_company"),
                             emailAddressesEntity))
                     .setDate(rs.getDate("evaluation_date"))
-                    .setGrade(rs.getDouble("grade"));
+                    .setGrade(rs.getInt("grade"));
 
 
 

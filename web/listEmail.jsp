@@ -24,7 +24,7 @@
 
 
             <form action="email" method="post">
-    <input type="text" name="idE" value="${emailAddress.id}"
+    <input type="text" name="id" value="${emailAddress.id}"
     <c:out value="${action == 'edit' ? 'readonly=\"readonly\"' : '' }"/>
     />
             <input type="hidden" value="delete" name="action"/>

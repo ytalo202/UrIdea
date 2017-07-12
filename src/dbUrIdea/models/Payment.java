@@ -190,7 +190,7 @@ public class Payment {
             return (new Payment())
                    .setId(rs.getInt("id"))
                    .setCompany(companiesEntity.findById(
-                           rs.getString("id_companies"), emailAddressesEntity))
+                           rs.getInt("id_companies"), emailAddressesEntity))
                    .setPaymentsType(paymentsTypesEntity.findById(
                            rs.getInt("id_payment_type")))
                    .setCardNumber(rs.getString("card_number"))
