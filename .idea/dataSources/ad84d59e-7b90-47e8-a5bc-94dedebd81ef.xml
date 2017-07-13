@@ -6,379 +6,371 @@
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
-    <schema id="3" parent="1" name="db_sport"/>
-    <schema id="4" parent="1" name="hr"/>
-    <schema id="5" parent="1" name="information_schema"/>
-    <schema id="6" parent="1" name="mysql"/>
-    <schema id="7" parent="1" name="performance_schema"/>
-    <schema id="8" parent="1" name="sakila"/>
-    <schema id="9" parent="1" name="sys"/>
-    <schema id="10" parent="1" name="world"/>
-    <table id="11" parent="2" name="comments"/>
-    <table id="12" parent="2" name="companies"/>
-    <table id="13" parent="2" name="cvs"/>
-    <table id="14" parent="2" name="email_addresses"/>
-    <table id="15" parent="2" name="employees"/>
-    <table id="16" parent="2" name="evaluations"/>
-    <table id="17" parent="2" name="payment_types"/>
-    <table id="18" parent="2" name="payments"/>
-    <column id="19" parent="11" name="id">
-      <Position>1</Position>
-      <DataType>varchar(10)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="20" parent="11" name="id_evaluation">
-      <Position>2</Position>
-      <DataType>varchar(25)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="21" parent="11" name="comment_type">
-      <Position>3</Position>
-      <DataType>int(2)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="22" parent="11" name="detail">
-      <Position>4</Position>
-      <DataType>varchar(100)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <index id="23" parent="11" name="fk_evidences_evaluations1_idx">
-      <ColNames>id_evaluation</ColNames>
-    </index>
-    <index id="24" parent="11" name="id_UNIQUE">
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="25" parent="11" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id
-id_evaluation</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <key id="26" parent="11" name="id_UNIQUE">
-      <ColNames>id</ColNames>
-      <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
-    </key>
-    <foreign-key id="27" parent="11" name="fk_evidences_evaluations1">
-      <ColNames>id_evaluation</ColNames>
-      <RefSchemaName>evadb</RefSchemaName>
-      <RefTableName>evaluations</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="28" parent="12" name="id">
-      <Position>1</Position>
-      <DataType>varchar(35)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="29" parent="12" name="password">
-      <Position>2</Position>
-      <DataType>varchar(45)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="30" parent="12" name="name_company">
-      <Position>3</Position>
-      <DataType>varchar(80)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="31" parent="12" name="description">
-      <Position>4</Position>
-      <DataType>varchar(255)|0</DataType>
-    </column>
-    <column id="32" parent="12" name="company_state">
-      <Position>5</Position>
-      <DataType>int(2)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="33" parent="12" name="id_email_address">
-      <Position>6</Position>
-      <DataType>int(15)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="34" parent="12" name="photo">
-      <Position>7</Position>
-      <DataType>mediumblob|0</DataType>
-    </column>
-    <column id="35" parent="12" name="address">
-      <Position>8</Position>
-      <DataType>varchar(100)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="36" parent="12" name="phone_number">
-      <Position>9</Position>
-      <DataType>int(20)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <index id="37" parent="12" name="fk_companies_emails_address1_idx">
-      <ColNames>id_email_address</ColNames>
-    </index>
-    <index id="38" parent="12" name="id_email_address_UNIQUE">
-      <ColNames>id_email_address</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <index id="39" parent="12" name="id_UNIQUE">
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="40" parent="12" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id
-id_email_address</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <key id="41" parent="12" name="id_UNIQUE">
-      <ColNames>id</ColNames>
-      <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
-    </key>
-    <key id="42" parent="12" name="id_email_address_UNIQUE">
-      <ColNames>id_email_address</ColNames>
-      <UnderlyingIndexName>id_email_address_UNIQUE</UnderlyingIndexName>
-    </key>
-    <foreign-key id="43" parent="12" name="fk_companies_emails_address1">
-      <ColNames>id_email_address</ColNames>
-      <RefSchemaName>evadb</RefSchemaName>
-      <RefTableName>email_addresses</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="44" parent="13" name="id">
-      <Position>1</Position>
-      <DataType>varchar(30)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="45" parent="13" name="id_employee">
-      <Position>2</Position>
-      <DataType>varchar(25)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="46" parent="13" name="cv_type">
-      <Position>3</Position>
-      <DataType>int(2)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="47" parent="13" name="description">
-      <Position>4</Position>
-      <DataType>varchar(100)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <index id="48" parent="13" name="fk_cvs_employees1_idx">
-      <ColNames>id_employee</ColNames>
-    </index>
-    <index id="49" parent="13" name="id_UNIQUE">
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="50" parent="13" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id
-id_employee</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <key id="51" parent="13" name="id_UNIQUE">
-      <ColNames>id</ColNames>
-      <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
-    </key>
-    <foreign-key id="52" parent="13" name="fk_cvs_employees1">
-      <ColNames>id_employee</ColNames>
-      <RefSchemaName>evadb</RefSchemaName>
-      <RefTableName>employees</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="53" parent="14" name="id">
+    <schema id="3" parent="1" name="hr"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="sys"/>
+    <schema id="8" parent="1" name="bdpresta"/>
+    <schema id="9" parent="1" name="mydb"/>
+    <table id="10" parent="2" name="comments"/>
+    <table id="11" parent="2" name="companies"/>
+    <table id="12" parent="2" name="cvs"/>
+    <table id="13" parent="2" name="email_addresses"/>
+    <table id="14" parent="2" name="employees"/>
+    <table id="15" parent="2" name="evaluations"/>
+    <table id="16" parent="2" name="payment_types"/>
+    <table id="17" parent="2" name="payments"/>
+    <column id="18" parent="10" name="id">
       <Position>1</Position>
       <DataType>int(15)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="54" parent="14" name="email_data">
+    <column id="19" parent="10" name="id_evaluation">
+      <Position>2</Position>
+      <DataType>int(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="10" name="comment_type">
+      <Position>3</Position>
+      <DataType>int(2)|0</DataType>
+    </column>
+    <column id="21" parent="10" name="detail">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <index id="22" parent="10" name="fk_evidences_evaluations1_idx">
+      <ColNames>id_evaluation</ColNames>
+    </index>
+    <index id="23" parent="10" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="24" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id
+id_evaluation</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="25" parent="10" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
+    </key>
+    <foreign-key id="26" parent="10" name="fk_evidences_evaluations1">
+      <ColNames>id_evaluation</ColNames>
+      <RefSchemaName>evadb</RefSchemaName>
+      <RefTableName>evaluations</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="27" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>int(15)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="28" parent="11" name="password">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="11" name="name_company">
+      <Position>3</Position>
+      <DataType>varchar(80)|0</DataType>
+    </column>
+    <column id="30" parent="11" name="description">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="31" parent="11" name="company_state">
+      <Position>5</Position>
+      <DataType>int(2)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <column id="32" parent="11" name="id_email_address">
+      <Position>6</Position>
+      <DataType>int(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="11" name="photo">
+      <Position>7</Position>
+      <DataType>mediumblob|0</DataType>
+    </column>
+    <column id="34" parent="11" name="address">
+      <Position>8</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="35" parent="11" name="phone_number">
+      <Position>9</Position>
+      <DataType>int(20)|0</DataType>
+    </column>
+    <index id="36" parent="11" name="fk_companies_emails_address1_idx">
+      <ColNames>id_email_address</ColNames>
+    </index>
+    <index id="37" parent="11" name="id_email_address_UNIQUE">
+      <ColNames>id_email_address</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="38" parent="11" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="39" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id
+id_email_address</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="40" parent="11" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
+    </key>
+    <key id="41" parent="11" name="id_email_address_UNIQUE">
+      <ColNames>id_email_address</ColNames>
+      <UnderlyingIndexName>id_email_address_UNIQUE</UnderlyingIndexName>
+    </key>
+    <foreign-key id="42" parent="11" name="fk_companies_emails_address1">
+      <ColNames>id_email_address</ColNames>
+      <RefSchemaName>evadb</RefSchemaName>
+      <RefTableName>email_addresses</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="43" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>int(15)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="44" parent="12" name="id_employee">
+      <Position>2</Position>
+      <DataType>int(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="12" name="cv_type">
+      <Position>3</Position>
+      <DataType>int(2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="12" name="description">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <index id="47" parent="12" name="fk_cvs_employees1_idx">
+      <ColNames>id_employee</ColNames>
+    </index>
+    <index id="48" parent="12" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="49" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id
+id_employee</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="50" parent="12" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
+    </key>
+    <foreign-key id="51" parent="12" name="fk_cvs_employees1">
+      <ColNames>id_employee</ColNames>
+      <RefSchemaName>evadb</RefSchemaName>
+      <RefTableName>employees</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="52" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>int(15)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="53" parent="13" name="email_data">
       <Position>2</Position>
       <DataType>varchar(70)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="55" parent="14" name="email_data_UNIQUE">
+    <index id="54" parent="13" name="email_data_UNIQUE">
       <ColNames>email_data</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="56" parent="14" name="id_UNIQUE">
+    <index id="55" parent="13" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="57" parent="14" name="PRIMARY">
+    <key id="56" parent="13" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="58" parent="14" name="id_UNIQUE">
+    <key id="57" parent="13" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="59" parent="14" name="email_data_UNIQUE">
+    <key id="58" parent="13" name="email_data_UNIQUE">
       <ColNames>email_data</ColNames>
       <UnderlyingIndexName>email_data_UNIQUE</UnderlyingIndexName>
     </key>
-    <column id="60" parent="15" name="id">
+    <column id="59" parent="14" name="id">
       <Position>1</Position>
-      <DataType>varchar(25)|0</DataType>
+      <DataType>int(15)|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="61" parent="15" name="id_company">
+    <column id="60" parent="14" name="id_company">
       <Position>2</Position>
-      <DataType>varchar(35)|0</DataType>
+      <DataType>int(15)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="62" parent="15" name="id_email_address">
+    <column id="61" parent="14" name="id_email_address">
       <Position>3</Position>
       <DataType>int(15)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="63" parent="15" name="employee_type">
+    <column id="62" parent="14" name="employee_type">
       <Position>4</Position>
       <DataType>int(2)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <column id="64" parent="15" name="password">
+    <column id="63" parent="14" name="password">
       <Position>5</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="65" parent="15" name="employee_name">
+    <column id="64" parent="14" name="employee_name">
       <Position>6</Position>
       <DataType>varchar(45)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <column id="66" parent="15" name="employee_first_last_name">
+    <column id="65" parent="14" name="employee_first_last_name">
       <Position>7</Position>
       <DataType>varchar(45)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <column id="67" parent="15" name="employee_second_last_name">
+    <column id="66" parent="14" name="employee_second_last_name">
       <Position>8</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="68" parent="15" name="dni">
+    <column id="67" parent="14" name="dni">
       <Position>9</Position>
       <DataType>int(10)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <column id="69" parent="15" name="phone_number">
+    <column id="68" parent="14" name="phone_number">
       <Position>10</Position>
       <DataType>int(15)|0</DataType>
     </column>
-    <column id="70" parent="15" name="cell_phone_number">
+    <column id="69" parent="14" name="cell_phone_number">
       <Position>11</Position>
       <DataType>int(15)|0</DataType>
     </column>
-    <column id="71" parent="15" name="photo">
+    <column id="70" parent="14" name="photo">
       <Position>12</Position>
       <DataType>mediumblob|0</DataType>
     </column>
-    <column id="72" parent="15" name="address">
+    <column id="71" parent="14" name="address">
       <Position>13</Position>
       <DataType>varchar(45)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <column id="73" parent="15" name="department">
+    <column id="72" parent="14" name="department">
       <Position>14</Position>
       <DataType>varchar(45)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <column id="74" parent="15" name="birthdate">
+    <column id="73" parent="14" name="birthdate">
       <Position>15</Position>
       <DataType>date|0</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <index id="75" parent="15" name="dni_UNIQUE">
+    <index id="74" parent="14" name="dni_UNIQUE">
       <ColNames>dni</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="76" parent="15" name="fk_employees_companies1_idx">
+    <index id="75" parent="14" name="fk_employees_companies1_idx">
       <ColNames>id_company</ColNames>
     </index>
-    <index id="77" parent="15" name="fk_employees_emails_address1_idx">
+    <index id="76" parent="14" name="fk_employees_emails_address1_idx">
       <ColNames>id_email_address</ColNames>
     </index>
-    <index id="78" parent="15" name="id_email_adress_UNIQUE">
+    <index id="77" parent="14" name="id_email_adress_UNIQUE">
       <ColNames>id_email_address</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="79" parent="15" name="id_UNIQUE">
+    <index id="78" parent="14" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="80" parent="15" name="PRIMARY">
+    <key id="79" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id
 id_company
 id_email_address</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="81" parent="15" name="id_UNIQUE">
+    <key id="80" parent="14" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="82" parent="15" name="id_email_adress_UNIQUE">
+    <key id="81" parent="14" name="id_email_adress_UNIQUE">
       <ColNames>id_email_address</ColNames>
       <UnderlyingIndexName>id_email_adress_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="83" parent="15" name="dni_UNIQUE">
+    <key id="82" parent="14" name="dni_UNIQUE">
       <ColNames>dni</ColNames>
       <UnderlyingIndexName>dni_UNIQUE</UnderlyingIndexName>
     </key>
-    <foreign-key id="84" parent="15" name="fk_employees_companies1">
+    <foreign-key id="83" parent="14" name="fk_employees_companies1">
       <ColNames>id_company</ColNames>
       <RefSchemaName>evadb</RefSchemaName>
       <RefTableName>companies</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="85" parent="15" name="fk_employees_emails_address1">
+    <foreign-key id="84" parent="14" name="fk_employees_emails_address1">
       <ColNames>id_email_address</ColNames>
       <RefSchemaName>evadb</RefSchemaName>
       <RefTableName>email_addresses</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="86" parent="16" name="id">
+    <column id="85" parent="15" name="id">
       <Position>1</Position>
-      <DataType>varchar(25)|0</DataType>
+      <DataType>int(15)|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="87" parent="16" name="id_evaluator">
+    <column id="86" parent="15" name="id_evaluator">
       <Position>2</Position>
-      <DataType>varchar(25)|0</DataType>
+      <DataType>int(15)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="88" parent="16" name="id_user_employee">
+    <column id="87" parent="15" name="id_user_employee">
       <Position>3</Position>
-      <DataType>varchar(25)|0</DataType>
+      <DataType>int(15)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="89" parent="16" name="id_company">
+    <column id="88" parent="15" name="id_company">
       <Position>4</Position>
-      <DataType>varchar(35)|0</DataType>
+      <DataType>int(15)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="90" parent="16" name="evaluation_date">
+    <column id="89" parent="15" name="evaluation_date">
       <Position>5</Position>
       <DataType>date|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="91" parent="16" name="grade">
+    <column id="90" parent="15" name="grade">
       <Position>6</Position>
-      <DataType>decimal(5,2)|0</DataType>
+      <DataType>int(3)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="92" parent="16" name="fk_evaluations_companies1_idx">
+    <index id="91" parent="15" name="fk_evaluations_companies1_idx">
       <ColNames>id_company</ColNames>
     </index>
-    <index id="93" parent="16" name="fk_evaluations_employees1_idx">
+    <index id="92" parent="15" name="fk_evaluations_employees1_idx">
       <ColNames>id_user_employee</ColNames>
     </index>
-    <index id="94" parent="16" name="fk_evaluations_employees_idx">
+    <index id="93" parent="15" name="fk_evaluations_employees_idx">
       <ColNames>id_evaluator</ColNames>
     </index>
-    <index id="95" parent="16" name="id_UNIQUE">
+    <index id="94" parent="15" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="96" parent="16" name="PRIMARY">
+    <key id="95" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id
 id_evaluator
@@ -386,149 +378,164 @@ id_user_employee
 id_company</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="97" parent="16" name="id_UNIQUE">
+    <key id="96" parent="15" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
-    <foreign-key id="98" parent="16" name="fk_evaluations_employees">
+    <foreign-key id="97" parent="15" name="fk_evaluations_employees">
       <ColNames>id_evaluator</ColNames>
       <RefSchemaName>evadb</RefSchemaName>
       <RefTableName>employees</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="99" parent="16" name="fk_evaluations_employees1">
+    <foreign-key id="98" parent="15" name="fk_evaluations_employees1">
       <ColNames>id_user_employee</ColNames>
       <RefSchemaName>evadb</RefSchemaName>
       <RefTableName>employees</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="100" parent="16" name="fk_evaluations_companies1">
+    <foreign-key id="99" parent="15" name="fk_evaluations_companies1">
       <ColNames>id_company</ColNames>
       <RefSchemaName>evadb</RefSchemaName>
       <RefTableName>companies</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="101" parent="17" name="id">
+    <column id="100" parent="16" name="id">
       <Position>1</Position>
       <DataType>int(2)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="102" parent="17" name="payment_type_name">
+    <column id="101" parent="16" name="payment_type_name">
       <Position>2</Position>
       <DataType>varchar(35)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="103" parent="17" name="id_UNIQUE">
+    <index id="102" parent="16" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="104" parent="17" name="PRIMARY">
+    <key id="103" parent="16" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="105" parent="17" name="id_UNIQUE">
+    <key id="104" parent="16" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
-    <column id="106" parent="18" name="id">
+    <column id="105" parent="17" name="id">
       <Position>1</Position>
       <DataType>int(15)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="107" parent="18" name="id_companies">
+    <column id="106" parent="17" name="id_companies">
       <Position>2</Position>
-      <DataType>varchar(35)|0</DataType>
+      <DataType>int(15)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="108" parent="18" name="id_payment_type">
+    <column id="107" parent="17" name="id_payment_type">
       <Position>3</Position>
       <DataType>int(2)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="109" parent="18" name="card_number">
+    <column id="108" parent="17" name="card_number">
       <Position>4</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="110" parent="18" name="name">
+    <column id="109" parent="17" name="name">
       <Position>5</Position>
       <DataType>varchar(45)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <column id="111" parent="18" name="last_name">
+    <column id="110" parent="17" name="last_name">
       <Position>6</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="112" parent="18" name="first_address">
+    <column id="111" parent="17" name="first_address">
       <Position>7</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="113" parent="18" name="second_address">
+    <column id="112" parent="17" name="second_address">
       <Position>8</Position>
       <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <column id="114" parent="18" name="payment_date">
+    <column id="113" parent="17" name="payment_date">
       <Position>9</Position>
       <DataType>date|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="115" parent="18" name="location">
+    <column id="114" parent="17" name="location">
       <Position>10</Position>
       <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="116" parent="18" name="country">
+    <column id="115" parent="17" name="country">
       <Position>11</Position>
       <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="117" parent="18" name="code_zip">
+    <column id="116" parent="17" name="code_zip">
       <Position>12</Position>
       <DataType>varchar(15)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="118" parent="18" name="cell_phone_number">
+    <column id="117" parent="17" name="cell_phone_number">
       <Position>13</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="119" parent="18" name="payment_amount">
+    <column id="118" parent="17" name="payment_amount">
       <Position>14</Position>
       <DataType>decimal(5,2)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="120" parent="18" name="fk_payments_companies1_idx">
+    <column id="119" parent="17" name="expiry_month">
+      <Position>15</Position>
+      <DataType>int(2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="120" parent="17" name="expiry_day">
+      <Position>16</Position>
+      <DataType>int(2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="121" parent="17" name="security_code">
+      <Position>17</Position>
+      <DataType>int(5)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="122" parent="17" name="fk_payments_companies1_idx">
       <ColNames>id_companies</ColNames>
     </index>
-    <index id="121" parent="18" name="fk_payments_payments_types1_idx">
+    <index id="123" parent="17" name="fk_payments_payments_types1_idx">
       <ColNames>id_payment_type</ColNames>
     </index>
-    <index id="122" parent="18" name="id_UNIQUE">
+    <index id="124" parent="17" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="123" parent="18" name="PRIMARY">
+    <key id="125" parent="17" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id
 id_companies
 id_payment_type</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="124" parent="18" name="id_UNIQUE">
+    <key id="126" parent="17" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
-    <foreign-key id="125" parent="18" name="fk_payments_companies1">
+    <foreign-key id="127" parent="17" name="fk_payments_companies1">
       <ColNames>id_companies</ColNames>
       <RefSchemaName>evadb</RefSchemaName>
       <RefTableName>companies</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="126" parent="18" name="fk_payments_payments_types1">
+    <foreign-key id="128" parent="17" name="fk_payments_payments_types1">
       <ColNames>id_payment_type</ColNames>
       <RefSchemaName>evadb</RefSchemaName>
       <RefTableName>payment_types</RefTableName>

@@ -38,6 +38,12 @@ public class BaseEntity {
         this.connection = connection;
         return this;
     }
+    //------------
+    public Connection closesConnection(){
+        connection= null;
+        return  connection;
+    }
+    //-----------
 
     public String getTableName() {
         return tableName;
@@ -49,6 +55,7 @@ public class BaseEntity {
     }
 
     public String getDefaultQuery() {
+
         return BASE_QUERY + getTableName();
     }
 

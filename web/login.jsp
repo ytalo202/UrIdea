@@ -46,15 +46,27 @@
                     </div>
                 </div>
                 <div class="myform-bottom">
-                    <form role="form" action="" method="post" class="">
+
+                    <%--
+
+     Estoooo
+   --%>
+                    <form role="form" action="valiCom" method="post" class="">
                         <div class="form-group">
-                            <input type="text" name="form-username" placeholder="Usuario..." class="form-control" id="form-username">
+                            <input type="text" name="txtusuario"
+                                   placeholder="Usuario..."
+                                   class="form-control" id="form-username">
                         </div>
                         <div class="form-group">
-                            <input type="password" name="form-password" placeholder="Contraseña..." class="form-control" id="form-password">
+
+                            <input type="password" name="txtclave" placeholder="Contraseña..."
+                                   class="form-control" id="form-password">
                         </div>
-                        <button type="submit" class="mybtn">Entrar</button>
+
+                        <input type="submit" class="mybtn"/>
                     </form>
+
+
                 </div>
             </div>
         </div>

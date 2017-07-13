@@ -3,6 +3,7 @@ package dbUrIdea.models;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +11,36 @@ import java.util.List;
  * Created by Yoshinon on 15/06/2017.
  */
 public class CompaniesEntity extends BaseEntity {
+
+    //-----
+    private Connection conn = null;
+    private Statement st = null;
+    private  ResultSet rss = null;
+
+    public boolean validarUserCompany(String nom,String clave) {
+        boolean encontrado = false;
+
+        try {
+            conn = this.getConnection();
+            st = conn.createStatement();
+            rss = st.executeQuery("select * from companies " +
+                    "where name_company = '" + nom + "' " +
+                    "and password = '" + clave + "'");
+
+            if (rss.next()) {
+                encontrado = true;
+
+            }
+            this.closesConnection();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return encontrado;
+
+
+    }
+
 
     public CompaniesEntity() {
         super();
@@ -50,12 +81,15 @@ public class CompaniesEntity extends BaseEntity {
     public List<Company> findByCriteria(String criteria,
                                         EmailAddressesEntity emailAddressEntit) {
         String sql = getDefaultQuery() +
-                (criteria.equalsIgnoreCase("") ? "" : " WHERE " + criteria);
+                (criteria.equalsIgnoreCase("") ?
+                        "" : " WHERE " + criteria);
         List<Company> companies = new ArrayList<>();
         try {
-            ResultSet rs = getConnection().createStatement().executeQuery(sql);
+            ResultSet rs = getConnection()
+                    .createStatement().executeQuery(sql);
             if(rs == null) return null;
-            while(rs.next()) companies.add(Company.build(rs, emailAddressEntit));
+            while(rs.next()) companies.add(
+                    Company.build(rs, emailAddressEntit));
             return companies;
         } catch(SQLException e) {
             e.printStackTrace();
@@ -93,6 +127,9 @@ public class CompaniesEntity extends BaseEntity {
                 " WHERE id = " + company.getIdAsString();
         return change(sql);
     }
+
+
+
 
     public boolean delete(Company company) {
         String sql = "DELETE FROM companies WHERE id = " +
