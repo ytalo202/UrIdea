@@ -60,36 +60,40 @@ public class PaymentServlet extends HttpServlet {
                 log(message);
                 break;
             }
-            /*case "create": {
+            case "create": {
 
 
-                //Company company= service.getComanyByEmailId(Integer.parseInt(request.getParameter("EmailId")));
-                EmailAddress emailAddress =new EmailAddress();
-                Company company =new Company();
-                //company.setId(Integer.parseInt(request.getParameter("id")));
-                company.setPassword(request.getParameter("password"));
-                company.setNameCompany(request.getParameter("nameCompany"));
-                company.setDescription(request.getParameter("description"));
-                company.setCompanyState
-                        (Integer.parseInt(request.getParameter("companyState")));
+                Company company = new Company();
+                PaymentsType paymentsType = new PaymentsType();
+                Payment payment= new Payment();
 
 
-                ///-------------------Probando
-                company.setEmailAdress(emailAddress.setId(Integer.parseInt(request.getParameter("EmailId"))));
+                payment.setCompany(company.setId(
+                        Integer.parseInt(request.getParameter("id_companies"))));
+                payment.setPaymentsType(
+                        paymentsType.setId(Integer.parseInt(request.getParameter("id_payment_type"))));
+                payment.setCardNumber(request.getParameter("card_number"));
+                payment.setName(request.getParameter("name"));
+                payment.setLastName(request.getParameter("last_name"));
+                payment.setFirstAddress(request.getParameter("first_address"));
+                payment.setSecondAddress(request.getParameter("second_address"));
+                payment.setPaymentDate(Date.valueOf(request.getParameter("payment_date")));
+                payment.setLocation(request.getParameter("location"));
+                payment.setCountry(request.getParameter("country"));
+                payment.setCodeZip(request.getParameter("code_zip"));
+                payment.setCellPhoneNumber(request.getParameter("cell_phone_number"));
+                payment.setAmount(Float.valueOf(request.getParameter("payment_amount")));
+                payment.setExpiryMonth(Integer.parseInt(request.getParameter("expiry_month")));
+                payment.setExpiryDay(Integer.parseInt(request.getParameter("expiry_day")));
+                payment.setSecurityCode(Integer.parseInt(request.getParameter("security_code")));
 
-                //
-                company.setAddress(request.getParameter("address"));
-                company.setPhoneNumber(Integer.parseInt(request.getParameter("phoneNumber")));
-
-
-                String message = service.createComp(company) ?
+                String message = service.createPayment(payment) ?
                         "Create success" :
                         "Error while creating";
                 log(message);
                 break;
 
-
-            }*/
+            }
 
 
         }

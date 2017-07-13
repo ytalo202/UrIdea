@@ -64,12 +64,13 @@ public class PaymentsEntity extends BaseEntity {
 
     public boolean add(Payment payment) {
         String sql = "INSERT payments(" +
-                "id_companies,id_payment_type," +
-                "card_number,name, " +
-                "last_name,first_address,second_address,payment_date,location,country,code_zip, " +
-                "cell_phone_number," +
-                "payment_amount, " +
-                "expiry_month, expiry_day, security_code) " +
+                "id_companies, id_payment_type," +
+                " card_number, name, " +
+                " last_name, first_address, second_address, payment_date, location, country, " +
+                "code_zip, " +
+                " cell_phone_number," +
+                " payment_amount, " +
+                " expiry_month, expiry_day, security_code) " +
                 "VALUES("
                 +payment.getCompany().getIdAsString()+", "
                 +payment.getPaymentsType().getIdAsString()+", "

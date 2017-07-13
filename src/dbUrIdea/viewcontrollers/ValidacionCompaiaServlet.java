@@ -30,21 +30,25 @@ public class ValidacionCompaiaServlet extends HttpServlet {
         String usuario = request.getParameter("txtusuario");
         String clave = request.getParameter("txtclave");
         CompaniesEntity user= new CompaniesEntity();
-        if (user.validarUserCompany(usuario,clave)){
+
+
+        //String message = service.validarCompany(usuario,clave) ? "Update success" : "Error while updating";log(message);
+        if (user.consulta(usuario,clave)){
+            response.sendRedirect(Indice_EDIT_URI);
 
             //request.getRequestDispatcher("Listado.jsp").forward(request,response);
             RequestDispatcher dispatcher =
                     request.getRequestDispatcher(Indice_EDIT_URI);
             dispatcher.forward(request, response);
         }else{
-            request.setAttribute("error",
-                    "<script>alert('USUARIO Y/O CONTRSEÑA" +
-                            "NO VALIDOS')</script>");
+            //request.setAttribute("error", "<script>alert('USUARIO Y/O CONTRSEÑA" + "NO VALIDOS')</script>");
 
             //request.getRequestDispatcher("index.jsp").forward(request,response);
             RequestDispatcher dispatcher =
                     request.getRequestDispatcher(Login_ADD_URI);
             dispatcher.forward(request, response);
+
+            response.sendRedirect(Login_ADD_URI);
 
         }
 

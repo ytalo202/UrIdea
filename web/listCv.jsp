@@ -13,14 +13,17 @@
 </head>
 <body>
 <jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
-<h1>Desordenado</h1>
+
 <c:forEach var="cv" items="${service.cvs}">
 
-    <p><c:out value="${cv.id}  ----> "/><c:out value=" ${cv.cvType}--->"/>
-
-        <c:out value=" ${cv.description} ---> "/>
-        <c:out value=" ${cv.employee.id}"/></p>
-
+    <p><c:out value="${cv.employee.name}"/>
+        <c:out value="${cv.cvType}"/>
+        <c:out value="${cv.description}"/>
+        <a href="cV?action=edit&id=<c:out value="${cv.id}"/>">
+            Edit
+        </a>
+    </p>
 </c:forEach>
+<a href="cV?action=add">Add PaymentsType</a>
 </body>
 </html>

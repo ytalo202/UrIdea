@@ -41,7 +41,10 @@ public class PaymentsTypesServlet  extends HttpServlet {
                 log(message);
             }
 
+            //no nesecita create xDDD
+
         }
+
         RequestDispatcher dispatcher =
                 request.getRequestDispatcher(PAYMENTSTYPE_INDEX_URI);
         dispatcher.forward(request, response);

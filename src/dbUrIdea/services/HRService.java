@@ -207,4 +207,28 @@ public class HRService {
 
         return getDataStore().createPayment(payment);
     }
+
+
+    public boolean validarCompany(String nom,String clave) {
+
+        return getDataStore().validarCompany(nom,clave);
+    }
+
+
+
+    public Cv getCvById(int id) {
+
+        return getDataStore().findCvById(id);
+    }
+
+    public boolean updateCv(Cv cv) {
+
+        return getDataStore().updateCv(cv);
+    }
+
+    public boolean createCv(Cv cv) {
+
+        return getDataStore().createCv(cv);
+    }
+
 }

@@ -74,6 +74,7 @@ public class CvsEntity extends BaseEntity {
 
     public boolean update(Cv cv) {
         String sql = "UPDATE cvs SET " +
+                "cv_type = " + cv.getcvTypeAsString() +", "+
                 "description = " + cv.getDescriptionAsValue() +
                 " WHERE id = " + cv.getIdAsString();
         return change(sql);

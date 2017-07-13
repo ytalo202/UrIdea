@@ -86,6 +86,13 @@ public class HRDataStore {
     public boolean createCv(Cv cv) {
         return getCvsEntity().add(cv);
     }
+    public boolean updateCv(Cv cv) {
+        return getCvsEntity().update(cv);
+    }
+
+    public Cv findCvById(int  id){
+        return getCvsEntity().findById(id,getEmployeesEntity(),getCompaniesEntity(),getEmailAddressesEntity());
+    }
 
 
 //-------------------EmailAddress
@@ -333,6 +340,10 @@ public class HRDataStore {
 
     public boolean deleteEmailById(EmailAddress emailAddress) {
         return getEmailAddressesEntity().deleteById(emailAddress);
+    }
+
+    public boolean validarCompany(String nom,String clave) {
+        return getCompaniesEntity().consulta(nom,clave);
     }
 
 
