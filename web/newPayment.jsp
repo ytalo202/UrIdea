@@ -11,6 +11,6 @@
     <title>Add Email</title>
 </head>
 <body>
-<jsp:include page="_NPayment.jsp"/>
+<jsp:include page="pagos.jsp"/>
 </body>
 </html>

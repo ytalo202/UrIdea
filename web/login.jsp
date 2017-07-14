@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Formulario Login</title>
+    <title>Login</title>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"> <!--Iconos-->
@@ -27,9 +27,9 @@
 
         <div class="row">
             <div class="col-sm-12" >
-                <h1><strong>Plusis</strong> Formulario Login</h1>
+                <h1>Formulario Login</h1>
                 <div class="mydescription">
-                    <p>Formulario Login diseñado con Bootstrap. </p>
+                    <p> </p>
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
 
      Estoooo
    --%>
-                    <form role="form" action="v" method="post" class="">
+                    <form role="form" action="valiCom" method="post" class="">
                         <div class="form-group">
                             <input type="text" name="txtusuario"
                                    placeholder="Usuario..."
@@ -61,9 +61,10 @@
 
                             <input type="password" name="txtclave" placeholder="Contraseña..."
                                    class="form-control" id="form-password">
+
                         </div>
-                        <input type="hidden" value="menu" name="action"/>
-                        <input type="submit" class="mybtn"/>
+
+                        <button input type="submit" class="mybtn">Entrar</button>>
                     </form>
 
 
@@ -71,22 +72,7 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-sm-12 mysocial-login">
-                <h3>...ingresa también por:</h3>
-                <div class="mysocial-login-buttons" >
-                    <a class="mybtn-social" href="#">
-                        <i class="fa fa-facebook"></i> Facebook
-                    </a>
-                    <a class="mybtn-social" href="#">
-                        <i class="fa fa-twitter"></i> Twitter
-                    </a>
-                    <a class="mybtn-social" href="#">
-                        <i class="fa fa-google-plus"></i> Google Plus
-                    </a>
-                </div>
-            </div>
-        </div>
+
 
     </div>
 </div>
