@@ -26,9 +26,9 @@
     <div class="container" >
         <div class="row">
             <div class="col-sm-12" >
-                <h1><strong>Plusis</strong> Formulario de Registro</h1>
+                <h1> Crea una Cuenta</h1>
                 <div class="mydescription">
-                    <p>Formulario de Registro diseñado con Bootstrap. </p>
+                    <p> </p>
                 </div>
             </div>
         </div>
@@ -37,43 +37,30 @@
                 <div class="myform-top">
                     <div class="myform-top-left">
                         <h3>Regístrate en nuestro sitio.</h3>
-                        <p>Por favor ingresa tus datos personales:</p>
+
                     </div>
                     <div class="myform-top-right">
                         <i class="fa fa-user"></i>
                     </div>
                 </div>
                 <div class="myform-bottom">
-                    <form role="form" action="" method="post" class="">
+                    <form role="form" action="email" method="post" class="">
+
+                        <h1>Email</h1>
                         <div class="form-group">
-                            <input type="text" name="form-firtsname" placeholder="Nombres..." class="form-control" id="form-firtsname">
+                            <input type="text" name="emailData" placeholder="Email..." class="form-control" >
                         </div>
+                        <h1>Elija Una Contraseña</h1>
                         <div class="form-group">
-                            <input type="text" name="form-lastname" placeholder="Apellidos..." class="form-control" id="form-lastname">
+                            <input type="text" name="form-contraseña" placeholder="Contraseña..." class="form-control" id="form-contraseña">
                         </div>
-                        <div class="form-group">
-                            <input type="text" name="form-email" placeholder="Email..." class="form-control" id="form-email">
-                        </div>
+                        <input type="hidden" value="create" name="action"/>
                         <button type="submit" class="mybtn">Registrarme</button>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12 mysocial-login">
-                <h3>...ingresa también por:</h3>
-                <div class="mysocial-login-buttons" >
-                    <a class="mybtn-social" href="#">
-                        <i class="fa fa-facebook"></i> Facebook
-                    </a>
-                    <a class="mybtn-social" href="#">
-                        <i class="fa fa-twitter"></i> Twitter
-                    </a>
-                    <a class="mybtn-social" href="#">
-                        <i class="fa fa-google-plus"></i> Google Plus
-                    </a>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>

@@ -84,7 +84,7 @@
             <div class="w3-right w3-hide-small">
 
 
-                <a href="index.jsp" class="w3-bar-item w3-button"><i class="fa fa-home" aria-hidden="true" ></i> HOME</a>
+                <a href="pagos.jsp" class="w3-bar-item w3-button"><i class="fa fa-home" aria-hidden="true" ></i> HOME</a>
                 <a href="Listado.jsp" class="w3-bar-item w3-button">ABOUT</a>
                 <a href="register.jsp" class="w3-bar-item w3-button"> SIGN UP</a>
                 <a href="login.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> LOGIN</a>
@@ -154,7 +154,7 @@
         </div>
 
         <div class="item" class="container">
-            <img src="image/evaluar1.png" alt="Chicago" width="100%" height="100%">
+            <img src="image/asesor2.jpg" alt="Chicago" width="100%" height="100%">
             <div class="carousel-caption">
                 <br>
                 <h1 >La plataforma de evaluacion de personal </h1>
@@ -170,7 +170,7 @@
 
 
         <div class="item" class="container" >
-            <img src="image/asesor.jpg" alt="Los Angeles" width="100%" height="100%">
+            <img src="image/empresas3.jpg" alt="Los Angeles" width="100%" height="100%">
             <div class="carousel-caption">
                 <br>
                 <br>
@@ -199,15 +199,15 @@
     <!-- Container (The Band Section) -->
 
     <div class="container">
-        <h3 class="text-center">Contact</h3>
-        <p class="text-center"><em>We love our fans!</em></p>
+        <h3 class="text-center">Contáctanos</h3>
+        <p class="text-center"><em></em></p>
 
         <div class="row">
             <div class="col-md-4">
                 <p>Fan? Drop a note.</p>
-                <p><span class="glyphicon glyphicon-map-marker"></span>Chicago, US</p>
-                <p><span class="glyphicon glyphicon-phone"></span>Phone: +00 1515151515</p>
-                <p><span class="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p>
+                <p><span class="glyphicon glyphicon-map-marker"></span>Perú</p>
+                <p><span class="glyphicon glyphicon-phone"></span>Teléfono: +00 1515151515</p>
+                <p><span class="glyphicon glyphicon-envelope"></span>Email: evap@gmail.com</p>
             </div>
             <div class="col-md-8">
                 <div class="row">
@@ -222,7 +222,7 @@
                 <br>
                 <div class="row">
                     <div class="col-md-12 form-group">
-                        <button class="btn pull-right" type="submit">Send</button>
+                        <button class="btn pull-right" type="submit">Enviar</button>
                     </div>
                 </div>
             </div>
