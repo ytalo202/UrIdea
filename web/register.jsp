@@ -22,6 +22,7 @@
 </head>
 
 <body>
+<jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
 <div class="my-content" >
     <div class="container" >
         <div class="row">
@@ -48,11 +49,11 @@
 
                         <h1>Email</h1>
                         <div class="form-group">
-                            <input type="text" name="emailData" placeholder="Email..." class="form-control" >
+                            <input type="text" name="emailData" placeholder="Email..." class="form-control" required>
                         </div>
                         <h1>Elija Una Contraseña</h1>
                         <div class="form-group">
-                            <input type="text" name="form-contraseña" placeholder="Contraseña..." class="form-control" id="form-contraseña">
+                            <input type="text" name="contraseña" placeholder="Contraseña..." class="form-control" required>
                         </div>
                         <input type="hidden" value="create" name="action"/>
                         <button type="submit" class="mybtn">Registrarme</button>
@@ -60,7 +61,6 @@
                 </div>
             </div>
         </div>
-
         </div>
     </div>
 </div>
