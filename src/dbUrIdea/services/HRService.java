@@ -231,4 +231,9 @@ public class HRService {
         return getDataStore().createCv(cv);
     }
 
+    public Company getIdByCompany(String name,String pass) {
+
+        return getDataStore().findIdByCompany(name,pass);
+    }
+
 }

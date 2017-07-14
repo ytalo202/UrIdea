@@ -8,6 +8,8 @@ import java.sql.SQLException;
 public class BaseEntity {
     private Connection connection;
     private static String BASE_QUERY = "SELECT * FROM ";
+
+    private static String BASE_ID = "SELECT id FROM ";
     private String tableName;
 
     public BaseEntity() {
@@ -28,6 +30,14 @@ public class BaseEntity {
 
     public static void setBaseQuery(String baseQuery) {
         BASE_QUERY = baseQuery;
+    }
+
+    public static String getBaseId() {
+        return BASE_ID;
+    }
+
+    public static void setBaseId(String baseId) {
+        BASE_ID = baseId;
     }
 
     public Connection getConnection() {
@@ -58,6 +68,13 @@ public class BaseEntity {
 
         return BASE_QUERY + getTableName();
     }
+
+    public String getDefaultIdQuery() {
+
+        return BASE_ID + getTableName();
+    }
+
+
 
     public boolean change(String sql) {
         try {

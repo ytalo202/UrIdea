@@ -51,7 +51,7 @@
 
      Estoooo
    --%>
-                    <form role="form" action="valiCom" method="post" class="">
+                    <form role="form" action="v" method="post" class="">
                         <div class="form-group">
                             <input type="text" name="txtusuario"
                                    placeholder="Usuario..."
@@ -62,7 +62,7 @@
                             <input type="password" name="txtclave" placeholder="Contraseña..."
                                    class="form-control" id="form-password">
                         </div>
-
+                        <input type="hidden" value="menu" name="action"/>
                         <input type="submit" class="mybtn"/>
                     </form>
 

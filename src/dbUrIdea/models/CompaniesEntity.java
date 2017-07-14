@@ -23,7 +23,11 @@ public class CompaniesEntity extends BaseEntity {
 
            String consulta = "select * from" +
                    " companies where name_company = '"+nom+"' and password = '"+clave+"'";
+
+           //-----
            pst = getConnection().prepareStatement(consulta);
+
+
            pst.setString(1,nom);
            pst.setString(2,clave);
            rs = pst.executeQuery();
@@ -76,14 +80,45 @@ public class CompaniesEntity extends BaseEntity {
         return findByCriteria(criteria,emailAddressEntit).get(0);
     }
 
+
+
+
+
     public Company findByState(String state, EmailAddressesEntity emailAddressEntit) {
         String criteria = "id_state_company = " + "'" + state + "'";
+        return findByCriteria(criteria, emailAddressEntit).get(0);
+    }
+
+
+    public Company findByNameAndPass(String name,String pass, EmailAddressesEntity emailAddressEntit) {
+        String criteria = "name_company = " + "'"
+                + name + "' and password = '"+pass+"'";
         return findByCriteria(criteria, emailAddressEntit).get(0);
     }
 
     public List<Company> findByCriteria(String criteria,
                                         EmailAddressesEntity emailAddressEntit) {
         String sql = getDefaultQuery() +
+                (criteria.equalsIgnoreCase("") ?
+                        "" : " WHERE " + criteria);
+        List<Company> companies = new ArrayList<>();
+        try {
+            ResultSet rs = getConnection()
+                    .createStatement().executeQuery(sql);
+            if(rs == null) return null;
+            while(rs.next()) companies.add(
+                    Company.build(rs, emailAddressEntit));
+            return companies;
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return companies;
+    }
+
+
+    public List<Company> findByCriteriaId(String criteria,
+                                        EmailAddressesEntity emailAddressEntit) {
+        String sql = getDefaultIdQuery() +
                 (criteria.equalsIgnoreCase("") ?
                         "" : " WHERE " + criteria);
         List<Company> companies = new ArrayList<>();
