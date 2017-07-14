@@ -11,6 +11,6 @@
     <title>Add Employee</title>
 </head>
 <body>
-<jsp:include page="pagos.jsp"/>
+<jsp:include page="_NEmployee.jsp"/>
 </body>
 </html>

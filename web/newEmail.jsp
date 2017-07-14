@@ -11,6 +11,6 @@
     <title>Add Email</title>
 </head>
 <body>
-<jsp:include page="register.jsp"/>
+<jsp:include page="_NEmailForm.jsp"/>
 </body>
 </html>

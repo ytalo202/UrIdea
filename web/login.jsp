@@ -51,7 +51,7 @@
 
      Estoooo
    --%>
-                    <form role="form" action="valiCom" method="post" class="">
+                    <form role="form" action="v" method="post" class="">
                         <div class="form-group">
                             <input type="text" name="txtusuario"
                                    placeholder="Usuario..."
@@ -63,8 +63,8 @@
                                    class="form-control" id="form-password">
 
                         </div>
-
-                        <button input type="submit" class="mybtn">Entrar</button>>
+                        <input type="hidden" value="menu" name="action"/>
+                        <button input type="submit" class="mybtn">Entrar</button>
                     </form>
 
 
