@@ -86,6 +86,7 @@
 
                 <a href="pagos.jsp" class="w3-bar-item w3-button"><i class="fa fa-home" aria-hidden="true" ></i> HOME</a>
                 <a href="Listado.jsp" class="w3-bar-item w3-button">ABOUT</a>
+                <a href="administrador.jsp" class="w3-bar-item w3-button">Root</a>
                 <a href="register.jsp" class="w3-bar-item w3-button"> SIGN UP</a>
                 <a href="login.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> LOGIN</a>
             </div>

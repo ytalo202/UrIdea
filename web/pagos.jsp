@@ -7,6 +7,7 @@
 --%>
 
 
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -15,6 +16,7 @@
 <html lang="es">
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,6 +50,9 @@
                     <div class="myform-top-left">
                         <h3></h3>
                         <p>Nombre y Dirección en Particular</p>
+                    </div>
+                    <div class="myform-top-right">
+                        <i class="fa fa-money"></i>
                     </div>
                 </div>
                 <div class="myform-bottom">
@@ -148,7 +153,8 @@
                         </div>
                         <br>
                         <input type="hidden" value="create" name="action"/>
-                        <input type="submit" >
+                        <button input type="submit" class="mybtn">Crear y Registrar</button>
+
 
                     </form>
                 </form>
