@@ -75,25 +75,6 @@
     <a href="" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Administrador</a>
 </nav>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="my-content" >
     <div class="container" >
         <div class="row">
@@ -121,14 +102,6 @@
                         <form><button type="button" class="btn btn-primary btn-lg btn-block">Seleccione Una Opción</button></form>
 
 
-
-
-
-
-
-
-
-
                       <form>  <button type="button" class="btn btn-default btn-lg btn-block"><a href="_CompaniesForm.jsp">Editar Cuenta</a></button>
                       <form>  <button type="button" class="btn btn-default btn-lg btn-block"><a href="_NEmployee.jsp">Agregar Empleado</a></button>
                           <form>  <button type="button" class="btn btn-default btn-lg btn-block"><a href="">Lista de Empleados</a></button></form>
@@ -136,11 +109,6 @@
                           <form>   <button type="button" class="btn btn-default btn-lg btn-block"><a href="">Evaluar Empleados</a></button></form>
 
                           <form>     <button type="button" class="btn btn-default btn-lg btn-block"><a href="index.jsp">Cerrar Cuenta</a></button></form>
-
-
-
-
-
                     </form>
                 </div>
             </div>
