@@ -31,12 +31,33 @@ public class ValidacionCompaiaServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
-
-
- String usuario = request.getParameter("txtusuario");
-        String clave = request.getParameter("txtclave");
+        String email = request.getParameter("txtusuario");
+        String usuario ="";
+        String password = request.getParameter("txtclave");
         CompaniesEntity user= new CompaniesEntity();
 
+        if (!request.getParameter("txtusuario").equalsIgnoreCase("")&&!request.getParameter("txtclave").equalsIgnoreCase("")) {
+            try{Company company = service.getIdByCompany(email, password);
+                request.setAttribute("company", company);
+                //POSIBLE USO request.setAttribute("action", "menu");
+                RequestDispatcher dispatcher =request.getRequestDispatcher(L_EDIT_URI);
+                dispatcher.forward(request,response);}
+            catch (Exception e){
+                //    response.sendRedirect("login.jsp?error=Nombre y/o usuarios invalidos");
+                RequestDispatcher dispatcher =request.getRequestDispatcher(L_INDEX_URI);
+                dispatcher.forward(request, response);
+            }
+        }
+        else {
+            //response.sendRedirect("login.jsp?error=Nombre y/o usuarios invalidos");
+            if (user.validar(usuario, password) == false) {
+                RequestDispatcher dispatcher = request.getRequestDispatcher(L_INDEX_URI);
+                dispatcher.forward(request, response);
+
+            }
+        }
+
+    }
 
         //String message = service.validarCompany(usuario,clave) ? "Update success" : "Error while updating";log(message);
       /*  if (service.getIdByCompany(usuario,clave)!=null){
@@ -60,27 +81,7 @@ public class ValidacionCompaiaServlet extends HttpServlet {
 
         }*/
 
-            Company company = service.getIdByCompany(
-                    request.getParameter("txtusuario"),
-                    request.getParameter("txtclave"));
-        if (company.getId()!='y') {
-            request.setAttribute("company", company);
-            request.setAttribute("action", "menu");
 
-            RequestDispatcher dispatcher =
-                    request.getRequestDispatcher(L_EDIT_URI);
-            dispatcher.forward(request, response);
-        }
-        else {
-            if (user.validar(usuario, clave) == false) {
-                RequestDispatcher dispatcher =
-                        request.getRequestDispatcher(L_INDEX_URI);
-                dispatcher.forward(request, response);
-
-            }
-        }
-
-    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

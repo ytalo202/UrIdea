@@ -77,6 +77,7 @@ public class CompaniesEntity extends BaseEntity {
 
 
 
+
     public CompaniesEntity() {
         super();
     }
@@ -118,10 +119,24 @@ public class CompaniesEntity extends BaseEntity {
     }
 
 
-    public Company findByNameAndPass(String name,String pass, EmailAddressesEntity emailAddressEntit) {
-        String criteria = "name_company = " + "'"
-                + name + "' and password = '"+pass+"'";
-        return findByCriteria(criteria, emailAddressEntit).get(0);
+    public Company findByNameAndPass(String email,String password ,EmailAddressesEntity emailAddressEntity) {
+        return findIdByEmailAndPassword(email,password ,emailAddressEntity).get(0);
+    }
+
+    public List<Company> findIdByEmailAndPassword(String email, String password, EmailAddressesEntity emailAddressEntity) {
+        String sql ="select * from companies a left join email_addresses b on a.id_email_address = b.id where email_data='"+ email+"' and a.password ='"+password+"'";
+        List<Company> companies = new ArrayList<>();
+        try {
+            ResultSet rs = getConnection()
+                    .createStatement().executeQuery(sql);
+            if(rs == null) return null;
+            while(rs.next()) companies.add(
+                    Company.build(rs, emailAddressEntity));
+            return companies;
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return companies;
     }
 
     public List<Company> findByCriteria(String criteria,

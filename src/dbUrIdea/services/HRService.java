@@ -228,9 +228,8 @@ public class HRService {
         return getDataStore().createCv(cv);
     }
 
-    public Company getIdByCompany(String name,String pass) {
-
-        return getDataStore().findIdByCompany(name,pass);
+    public Company getIdByCompany(String email,String password) {
+        return getDataStore().findIdByCompany(email,password);
     }
 
     public Employee findAdministradores(int type ,int id_company) {

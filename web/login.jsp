@@ -41,7 +41,7 @@
                 <div class="myform-top">
                     <div class="myform-top-left">
                         <h3>Ingresa a nuestro sitio.</h3>
-                        <p>Digita tu usuario y contraseña:</p>
+                        <p>Digita tu correo eletrónico y contraseña:</p>
                     </div>
                     <div class="myform-top-right">
                         <i class="fa fa-key"></i>
@@ -53,10 +53,10 @@
 
      Estoooo
    --%>
-                    <form role="form" action="v" method="post" class="">
+                    <form role="form" action="va" method="post" class="">
                         <div class="form-group">
                             <input type="text" name="txtusuario"
-                                   placeholder="Usuario..."
+                                   placeholder="Correo Eletrónico..."
                                    class="form-control" id="form-username">
                         </div>
                         <div class="form-group">
