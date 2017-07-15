@@ -59,8 +59,11 @@
                             <a href="v?action=edit&idCompany=<c:out value="${company.id}"/>">
 
                         Editar Empresa</a></button>
-                        <button type="button" class="btn btn-default btn-lg btn-block"><a href="_NEmployee.jsp">
-                            Crear Administrador</a></button>
+
+
+                        <button type="button" class="btn btn-default btn-lg btn-block">
+                            <a href="v?action=creEmail&idCompany=<c:out value="${company.id}"/>">
+                                Crear Administrador</a></button>
 
 
 
@@ -70,15 +73,18 @@
                                 Lista de Administradores</a></button>
 
                         <button type="button" class="btn btn-default btn-lg btn-block">
-                            <a href="">Lista de Empleados</a></button>
-
-
+                            <a href="v?action=seleccionEmpleados&idCompany=<c:out value="${company.id}"/>">
+                                Lista de Empleados</a></button>
 
 
                         <button type="button" class="btn btn-default btn-lg btn-block">
                             <a href="v?action=editCorre&idCompany=<c:out value="${company.id}"/>">
 
                                 Editar Email</a></button>
+
+
+
+
 
 
                         <button type="button"

@@ -40,7 +40,7 @@
             <div class="col-sm-6 col-sm-offset-3 myform-cont" >
                 <div class="myform-top">
                     <div class="myform-top-left">
-                        <h3>Lista de Administradores</h3>
+                        <h3>Lista de Todos los Empleados</h3>
 
                     </div>
                     <div class="myform-top-right">
@@ -60,10 +60,10 @@
 
 
                                 var cod ="${employee.company.id}";
-                                var tipe ="${employee.employeeType}";
 
+                                var t =0;
 
-                                if(cod == "${company.id}" &&tipe ==1){
+                                if(cod == "${company.id}"){
 
                                     document.write('- ');
                                     document.write('<c:out value="${employee.name}"/>');

@@ -36,6 +36,11 @@ public class SesionCompanyServlet extends HttpServlet {
     public static String Email_URI = "/_EmailsForm.jsp";
     public static String Adm_URI = "/listAdministor.jsp";
 
+    public static String Empl_URI = "/listEmpleado.jsp";
+    public static String Emailnew_URI = "/newEmpEmail.jsp";
+
+    public static String EmpleadoAdm_URI = "/newEmpAdm.jsp";
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -80,6 +85,9 @@ public class SesionCompanyServlet extends HttpServlet {
 
 
             }
+
+
+
 
 
             case "menu": {
@@ -163,6 +171,34 @@ public class SesionCompanyServlet extends HttpServlet {
                 break;
 
             }
+
+            case "createEmail": {
+                EmailAddress emailAddress= new EmailAddress();
+                emailAddress.setEmailData(request.getParameter("emailData"));
+                String message = service.createEmail(emailAddress) ?
+                        "Create success" :
+                        "Error while creating";
+
+                Company company = service.getCompanyById(Integer.parseInt(
+                        request.getParameter("idCompany")));
+                request.setAttribute("company", company);
+                request.setAttribute("action", "edit");
+
+
+                EmailAddress emailAddress1 = service.getEmailAddressById(Integer.parseInt(
+                        request.getParameter("emailData")));
+                request.setAttribute("emailAddress", emailAddress1);
+                request.setAttribute("action", "edit");
+
+
+                log(message);
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(EmpleadoAdm_URI);
+                dispatcher.forward(request, response);
+                break;
+            }
+
+
 
           /*  case "createEmpleado": {
 
@@ -255,6 +291,39 @@ public class SesionCompanyServlet extends HttpServlet {
                 actionUri = Adm_URI;
                 break;
             }
+
+            case "seleccionEmpleados": {
+
+
+                Company company = service.getCompanyById(Integer.parseInt(
+                        request.getParameter("idCompany")));
+                request.setAttribute("company", company);
+                request.setAttribute("action", "seleccion");
+                actionUri = Empl_URI;
+                break;
+            }
+
+            case "regresar": {
+                Company company = service.getCompanyById(Integer.parseInt(request.getParameter("idCompany")));
+                request.setAttribute("company", company);
+                request.setAttribute("action", "edit");
+                actionUri = root_URI;
+                break;
+
+
+            }
+
+            case "creEmail": {
+                Company company = service.getCompanyById(Integer.parseInt(request.getParameter("idCompany")));
+                request.setAttribute("company", company);
+                request.setAttribute("action", "edit");
+                actionUri = Emailnew_URI;
+                break;
+            }
+
+
+
+
 
             default:
                 actionUri = COMPS_INDEX_URI;

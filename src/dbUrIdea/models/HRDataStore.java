@@ -352,6 +352,12 @@ public class HRDataStore {
 
     }
 
+    public EmailAddress findIdByEmail(String email) {
+        return getEmailAddressesEntity().findByEmailData(
+        email);
+
+    }
+
     public Employee findIdByEmployee(String email,String password) {
         return getEmployeesEntity().findByNameAndPass(email,password,getEmailAddressesEntity(),getCompaniesEntity());
     }
