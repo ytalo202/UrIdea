@@ -7,7 +7,7 @@
 
 <form action="v" method="post">
 
-    <input type="hidden" name="id" value="${company.id}"/>
+    <input type="text" name="idCompany" value="${company.id}"/>
 
     <input type="hidden" value="edit" name="action"/>
     <input type="submit"/>

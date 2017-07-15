@@ -11,10 +11,34 @@ public class CompaniesEntity extends BaseEntity {
 
     //-----
 
+    private Connection conn = null;
+    private Statement st = null;
+    private ResultSet rs = null;
 
-    public boolean consulta(String nom,String clave) {
+    public boolean validar(String nom ,
+                           String clave ){
+        boolean encontrado = false;
+        try {
+            conn = this.getConnection();
+            st = conn.createStatement();
+            rs=st.executeQuery("select * from" +
+                    " companies where name_company = '"+nom+"' and password = '"+clave+"'");
+            if (rs.next()){
+                encontrado=true;
+            }
+                this.closesConnection();
+
+        }catch (Exception e){
+
+        }
+            return encontrado;
+    }
+
+
+/*  public boolean consulta(String nom,String clave) {
         //boolean encontrado = false;
         PreparedStatement pst = null;
+        Statement ps = null;
         Connection conn = null;
         Statement st = null;
         ResultSet rs = null;
@@ -25,7 +49,7 @@ public class CompaniesEntity extends BaseEntity {
                    " companies where name_company = '"+nom+"' and password = '"+clave+"'";
 
            //-----
-           pst = getConnection().prepareStatement(consulta);
+           pst = getConnection().createStatement(consulta);
 
 
            pst.setString(1,nom);
@@ -47,7 +71,11 @@ public class CompaniesEntity extends BaseEntity {
             }
         }
         return false;
-    }
+    }*/
+
+
+
+
 
     public CompaniesEntity() {
         super();
@@ -177,6 +205,11 @@ public class CompaniesEntity extends BaseEntity {
     public boolean delete(String id) {
         String sql = "DELETE FROM companies WHERE id = " +
                 "'" + id + "'";
+        return change(sql);
+    }
+
+    public boolean Confe(String name,String clave) {
+        String sql = "select * companies where name_company = '"+name+"' and password = '"+clave+"'";
         return change(sql);
     }
 

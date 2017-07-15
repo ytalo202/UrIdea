@@ -209,10 +209,7 @@ public class HRService {
     }
 
 
-    public boolean validarCompany(String nom,String clave) {
-
-        return getDataStore().validarCompany(nom,clave);
-    }
+    //public boolean validarCompany(String nom,String clave) {return getDataStore().validarCompany(nom,clave);}
 
 
 
