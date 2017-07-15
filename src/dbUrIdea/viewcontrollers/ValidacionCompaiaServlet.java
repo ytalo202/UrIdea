@@ -42,6 +42,7 @@ public class ValidacionCompaiaServlet extends HttpServlet {
                 //POSIBLE USO request.setAttribute("action", "menu");
                 RequestDispatcher dispatcher =request.getRequestDispatcher(L_EDIT_URI);
                 dispatcher.forward(request,response);}
+
             catch (Exception e){
                 //    response.sendRedirect("login.jsp?error=Nombre y/o usuarios invalidos");
                 RequestDispatcher dispatcher =request.getRequestDispatcher(L_INDEX_URI);
