@@ -53,7 +53,7 @@
 
      Estoooo
    --%>
-                    <form role="form" action="v" method="post" class="">
+                    <form role="form" action="va" method="post" class="">
                         <div class="form-group">
                             <input type="text" name="txtusuario"
                                    placeholder="Usuario..."
@@ -63,6 +63,7 @@
 
                             <input type="password" name="txtclave" placeholder="Contraseña..."
                                    class="form-control" id="form-password">
+
 
                         </div>
                         <input type="hidden" value="menu" name="action"/>

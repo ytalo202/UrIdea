@@ -342,9 +342,7 @@ public class HRDataStore {
         return getEmailAddressesEntity().deleteById(emailAddress);
     }
 
-    public boolean validarCompany(String nom,String clave) {
-        return getCompaniesEntity().consulta(nom,clave);
-    }
+   // public boolean validarCompany(String nom,String clave) {return getCompaniesEntity().consulta(nom,clave);}
 
 
 
