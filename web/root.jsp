@@ -61,8 +61,13 @@
                         Editar Empresa</a></button>
                         <button type="button" class="btn btn-default btn-lg btn-block"><a href="_NEmployee.jsp">
                             Crear Administrador</a></button>
-                        <button type="button" class="btn btn-default btn-lg btn-block"><a href="">
-                            Lista de Administradores</a></button>
+
+
+
+
+                        <button type="button" class="btn btn-default btn-lg btn-block">
+                            <a href="v?action=seleccion&idCompany=<c:out value="${company.id}"/>">
+                                Lista de Administradores</a></button>
 
                         <button type="button" class="btn btn-default btn-lg btn-block">
                             <a href="">Lista de Empleados</a></button>

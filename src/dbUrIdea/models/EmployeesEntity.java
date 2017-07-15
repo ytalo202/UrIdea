@@ -66,6 +66,18 @@ public class EmployeesEntity extends BaseEntity {
                 emailAddressesEntity).get(0);
     }
 
+
+    public Employee findAdministradores(int type ,int id_company,
+                                    CompaniesEntity companiesEntity,
+
+                                    EmailAddressesEntity emailAddressesEntity
+    ) {
+        String criteria = "employee_type = "+String.valueOf(type)+" and id_company= "+String.valueOf(id_company);
+        return findByCriteria(criteria, companiesEntity,
+                emailAddressesEntity).get(0);
+    }
+
+
     public Employee findByIdUserType(String id,
                                      CompaniesEntity companiesEntity,
 
@@ -157,5 +169,11 @@ public class EmployeesEntity extends BaseEntity {
                 "'" + id + "'";
         return change(sql);
     }
+/*
+    public boolean verAdministrador(Employee employee) {
+        String sql = "SELECT * from employees where employee_type = " +
+                "'" + id + "'";
+        return change(sql);
+    }*/
 
 }

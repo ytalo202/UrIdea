@@ -350,4 +350,9 @@ public class HRDataStore {
         return getCompaniesEntity().findByNameAndPass(
                 name,pass,getEmailAddressesEntity());
     }
+
+    public Employee findAdministradores(int type ,int id_company) {
+        return getEmployeesEntity().findAdministradores(
+                type,id_company,getCompaniesEntity(),getEmailAddressesEntity());
+    }
 }
