@@ -43,7 +43,7 @@
             opacity: 0.7;
         }
         .person:hover {
-            border-color: #D00C2D;
+            border-color: #d00c2d;
         }
         .carousel-inner img {
 
@@ -88,8 +88,7 @@
                 <a href="Listado.jsp" class="w3-bar-item w3-button">ABOUT</a>
                 <a href="evaluation.jsp" class="w3-bar-item w3-button">Evaluation</a>
                 <a href="register.jsp" class="w3-bar-item w3-button"> SIGN UP</a>
-                <a href="loginEmployee.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> LOGIN EMPLOYEE</a>
-                <a href="login.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> LOGIN COMPANY</a>
+                <a href="login.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i>LOGIN</a>
             </div>
             <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -109,12 +108,14 @@
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-card-2 w3-animate-left
   w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+    <p> </p>
+    <p> </p>
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button
     w3-large w3-padding-16">Close ×</a>
     <a href="index.jsp" onclick="w3_close()" class="w3-bar-item w3-button">HOME</a>
     <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
     <a href="" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
-    <a href="register.jsp" onclick="w3_close()" class="w3-bar-item w3-button">LOGIN IN</a>
+    <a href="register.jsp" onclick="w3_close()" class="w3-bar-item w3-button">SING UP</a>
     <a href="login.jsp" onclick="w3_close()" class="w3-bar-item w3-button">LOGIN</a>
 </nav>
 
@@ -149,7 +150,7 @@
                 <br>
                 <br>
                 <br>
-                <p>Los mejores Profesionales a tu alcance .</p>
+                <h2>Los mejores Profesionales a tu alcance .</h2>
                 <br>
 
             </div>
@@ -164,7 +165,7 @@
                 <br>
                 <br>
                 <br>
-                <p>Somos la primera Empresa orientada a satisfacer las necesidades de personal</p>
+                <h2>Somos la primera Empresa orientada a satisfacer las necesidades de personal</h2>
                 <br>
                 <br>
             </div>
@@ -181,7 +182,7 @@
                 <br>
                 <br>
                 <br>
-                <p >Mediante esta plataforma podras encontrar deficiente</p>
+                <h2 >Mediante esta plataforma podras encontrar deficiente</h2>
                 <br>
                 <br>
             </div>

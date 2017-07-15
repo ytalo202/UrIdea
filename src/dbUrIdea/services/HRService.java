@@ -233,6 +233,12 @@ public class HRService {
         return getDataStore().findIdByCompany(name,pass);
     }
 
+    public Employee getIdByEmployee(String email,String password) {
+        return getDataStore().findIdByEmployee(email,password);
+    }
+
+
+
     public Employee findAdministradores(
             //int type ,int id_company
     ) {

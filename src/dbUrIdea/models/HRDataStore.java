@@ -349,6 +349,11 @@ public class HRDataStore {
     public Company findIdByCompany(String name,String pass) {
         return getCompaniesEntity().findByNameAndPass(
                 name,pass,getEmailAddressesEntity());
+
+    }
+
+    public Employee findIdByEmployee(String email,String password) {
+        return getEmployeesEntity().findByNameAndPass(email,password,getEmailAddressesEntity(),getCompaniesEntity());
     }
 
     public Employee findAdministradores(//int type ,int id_company
