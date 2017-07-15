@@ -53,8 +53,10 @@
                         <h1>Menu</h1>
                         <input type="hidden" name="idCompany" value="${company.id}"/>
                         <button type="button" class="btn btn-primary btn-lg btn-block">Seleccione Una Opcion</button>
+
+
                         <button type="button" class="btn btn-default btn-lg btn-block">
-                            <a href="v?action=edit&id=<c:out value="${company.id}"/>">
+                            <a href="v?action=edit&idCompany=<c:out value="${company.id}"/>">
 
                         Editar Empresa</a></button>
                         <button type="button" class="btn btn-default btn-lg btn-block"><a href="_NEmployee.jsp">
@@ -69,9 +71,11 @@
 
 
                         <button type="button" class="btn btn-default btn-lg btn-block">
-                            <a href="v?action=editE&idEmail=<c:out value="${company.emailAdress.id}"/>">
+                            <a href="v?action=editCorre&idCompany=<c:out value="${company.id}"/>">
 
-                                Editar Correo</a></button>
+                                Editar Email</a></button>
+
+
                         <button type="button"
                                 class="btn btn-default btn-lg btn-block">
                             <a href="v?action=out">Cerrar Cuenta</a></button>
