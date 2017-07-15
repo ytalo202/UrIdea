@@ -1,11 +1,10 @@
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
-  Created by IntelliJ IDEA.
-  User: Usuario
-  Date: 14/07/2017
-  Time: 14:59
-  To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
+
+
 <html lang="es">
 <head>
     <meta charset="utf-8">
@@ -22,19 +21,24 @@
 </head>
 
 <body>
-<jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
+
 <div class="my-content" >
     <div class="container" >
         <div class="row">
             <div class="col-sm-12" >
-                <h1> Empresa Pepito</h1>
+                <h1> Empresa  <c:out value="${company.nameCompany}"/></h1>
                 <div class="mydescription">
                     <p> </p>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-6 col-sm-offset-3 myform-cont" >
+
+
+
+
+
+
+        <div class="col-sm-6 col-sm-offset-3 myform-cont" >
                 <div class="myform-top">
                     <div class="myform-top-left">
                         <h3 >Root</h3>
@@ -44,16 +48,33 @@
                         <i class="fa fa-user"></i>
                     </div>
                 </div>
-                <div class="myform-bottom">
+                <div class="myform-bottom" action="v" method="post">
                     <form role="form" >
-                        <h1>Menú</h1>
-                        <button type="button" class="btn btn-primary btn-lg btn-block">Seleccione Una Opción</button>
-                        <button type="button" class="btn btn-default btn-lg btn-block"><a href="_CompaniesForm.jsp">Editar Empresa</a></button>
-                        <button type="button" class="btn btn-default btn-lg btn-block"><a href="_NEmployee.jsp"> Crear Administrador</a></button>
-                        <button type="button" class="btn btn-default btn-lg btn-block"><a href="">Lista de Administradores</a></button>
+                        <h1>Menu</h1>
+                        <input type="hidden" name="idCompany" value="${company.id}"/>
+                        <button type="button" class="btn btn-primary btn-lg btn-block">Seleccione Una Opcion</button>
+                        <button type="button" class="btn btn-default btn-lg btn-block">
+                            <a href="v?action=edit&id=<c:out value="${company.id}"/>">
 
-                        <button type="button" class="btn btn-default btn-lg btn-block"><a href="">Lista de Empleados</a></button>
-                        <button type="button" class="btn btn-default btn-lg btn-block"><a href="index.jsp">Cerrar Cuenta</a></button>
+                        Editar Empresa</a></button>
+                        <button type="button" class="btn btn-default btn-lg btn-block"><a href="_NEmployee.jsp">
+                            Crear Administrador</a></button>
+                        <button type="button" class="btn btn-default btn-lg btn-block"><a href="">
+                            Lista de Administradores</a></button>
+
+                        <button type="button" class="btn btn-default btn-lg btn-block">
+                            <a href="">Lista de Empleados</a></button>
+
+
+
+
+                        <button type="button" class="btn btn-default btn-lg btn-block">
+                            <a href="v?action=editE&idEmail=<c:out value="${company.emailAdress.id}"/>">
+
+                                Editar Correo</a></button>
+                        <button type="button"
+                                class="btn btn-default btn-lg btn-block">
+                            <a href="v?action=out">Cerrar Cuenta</a></button>
 
 
 

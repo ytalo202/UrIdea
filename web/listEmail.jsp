@@ -23,13 +23,13 @@
         </a>
 
 
-            <form action="email" method="post">
-    <input type="text" name="id" value="${emailAddress.id}"
-    <c:out value="${action == 'edit' ? 'readonly=\"readonly\"' : '' }"/>
-    />
-            <input type="hidden" value="delete" name="action"/>
-            <input type="submit"/>
-            </form>
+    <form action="email" method="post">
+        <input type="text" name="id" value="${emailAddress.id}"
+                <c:out value="${action == 'edit' ? 'readonly=\"readonly\"' : '' }"/>
+        />
+        <input type="hidden" value="delete" name="action"/>
+        <input type="submit"/>
+    </form>
     </p>
 </c:forEach>
 <a href="email?action=add">Add Email</a>

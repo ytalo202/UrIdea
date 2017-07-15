@@ -11,6 +11,6 @@
     <title>Edit Employee</title>
 </head>
 <body>
-<jsp:include page="_Lform.jsp"/>
+<jsp:include page="mesaje.jsp"/>
 </body>
 </html>

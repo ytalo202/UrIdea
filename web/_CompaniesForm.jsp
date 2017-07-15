@@ -1,30 +1,108 @@
 
 
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
 
-<form action="comp" method="post">
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pago</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"> <!--Iconos-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
 
 
-    <input type="text" name="id" value="${company.id}"
-            <c:out value="${action == 'edit' ? 'readonly=\"readonly\"' : '' }"/>
-    />
-    <input type="text" name="evaluation" value="${company.emailAdress.emailData}"
-            <c:out value="${action == 'edit' ? 'readonly=\"readonly\"' : '' }"/>
-    />
+<body>
 
-    <input type="text" name="password" value="${company.password}"/>
-    <input type="text" name="nameCompany" value="${company.nameCompany}"/>
-    <input type="text" name="description" value="${company.description}"/>
-    <input type="text" name="companyState" value="${company.companyState}"/>
-    <input type="text" name="address" value="${company.address}"/>
 
-    <input type="text" name="phoneNumber" value="${company.phoneNumber}"/>
+<div class="my-content" >
+    <div class="container" >
 
-    <input type="hidden" value="update" name="action"/>
-    <input type="submit"/>
-</form>
+        <div class="row">
+            <div class="col-sm-12" >
+                <h1>Actualizar Datos de Compañia</h1>
+                <div class="mydescription">
+                    <p> </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 myform-cont" >
+                <div class="myform-top">
+                    <div class="myform-top-left">
+                        <h3></h3>
+                        <p>Nombre y Dirección en Particular</p>
+                    </div>
+                    <div class="myform-top-right">
+                        <i class="fa fa-money"></i>
+                    </div>
+                </div>
+                <div class="myform-bottom">
+
+
+                    <form role="form" action="v" method="post" >
+
+                        <div class="form-group">
+                            <input type="hidden" name="idCompany" value="${company.id}" placeholder="Country..." class="form-control"  required>
+
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text"  name="password" value="${company.password}"  class="form-control" >
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text"  name="nameCompany" value="${company.nameCompany}" placeholder="Location-City..." class="form-control" >
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="description" value="${company.description}" placeholder="Location-City..." class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden"  name="companyState" value="${company.companyState}" placeholder="Location-City..." class="form-control" >
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text"   name="address" value="${company.address}" placeholder="Location-City..." class="form-control" >
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text"   name="phoneNumber" value="${company.phoneNumber}" placeholder="Location-City..." class="form-control" >
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden"  name="id_email_address" value="${company.emailAdress.id}" placeholder="Location-City..." class="form-control" >
+                        </div>
+
+
+                        <input type="hidden" value="update" name="action"/>
+                        <button input type="submit" class="mybtn">Update</button>
+
+
+
+
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
