@@ -8,7 +8,6 @@
 <form action="v" method="post">
 
     <input type="text" name="idCompany" value="${company.id}"/>
-
     <input type="hidden" value="edit" name="action"/>
     <input type="submit"/>
 </form>

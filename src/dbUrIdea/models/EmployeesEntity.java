@@ -3,6 +3,7 @@ package dbUrIdea.models;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -175,5 +176,48 @@ public class EmployeesEntity extends BaseEntity {
                 "'" + id + "'";
         return change(sql);
     }*/
+
+//VALIDAR CORREO Y CONTRASEÑA
+    public Employee findByNameAndPass(String email,String password ,EmailAddressesEntity emailAddressEntity,CompaniesEntity companiesEntity) {
+        return findIdByEmailAndPassword(email,password ,emailAddressEntity,companiesEntity).get(0);
+    }
+
+    public List<Employee> findIdByEmailAndPassword(String email, String password, EmailAddressesEntity emailAddressEntity,CompaniesEntity companiesEntity) {
+        String sql ="select * from employees a left join email_addresses b on a.id_email_address = b.id where email_data='"+ email+"' and a.password ='"+password+"'";
+        List<Employee> employees = new ArrayList<>();
+        try {
+            ResultSet rs = getConnection().createStatement().executeQuery(sql);
+            if(rs == null) return null;
+            while(rs.next()) employees.add(Employee.build(rs, companiesEntity, emailAddressEntity));
+            return employees;
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return employees;
+    }
+
+    private Connection conn = null;
+    private Statement st = null;
+    private ResultSet rs = null;
+
+    public boolean validar(String nom ,
+                           String clave ){
+        boolean encontrado = false;
+        try {
+            conn = this.getConnection();
+            st = conn.createStatement();
+            rs=st.executeQuery("select * from" +
+                    " companies where name_company = '"+nom+"' and password = '"+clave+"'");
+            if (rs.next()){
+                encontrado=true;
+            }
+            this.closesConnection();
+
+        }catch (Exception e){
+
+        }
+        return encontrado;
+    }
+
 
 }

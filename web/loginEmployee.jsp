@@ -29,7 +29,7 @@
 
         <div class="row">
             <div class="col-sm-12" >
-                <h1>Formulario Login</h1>
+                <h1>Formulario Login para Empleados</h1>
                 <div class="mydescription">
                     <p> </p>
                 </div>
@@ -53,15 +53,15 @@
 
      Estoooo
    --%>
-                    <form role="form" action="va" method="post" class="">
+                    <form role="form" action="validateEmployee" method="post" class="">
                         <div class="form-group">
-                            <input type="text" name="txtusuario"
+                            <input type="text" name="txtemail"
                                    placeholder="Correo Eletrónico..."
                                    class="form-control" id="form-username">
                         </div>
                         <div class="form-group">
 
-                            <input type="password" name="txtclave" placeholder="Contraseña..."
+                            <input type="password" name="txtpassword" placeholder="Contraseña..."
                                    class="form-control" id="form-password">
 
 
