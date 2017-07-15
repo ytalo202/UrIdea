@@ -51,6 +51,8 @@
                         <h3></h3>
                         <p>Nombre y Dirección en Particular</p>
                     </div>
+
+
                     <div class="myform-top-right">
                         <i class="fa fa-money"></i>
                     </div>

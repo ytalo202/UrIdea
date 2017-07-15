@@ -67,12 +67,12 @@ public class EmployeesEntity extends BaseEntity {
     }
 
 
-    public Employee findAdministradores(int type ,int id_company,
-                                    CompaniesEntity companiesEntity,
+    public Employee findAdministradores(//int type ,int id_company,
+                                         CompaniesEntity companiesEntity,
 
                                     EmailAddressesEntity emailAddressesEntity
     ) {
-        String criteria = "employee_type = "+String.valueOf(type)+" and id_company= "+String.valueOf(id_company);
+        String criteria = "employee_type = "+1+" and id_company= "+1;
         return findByCriteria(criteria, companiesEntity,
                 emailAddressesEntity).get(0);
     }

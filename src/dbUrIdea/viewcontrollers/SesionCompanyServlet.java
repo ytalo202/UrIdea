@@ -221,7 +221,8 @@ public class SesionCompanyServlet extends HttpServlet {
                 break;
             }
             case "edit": {
-                Company company = service.getCompanyById(Integer.parseInt(
+                Company company
+                        = service.getCompanyById(Integer.parseInt(
                         request.getParameter("idCompany")));
                 request.setAttribute("company", company);
                 request.setAttribute("action", "edit");
@@ -245,14 +246,12 @@ public class SesionCompanyServlet extends HttpServlet {
 
 
             case "seleccion": {
-                int id_company = Integer.parseInt(request.getParameter("idCompany"));
-                service.findAdministradores(1,id_company);
+
+
                 Company company = service.getCompanyById(Integer.parseInt(
                         request.getParameter("idCompany")));
-
-
                 request.setAttribute("company", company);
-                request.setAttribute("action", "editCorre");
+                request.setAttribute("action", "seleccion");
                 actionUri = Adm_URI;
                 break;
             }

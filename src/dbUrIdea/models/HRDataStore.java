@@ -351,8 +351,10 @@ public class HRDataStore {
                 name,pass,getEmailAddressesEntity());
     }
 
-    public Employee findAdministradores(int type ,int id_company) {
+    public Employee findAdministradores(//int type ,int id_company
+    ) {
         return getEmployeesEntity().findAdministradores(
-                type,id_company,getCompaniesEntity(),getEmailAddressesEntity());
+                //type,id_company,
+                getCompaniesEntity(),getEmailAddressesEntity());
     }
 }

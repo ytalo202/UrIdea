@@ -233,9 +233,12 @@ public class HRService {
         return getDataStore().findIdByCompany(name,pass);
     }
 
-    public Employee findAdministradores(int type ,int id_company) {
+    public Employee findAdministradores(
+            //int type ,int id_company
+    ) {
         return getDataStore().findAdministradores(
-                type,id_company);
+                //type,id_company
+        );
     }
 
 }
