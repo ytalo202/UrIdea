@@ -43,7 +43,6 @@ public class ValidateEmployeeServlet extends HttpServlet {
             }catch (Exception a) {try {
                 Company company = service.getIdByCompany(email, password);
                 request.setAttribute("company", company);
-
                 RequestDispatcher dispatcher = request.getRequestDispatcher(COMPANY_EDIT_URI);
                 dispatcher.forward(request, response);
                 log("FUNCIONA COLMPANY");

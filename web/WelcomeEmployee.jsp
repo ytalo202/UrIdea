@@ -48,12 +48,14 @@
                 <div class="myform-bottom">
 
 
-                    <form action="validateEmployee" method="post">
+                    <form action="TypeEmployeeValidation" method="post">
 
-                        <input type="hidden" name="idCompany" value="${employee.id}"/>
+                        <input type="hidden" name="idEmployee" value="${employee.id}"/>
+                        <input type="hidden" name="EmployeeType" value="${employee.employeeType}"/>
+
                         <p>Welcome to Eva Web Aplication  ...</p>
 
-                        <input type="hidden" value="servis" name="action"/>
+                        <input type="hidden" value="select" name="action"/>
                         <button input type="submit" class="mybtn">Next</button>
                     </form>
 
