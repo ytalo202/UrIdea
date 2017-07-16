@@ -200,9 +200,10 @@ public class SesionCompanyServlet extends HttpServlet {
 
                 Employee employee =new Employee();
                 EmailAddress emailAddress =new EmailAddress();
-                Company company =new Company();
+                Company company1 =new Company();
                 employee.setEmailAddress(emailAddress.setId(service.getEmailCount()));
-                employee.setCompany(company.setId(Integer.parseInt(
+
+                employee.setCompany(company1.setId(Integer.parseInt(
                         request.getParameter("idCompany"))));
                 employee.setEmployeeType(1);
                 employee.setPassword(request.getParameter("password"));
@@ -211,11 +212,12 @@ public class SesionCompanyServlet extends HttpServlet {
                         "Create success" :
                         "Error while creating";
 
-              Company company1 = service.getCompanyById(Integer.parseInt(
+              Company company = service.getCompanyById(Integer.parseInt(
                       request.getParameter("idCompany")));
-              request.setAttribute("company", company1);
+              request.setAttribute("company", company);
               request.setAttribute("action", "edit");
                 log(message);
+
               RequestDispatcher dispatcher =
                       request.getRequestDispatcher(Adm_URI);
               dispatcher.forward(request, response);

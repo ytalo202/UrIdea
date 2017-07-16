@@ -19,9 +19,6 @@
 
     <p>Clave <input type="text" name="password" value="${employee.password}"/><p>
 
-
-
-
     <input type="hidden" value="createEmplAdmin" name="action"/>
     <input type="submit"/>
 </form>
