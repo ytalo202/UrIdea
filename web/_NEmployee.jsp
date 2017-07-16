@@ -7,13 +7,14 @@
 --%>
 <jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
 
-<form action="emp" method="post">
+<form action="v" method="post">
 
 
 
-    <p>id_company<input type="text" name="id_company" value="${emp.company.nameCompany}"/></p>
-    <p>id_email_address int<input type="text" name="id_email_address" value="${emp.emailAddress.emailData}"/></p>
-   <p>employee_type int <input type="text" name="employee_type" value="${emp.employeeType}"/></p>
+    <p>id_company<input type="hidden" name="idCompany" value="${company.id}"/></p>
+    <p>id_email_address int<input type="hidden" name="id_email_address}"/></p>
+  
+
     <p>password<input type="text" name="password" value="${emp.password}"/></p>
     <p>employee_name <input type="text" name="employee_name" value="${emp.name}"/></p>
     <p>employee_first_last_name <input type="text" name="employee_first_last_name" value="${emp.firstLastName}"/></p>
@@ -26,6 +27,6 @@
     <p>birthdate <input type="text" name="birthdate" value="${emp.birthdate}"/></p>
 
 
-    <input type="hidden" value="create" name="action"/>
+    <input type="hidden" value="createEmplAdmin" name="action"/>
     <input type="submit"/>
 </form>
