@@ -45,10 +45,7 @@
             <!-- Right-sided navbar links -->
             <div class="w3-right w3-hide-small">
 
-
-
-
-                <a href="login.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Administrador</a>
+                <a class="w3-bar-item w3-button"><i class="fa fa-user"></i> Administrador</a>
             </div>
             <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -59,11 +56,6 @@
         </div>
     </div>
 </div>
-
-</nav>
-
-
-
 
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-card-2 w3-animate-left
@@ -79,7 +71,7 @@
     <div class="container" >
         <div class="row">
             <div class="col-sm-12" >
-                <h1> Company Pepito</h1>
+                <h1> Administrador </h1>
                 <div class="mydescription">
                     <p> </p>
                 </div>
@@ -104,11 +96,13 @@
 
                       <form>  <button type="button" class="btn btn-default btn-lg btn-block"><a href="_CompaniesForm.jsp">Editar Cuenta</a></button>
                       <form>  <button type="button" class="btn btn-default btn-lg btn-block"><a href="_NEmployee.jsp">Agregar Empleado</a></button>
-                          <form>  <button type="button" class="btn btn-default btn-lg btn-block"><a href="">Lista de Empleados</a></button></form>
+                          <form> <button type="button" class="btn btn-default btn-lg btn-block"><a href="">Lista de Empleados</a></button></form>
 
-                          <form>   <button type="button" class="btn btn-default btn-lg btn-block"><a href="">Evaluar Empleados</a></button></form>
+                          <form><button type="button" class="btn btn-default btn-lg btn-block"><a href="">Evaluar Empleados</a></button></form>
 
-                          <form>     <button type="button" class="btn btn-default btn-lg btn-block"><a href="index.jsp">Cerrar Cuenta</a></button></form>
+                          <form><button type="button" class="btn btn-default btn-lg btn-block"><a href="index.jsp">Cerrar Cuenta</a></button></form>
+                    </form>
+                      </form>
                     </form>
                 </div>
             </div>

@@ -27,7 +27,7 @@
     <div class="container" >
         <div class="row">
             <div class="col-sm-12" >
-                <h1> Company Pepito</h1>
+                <h1> Empleado Pepito</h1>
                 <div class="mydescription">
                     <p> </p>
                 </div>

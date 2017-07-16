@@ -198,7 +198,7 @@ public class EmployeesEntity extends BaseEntity {
     }
 
     public List<Employee> findIdByEmailAndPassword(String email, String password, EmailAddressesEntity emailAddressEntity,CompaniesEntity companiesEntity) {
-        String sql ="select * from employees a left join email_addresses b on a.id_email_address = b.id where email_data='"+ email+"' and a.password ='"+password+"'";
+        String sql ="select a.id,a.id_company,a.id_email_address,a.employee_type,a.password,a.employee_name,a.employee_first_last_name,a.employee_second_last_name,a.dni,a.phone_number,a.cell_phone_number,a.photo,a.address,a.department,a.birthdate from employees a left join email_addresses b on a.id_email_address = b.id where email_data='"+ email+"' and a.password ='"+password+"'";
         List<Employee> employees = new ArrayList<>();
         try {
             ResultSet rs = getConnection().createStatement().executeQuery(sql);
@@ -210,6 +210,7 @@ public class EmployeesEntity extends BaseEntity {
         }
         return employees;
     }
+
 
     private Connection conn = null;
     private Statement st = null;
