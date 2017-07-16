@@ -6,7 +6,7 @@
 
 <form action="v" method="post">
     <input type="hidden" name="idCompany" value="${company.id}"/>
-    <input type="text" name="emailData" />
+    <p>Correo ..<input type="text" name="emailData" /></p>
     <input type="hidden" value="createEmail" name="action"/>
     <input type="submit"/>
 </form>

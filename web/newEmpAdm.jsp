@@ -11,17 +11,17 @@
 
 
 
-    <p>id_company
-
-        <input type="text" name="idCompany" value="${company.id}"/></p>
-
-    <p>id_email_address int
-
-        <input type="text" name="idEmail" value="${emailAddress.id}"/></p>
 
 
+        <input type="hidden" name="idCompany" value="${company.id}"/>
+
+    <p>Nombre<input type="text" name="employee_name" value="${employee.name}"/></p>
+
+    <p>Clave <input type="text" name="password" value="${employee.password}"/><p>
 
 
-    <input type="hidden" value="create" name="action"/>
+
+
+    <input type="hidden" value="createEmplAdmin" name="action"/>
     <input type="submit"/>
 </form>

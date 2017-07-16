@@ -61,6 +61,12 @@ public class HRService {
         return getDataStore().findAllEmail();
     }
 
+    public int getEmailCount() {
+        return getEmailAddresses().size();
+    }
+
+
+
     public List<PaymentsType> getPaymentsTypes(){
         return getDataStore().findAllPaymentsType();
     }
@@ -248,6 +254,11 @@ public class HRService {
         return getDataStore().findAdministradores(
                 //type,id_company
         );
+    }
+
+    public boolean createEmployee2(Employee employee) {
+
+        return getDataStore().createEmpleado2(employee);
     }
 
 }

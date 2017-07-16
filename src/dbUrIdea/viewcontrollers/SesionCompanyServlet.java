@@ -37,9 +37,11 @@ public class SesionCompanyServlet extends HttpServlet {
     public static String Adm_URI = "/listAdministor.jsp";
 
     public static String Empl_URI = "/listEmpleado.jsp";
+
     public static String Emailnew_URI = "/newEmpEmail.jsp";
 
     public static String EmpleadoAdm_URI = "/newEmpAdm.jsp";
+
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -173,21 +175,15 @@ public class SesionCompanyServlet extends HttpServlet {
             }
 
             case "createEmail": {
-                EmailAddress emailAddress= new EmailAddress();
-                emailAddress.setEmailData(request.getParameter("emailData"));
-                String message = service.createEmail(emailAddress) ?
+                EmailAddress emailAddress1= new EmailAddress();
+                emailAddress1.setEmailData(request.getParameter("emailData"));
+                String message = service.createEmail(emailAddress1) ?
                         "Create success" :
                         "Error while creating";
 
                 Company company = service.getCompanyById(Integer.parseInt(
                         request.getParameter("idCompany")));
                 request.setAttribute("company", company);
-                request.setAttribute("action", "edit");
-
-
-                EmailAddress emailAddress1 = service.getEmailAddressById(Integer.parseInt(
-                        request.getParameter("emailData")));
-                request.setAttribute("emailAddress", emailAddress1);
                 request.setAttribute("action", "edit");
 
 
@@ -200,39 +196,33 @@ public class SesionCompanyServlet extends HttpServlet {
 
 
 
-          /*  case "createEmpleado": {
+          case "createEmplAdmin": {
 
-
-                //Company company= service.getComanyByEmailId(Integer.parseInt(request.getParameter("EmailId")));
                 Employee employee =new Employee();
                 EmailAddress emailAddress =new EmailAddress();
                 Company company =new Company();
-
-                employee.setCompany(company.setId(idC));
-
-                employee.setEmailAddress(emailAddress.setId
-                        (idCorreo));
-
-                // employee.setId(Integer.parseInt(request.getParameter("id")));
+                employee.setEmailAddress(emailAddress.setId(service.getEmailCount()));
+                employee.setCompany(company.setId(Integer.parseInt(
+                        request.getParameter("idCompany"))));
                 employee.setEmployeeType(1);
                 employee.setPassword(request.getParameter("password"));
                 employee.setName(request.getParameter("employee_name"));
-                employee.setFirstLastName(request.getParameter("employee_first_last_name"));
-                employee.setSecondLastName(request.getParameter("employee_second_last_name"));
-                employee.setDni(Integer.parseInt(request.getParameter("dni")));
-                employee.setPhoneNumber(Integer.parseInt(request.getParameter("phone_number")));
-                employee.setCellPhoneNumber(Integer.parseInt(request.getParameter("cell_phone_number")));
-                employee.setAddress(request.getParameter("address"));
-                employee.setDepartment(request.getParameter("department"));
-                employee.setBirthdate(Date.valueOf(request.getParameter("birthdate")));
-                String message = service.createEmployee(employee) ?
+                String message = service.createEmployee2(employee) ?
                         "Create success" :
                         "Error while creating";
+
+              Company company1 = service.getCompanyById(Integer.parseInt(
+                      request.getParameter("idCompany")));
+              request.setAttribute("company", company1);
+              request.setAttribute("action", "edit");
                 log(message);
+              RequestDispatcher dispatcher =
+                      request.getRequestDispatcher(Adm_URI);
+              dispatcher.forward(request, response);
                 break;
 
 
-            }*/
+            }
 
         }
 

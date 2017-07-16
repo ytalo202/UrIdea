@@ -368,4 +368,10 @@ public class HRDataStore {
                 //type,id_company,
                 getCompaniesEntity(),getEmailAddressesEntity());
     }
+
+    public boolean
+    createEmpleado2(Employee employee) {
+        return getEmployeesEntity().add2(employee);
+    }
+
 }
