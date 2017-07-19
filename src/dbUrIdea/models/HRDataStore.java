@@ -334,6 +334,11 @@ public class HRDataStore {
         return getCompaniesEntity().update(company);
     }
 
+    public boolean addCompany2(Company company) {
+
+        return getCompaniesEntity().add2(company);
+    }
+
     public boolean createEmail(EmailAddress emailAddress) {
         return getEmailAddressesEntity().add(emailAddress);
     }

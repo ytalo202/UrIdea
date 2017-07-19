@@ -87,7 +87,7 @@
                 <a href="pagos.jsp" class="w3-bar-item w3-button"><i class="fa fa-home" aria-hidden="true" ></i> HOME</a>
                 <a href="Listado.jsp" class="w3-bar-item w3-button">ABOUT</a>
                 <a href="evaluation.jsp" class="w3-bar-item w3-button">Evaluation</a>
-                <a href="register.jsp" class="w3-bar-item w3-button"> SIGN UP</a>
+                <a href="CompEmail.jsp" class="w3-bar-item w3-button"> SIGN UP</a>
                 <a href="login.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i>LOGIN</a>
             </div>
             <!-- Hide right-floated links on small screens and replace them with a menu icon -->

@@ -40,7 +40,11 @@ public class SesionCompanyServlet extends HttpServlet {
 
     public static String Emailnew_URI = "/newEmpEmail.jsp";
 
-    public static String EmpleadoAdm_URI = "/_NEmployee.jsp";
+    public static String EmpleadoAdm_URI = "/newEmpAdm.jsp";
+    //public static String CompEmail_URI = "/CompEmail.jsp";
+
+    public static String createComp_URI = "/CreateComp.jsp";
+    public static String priComp_URI = "/priMesaje.jsp";
 
 
 
@@ -86,6 +90,61 @@ public class SesionCompanyServlet extends HttpServlet {
                 break;
 
 
+            }
+
+
+            case "createComp":{
+
+                EmailAddress emailAddress =new EmailAddress();
+                Company company =new Company();
+                //company.setId(Integer.parseInt(request.getParameter("id")));
+                company.setPassword(request.getParameter("password"));
+                company.setNameCompany(request.getParameter("nameCompany"));
+                company.setCompanyState
+                        (1);
+
+
+                ///-------------------Probando
+                company.setEmailAdress(emailAddress.setId(service.getEmailCount()));
+                String message = service.addComp2(company) ?
+                        "Create success" :
+                        "Error while creating";
+                log(message);
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(priComp_URI);
+                dispatcher.forward(request, response);
+                break;
+
+
+            }
+
+            case "createCompEmail":{
+                EmailAddress emailAddress1= new EmailAddress();
+                emailAddress1.setEmailData(request.getParameter("emailData"));
+                String message = service.createEmail(emailAddress1) ?
+                        "Create success" :
+                        "Error while creating";
+                log(message);
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(createComp_URI);
+                dispatcher.forward(request, response);
+                break;
+            }
+
+
+
+            case "prSesion":{
+                Company company = service.getCompanyById(
+                        service.getCompanyCount());
+
+                request.setAttribute("company", company);
+                request.setAttribute("action", "menu");
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(root_URI);
+                dispatcher.forward(request, response);
+                break;
             }
 
 
@@ -201,6 +260,7 @@ public class SesionCompanyServlet extends HttpServlet {
                 Employee employee =new Employee();
                 EmailAddress emailAddress =new EmailAddress();
                 Company company1 =new Company();
+
                 employee.setEmailAddress(emailAddress.setId(service.getEmailCount()));
 
                 employee.setCompany(company1.setId(Integer.parseInt(
@@ -211,15 +271,8 @@ public class SesionCompanyServlet extends HttpServlet {
 
               employee.setPassword(request.getParameter("password"));
               employee.setName(request.getParameter("employee_name"));
-              employee.setFirstLastName(request.getParameter("employee_first_last_name"));
-              employee.setSecondLastName(request.getParameter("employee_second_last_name"));
               employee.setDni(Integer.parseInt(request.getParameter("dni")));
-              employee.setPhoneNumber(Integer.parseInt(request.getParameter("phone_number")));
-              employee.setCellPhoneNumber(Integer.parseInt(request.getParameter("cell_phone_number")));
-              employee.setAddress(request.getParameter("address"));
-              employee.setDepartment(request.getParameter("department"));
-              employee.setBirthdate(Date.valueOf(request.getParameter("birthdate")));
-              String message = service.createEmployee(employee) ?
+              String message = service.createEmployee2(employee) ?
                       "Create success" :
                       "Error while creating";
               log(message);

@@ -13,7 +13,7 @@
 
     <p>id_company<input type="hidden" name="idCompany" value="${company.id}"/></p>
     <p>id_email_address int<input type="hidden" name="id_email_address}"/></p>
-  
+
 
     <p>password<input type="text" name="password" value="${emp.password}"/></p>
     <p>employee_name <input type="text" name="employee_name" value="${emp.name}"/></p>

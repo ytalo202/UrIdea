@@ -198,6 +198,19 @@ public class CompaniesEntity extends BaseEntity {
                 + ")";
         return change(sql);
     }
+
+    public boolean add2(Company company) {
+        String sql = "INSERT companies ("+
+                "password, name_company, company_state," +
+                "id_email_address) " +
+                "VALUES(" +
+                company.getPasswordAsValue() + ", " +
+                company.getNameCompanyAsValue()+ ", " +
+                company.getCompanyStateAsString()+ ", " +
+                company.getEmailAdress().getIdAsString()
+                + ")";
+        return change(sql);
+    }
     public boolean update(Company company) {
         String sql = "UPDATE companies SET password = " + company.getPasswordAsValue() + ", " +
                 "name_company = " + company.getNameCompanyAsValue() + ", " +

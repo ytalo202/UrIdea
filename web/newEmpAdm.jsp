@@ -16,6 +16,7 @@
         <input type="hidden" name="idCompany" value="${company.id}"/>
 
     <p>Nombre<input type="text" name="employee_name" value="${employee.name}"/></p>
+    <p>Dni <input type="text" name="dni" value="${employee.dni}"/><p>
 
     <p>Clave <input type="text" name="password" value="${employee.password}"/><p>
 

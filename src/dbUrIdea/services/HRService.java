@@ -56,6 +56,12 @@ public class HRService {
 
         return getDataStore().findAllCompanies();
     }
+    public int getCompanyCount() {return getCompanies().size();}
+
+    public boolean addComp2(Company company) {
+
+        return getDataStore().addCompany2(company);
+    }
 
     public List<EmailAddress> getEmailAddresses() {
         return getDataStore().findAllEmail();
