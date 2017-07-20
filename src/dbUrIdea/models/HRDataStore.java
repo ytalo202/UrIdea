@@ -333,11 +333,18 @@ public class HRDataStore {
 
         return getCompaniesEntity().update(company);
     }
-
+//-----------
     public boolean addCompany2(Company company) {
 
         return getCompaniesEntity().add2(company);
     }
+
+
+    public boolean
+    createEmpleado2(Employee employee) {
+        return getEmployeesEntity().add2(employee);
+    }
+
 
     public boolean createEmail(EmailAddress emailAddress) {
         return getEmailAddressesEntity().add(emailAddress);
@@ -367,16 +374,34 @@ public class HRDataStore {
         return getEmployeesEntity().findByNameAndPass(email,password,getEmailAddressesEntity(),getCompaniesEntity());
     }
 
-    public Employee findAdministradores(//int type ,int id_company
-    ) {
-        return getEmployeesEntity().findAdministradores(
-                //type,id_company,
-                getCompaniesEntity(),getEmailAddressesEntity());
+
+/*
+    public List<Commentary> findAllCommentaries() {
+
+        return getCommentsEntity().findAll(
+                getEvaluationsEntity(),
+                getCompaniesEntity(),
+                getEmployeesEntity(),
+                getEmailAddressesEntity());
+    }
+    */
+//---------------
+    public List<Employee> findAllAdmin(int type ,int id_company)
+    {
+        return getEmployeesEntity().findAdministradores(type,id_company,getCompaniesEntity(),getEmailAddressesEntity());
     }
 
-    public boolean
-    createEmpleado2(Employee employee) {
-        return getEmployeesEntity().add2(employee);
+    public List<Employee> findAllEmployee(int id_company)
+    {
+        return getEmployeesEntity().findEmployee(id_company,getCompaniesEntity(),getEmailAddressesEntity());
     }
+
+
+    public boolean changeEmployee(Employee employee) {
+        return getEmployeesEntity().changeEmployee(employee);
+    }
+
+
+
 
 }

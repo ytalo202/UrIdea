@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome Employee</title>
+    <title>Formulario Login</title>
     <!-- CSS de Bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"> <!--Iconos-->
@@ -25,7 +25,7 @@
     <div class="container" >
         <div class="row">
             <div class="col-sm-12" >
-                <h1> Empleado <c:out value="${employee.name}"/></h1>
+                <h1> Empresa  <c:out value="${company.nameCompany}"/></h1>
                 <div class="mydescription">
                     <p> </p>
                 </div>
@@ -38,7 +38,7 @@
             <div class="col-sm-6 col-sm-offset-3 myform-cont" >
                 <div class="myform-top">
                     <div class="myform-top-left">
-                        <h3 >Empleado</h3>
+                        <h3 >Employee</h3>
 
                     </div>
                     <div class="myform-top-right">
@@ -48,15 +48,13 @@
                 <div class="myform-bottom">
 
 
-                    <form action="TypeEmployeeValidation" method="post">
+                    <form action="emplo" method="post">
 
-                        <input type="hidden" name="idEmployee" value="${employee.id}"/>
-                        <input type="hidden" name="EmployeeType" value="${employee.employeeType}"/>
-
-
+                        <input type="text" name="idType" value="${employee.employeeType}"/>
+                        <input type="text" name="idEmployee" value="${employee.id}"/>
                         <p>Welcome to Eva Web Aplication  ...</p>
 
-                        <input type="hidden" value="select" name="action"/>
+                        <input type="hidden" value="servis" name="action"/>
                         <button input type="submit" class="mybtn">Next</button>
                     </form>
 

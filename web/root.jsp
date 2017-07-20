@@ -67,10 +67,10 @@
 
 
 
-
                         <button type="button" class="btn btn-default btn-lg btn-block">
-                            <a href="v?action=seleccion&idCompany=<c:out value="${company.id}"/>">
-                                Lista de Administradores</a></button>
+                            <a href="v?action=lista&idCompany=<c:out value="${company.id}"/>">
+
+                                Lista Administradores</a></button>
 
                         <button type="button" class="btn btn-default btn-lg btn-block">
                             <a href="v?action=seleccionEmpleados&idCompany=<c:out value="${company.id}"/>">
@@ -81,6 +81,8 @@
                             <a href="v?action=editCorre&idCompany=<c:out value="${company.id}"/>">
 
                                 Editar Email</a></button>
+
+
 
 
 

@@ -8,7 +8,7 @@
 <jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
 
 <form action="v" method="post">
-
+    <p>Cod Email <input type="text" name="CorreNum" value="${emailNum}"/><p>
     <p>nombre<input type="text" name="nameCompany" /></p>
     <p>contraseña<input type="text" name="password" /></p>
     <input type="hidden" value="createComp" name="action"/>

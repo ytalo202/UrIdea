@@ -170,18 +170,27 @@ public class HRService {
 
         return getDataStore().deleteEmailById(emailAddress);
     }
-
+//-----------
     public boolean createComp(Company company) {
 
         return getDataStore().createCompany(company);
     }
 //---------------------------------
 
-
+//{{{{{
     public boolean createEmployee(Employee employee) {
 
         return getDataStore().createEmployee(employee);
     }
+
+//----
+
+    public boolean createEmployee2(Employee employee) {
+
+        return getDataStore().createEmpleado2(employee);
+    }
+
+
     public Employee getEmployeeById(int id) {
 
         return getDataStore().findEmployeeById(id);
@@ -248,23 +257,33 @@ public class HRService {
     public Employee getIdByEmployee(String email,String password) {
         return getDataStore().findIdByEmployee(email,password);
     }
+//-----------
 
     public EmailAddress getIdByEmail(String email) {
         return getDataStore().findIdByEmail(email);
     }
 
-
-    public Employee findAdministradores(
-            //int type ,int id_company
+//--------------
+    public List<Employee> findAdmin(
+            int type ,int id_company
     ) {
-        return getDataStore().findAdministradores(
-                //type,id_company
+        return getDataStore().findAllAdmin(
+                type,id_company
         );
     }
 
-    public boolean createEmployee2(Employee employee) {
 
-        return getDataStore().createEmpleado2(employee);
+    public List<Employee> findEmployee(
+            int id_company
+    ) {
+        return getDataStore().findAllEmployee(
+                id_company
+        );
+    }
+
+
+    public boolean changeEmployee(Employee employee) {
+        return getDataStore().changeEmployee(employee);
     }
 
 }

@@ -36,7 +36,7 @@ public class EmailAddressesEntity extends BaseEntity {
 
 
     public EmailAddress findByEmailData(String email) {
-        String criteria = " email_addresses = '" +
+        String criteria = " email_data  = '" +
                 email + "'";
         return findByCriteria(criteria).get(0);
     }

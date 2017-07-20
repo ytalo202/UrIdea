@@ -88,21 +88,54 @@
                         <i class="fa fa-user"></i>
                     </div>
                 </div>
-                <div class="myform-bottom">
+                <div class="myform-bottom" action="TypeEmployeeValidation" method="post">
                     <form role="form" >
-                        <h1>Menú</h1>
-                        <form><button type="button" class="btn btn-primary btn-lg btn-block">Seleccione Una Opción</button></form>
+                        <h1>Menu</h1>
+
+                        <input type="hidden" name="idCompany" value="${company.id}"/>
+                        <button type="button" class="btn btn-primary btn-lg btn-block">Seleccione Una Opcion</button>
 
 
-                      <form>  <button type="button" class="btn btn-default btn-lg btn-block"><a href="_CompaniesForm.jsp">Editar Cuenta</a></button>
-                      <form>  <button type="button" class="btn btn-default btn-lg btn-block"><a href="_NEmployee.jsp">Agregar Empleado</a></button>
-                          <form> <button type="button" class="btn btn-default btn-lg btn-block"><a href="">Lista de Empleados</a></button></form>
+                        <button type="button" class="btn btn-default btn-lg btn-block">
+                            <a href="v?action=edit&idCompany=<c:out value="${company.id}"/>">
 
-                          <form><button type="button" class="btn btn-default btn-lg btn-block"><a href="">Evaluar Empleados</a></button></form>
+                                Editar Empresa</a></button>
 
-                          <form><button type="button" class="btn btn-default btn-lg btn-block"><a href="index.jsp">Cerrar Cuenta</a></button></form>
-                    </form>
-                      </form>
+
+                        <button type="button" class="btn btn-default btn-lg btn-block">
+                            <a href="v?action=creEmail&idCompany=<c:out value="${company.id}"/>">
+                                Crear Administrador</a></button>
+
+
+
+
+                        <button type="button" class="btn btn-default btn-lg btn-block">
+                            <a href="v?action=seleccion&idCompany=<c:out value="${company.id}"/>">
+                                Lista de Administradores</a></button>
+
+                        <button type="button" class="btn btn-default btn-lg btn-block">
+                            <a href="v?action=seleccionEmpleados&idCompany=<c:out value="${company.id}"/>">
+                                Lista de Empleados</a></button>
+
+
+                        <button type="button" class="btn btn-default btn-lg btn-block">
+                            <a href="v?action=editCorre&idCompany=<c:out value="${company.id}"/>">
+
+                                Editar Email</a></button>
+
+
+
+
+
+
+                        <button type="button"
+                                class="btn btn-default btn-lg btn-block">
+                            <a href="v?action=out">Cerrar Cuenta</a></button>
+
+
+
+
+
                     </form>
                 </div>
             </div>

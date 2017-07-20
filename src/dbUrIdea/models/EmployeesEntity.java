@@ -23,7 +23,8 @@ public class EmployeesEntity extends BaseEntity {
         super(connection,"employees");
     }
 
-    public List<Employee> findAll(CompaniesEntity companiesEntity,
+    public List<Employee> findAll(
+            CompaniesEntity companiesEntity,
                                   EmailAddressesEntity emailAddressesEntity) {
         return findByCriteria("", companiesEntity, emailAddressesEntity);
     }
@@ -67,15 +68,25 @@ public class EmployeesEntity extends BaseEntity {
                 emailAddressesEntity).get(0);
     }
 
-
-    public Employee findAdministradores(//int type ,int id_company,
+//-------------------
+    public List<Employee> findAdministradores(int type ,int id_company,
                                          CompaniesEntity companiesEntity,
 
                                     EmailAddressesEntity emailAddressesEntity
     ) {
-        String criteria = "employee_type = "+1+" and id_company= "+1;
+        String criteria = "employee_type = "+type+" and id_company= "+id_company;
         return findByCriteria(criteria, companiesEntity,
-                emailAddressesEntity).get(0);
+                emailAddressesEntity);
+    }
+
+    public List<Employee> findEmployee(int id_company,
+                                              CompaniesEntity companiesEntity,
+
+                                              EmailAddressesEntity emailAddressesEntity
+    ) {
+        String criteria = "id_company= "+id_company;
+        return findByCriteria(criteria, companiesEntity,
+                emailAddressesEntity);
     }
 
 
@@ -135,6 +146,14 @@ public class EmployeesEntity extends BaseEntity {
         return change(sql);
     }
 
+    public boolean changeEmployee(Employee employee) {
+        String sql = "UPDATE employees SET " +
+                "employee_type = "+employee.getEmployeeTypeAsString()+
+                " WHERE id = " + employee.getIdAsString();
+        return change(sql);
+    }
+
+
     public boolean add(Employee employee) {
         String sql = "INSERT employees(" +
                 "id_company, id_email_address, employee_type, password, " +
@@ -162,9 +181,9 @@ public class EmployeesEntity extends BaseEntity {
     public boolean add2(Employee employee) {
         String sql = "INSERT employees(" +
                 "id_company, id_email_address, employee_type, password, " +
-                "employee_name,dnd) " +
+                "employee_name, dni) "+
                 "VALUES("
-                +employee.getCompany().getIdAsString()+ ", "
+                +employee.getCompany().getIdAsString()+", "
                 +employee.getEmailAddress().getIdAsString()+ ", "
                 +employee.getEmployeeTypeAsString()+ ", "
                 +employee.getPasswordAsValue()+ ", "

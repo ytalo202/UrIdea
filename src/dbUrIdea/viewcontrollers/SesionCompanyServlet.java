@@ -45,6 +45,12 @@ public class SesionCompanyServlet extends HttpServlet {
 
     public static String createComp_URI = "/CreateComp.jsp";
     public static String priComp_URI = "/priMesaje.jsp";
+    public static String pruebalista = "listPrueba.jsp";
+
+    public static String ChangeAdm_URI = "/changeAdmin.jsp";
+
+    public static String ChangeEmpl_URI = "/changeEmployee.jsp";
+
 
 
 
@@ -52,13 +58,16 @@ public class SesionCompanyServlet extends HttpServlet {
             throws ServletException, IOException {
 
 
-        int idC2;
-        int idCorreo2;
+
+
+
 
 
 
         String action = request.getParameter("action");
         switch(action) {
+
+
 
             case "update": {
                 //Company company = service.getCompanyById(request.getParameter("id"));
@@ -92,6 +101,54 @@ public class SesionCompanyServlet extends HttpServlet {
 
             }
 
+            case "updatechangeAdmin": {
+
+                Company company = new Company();
+                Employee employee= new Employee();
+                employee.setId(Integer.parseInt(request.getParameter("idEmployee")));
+                employee.setEmployeeType(1);
+
+                String message = service.changeEmployee(employee) ?
+                        "Update success" :
+                        "Error while updating";
+                company = service.getCompanyById(Integer.parseInt(
+                        request.getParameter("idCompany")));
+                request.setAttribute("company", company);
+                request.setAttribute("action", "edit");
+
+
+                log(message);
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(root_URI);
+                dispatcher.forward(request, response);
+
+                break;
+            }
+
+            case "updatechangeEmployee": {
+
+                Company company = new Company();
+                Employee employee= new Employee();
+                employee.setId(Integer.parseInt(request.getParameter("idEmployee")));
+                employee.setEmployeeType(2);
+
+                String message = service.changeEmployee(employee) ?
+                        "Update success" :
+                        "Error while updating";
+                company = service.getCompanyById(Integer.parseInt(
+                        request.getParameter("idCompany")));
+                request.setAttribute("company", company);
+                request.setAttribute("action", "edit");
+
+
+                log(message);
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(root_URI);
+                dispatcher.forward(request, response);
+
+                break;
+            }
+
 
             case "createComp":{
 
@@ -105,7 +162,7 @@ public class SesionCompanyServlet extends HttpServlet {
 
 
                 ///-------------------Probando
-                company.setEmailAdress(emailAddress.setId(service.getEmailCount()));
+                company.setEmailAdress(emailAddress.setId(Integer.parseInt(request.getParameter("CorreNum"))));
                 String message = service.addComp2(company) ?
                         "Create success" :
                         "Error while creating";
@@ -122,10 +179,12 @@ public class SesionCompanyServlet extends HttpServlet {
             case "createCompEmail":{
                 EmailAddress emailAddress1= new EmailAddress();
                 emailAddress1.setEmailData(request.getParameter("emailData"));
+                int Corre=service.getEmailCount()+1;
                 String message = service.createEmail(emailAddress1) ?
                         "Create success" :
                         "Error while creating";
                 log(message);
+                request.setAttribute("emailNum", Corre);
                 RequestDispatcher dispatcher =
                         request.getRequestDispatcher(createComp_URI);
                 dispatcher.forward(request, response);
@@ -236,6 +295,9 @@ public class SesionCompanyServlet extends HttpServlet {
             case "createEmail": {
                 EmailAddress emailAddress1= new EmailAddress();
                 emailAddress1.setEmailData(request.getParameter("emailData"));
+
+                int Corre=service.getEmailCount()+1;
+
                 String message = service.createEmail(emailAddress1) ?
                         "Create success" :
                         "Error while creating";
@@ -243,8 +305,10 @@ public class SesionCompanyServlet extends HttpServlet {
                 Company company = service.getCompanyById(Integer.parseInt(
                         request.getParameter("idCompany")));
                 request.setAttribute("company", company);
-                request.setAttribute("action", "edit");
 
+                request.setAttribute("action", "edit");
+                //
+                request.setAttribute("emailNum", Corre);
 
                 log(message);
                 RequestDispatcher dispatcher =
@@ -261,7 +325,9 @@ public class SesionCompanyServlet extends HttpServlet {
                 EmailAddress emailAddress =new EmailAddress();
                 Company company1 =new Company();
 
-                employee.setEmailAddress(emailAddress.setId(service.getEmailCount()));
+                employee.setEmailAddress(emailAddress.setId(Integer.parseInt
+                        (request.getParameter("CorreNum"))));
+
 
                 employee.setCompany(company1.setId(Integer.parseInt(
                         request.getParameter("idCompany"))));
@@ -375,6 +441,34 @@ public class SesionCompanyServlet extends HttpServlet {
                 request.setAttribute("company", company);
                 request.setAttribute("action", "edit");
                 actionUri = Emailnew_URI;
+                break;
+            }
+
+            case "lista": {
+                Company company = service.getCompanyById
+                        (Integer.parseInt(request.getParameter("idCompany")));
+
+
+                request.setAttribute("company", company);
+                request.setAttribute("action", "edit");
+                actionUri = pruebalista;
+                break;
+            }
+
+            case "editTypeEmployee": {
+                Employee employee = service.getEmployeeById(Integer.parseInt(request.getParameter("idEmployee")));
+                request.setAttribute("employee", employee);
+                request.setAttribute("action", "editTypeEmployee");
+                actionUri =ChangeEmpl_URI;
+                break;
+            }
+
+
+            case "editTypeAdmin": {
+                Employee employee = service.getEmployeeById(Integer.parseInt(request.getParameter("idEmployee")));
+                request.setAttribute("employee", employee);
+                request.setAttribute("action", "editTypeAdmin");
+                actionUri = ChangeAdm_URI;
                 break;
             }
 

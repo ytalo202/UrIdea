@@ -12,25 +12,22 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Lista Empleados</h1>
+<h1>lista Administradores</h1>
 <jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
-<c:forEach var="employee" items="${service.findAdmin(2,company.id)}">
-    <p>
-        <c:out value="${employee.name}"/>
+<c:forEach var="employee" items="${service.findAdmin(1,company.id)}">
+    <p><c:out value="${employee.name}"/>
         <c:out value="${employee.company.id}"/>
         <c:out value="${employee.employeeType}"/>
         <c:out value="${employee.dni}"/>
         <c:out value="${employee.emailAddress.emailData}"/>
 
-        <a href="v?action=editTypeAdmin&idEmployee=<c:out value="${employee.id}"/>">
-            Cambiar a Admin
+        <a href="v?action=editTypeEmployee&idEmployee=<c:out value="${employee.id}"/>">
+            Cambiar a Empleado
         </a>
     </p>
 </c:forEach>
-
 <a href="v?action=regresar&idCompany=<c:out value="${company.id}"/>">
 
     Regresar</a>
-
 </body>
 </html>
