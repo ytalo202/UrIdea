@@ -18,6 +18,7 @@ import java.sql.Date;
  * Created by Yoshinon on 14/07/2017.
  */
 @WebServlet(name = "SesionCompanyServlet",urlPatterns = "/v")
+
 public class SesionCompanyServlet extends HttpServlet {
     // Service Layer access object
     HRService service = new HRService();
