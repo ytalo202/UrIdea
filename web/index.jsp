@@ -2,75 +2,123 @@
 <%@ taglib uri="http://bootstrapjsp.org/" prefix="b" %>
 <html lang="en">
 <head>
-    <jsp:include page="bootstrap.jsp"/>
-
-
-
-    <title>W3.CSS Template</title>
-    <meta charset="UTF-8">
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>Bootstrap Theme The Band</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
     <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monserrat">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+
 
 
 
     <style>
-        body,h1,h2,h3,h4,h5,h6 {font-family: "Monserrat", Extra-Bold}
-        body, html {
-            height: 100%;
-            line-height: 2.0;
-
-        }
 
 
-        .w3-bar .w3-button {
-            padding: 16px;
-        }
 
-        .container {
-            padding: 80px 120px;
-        }
-        .person {
-            border: 10px solid transparent;
-            margin-bottom: 25px;
-            width: 80%;
-            height: 80%;
-            opacity: 0.7;
-        }
-        .person:hover {
-            border-color: #d00c2d;
-        }
         .carousel-inner img {
 
 
             width: 100%; /* Set width to 100% */
             margin: auto;
-
-
-        }
-        .carousel-caption h3{
-
         }
 
-        @media (max-width: 600px) {
-            .carousel-caption {
-                display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
-            }
+
+        h3, h4 {
+            margin: 10px 0 30px 0;
+            letter-spacing: 10px;
+            font-size: 20px;
+            color: #111;
+        }
+        .person {
+
+            margin-bottom: 25px;
+            width: 50%;
+            height: 30%;
+
+        }
+
+
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
+        @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+        ul,li{
+            padding:0;
+            margin:0;
+        }
+        li{
+            list-style-type:none;
+        }
+
+
+
+        footer { background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', sans-serif; }
+        .footer-col { margin-top:50px; }
+        .logofooter { margin-bottom:10px; font-size:25px; color:#fff; font-weight:700;}
+
+        .footer-col p { color:#fff; font-size:12px; font-family: 'Open Sans', sans-serif; margin-bottom:15px;}
+        .footer-col p i { width:20px; color:#999;}
+
+        .footer-ul { list-style-type:none;  padding-left:0; margin-left:2px;}
+        .footer-ul li { line-height:29px; font-size:12px;}
+        .footer-ul li a { color:#a0a3a4; transition: color 0.2s linear 0s, background 0.2s linear 0s; }
+        .footer-ul i { margin-right:10px;}
+        .footer-ul li a:hover {transition: color 0.2s linear 0s, background 0.2s linear 0s; color:#ff670f; }
+
+        .copyright { min-height:40px; background-color:#000000;}
+        .copyright p { text-align:left; color:#FFF; padding:10px 0; margin-bottom:0;}
+        .heading7 { font-size:21px; font-weight:700; color:#d9d6d6; margin-bottom:22px;}
+        .post p { font-size:12px; color:#FFF; line-height:20px;}
+        .post p span { display:block; color:#8f8f8f;}
+        .bottom_ul { list-style-type:none; float:right; margin-bottom:0;}
+        .bottom_ul li { float:left; line-height:40px;}
+        .bottom_ul li:after { content:"/"; color:#FFF; margin-right:8px; margin-left:8px;}
+        .bottom_ul li a { color:#FFF;  font-size:12px;}
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            font-size: 15px;
+            background-color: blue;
+            color: #fff;
+            text-align: center;
+            margin-right: 10px;
+            padding-top: 7px;
+            border-radius: 50%;
+        }
+        .footer-social li{
+            float:left;
+        }
+        .linked-in{
+            background-color:#007bb6;
+        }
+        .facebook{
+            background-color:#3b5998;
+        }
+        .twitter{
+            background-color:#1da1f2;
+        }
+        .google{
+            background-color:#f63e28;
+        }
+        .form-control {
+            border-radius: 0;
         }
 
     </style>
-
-
 </head>
-
 <body>
-<b:jumbotron>
-
 
 
 <div class="navbar navbar-default navbar-fixed-top">
@@ -84,11 +132,11 @@
             <div class="w3-right w3-hide-small">
 
 
-                <a href="pagos.jsp" class="w3-bar-item w3-button"><i class="fa fa-home" aria-hidden="true" ></i> HOME</a>
-                <a href="Listado.jsp" class="w3-bar-item w3-button">ABOUT</a>
-                <a href="evaluation.jsp" class="w3-bar-item w3-button">Evaluation</a>
-                <a href="CompEmail.jsp" class="w3-bar-item w3-button"> SIGN UP</a>
-                <a href="login.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i>LOGIN</a>
+                <a href="pagos.jsp" class="w3-bar-item w3-button"><i class="fa fa-home" aria-hidden="true" ></i> Inicio</a>
+                <a href="Listado.jsp" class="w3-bar-item w3-button">Nosotros</a>
+
+                <a href="login2.jsp" class="w3-bar-item w3-button"> Registrarse</a>
+                <a href="login.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i>Ingresar</a>
             </div>
             <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -112,11 +160,11 @@
     <p> </p>
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button
     w3-large w3-padding-16">Close ×</a>
-    <a href="index.jsp" onclick="w3_close()" class="w3-bar-item w3-button">HOME</a>
-    <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-    <a href="" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
-    <a href="register.jsp" onclick="w3_close()" class="w3-bar-item w3-button">SING UP</a>
-    <a href="login.jsp" onclick="w3_close()" class="w3-bar-item w3-button">LOGIN</a>
+    <a href="index.jsp" onclick="w3_close()" class="w3-bar-item w3-button">Inicio</a>
+    <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">Nosotros</a>
+
+    <a href="register.jsp" onclick="w3_close()" class="w3-bar-item w3-button">Registrese</a>
+    <a href="login.jsp" onclick="w3_close()" class="w3-bar-item w3-button">Ingresar</a>
 </nav>
 
 
@@ -198,65 +246,171 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+</div>
 
-    <!-- Container (The Band Section) -->
-
-    <div class="container">
-        <h3 class="text-center">Contáctanos</h3>
-        <p class="text-center"><em></em></p>
-
-        <div class="row">
-            <div class="col-md-4">
-                <p>Fan? Drop a note.</p>
-                <p><span class="glyphicon glyphicon-map-marker"></span>Perú</p>
-                <p><span class="glyphicon glyphicon-phone"></span>Teléfono: +00 1515151515</p>
-                <p><span class="glyphicon glyphicon-envelope"></span>Email: evap@gmail.com</p>
-            </div>
-            <div class="col-md-8">
-                <div class="row">
-                    <div class="col-sm-6 form-group">
-                        <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-                    </div>
-                    <div class="col-sm-6 form-group">
-                        <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-                    </div>
-                </div>
-                <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
-                <br>
-                <div class="row">
-                    <div class="col-md-12 form-group">
-                        <button class="btn pull-right" type="submit">Enviar</button>
-                    </div>
-                </div>
+<br>
+<br>
+<div id="band" class="container text-center">
+    <h3>EVALUACION  DE PERSONAL DE 360°</h3>
+    <p><em>Importancia</em></p>
+    <p>
+        La evaluación de 360 grados es una herramienta extraordinaria para medir las competencias blandas
+        de los líderes de una organización, ya que considera a todos aquellos puestos que tienen relación
+        directa con el evaluado (pares, clientes internos, colaboradores y jefes), solicitando retroalimentación
+        sobre su desempeño en las competencias clave
+        del puesto. Se llama evaluación de 360 grados o evaluación integral ya que considera todas las
+        relaciones representativas que tiene el líder o evaluado a su alrededor.</p>
+    <br>
+    <div class="row">
+        <div class="col-sm-4">
+            <p class="text-center"><strong>¿Porque evaluar?</strong></p><br>
+            <a href="#demo" data-toggle="collapse">
+                <img src="http://etalentprofile.com/images/e_talent_profile/evaluacion-360-imagen.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+            </a>
+            <div id="demo" class="collapse">
+                <p>Hacer promociones de puesto.</p>
+                <p>Hacer planes de capacitación o detección de necesidades de capacitación.</p>
+                <p>Desarrollo del personal para puestos de mayores responsabilidades.</p>
             </div>
         </div>
-        <br>
-        <script>
+        <div class="col-sm-4">
+            <p class="text-center"><strong>El Resultado Proporciona</strong></p><br>
+            <a href="#demo2" data-toggle="collapse">
+                <img src="http://stratega-rrhh.com/2016/wp-content/uploads/2017/02/para-lic-fer.png" class="img-circle person" alt="Random Name" width="255" height="255">
+            </a>
+            <div id="demo2" class="collapse">
+                <p>Las Debilidades  </p>
+                <p>Cualidades</p>
+                <p>Habilidades,aptitudes</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <p class="text-center"><strong>Grupo de Competencias evaluadas </strong></p><br>
+            <a href="#demo3" data-toggle="collapse">
+                <img src="http://humansmart.com.mx/imagesnew2/0/0/0/1/1/3/7/2/5/5/345%20x%20230%20evaluacion360.png" class="img-circle person" alt="Random Name" width="255" height="255">
+            </a>
+            <div id="demo3" class="collapse">
+                <p>Competencias Profesionales</p>
+                <p>Competencias Generales</p>
+                <p>Competencias Estrategicas</p>
+            </div>
+        </div>
+    </div>
+</div>
 
-            //////////////////////////77777777
-
-
-            var mySidebar = document.getElementById("mySidebar");
-
-            function w3_open() {
-                if (mySidebar.style.display === 'block') {
-                    mySidebar.style.display = 'none';
-                } else {
-                    mySidebar.style.display = 'block';
-                }
-            }
-
-            // Close the sidebar with the close button
-            function w3_close() {
-                mySidebar.style.display = "none";
-            }
-
-        </script>
 
 
 
-        </b:jumbotron>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 footer-col">
+                <div class="logofooter"> <img src="image/logo.jpg" width="70" height="50"></div>
+                <p>La Plataforma Evap, es una plataforma web,encargada de evaluar a personal de
+                    distintas empresas,teniendo su sede central en Lima-Perú.</p>
+                <p><i class="fa fa-map-pin"></i> #228, Lima, Perú</p>
+                <p><i class="fa fa-phone"></i> Telefono (Perú) : +01 9999 999 999</p>
+                <p><i class="fa fa-envelope"></i> E-mail : Evap@gmail.com.com</p>
+
+            </div>
+            <div class="col-md-3 col-sm-6 footer-col">
+                <h6 class="heading7">Sobre Nosotros</h6>
+                <ul class="footer-ul">
+                    <li><a href="#"> Carrera</a></li>
+                    <li><a href="#"> Politicas de privacidad</a></li>
+                    <li><a href="#"> Terminos y condiciones</a></li>
+                    <li><a href="#"> Clientes</a></li>
+                    <li><a href="#"> Ranking</a></li>
+                    <li><a href="#"> Case Studies</a></li>
+                    <li><a href="#"> Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-sm-6 footer-col">
+                <h6 class="heading7">Ultima Publicación</h6>
+                <div class="post">
+                    <p>Se publico en Facebook ,el ultimo taller vivencial de la plataforma web  <span>Agosto 3,2017</span></p>
+                    <p>Se transmmitio por Youtube ,la nueva forma de evaluar las competencias de personal <span>Agosto 4,2017</span></p>
+                    <p>Se publico los descuentos que se estan haciendo por este mes  <span>Agosto 5,2017</span></p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 footer-col">
+                <h6 class="heading7">Siguenos</h6>
+                <ul class="footer-social">
+                    <li><i class="fa fa-linkedin social-icon linked-in" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-facebook social-icon facebook" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-twitter social-icon twitter" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-google-plus social-icon google" aria-hidden="true"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer start from here-->
+
+<div class="copyright">
+    <div class="container">
+        <div class="col-md-6">
+            <p>© 2016 -.Derechos reservados</p>
+        </div>
+        <div class="col-md-6">
+            <ul class="bottom_ul">
+                <li><a href="#">Ayuda</a></li>
+                <li><a href="#">Preguntas Frecuentes</a></li>
+                <li><a href="#">Blog</a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+
+
+
+
+    var mySidebar = document.getElementById("mySidebar");
+
+    function w3_open() {
+        if (mySidebar.style.display === 'block') {
+            mySidebar.style.display = 'none';
+        } else {
+            mySidebar.style.display = 'block';
+        }
+    }
+
+    // Close the sidebar with the close button
+    function w3_close() {
+        mySidebar.style.display = "none";
+    }
+
+</script>
+
 
 </body>
 </html>
-

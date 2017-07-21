@@ -5,7 +5,7 @@ body {
     color: #fff;
     line-height: 30px;
     text-align: center;
-    background-color: #222733;
+    background-color: #f5f5f5;
 
 }
 strong { 
@@ -104,7 +104,7 @@ button.mybtn {
     line-height: 40px;
     color: #fff;
     -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
-    
+
 }
 button.mybtn:hover, button.mybtn:active { 
     opacity: 0.6; 
