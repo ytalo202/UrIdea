@@ -86,8 +86,22 @@ public class EvaluationsEntity extends BaseEntity{
 
     public boolean update(Evaluation evaluation) {
         String sql = "UPDATE evaluations SET " +
-                 "evaluation_date = "+evaluation.getDateAsValue()+ ", "+
                 "grade = "+evaluation.getGradeAsString()+
+                "commitment = "+evaluation.getCommitmentAsString()+ ", "+
+                "communication = "+evaluation.getCommunicationAsString()+ ", "+
+                "ethic = "+evaluation.getAsEthicString()+ ", "+
+                "team_management = "+evaluation.getTeam_managementAsString()+ ", "+
+                "decision_making = "+evaluation.getAsDecision_makingString()+ ", "+
+                "strategic_thinking ="+evaluation.getStrategic_thinkingAsString()+ ", "+
+                "customer_orientation = "+evaluation.getCustomer_orientationAsString()+ ", "+
+                "social_responsability = "+evaluation.getSocial_responsabilityAsString()+ ", "+
+                "time_management = "+evaluation.getTime_managementAsString()+ ", "+
+                "use_of_resources = "+evaluation.getUse_of_resourcesAsString()+ ", "+
+                "cost_orientation = "+evaluation.getCost_orientationAsString()+ ", "+
+                "knowledge_of_languages = "+evaluation.getKnowledge_of_languagesAsString()+ ", "+
+                "digital_skills = "+evaluation.getDigital_skillsAsString()+
+
+
                 " WHERE id = " + evaluation.getIdAsString();
 
         return change(sql);
@@ -106,13 +120,28 @@ public class EvaluationsEntity extends BaseEntity{
 
     public boolean add(Evaluation evaluation) {
         String sql = "INSERT evaluations(id_evaluator, id_user_employee," +
-                " id_company, evaluation_date, grade) " +
+                " id_company, grade, commitment, communication, ethic, team_management," +
+                " strategic_thinking, customer_orientation, social_responsability," +
+                " time_management, use_of_resources, cost_orientation, knowledge_of_languages," +
+                " digital_skills) " +
                 "VALUES("
                 +evaluation.getIdEmployee().getIdAsString()+ ", "
                 +evaluation.getIdUserEmployee().getIdAsString()+ ", "
                 +evaluation.getCompany().getIdAsString()+ ", "
-                +evaluation.getDateAsValue()+ ", "
-                +evaluation.getGradeAsString()+ ") ";
+                +evaluation.getGradeAsString()+ ", "
+                +evaluation.getCommitmentAsString()+ ", "
+                +evaluation.getCommunicationAsString()+ ", "
+                +evaluation.getAsEthicString()+ ", "
+                +evaluation.getTeam_managementAsString()+ ", "
+                +evaluation.getAsDecision_makingString()+ ", "
+                +evaluation.getStrategic_thinkingAsString()+ ", "
+                +evaluation.getCustomer_orientationAsString()+ ", "
+                +evaluation.getSocial_responsabilityAsString()+ ", "
+                +evaluation.getTime_managementAsString()+ ", "
+                +evaluation.getUse_of_resourcesAsString()+ ", "
+                +evaluation.getCost_orientationAsString()+ ", "
+                +evaluation.getKnowledge_of_languagesAsString()+ ", "
+                +evaluation.getDigital_skillsAsString()+")";
 
         return change(sql);
     }

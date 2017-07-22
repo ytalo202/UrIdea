@@ -193,7 +193,7 @@ public class EmployeesEntity extends BaseEntity {
     public boolean add2(Employee employee) {
         String sql = "INSERT employees(" +
                 "id_company, id_email_address, id_areas, employee_type, password, " +
-                "employee_name, dni) "+
+                "employee_name, dni, birthdate) "+
                 "VALUES("
                 +employee.getCompany().getIdAsString()+", "
                 +employee.getEmailAddress().getIdAsString()+ ", "
@@ -201,7 +201,8 @@ public class EmployeesEntity extends BaseEntity {
                 +employee.getEmployeeTypeAsString()+ ", "
                 +employee.getPasswordAsValue()+ ", "
                 +employee.getNameAsValue()+", "
-                +employee.getDni()
+                +employee.getDni()+", "
+                +employee.getBirthdateAsValue()
                 + ")";
         return change(sql);
     }

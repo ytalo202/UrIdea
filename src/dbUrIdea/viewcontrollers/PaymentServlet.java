@@ -44,7 +44,6 @@ public class PaymentServlet extends HttpServlet {
                 payment.setLastName(request.getParameter("last_name"));
                 payment.setFirstAddress(request.getParameter("first_address"));
                 payment.setSecondAddress(request.getParameter("second_address"));
-                payment.setPaymentDate(Date.valueOf(request.getParameter("payment_date")));
                 payment.setLocation(request.getParameter("location"));
                 payment.setCountry(request.getParameter("country"));
                 payment.setCodeZip(request.getParameter("code_zip"));
@@ -77,7 +76,6 @@ public class PaymentServlet extends HttpServlet {
                 payment.setLastName(request.getParameter("last_name"));
                 payment.setFirstAddress(request.getParameter("first_address"));
                 payment.setSecondAddress(request.getParameter("second_address"));
-                payment.setPaymentDate(Date.valueOf(request.getParameter("payment_date")));
                 payment.setLocation(request.getParameter("location"));
                 payment.setCountry(request.getParameter("country"));
                 payment.setCodeZip(request.getParameter("code_zip"));

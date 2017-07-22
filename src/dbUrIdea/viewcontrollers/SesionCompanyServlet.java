@@ -336,6 +336,7 @@ public class SesionCompanyServlet extends HttpServlet {
                         request.getParameter("idCompany"))));
 
                 employee.setArea(area.setId(Integer.parseInt(request.getParameter("idArea"))));
+              employee.setBirthdate(Date.valueOf(request.getParameter("cumple")));
                 employee.setEmployeeType(1);
 
 

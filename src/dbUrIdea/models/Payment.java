@@ -2,6 +2,7 @@ package dbUrIdea.models;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.Date;
 
 /**
@@ -16,7 +17,7 @@ public class Payment {
     private String lastName;
     private String firstAddress;
     private String secondAddress;
-    private Date paymentDate;
+    private Timestamp paymentDate;
     private String location;
     private String country;
     private String codeZip;
@@ -30,9 +31,7 @@ public class Payment {
     public Payment() {
     }
 
-    public Payment(int id, Company company, PaymentsType paymentsType, String cardNumber, String name, String lastName,
-                   String firstAddress, String secondAddress, Date paymentDate, String location, String country,
-                   String codeZip, String cellPhoneNumber, float amount, int expiryMonth, int expiryDay , int securityCode ) {
+    public Payment(int id, Company company, PaymentsType paymentsType, String cardNumber, String name, String lastName, String firstAddress, String secondAddress, Timestamp paymentDate, String location, String country, String codeZip, String cellPhoneNumber, float amount, int expiryMonth, int expiryDay, int securityCode) {
         this.id = id;
         this.company = company;
         this.paymentsType = paymentsType;
@@ -47,10 +46,11 @@ public class Payment {
         this.codeZip = codeZip;
         this.cellPhoneNumber = cellPhoneNumber;
         this.amount = amount;
-        this.expiryDay = expiryDay;
         this.expiryMonth = expiryMonth;
+        this.expiryDay = expiryDay;
         this.securityCode = securityCode;
     }
+
 
     public String getCardNumberAsValue() {return "'" + getCardNumber() + "'"; }
     public String getIdAsString() { return String.valueOf(getId());  }
@@ -139,14 +139,6 @@ public class Payment {
         return this;
     }
 
-    public Date getPaymentDate() {
-        return paymentDate;
-    }
-
-    public Payment setPaymentDate(Date paymentDate) {
-        this.paymentDate = paymentDate;
-        return this;
-    }
 
     public String getLocation() {
         return location;
@@ -242,7 +234,7 @@ public class Payment {
                     .setLastName(rs.getString("last_name"))
                     .setFirstAddress(rs.getString("first_address"))
                     .setSecondAddress(rs.getString("second_address"))
-                    .setPaymentDate(rs.getDate("payment_date"))
+                    .setPaymentDate(rs.getTimestamp("payment_date_and_time"))
                     .setLocation(rs.getString("location"))
                     .setCountry(rs.getString("country"))
                     .setCodeZip(rs.getString("code_zip"))
@@ -260,5 +252,12 @@ public class Payment {
     }
 
 
+    public Timestamp getPaymentDate() {
+        return paymentDate;
+    }
 
+    public Payment setPaymentDate(Timestamp paymentDate) {
+        this.paymentDate = paymentDate;
+        return this;
+    }
 }

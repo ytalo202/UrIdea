@@ -66,7 +66,7 @@ public class PaymentsEntity extends BaseEntity {
         String sql = "INSERT payments(" +
                 "id_companies, id_payment_type," +
                 " card_number, name, " +
-                " last_name, first_address, second_address, payment_date, location, country, " +
+                " last_name, first_address, second_address, location, country, " +
                 "code_zip, " +
                 " cell_phone_number," +
                 " payment_amount, " +
@@ -79,7 +79,6 @@ public class PaymentsEntity extends BaseEntity {
                 +payment.getLastNameAsValue()+", "
                 +payment.getFirstAddressAsValue()+", "
                 +payment.getSecondAddressAsValue()+", "
-                +payment.getDateAsValue()+", "
                 +payment.getLocationAsValue()+", "
                 +payment.getCountryAsValue()+", "
                 +payment.getCodeZipAsValue()+", "
@@ -112,7 +111,6 @@ public class PaymentsEntity extends BaseEntity {
                 "last_name = "+payment.getLastNameAsValue()+", " +
                 "first_address = "+payment.getFirstAddressAsValue()+", " +
                 "second_address = "+payment.getSecondAddressAsValue()+", " +
-                "payment_date = "+payment.getDateAsValue()+", " +
                 "location = "+payment.getLocationAsValue()+", " +
                 "country = "+payment.getCountryAsValue()+", " +
                 "code_zip = "+payment.getCodeZipAsValue()+", " +

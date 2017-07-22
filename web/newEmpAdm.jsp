@@ -19,7 +19,14 @@
 
     <p>Nombre<input type="text" name="employee_name"/></p>
     <p>Dni <input type="text" name="dni"/><p>
-    <p>CodArea <input type="text" name="idArea"/><p>
+
+    <select name="idArea">
+        <option value="1">Contabilidad</option>
+        <option value="2">Administracion</option>
+        <option value="3">Publicidad</option>
+        <option value="4">Recursos Humanos</option>
+    </select>
+    <input type="date" name="cumple">
 
     <p>Clave <input type="text" name="password"/><p>
 

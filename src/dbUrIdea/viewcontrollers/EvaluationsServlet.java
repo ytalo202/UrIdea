@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  * Created by Yoshinon on 11/07/2017.
@@ -38,7 +39,7 @@ public class EvaluationsServlet extends HttpServlet {
                 //Evaluation evaluation = service.getEvaluationById(Integer.parseInt(request.getParameter("id")));
                 Evaluation evaluation = new Evaluation();
                 evaluation.setId(Integer.parseInt(request.getParameter("id")));
-                evaluation.setDate(Date.valueOf(request.getParameter("evaluation_date")));
+
                 evaluation.setGrade(Integer.parseInt(request.getParameter("grade")));
                 String message = service.updateEvaluation(evaluation) ?
                         "Update success" :
@@ -59,8 +60,7 @@ public class EvaluationsServlet extends HttpServlet {
                 evaluation.setIdUserEmployee(employee.setId(Integer.parseInt(
                         request.getParameter("id_user_employee"))));
                // evaluation.setId(Integer.parseInt(request.getParameter("id")));
-                evaluation.setDate(Date.valueOf(request.getParameter("evaluation_date")));
-                evaluation.setGrade(Integer.parseInt(request.getParameter("grade")));
+                evaluation.setGrade(Double.parseDouble(request.getParameter("grade")));
                 String message = service.createEvaluation(evaluation) ?
                         "Create success" :
                         "Error while creating";
