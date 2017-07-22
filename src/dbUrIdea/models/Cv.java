@@ -76,13 +76,13 @@ public class Cv {
     public static Cv build(ResultSet rs,
                            EmployeesEntity employeesEntity,
                            CompaniesEntity companiesEntity,
-                           EmailAddressesEntity emailAddressesEntity
+                           EmailAddressesEntity emailAddressesEntity,AreasEntity areasEntity
                            ) {
         try {
             return (new Cv())
                     .setId(rs.getInt("id"))
                     .setEmployee(employeesEntity.findById(rs.getInt("id_employee")
-                            , companiesEntity, emailAddressesEntity))
+                            , companiesEntity, emailAddressesEntity,areasEntity))
                     .setCvType(rs.getInt("cv_type"))
                     .setDescription(rs.getString("description"));
 

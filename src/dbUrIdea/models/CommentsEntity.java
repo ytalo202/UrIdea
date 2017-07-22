@@ -19,24 +19,23 @@ public class CommentsEntity extends BaseEntity {
         super(connection,"comments");
     }
 
-    public List<Commentary>
-    findAll(EvaluationsEntity evaluationsEntity,CompaniesEntity companiesEntity,
+    public List<Commentary> findAll(EvaluationsEntity evaluationsEntity,CompaniesEntity companiesEntity,
                                     EmployeesEntity employeesEntity,
-                                    EmailAddressesEntity emailAddressesEntity )
+                                    EmailAddressesEntity emailAddressesEntity,AreasEntity areasEntity )
     {
         return findByCriteria("", evaluationsEntity,
-                companiesEntity,employeesEntity,emailAddressesEntity);
+                companiesEntity,employeesEntity,emailAddressesEntity,areasEntity);
     }
 
     public Commentary findById(int id,
                                EvaluationsEntity evaluationsEntity,
                                CompaniesEntity companiesEntity,
                                EmployeesEntity employeesEntity,
-                               EmailAddressesEntity emailAddressesEntity
+                               EmailAddressesEntity emailAddressesEntity,AreasEntity areasEntity
     ) {
         String criteria = "id = " + String.valueOf(id);
         return findByCriteria(criteria,evaluationsEntity,
-                companiesEntity,employeesEntity,emailAddressesEntity).get(0);
+                companiesEntity,employeesEntity,emailAddressesEntity,areasEntity).get(0);
     }
 
 
@@ -44,7 +43,7 @@ public class CommentsEntity extends BaseEntity {
                                            EvaluationsEntity evaluationsEntity,
                                            CompaniesEntity companiesEntity,
                                            EmployeesEntity employeesEntity,
-                                           EmailAddressesEntity emailAddressesEntity)
+                                           EmailAddressesEntity emailAddressesEntity,AreasEntity areasEntity)
     {
         String sql = getDefaultQuery() +
                 (criteria.equalsIgnoreCase("") ? "" : " WHERE " + criteria);
@@ -53,7 +52,7 @@ public class CommentsEntity extends BaseEntity {
             ResultSet rs = getConnection().createStatement().executeQuery(sql);
             if(rs == null) return null;
             while(rs.next()) comments.add(Commentary.build(
-                    rs,evaluationsEntity,companiesEntity,employeesEntity,emailAddressesEntity));
+                    rs,evaluationsEntity,companiesEntity,employeesEntity,emailAddressesEntity,areasEntity));
             return comments;
         } catch(SQLException e) {
             e.printStackTrace();

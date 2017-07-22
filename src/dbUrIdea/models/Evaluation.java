@@ -109,18 +109,19 @@ public class Evaluation {
     public static Evaluation build(ResultSet rs,
                            EmployeesEntity employeesEntity,
                            CompaniesEntity companiesEntity,
-                           EmailAddressesEntity emailAddressesEntity
+                           EmailAddressesEntity emailAddressesEntity,
+                                   AreasEntity areasEntity
     ) {
         try {
             return (new Evaluation())
                     .setId(rs.getInt("id"))
                     .setIdEmployee(employeesEntity.findById(
                             rs.getInt("id_evaluator")
-                            , companiesEntity, emailAddressesEntity
+                            , companiesEntity, emailAddressesEntity,areasEntity
                             ))
                     .setIdUserEmployee(employeesEntity.findById(
                             rs.getInt("id_user_employee")
-                            , companiesEntity, emailAddressesEntity
+                            , companiesEntity, emailAddressesEntity,areasEntity
                            ))
                     .setCompany(companiesEntity.findById(
                             rs.getInt("id_company"),

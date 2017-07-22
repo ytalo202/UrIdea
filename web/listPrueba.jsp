@@ -20,6 +20,7 @@
         <c:out value="${employee.employeeType}"/>
         <c:out value="${employee.dni}"/>
         <c:out value="${employee.emailAddress.emailData}"/>
+        <c:out value="${employee.area.nameArea}"/>
 
         <a href="v?action=editTypeEmployee&idEmployee=<c:out value="${employee.id}"/>">
             Cambiar a Empleado

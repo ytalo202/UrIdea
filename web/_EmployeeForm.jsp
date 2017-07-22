@@ -20,6 +20,10 @@
             <c:out value="${action == 'edit' ? 'readonly=\"readonly\"' : '' }"/>
     />
 
+    <input type="text" name="idArea" value="${employee.area.nameArea}"
+            <c:out value="${action == 'edit' ? 'readonly=\"readonly\"' : '' }"/>
+    />
+
 
     <input type="text" name="employee_type" value="${employee.employeeType}"/>
     <input type="text" name="password" value="${employee.password}"/>

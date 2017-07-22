@@ -20,24 +20,24 @@ public class CvsEntity extends BaseEntity {
 
     public List<Cv> findAll(EmployeesEntity employeesEntity,
                             CompaniesEntity companiesEntity,
-                            EmailAddressesEntity emailAddressesEntity
+                            EmailAddressesEntity emailAddressesEntity,AreasEntity areasEntity
                             ) {
-        return findByCriteria("", employeesEntity,companiesEntity, emailAddressesEntity
+        return findByCriteria("", employeesEntity,companiesEntity, emailAddressesEntity,areasEntity
                 );
     }
 
     public Cv findById(int id,
                        EmployeesEntity employeesEntity,
                        CompaniesEntity companiesEntity,
-                       EmailAddressesEntity emailAddressesEntity
+                       EmailAddressesEntity emailAddressesEntity,AreasEntity areasEntity
                        ) {
         String criteria = "id = " + String.valueOf(id);
-        return findByCriteria(criteria, employeesEntity, companiesEntity,  emailAddressesEntity).get(0);
+        return findByCriteria(criteria, employeesEntity, companiesEntity,  emailAddressesEntity,areasEntity).get(0);
     }
 
     public List<Cv> findByCriteria(String criteria, EmployeesEntity employeesEntity,
                                    CompaniesEntity companiesEntity,
-                                   EmailAddressesEntity emailAddressesEntity
+                                   EmailAddressesEntity emailAddressesEntity,AreasEntity areasEntity
                                    ) {
         String sql = getDefaultQuery() +
                 (criteria.equalsIgnoreCase("") ? "" : " WHERE " + criteria);
@@ -45,7 +45,7 @@ public class CvsEntity extends BaseEntity {
         try {
             ResultSet rs = getConnection().createStatement().executeQuery(sql);
             if(rs == null) return null;
-            while(rs.next()) cvs.add(Cv.build(rs, employeesEntity, companiesEntity,  emailAddressesEntity
+            while(rs.next()) cvs.add(Cv.build(rs, employeesEntity, companiesEntity,  emailAddressesEntity,areasEntity
             ));
             return cvs;
         } catch(SQLException e) {
@@ -56,10 +56,10 @@ public class CvsEntity extends BaseEntity {
 
     public List<Cv> findAllOrderByName(EmployeesEntity employeesEntity,
                                        CompaniesEntity companiesEntity,
-                                       EmailAddressesEntity emailAddressesEntity,
+                                       EmailAddressesEntity emailAddressesEntity,AreasEntity areasEntity,
                                        boolean isAscending) {
         return findByCriteria("true ORDER BY id" +
-                (isAscending ? "" : " DESC"), employeesEntity, companiesEntity, emailAddressesEntity
+                (isAscending ? "" : " DESC"), employeesEntity, companiesEntity, emailAddressesEntity,areasEntity
                 );
     }
 //ponerlo al resto de enititys

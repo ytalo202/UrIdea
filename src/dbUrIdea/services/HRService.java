@@ -286,4 +286,22 @@ public class HRService {
         return getDataStore().changeEmployee(employee);
     }
 
+
+    public List<Area> findAllAreas() {
+
+        return getDataStore().findAllAreas();
+    }
+    public Area getAreaById(int id){
+        return getDataStore().findAreById(id);
+    }
+
+    public boolean createArea(Area area) {
+
+        return getDataStore().createArea(area);
+    }
+
+    public boolean updateArea(Area area) {
+
+        return getDataStore().updateArea(area);
+    }
 }

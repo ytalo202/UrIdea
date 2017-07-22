@@ -1,5 +1,6 @@
 package dbUrIdea.viewcontrollers;
 
+import dbUrIdea.models.Area;
 import dbUrIdea.models.Company;
 import dbUrIdea.models.EmailAddress;
 import dbUrIdea.models.Employee;
@@ -324,6 +325,7 @@ public class SesionCompanyServlet extends HttpServlet {
 
                 Employee employee =new Employee();
                 EmailAddress emailAddress =new EmailAddress();
+              Area area = new Area();
                 Company company1 =new Company();
 
                 employee.setEmailAddress(emailAddress.setId(Integer.parseInt
@@ -332,6 +334,8 @@ public class SesionCompanyServlet extends HttpServlet {
 
                 employee.setCompany(company1.setId(Integer.parseInt(
                         request.getParameter("idCompany"))));
+
+                employee.setArea(area.setId(Integer.parseInt(request.getParameter("idArea"))));
                 employee.setEmployeeType(1);
 
 

@@ -22,11 +22,12 @@ public class Employee {
     private Company company;
     private int employeeType;
     private EmailAddress emailAddress;
+    private Area area;
 
     public Employee() {
     }
 
-    public Employee(int id, String password, String name, String firstLastName, String secondLastName, int phoneNumber, int cellPhoneNumber, int dni, String address, String department, Date birthdate, Company company, int employeeType, EmailAddress emailAddress) {
+    public Employee(int id, String password, String name, String firstLastName, String secondLastName, int phoneNumber, int cellPhoneNumber, int dni, String address, String department, Date birthdate, Company company, int employeeType, EmailAddress emailAddress, Area area) {
         this.id = id;
         this.password = password;
         this.name = name;
@@ -34,13 +35,14 @@ public class Employee {
         SecondLastName = secondLastName;
         this.phoneNumber = phoneNumber;
         this.cellPhoneNumber = cellPhoneNumber;
-        this.setDni(dni);
+        this.dni = dni;
         this.address = address;
         this.department = department;
         this.birthdate = birthdate;
         this.company = company;
         this.employeeType = employeeType;
         this.emailAddress = emailAddress;
+        this.setArea(area);
     }
 
 
@@ -208,7 +210,9 @@ public class Employee {
     }
 
     public static Employee build(ResultSet rs, CompaniesEntity companiesEntity,
-                                 EmailAddressesEntity emailAddressesEntity) {
+                                 EmailAddressesEntity emailAddressesEntity,
+                                 AreasEntity areasEntity
+    ) {
         try {
             return (new Employee())
                     .setId(rs.getInt("id"))
@@ -217,6 +221,8 @@ public class Employee {
                              emailAddressesEntity))
                     .setEmailAddress(emailAddressesEntity.findById(
                             rs.getInt("id_email_address")))
+                    .setArea(areasEntity.findById(
+                            rs.getInt("id_areas"),companiesEntity,emailAddressesEntity))
                     .setEmployeeType(rs.getInt("employee_type"))
                     .setPassword(rs.getString("password"))
                     .setName(rs.getString("employee_name"))
@@ -241,6 +247,15 @@ public class Employee {
 
     public Employee setDni(int dni) {
         this.dni = dni;
+        return this;
+    }
+
+    public Area getArea() {
+        return area;
+    }
+
+    public Employee setArea(Area area) {
+        this.area = area;
         return this;
     }
 }

@@ -71,13 +71,13 @@ import java.sql.SQLException;
 
     public static Commentary build(ResultSet rs, EvaluationsEntity evaluationsEntity,
                                    CompaniesEntity companiesEntity
-            , EmployeesEntity employeesEntity, EmailAddressesEntity emailAddressesEntity) {
+            , EmployeesEntity employeesEntity, EmailAddressesEntity emailAddressesEntity,AreasEntity areasEntity) {
         try {
             return (new Commentary())
                     .setId(rs.getInt("id"))
                     .setEvaluation(evaluationsEntity.findById
                             (rs.getInt("id_evaluation"),
-                                    employeesEntity,companiesEntity,emailAddressesEntity))
+                                    employeesEntity,companiesEntity,emailAddressesEntity,areasEntity))
                     .setCommentaryType(rs.getInt("comment_type"))
                     .setDetail(rs.getString("detail"))
                     ;
