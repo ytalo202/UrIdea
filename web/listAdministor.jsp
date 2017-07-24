@@ -84,7 +84,7 @@
 
 
                         <button type="button" class="btn btn-default btn-lg btn-block">
-                            <a href="v?action=regresar&idCompany=<c:out value="${company.id}"/>">
+                            <a href="v?action=regresar">
 
                                 Regresar</a></button>
                     </form>

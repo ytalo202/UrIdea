@@ -50,35 +50,37 @@
                 </div>
                 <div class="myform-bottom" action="v" method="post">
                     <form role="form" >
+
                         <h1>Menu</h1>
                         <input type="hidden" name="idCompany" value="${company.id}"/>
+
                         <button type="button" class="btn btn-primary btn-lg btn-block">Seleccione Una Opcion</button>
 
 
                         <button type="button" class="btn btn-default btn-lg btn-block">
-                            <a href="v?action=edit&idCompany=<c:out value="${company.id}"/>">
+                            <a href="v?action=edit">
 
                         Editar Empresa</a></button>
 
 
                         <button type="button" class="btn btn-default btn-lg btn-block">
-                            <a href="v?action=creEmail&idCompany=<c:out value="${company.id}"/>">
+                            <a href="v?action=creEmail">
                                 Crear Administrador</a></button>
 
 
 
                         <button type="button" class="btn btn-default btn-lg btn-block">
-                            <a href="v?action=lista&idCompany=<c:out value="${company.id}"/>">
+                            <a href="v?action=lista">
 
                                 Lista Administradores</a></button>
 
                         <button type="button" class="btn btn-default btn-lg btn-block">
-                            <a href="v?action=seleccionEmpleados&idCompany=<c:out value="${company.id}"/>">
+                            <a href="v?action=seleccionEmpleados">
                                 Lista de Empleados</a></button>
 
 
                         <button type="button" class="btn btn-default btn-lg btn-block">
-                            <a href="v?action=editCorre&idCompany=<c:out value="${company.id}"/>">
+                            <a href="v?action=editCorre">
 
                                 Editar Email</a></button>
 

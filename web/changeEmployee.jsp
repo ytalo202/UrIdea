@@ -24,7 +24,6 @@
     <input type="submit"/>
 
     <button type="button">
-        <a href="v?action=regresar&idCompany=<c:out value="${employee.company.id}"/>">
-
+        <a href="v?action=regresar">
             Regresar</a></button>
 </form>

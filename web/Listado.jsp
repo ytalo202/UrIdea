@@ -21,6 +21,7 @@
 <p><a href="listEmployee.jsp">List Employee</a></p>
 <p><a href="listPayment.jsp">List Payment</a></p>
 <p><a href="listPaymentEdit.jsp">List Payment Edit</a></p>
+<p><a href="grafico.jsp">Grafico</a></p>
 
 </body>
 </html>

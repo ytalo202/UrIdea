@@ -11,10 +11,10 @@
 <form action="v" method="post">
 
 
-    <input type="hidden" name="idEmployee" value="${employee.id}"
+    <input type="text" name="idEmployee" value="${employee.id}"
             <c:out value="${action == 'edit' ? 'readonly=\"readonly\"' : '' }"/>
     />
-    <input type="hidden" name="idCompany" value="${employee.company.id}"
+    <input type="text" name="idCompany" value="${employee.company.id}"
             <c:out value="${action == 'edit' ? 'readonly=\"readonly\"' : '' }"/>
     />
 
@@ -25,7 +25,7 @@
     <input type="submit"/>
 
     <button type="button">
-        <a href="v?action=regresar&idCompany=<c:out value="${employee.company.id}"/>">
+        <a href="v?action=regresar">
 
             Regresar</a></button>
 </form>

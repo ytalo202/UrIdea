@@ -27,7 +27,7 @@
         </a>
     </p>
 </c:forEach>
-<a href="v?action=regresar&idCompany=<c:out value="${company.id}"/>">
+<a href="v?action=regresar">
 
     Regresar</a>
 </body>

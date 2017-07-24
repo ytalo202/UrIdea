@@ -24,34 +24,43 @@ public class SesionCompanyServlet extends HttpServlet {
     // Service Layer access object
     HRService service = new HRService();
     // Action View Paths
-    public static String L_EDIT_URI = "/editL.jsp";
-    public static String L_INDEX_URI = "/login.jsp";
-    public static String COMPS_EDIT_URI = "/editCompany.jsp";
-    public static String COMPS_ADD_URI = "/newCompany.jsp";
-    public static String COMPS_INDEX_URI = "/listCompany.jsp";
-    public static String Menu_INDEX_URI = "/Ly.jsp";
-    public static String MU_URI = "/mu.jsp";
-    public static String out_URI = "/index.jsp";
+    public static String VaMensajeEntra_URI = "/VaMensajeEntrada.jsp";
 
-    public static String root_URI = "/root.jsp";
 
-    public static String Email_URI = "/_EmailsForm.jsp";
+
+    public static String EDItCompany_URI = "/editCompany.jsp";
+
+
+
+
+    public static String Menu_Root_URI = "/VaRoot.jsp";
+
+
+    public static String outCompany_URI = "/index.jsp";
+
+    public static String MenuRoot_URI = "/root.jsp";
+
+    public static String UpdateCompanyEmail_URI = "/_EmailsForm.jsp";
+
     public static String Adm_URI = "/listAdministor.jsp";
 
-    public static String Empl_URI = "/listEmpleado.jsp";
+    public static String ListEmpleados_URI = "/listEmpleado.jsp";
 
-    public static String Emailnew_URI = "/newEmpEmail.jsp";
+    public static String NuevoEmailEmp_URI = "/newEmpEmail.jsp";
 
-    public static String EmpleadoAdm_URI = "/newEmpAdm.jsp";
-    //public static String CompEmail_URI = "/CompEmail.jsp";
+    public static String NuevoEmpleadoAdm_URI = "/newEmpAdm.jsp";
+
 
     public static String createComp_URI = "/CreateComp.jsp";
-    public static String priComp_URI = "/priMesaje.jsp";
-    public static String pruebalista = "listPrueba.jsp";
+    public static String primeraSesionComp_URI = "/priMesaje.jsp";
+
+    public static String listaAdministradores = "listAdministrators.jsp";
 
     public static String ChangeAdm_URI = "/changeAdmin.jsp";
 
     public static String ChangeEmpl_URI = "/changeEmployee.jsp";
+
+    int codCom;
 
 
 
@@ -75,7 +84,9 @@ public class SesionCompanyServlet extends HttpServlet {
                 //Company company = service.getCompanyById(request.getParameter("id"));
 
                 Company company= new Company();
-                company.setId(Integer.parseInt(request.getParameter("idCompany")));
+                company.setId(codCom
+                        //Integer.parseInt(request.getParameter("idCompany"))
+                );
                 company.setPassword(request.getParameter("password"));
                 company.setNameCompany(request.getParameter("nameCompany"));
                 company.setDescription(request.getParameter("description"));
@@ -88,15 +99,17 @@ public class SesionCompanyServlet extends HttpServlet {
                         "Update success" :
                         "Error while updating";
 
-                company = service.getCompanyById(Integer.parseInt(
-                        request.getParameter("idCompany")));
+                company = service.getCompanyById(
+                        codCom
+                        //Integer.parseInt(request.getParameter("idCompany"))
+                );
                 request.setAttribute("company", company);
                 request.setAttribute("action", "edit");
 
 
                 log(message);
                 RequestDispatcher dispatcher =
-                        request.getRequestDispatcher(root_URI);
+                        request.getRequestDispatcher(MenuRoot_URI);
                 dispatcher.forward(request, response);
                 break;
 
@@ -113,15 +126,17 @@ public class SesionCompanyServlet extends HttpServlet {
                 String message = service.changeEmployee(employee) ?
                         "Update success" :
                         "Error while updating";
-                company = service.getCompanyById(Integer.parseInt(
-                        request.getParameter("idCompany")));
+                company = service.getCompanyById(
+                        codCom
+                        //Integer.parseInt(request.getParameter("idCompany"))
+                );
                 request.setAttribute("company", company);
                 request.setAttribute("action", "edit");
 
 
                 log(message);
                 RequestDispatcher dispatcher =
-                        request.getRequestDispatcher(root_URI);
+                        request.getRequestDispatcher(MenuRoot_URI);
                 dispatcher.forward(request, response);
 
                 break;
@@ -137,15 +152,17 @@ public class SesionCompanyServlet extends HttpServlet {
                 String message = service.changeEmployee(employee) ?
                         "Update success" :
                         "Error while updating";
-                company = service.getCompanyById(Integer.parseInt(
-                        request.getParameter("idCompany")));
+                company = service.getCompanyById(
+                        codCom
+                        //Integer.parseInt(request.getParameter("idCompany"))
+                );
                 request.setAttribute("company", company);
                 request.setAttribute("action", "edit");
 
 
                 log(message);
                 RequestDispatcher dispatcher =
-                        request.getRequestDispatcher(root_URI);
+                        request.getRequestDispatcher(MenuRoot_URI);
                 dispatcher.forward(request, response);
 
                 break;
@@ -171,7 +188,7 @@ public class SesionCompanyServlet extends HttpServlet {
                 log(message);
 
                 RequestDispatcher dispatcher =
-                        request.getRequestDispatcher(priComp_URI);
+                        request.getRequestDispatcher(primeraSesionComp_URI);
                 dispatcher.forward(request, response);
                 break;
 
@@ -203,9 +220,9 @@ public class SesionCompanyServlet extends HttpServlet {
                 request.setAttribute("action", "menu");
 
                 RequestDispatcher dispatcher =
-                        request.getRequestDispatcher(root_URI);
+                        request.getRequestDispatcher(MenuRoot_URI);
                 dispatcher.forward(request, response);
-                break;
+              break;
             }
 
 
@@ -223,7 +240,7 @@ public class SesionCompanyServlet extends HttpServlet {
                 request.setAttribute("action", "menu");
 
                 RequestDispatcher dispatcher =
-                        request.getRequestDispatcher(L_EDIT_URI);
+                        request.getRequestDispatcher(VaMensajeEntra_URI);
                 dispatcher.forward(request, response);
                 break;
             }
@@ -231,39 +248,30 @@ public class SesionCompanyServlet extends HttpServlet {
             case "edit": {
 
                int  idC = Integer.parseInt(request.getParameter("idCompany"));
-                Company company = service.getCompanyById(idC);
+
+                Company company = service.getCompanyById(codCom
+                        //idC
+                );
 
                 request.setAttribute("company", company);
                 request.setAttribute("action", "edit");
                 RequestDispatcher dispatcher =
-                        request.getRequestDispatcher(COMPS_EDIT_URI);
+                        request.getRequestDispatcher(EDItCompany_URI);
                 dispatcher.forward(request, response);
                 break;
             }
-
+////---------------------------------------------
             case "servis": {
 
                 int  idC = Integer.parseInt(request.getParameter("idCompany"));
+                codCom = idC;
+
                 Company company = service.getCompanyById(idC);
 
                 request.setAttribute("company", company);
                 request.setAttribute("action", "servis");
                 RequestDispatcher dispatcher =
-                        request.getRequestDispatcher(Menu_INDEX_URI);
-                dispatcher.forward(request, response);
-                break;
-            }
-
-            case "mostrar": {
-
-                String c = "Holaaaaa bakaa ";
-               int  idC = Integer.parseInt(request.getParameter("idCompany"));
-               int idCorreo =Integer.parseInt(request.getParameter("idEmail"));
-
-                request.setAttribute("company", c);
-
-                RequestDispatcher dispatcher =
-                        request.getRequestDispatcher(MU_URI);
+                        request.getRequestDispatcher(Menu_Root_URI);
                 dispatcher.forward(request, response);
                 break;
             }
@@ -280,15 +288,17 @@ public class SesionCompanyServlet extends HttpServlet {
                         "Update success" :
                         "Error while updating";
 
-                Company company = service.getCompanyById(Integer.parseInt(
-                        request.getParameter("idCompany")));
+                Company company = service.getCompanyById(
+                        codCom
+                        //Integer.parseInt(request.getParameter("idCompany"))
+                );
                 request.setAttribute("company", company);
                 request.setAttribute("action", "edit");
 
 
                 log(message);
                 RequestDispatcher dispatcher =
-                        request.getRequestDispatcher(root_URI);
+                        request.getRequestDispatcher(MenuRoot_URI);
                 dispatcher.forward(request, response);
                 break;
 
@@ -304,8 +314,10 @@ public class SesionCompanyServlet extends HttpServlet {
                         "Create success" :
                         "Error while creating";
 
-                Company company = service.getCompanyById(Integer.parseInt(
-                        request.getParameter("idCompany")));
+                Company company = service.getCompanyById(
+                        codCom
+                        //Integer.parseInt(request.getParameter("idCompany"))
+                );
                 request.setAttribute("company", company);
 
                 request.setAttribute("action", "edit");
@@ -314,7 +326,7 @@ public class SesionCompanyServlet extends HttpServlet {
 
                 log(message);
                 RequestDispatcher dispatcher =
-                        request.getRequestDispatcher(EmpleadoAdm_URI);
+                        request.getRequestDispatcher(NuevoEmpleadoAdm_URI);
                 dispatcher.forward(request, response);
                 break;
             }
@@ -332,8 +344,11 @@ public class SesionCompanyServlet extends HttpServlet {
                         (request.getParameter("CorreNum"))));
 
 
-                employee.setCompany(company1.setId(Integer.parseInt(
-                        request.getParameter("idCompany"))));
+                employee.setCompany(company1.setId(
+                        codCom
+                        //Integer.parseInt(request.getParameter("idCompany"))
+                        )
+                );
 
                 employee.setArea(area.setId(Integer.parseInt(request.getParameter("idArea"))));
               employee.setBirthdate(Date.valueOf(request.getParameter("cumple")));
@@ -350,8 +365,10 @@ public class SesionCompanyServlet extends HttpServlet {
               log(message);
 
 
-              Company company = service.getCompanyById(Integer.parseInt(
-                      request.getParameter("idCompany")));
+              Company company = service.getCompanyById(
+                      codCom
+                      //Integer.parseInt(request.getParameter("idCompany"))
+              );
               request.setAttribute("company", company);
               request.setAttribute("action", "edit");
 
@@ -368,7 +385,7 @@ public class SesionCompanyServlet extends HttpServlet {
 
 
         RequestDispatcher dispatcher =
-                request.getRequestDispatcher(L_INDEX_URI);
+                request.getRequestDispatcher(MenuRoot_URI);
         dispatcher.forward(request, response);
 
 
@@ -380,32 +397,33 @@ public class SesionCompanyServlet extends HttpServlet {
         String action = request.getParameter("action");
         String actionUri;
         switch(action) {
-            case "add": {
-                actionUri = COMPS_ADD_URI;
-                request.setAttribute("action", "add");
-                break;
-            }
+
             case "edit": {
                 Company company
-                        = service.getCompanyById(Integer.parseInt(
-                        request.getParameter("idCompany")));
+                        = service.getCompanyById(
+                        codCom
+                                //Integer.parseInt(request.getParameter("idCompany"))
+                );
                 request.setAttribute("company", company);
                 request.setAttribute("action", "edit");
-                actionUri =COMPS_EDIT_URI;
+                actionUri = EDItCompany_URI;
                 break;
             }
             case "out": {
 
-                actionUri = out_URI;
+                actionUri = outCompany_URI;
+                codCom=0;
                 break;
             }
 
             case "editCorre": {
-                Company company = service.getCompanyById(Integer.parseInt(
-                        request.getParameter("idCompany")));
+                Company company = service.getCompanyById(
+                        codCom
+                        //Integer.parseInt(request.getParameter("idCompany"))
+                );
                 request.setAttribute("company", company);
                 request.setAttribute("action", "editCorre");
-                actionUri = Email_URI;
+                actionUri = UpdateCompanyEmail_URI;
                 break;
             }
 
@@ -413,8 +431,11 @@ public class SesionCompanyServlet extends HttpServlet {
             case "seleccion": {
 
 
-                Company company = service.getCompanyById(Integer.parseInt(
-                        request.getParameter("idCompany")));
+                Company company = service.getCompanyById(
+                        codCom
+                        //Integer.parseInt(request.getParameter("idCompany"))
+
+                );
                 request.setAttribute("company", company);
                 request.setAttribute("action", "seleccion");
                 actionUri = Adm_URI;
@@ -424,45 +445,60 @@ public class SesionCompanyServlet extends HttpServlet {
             case "seleccionEmpleados": {
 
 
-                Company company = service.getCompanyById(Integer.parseInt(
-                        request.getParameter("idCompany")));
+                Company company = service.getCompanyById(
+                        codCom
+                        //Integer.parseInt(request.getParameter("idCompany"))
+
+                );
                 request.setAttribute("company", company);
                 request.setAttribute("action", "seleccion");
-                actionUri = Empl_URI;
+                actionUri = ListEmpleados_URI;
                 break;
             }
 
             case "regresar": {
-                Company company = service.getCompanyById(Integer.parseInt(request.getParameter("idCompany")));
+                Company company = service.getCompanyById(
+                        codCom
+                        //Integer.parseInt(request.getParameter("idCompany"))
+                );
                 request.setAttribute("company", company);
                 request.setAttribute("action", "edit");
-                actionUri = root_URI;
+                actionUri = MenuRoot_URI;
                 break;
 
 
             }
 
             case "creEmail": {
-                Company company = service.getCompanyById(Integer.parseInt(request.getParameter("idCompany")));
+                Company company = service.getCompanyById(
+                        codCom
+                        //Integer.parseInt(request.getParameter("idCompany"))
+
+                );
                 request.setAttribute("company", company);
                 request.setAttribute("action", "edit");
-                actionUri = Emailnew_URI;
+                actionUri = NuevoEmailEmp_URI;
                 break;
             }
 
             case "lista": {
-                Company company = service.getCompanyById
-                        (Integer.parseInt(request.getParameter("idCompany")));
+                Company company = service.getCompanyById(
+                        codCom
+                                //Integer.parseInt(request.getParameter("idCompany"))
+                );
 
 
                 request.setAttribute("company", company);
                 request.setAttribute("action", "edit");
-                actionUri = pruebalista;
+                actionUri = listaAdministradores;
                 break;
             }
 
             case "editTypeEmployee": {
-                Employee employee = service.getEmployeeById(Integer.parseInt(request.getParameter("idEmployee")));
+                Employee employee = service.getEmployeeById(
+                        //codCom
+                        Integer.parseInt(request.getParameter("idEmployee"))
+                );
                 request.setAttribute("employee", employee);
                 request.setAttribute("action", "editTypeEmployee");
                 actionUri =ChangeEmpl_URI;
@@ -471,7 +507,10 @@ public class SesionCompanyServlet extends HttpServlet {
 
 
             case "editTypeAdmin": {
-                Employee employee = service.getEmployeeById(Integer.parseInt(request.getParameter("idEmployee")));
+                Employee employee = service.getEmployeeById(
+                        //codCom
+                        Integer.parseInt(request.getParameter("idEmployee"))
+                        );
                 request.setAttribute("employee", employee);
                 request.setAttribute("action", "editTypeAdmin");
                 actionUri = ChangeAdm_URI;
@@ -483,7 +522,7 @@ public class SesionCompanyServlet extends HttpServlet {
 
 
             default:
-                actionUri = COMPS_INDEX_URI;
+                actionUri = MenuRoot_URI;
         }
         RequestDispatcher dispatcher = request.getRequestDispatcher(actionUri);
         dispatcher.forward(request, response);

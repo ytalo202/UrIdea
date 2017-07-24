@@ -20,7 +20,7 @@ import java.io.IOException;
 @WebServlet(name = "ValidateEmployeeServlet",urlPatterns = "/validateEmployee")
 public class ValidateEmployeeServlet extends HttpServlet {
     HRService service = new HRService();
-    public static String COMPANY_EDIT_URI = "/editL.jsp";
+    public static String COMPANY_EDIT_URI = "/VaMensajeEntrada.jsp";
     public static String EMPLOYEE_EDIT_URI = "/loginEmployeeSuccess.jsp";
     public static String EMPLOYEE_INDEX_URI = "/login.jsp";
 

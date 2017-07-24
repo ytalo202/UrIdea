@@ -23,13 +23,14 @@
         <c:out value="${employee.emailAddress.emailData}"/>
         <c:out value="${employee.area.nameArea}"/>
 
+
         <a href="v?action=editTypeAdmin&idEmployee=<c:out value="${employee.id}"/>">
             Cambiar a Admin
         </a>
     </p>
 </c:forEach>
 
-<a href="v?action=regresar&idCompany=<c:out value="${company.id}"/>">
+<a href="v?action=regresar">
 
     Regresar</a>
 
