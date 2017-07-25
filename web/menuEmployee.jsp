@@ -48,10 +48,13 @@
                     <form role="form" >
                         <h1>Menú</h1>
                         <button type="button" class="btn btn-primary btn-lg btn-block">Seleccione Una Opción</button>
-                        <button type="button" class="btn btn-default btn-lg btn-block"><a href="_CompaniesForm.jsp">Editar Cuenta</a></button>
-                        <button type="button" class="btn btn-default btn-lg btn-block"><a href="_NEmployee.jsp"> Visualizar Evaluaciones</a></button>
+                        <button type="button" class="btn btn-default btn-lg btn-block">
+                            <a href="_CompaniesForm.jsp">Editar Cuenta</a></button>
+                        <button type="button" class="btn btn-default btn-lg btn-block">
+                            <a href="_NEmployee.jsp"> Visualizar Evaluaciones</a></button>
 
-                        <button type="button" class="btn btn-default btn-lg btn-block"><a href="index.jsp">Cerrar Cuenta</a></button>
+                        <button type="button" class="btn btn-default btn-lg btn-block">
+                            <a href="index.jsp">Cerrar Cuenta</a></button>
 
 
 

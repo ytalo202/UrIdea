@@ -10,6 +10,11 @@ public class BaseEntity {
     private static String BASE_QUERY = "SELECT * FROM ";
 
     private static String BASE_ID = "SELECT id FROM ";
+
+    private static String Base_Avg= "select id,id_evaluator, id_user_employee,id_company,grade, commitment, communication, ethic, team_management,decision_making, \n" +
+            "strategic_thinking, customer_orientation, social_responsability,time_management,\n" +
+            " use_of_resources, cost_orientation, knowledge_of_languages,digital_skills from ";
+
     private String tableName;
 
     public BaseEntity() {
@@ -38,6 +43,14 @@ public class BaseEntity {
 
     public static void setBaseId(String baseId) {
         BASE_ID = baseId;
+    }
+
+    public static String getBase_Avg() {
+        return Base_Avg;
+    }
+
+    public static void setBase_Avg(String base_Avg) {
+        Base_Avg = base_Avg;
     }
 
     public Connection getConnection() {
@@ -72,6 +85,11 @@ public class BaseEntity {
     public String getDefaultIdQuery() {
 
         return BASE_ID + getTableName();
+    }
+
+    public String getDefaultAgvQuery() {
+
+        return  Base_Avg+ getTableName();
     }
 
 

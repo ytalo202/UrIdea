@@ -77,47 +77,47 @@ public class Evaluation {
     }
 
     public String getCommitmentAsString() {
-        return String.valueOf(getId());
+        return String.valueOf(getCommitment());
     }
     public String getCommunicationAsString() {
-        return String.valueOf(getId());
+        return String.valueOf(getCommunication());
     }
-    public String getAsEthicString() {
-        return String.valueOf(getId());
+    public String getEthicAsString() {
+        return String.valueOf(getEthic());
     }
     public String getTeam_managementAsString() {
-        return String.valueOf(getId());
+        return String.valueOf(getTeam_management());
     }
     public String getAsDecision_makingString() {
-        return String.valueOf(getId());
+        return String.valueOf(getDecision_making());
     }
     public String getStrategic_thinkingAsString() {
-        return String.valueOf(getId());
+        return String.valueOf(getStrategic_thinking());
     }
     public String getCustomer_orientationAsString() {
-        return String.valueOf(getId());
+        return String.valueOf(getCustomer_orientation());
     }
     public String getSocial_responsabilityAsString() {
-        return String.valueOf(getId());
+        return String.valueOf(getSocial_responsability());
     }
     public String getTime_managementAsString() {
-        return String.valueOf(getId());
+        return String.valueOf(getTime_management());
     }
 
     public String getUse_of_resourcesAsString() {
-        return String.valueOf(getId());
+        return String.valueOf(getUse_of_resources());
     }
 
     public String getCost_orientationAsString() {
-        return String.valueOf(getId());
+        return String.valueOf(getCost_orientation());
     }
 
     public String getKnowledge_of_languagesAsString() {
-        return String.valueOf(getId());
+        return String.valueOf(getKnowledge_of_languages());
     }
 
     public String getDigital_skillsAsString() {
-        return String.valueOf(getId());
+        return String.valueOf(getDigital_skills());
     }
 
 
@@ -173,52 +173,6 @@ public class Evaluation {
         return this;
     }
 
-    public static Evaluation build(ResultSet rs,
-                           EmployeesEntity employeesEntity,
-                           CompaniesEntity companiesEntity,
-                           EmailAddressesEntity emailAddressesEntity,
-                                   AreasEntity areasEntity
-    ) {
-        try {
-            return (new Evaluation())
-                    .setId(rs.getInt("id"))
-                    .setIdEmployee(employeesEntity.findById(
-                            rs.getInt("id_evaluator")
-                            , companiesEntity, emailAddressesEntity,areasEntity
-                            ))
-                    .setIdUserEmployee(employeesEntity.findById(
-                            rs.getInt("id_user_employee")
-                            , companiesEntity, emailAddressesEntity,areasEntity
-                           ))
-                    .setCompany(companiesEntity.findById(
-                            rs.getInt("id_company"),
-                            emailAddressesEntity))
-                    .setDate(rs.getTimestamp("evaluation_date_and_time"))
-                    .setGrade(rs.getDouble("grade"))
-                    .setCommitment(rs.getInt("commitment"))
-                    .setCommunication(rs.getInt("communication"))
-                    .setEthic(rs.getInt("ethic"))
-                    .setTeam_management(rs.getInt("team_management"))
-                    .setDecision_making(rs.getInt("decision_making"))
-                    .setStrategic_thinking(rs.getInt("strategic_thinking"))
-                    .setCustomer_orientation(rs.getInt("customer_orientation"))
-                    .setSocial_responsability(rs.getInt("social_responsability"))
-                    .setTime_management(rs.getInt("time_management"))
-                    .setUse_of_resources(rs.getInt("use_of_resources"))
-                    .setCost_orientation(rs.getInt("cost_orientation"))
-                    .setKnowledge_of_languages(rs.getInt("knowledge_of_languages"))
-                    .setDigital_skills(rs.getInt("digital_skills"));
-
-
-
-
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
     public Timestamp getDate() {
         return date;
     }
@@ -228,20 +182,25 @@ public class Evaluation {
         return this;
     }
 
+
+
     public int getCommitment() {
         return commitment;
     }
 
-    public Evaluation setCommitment(int commitment) {
+    public Evaluation setCommitment
+            (int commitment) {
         this.commitment = commitment;
         return this;
     }
 
     public int getCommunication() {
+
         return communication;
     }
 
-    public Evaluation setCommunication(int communication) {
+    public Evaluation setCommunication
+            (int communication) {
         this.communication = communication;
         return this;
     }
@@ -344,4 +303,52 @@ public class Evaluation {
         this.digital_skills = digital_skills;
         return this;
     }
+
+    public static Evaluation build(ResultSet rs,
+                           EmployeesEntity employeesEntity,
+                           CompaniesEntity companiesEntity,
+                           EmailAddressesEntity emailAddressesEntity,
+                                   AreasEntity areasEntity
+    ) {
+        try {
+            return (new Evaluation())
+                    .setId(rs.getInt("id"))
+                    .setIdEmployee(employeesEntity.findById(
+                            rs.getInt("id_evaluator")
+                            , companiesEntity, emailAddressesEntity,areasEntity
+                            ))
+                    .setIdUserEmployee(employeesEntity.findById(
+                            rs.getInt("id_user_employee")
+                            , companiesEntity, emailAddressesEntity,areasEntity
+                           ))
+                    .setCompany(companiesEntity.findById(
+                            rs.getInt("id_company"),
+                            emailAddressesEntity))
+                    .setDate(rs.getTimestamp("evaluation_date_and_time"))
+                    .setGrade(rs.getDouble("grade"))
+                    .setCommitment(rs.getInt("commitment"))
+                    .setCommunication(rs.getInt("communication"))
+                    .setEthic(rs.getInt("ethic"))
+                    .setTeam_management(rs.getInt("team_management"))
+                    .setDecision_making(rs.getInt("decision_making"))
+                    .setStrategic_thinking(rs.getInt("strategic_thinking"))
+                    .setCustomer_orientation(rs.getInt("customer_orientation"))
+                    .setSocial_responsability(rs.getInt("social_responsability"))
+                    .setTime_management(rs.getInt("time_management"))
+                    .setUse_of_resources(rs.getInt("use_of_resources"))
+                    .setCost_orientation(rs.getInt("cost_orientation"))
+                    .setKnowledge_of_languages(rs.getInt("knowledge_of_languages"))
+                    .setDigital_skills(rs.getInt("digital_skills"));
+
+
+
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
 }

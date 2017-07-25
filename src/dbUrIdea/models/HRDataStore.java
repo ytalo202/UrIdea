@@ -184,6 +184,9 @@ public class HRDataStore {
                 getCompaniesEntity(), getEmailAddressesEntity(),getAreasEntity()
         );
     }
+
+
+
     public Employee findEmployeeById(int  id){
         return getEmployeesEntity().findById(id ,getCompaniesEntity(),getEmailAddressesEntity(),getAreasEntity());
     }
@@ -196,6 +199,12 @@ public class HRDataStore {
     public boolean updateEmployee(Employee employee) {
 
         return getEmployeesEntity().update(employee);
+    }
+
+
+    public boolean updateEmployee2(Employee employee) {
+
+        return getEmployeesEntity().updateData(employee);
     }
 
     //------------------Evaluation
@@ -211,14 +220,8 @@ public class HRDataStore {
         return this;
     }
 
-    public List<Evaluation> findAllEvaluations() {
 
-        return getEvaluationsEntity().findAll(
-                getEmployeesEntity(),
-                getCompaniesEntity(),
-                getEmailAddressesEntity(),getAreasEntity());
-    }
-
+///-------------------eVALU
     public boolean createEvaluation(Evaluation evaluation) {
 
         return getEvaluationsEntity().add(evaluation);
@@ -410,7 +413,8 @@ public class HRDataStore {
 
     public Employee findIdByEmployee(String email,String password) {
         return getEmployeesEntity().findByNameAndPass(
-                email,password,getEmailAddressesEntity(),getCompaniesEntity(),getAreasEntity());
+                email,password,getEmailAddressesEntity(),
+                getCompaniesEntity(),getAreasEntity());
     }
 
 
@@ -431,6 +435,13 @@ public class HRDataStore {
                 getEmailAddressesEntity(),getAreasEntity());
     }
 
+
+    public List<Employee> findAllxArea(int type ,int id_company,int area)
+    {
+        return getEmployeesEntity().findEmpXarea(type,id_company,area,getCompaniesEntity(),
+                getEmailAddressesEntity(),getAreasEntity());
+    }
+
     public List<Employee> findAllEmployee(int id_company)
     {
         return getEmployeesEntity().findEmployee(id_company,getCompaniesEntity(),
@@ -444,4 +455,30 @@ public class HRDataStore {
 
 
 
+   /* public List<Evaluation> findAllEvaluationProm() {
+
+        return getEvaluationsEntity().findEvaluationPromedioById(
+                getEmployeesEntity(),getCompaniesEntity(),
+                getEmailAddressesEntity(),getAreasEntity()
+        );
+    }*/
+
+    public List<Evaluation> findEvaluationAgv(int id) {
+
+        return getEvaluationsEntity().findbyIdEmpleado(id,
+                getEmployeesEntity(),getCompaniesEntity(),
+                getEmailAddressesEntity(),getAreasEntity()
+        );
+    }
+
+    public List<Evaluation> findAllEvaluations() {
+
+        return getEvaluationsEntity().findAll(
+                getEmployeesEntity(),
+                getCompaniesEntity(),
+                getEmailAddressesEntity(),getAreasEntity());
+    }
+
 }
+
+

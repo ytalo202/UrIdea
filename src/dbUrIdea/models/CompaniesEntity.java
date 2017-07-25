@@ -123,8 +123,12 @@ public class CompaniesEntity extends BaseEntity {
         return findIdByEmailAndPassword(email,password ,emailAddressEntity).get(0);
     }
 
-    public List<Company> findIdByEmailAndPassword(String email, String password, EmailAddressesEntity emailAddressEntity) {
-        String sql ="select a.id,a.password,a.name_company,a.description,a.company_state,a.id_email_address,a.photo,a.address,a.phone_number from companies a left join email_addresses b on a.id_email_address = b.id where email_data='"+ email+"' and a.password ='"+password+"'";
+    public List<Company> findIdByEmailAndPassword(String email, String password,
+                                                  EmailAddressesEntity emailAddressEntity) {
+        String sql ="select a.id,a.password,a.name_company,a.description," +
+                "a.company_state,a.id_email_address,a.photo,a.address,a.phone_number from" +
+                " companies a left join email_addresses b on a.id_email_address = b.id" +
+                " where email_data= '"+email+"' and a.password = '"+password+"'";
         List<Company> companies = new ArrayList<>();
         try {
             ResultSet rs = getConnection()

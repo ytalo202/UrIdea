@@ -30,6 +30,7 @@
         <c:out value="${employee.dni} -> "/>
         <c:out value="${employee.phoneNumber} -> "/>
         <c:out value="${employee.cellPhoneNumber} -> "/>
+
         <c:out value="${employee.area.nameArea} -> "/>
 
         <a href="emp?action=edit&id=<c:out value="${employee.id}"/>">

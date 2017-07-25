@@ -33,15 +33,21 @@ public class ValidateEmployeeServlet extends HttpServlet {
         EmployeesEntity e = new EmployeesEntity();
         CompaniesEntity c = new CompaniesEntity();
 
-        if (!request.getParameter("txtemail").equalsIgnoreCase("") && !request.getParameter("txtpassword").equalsIgnoreCase("")) {
+        if (!request.getParameter("txtemail").
+                equalsIgnoreCase("") && !request.getParameter
+                ("txtpassword").equalsIgnoreCase("")) {
+
             try {
+
+
                 Employee employee = service.getIdByEmployee(email, password);
                 request.setAttribute("employee", employee);
                 RequestDispatcher dispatcher = request.getRequestDispatcher
                         (EMPLOYEE_EDIT_URI);
                 dispatcher.forward(request, response);
                 log("FUNCIONA EMPLOYEE");
-            }catch (Exception a) {
+            }
+            catch (Exception a) {
                 try {
                 Company company = service.getIdByCompany(email, password);
                 request.setAttribute("company", company);

@@ -55,16 +55,21 @@
                     <form role="form" action="v" method="post" >
 
                         <div class="form-group">
-                            <input type="hidden" name="idCompany" value="${company.id}" placeholder="Country..." class="form-control"  required>
+                            <input type="hidden" name="idCompany"
+                                   value="${company.id}" placeholder="Country..."
+                                   class="form-control"  required>
 
                         </div>
 
                         <div class="form-group">
-                            <input type="text"  name="password" value="${company.password}"  class="form-control" >
+                            <input type="text"  name="password"
+                                   value="${company.password}"  class="form-control" >
                         </div>
 
                         <div class="form-group">
-                            <input type="text"  name="nameCompany" value="${company.nameCompany}" placeholder="Location-City..." class="form-control" >
+                            <input type="text"  name="nameCompany"
+                                   value="${company.nameCompany}"
+                                   placeholder="Location-City..." class="form-control" >
                         </div>
 
                         <div class="form-group">

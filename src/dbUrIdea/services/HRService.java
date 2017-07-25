@@ -90,6 +90,7 @@ public class HRService {
         return getDataStore().findAllCvs();
     }
 
+    ///----------evaluation
     public List<Evaluation> getEvaluations(){
 
         return getDataStore().findAllEvaluations();
@@ -217,6 +218,8 @@ public class HRService {
         return getDataStore().updateEvaluation(evaluation);
     }
 
+
+    ///--------EVALUACION
     public boolean createEvaluation(Evaluation evaluation) {
 
         return getDataStore().createEvaluation(evaluation);
@@ -249,12 +252,18 @@ public class HRService {
         return getDataStore().createCv(cv);
     }
 
-    public Company getIdByCompany(String name,String pass) {
+
+    //----Company login
+    public Company getIdByCompany
+            (String name,String pass) {
 
         return getDataStore().findIdByCompany(name,pass);
     }
 
-    public Employee getIdByEmployee(String email,String password) {
+    //----empleado login
+
+    public Employee getIdByEmployee
+            (String email,String password) {
         return getDataStore().findIdByEmployee(email,password);
     }
 //-----------
@@ -272,6 +281,16 @@ public class HRService {
         );
     }
 
+    public List<Employee> findAllxArea(int type ,int id_company,int are)
+    {
+        return getDataStore().findAllxArea(type, id_company, are);
+    }
+
+    public boolean updateEmployee2(Employee employee) {
+
+        return getDataStore().updateEmployee2(employee);
+    }
+
 
     public List<Employee> findEmployee(
             int id_company
@@ -280,6 +299,8 @@ public class HRService {
                 id_company
         );
     }
+
+
 
 
     public boolean changeEmployee(Employee employee) {
@@ -303,5 +324,16 @@ public class HRService {
     public boolean updateArea(Area area) {
 
         return getDataStore().updateArea(area);
+    }
+/*
+    public List<Evaluation> findAllEvaluationProm() {
+
+        return getDataStore().findAllEvaluationProm();
+    }*/
+
+
+    public List<Evaluation> findEvaluationAgv(int id) {
+
+        return getDataStore().findEvaluationAgv(id);
     }
 }

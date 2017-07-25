@@ -50,8 +50,11 @@
 
                     <form action="TypeEmployeeValidation" method="post">
 
-                        <input type="hidden" name="idEmployee" value="${employee.id}"/>
-                        <input type="hidden" name="EmployeeType" value="${employee.employeeType}"/>
+                        <input type="text" name="idEmployee" value="${employee.id}" class="form-control"/>
+                        <input type="text" name="EmployeeType" value="${employee.employeeType}" class="form-control"/>
+                        <input type="text" name="idEmail" value="${employee.emailAddress.id}" class="form-control"/>
+                        <input type="text" name="idCompany" value="${employee.company.id}" class="form-control"/>
+                        <input type="text" name="idArea" value="${employee.area.id}" class="form-control"/>
 
 
                         <p>Welcome to Eva Web Aplication  ...</p>
