@@ -14,7 +14,7 @@ public class HRDataStore {
     private EmailAddressesEntity emailAddressesEntity;
     private EmployeesEntity employeesEntity;
     private EvaluationsEntity evaluationsEntity;
-    private CommentsEntity commentsEntity;
+
     private PaymentsEntity paymentsEntity;
     private PaymentsTypesEntity paymentsTypesEntity;
     private AreasEntity areasEntity;
@@ -130,11 +130,10 @@ public class HRDataStore {
     public List<Area> findAllAreas() {
 
         return getAreasEntity().findAll(
-                getCompaniesEntity(), getEmailAddressesEntity()
         );
     }
     public Area findAreById(int id){
-        return getAreasEntity().findById(id ,getCompaniesEntity(),getEmailAddressesEntity());
+        return getAreasEntity().findById(id);
     }
 
     public boolean createArea(Area area) {
@@ -241,32 +240,13 @@ public class HRDataStore {
 
     //------------Comments
 
-    public CommentsEntity getCommentsEntity() {
-        if (commentsEntity == null) {
-            commentsEntity = new CommentsEntity(getConnection());
-        }
 
-        return commentsEntity;
-    }
 
-    public HRDataStore setCommentsEntity(CommentsEntity commentsEntity) {
-        this.commentsEntity = commentsEntity;
-        return this;
-    }
 
-    public List<Commentary> findAllCommentaries() {
 
-        return getCommentsEntity().findAll(
-                getEvaluationsEntity(),
-                getCompaniesEntity(),
-                getEmployeesEntity(),
-                getEmailAddressesEntity(),getAreasEntity());
-    }
 
-    public boolean createCommentary(Commentary commentary) {
 
-        return getCommentsEntity().add(commentary);
-    }
+
 
     //---------------------Payments
     public PaymentsEntity getPaymentsEntity() {
@@ -357,15 +337,7 @@ public class HRDataStore {
 
 
 
-    public Commentary findCommentaryById(int id) {
-        return getCommentsEntity().findById(id,
-                getEvaluationsEntity(),getCompaniesEntity(),getEmployeesEntity(),getEmailAddressesEntity(),getAreasEntity());
-    }
 
-    public boolean updateCommentary(Commentary commentary) {
-
-        return getCommentsEntity().update(commentary);
-    }
 
     public Company findCompanyById(int id) {
         return getCompaniesEntity().findById(id,getEmailAddressesEntity());}
@@ -462,6 +434,9 @@ public class HRDataStore {
                 getEmailAddressesEntity(),getAreasEntity()
         );
     }*/
+
+//evaluationnnnnnnnnnn
+
 
     public List<Evaluation> findEvaluationAgv(int id) {
 

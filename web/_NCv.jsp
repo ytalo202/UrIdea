@@ -5,14 +5,21 @@
 --%>
 <jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
 
-<form action="cV" method="post">
+<form action="TypeEmployeeValidation" method="post">
 
 
-    <p>id_employee<input type="text" name="id_employee"/></p>
-    <p>cv_type<input type="text" name="cv_type"/></p>
-    <p>description<input type="text" name="description"/></p>
+
+    <select name="cv_type">
+        <option value="1" >Experienza</option>
+        <option value="2" >Estudios</option>
+    </select>
+
+    <p>description
+        <textarea name="description"
+                  cols="30" rows="10"></textarea>
+    </p>
 
 
-    <input type="hidden" value="create" name="action"/>
+    <input type="hidden" value="addCv2" name="action"/>
     <input type="submit"/>
 </form>

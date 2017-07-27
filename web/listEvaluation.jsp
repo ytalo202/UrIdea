@@ -25,6 +25,7 @@
         <c:out value=" ${evaluation.idUserEmployee.name} ---> "/>
         <c:out value=" ${evaluation.date} ---> "/>
             <c:out value=" ${evaluation.knowledge_of_languages}"/>
+        <c:out value="${evaluation.avg_grade}"/>
 
             <c:out value=" ${evaluation.commitment}"/>
         <div ><FONT SIZE=15><p>Animes</p></font ></div>

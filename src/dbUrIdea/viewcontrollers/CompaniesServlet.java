@@ -1,6 +1,5 @@
 package dbUrIdea.viewcontrollers;
 
-import dbUrIdea.models.Commentary;
 import dbUrIdea.models.Company;
 import dbUrIdea.models.EmailAddress;
 import dbUrIdea.services.HRService;

@@ -45,9 +45,6 @@ public class AreasServlet extends HttpServlet {
 
             case "create": {
                 Area area= new Area();
-                Company company = new Company();
-                area.setCompany(company.setId(Integer.parseInt(
-                        request.getParameter("id_companies"))));
                 area.setNameArea(request.getParameter("name_area"));
                 String message = service.createArea(area) ?
                         "Create success" :

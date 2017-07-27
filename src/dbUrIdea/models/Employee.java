@@ -9,6 +9,7 @@ import java.util.Date;
  */
 public class Employee {
     private int id;
+    private int id2;
     private String password;
     private String name;
     private String firstLastName;
@@ -27,7 +28,11 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(int id, String password, String name, String firstLastName, String secondLastName, int phoneNumber, int cellPhoneNumber, int dni, String address, String department, Date birthdate, Company company, int employeeType, EmailAddress emailAddress, Area area) {
+    public Employee(int id, String password,
+                    String name, String firstLastName,
+                    String secondLastName, int phoneNumber, int cellPhoneNumber,
+                    int dni, String address, String department, Date birthdate,
+                    Company company, int employeeType, EmailAddress emailAddress, Area area) {
         this.id = id;
         this.password = password;
         this.name = name;
@@ -44,6 +49,22 @@ public class Employee {
         this.emailAddress = emailAddress;
         this.setArea(area);
     }
+
+
+    public int getId2() {
+
+        return id2;
+    }
+
+    public Employee setId2(int id2) {
+        this.id2 = id2;
+        return this;
+    }
+
+    public String getId2AsString() {
+        return String.valueOf(getId2());
+    }
+
 
 
     public int getId() {
@@ -222,7 +243,7 @@ public class Employee {
                     .setEmailAddress(emailAddressesEntity.findById(
                             rs.getInt("id_email_address")))
                     .setArea(areasEntity.findById(
-                            rs.getInt("id_areas"),companiesEntity,emailAddressesEntity))
+                            rs.getInt("id_areas")))
                     .setEmployeeType(rs.getInt("employee_type"))
                     .setPassword(rs.getString("password"))
                     .setName(rs.getString("employee_name"))

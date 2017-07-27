@@ -27,6 +27,10 @@
             Evaluar Empleado
         </a>
 
+        <a href="TypeEmployeeValidation?action=addCv&idEmpleado=<c:out value="${employee.id}"/>">
+            Agregar Caracteristica a Cv
+        </a>
+
     </p>
 </c:forEach>
 

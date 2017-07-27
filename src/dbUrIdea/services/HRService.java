@@ -81,10 +81,6 @@ public class HRService {
         return getDataStore().findAllEmailsOrderById();
     }
 
-    public List<Commentary> getComments() {
-
-        return getDataStore().findAllCommentaries();
-    }
 
     public List<Cv> getCvs() {
         return getDataStore().findAllCvs();
@@ -142,15 +138,7 @@ public class HRService {
 
     //----------------
 
-    public Commentary getCommentaryById(int id) {
-        return getDataStore().findCommentaryById(id);
-    }
 
-
-    public boolean updateCommentary(Commentary commentary) {
-
-        return getDataStore().updateCommentary(commentary);
-    }
 
 
     public Company getCompanyById(int id) {
@@ -202,10 +190,6 @@ public class HRService {
         return getDataStore().updateEmployee(employee);
     }
 
-    public boolean createComentary(Commentary commentary) {
-
-        return getDataStore().createCommentary(commentary);
-    }
 
 
     public Evaluation getEvaluationById(int id) {
@@ -336,4 +320,6 @@ public class HRService {
 
         return getDataStore().findEvaluationAgv(id);
     }
+
+
 }

@@ -50,6 +50,8 @@ public class EvaluationsEntity extends BaseEntity{
     }
 
 
+
+
     public List<Evaluation> findbyIdEmpleado(int id,EmployeesEntity employeesEntity,
                                     CompaniesEntity companiesEntity,
 
@@ -84,8 +86,8 @@ public class EvaluationsEntity extends BaseEntity{
 
         String sql =
 
-                getDefaultAgvQuery()
-                //getDefaultQuery()
+                //getDefaultAgvQuery()
+                getDefaultQuery()
                 +
                 (criteria.equalsIgnoreCase("") ? "" : " WHERE " + criteria);
         List<Evaluation> evaluations = new ArrayList<>();
@@ -138,16 +140,22 @@ public class EvaluationsEntity extends BaseEntity{
     }
 
     public boolean add(Evaluation evaluation) {
-        String sql = "INSERT evaluations(id_evaluator, id_user_employee," +
-                " id_company, grade, commitment, communication, ethic, team_management," +
+        String sql = "INSERT evaluations(id_evaluator,id_user_employee, " +
+                " id_company, id_area, grade, grade1, grade2, commitment, communication, ethic, team_management," +
                 " decision_making, strategic_thinking, customer_orientation, social_responsability," +
                 " time_management, use_of_resources, cost_orientation, knowledge_of_languages," +
-                " digital_skills) " +
+                " digital_skills, professional_improvement, comment, avg_grade) " +
                 "VALUES("
-                +evaluation.getIdEmployee().getIdAsString()+ ", "
+                +evaluation.getIdEmployee().getId2AsString()+ ", "
+
                 +evaluation.getIdUserEmployee().getIdAsString()+ ", "
+
+
                 +evaluation.getCompany().getIdAsString()+ ", "
+                +evaluation.getArea().getIdAsString()+ ", "
                 +evaluation.getGradeAsString()+ ", "
+                +evaluation.getGrade1AsString()+", "
+                +evaluation.getGrade2AsString()+", "
                 +evaluation.getCommitmentAsString()+ ", "
                 +evaluation.getCommunicationAsString()+ ", "
                 +evaluation.getEthicAsString()+ ", "
@@ -160,21 +168,23 @@ public class EvaluationsEntity extends BaseEntity{
                 +evaluation.getUse_of_resourcesAsString()+ ", "
                 +evaluation.getCost_orientationAsString()+ ", "
                 +evaluation.getKnowledge_of_languagesAsString()+ ", "
-                +evaluation.getDigital_skillsAsString()+")";
-
+                +evaluation.getDigital_skillsAsString()+", "
+                +evaluation.getProfessional_improvementAsString()+ ", "
+                +evaluation.getCommentAsValue()+", "
+                +evaluation.getAvg_gradeAsString()+
+                ")";
         return change(sql);
     }
 
 /*
-    public List<Evaluation> findEvaluationPromedioById(//int id,
+    public List<Evaluation> findByNewCriterial(
                                                        EmployeesEntity employeesEntity,
                                                        CompaniesEntity companiesEntity,
                                                        EmailAddressesEntity emailAddressesEntity,AreasEntity areasEntity) {
-        String sql ="select id_user_employee, avg(grade), avg(communication), " +
-                "avg(ethic), avg(team_management),avg(decision_making), "+
-                "avg(strategic_thinking), avg(customer_orientation), avg(social_responsability),avg(time_management),"+
-                "avg(use_of_resources), avg(cost_orientation), avg(knowledge_of_languages),avg(digital_skills) from"+
-                " evaluations where id_user_employee = 15";
+        String sql ="INSERT evaluations(id_evaluator, id_user_employee,id_company,"+
+                "grade, commitment, communication, ethic, team_management,decision_making," +
+                "strategic_thinking, customer_orientation, social_responsability,time_management," +
+                " use_of_resources, cost_orientation, knowledge_of_languages,digital_skills) \n";
         List<Evaluation> evaluations = new ArrayList<>();
         try {
             ResultSet rs = getConnection().createStatement().executeQuery(sql);
@@ -188,23 +198,26 @@ public class EvaluationsEntity extends BaseEntity{
             e.printStackTrace();
         }
         return evaluations;
-    }*/
+    }
+*/
 
-
+//nuevo build
 
     public List<Evaluation> findByAGV(String criteria,
                                            EmployeesEntity employeesEntity,
                                            CompaniesEntity companiesEntity,
-                                           EmailAddressesEntity emailAddressesEntity,AreasEntity areasEntity
+                                           EmailAddressesEntity emailAddressesEntity,
+                                      AreasEntity areasEntity
     ) {
 
-        String sql = getDefaultAgvQuery() +
+        String sql =
+                getDefaultAgvQuery()+
                 (criteria.equalsIgnoreCase("") ? "" : " WHERE " + criteria);
         List<Evaluation> evaluations = new ArrayList<>();
         try {
             ResultSet rs = getConnection().createStatement().executeQuery(sql);
             if(rs == null) return null;
-            while(rs.next()) evaluations.add(Evaluation.build(rs,
+            while(rs.next()) evaluations.add(Evaluation.build2(rs,
                     employeesEntity, companiesEntity,
                     emailAddressesEntity,areasEntity));
 

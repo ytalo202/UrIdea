@@ -18,24 +18,40 @@
 <b:jumbotron>
     <jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
 
-    <c:forEach var="evaluation" items="${service.findEvaluationAgv(15)}">
+    <c:forEach var="evaluation" items="${service.findEvaluationAgv(11)}">
 
 
 
 
-       <p>
-           <c:out value=" ${evaluation.grade} ---> "/>
-        <c:out value=" ${evaluation.communication} ---> "/>
-        <c:out value=" ${evaluation.cost_orientation} ---> "/>
-        <c:out value=" ${evaluation.customer_orientation} ---> "/>
-        <c:out value=" ${evaluation.decision_making} ---> "/>
-        <c:out value=" ${evaluation.digital_skills} ---> "/>
-        <c:out value=" ${evaluation.strategic_thinking} ---> "/>
-        <c:out value=" ${evaluation.knowledge_of_languages} ---> "/>
-           <c:out value=" ${evaluation.team_management} ---> "/>
-       </p>
+        <div class="progress">
+            <div class="progress-bar progress-bar-success"
+                 style="width: <c:out value="${evaluation.grade}"/>%">
+                <span class="sr-only">35% Complete (success)</span>
+                <c:out value="${evaluation.grade}"/>%
+            </div>
+            <div class="progress-bar progress-bar-striped active" style="width: <c:out value=" ${evaluation.grade1}"/>%">
+                <span class="sr-only">20% Complete (warning)</span>
+                <c:out value="${evaluation.grade1}"/>%
+            </div>
+            <div class="progress-bar progress-bar-danger" style="width: <c:out value=" ${evaluation.grade2}"/>%">
+                <span class="sr-only">10% Complete (danger)</span>
+                <c:out value="${evaluation.grade2}"/>%
+            </div>
+        </div>
+
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="<c:out value="${evaluation.grade}"/>" aria-valuemin="0" aria-valuemax="100" style="width: <c:out value="${evaluation.grade}"/>%;">
+                60%
+            </div>
+        </div>
+
+
+           <c:out value="${evaluation.avg_grade}"/>
+
 
     </c:forEach>
+
+
 
 
 </b:jumbotron>

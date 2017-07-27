@@ -35,6 +35,9 @@ public class TypeEmployeeServlet extends HttpServlet {
     public static String listaEmpleadosxArea = "/listaEmpAre.jsp";
     public static String  UpdateEmpEmail_URI= "/_EmpEmailUpdate.jsp";
     public static String  evaluar_uri= "/_Evaluar.jsp";
+    public static String  evaluar2_uri= "/_Evaluar2.jsp";
+    public static String  evaluar3_uri= "/_Evaluar3.jsp";
+    public static String  addCv_uri= "/_NCv.jsp";
     int idE ;
     int employeeType;
     int EmailId;
@@ -42,6 +45,31 @@ public class TypeEmployeeServlet extends HttpServlet {
     int idA;
 
     int EmpEvaluado;
+    int EmpCv;
+
+    //evaluacion1
+    double compromiso;
+    double trabajoEquipo;
+    double tomaDesicion;
+    double opinion;
+    double time;
+    double grade;
+    //evaluacion2
+
+    double valiente;
+    double honesto;
+    double compartir;
+    double responsable;
+    double confianza;
+    double grade1;
+
+    //evaluacion3
+    double comunicacion;
+    double mejora;
+    double idiomas;
+    double digital;
+    double grade2;
+
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -52,7 +80,7 @@ public class TypeEmployeeServlet extends HttpServlet {
 
             case "select": {
                 employeeType = Integer.parseInt(request.getParameter("EmployeeType"));
-                idE = Integer.parseInt(request.getParameter("idEmployee"));
+                idE = Integer.parseInt(request.getParameter("idAdmin"));
                 EmailId = Integer.parseInt(request.getParameter("idEmail"));
                 idCom = Integer.parseInt(request.getParameter("idCompany"));
                 idA = Integer.parseInt(request.getParameter("idArea"));
@@ -244,7 +272,7 @@ public class TypeEmployeeServlet extends HttpServlet {
 
                 employee.setCompany(company1.setId(
                         idCom
-                        //Integer.parseInt(request.getParameter("idCompany"))
+
                         )
                 );
 
@@ -279,46 +307,139 @@ public class TypeEmployeeServlet extends HttpServlet {
 
             }
 
-            case "createEvaluation": {
+            case "createEvaluation1": {
 
 
-                //Company company= service.getComanyByEmailId(Integer.parseInt(request.getParameter("EmailId")));
-
+                /*
                 Company company =new Company();
                 Evaluation evaluation = new Evaluation();
                 Employee employee =new Employee();
                 evaluation.setCompany(company.setId(idCom));
                 evaluation.setIdEmployee(employee.setId(idE));
                 evaluation.setIdUserEmployee(employee.setId(EmpEvaluado));
-                int v1= Integer.parseInt(request.getParameter("commitment"));
-                int v2= Integer.parseInt(request.getParameter("communication"));
-                int v3= Integer.parseInt(request.getParameter("ethic"));
-                int v4= Integer.parseInt(request.getParameter("team_management"));
-                int v5= Integer.parseInt(request.getParameter("decision_making"));
-                int v6= Integer.parseInt(request.getParameter("strategic_thinking"));
-                int v7= Integer.parseInt(request.getParameter("customer_orientation"));
-                int v8= Integer.parseInt(request.getParameter("social_responsability"));
-                int v9= Integer.parseInt(request.getParameter("time_management"));
-                int v10= Integer.parseInt(request.getParameter("use_of_resources"));
-                int v11= Integer.parseInt(request.getParameter("cost_orientation"));
-                int v12= Integer.parseInt(request.getParameter("knowledge_of_languages"));
-                int v13= Integer.parseInt(request.getParameter("digital_skills"));
-                double suma =v1+v2+v3+v4+v5+v6+v7+v8+v9+v10+v11+v12+v13;
-                evaluation.setGrade(suma);
-                evaluation.setCommitment(v1);
-                evaluation.setCommunication(v2);
-                evaluation.setEthic(v3);
-                evaluation.setTeam_management(v4);
-                evaluation.setDecision_making(v5);
-                evaluation.setStrategic_thinking(v6);
-                evaluation.setCustomer_orientation(v7);
-                evaluation.setSocial_responsability(v8);
-                evaluation.setTime_management(v9);
-                evaluation.setUse_of_resources(v10);
-                evaluation.setCost_orientation(v11);
-                evaluation.setKnowledge_of_languages(v12);
-                evaluation.setDigital_skills(v13);
+
+                */
+           compromiso= Double.parseDouble(request.getParameter("commitment"));
+            trabajoEquipo= Double.parseDouble(request.getParameter("team_management"));
+             tomaDesicion= Double.parseDouble(request.getParameter("decision_making"));
+             opinion= Double.parseDouble(request.getParameter("strategic_thinking"));
+          time= Double.parseDouble(request.getParameter("time_management"));
+          grade = compromiso+trabajoEquipo+tomaDesicion+opinion+time;
+
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(evaluar2_uri);
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+
+            case "createEvaluation2": {
+
+
+                /*
+                Company company =new Company();
+                Evaluation evaluation = new Evaluation();
+                Employee employee =new Employee();
+                evaluation.setCompany(company.setId(idCom));
+                evaluation.setIdEmployee(employee.setId(idE));
+                evaluation.setIdUserEmployee(employee.setId(EmpEvaluado));
+
+                */
+
+             valiente= Double.parseDouble(request.getParameter("ethic"));
+
+            honesto= Double.parseDouble(request.getParameter("customer_orientation"));
+            compartir= Double.parseDouble(request.getParameter("social_responsability"));
+            responsable= Double.parseDouble(request.getParameter("use_of_resources"));
+             confianza= Double.parseDouble(request.getParameter("cost_orientation"));
+                grade1 = valiente+honesto+compartir+responsable+confianza;
+
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(evaluar3_uri);
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+
+            case "createEvaluation3": {
+
+
+
+                Company company =new Company();
+                Evaluation evaluation = new Evaluation();
+                Employee employee =new Employee();
+                Area area = new Area();
+
+                comunicacion= Double.parseDouble(request.getParameter("communication"));
+                mejora= Double.parseDouble(request.getParameter("professional_improvement"));
+                idiomas= Double.parseDouble(request.getParameter("knowledge_of_languages"));
+                digital= Double.parseDouble(request.getParameter("digital_skills"));
+                grade2 = comunicacion+mejora+idiomas+digital;
+                double avg =grade2+grade1+grade;
+
+
+
+                evaluation.setCompany(company.setId(idCom));
+
+                //evaluation.setIdEmployee(employee.setId(9));
+                evaluation.setIdEmployee(employee.setId2(idE));
+
+                evaluation.setIdUserEmployee(employee.setId(EmpEvaluado));
+
+
+                evaluation.setArea(area.setId(idA));
+
+                evaluation.setGrade(grade);
+                evaluation.setGrade1(grade1);
+                evaluation.setGrade2(grade2);
+
+                evaluation.setCommitment(compromiso);
+                evaluation.setCommunication(comunicacion);
+                evaluation.setEthic(valiente);
+                evaluation.setTeam_management(trabajoEquipo);
+                evaluation.setDecision_making(tomaDesicion);
+                evaluation.setStrategic_thinking(opinion);
+                evaluation.setCustomer_orientation(honesto);
+                evaluation.setSocial_responsability(compartir);
+                evaluation.setTime_management(time);
+                evaluation.setUse_of_resources(responsable);
+                evaluation.setCost_orientation(confianza);
+                evaluation.setKnowledge_of_languages(idiomas);
+                evaluation.setDigital_skills(digital);
+                evaluation.setProfessional_improvement(mejora);
+                evaluation.setAvg_grade(avg);
+                evaluation.setComment(request.getParameter("comment"));
+
                 String message = service.createEvaluation(evaluation) ?
+                        "Create success" :
+                        "Error while creating";
+                log(message);
+
+                Employee employee1 = service.getEmployeeById(idE);
+
+                request.setAttribute("employee", employee1);
+                request.setAttribute("action", "edit");
+
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(MenuAdmin_URI );
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+            case "addCv2": {
+                Cv cv= new Cv();
+                Employee employee=new Employee();
+                cv.setEmployee(employee.setId(EmpCv));
+
+                cv.setCvType(Integer.parseInt(request.getParameter("cv_type")));
+                cv.setDescription(request.getParameter("description"));
+                String message = service.createCv(cv) ?
                         "Create success" :
                         "Error while creating";
                 log(message);
@@ -412,6 +533,16 @@ public class TypeEmployeeServlet extends HttpServlet {
                 actionUri = evaluar_uri;
                 break;
             }
+
+            case "addCv": {
+
+                EmpCv =Integer.parseInt(request.getParameter("idEmpleado"));
+                actionUri = addCv_uri;
+                break;
+            }
+
+
+
 
 
 /*

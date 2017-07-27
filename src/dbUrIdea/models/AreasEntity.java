@@ -21,24 +21,20 @@ public class AreasEntity extends BaseEntity {
 
     }
 
-    public List<Area> findAll(CompaniesEntity companiesEntity,
-                              EmailAddressesEntity emailAddressesEntity)
+    public List<Area> findAll()
     {
-        return findByCriteria("", companiesEntity, emailAddressesEntity);
+        return findByCriteria("");
     }
 
-    public Area findById(int id,CompaniesEntity companiesEntity,
-                         EmailAddressesEntity emailAddressesEntity
+    public Area findById(int id
     ) {
         String criteria = "id = " + String.valueOf(id);
         return findByCriteria(criteria
-                ,companiesEntity, emailAddressesEntity).get(0);
+                ).get(0);
     }
 
 
-    public List<Area> findByCriteria(String criteria,
-                                           CompaniesEntity companiesEntity,
-                                           EmailAddressesEntity emailAddressesEntity)
+    public List<Area> findByCriteria(String criteria)
     {
         String sql = getDefaultQuery() +
                 (criteria.equalsIgnoreCase("") ? "" : " WHERE " + criteria);
@@ -47,7 +43,7 @@ public class AreasEntity extends BaseEntity {
             ResultSet rs = getConnection().createStatement().executeQuery(sql);
             if(rs == null) return null;
             while(rs.next()) areas.add(Area.build(
-                    rs,companiesEntity, emailAddressesEntity));
+                    rs));
             return areas;
         } catch(SQLException e) {
             e.printStackTrace();
@@ -56,9 +52,8 @@ public class AreasEntity extends BaseEntity {
     }
 
     public boolean add(Area area) {
-        String sql = "INSERT areas(id_companies, name_area) " +
+        String sql = "INSERT areas(name_area) " +
                 "VALUES("
-                + area.getCompany().getIdAsString()+", "
                 + area.getNameAreAsValue()+")";
 
         return change(sql);

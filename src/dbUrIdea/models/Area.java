@@ -9,16 +9,14 @@ import java.sql.SQLException;
 
 public class Area {
     private int id;
-    private Company company;
     private String nameArea;
 
 
     public Area() {
     }
 
-    public Area(int id, Company company, String nameArea) {
+    public Area(int id, String nameArea) {
         this.setId(id);
-        this.setCompany(company);
         this.setNameArea(nameArea);
     }
 
@@ -38,14 +36,7 @@ public class Area {
         return this;
     }
 
-    public Company getCompany() {
-        return company;
-    }
 
-    public Area setCompany(Company company) {
-        this.company = company;
-        return this;
-    }
 
     public String getNameArea() {
         return nameArea;
@@ -56,18 +47,12 @@ public class Area {
         return this;
     }
 
-    public static Area build(ResultSet rs,
-                           CompaniesEntity companiesEntity,
-                           EmailAddressesEntity emailAddressesEntity
+    public static Area build(ResultSet rs
     )
     {
         try {
             return (new Area())
                     .setId(rs.getInt("id"))
-                    .setCompany(companiesEntity.findById(
-                            rs.getInt("id_companies")
-                            ,emailAddressesEntity))
-
                     .setNameArea(rs.getString("name_area"));
 
 
