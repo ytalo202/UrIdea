@@ -136,7 +136,7 @@
                 <a href="Listado.jsp" class="w3-bar-item w3-button">Nosotros</a>
 
                 <a href="CompEmail.jsp" class="w3-bar-item w3-button"> Registrarse</a>
-                <a href="lgin1.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i>Ingresar</a>
+                <a href="login.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i>Ingresar</a>
             </div>
             <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -164,7 +164,7 @@
     <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">Nosotros</a>
 
     <a href="register.jsp" onclick="w3_close()" class="w3-bar-item w3-button">Registrese</a>
-    <a href="lgin1.jsp" onclick="w3_close()" class="w3-bar-item w3-button">Ingresar</a>
+    <a href="login.jsp" onclick="w3_close()" class="w3-bar-item w3-button">Ingresar</a>
 </nav>
 
 
