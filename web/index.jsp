@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <!-- Theme Made By www.w3schools.com - No Copyright -->
-    <title>Bootstrap Theme The Band</title>
+    <title>Evap</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -136,7 +136,7 @@
                 <a href="Listado.jsp" class="w3-bar-item w3-button">Nosotros</a>
 
                 <a href="CompEmail.jsp" class="w3-bar-item w3-button"> Registrarse</a>
-                <a href="login.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i>Ingresar</a>
+                <a href="lgin1.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i>Ingresar</a>
             </div>
             <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -164,7 +164,7 @@
     <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">Nosotros</a>
 
     <a href="register.jsp" onclick="w3_close()" class="w3-bar-item w3-button">Registrese</a>
-    <a href="login.jsp" onclick="w3_close()" class="w3-bar-item w3-button">Ingresar</a>
+    <a href="lgin1.jsp" onclick="w3_close()" class="w3-bar-item w3-button">Ingresar</a>
 </nav>
 
 
@@ -187,7 +187,7 @@
 
             <img src="image/header.jpg" alt="New York" width="100%" height="100%">
 
-            <div class="carousel-caption">
+            <div class="carousel-caption" >
 
                 <h1 >Bienvenidos a Evap </h1 >
                 <br>

@@ -51,7 +51,7 @@
                     <div class="input-group">
                         <div class="checkbox">
                             <label>
-                                <input id="login-remember" type="checkbox" name="remember" value="1"> Recuerdame
+                                <input id="login-remember" type="checkbox" name="remember" value="1"> Recordar
                             </label>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
 
                         <div class="col-sm-12 controls">
                             <input type="hidden" value="menu" name="action"/>
-                            <input  type="submit" class="btn btn-success"/>
+                            <input  type="submit" Value="Ingresar" class="btn btn-success"/>
 
 
                         </div>
