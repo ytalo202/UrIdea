@@ -29,7 +29,7 @@
     <script src="https://portalestudiante.utp.edu.pe/Scripts/ScriptGeneral.js"></script>
 
 
-    <link rel="stylesheet" href="css/styleUrIdea.css">
+    <link rel="stylesheet" href="css/styleLogin.css">
 
     <script>
         $(document).ready(function () {

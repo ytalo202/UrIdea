@@ -1,0 +1,584 @@
+@font-face {
+    font-family: "helvetica";
+    src: url("https://portalestudiante.utp.edu.pe/Fonts/helvetica-neue1_0.ttf");
+}
+h2
+{
+    margin-top: 0px!important;
+    margin-bottom: 0px!important;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-size: 62.5%;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: helvetica !important;
+}
+
+@media (max-width: 768px) {
+    html, body {
+        font-size: 50%;
+    }
+}
+
+.ocultar {
+    display: none;
+}
+
+svg {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    overflow: visible;
+}
+
+.tdLogin {
+    font-size: 28px;
+    color: white;
+    height: 5%;
+}
+
+.tdLoginTitulo {
+    font-size: 28px;
+    color: white;
+}
+
+.tdLoginTituloIE {
+    font-size: 28px;
+    color: white;
+    padding-top: 7%;
+    padding-bottom: 7%;
+}
+
+.svg-icon {
+    cursor: pointer;
+}
+
+.svg-icon path {
+    stroke: rgba(255, 255, 255, 0.9);
+    fill: none;
+    stroke-width: 1;
+}
+
+.container {
+    width: 100% !important;
+}
+
+input, button {
+    outline: none;
+    border: none;
+}
+
+.navbar-inverse {
+    position: relative !important;
+}
+
+.navbar-inverse {
+    margin-bottom: 0% !important;
+}
+/*
+.cont {
+    height: 72%;
+   background-image: url('../Images/portal estudiante.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    font-family: helvetica !important;
+}*/
+
+.cont_xs {
+    height: 72%;
+    background-image: url("https://s3-us-west-2.amazonaws.com/bfxpublicos/salesupblog/1000025643.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    font-family: helvetica !important;
+}
+
+.col-md-6
+{
+    border-bottom:1px solid;
+}
+
+.idp {
+
+    text-align: center;
+    color: #9C9494;
+    font-size: 12px;
+    line-height: 20px;
+    font-family: helvetica !important;
+}
+
+.idp a {
+    margin-left: 5%;
+    font-family: helvetica !important;
+    color: #333333 !important;
+}
+
+.idp span {
+    margin-left: 3%;
+    color: #333333 !important;
+}
+
+.TituloHeader {
+    color: #000000;
+    font-size: 35px;
+}
+
+.navbar-right:last-child {
+    margin-right: 25px !important;
+    margin-top: 2%;
+}
+
+.demo {
+    float: right;
+    width: 400px;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+
+
+.login {
+    position: relative;
+    height: 100%;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 0%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 0%);
+}
+
+.login.inactive {
+    opacity: 0;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+#loginIdat {
+    width: 100%;
+    height: 100%;
+}
+
+#loginForm {
+    display: initial !important;
+    width: 100%;
+    height: 100%;
+}
+
+.login__form {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem 2.5rem;
+    text-align: center;
+}
+
+
+
+
+.login__row {
+    height: 5rem;
+    padding-top: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.login__icon {
+    margin-bottom: -0.4rem;
+    margin-right: 0.5rem;
+}
+
+.login__icon.name path {
+    stroke-dasharray: 73.50196075439453;
+    stroke-dashoffset: 73.50196075439453;
+    -webkit-animation: animatePath 2s 0.5s forwards;
+    animation: animatePath 2s 0.5s forwards;
+}
+
+.login__icon.pass path {
+    stroke-dasharray: 92.10662841796875;
+    stroke-dashoffset: 92.10662841796875;
+    -webkit-animation: animatePath 2s 0.5s forwards;
+    animation: animatePath 2s 0.5s forwards;
+}
+
+.Tdbutton {
+    height: 6%;
+    padding: 3%;
+}
+
+
+
+
+.buttonLimpiar {
+    position: relative;
+    width: 35% !important;
+    height: 4rem;
+    text-align: center;
+    color: rgb(176, 30, 49);
+    background: rgba(255, 255, 255, 0.8);
+    background-repeat: no-repeat;
+    font-size: 18px;
+    border-radius: 0rem;
+    cursor: pointer;
+    overflow: hidden;
+    margin-left: 5px;
+}
+
+.dCaptchaModIE {
+    width: 210px !important;
+    height: 87px !important;
+    padding-bottom: 4%;
+}
+
+#tdCatcha {
+    text-align: left !important;
+    height: 8%;
+}
+
+#dCaptcha {
+    width: 60%;
+    height: 60%;
+    padding-bottom: 4%;
+}
+
+
+
+
+.TxtCssCaptcha {
+    display: inline-block;
+    width: 100% !important;
+    height: 60%;
+    padding-left: 1.5rem;
+    font-size: 1.5rem;
+    background: transparent;
+    color: #FDFCFD;
+    border: 1px solid white;
+}
+
+.TxtCssCaptchaIE {
+    display: inline-block;
+    width: 100% !important;
+    height: 45px;
+    padding-left: 1.5rem;
+    font-size: 1.5rem;
+    background: transparent;
+    color: #FDFCFD;
+    border: 1px solid white;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.TxtUsuario {
+    display: inline-block;
+    width: 100%;
+    height: 50%;
+    padding-left: 1.5rem;
+    font-size: 1.5rem;
+    background: transparent;
+    color: #FDFCFD;
+    border: 1px solid white;
+}
+
+.TxtUsuarioIE {
+    display: inline-block;
+    width: 350px;
+    height: 45px;
+    padding-left: 1.5rem;
+    font-size: 1.5rem;
+    background: transparent;
+    color: #FDFCFD;
+    border: 1px solid white;
+    margin-bottom: 4%;
+}
+
+
+
+.tablecell {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.tablecellIE {
+    height: 100% !important;
+}
+
+
+
+
+
+
+#loginform {
+    width: 100%;
+    height: 100%;
+}
+
+#loadCaptcha {
+    display: none;
+}
+
+.ripple {
+    position: absolute;
+    width: 15rem;
+    height: 15rem;
+    margin-left: -7.5rem;
+    margin-top: -7.5rem;
+    background: rgba(0, 0, 0, 0.4);
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-animation: animRipple 0.4s;
+    animation: animRipple 0.4s;
+    border-radius: 50%;
+}
+
+@-webkit-keyframes animRipple {
+    to {
+        -webkit-transform: scale(3.5);
+        transform: scale(3.5);
+        opacity: 0;
+    }
+}
+
+@keyframes animRipple {
+    to {
+        -webkit-transform: scale(3.5);
+        transform: scale(3.5);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes rotate {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes animatePath {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes animatePath {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@media only screen and (max-width:380px) {
+    .login {
+        position: initial;
+        height: 100%;
+        background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 0%);
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 0%);
+    }
+
+}
+
+
+
+#lblError {
+    font-size: 14px;
+    font-weight: normal !important;
+    font-family: helvetica !important;
+}
+.navbar-header
+{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+.button {
+    position: relative;
+    width: 35% !important;
+    height: 4rem;
+    color: rgba(255, 255, 255, 0.8);
+    background: url("https://portalestudiante.utp.edu.pe/Images/icono.png") rgb(176, 30, 49);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    font-size: 18px;
+    border-radius: 0rem;
+    cursor: pointer;
+    overflow: hidden;
+    -webkit-transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
+    transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
+    margin-left: 5px;
+    padding-right: 20px;
+}
+
+
+@media (min-width: 0px) and (max-width: 324px){
+
+    .button {
+        background-size: 20px 20px;
+        background-position: 72px 6px;
+
+    }
+
+}
+
+
+
+@media (min-width: 325px) and (max-width: 420px){
+
+    .button {
+        background-size: 20px 20px;
+        background-position: 80px 6px;
+
+    }
+
+}
+
+@media (min-width: 421px) {
+
+    .button {
+        background-size: 25px 25px;
+        background-position: 85px 7px;
+    }
+
+
+
+
+
+
+    .cont {
+        height: 72%;
+        background-image: url("https://s3-us-west-2.amazonaws.com/bfxpublicos/salesupblog/1000025643.png");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        font-family: helvetica !important;
+    }
+
+}
+@media (max-width: 320px) {
+
+    .cont {
+        height: 72%;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        font-family: helvetica !important;
+    }
+    .login__form {
+        position: inherit;
+        left: 0;
+        width: 100%;
+        height: 390px;
+        padding-right:5%;
+        padding-left:25%;
+        text-align: center;
+    }
+    .login {
+        height: 390px;
+    }
+
+    .demo {
+        height: 390px;
+    }
+}
+@media (min-width: 321px) and (max-width: 400px) {
+    .cont {
+        height: 400px;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        font-family: helvetica !important;
+    }
+    .login__form {
+        position: inherit;
+        left: 0;
+        width: 100%;
+        height: 400px;
+        padding-right:5%;
+        padding-left:15%;
+        text-align: center;
+    }
+    .login {
+
+        height: 400px;
+    }
+    .demo {
+        height: 400px;
+    }
+
+
+
+
+}
+
+@media (min-width: 401px) and (max-width: 500px) {
+    .cont {
+        height: 72%;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        font-family: helvetica !important;
+    }
+    .login__form {
+        position: inherit;
+        left: 0;
+        width: 100%;
+        height: 500px;
+        padding-right:5%;
+        padding-left:15%;
+        text-align: center;
+    }
+    body {
+        padding-right: 0px;
+        padding-left: 20px;
+    }
+    .demo {
+        float: right;
+        width: 450px;
+        height: 100%;
+        overflow: hidden;
+    }
+    .login {
+
+        height: 500px;
+    }
+    .demo {
+        height: 500px;
+    }
+    /*
+    .button {
+ background-position: 66px 7px;
+}
+     .button {
+     background-position: 80px 6px;
+ }
+        */
+
+}
+@media (max-width: 380px) {
+    /*
+    .button {
+        background-position: 70px 6px;
+    }
+    */
+
+    .idp {
+        font-size: 100%;
+    }
+
+    .navbar-header {
+        margin-left: 0px !important;
+    }
+
+    body {
+        padding-right: 0px !important;
+    }
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: helvetica !important;
+}
