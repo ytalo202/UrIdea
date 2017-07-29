@@ -21,10 +21,11 @@
     <p>Dni <input type="text" name="dni"/><p>
 
     <select name="idArea">
-        <option value="1">Contabilidad</option>
-        <option value="2">Administracion</option>
-        <option value="3">Publicidad</option>
-        <option value="4">Recursos Humanos</option>
+        <option value="1">Informatica</option>
+        <option value="2">Marketing</option>
+        <option value="3">Produccion</option>
+        <option value="4">Administracion</option>
+        <option value="5">Practicantes</option>
     </select>
     <input type="date" name="cumple">
 

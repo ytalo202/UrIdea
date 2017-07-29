@@ -4,7 +4,7 @@
 
 --%>
 <jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
-<h1>Evaluacion de Valores Practicantes </h1>
+<h1>Evaluacion de Valores  Marketing</h1>
 
 <form action="TypeEmployeeValidation" method="post">
 
@@ -59,6 +59,6 @@
 
 
     </table>
-    <input type="hidden" value="createEvaluation2" name="action"/>
+    <input type="hidden" value="createEvaluationAdministracion2" name="action"/>
     <input type="submit"/>
 </form>

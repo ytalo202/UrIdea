@@ -221,20 +221,38 @@ public class HRDataStore {
 
 
 ///-------------------eVALU
-    public boolean createEvaluation(Evaluation evaluation) {
+    public boolean createEvaluationAdministration(Evaluation evaluation) {
 
-        return getEvaluationsEntity().add(evaluation);
+        return getEvaluationsEntity().addAdministration(evaluation);
     }
+    public boolean createEvaluationInformatica(Evaluation evaluation) {
 
+        return getEvaluationsEntity().addInformatica(evaluation);
+    }
+    public boolean createEvaluationMarketing(Evaluation evaluation) {
+
+        return getEvaluationsEntity().addMarketing(evaluation);
+    }
+    public boolean createEvaluationPracticantes(Evaluation evaluation) {
+
+        return getEvaluationsEntity().addPractitioners(evaluation);
+    }
+    public boolean createEvaluationProduction(Evaluation evaluation) {
+
+        return getEvaluationsEntity().addProduction(evaluation);
+    }
+/*
     public boolean updateEvaluation(Evaluation evaluation) {
 
         return getEvaluationsEntity().update(evaluation);
-    }
+    }*/
 
     public Evaluation findEvaluationById(int id) {
         return getEvaluationsEntity().findById(
                 id,getEmployeesEntity(),getCompaniesEntity(),getEmailAddressesEntity(),getAreasEntity());
     }
+
+
 
 
 
@@ -427,13 +445,6 @@ public class HRDataStore {
 
 
 
-   /* public List<Evaluation> findAllEvaluationProm() {
-
-        return getEvaluationsEntity().findEvaluationPromedioById(
-                getEmployeesEntity(),getCompaniesEntity(),
-                getEmailAddressesEntity(),getAreasEntity()
-        );
-    }*/
 
 //evaluationnnnnnnnnnn
 

@@ -18,7 +18,7 @@
 <b:jumbotron>
     <jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
 
-    <c:forEach var="evaluation" items="${service.findEvaluationAgv(11)}">
+    <c:forEach var="evaluation" items="${service.findEvaluationAgv(2)}">
 
 
 
@@ -40,7 +40,9 @@
         </div>
 
         <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="<c:out value="${evaluation.grade}"/>" aria-valuemin="0" aria-valuemax="100" style="width: <c:out value="${evaluation.grade}"/>%;">
+            <div class="progress-bar" role="progressbar"
+                 aria-valuenow="<c:out value="${evaluation.grade}"/>" aria-valuemin="0"
+                 aria-valuemax="100" style="width: <c:out value="${evaluation.grade}"/>%;">
                 60%
             </div>
         </div>

@@ -196,17 +196,33 @@ public class HRService {
 
         return getDataStore().findEvaluationById(id);
     }
-
+/*
     public boolean updateEvaluation(Evaluation evaluation) {
 
         return getDataStore().updateEvaluation(evaluation);
-    }
+    }*/
 
 
     ///--------EVALUACION
-    public boolean createEvaluation(Evaluation evaluation) {
+    public boolean createEvaluationAdministracion(Evaluation evaluation) {
 
-        return getDataStore().createEvaluation(evaluation);
+        return getDataStore().createEvaluationAdministration(evaluation);
+    }
+    public boolean createEvaluationInformatica(Evaluation evaluation) {
+
+        return getDataStore().createEvaluationInformatica(evaluation);
+    }
+    public boolean createEvaluationMarketing(Evaluation evaluation) {
+
+        return getDataStore().createEvaluationMarketing(evaluation);
+    }
+    public boolean createEvaluationPracticantes(Evaluation evaluation) {
+
+        return getDataStore().createEvaluationPracticantes(evaluation);
+    }
+    public boolean createEvaluationProduccion(Evaluation evaluation) {
+
+        return getDataStore().createEvaluationProduction(evaluation);
     }
 
 

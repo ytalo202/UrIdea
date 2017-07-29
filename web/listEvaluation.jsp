@@ -27,7 +27,7 @@
             <c:out value=" ${evaluation.knowledge_of_languages}"/>
         <c:out value="${evaluation.avg_grade}"/>
 
-            <c:out value=" ${evaluation.commitment}"/>
+            <c:out value=" ${evaluation.commitment_company}"/>
         <div ><FONT SIZE=15><p>Animes</p></font ></div>
     <div class="progress">
 

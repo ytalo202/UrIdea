@@ -4,41 +4,41 @@
 
 --%>
 <jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
-<h1>Evaluacion de Crecimiento Profesional </h1>
+<h1>Evaluacion de Crecimiento Profesional Practicantes</h1>
 
 <form action="TypeEmployeeValidation" method="post">
 
     <table border="1">
 
         <tr>
-            <td>Habilidades de Comunicacion</td>
-            <td> <input type="radio" name="communication" value="1">bajo
-                <input type="radio" name="communication" value="3">medio
-                <input type="radio" name="communication" value="5">alta
+            <td>Se Desempeño de Manera Adecuando</td>
+            <td> <input type="radio" name="performance" value="1">bajo
+                <input type="radio" name="performance" value="3">medio
+                <input type="radio" name="performance" value="8.35">alta
             </td>
         </tr>
 
         <tr>
-            <td>Conocimiento de Idiomas</td>
-            <td> <input type="radio" name="knowledge_of_languages" value="1">bajo
-                <input type="radio" name="knowledge_of_languages" value="3">medio
-                <input type="radio" name="knowledge_of_languages" value="5">alto
+            <td>Trabajo de Manera Eficiente</td>
+            <td> <input type="radio" name="efficiency" value="1">bajo
+                <input type="radio" name="efficiency" value="3">medio
+                <input type="radio" name="efficiency" value="8.35">alto
             </td>
         </tr>
 
         <tr>
-        <td>Manejo de Computacion</td>
-        <td> <input type="radio" name="digital_skills" value="1">bajo
-            <input type="radio" name="digital_skills" value="3">medio
-            <input type="radio" name="digital_skills" value="5">alto
+        <td>Cumplio con todas sus tareas</td>
+        <td> <input type="radio" name="productivity" value="1">bajo
+            <input type="radio" name="productivity" value="3">medio
+            <input type="radio" name="productivity" value="8.35">alto
         </td>
     </tr>
 
         <tr>
-            <td>Lleva Cursos para aumentar y actualizar sus conocimientos</td>
-            <td> <input type="radio" name="professional_improvement" value="3">bajo
-                <input type="radio" name="professional_improvement" value="5">medio
-                <input type="radio" name="professional_improvement" value="10">alto
+            <td>Innovo ?</td>
+            <td> <input type="radio" name="innovative" value="1">bajo
+                <input type="radio" name="innovative" value="5">medio
+                <input type="radio" name="innovative" value="8.35">alto
             </td>
         </tr>
 

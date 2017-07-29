@@ -33,6 +33,8 @@ public class EvaluationsServlet extends HttpServlet {
 
         String action = request.getParameter("action");
         switch(action) {
+
+            /*
             case "update": {
                 //Company company = service.getCompanyById(request.getParameter("id"));
 
@@ -47,6 +49,10 @@ public class EvaluationsServlet extends HttpServlet {
                 log(message);
             break;
             }
+
+            */
+
+            /*
             case "create": {
 
 
@@ -69,6 +75,7 @@ public class EvaluationsServlet extends HttpServlet {
 
 
             }
+            */
 
         }
 
@@ -80,7 +87,7 @@ public class EvaluationsServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+/*
         String action = request.getParameter("action");
         String actionUri;
         switch(action) {
@@ -89,6 +96,8 @@ public class EvaluationsServlet extends HttpServlet {
                 request.setAttribute("action", "add");
                 break;
             }
+
+            /*
             case "edit": {
                 Evaluation evaluation = service.getEvaluationById(
                         Integer.parseInt(request.getParameter("id")));
@@ -100,7 +109,10 @@ public class EvaluationsServlet extends HttpServlet {
             default:
                 actionUri = EVAL_INDEX_URI;
         }
+
+
         RequestDispatcher dispatcher = request.getRequestDispatcher(actionUri);
         dispatcher.forward(request, response);
-    }
+    }*/
+        }
 }

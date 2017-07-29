@@ -35,9 +35,26 @@ public class TypeEmployeeServlet extends HttpServlet {
     public static String listaEmpleadosxArea = "/listaEmpAre.jsp";
     public static String  UpdateEmpEmail_URI= "/_EmpEmailUpdate.jsp";
     public static String  evaluar_uri= "/_Evaluar.jsp";
+    public static String  evaluarInformatica_uri= "/_EvaluarInformatica.jsp";
+    public static String  evaluarInformatica2_uri= "/_EvaluarInformatica2.jsp";
+    public static String  evaluarInformatica3_uri= "/_EvaluarInformatica3.jsp";
+
+    public static String  evaluarAdministracion_uri= "/_EvaluarAdministracion.jsp";
+    public static String  evaluarAdministracion2_uri= "/_EvaluarAdministracion2.jsp";
+    public static String  evaluarAdministracion3_uri= "/_EvaluarAdministracion3.jsp";
+
+    public static String  evaluarProduccion_uri= "/_EvaluarProduccion.jsp";
+    public static String  evaluarProduccion2_uri= "/_EvaluarProduccion2.jsp";
+    public static String  evaluarProduccion3_uri= "/_EvaluarProduccion3.jsp";
+
+    public static String  evaluarMarketing_uri= "/_EvaluarMaketing.jsp";
+    public static String  evaluarMarketing2_uri= "/_EvaluarMaketing2.jsp";
+    public static String  evaluarMarketing3_uri= "/_EvaluarMaketing3.jsp";
+
     public static String  evaluar2_uri= "/_Evaluar2.jsp";
     public static String  evaluar3_uri= "/_Evaluar3.jsp";
     public static String  addCv_uri= "/_NCv.jsp";
+
     int idE ;
     int employeeType;
     int EmailId;
@@ -47,28 +64,47 @@ public class TypeEmployeeServlet extends HttpServlet {
     int EmpEvaluado;
     int EmpCv;
 
+
+
+
+
     //evaluacion1
-    double compromiso;
-    double trabajoEquipo;
-    double tomaDesicion;
-    double opinion;
-    double time;
-    double grade;
+    float competitivo;
+    float presion;
+    float compromiso;
+    float trabajoEquipo;
+    float tomaDesicion;
+    float objetivo;
+    float liderasgo;
+    float analitico;
+    float proactivo;
+    float grade;
     //evaluacion2
 
-    double valiente;
-    double honesto;
-    double compartir;
-    double responsable;
-    double confianza;
-    double grade1;
+    float puntual;
+    float honesto;
+    float organizado;
+    float responsable;
+    float respeto;
+    float grade1;
+
+
+
 
     //evaluacion3
-    double comunicacion;
-    double mejora;
-    double idiomas;
-    double digital;
-    double grade2;
+    float desempeño;
+    float negocioSkills;
+    float negociosC;
+    float comunicacion;
+    float eficiencia;
+    float productividad;
+    float innovacion;
+    float grade2;
+    float idiomas;
+    float computadora;
+    float conocimientos;
+    float soluciones;
+    float optimisar;
 
 
 
@@ -310,25 +346,307 @@ public class TypeEmployeeServlet extends HttpServlet {
             case "createEvaluation1": {
 
 
-                /*
-                Company company =new Company();
-                Evaluation evaluation = new Evaluation();
-                Employee employee =new Employee();
-                evaluation.setCompany(company.setId(idCom));
-                evaluation.setIdEmployee(employee.setId(idE));
-                evaluation.setIdUserEmployee(employee.setId(EmpEvaluado));
+           compromiso= Float.parseFloat(request.getParameter("commitment_company"));
+            trabajoEquipo= Float.parseFloat(request.getParameter("teamwork"));
+             tomaDesicion= Float.parseFloat(request.getParameter("decision_making"));
+             proactivo= Float.parseFloat(request.getParameter("proactive"));
+          grade = compromiso+trabajoEquipo+tomaDesicion+proactivo;
 
-                */
-           compromiso= Double.parseDouble(request.getParameter("commitment"));
-            trabajoEquipo= Double.parseDouble(request.getParameter("team_management"));
-             tomaDesicion= Double.parseDouble(request.getParameter("decision_making"));
-             opinion= Double.parseDouble(request.getParameter("strategic_thinking"));
-          time= Double.parseDouble(request.getParameter("time_management"));
-          grade = compromiso+trabajoEquipo+tomaDesicion+opinion+time;
+          RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(evaluar2_uri);
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+            case "createEvaluationIformatica1": {
+
+
+                compromiso= Float.parseFloat(request.getParameter("commitment_company"));
+                competitivo=Float.parseFloat(request.getParameter("competitive"));
+                presion= Float.parseFloat(request.getParameter("work_under_pressure"));
+                proactivo= Float.parseFloat(request.getParameter("proactive"));
+                grade = compromiso+competitivo+presion+proactivo;
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(evaluarInformatica2_uri);
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+            case "createEvaluationAdministracion2": {
+
+                honesto= Float.parseFloat(request.getParameter("honesty"));
+                organizado= Float.parseFloat(request.getParameter("organized"));
+                responsable= Float.parseFloat(request.getParameter("responsibility"));
+                respeto= Float.parseFloat(request.getParameter("respect"));
+                grade1 = honesto+responsable+organizado+respeto;
 
 
                 RequestDispatcher dispatcher =
-                        request.getRequestDispatcher(evaluar2_uri);
+                        request.getRequestDispatcher(evaluarAdministracion3_uri);
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+            case "createEvaluationAdministracion3": {
+
+
+
+                Company company =new Company();
+                Evaluation evaluation = new Evaluation();
+                Employee employee =new Employee();
+                Area area = new Area();
+                comunicacion= Float.parseFloat(request.getParameter("communication_skills"));
+                idiomas= Float.parseFloat(request.getParameter("language_skills"));
+                negocioSkills= Float.parseFloat(request.getParameter("business_skills"));
+
+                negociosC= Float.parseFloat(request.getParameter("business_knowledge"));
+                optimisar= Float.parseFloat(request.getParameter("resource_optimization"));
+                eficiencia= Float.parseFloat(request.getParameter("efficiency"));
+                productividad= Float.parseFloat(request.getParameter("productivity"));
+                innovacion= Float.parseFloat(request.getParameter("innovative"));
+                grade2 = comunicacion+idiomas+negociosC+negocioSkills+optimisar+eficiencia
+                        +productividad+innovacion;
+
+                float avg =grade2+grade1+grade;
+
+
+
+
+
+
+                evaluation.setCompany(company.setId(idCom));
+                evaluation.setIdEvaluator(employee.setId2(idE));
+                evaluation.setIdUserEmployee(employee.setId(EmpEvaluado));
+                evaluation.setArea(area.setId(idA));
+
+                evaluation.setGrade(grade);
+                evaluation.setGrade1(grade1);
+                evaluation.setGrade2(grade2);
+                //actitud
+
+
+
+                evaluation.setCommitment_company(compromiso);
+                evaluation.setProactive(proactivo);
+                evaluation.setObjective(objetivo);
+                evaluation.setDecision_making(tomaDesicion);
+                evaluation.setTeamwork(trabajoEquipo);
+
+                //valores
+                evaluation.setPunctuality(puntual);
+                evaluation.setHonesty(honesto);
+                evaluation.setOrganized(organizado);
+                evaluation.setResponsibility(responsable);
+                evaluation.setRespect(respeto);
+                //crecimiento profecional
+
+                evaluation.setLanguage_skills(idiomas);
+                evaluation.setBusiness_skills(negocioSkills);
+                evaluation.setBusiness_knowledge(negociosC);
+                evaluation.setProductivity(productividad);
+                evaluation.setResource_optimization(optimisar);
+                evaluation.setEfficiency(eficiencia);
+                evaluation.setCommunication_skills(comunicacion);
+                evaluation.setInnovative(innovacion);
+                evaluation.setAvg_grade(avg);
+                evaluation.setComment(request.getParameter("comment"));
+
+                String message = service.createEvaluationAdministracion(evaluation) ?
+                        "Create success" :
+                        "Error while creating";
+                log(message);
+
+                Employee employee1 = service.getEmployeeById(idE);
+
+                request.setAttribute("employee", employee1);
+                request.setAttribute("action", "edit");
+
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(MenuAdmin_URI );
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+
+            case "createEvaluationAdministracion1": {
+
+                compromiso= Float.parseFloat(request.getParameter("commitment_company"));
+                proactivo=Float.parseFloat(request.getParameter("proactive"));
+                tomaDesicion=Float.parseFloat(request.getParameter("decision_making"));
+                objetivo= Float.parseFloat(request.getParameter("objective"));
+                trabajoEquipo= Float.parseFloat(request.getParameter("teamwork"));
+                grade = compromiso+competitivo+presion+proactivo;
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(evaluarAdministracion2_uri);
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+
+            case "createEvaluationProduccion1": {
+                compromiso= Float.parseFloat(request.getParameter("commitment_company"));
+                presion=Float.parseFloat(request.getParameter("work_under_pressure"));
+                trabajoEquipo= Float.parseFloat(request.getParameter("teamwork"));
+                proactivo= Float.parseFloat(request.getParameter("proactive"));
+                grade = compromiso+presion+trabajoEquipo+proactivo;
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(evaluarProduccion2_uri);
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+            case "createEvaluationProduccion2": {
+
+                puntual= Float.parseFloat(request.getParameter("punctuality"));
+                honesto= Float.parseFloat(request.getParameter("honesty"));
+                organizado= Float.parseFloat(request.getParameter("organized"));
+                responsable= Float.parseFloat(request.getParameter("responsibility"));
+                respeto= Float.parseFloat(request.getParameter("respect"));
+                grade1 = honesto+responsable+organizado+respeto+puntual;
+
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(evaluarProduccion3_uri);
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+
+            case "createEvaluationProduccion3": {
+
+
+
+                Company company =new Company();
+                Evaluation evaluation = new Evaluation();
+                Employee employee =new Employee();
+                Area area = new Area();
+
+                eficiencia= Float.parseFloat(request.getParameter("efficiency"));
+                desempeño= Float.parseFloat(request.getParameter("performance"));
+                productividad= Float.parseFloat(request.getParameter("productivity"));
+                optimisar= Float.parseFloat(request.getParameter("resource_optimization"));
+
+                innovacion= Float.parseFloat(request.getParameter("innovative"));
+                grade2 = desempeño+optimisar+eficiencia+productividad+innovacion;
+                float avg =grade2+grade1+grade;
+
+
+
+
+
+
+                evaluation.setCompany(company.setId(idCom));
+                evaluation.setIdEvaluator(employee.setId2(idE));
+                evaluation.setIdUserEmployee(employee.setId(EmpEvaluado));
+                evaluation.setArea(area.setId(idA));
+
+                evaluation.setGrade(grade);
+                evaluation.setGrade1(grade1);
+                evaluation.setGrade2(grade2);
+                //actitud
+
+
+
+
+                evaluation.setCommitment_company(compromiso);
+                evaluation.setWork_under_pressure(presion);
+                evaluation.setTeamwork(trabajoEquipo);
+                evaluation.setProactive(proactivo);
+                //valores
+                evaluation.setHonesty(honesto);
+                evaluation.setOrganized(organizado);
+                evaluation.setPunctuality(puntual);
+                evaluation.setResponsibility(responsable);
+                evaluation.setRespect(respeto);
+                //crecimiento profecional
+
+
+                //crecimiento Profecional
+                evaluation.setEfficiency(eficiencia);
+                evaluation.setPerformance(desempeño);
+                evaluation.setProductivity(productividad);
+                evaluation.setResource_optimization(optimisar);
+                evaluation.setInnovative(innovacion);
+                evaluation.setAvg_grade(avg);
+                evaluation.setComment(request.getParameter("comment"));
+
+                String message = service.createEvaluationProduccion(evaluation) ?
+                        "Create success" :
+                        "Error while creating";
+                log(message);
+
+                Employee employee1 = service.getEmployeeById(idE);
+
+                request.setAttribute("employee", employee1);
+                request.setAttribute("action", "edit");
+
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(MenuAdmin_URI );
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+            case "createEvaluationMarketing1": {
+
+
+
+                compromiso= Float.parseFloat(request.getParameter("commitment_company"));
+                liderasgo=Float.parseFloat(request.getParameter("leadership"));
+                analitico=Float.parseFloat(request.getParameter("analytical"));
+                objetivo= Float.parseFloat(request.getParameter("objective"));
+                tomaDesicion= Float.parseFloat(request.getParameter("decision_making"));
+                grade = compromiso+liderasgo+analitico+objetivo+tomaDesicion;
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(evaluarMarketing2_uri);
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+
+            case "createEvaluationIformatica2": {
+
+                honesto= Float.parseFloat(request.getParameter("honesty"));
+                organizado= Float.parseFloat(request.getParameter("organized"));
+                responsable= Float.parseFloat(request.getParameter("responsibility"));
+                respeto= Float.parseFloat(request.getParameter("respect"));
+                grade1 = honesto+responsable+organizado+respeto;
+
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(evaluarInformatica3_uri);
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+
+            case "createEvaluationMarketing2": {
+
+                puntual= Float.parseFloat(request.getParameter("punctuality"));
+                honesto= Float.parseFloat(request.getParameter("honesty"));
+                organizado= Float.parseFloat(request.getParameter("organized"));
+                responsable= Float.parseFloat(request.getParameter("responsibility"));
+                respeto= Float.parseFloat(request.getParameter("respect"));
+                grade1 = honesto+responsable+organizado+respeto+puntual;
+
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(evaluarMarketing3_uri);
                 dispatcher.forward(request, response);
                 break;
 
@@ -348,13 +666,13 @@ public class TypeEmployeeServlet extends HttpServlet {
 
                 */
 
-             valiente= Double.parseDouble(request.getParameter("ethic"));
+             puntual= Float.parseFloat(request.getParameter("punctuality"));
 
-            honesto= Double.parseDouble(request.getParameter("customer_orientation"));
-            compartir= Double.parseDouble(request.getParameter("social_responsability"));
-            responsable= Double.parseDouble(request.getParameter("use_of_resources"));
-             confianza= Double.parseDouble(request.getParameter("cost_orientation"));
-                grade1 = valiente+honesto+compartir+responsable+confianza;
+            honesto= Float.parseFloat(request.getParameter("honesty"));
+            organizado= Float.parseFloat(request.getParameter("organized"));
+            responsable= Float.parseFloat(request.getParameter("responsibility"));
+             respeto= Float.parseFloat(request.getParameter("respect"));
+                grade1 = puntual+honesto+responsable+organizado+respeto;
 
 
                 RequestDispatcher dispatcher =
@@ -365,7 +683,8 @@ public class TypeEmployeeServlet extends HttpServlet {
             }
 
 
-            case "createEvaluation3": {
+
+            case "createEvaluationMarketing3": {
 
 
 
@@ -374,47 +693,65 @@ public class TypeEmployeeServlet extends HttpServlet {
                 Employee employee =new Employee();
                 Area area = new Area();
 
-                comunicacion= Double.parseDouble(request.getParameter("communication"));
-                mejora= Double.parseDouble(request.getParameter("professional_improvement"));
-                idiomas= Double.parseDouble(request.getParameter("knowledge_of_languages"));
-                digital= Double.parseDouble(request.getParameter("digital_skills"));
-                grade2 = comunicacion+mejora+idiomas+digital;
-                double avg =grade2+grade1+grade;
+
+
+                idiomas= Float.parseFloat(request.getParameter("language_skills"));
+                negocioSkills= Float.parseFloat(request.getParameter("business_skills"));
+                negociosC= Float.parseFloat(request.getParameter("business_knowledge"));
+
+                conocimientos= Float.parseFloat(request.getParameter("market_knowledge"));
+                productividad= Float.parseFloat(request.getParameter("productivity"));
+                comunicacion= Float.parseFloat(request.getParameter("communication_skills"));
+                innovacion= Float.parseFloat(request.getParameter("innovative"));
+                grade2 = idiomas+negocioSkills+negociosC+conocimientos
+                        +productividad+comunicacion+innovacion;
+
+                float avg =grade2+grade1+grade;
+
+
+
 
 
 
                 evaluation.setCompany(company.setId(idCom));
-
-                //evaluation.setIdEmployee(employee.setId(9));
-                evaluation.setIdEmployee(employee.setId2(idE));
-
+                evaluation.setIdEvaluator(employee.setId2(idE));
                 evaluation.setIdUserEmployee(employee.setId(EmpEvaluado));
-
-
                 evaluation.setArea(area.setId(idA));
 
                 evaluation.setGrade(grade);
                 evaluation.setGrade1(grade1);
                 evaluation.setGrade2(grade2);
+                //actitud
 
-                evaluation.setCommitment(compromiso);
-                evaluation.setCommunication(comunicacion);
-                evaluation.setEthic(valiente);
-                evaluation.setTeam_management(trabajoEquipo);
+
+
+                evaluation.setCommitment_company(compromiso);
+                evaluation.setLeadership(liderasgo);
+                evaluation.setAnalytical(analitico);
+                evaluation.setObjective(objetivo);
                 evaluation.setDecision_making(tomaDesicion);
-                evaluation.setStrategic_thinking(opinion);
-                evaluation.setCustomer_orientation(honesto);
-                evaluation.setSocial_responsability(compartir);
-                evaluation.setTime_management(time);
-                evaluation.setUse_of_resources(responsable);
-                evaluation.setCost_orientation(confianza);
-                evaluation.setKnowledge_of_languages(idiomas);
-                evaluation.setDigital_skills(digital);
-                evaluation.setProfessional_improvement(mejora);
+
+                //valores
+                evaluation.setPunctuality(puntual);
+                evaluation.setHonesty(honesto);
+                evaluation.setOrganized(organizado);
+                evaluation.setResponsibility(responsable);
+                evaluation.setRespect(respeto);
+                //crecimiento profecional
+
+
+
+                evaluation.setLanguage_skills(idiomas);
+                evaluation.setBusiness_skills(negocioSkills);
+                evaluation.setBusiness_knowledge(negociosC);
+                evaluation.setMarket_knowledge(conocimientos);
+                evaluation.setProductivity(productividad);
+                evaluation.setCommunication_skills(comunicacion);
+                evaluation.setInnovative(innovacion);
                 evaluation.setAvg_grade(avg);
                 evaluation.setComment(request.getParameter("comment"));
 
-                String message = service.createEvaluation(evaluation) ?
+                String message = service.createEvaluationMarketing(evaluation) ?
                         "Create success" :
                         "Error while creating";
                 log(message);
@@ -431,6 +768,146 @@ public class TypeEmployeeServlet extends HttpServlet {
                 break;
 
             }
+
+
+            case "createEvaluationIformatica3": {
+
+
+
+                Company company =new Company();
+                Evaluation evaluation = new Evaluation();
+                Employee employee =new Employee();
+                Area area = new Area();
+
+                idiomas= Float.parseFloat(request.getParameter("language_skills"));
+                computadora= Float.parseFloat(request.getParameter("computer_skills"));
+                conocimientos= Float.parseFloat(request.getParameter("market_knowledge"));
+                productividad= Float.parseFloat(request.getParameter("productivity"));
+                eficiencia= Float.parseFloat(request.getParameter("efficiency"));
+                soluciones= Float.parseFloat(request.getParameter("give_successful_solutions"));
+                innovacion= Float.parseFloat(request.getParameter("innovative"));
+                grade2 = idiomas+computadora+conocimientos+eficiencia+productividad+soluciones+innovacion;
+                float avg =grade2+grade1+grade;
+
+
+
+
+
+
+                evaluation.setCompany(company.setId(idCom));
+                evaluation.setIdEvaluator(employee.setId2(idE));
+                evaluation.setIdUserEmployee(employee.setId(EmpEvaluado));
+                evaluation.setArea(area.setId(idA));
+
+                evaluation.setGrade(grade);
+                evaluation.setGrade1(grade1);
+                evaluation.setGrade2(grade2);
+                //actitud
+
+                evaluation.setCommitment_company(compromiso);
+                evaluation.setCompetitive(competitivo);
+                evaluation.setWork_under_pressure(presion);
+                evaluation.setProactive(proactivo);
+                //valores
+                evaluation.setHonesty(honesto);
+                evaluation.setOrganized(organizado);
+                evaluation.setResponsibility(responsable);
+                evaluation.setRespect(respeto);
+                //crecimiento profecional
+                evaluation.setLanguage_skills(idiomas);
+                evaluation.setCommunication_skills(computadora);
+                evaluation.setMarket_knowledge(conocimientos);
+                evaluation.setProductivity(productividad);
+                evaluation.setEfficiency(eficiencia);
+                evaluation.setGive_successful_solutions(soluciones);
+                evaluation.setInnovative(innovacion);
+                evaluation.setAvg_grade(avg);
+                evaluation.setComment(request.getParameter("comment"));
+
+                String message = service.createEvaluationInformatica(evaluation) ?
+                        "Create success" :
+                        "Error while creating";
+                log(message);
+
+                Employee employee1 = service.getEmployeeById(idE);
+
+                request.setAttribute("employee", employee1);
+                request.setAttribute("action", "edit");
+
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(MenuAdmin_URI );
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+
+            case "createEvaluation3": {
+
+
+
+                Company company =new Company();
+                Evaluation evaluation = new Evaluation();
+                Employee employee =new Employee();
+                Area area = new Area();
+
+                desempeño= Float.parseFloat(request.getParameter("performance"));
+                eficiencia= Float.parseFloat(request.getParameter("efficiency"));
+                productividad= Float.parseFloat(request.getParameter("productivity"));
+                innovacion= Float.parseFloat(request.getParameter("innovative"));
+                grade2 = desempeño+eficiencia+productividad+innovacion;
+                float avg =grade2+grade1+grade;
+
+
+
+                evaluation.setCompany(company.setId(idCom));
+                evaluation.setIdEvaluator(employee.setId2(idE));
+                evaluation.setIdUserEmployee(employee.setId(EmpEvaluado));
+                evaluation.setArea(area.setId(idA));
+
+                evaluation.setGrade(grade);
+                evaluation.setGrade1(grade1);
+                evaluation.setGrade2(grade2);
+                //actitud
+                evaluation.setCommitment_company(compromiso);
+                evaluation.setProactive(proactivo);
+                evaluation.setTeamwork(trabajoEquipo);
+                evaluation.setDecision_making(tomaDesicion);
+                //valores
+                evaluation.setPunctuality(puntual);
+                evaluation.setHonesty(honesto);
+                evaluation.setOrganized(organizado);
+                evaluation.setResponsibility(responsable);
+                evaluation.setRespect(respeto);
+                //crecimiento profecional
+
+
+                evaluation.setPerformance(desempeño);
+                evaluation.setEfficiency(eficiencia);
+                evaluation.setProductivity(productividad);
+                evaluation.setInnovative(innovacion);
+                evaluation.setAvg_grade(avg);
+                evaluation.setComment(request.getParameter("comment"));
+
+                String message = service.createEvaluationPracticantes(evaluation) ?
+                        "Create success" :
+                        "Error while creating";
+                log(message);
+
+                Employee employee1 = service.getEmployeeById(idE);
+
+                request.setAttribute("employee", employee1);
+                request.setAttribute("action", "edit");
+
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(MenuAdmin_URI );
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
 
             case "addCv2": {
                 Cv cv= new Cv();
@@ -528,10 +1005,27 @@ public class TypeEmployeeServlet extends HttpServlet {
             }
 
             case "evaluar": {
-
                 EmpEvaluado =Integer.parseInt(request.getParameter("idEmpleado"));
+                if (idA ==5){
+
                 actionUri = evaluar_uri;
-                break;
+                break;}
+                if (idA ==4){
+
+                    actionUri = evaluarAdministracion_uri;
+                    break;}
+                if (idA ==3){
+
+                    actionUri = evaluarProduccion_uri;
+                    break;}
+                if (idA ==2){
+
+                    actionUri = evaluarMarketing_uri;
+                    break;}
+                else{
+
+                    actionUri = evaluarInformatica_uri;
+                    break;}
             }
 
             case "addCv": {
