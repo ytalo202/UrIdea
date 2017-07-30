@@ -100,6 +100,12 @@ public class HRService {
 
     }
 
+    public List<Employee> findAllEmployeeById(int id)
+    {
+        return getDataStore().findAllEmployeeById(id);
+    }
+
+
     public boolean updatePayment(Payment payment) {
         return getDataStore().updatePayment(payment);
     }
@@ -335,6 +341,11 @@ public class HRService {
     public List<Evaluation> findEvaluationAgv(int id) {
 
         return getDataStore().findEvaluationAgv(id);
+    }
+
+    public List<Cv> findAllCvsByIdEmployee(int idEmployee)
+    {
+        return getDataStore().findAllCvsById(idEmployee);
     }
 
 

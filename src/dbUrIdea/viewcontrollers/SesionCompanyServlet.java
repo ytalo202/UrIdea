@@ -60,7 +60,10 @@ public class SesionCompanyServlet extends HttpServlet {
 
     public static String ChangeEmpl_URI = "/changeEmployee.jsp";
 
+    public static String perfilEmployee_uri = "/PerfilPrueba.jsp";
+
     int codCom;
+    int EmpEvaluado;
 
 
 
@@ -516,6 +519,19 @@ public class SesionCompanyServlet extends HttpServlet {
                 actionUri = ChangeAdm_URI;
                 break;
             }
+
+            case "Perfil": {
+                EmpEvaluado =Integer.parseInt(request.getParameter("idEmployee"));
+
+                Employee employee = service.getEmployeeById(EmpEvaluado);
+                request.setAttribute("employee", employee);
+                request.setAttribute("action", "Perfil");
+                actionUri = perfilEmployee_uri;
+                break;
+            }
+
+
+
 
 
 

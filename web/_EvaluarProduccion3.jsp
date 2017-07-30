@@ -13,16 +13,16 @@
         <tr>
             <td>eficiente</td>
             <td> <input type="radio" name="efficiency" value="1">bajo
-                <input type="radio" name="efficiency" value="2">medio
-                <input type="radio" name="efficiency" value="4.77">alta
+                <input type="radio" name="efficiency" value="3">medio
+                <input type="radio" name="efficiency" value="6.68">alta
             </td>
         </tr>
 
         <tr>
             <td>desempeño</td>
             <td> <input type="radio" name="performance" value="1">bajo
-                <input type="radio" name="performance" value="2">medio
-                <input type="radio" name="performance" value="4.77">alto
+                <input type="radio" name="performance" value="3">medio
+                <input type="radio" name="performance" value="6.68">alto
             </td>
         </tr>
 
@@ -30,16 +30,16 @@
         <tr>
             <td>Fue productivo</td>
             <td> <input type="radio" name="productivity" value="1">bajo
-                <input type="radio" name="productivity" value="2">medio
-                <input type="radio" name="productivity" value="4.77">alto
+                <input type="radio" name="productivity" value="3">medio
+                <input type="radio" name="productivity" value="6.68">alto
             </td>
         </tr>
 
         <tr>
             <td>optimisa recursis</td>
             <td> <input type="radio" name="resource_optimization" value="1">bajo
-                <input type="radio" name="resource_optimization" value="2">medio
-                <input type="radio" name="resource_optimization" value="4.77">alto
+                <input type="radio" name="resource_optimization" value="3">medio
+                <input type="radio" name="resource_optimization" value="6.68">alto
             </td>
         </tr>
 
@@ -48,8 +48,8 @@
         <tr>
             <td>Innovo ?</td>
             <td> <input type="radio" name="innovative" value="1">bajo
-                <input type="radio" name="innovative" value="2">medio
-                <input type="radio" name="innovative" value="4.78">alto
+                <input type="radio" name="innovative" value="3">medio
+                <input type="radio" name="innovative" value="6.68">alto
             </td>
         </tr>
 

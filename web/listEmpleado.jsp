@@ -27,6 +27,10 @@
         <a href="v?action=editTypeAdmin&idEmployee=<c:out value="${employee.id}"/>">
             Cambiar a Admin
         </a>
+
+        <a href="v?action=Perfil&idEmployee=<c:out value="${employee.id}"/>">
+            Ver Perfil
+        </a>
     </p>
 </c:forEach>
 

@@ -54,6 +54,7 @@ public class TypeEmployeeServlet extends HttpServlet {
     public static String  evaluar2_uri= "/_Evaluar2.jsp";
     public static String  evaluar3_uri= "/_Evaluar3.jsp";
     public static String  addCv_uri= "/_NCv.jsp";
+    public static String perfilEmployee_uri = "/PerfilPrueba.jsp";
 
     int idE ;
     int employeeType;
@@ -63,6 +64,7 @@ public class TypeEmployeeServlet extends HttpServlet {
 
     int EmpEvaluado;
     int EmpCv;
+    int EmpPerfil;
 
 
 
@@ -381,7 +383,8 @@ public class TypeEmployeeServlet extends HttpServlet {
                 organizado= Float.parseFloat(request.getParameter("organized"));
                 responsable= Float.parseFloat(request.getParameter("responsibility"));
                 respeto= Float.parseFloat(request.getParameter("respect"));
-                grade1 = honesto+responsable+organizado+respeto;
+                puntual=Float.parseFloat(request.getParameter("punctuality"));
+                grade1 = honesto+responsable+organizado+respeto+puntual;
 
 
                 RequestDispatcher dispatcher =
@@ -481,7 +484,7 @@ public class TypeEmployeeServlet extends HttpServlet {
                 tomaDesicion=Float.parseFloat(request.getParameter("decision_making"));
                 objetivo= Float.parseFloat(request.getParameter("objective"));
                 trabajoEquipo= Float.parseFloat(request.getParameter("teamwork"));
-                grade = compromiso+competitivo+presion+proactivo;
+                grade = compromiso+objetivo+trabajoEquipo+proactivo+tomaDesicion;
 
                 RequestDispatcher dispatcher =
                         request.getRequestDispatcher(evaluarAdministracion2_uri);
@@ -1032,6 +1035,15 @@ public class TypeEmployeeServlet extends HttpServlet {
 
                 EmpCv =Integer.parseInt(request.getParameter("idEmpleado"));
                 actionUri = addCv_uri;
+                break;
+            }
+            case "Perfil": {
+                EmpPerfil=Integer.parseInt(request.getParameter("idEmpleado"));
+
+                Employee employee = service.getEmployeeById(EmpPerfil);
+                request.setAttribute("employee", employee);
+                request.setAttribute("action", "Perfil");
+                actionUri = perfilEmployee_uri;
                 break;
             }
 

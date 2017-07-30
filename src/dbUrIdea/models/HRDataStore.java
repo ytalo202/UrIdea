@@ -439,6 +439,20 @@ public class HRDataStore {
     }
 
 
+    public List<Employee> findAllEmployeeById(int id)
+    {
+        return getEmployeesEntity().listFindById(id,getCompaniesEntity(),
+                getEmailAddressesEntity(),getAreasEntity());
+    }
+
+
+    public List<Cv> findAllCvsById(int id)
+    {
+        return getCvsEntity().findByIdEmployee(id,getEmployeesEntity(),
+                getCompaniesEntity(),getEmailAddressesEntity(),getAreasEntity());
+    }
+
+
     public boolean changeEmployee(Employee employee) {
         return getEmployeesEntity().changeEmployee(employee);
     }

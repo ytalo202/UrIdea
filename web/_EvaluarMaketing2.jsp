@@ -59,6 +59,6 @@
 
 
     </table>
-    <input type="hidden" value="createEvaluationAdministracion2" name="action"/>
+    <input type="hidden" value="createEvaluationMarketing2" name="action"/>
     <input type="submit"/>
 </form>

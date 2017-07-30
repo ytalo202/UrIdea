@@ -63,6 +63,18 @@ public class EmployeesEntity extends BaseEntity {
                 emailAddressesEntity,areasEntity).get(0);
     }
 
+
+    public List<Employee> listFindById(int id,
+                             CompaniesEntity companiesEntity,
+
+                             EmailAddressesEntity emailAddressesEntity,AreasEntity areasEntity
+    ) {
+        String criteria = "id = " + id;
+        return findByCriteria(criteria, companiesEntity,
+                emailAddressesEntity,areasEntity);
+    }
+
+
     public Employee findByName(String name,
                                CompaniesEntity companiesEntity,
 

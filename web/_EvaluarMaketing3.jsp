@@ -13,53 +13,53 @@
         <tr>
             <td>Tiene estudios de otros idiomas</td>
             <td> <input type="radio" name="language_skills" value="1">bajo
-                <input type="radio" name="language_skills" value="3">medio
-                <input type="radio" name="language_skills" value="8.35">alta
+                <input type="radio" name="language_skills" value="2">medio
+                <input type="radio" name="language_skills" value="4.77">alta
             </td>
         </tr>
 
         <tr>
             <td>sabe de negocios</td>
             <td> <input type="radio" name="business_skills" value="1">bajo
-                <input type="radio" name="business_skills" value="3">medio
-                <input type="radio" name="business_skills" value="8.35">alto
+                <input type="radio" name="business_skills" value="2">medio
+                <input type="radio" name="business_skills" value="4.77">alto
             </td>
         </tr>
 
         <tr>
             <td>Cumplio con todas sus tareas</td>
             <td> <input type="radio" name="business_knowledge" value="1">bajo
-                <input type="radio" name="business_knowledge" value="3">medio
-                <input type="radio" name="business_knowledge" value="8.35">alto
+                <input type="radio" name="business_knowledge" value="2">medio
+                <input type="radio" name="business_knowledge" value="4.77">alto
             </td>
         </tr>
         <tr>
             <td>actualiza sus conocimientos de mercado</td>
             <td> <input type="radio" name="market_knowledge" value="1">bajo
-                <input type="radio" name="market_knowledge" value="3">medio
-                <input type="radio" name="market_knowledge" value="8.35">alto
+                <input type="radio" name="market_knowledge" value="2">medio
+                <input type="radio" name="market_knowledge" value="4.77">alto
             </td>
         </tr>
         <tr>
             <td>fue productivo</td>
             <td> <input type="radio" name="productivity" value="1">bajo
-                <input type="radio" name="productivity" value="3">medio
-                <input type="radio" name="productivity" value="8.35">alto
+                <input type="radio" name="productivity" value="2">medio
+                <input type="radio" name="productivity" value="4.77">alto
             </td>
         </tr>
         <tr>
             <td>mejoro sus habilidades de comunicacion</td>
             <td> <input type="radio" name="communication_skills" value="1">bajo
-                <input type="radio" name="communication_skills" value="3">medio
-                <input type="radio" name="communication_skills" value="8.35">alto
+                <input type="radio" name="communication_skills" value="2">medio
+                <input type="radio" name="communication_skills" value="4.77">alto
             </td>
         </tr>
 
         <tr>
             <td>Innovo ?</td>
             <td> <input type="radio" name="innovative" value="1">bajo
-                <input type="radio" name="innovative" value="5">medio
-                <input type="radio" name="innovative" value="8.35">alto
+                <input type="radio" name="innovative" value="2">medio
+                <input type="radio" name="innovative" value="4.77">alto
             </td>
         </tr>
 

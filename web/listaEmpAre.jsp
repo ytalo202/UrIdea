@@ -31,6 +31,10 @@
             Agregar Caracteristica a Cv
         </a>
 
+        <a href="TypeEmployeeValidation?action=Perfil&idEmpleado=<c:out value="${employee.id}"/>">
+            Ver Perfil
+        </a>
+
     </p>
 </c:forEach>
 

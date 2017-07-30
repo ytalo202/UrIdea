@@ -12,63 +12,63 @@
     <table border="1">
         <tr>
             <td>Mostro su compromiso a la Empresa en Mcuhas Ocaciones</td>
-            <td> <input type="radio" name="communication_skills" value="3">bajo
-                <input type="radio" name="communication_skills" value="5">medio
-                <input type="radio" name="communication_skills" value="8.325">alto
+            <td> <input type="radio" name="communication_skills" value="1">bajo
+                <input type="radio" name="communication_skills" value="2">medio
+                <input type="radio" name="communication_skills" value="4.175">alto
             </td>
         </tr>
 
         <tr>
             <td>Tomo Decisiones para resolver distintos Problemas Ocurridos</td>
-            <td>  <input type="radio" name="language_skills" value="3">pocas veces
-                <input type="radio" name="language_skills" value="5">regularmente
-                <input type="radio" name="language_skills" value="8.325">siempre
+            <td>  <input type="radio" name="language_skills" value="1">pocas veces
+                <input type="radio" name="language_skills" value="2">regularmente
+                <input type="radio" name="language_skills" value="4.175">siempre
             </td>
         </tr>
 
         <tr>
             <td>Trabajo en Equipo de manera Adecuada Sin Demasiados percances</td>
-            <td> <input type="radio" name="business_skills" value="3">bajo
-                <input type="radio" name="business_skills" value="5">medio
-                <input type="radio" name="business_skills" value="8.325">alto
+            <td> <input type="radio" name="business_skills" value="1">bajo
+                <input type="radio" name="business_skills" value="2">medio
+                <input type="radio" name="business_skills" value="4.175">alto
             </td>
         </tr>
 
 
         <tr>
             <td>Tomo la Iniciativa Para Empezar el Trabajo</td>
-            <td> <input type="radio" name="business_knowledge" value="3">pocas veces
-                <input type="radio" name="business_knowledge" value="5">regularmente
-                <input type="radio" name="business_knowledge" value="8.325">siempre
+            <td> <input type="radio" name="business_knowledge" value="1">pocas veces
+                <input type="radio" name="business_knowledge" value="2">regularmente
+                <input type="radio" name="business_knowledge" value="4.175">siempre
             </td>
         </tr>
 
         <tr>
             <td>Tomo la Iniciativa Para Empezar el Trabajo</td>
-            <td> <input type="radio" name="resource_optimization" value="3">pocas veces
-                <input type="radio" name="resource_optimization" value="5">regularmente
-                <input type="radio" name="resource_optimization" value="8.325">siempre
+            <td> <input type="radio" name="resource_optimization" value="1">pocas veces
+                <input type="radio" name="resource_optimization" value="2">regularmente
+                <input type="radio" name="resource_optimization" value="4.175">siempre
             </td>
         </tr>
         <tr>
             <td>Tomo la Iniciativa Para Empezar el Trabajo</td>
-            <td> <input type="radio" name="efficiency" value="3">pocas veces
-                <input type="radio" name="efficiency" value="5">regularmente
-                <input type="radio" name="efficiency" value="8.325">siempre
+            <td> <input type="radio" name="efficiency" value="1">pocas veces
+                <input type="radio" name="efficiency" value="2">regularmente
+                <input type="radio" name="efficiency" value="4.175">siempre
             </td>
         </tr>
         <tr>
             <td>Tomo la Iniciativa Para Empezar el Trabajo</td>
-            <td> <input type="radio" name="productivity" value="3">pocas veces
-                <input type="radio" name="productivity" value="5">regularmente
-                <input type="radio" name="productivity" value="8.325">siempre
+            <td> <input type="radio" name="productivity" value="1">pocas veces
+                <input type="radio" name="productivity" value="2">regularmente
+                <input type="radio" name="productivity" value="4.175">siempre
             </td>
         </tr>
         <tr>
             <td>Tomo la Iniciativa Para Empezar el Trabajo</td>
-            <td> <input type="radio" name="innovative" value="3">pocas veces
-                <input type="radio" name="innovative" value="5">regularmente
-                <input type="radio" name="innovative" value="8.325">siempre
+            <td> <input type="radio" name="innovative" value="1">pocas veces
+                <input type="radio" name="innovative" value="2">regularmente
+                <input type="radio" name="innovative" value="4.175">siempre
             </td>
         </tr>
 

@@ -12,41 +12,42 @@
     <table border="1">
         <tr>
             <td>Mostro su compromiso a la Empresa en Mcuhas Ocaciones</td>
-            <td> <input checked="checked" type="radio" name="commitment_company" value="3">bajo
-                <input type="radio" name="commitment_company" value="5">medio
-                <input type="radio" name="commitment_company" value="8.325">alto
+            <td>
+                <input type="radio" name="commitment_company" value="1">bajo
+                <input type="radio" name="commitment_company" value="3">medio
+                <input type="radio" name="commitment_company" value="6.66">alto
             </td>
         </tr>
         <tr>
             <td>proactivo</td>
-            <td>  <input type="radio" name="proactive" value="3">pocas veces
-                <input type="radio" name="proactive" value="5">regularmente
-                <input type="radio" name="proactive" value="8.325">siempre
+            <td>  <input type="radio" name="proactive" value="1">pocas veces
+                <input type="radio" name="proactive" value="3">regularmente
+                <input type="radio" name="proactive" value="6.66">siempre
             </td>
         </tr>
 
         <tr>
             <td>Objetivo</td>
-            <td>  <input type="radio" name="objective" value="3">pocas veces
-                <input type="radio" name="objective" value="5">regularmente
-                <input type="radio" name="objective" value="8.325">siempre
+            <td>  <input type="radio" name="objective" value="1">pocas veces
+                <input type="radio" name="objective" value="3">regularmente
+                <input type="radio" name="objective" value="6.66">siempre
             </td>
         </tr>
 
         <tr>
             <td>toma decision</td>
-            <td> <input type="radio" name="decision_making" value="3">bajo
-                <input type="radio" name="decision_making" value="5">medio
-                <input type="radio" name="decision_making" value="8.325">alto
+            <td> <input type="radio" name="decision_making" value="1">bajo
+                <input type="radio" name="decision_making" value="3">medio
+                <input type="radio" name="decision_making" value="6.66">alto
             </td>
         </tr>
 
 
         <tr>
             <td>Trabaja en equipo</td>
-            <td> <input type="radio" name="teamwork" value="3">pocas veces
-                <input type="radio" name="teamwork" value="5">regularmente
-                <input type="radio" name="teamwork" value="8.325">siempre
+            <td> <input type="radio" name="teamwork" value="1">pocas veces
+                <input type="radio" name="teamwork" value="3">regularmente
+                <input type="radio" name="teamwork" value="6.66">siempre
             </td>
         </tr>
 
