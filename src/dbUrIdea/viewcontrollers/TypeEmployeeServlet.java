@@ -54,7 +54,10 @@ public class TypeEmployeeServlet extends HttpServlet {
     public static String  evaluar2_uri= "/_Evaluar2.jsp";
     public static String  evaluar3_uri= "/_Evaluar3.jsp";
     public static String  addCv_uri= "/_NCv.jsp";
-    public static String perfilEmployee_uri = "/PerfilPrueba.jsp";
+
+    public static String perfilEmployee_uri = "/PerfilPrueba1.jsp";
+    public static String perfilHistorialEvaluEmployee_uri = "/PerfilHistorialEvaluation1.jsp";
+
 
     int idE ;
     int employeeType;
@@ -1045,6 +1048,34 @@ public class TypeEmployeeServlet extends HttpServlet {
                 request.setAttribute("action", "Perfil");
                 actionUri = perfilEmployee_uri;
                 break;
+            }
+
+            case "EvaluationHistorial": {
+                EmpEvaluado =Integer.parseInt(request.getParameter("idEmployee"));
+
+                Employee employee = service.getEmployeeById(EmpEvaluado);
+                request.setAttribute("employee", employee);
+                request.setAttribute("action", "Perfil");
+                if (idA ==5){
+
+                    actionUri = perfilHistorialEvaluEmployee_uri;
+                    break;}
+                if (idA ==4){
+
+                    actionUri = evaluarAdministracion_uri;
+                    break;}
+                if (idA ==3){
+
+                    actionUri = evaluarProduccion_uri;
+                    break;}
+                if (idA ==2){
+
+                    actionUri = evaluarMarketing_uri;
+                    break;}
+                else{
+
+                    actionUri = evaluarInformatica_uri;
+                    break;}
             }
 
 

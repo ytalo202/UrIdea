@@ -19,28 +19,28 @@
 <h1>Perfil</h1>
 <c:forEach var="employee" items="${service.findAllEmployeeById(employee.id)}">
 
-   <p>Nombre </p>
-        <c:out value="${employee.name} "/>
-        <c:out value="${employee.firstLastName} "/>
-        <c:out value="${employee.secondLastName}"/>
+    <p>Nombre </p>
+    <c:out value="${employee.name} "/>
+    <c:out value="${employee.firstLastName} "/>
+    <c:out value="${employee.secondLastName}"/>
     <br>
     <p>Trabaja Para </p>
-        <c:out value="${employee.company.nameCompany} -> "/>
+    <c:out value="${employee.company.nameCompany} -> "/>
     <br>
     <p>Su Correo </p>
-        <c:out value="${employee.emailAddress.emailData} -> "/>
+    <c:out value="${employee.emailAddress.emailData} -> "/>
     <br>
     <p>Recidencia </p>
-        <c:out value="${employee.department}"/>
+    <c:out value="${employee.department}"/>
     <br>
     <p>Dni </p>
-        <c:out value="${employee.dni} -> "/>
+    <c:out value="${employee.dni} -> "/>
     <br>
     <p>Direccion de Domicilio </p>
-        <c:out value="${employee.address} -> "/>
+    <c:out value="${employee.address} -> "/>
     <br>
     <p>Cumpleaños </p>
-        <c:out value="${employee.birthdate} -> "/>
+    <c:out value="${employee.birthdate} -> "/>
     <br>
     <p>Telefono
         <c:out value="${employee.phoneNumber}"/></p>
@@ -78,8 +78,8 @@
     <h1>Promedio General</h1>
     <c:out value="${evaluation.avg_grade}"/>
 
-    <a href="v?action=EvaluationHistorial&idEmployee=<c:out value="${evaluation.idUserEmployee.id}"/>">
-        Ver Perfil
+    <a href="TypeEmployeeValidation?action=Perfil&idEmployee=<c:out value="${evaluation.idUserEmployee.id}"/>">
+        Ver Historial de Evaluaciones
     </a>
 
 </c:forEach>

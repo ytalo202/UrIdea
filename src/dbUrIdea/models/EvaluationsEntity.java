@@ -20,6 +20,20 @@ public class EvaluationsEntity extends BaseEntity{
         super(connection,"evaluations");
     }
 
+    public List<Evaluation> findbyIdEmpleadoListado(int id,EmployeesEntity employeesEntity,
+                                                    CompaniesEntity companiesEntity,
+
+                                                    EmailAddressesEntity
+                                                            emailAddressesEntity,AreasEntity areasEntity
+    ) {
+
+        String criteria = "id_user_employee = "+id+" ORDER BY id DESC";
+
+        return findByCriteria(criteria, employeesEntity, companiesEntity,
+                emailAddressesEntity,areasEntity);
+    }
+
+
     public List<Evaluation> findAll(EmployeesEntity employeesEntity,
                                     CompaniesEntity companiesEntity,
 

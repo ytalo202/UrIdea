@@ -337,6 +337,10 @@ public class HRService {
         return getDataStore().findAllEvaluationProm();
     }*/
 
+    public List<Evaluation> findListEvaluatsById(int id) {
+
+        return getDataStore().findListEvaluationById(id);
+    }
 
     public List<Evaluation> findEvaluationAgv(int id) {
 

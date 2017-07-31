@@ -471,6 +471,14 @@ public class HRDataStore {
         );
     }
 
+    public List<Evaluation> findListEvaluationById(int id) {
+
+        return getEvaluationsEntity().findbyIdEmpleadoListado(id,
+                getEmployeesEntity(),getCompaniesEntity(),
+                getEmailAddressesEntity(),getAreasEntity()
+        );
+    }
+
     public List<Evaluation> findAllEvaluations() {
 
         return getEvaluationsEntity().findAll(
