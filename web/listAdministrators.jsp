@@ -236,7 +236,7 @@
                                         <c:forEach var="employee" items="${service.findAdmin(1,company.id)}">
                                         <tr>
 
-                                            <td><c:out value="${company.password}"  /></td>
+                                            <td><c:out value="${employee.password}"  /></td>
                                             <td><c:out value="${employee.name}"/></td>
 
                                             <td>   <c:out value="${employee.employeeType}"/></td>

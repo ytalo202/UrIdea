@@ -24,6 +24,7 @@
 <p><a href="grafico.jsp">Grafico</a></p>
 <p><a href="listPrueba.jsp">Grafico22</a></p>
 <p><a href="PerfilPrueba.jsp">perfilPrueba</a></p>
+<p><a href="PerfilCompañia.jsp">perfilCompañia</a></p>
 
 </body>
 </html>

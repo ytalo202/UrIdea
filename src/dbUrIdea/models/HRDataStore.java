@@ -408,16 +408,12 @@ public class HRDataStore {
     }
 
 
-/*
-    public List<Commentary> findAllCommentaries() {
 
-        return getCommentsEntity().findAll(
-                getEvaluationsEntity(),
-                getCompaniesEntity(),
-                getEmployeesEntity(),
-                getEmailAddressesEntity());
+    public List<Company> ListCompanyById(int idCom) {
+
+        return getCompaniesEntity().ListById(idCom, getEmailAddressesEntity());
     }
-    */
+
 //---------------
     public List<Employee> findAllAdmin(int type ,int id_company)
     {

@@ -292,6 +292,11 @@ public class HRService {
         return getDataStore().findAllxArea(type, id_company, are);
     }
 
+    public List<Company> ListCompanyById(int idCom) {
+
+        return getDataStore().ListCompanyById(idCom);
+    }
+
     public boolean updateEmployee2(Employee employee) {
 
         return getDataStore().updateEmployee2(employee);

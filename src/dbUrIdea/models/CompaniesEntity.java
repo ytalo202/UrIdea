@@ -110,6 +110,12 @@ public class CompaniesEntity extends BaseEntity {
     }
 
 
+    public List<Company> ListById(int idCom, EmailAddressesEntity emailAddressEntit) {
+        String criteria = "id = " + idCom;
+        return findByCriteria(criteria,emailAddressEntit);
+    }
+
+
 
 
 
