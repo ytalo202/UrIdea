@@ -21,7 +21,7 @@
 <c:forEach var="evaluation" items="${service.evaluations}">
 
     <p><c:out value=" ${evaluation.company.nameCompany} ---> "/>
-        <c:out value=" ${evaluation.idEmployee.name} ---> "/>
+        <c:out value=" ${evaluation.idUserEmployee.area.id} ---> "/>
         <c:out value=" ${evaluation.idUserEmployee.name} ---> "/>
         <c:out value=" ${evaluation.date} ---> "/>
             <c:out value=" ${evaluation.knowledge_of_languages}"/>

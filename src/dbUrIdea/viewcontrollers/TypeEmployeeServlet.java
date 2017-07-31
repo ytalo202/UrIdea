@@ -57,6 +57,10 @@ public class TypeEmployeeServlet extends HttpServlet {
 
     public static String perfilEmployee_uri = "/PerfilPrueba1.jsp";
     public static String perfilHistorialEvaluEmployee_uri = "/PerfilHistorialEvaluation1.jsp";
+    public static String perfilHistoEvaluAdminitracionEmployee_uri = "/PerfilHistorialEvaluationAdministracion.jsp";
+    public static String perfilHistoEvaluInformaticaEmployee_uri = "/PerfilHistorialEvaluationInformatica.jsp";
+    public static String perfilHistoEvaluMarketingEmployee_uri = "/PerfilHistorialEvaluationMarketing.jsp";
+    public static String perfilHistoProduccionEmployee_uri = "/PerfilHistorialEvaluationProduccion.jsp";
 
 
     int idE ;
@@ -68,6 +72,7 @@ public class TypeEmployeeServlet extends HttpServlet {
     int EmpEvaluado;
     int EmpCv;
     int EmpPerfil;
+    int areaId;
 
 
 
@@ -821,7 +826,7 @@ public class TypeEmployeeServlet extends HttpServlet {
                 evaluation.setRespect(respeto);
                 //crecimiento profecional
                 evaluation.setLanguage_skills(idiomas);
-                evaluation.setCommunication_skills(computadora);
+                evaluation.setComputer_skills(computadora);
                 evaluation.setMarket_knowledge(conocimientos);
                 evaluation.setProductivity(productividad);
                 evaluation.setEfficiency(eficiencia);
@@ -1052,29 +1057,30 @@ public class TypeEmployeeServlet extends HttpServlet {
 
             case "EvaluationHistorial": {
                 EmpEvaluado =Integer.parseInt(request.getParameter("idEmployee"));
+                areaId =Integer.parseInt(request.getParameter("idArea"));
 
                 Employee employee = service.getEmployeeById(EmpEvaluado);
                 request.setAttribute("employee", employee);
                 request.setAttribute("action", "Perfil");
-                if (idA ==5){
+                if (areaId ==5){
 
                     actionUri = perfilHistorialEvaluEmployee_uri;
                     break;}
-                if (idA ==4){
+                if (areaId ==4){
 
-                    actionUri = evaluarAdministracion_uri;
+                    actionUri = perfilHistoEvaluAdminitracionEmployee_uri;
                     break;}
-                if (idA ==3){
+                if (areaId ==3){
 
-                    actionUri = evaluarProduccion_uri;
+                    actionUri = perfilHistoProduccionEmployee_uri;
                     break;}
-                if (idA ==2){
+                if (areaId ==2){
 
-                    actionUri = evaluarMarketing_uri;
+                    actionUri = perfilHistoEvaluMarketingEmployee_uri;
                     break;}
                 else{
 
-                    actionUri = evaluarInformatica_uri;
+                    actionUri = perfilHistoEvaluInformaticaEmployee_uri;
                     break;}
             }
 

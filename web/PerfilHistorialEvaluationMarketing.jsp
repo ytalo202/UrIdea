@@ -74,39 +74,40 @@
                 </tr>
                 <tr>
                     <td>Compromiso: </td> <td><c:out value=" ${evaluation.commitment_company}"/></td>
+                    <td>Puntualidad: </td><td><c:out value=" ${evaluation.punctuality}"/></td>
+                    <td>Habilidad de Idiomas: </td><td><c:out value=" ${evaluation.language_skills}"/></td>
+                </tr>
+                <tr>
+                    <td>Liderasgo: </td><td><c:out value=" ${evaluation.leadership}"/></td>
                     <td>Honestidad: </td><td><c:out value=" ${evaluation.honesty}"/></td>
-                    <td>Habilidad Idiomas: </td><td><c:out value=" ${evaluation.language_skills}"/></td>
+                    <td>Habilidad de Negocios: </td><td><c:out value=" ${evaluation.business_skills}"/></td>
                 </tr>
                 <tr>
-                    <td>Competitivo: </td><td><c:out value=" ${evaluation.competitive}"/></td>
-                    <td>Organizado: </td><td><c:out value=" ${evaluation.organized}"/></td>
-                    <td>Habilidad de Computacion: </td><td><c:out value=" ${evaluation.computer_skills}"/></td>
+                    <td>Analitico: </td><td><c:out value=" ${evaluation.analytical}"/></td>
+                    <td>Organizacion: </td><td><c:out value=" ${evaluation.organized}"/></td>
+                    <td>Conocimientos de Negocio: </td><td><c:out value=" ${evaluation.business_knowledge}"/></td>
                 </tr>
                 <tr>
-                    <td>Trabajo bajo Presion: </td><td><c:out value=" ${evaluation.work_under_pressure}"/></td>
+                    <td>Objetivo: </td><td><c:out value=" ${evaluation.objective}"/></td>
                     <td>Responsabilidad: </td><td><c:out value=" ${evaluation.responsibility}"/></td>
-                    <td>Actualizaciones: </td><td><c:out value=" ${evaluation.market_knowledge}"/></td>
+                    <td>Conocimientos de Mercado: </td><td><c:out value=" ${evaluation.market_knowledge}"/></td>
                 </tr>
                 <tr>
-                    <td>Proactivo: </td><td><c:out value=" ${evaluation.proactive}"/></td>
+                    <td>Toma de decisiones: </td><td><c:out value=" ${evaluation.decision_making}"/></td>
                     <td>Respeto: </td><td><c:out value=" ${evaluation.respect}"/></td>
-                    <td>Productivo: </td><td><c:out value=" ${evaluation.productivity}"/></td>
+                    <td>Productividad: </td><td><c:out value=" ${evaluation.productivity}"/></td>
                 </tr>
                 <tr>
                     <td></td><td></td>
                     <td></td><td></td>
-                    <td>Eficiente: </td><td><c:out value=" ${evaluation.efficiency}"/></td>
-                </tr>
-                <tr>
-                    <td></td><td></td>
-                    <td></td><td></td>
-                    <td>Dar Soluciones: </td><td><c:out value=" ${evaluation.give_successful_solutions}"/></td>
+                    <td>Comunicacion: </td><td><c:out value=" ${evaluation.communication_skills}"/></td>
                 </tr>
                 <tr>
                     <td></td><td></td>
                     <td></td><td></td>
                     <td>Innovacion: </td><td><c:out value=" ${evaluation.innovative}"/></td>
                 </tr>
+
             </table>
             <br>
             <p>Comentario: <c:out value=" ${evaluation.comment}"/></p>

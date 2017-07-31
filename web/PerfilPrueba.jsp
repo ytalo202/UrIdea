@@ -78,8 +78,9 @@
     <h1>Promedio General</h1>
     <c:out value="${evaluation.avg_grade}"/>
 
-    <a href="v?action=EvaluationHistorial&idEmployee=<c:out value="${evaluation.idUserEmployee.id}"/>">
-        Ver Perfil
+    <a href="v?action=EvaluationHistorial&idEmployee=
+<c:out value="${evaluation.idUserEmployee.id}"/>&idArea=<c:out value="${evaluation.idUserEmployee.area.id}"/>">
+        Ver Historial de Evaluaciones
     </a>
 
 </c:forEach>

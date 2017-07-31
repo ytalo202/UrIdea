@@ -64,9 +64,12 @@ public class SesionCompanyServlet extends HttpServlet {
 
     public static String perfilHistorialEvaluEmployee_uri = "/PerfilHistorialEvaluation.jsp";
 
+    public static String listaAreaEmployee_uri = "/listaXarea.jsp";
+
 
     int codCom;
     int EmpEvaluado;
+    int idArea;
 
 
 
@@ -120,6 +123,33 @@ public class SesionCompanyServlet extends HttpServlet {
                 break;
 
 
+            }
+
+            case "listTypeArea": {
+                idArea=Integer.parseInt(request.getParameter("idArea"));
+                if (idArea==6){
+                    Company company = service.getCompanyById(codCom);
+
+                    request.setAttribute("company", company);
+                    request.setAttribute("action", "edit");
+
+                    RequestDispatcher dispatcher =
+                            request.getRequestDispatcher(ListEmpleados_URI);
+                    dispatcher.forward(request, response);
+                    break;
+                }
+                else {
+                    Company company = service.getCompanyById(codCom);
+
+                    request.setAttribute("company", company);
+                    request.setAttribute("action", "edit");
+                    request.setAttribute("idArea", idArea);
+
+                    RequestDispatcher dispatcher =
+                            request.getRequestDispatcher(listaAreaEmployee_uri);
+                    dispatcher.forward(request, response);
+                    break;
+                }
             }
 
             case "updatechangeAdmin": {
@@ -543,6 +573,10 @@ public class SesionCompanyServlet extends HttpServlet {
                 actionUri = perfilHistorialEvaluEmployee_uri;
                 break;
             }
+
+
+
+
 
 
 

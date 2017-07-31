@@ -12,11 +12,8 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Lista Empleados</h1>
+<h1>Lista Empleados x Area</h1>
 <jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
-
-
-
 
 <form   action="v" method="post">
     <select name="idArea"  onchange="this.form.submit()">
@@ -31,9 +28,7 @@
     <input type="hidden" value="listTypeArea" name="action">
 
 </form>
-
-
-<c:forEach var="employee" items="${service.findAdmin(2,company.id)}">
+<c:forEach var="employee" items="${service.findAllxArea(2,company.id,idArea)}">
     <p>
         <c:out value="${employee.name}"/>
         <c:out value="${employee.company.id}"/>
@@ -42,18 +37,22 @@
         <c:out value="${employee.emailAddress.emailData}"/>
         <c:out value="${employee.area.nameArea}"/>
 
-
-        <a href="v?action=editTypeAdmin&idEmployee=<c:out value="${employee.id}"/>">
-            Cambiar a Admin
+        <a href="TypeEmployeeValidation?action=evaluar&idEmpleado=<c:out value="${employee.id}"/>">
+            Evaluar Empleado
         </a>
 
-        <a href="v?action=Perfil&idEmployee=<c:out value="${employee.id}"/>">
+        <a href="TypeEmployeeValidation?action=addCv&idEmpleado=<c:out value="${employee.id}"/>">
+            Agregar Caracteristica a Cv
+        </a>
+
+        <a href="TypeEmployeeValidation?action=Perfil&idEmpleado=<c:out value="${employee.id}"/>">
             Ver Perfil
         </a>
+
     </p>
 </c:forEach>
 
-<a href="v?action=regresar">
+<a href="TypeEmployeeValidation?action=regresar">
 
     Regresar</a>
 
