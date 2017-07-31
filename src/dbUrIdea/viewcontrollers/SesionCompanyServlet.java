@@ -38,11 +38,11 @@ public class SesionCompanyServlet extends HttpServlet {
 
     public static String outCompany_URI = "/index.jsp";
 
-    public static String MenuRoot_URI = "/root.jsp";
+    public static String MenuRoot_URI = "/menuRoot.jsp";
 
     public static String UpdateCompanyEmail_URI = "/_EmailsForm.jsp";
 
-    public static String Adm_URI = "/listAdministor.jsp";
+    public static String Adm_URI = "/menuRoot.jsp";
 
     public static String ListEmpleados_URI = "/listEmpleado.jsp";
 

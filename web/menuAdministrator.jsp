@@ -67,25 +67,14 @@
                         <a href="newEmpEmail2.jsp">
                             Agregar Empleado</a></button>
 
-
-
-
                     <button type="button" class="btn btn-default btn-lg btn-block">
                         <a href="TypeEmployeeValidation?action=lista">
                             Lista de Empleados</a></button>
-
-
-
 
                     <button type="button" class="btn btn-default btn-lg btn-block">
                         <a href="TypeEmployeeValidation?action=editCorre">
 
                             Editar Email</a></button>
-
-
-
-
-
 
                     <button type="button"
                             class="btn btn-default btn-lg btn-block">

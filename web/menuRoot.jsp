@@ -1,6 +1,10 @@
-
-
-
+<%--
+  Created by IntelliJ IDEA.
+  User: Usuario
+  Date: 31/07/2017
+  Time: 2:05
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://bootstrapjsp.org/" prefix="b" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -16,16 +20,6 @@
     <meta name="author" content="">
 
     <title>SB Admin - Bootstrap Admin Template</title>
-
-
-
-
-
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"> <!--Iconos-->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500" rel="stylesheet">
-
 
     <!-- Bootstrap Core CSS -->
     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin/css/bootstrap.min.css" rel="stylesheet">
@@ -48,7 +42,7 @@
 
 </head>
 
-<body style="background-image:url(http://img.freepik.com/free-vector/modern-medical-background_1035-8989.jpg?size=338&ext=jpg)" class="home">
+<body style="background-image:url(http://img.freepik.com/free-vector/modern-medical-background_1035-8989.jpg?size=338&ext=jpg)" class="fa-home">
 
 <div id="wrapper">
 
@@ -168,13 +162,13 @@
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
-                <li>
+                <li class="active">
                     <a href="menuRoot.jsp"><i class="fa fa-fw fa-dashboard"></i> Menú</a>
                 </li>
                 <li>
                     <a href="v?action=edit"><i class="fa fa-fw fa-bar-chart-o"></i> Editar Empresa</a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="v?action=creEmail"><i class="fa fa-fw fa-table"></i> Crear Administrador</a>
                 </li>
                 <li>
@@ -208,105 +202,47 @@
         <!-- /.navbar-collapse -->
     </nav>
 
-    <div id="page-wrapper" style="background-image:url(http://img.freepik.com/free-vector/modern-medical-background_1035-8989.jpg?size=338&ext=jpg)" class="home">
+    <div id="page-wrapper">
 
         <div class="container-fluid">
 
             <!-- Page Heading -->
-
-            <div class="my-content" >
-                <div class="container" >
-
-                    <div class="row">
-                        <div class="col-sm-12" >
-                            <h1 align="center"><img src="http://www.minsarsta.gob.pe/Aplicativos%20Informaticos/SES%20LAB.png"  width="80px" height="80px"></h1>
-                            <div class="mydescription">
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-6 col-sm-offset-3 myform-cont" >
-                            <div class="myform-bottom">
-                                <form class="form-horizontal " action="v" method="post" role="form" >
-                                    <input type="hidden" name="idCompany" value="${company.id}" />
-                                    <div class="form-group">
-                                        <label class="col-lg-2"> Cod Email</label>
-                                        <div class="col-lg-10" ><input type="text" name="CorreNum" value="${emailNum}" placeholder="Cod. Num" class="form-control"  required/>
-                                        </div></div>
-
-                                    <div class="form-group">
-                                        <label class="col-lg-2">Nombre</label>
-                                        <div class="col-lg-10"><input type="text" name="employee_name"  placeholder="Nombre" class="form-control" required/>
-                                        </div></div>
-
-                                    <div class="form-group">
-                                        <label class="col-lg-2">Dni</label>
-                                        <div class="col-lg-10"><input type="text" name="dni"  placeholder="Dni" class="form-control" required/>
-                                        </div></div>
-
-                                    <div class="form-group">
-                                        <label class="col-lg-2">Area</label>
-                                        <div class="col-lg-10"><select name="idArea"  required>
-                                            <option value="1">Contabilidad</option>
-                                            <option value="2">Administracion</option>
-                                            <option value="3">Publicidad</option>
-                                            <option value="4">Recursos Humanos</option>
-                                        </select>
-                                        </div></div>
-                                    <div class="form-group">
-                                        <label class="col-lg-2">Fecha</label>
-                                        <div class="col-lg-10"><input type="date" name="cumple"   required/>
-                                        </div></div>
-
-
-                                    <div class="form-group">
-                                        <label class="col-lg-2">Contraseña</label>
-                                        <div class="col-lg-10"><input type="text" name="password"  placeholder="contraseña" class="form-control" required/>
-                                        </div></div>
-
-                                    <input type="hidden" value="createEmplAdmin" name="action" />
-                                    <p align="center"><button input type="submit" class="btn btn-primary">Crear</button></p>
-                                </form>
-
-                            </div>
-                        </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h7> Empresa  <c:out value="${company.nameCompany}"/></h7>
+                    <div class="mydescription">
+                        <p> </p>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
-                <!-- /.row -->
-
-                <!-- /.row -->
-
             </div>
-            <!-- /.container-fluid -->
+
+            <!-- /.row -->
+
+            <!-- /.row -->
 
         </div>
-        <!-- /#page-wrapper -->
+        <!-- /.container-fluid -->
 
     </div>
-    <!-- /#wrapper -->
+    <!-- /#page-wrapper -->
 
-    <!-- jQuery -->
-    <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/jquery.js"></script>
+</div>
+<!-- /#wrapper -->
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/bootstrap.min.js"></script>
+<!-- jQuery -->
+<script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/jquery.js"></script>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/raphael.min.js"></script>
-    <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/morris.min.js"></script>
-    <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/morris-data.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/bootstrap.min.js"></script>
+
+<!-- Morris Charts JavaScript -->
+<script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/raphael.min.js"></script>
+<script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/morris.min.js"></script>
+<script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/morris-data.js"></script>
 
 </body>
 
 </html>
+
+
+

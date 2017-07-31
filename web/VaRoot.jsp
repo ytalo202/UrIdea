@@ -11,6 +11,6 @@
     <title>Edit Company</title>
 </head>
 <body>
-<jsp:include page="root.jsp"/>
+<jsp:include page="menuRoot.jsp"/>
 </body>
 </html>
