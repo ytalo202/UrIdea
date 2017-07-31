@@ -15,6 +15,9 @@ public class BaseEntity {
             "avg(grade2),avg(avg_grade) from ";
 
 
+    private static String Base_Email= "select id from ";
+
+
 
     private String tableName;
 
@@ -56,6 +59,13 @@ public class BaseEntity {
         Base_Avg = base_Avg;
     }
 
+    public static String getBase_Email() {
+        return Base_Email;
+    }
+
+    public static void setBase_Email(String base_Email) {
+        Base_Email = base_Email;
+    }
 
 
     public Connection getConnection() {
@@ -95,6 +105,11 @@ public class BaseEntity {
     public String getDefaultAgvQuery() {
 
         return  Base_Avg+ getTableName();
+    }
+
+    public String getDefaultEmailQuery() {
+
+        return  Base_Email+ getTableName();
     }
 
 

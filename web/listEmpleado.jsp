@@ -246,8 +246,8 @@
                                             <th>Dni</th>
                                             <th>Correo Electrónico</th>
                                             <th>Área</th>
-                                            <th>Cambiar</th>
-                                            <th>Agregar Cararteristica</th>
+                                            <th>Promover a Admin</th>
+                                            <th>Perfil</th>
                                         </tr>
 <c:forEach var="employee" items="${service.findAdmin(2,company.id)}">
 <tr>

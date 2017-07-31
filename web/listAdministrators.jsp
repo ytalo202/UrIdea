@@ -232,8 +232,9 @@
                                             <th>Área</th>
                                             <th>Cambiar</th>
                                         </tr>
-                                        <tr>
+
                                         <c:forEach var="employee" items="${service.findAdmin(1,company.id)}">
+                                        <tr>
 
                                             <td><c:out value="${company.password}"  /></td>
                                             <td><c:out value="${employee.name}"/></td>
@@ -246,9 +247,9 @@
                                                 <img src="https://userscontent2.emaze.com/images/26a5e505-30d9-4e65-aafe-1e6943cb2c0b/9dfd4e2547adb3530209ae02a0623a44.png" width="20px" height="20px" alt="Cambiar a Empleado" class="img-responsive">
                                             </a>
                                             </td>
-
-                                            </c:forEach>
                                         </tr>
+                                            </c:forEach>
+
                                     </table>
                                 </div>
                             </div>

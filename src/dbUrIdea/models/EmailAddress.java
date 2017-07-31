@@ -58,4 +58,14 @@ public class EmailAddress {
         }
         return null;
     }
+
+    public static EmailAddress build2(ResultSet resultSet) {
+        try {
+            return (new EmailAddress())
+                    .setId(resultSet.getInt("id"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

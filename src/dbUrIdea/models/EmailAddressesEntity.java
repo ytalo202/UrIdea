@@ -35,10 +35,10 @@ public class EmailAddressesEntity extends BaseEntity {
     }
 
 
-    public EmailAddress findByEmailData(String email) {
-        String criteria = " email_data  = '" +
-                email + "'";
-        return findByCriteria(criteria).get(0);
+    public EmailAddress findIdByEmailData(String email) {
+        String criteria = "email_data  = '"+
+                email+"'";
+        return findByCriteriaEmail(criteria).get(0);
     }
 
     public List<EmailAddress> findAllOrderedByEmail() {
@@ -63,6 +63,27 @@ public class EmailAddressesEntity extends BaseEntity {
             if(rs == null) return null;
             while(rs.next()) {
             emails_addresses.add(EmailAddress.build(rs));
+
+            }
+            return emails_addresses;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return emails_addresses;
+    }
+
+
+    public List<EmailAddress> findByCriteriaEmail(String criteria) {
+        String sql = getDefaultEmailQuery() +
+                (criteria.equalsIgnoreCase("") ? "" : " WHERE " + criteria);
+        List<EmailAddress> emails_addresses = new ArrayList<>();
+        try {
+            ResultSet rs = getConnection()
+                    .createStatement()
+                    .executeQuery(sql);
+            if(rs == null) return null;
+            while(rs.next()) {
+                emails_addresses.add(EmailAddress.build2(rs));
 
             }
             return emails_addresses;

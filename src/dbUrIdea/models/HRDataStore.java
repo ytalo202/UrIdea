@@ -395,8 +395,8 @@ public class HRDataStore {
 
     }
 
-    public EmailAddress findIdByEmail(String email) {
-        return getEmailAddressesEntity().findByEmailData(
+    public EmailAddress findId2ByEmail(String email) {
+        return getEmailAddressesEntity().findIdByEmailData(
         email);
 
     }

@@ -70,6 +70,7 @@ public class SesionCompanyServlet extends HttpServlet {
     int codCom;
     int EmpEvaluado;
     int idArea;
+    String email;
 
 
 
@@ -217,7 +218,7 @@ public class SesionCompanyServlet extends HttpServlet {
 
 
                 ///-------------------Probando
-                company.setEmailAdress(emailAddress.setId(Integer.parseInt(request.getParameter("CorreNum"))));
+                company.setEmailAdress(service.findIdByEmail(email));
                 String message = service.addComp2(company) ?
                         "Create success" :
                         "Error while creating";
@@ -233,13 +234,12 @@ public class SesionCompanyServlet extends HttpServlet {
 
             case "createCompEmail":{
                 EmailAddress emailAddress1= new EmailAddress();
-                emailAddress1.setEmailData(request.getParameter("emailData"));
-                int Corre=service.getEmailCount()+1;
+                email=request.getParameter("emailData");
+                emailAddress1.setEmailData(email);
                 String message = service.createEmail(emailAddress1) ?
                         "Create success" :
                         "Error while creating";
                 log(message);
-                request.setAttribute("emailNum", Corre);
                 RequestDispatcher dispatcher =
                         request.getRequestDispatcher(createComp_URI);
                 dispatcher.forward(request, response);
@@ -251,6 +251,8 @@ public class SesionCompanyServlet extends HttpServlet {
             case "prSesion":{
                 Company company = service.getCompanyById(
                         service.getCompanyCount());
+                codCom=service.getCompanyCount();
+
 
                 request.setAttribute("company", company);
                 request.setAttribute("action", "menu");
@@ -342,9 +344,12 @@ public class SesionCompanyServlet extends HttpServlet {
 
             case "createEmail": {
                 EmailAddress emailAddress1= new EmailAddress();
-                emailAddress1.setEmailData(request.getParameter("emailData"));
+                email=request.getParameter("emailData");
+                emailAddress1.setEmailData(email);
 
-                int Corre=service.getEmailCount()+1;
+
+
+
 
                 String message = service.createEmail(emailAddress1) ?
                         "Create success" :
@@ -358,7 +363,7 @@ public class SesionCompanyServlet extends HttpServlet {
 
                 request.setAttribute("action", "edit");
                 //
-                request.setAttribute("emailNum", Corre);
+
 
                 log(message);
                 RequestDispatcher dispatcher =
@@ -376,8 +381,9 @@ public class SesionCompanyServlet extends HttpServlet {
               Area area = new Area();
                 Company company1 =new Company();
 
-                employee.setEmailAddress(emailAddress.setId(Integer.parseInt
-                        (request.getParameter("CorreNum"))));
+
+
+              employee.setEmailAddress(service.findIdByEmail(email));
 
 
                 employee.setCompany(company1.setId(

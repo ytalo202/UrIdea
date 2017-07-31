@@ -62,6 +62,7 @@ public class TypeEmployeeServlet extends HttpServlet {
     public static String perfilHistoEvaluMarketingEmployee_uri = "/PerfilHistorialEvaluationMarketing.jsp";
     public static String perfilHistoProduccionEmployee_uri = "/PerfilHistorialEvaluationProduccion.jsp";
 
+    String email;
 
     int idE ;
     int employeeType;
@@ -280,9 +281,9 @@ public class TypeEmployeeServlet extends HttpServlet {
 
             case "createEmail": {
                 EmailAddress emailAddress1= new EmailAddress();
-                emailAddress1.setEmailData(request.getParameter("emailData"));
 
-                int Corre=service.getEmailCount()+1;
+                email=request.getParameter("emailData");
+                emailAddress1.setEmailData(email);
 
                 String message = service.createEmail(emailAddress1) ?
                         "Create success" :
@@ -296,7 +297,7 @@ public class TypeEmployeeServlet extends HttpServlet {
 
                 request.setAttribute("action", "edit");
                 //
-                request.setAttribute("emailNum", Corre);
+
 
                 log(message);
                 RequestDispatcher dispatcher =
@@ -305,15 +306,14 @@ public class TypeEmployeeServlet extends HttpServlet {
                 break;
             }
 
-            case "createEmplAdmin": {
+            case "createEmplPeon": {
 
                 Employee employee =new Employee();
                 EmailAddress emailAddress =new EmailAddress();
                 Area area = new Area();
                 Company company1 =new Company();
 
-                employee.setEmailAddress(emailAddress.setId(Integer.parseInt
-                        (request.getParameter("CorreNum"))));
+                employee.setEmailAddress(service.findIdByEmail(email));
 
 
                 employee.setCompany(company1.setId(

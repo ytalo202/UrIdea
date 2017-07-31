@@ -223,15 +223,25 @@
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3 myform-cont" >
                             <div class="myform-bottom">
-                                <div role="form" action="v" method="post" class="form-horizontal" >
-                                    <div class="form-group">
-                                        <input type="hidden" name="idCompany" value="${company.id}">
-                                        <label class="col-lg-2"></label><div class="col-lg-10"></div><input type="text" name="emailData"  placeholder="Correo" class="form-control">
-                                    </div></div>
+                                <form class="form-horizontal " action="v" method="post" role="form">
+                                        <div class="form-group">
+
+
+                                        <label class="col-lg-2"></label>
+                                            <div class="col-lg-10"></div>
+
+                                            <input type="text" name="emailData"  placeholder="Correo" class="form-control">
+
+                                        </div>
+
+
+
+
+
+
 
                                     <input type="hidden" value="createEmail" name="action"/>
-
-                                    <h1 align="center"><button input type="submit" class="btn btn-primary">Siguiente</button></h1>
+                                    <p align="center"> <button type="submit" class="btn btn-primary">Siguiente</button></p>
                                 </form>
                             </div>
                         </div>

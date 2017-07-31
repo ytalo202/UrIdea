@@ -21,6 +21,6 @@
 
 
 
-    <input type="hidden" value="createEmplAdmin" name="action"/>
+    <input type="hidden" value="createEmplPeon" name="action"/>
     <input type="submit"/>
 </form>

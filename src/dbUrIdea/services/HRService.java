@@ -274,8 +274,8 @@ public class HRService {
     }
 //-----------
 
-    public EmailAddress getIdByEmail(String email) {
-        return getDataStore().findIdByEmail(email);
+    public EmailAddress findIdByEmail(String email) {
+        return getDataStore().findId2ByEmail(email);
     }
 
 //--------------
