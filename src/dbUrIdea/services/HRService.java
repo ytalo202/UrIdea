@@ -303,6 +303,11 @@ public class HRService {
     }
 
 
+    public boolean changeArea(Employee employee) {
+        return getDataStore().changeArea(employee);
+    }
+
+
     public List<Employee> findEmployee(
             int id_company
     ) {

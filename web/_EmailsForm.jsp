@@ -145,7 +145,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Root <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        <a href="v?action=perfilCompany"><i class="fa fa-fw fa-user"></i> Profile</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
@@ -164,7 +164,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li class="active">
-                    <a href="menuRoot.jsp"><i class="fa fa-fw fa-dashboard"></i> Menú</a>
+                    <a href="v?action=regresar"><i class="fa fa-fw fa-dashboard"></i> Menú</a>
                 </li>
                 <li>
                     <a href="v?action=edit"><i class="fa fa-fw fa-bar-chart-o"></i> Editar Empresa</a>

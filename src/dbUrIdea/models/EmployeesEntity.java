@@ -236,6 +236,9 @@ public class EmployeesEntity extends BaseEntity {
     }
 
 
+
+
+
     public boolean add(Employee employee) {
         String sql = "INSERT employees(" +
                 "id_company, id_email_address, id_areas, employee_type, password, " +

@@ -1,3 +1,6 @@
+
+
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://bootstrapjsp.org/" prefix="b" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -14,11 +17,14 @@
 
     <title>SB Admin - Bootstrap Admin Template</title>
 
+
+
+
+
+
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"> <!--Iconos-->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500" rel="stylesheet">
-
-
 
 
     <!-- Bootstrap Core CSS -->
@@ -162,13 +168,13 @@
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
-                <li class="active">
+                <li>
                     <a href="v?action=regresar"><i class="fa fa-fw fa-dashboard"></i> Menú</a>
                 </li>
                 <li>
                     <a href="v?action=edit"><i class="fa fa-fw fa-bar-chart-o"></i> Editar Empresa</a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="v?action=creEmail"><i class="fa fa-fw fa-table"></i> Crear Administrador</a>
                 </li>
                 <li>
@@ -204,68 +210,59 @@
 
     <div id="page-wrapper" style="background-image:url(http://img.freepik.com/free-vector/modern-medical-background_1035-8989.jpg?size=338&ext=jpg)" class="home">
 
-        <div class="container-fluid" >
+        <div class="container-fluid">
 
             <!-- Page Heading -->
 
-            <h1 align="center">lista Administradores</h1>
+            <div class="my-content" >
+                <div class="container" >
 
+                    <div class="row">
+                        <div class="col-sm-12" >
+                            <h1 align="center"><img src="http://www.minsarsta.gob.pe/Aplicativos%20Informaticos/SES%20LAB.png"  width="80px" height="80px"></h1>
+                            <div class="mydescription">
 
-
-            <section class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"></h3>
                             </div>
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
+                        </div>
+                    </div>
 
-                                        <tr>
-                                            <th>Contraseña</th>
-                                            <th>Nombre</th>
-                                            <th>Tipo de Empleado</th>
-                                            <th>Dni</th>
-                                            <th>Correo Electrónico</th>
-                                            <th>Área</th>
-                                            <th>Cambiar a Empleado</th>
-                                            <th>Cambiar de Area</th>
-                                        </tr>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 myform-cont" >
+                            <div class="myform-bottom">
 
-                                        <c:forEach var="employee"
-                                                   items="${service.findAdmin(1,company.id)}">
-                                        <tr>
 
-                                            <td><c:out value="${employee.password}"  /></td>
-                                            <td><c:out value="${employee.name}"/></td>
+                                <form class="form-horizontal " action="v" method="post" role="form" >
 
-                                            <td>   <c:out value="${employee.employeeType}"/></td>
-                                            <td> <c:out value="${employee.dni}"/></td>
-                                            <td> <c:out value="${employee.emailAddress.emailData}"/></td>
-                                            <td><c:out value="${employee.area.nameArea}"/></td>
-                                            <td align="center"> <a href="v?action=editTypeEmployee&idEmployee=<c:out value="${employee.id}" />" >
-                                            <img src="https://userscontent2.emaze.com/images/26a5e505-30d9-4e65-aafe-1e6943cb2c0b/9dfd4e2547adb3530209ae02a0623a44.png" width="20px" height="20px" alt="Cambiar a Empleado" class="img-responsive">
-                                        </a>
-                                        </td>
+                                    <div class="form-group">
+                                        <label class="col-lg-2">Area</label>
+                                        <div class="col-lg-10">
 
-                                            <td align="center">
-                                                <a href="v?action=editChangeArea&idEmployee=
-<c:out value="${employee.id}" />" >
-                                                <img src="https://userscontent2.emaze.com/images/26a5e505-30d9-4e65-aafe-1e6943cb2c0b/9dfd4e2547adb3530209ae02a0623a44.png" width="20px" height="20px" alt="Cambiar a Empleado" class="img-responsive">
-                                            </a>
-                                            </td>
-                                        </tr>
-                                            </c:forEach>
+                                            <select name="idArea">
+                                                <option >Elegir Area</option>
+                                                <option value="1">Informatica</option>
+                                                <option value="2">Marketing</option>
+                                                <option value="3">Produccion</option>
+                                                <option value="4">Administracion</option>
+                                                <option value="5">Practicantes</option>
+                                            </select>
 
-                                    </table>
-                                </div>
+
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <input type="hidden" value="changeAre" name="action" />
+                                    <p align="center">
+                                        <button input type="submit" class="btn btn-primary">
+                                            Confirmar</button></p>
+                                </form>
+
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
 
 
 
@@ -275,32 +272,29 @@
 
 
 
-           <p align="center"><a href="v?action=regresar">
+                <!-- /.row -->
 
-               Regresar</a></p>
-            <!-- /.row -->
+                <!-- /.row -->
 
-            <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
 
         </div>
-        <!-- /.container-fluid -->
+        <!-- /#page-wrapper -->
 
     </div>
-    <!-- /#page-wrapper -->
+    <!-- /#wrapper -->
 
-</div>
-<!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/jquery.js"></script>
 
-<!-- jQuery -->
-<script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/bootstrap.min.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/bootstrap.min.js"></script>
-
-<!-- Morris Charts JavaScript -->
-<script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/raphael.min.js"></script>
-<script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/morris.min.js"></script>
-<script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/morris-data.js"></script>
+    <!-- Morris Charts JavaScript -->
+    <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/raphael.min.js"></script>
+    <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/morris.min.js"></script>
+    <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/morris-data.js"></script>
 
 </body>
 

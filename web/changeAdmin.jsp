@@ -45,7 +45,9 @@
                 <div class="modal-footer">
 
 
-                    <button type="button" class="btn btn-default" data-dismiss="modal" href="href="v?action=regresar"">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        <a href="v?action=regresar">
+                            Cancelar</a></button>
                     <input type="hidden" value="updatechangeAdmin" name="action"/>
                     <button type="submit" class="btn btn-primary">Save changes</button>
                 </div>

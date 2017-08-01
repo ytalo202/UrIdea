@@ -17,7 +17,7 @@
 
 
 
-<c:forEach var="company" items="${service.ListCompanyById(2)}">
+<c:forEach var="company" items="${service.ListCompanyById(company.id)}">
 
 
     <h1>Compañia <c:out value="${company.nameCompany}"/></h1>
@@ -53,7 +53,7 @@
 
     </tr>
 
-    <c:forEach var="employee" items="${service.findAdmin(1,2)}">
+    <c:forEach var="employee" items="${service.findAdmin(1,company.id)}">
         <tr>
             <td><c:out value="${employee.name} "/><c:out value="${employee.firstLastName} "/>
                 <c:out value="${employee.secondLastName}"/></td>
@@ -96,7 +96,7 @@
 
     </tr>
 
-    <c:forEach var="employee" items="${service.findAdmin(2,2)}">
+    <c:forEach var="employee" items="${service.findAdmin(2,company.id)}">
         <tr>
             <td><c:out value="${employee.name} "/><c:out value="${employee.firstLastName} "/>
                 <c:out value="${employee.secondLastName}"/></td>

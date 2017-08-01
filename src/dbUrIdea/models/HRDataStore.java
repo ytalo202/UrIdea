@@ -385,6 +385,11 @@ public class HRDataStore {
         return getEmailAddressesEntity().deleteById(emailAddress);
     }
 
+
+    public boolean changeArea(Employee employee) {
+        return getEmployeesEntity().CambioArea(employee);
+    }
+
    // public boolean validarCompany(String nom,String clave) {return getCompaniesEntity().consulta(nom,clave);}
 
 

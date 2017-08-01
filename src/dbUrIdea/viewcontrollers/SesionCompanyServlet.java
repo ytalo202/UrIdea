@@ -28,7 +28,7 @@ public class SesionCompanyServlet extends HttpServlet {
 
 
 
-    public static String EDItCompany_URI = "/editCompany.jsp";
+    public static String EDItCompany_URI = "/_CompaniesForm.jsp";
 
 
 
@@ -62,15 +62,25 @@ public class SesionCompanyServlet extends HttpServlet {
 
     public static String perfilEmployee_uri = "/PerfilPrueba.jsp";
 
-    public static String perfilHistorialEvaluEmployee_uri = "/PerfilHistorialEvaluation.jsp";
+    public static String perfilHistorialEvaluEmployee_uri = "/PerfilHistorialEvaluation1.jsp";;
+    public static String perfilHistoEvaluAdminitracionEmployee_uri = "/PerfilHistorialEvaluationAdministracion.jsp";
+    public static String perfilHistoEvaluInformaticaEmployee_uri = "/PerfilHistorialEvaluationInformatica.jsp";
+    public static String perfilHistoEvaluMarketingEmployee_uri = "/PerfilHistorialEvaluationMarketing.jsp";
+    public static String perfilHistoProduccionEmployee_uri = "/PerfilHistorialEvaluationProduccion.jsp";
 
     public static String listaAreaEmployee_uri = "/listaXarea.jsp";
+    public static String perfilCompany_uri = "/PerfilCompañia.jsp";
+
+    public static String changeAreaEmpl_uri = "/CambioArea.jsp";
 
 
     int codCom;
     int EmpEvaluado;
     int idArea;
     String email;
+    String nameCompany;
+    int areaId;
+    int changeEmpl;
 
 
 
@@ -94,11 +104,10 @@ public class SesionCompanyServlet extends HttpServlet {
                 //Company company = service.getCompanyById(request.getParameter("id"));
 
                 Company company= new Company();
-                company.setId(codCom
-                        //Integer.parseInt(request.getParameter("idCompany"))
-                );
+                company.setId(codCom);
                 company.setPassword(request.getParameter("password"));
-                company.setNameCompany(request.getParameter("nameCompany"));
+                nameCompany=request.getParameter("nameCompany");
+                company.setNameCompany(nameCompany);
                 company.setDescription(request.getParameter("description"));
                 company.setCompanyState(Integer.parseInt
                         (request.getParameter("companyState")));
@@ -109,12 +118,10 @@ public class SesionCompanyServlet extends HttpServlet {
                         "Update success" :
                         "Error while updating";
 
-                company = service.getCompanyById(
-                        codCom
-                        //Integer.parseInt(request.getParameter("idCompany"))
-                );
+                company = service.getCompanyById(codCom);
                 request.setAttribute("company", company);
                 request.setAttribute("action", "edit");
+                request.setAttribute("nombreCompañia",nameCompany);
 
 
                 log(message);
@@ -232,6 +239,26 @@ public class SesionCompanyServlet extends HttpServlet {
 
             }
 
+
+            case "changeAre":{
+
+                Employee employee =new Employee();
+                Area area =new Area();
+                employee.setId(changeEmpl);
+                employee.setArea(area.setId(Integer.parseInt(request.getParameter("idArea"))));
+                String message = service.changeArea(employee) ?
+                        "Create success" :
+                        "Error while creating";
+                log(message);
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(Menu_Root_URI);
+                dispatcher.forward(request, response);
+                break;
+
+
+            }
+
             case "createCompEmail":{
                 EmailAddress emailAddress1= new EmailAddress();
                 email=request.getParameter("emailData");
@@ -285,16 +312,16 @@ public class SesionCompanyServlet extends HttpServlet {
 
             case "edit": {
 
-               int  idC = Integer.parseInt(request.getParameter("idCompany"));
 
-                Company company = service.getCompanyById(codCom
-                        //idC
-                );
+
+                Company company = service.getCompanyById(codCom);
 
                 request.setAttribute("company", company);
                 request.setAttribute("action", "edit");
+                request.setAttribute("nombreCompañia",nameCompany);
                 RequestDispatcher dispatcher =
                         request.getRequestDispatcher(EDItCompany_URI);
+
                 dispatcher.forward(request, response);
                 break;
             }
@@ -303,6 +330,7 @@ public class SesionCompanyServlet extends HttpServlet {
 
                 int  idC = Integer.parseInt(request.getParameter("idCompany"));
                 codCom = idC;
+                nameCompany = request.getParameter("nameCompany");
 
                 Company company = service.getCompanyById(idC);
 
@@ -441,13 +469,14 @@ public class SesionCompanyServlet extends HttpServlet {
         switch(action) {
 
             case "edit": {
-                Company company
-                        = service.getCompanyById(
-                        codCom
-                                //Integer.parseInt(request.getParameter("idCompany"))
-                );
+
+
+
+
+                Company company = service.getCompanyById(codCom);
                 request.setAttribute("company", company);
                 request.setAttribute("action", "edit");
+                request.setAttribute("nombreCompañia",nameCompany);
                 actionUri = EDItCompany_URI;
                 break;
             }
@@ -552,10 +581,18 @@ public class SesionCompanyServlet extends HttpServlet {
                 Employee employee = service.getEmployeeById(
                         //codCom
                         Integer.parseInt(request.getParameter("idEmployee"))
-                        );
+                );
                 request.setAttribute("employee", employee);
                 request.setAttribute("action", "editTypeAdmin");
                 actionUri = ChangeAdm_URI;
+                break;
+            }
+
+
+            case "editChangeArea": {
+
+                changeEmpl=Integer.parseInt(request.getParameter("idEmployee"));
+                actionUri =changeAreaEmpl_uri;
                 break;
             }
 
@@ -572,11 +609,40 @@ public class SesionCompanyServlet extends HttpServlet {
 
             case "EvaluationHistorial": {
                 EmpEvaluado =Integer.parseInt(request.getParameter("idEmployee"));
+                areaId =Integer.parseInt(request.getParameter("idArea"));
 
                 Employee employee = service.getEmployeeById(EmpEvaluado);
                 request.setAttribute("employee", employee);
                 request.setAttribute("action", "Perfil");
-                actionUri = perfilHistorialEvaluEmployee_uri;
+                if (areaId ==5){
+
+                    actionUri = perfilHistorialEvaluEmployee_uri;
+                    break;}
+                if (areaId ==4){
+
+                    actionUri = perfilHistoEvaluAdminitracionEmployee_uri;
+                    break;}
+                if (areaId ==3){
+
+                    actionUri = perfilHistoProduccionEmployee_uri;
+                    break;}
+                if (areaId ==2){
+
+                    actionUri = perfilHistoEvaluMarketingEmployee_uri;
+                    break;}
+                else{
+
+                    actionUri = perfilHistoEvaluInformaticaEmployee_uri;
+                    break;}
+            }
+
+
+            case "perfilCompany": {
+                Company company = service.getCompanyById(codCom);
+
+                request.setAttribute("company", company);
+                request.setAttribute("action", "edit");
+                actionUri = perfilCompany_uri;
                 break;
             }
 
