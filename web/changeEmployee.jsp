@@ -45,8 +45,7 @@
                     <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
                 </div>
                 <div class="modal-footer">
-
-                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <button type="button" class="btn btn-default" >
                         <a href="v?action=regresar">
                             Cancelar</a></button>
                     <input type="hidden" value="updatechangeEmployee" name="action"/>
@@ -55,6 +54,8 @@
             </div>
         </div>
     </form>
+
+
 </div>
 
 <!-- Buttons -->

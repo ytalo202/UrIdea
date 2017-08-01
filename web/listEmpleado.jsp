@@ -288,9 +288,9 @@
                 </div>
             </section>
 
-            <p align="center"><a href="TypeEmployeeValidation?action=regresar">
+            <p align="center"><a href="v?action=regresar">
 
-                Regresar</a></p>
+            Regresar</a></p>
 
 
 

@@ -45,7 +45,7 @@
                 <div class="modal-footer">
 
 
-                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <button type="button" class="btn btn-default" >
                         <a href="v?action=regresar">
                             Cancelar</a></button>
                     <input type="hidden" value="updatechangeAdmin" name="action"/>

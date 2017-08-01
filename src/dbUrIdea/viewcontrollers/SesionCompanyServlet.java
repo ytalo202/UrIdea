@@ -450,6 +450,20 @@ public class SesionCompanyServlet extends HttpServlet {
 
             }
 
+            case "regresar": {
+                Company company = service.getCompanyById(
+                        codCom
+                        //Integer.parseInt(request.getParameter("idCompany"))
+                );
+                request.setAttribute("company", company);
+                request.setAttribute("action", "edit");
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(Menu_Root_URI);
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
         }
 
 

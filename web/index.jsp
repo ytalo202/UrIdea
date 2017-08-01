@@ -126,13 +126,30 @@
 
     <div class="w3-top">
         <div align="center" class="w3-bar w3-white w3-card-2" id="myNavbar">
-            <a href="#home" class="w3-bar-item w3-button w3-wide">
-                <img src="image/logo.jpg"  width="80" height="30"></a>
+
+
+
+            <a href="#dem" data-toggle="collapse" class="w3-bar-item w3-button w3-wide">
+                <img src="image/logo.jpg"  width="80" height="30">
+            </a>
+
+
+            <div id="dem" class="collapse">
+                <form action="" method="post" class="w3-bar-item w3-button w3-wide"
+                      style="height:38px" style="width:80px">
+                    <input type="text" name="compañiaCode" size="10" style="height:30px">
+                    <input type="hidden"  value="edit" name="action">
+                    <input type="submit" value="Buscar" size="5"  style="height:30px">
+                </form>
+                </div>
+
+
             <!-- Right-sided navbar links -->
             <div class="w3-right w3-hide-small">
 
 
-                <a href="pagos.jsp" class="w3-bar-item w3-button"><i class="fa fa-home" aria-hidden="true" ></i> Inicio</a>
+                <a href="pagos.jsp" class="w3-bar-item w3-button">
+                    <i class="fa fa-home" aria-hidden="true" ></i> Inicio</a>
                 <a href="Listado.jsp" class="w3-bar-item w3-button">Nosotros</a>
 
                 <a href="CompEmail.jsp" class="w3-bar-item w3-button"> Registrarse</a>

@@ -1055,6 +1055,15 @@ public class TypeEmployeeServlet extends HttpServlet {
                 break;
             }
 
+            case "PerfilEmpleado": {
+
+                Employee employee = service.getEmployeeById(idE);
+                request.setAttribute("employee", employee);
+                request.setAttribute("action", "PerfilEmpleado");
+                actionUri = perfilEmployee_uri;
+                break;
+            }
+
             case "EvaluationHistorial": {
                 EmpEvaluado =Integer.parseInt(request.getParameter("idEmployee"));
                 areaId =Integer.parseInt(request.getParameter("idArea"));
