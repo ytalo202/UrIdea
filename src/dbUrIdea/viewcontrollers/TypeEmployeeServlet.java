@@ -1017,6 +1017,11 @@ public class TypeEmployeeServlet extends HttpServlet {
 
             case "evaluar": {
                 EmpEvaluado =Integer.parseInt(request.getParameter("idEmpleado"));
+
+                Employee employee = service.getEmployeeById(EmpEvaluado);
+                request.setAttribute("employee", employee);
+                request.setAttribute("action", "Perfil");
+
                 if (idA ==5){
 
                 actionUri = evaluar_uri;

@@ -52,10 +52,10 @@
 
                         <input type="hidden" name="idCompany" value="${company.id}"/>
                         <input type="hidden" name="nameCompany" value="${company.nameCompany}"/>
-                        <p>Welcome to Eva Web Aplication  ...</p>
+                        <p>Bienvenido a Evap  ...</p>
 
                         <input type="hidden" value="servis" name="action"/>
-                        <button input type="submit" class="mybtn">Next</button>
+                        <button input type="submit" class="btn btn-primary">Next</button>
                     </form>
 
 
