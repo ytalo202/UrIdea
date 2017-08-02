@@ -35,7 +35,7 @@
 </head>
 <body>
 <jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
-<h1>Historial de Evaluacion</h1>
+<h1>Historial de Evaluacion de Informatico</h1>
 <div class="col-sm-4">
     <c:forEach var="evaluation" items="${service.findListEvaluatsById((employee.id))}">
 

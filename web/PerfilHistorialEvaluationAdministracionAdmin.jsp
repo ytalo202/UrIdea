@@ -35,9 +35,9 @@
 </head>
 <body>
 <jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
-<h1>Historial de Evaluacion de Practicante</h1>
+<h1>Historial de Evaluacion de Administracion</h1>
 <div class="col-sm-4">
-<c:forEach var="evaluation" items="${service.findListEvaluatsById((employee.id))}">
+    <c:forEach var="evaluation" items="${service.findListEvaluatsById((employee.id))}">
 
 
         <a href="#<c:out value="${evaluation.id}"/>" data-toggle="collapse">
@@ -64,47 +64,63 @@
             <p>Fecha: <c:out value=" ${evaluation.date}"/></p>
             <p>Evaluador: <c:out value=" ${evaluation.idEvaluator.name}"/> <c:out value=" ${evaluation.idEvaluator.firstLastName}"/> <c:out value=" ${evaluation.idEvaluator.secondLastName}"/></p>
             <table border="1">
-            <tr>
-                <th >Evaluacion de Actitud</th>
-                <th >Puntaje </th>
-                <th >Evaluacion de Valores</th>
-                <th >Puntaje </th>
-                <th >Evaluacion de Crecimiento Profecional</th>
-                <th >Puntaje </th>
-            </tr>
-            <tr>
-                <td>Compromiso: </td> <td><c:out value=" ${evaluation.commitment_company}"/></td>
-                <td>Puntualidad: </td> <td><c:out value=" ${evaluation.punctuality}"/></td>
-                <td>Desempeño: </td><td><c:out value=" ${evaluation.performance}"/></td>
-            </tr>
-            <tr>
-                <td>Proactividad: </td><td><c:out value=" ${evaluation.proactive}"/></td>
-                <td>Honestidad: </td><td><c:out value=" ${evaluation.honesty}"/></td>
-                <td>Eficiencia: </td><td><c:out value=" ${evaluation.efficiency}"/></td>
-            </tr>
-            <tr>
-                <td>Trabajo en Equipo: </td><td><c:out value=" ${evaluation.teamwork}"/></td>
-                <td>Organizacion: </td><td><c:out value=" ${evaluation.organized}"/></td>
-                <td>Productividad: </td><td><c:out value=" ${evaluation.productivity}"/></td>
-            </tr>
-            <tr>
-                <td>Toma de Decisiones: </td><td><c:out value=" ${evaluation.decision_making}"/></td>
-                <td>Responsabilidad: </td><td><c:out value=" ${evaluation.responsibility}"/></td>
-                <td>Innovacion: </td><td><c:out value=" ${evaluation.innovative}"/></td>
-            </tr>
+                <tr>
+                    <th >Evaluacion de Actitud</th>
+                    <th >Puntaje </th>
+                    <th >Evaluacion de Valores</th>
+                    <th >Puntaje </th>
+                    <th >Evaluacion de Crecimiento Profecional</th>
+                    <th >Puntaje </th>
+                </tr>
+                <tr>
+                    <td>Compromiso: </td> <td><c:out value=" ${evaluation.commitment_company}"/></td>
+                    <td>Puntualidad: </td><td><c:out value=" ${evaluation.punctuality}"/></td>
+                    <td>Habilidad de Comunicacion: </td><td><c:out value=" ${evaluation.communication_skills}"/></td>
+                </tr>
+                <tr>
+                    <td>Proactividad: </td><td><c:out value=" ${evaluation.proactive}"/></td>
+                    <td>Honestidad: </td><td><c:out value=" ${evaluation.honesty}"/></td>
+                    <td>Habilidad de Idiomas: </td><td><c:out value=" ${evaluation.language_skills}"/></td>
+                </tr>
+                <tr>
+                    <td>IniciativaObjetivo: </td><td><c:out value=" ${evaluation.objective}"/></td>
+                    <td>Organizacion: </td><td><c:out value=" ${evaluation.organized}"/></td>
+                    <td>Habilidad de Negocios: </td><td><c:out value=" ${evaluation.business_skills}"/></td>
+                </tr>
+                <tr>
+                    <td>Toma de Decision: </td><td><c:out value=" ${evaluation.decision_making}"/></td>
+                    <td>Responsabilidad: </td><td><c:out value=" ${evaluation.responsibility}"/></td>
+                    <td>Conocimientos de Negocio: </td><td><c:out value=" ${evaluation.business_knowledge}"/></td>
+                </tr>
+                <tr>
+                    <td>Trabajo en Equipo</td><td><c:out value=" ${evaluation.teamwork}"/></td>
+                    <td>Respeto </td><td><c:out value=" ${evaluation.respect}"/></td>
+                    <td>Optimizacion de Recursos</td><td><c:out value=" ${evaluation.resource_optimization}"/></td>
+                </tr>
                 <tr>
                     <td></td><td></td>
-                    <td>Respeto: </td><td><c:out value=" ${evaluation.respect}"/></td>
                     <td></td><td></td>
+                    <td>Productividad</td><td><c:out value=" ${evaluation.productivity}"/></td>
                 </tr>
-        </table>
+                <tr>
+                    <td></td><td></td>
+                    <td></td><td></td>
+                    <td>Eficiencia</td><td><c:out value=" ${evaluation.efficiency}"/></td>
+                </tr>
+                <tr>
+                    <td></td><td></td>
+                    <td></td><td></td>
+                    <td>Innovacion</td><td><c:out value=" ${evaluation.innovative}"/></td>
+                </tr>
+            </table>
             <br>
             <p>Comentario: <c:out value=" ${evaluation.comment}"/></p>
+            <p>Si desea Editar la Evaluacion :</p>
 
         </div>
-<br>
+        <br>
 
-</c:forEach>
+    </c:forEach>
 
 </div>
 

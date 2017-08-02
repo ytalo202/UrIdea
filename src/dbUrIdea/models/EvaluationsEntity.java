@@ -118,31 +118,9 @@ public class EvaluationsEntity extends BaseEntity{
         }
         return evaluations;
     }
-/*
-    public boolean update(Evaluation evaluation) {
-        String sql = "UPDATE evaluations SET " +
-                "grade = "+evaluation.getGradeAsString()+
-                "commitment = "+evaluation.getCommitmentAsString()+ ", "+
-                "communication = "+evaluation.getCommunicationAsString()+ ", "+
-                "ethic = "+evaluation.getEthicAsString()+ ", "+
-                "team_management = "+evaluation.getTeam_managementAsString()+ ", "+
-                "decision_making = "+evaluation.getAsDecision_makingString()+ ", "+
-                "strategic_thinking ="+evaluation.getStrategic_thinkingAsString()+ ", "+
-                "customer_orientation = "+evaluation.getCustomer_orientationAsString()+ ", "+
-                "social_responsability = "+evaluation.getSocial_responsabilityAsString()+ ", "+
-                "time_management = "+evaluation.getTime_managementAsString()+ ", "+
-                "use_of_resources = "+evaluation.getUse_of_resourcesAsString()+ ", "+
-                "cost_orientation = "+evaluation.getCost_orientationAsString()+ ", "+
-                "knowledge_of_languages = "+evaluation.getKnowledge_of_languagesAsString()+ ", "+
-                "digital_skills = "+evaluation.getDigital_skillsAsString()+
 
 
-                " WHERE id = " + evaluation.getIdAsString();
 
-        return change(sql);
-    }
-
-    */
 
     public boolean delete(Evaluation evaluation) {
         String sql = "DELETE FROM evaluations WHERE id = " +
@@ -166,6 +144,7 @@ public class EvaluationsEntity extends BaseEntity{
                 +evaluation.getIdUserEmployee().getIdAsString()+ ", "
                 +evaluation.getCompany().getIdAsString()+ ", "
                 +evaluation.getArea().getIdAsString()+ ", "
+
                 +evaluation.getGradeAsString()+ ", "
                 +evaluation.getGrade1AsString()+", "
                 +evaluation.getGrade2AsString()+", "
@@ -191,6 +170,38 @@ public class EvaluationsEntity extends BaseEntity{
                 +evaluation.getCommentAsValue()+", "
                 +evaluation.getAvg_gradeAsString()+
                 ")";
+        return change(sql);
+    }
+
+
+    public boolean updateInformaticaEva(Evaluation evaluation) {
+        String sql = "UPDATE evaluations SET " +
+                "grade = "+evaluation.getGrade()+", "+
+                "grade1 = "+evaluation.getGrade1AsString()+", "+
+                "grade2 = "+evaluation.getGrade2AsString()+", "+
+                //actitud
+                "commitment_company = "+evaluation.getCommitment_companyAsString()+", "+
+                "competitive = "+evaluation.getCompetitiveAsString()+ ", "+
+                "work_under_pressure = "+evaluation.getWork_under_pressureAsString()+", "+
+                "proactive = "+evaluation.getProactiveAsString()+", "+
+                //valores
+                "honesty = "+evaluation.getHonestyAsString()+", "+
+                "organized = "+evaluation.getOrganizedAsString()+", "+
+                "responsibility = "+evaluation.getResponsibilityAsString()+", "+
+                "respect = "+evaluation.getRespectAsString()+", "+
+                //crecimiento Profecional
+                "language_skills = "+evaluation.getLanguage_skillsAsString()+ ", "+
+                "computer_skills = "+evaluation.getComputer_skillsAsString()+", "+
+                "market_knowledge = "+evaluation.getMarket_knowledgeAsString()+", "+
+                "productivity = "+evaluation.getProductivityAsString()+", "+
+                "efficiency = "+evaluation.getEfficiencyAsString()+", "+
+                "give_successful_solutions = "+evaluation.getGive_successful_solutionsAsString()+", "+
+                "innovative = "+evaluation.getInnovativeAsString()+", "+
+
+                "comment = "+evaluation.getCommentAsValue()+", "+
+                "competitive = "+evaluation.getAvg_gradeAsString()+
+                " WHERE id = " + evaluation.getId();
+
         return change(sql);
     }
 
@@ -239,6 +250,41 @@ public class EvaluationsEntity extends BaseEntity{
     }
 
 
+    public boolean updateMarketingEva(Evaluation evaluation) {
+        String sql = "UPDATE evaluations SET " +
+                "grade = "+evaluation.getGrade()+", "+
+                "grade1 = "+evaluation.getGrade1AsString()+", "+
+                "grade2 = "+evaluation.getGrade2AsString()+", "+
+                //actitud
+                "commitment_company = "+evaluation.getCommitment_companyAsString()+", "+
+                "leadership = "+evaluation.getLeadershipAsString()+", " +
+                "analytical = "+evaluation.getAnalyticalAsString()+", "+
+                "objective = "+evaluation.getObjectiveAsString()+", "+
+                "decision_making = "+evaluation.getDecision_makingAsString()+", "+
+
+                //valores
+                "punctuality = "+evaluation.getPunctualityAsString()+", "+
+                "honesty = "+evaluation.getHonestyAsString()+", "+
+                "organized = "+evaluation.getOrganizedAsString()+", "+
+                "responsibility = "+evaluation.getResponsibilityAsString()+", "+
+                "respect = "+evaluation.getRespectAsString()+", "+
+                //crecimiento Profecional
+                "language_skills = "+evaluation.getLanguage_skillsAsString()+ ", "+
+                "business_skills = "+evaluation.getBusiness_skillsAsString()+", "+
+                "business_knowledge = "+evaluation.getBusiness_knowledgeAsString()+", "+
+                "market_knowledge = "+evaluation.getMarket_knowledgeAsString()+", "+
+                "productivity = "+evaluation.getProductivityAsString()+", "+
+                "communication_skills = "+evaluation.getCommunication_skillsAsString()+", "+
+                "innovative = "+evaluation.getInnovativeAsString()+", "+
+
+                "comment = "+evaluation.getCommentAsValue()+", "+
+                "competitive = "+evaluation.getAvg_gradeAsString()+
+                " WHERE id = " + evaluation.getId();
+
+        return change(sql);
+    }
+
+
     public boolean addProduction(Evaluation evaluation) {
         String sql = "INSERT evaluations(id_evaluator,id_user_employee, " +
                 " id_company, id_area, grade, grade1, grade2," +
@@ -277,6 +323,38 @@ public class EvaluationsEntity extends BaseEntity{
                 +evaluation.getCommentAsValue()+", "
                 +evaluation.getAvg_gradeAsString()+
                 ")";
+        return change(sql);
+    }
+
+
+    public boolean updateProduccionEva(Evaluation evaluation) {
+        String sql = "UPDATE evaluations SET " +
+                "grade = "+evaluation.getGrade()+", "+
+                "grade1 = "+evaluation.getGrade1AsString()+", "+
+                "grade2 = "+evaluation.getGrade2AsString()+", "+
+                //actitud
+                "commitment_company = "+evaluation.getCommitment_companyAsString()+", "+
+                "work_under_pressure = "+evaluation.getWork_under_pressureAsString()+", "+
+                "teamwork = "+evaluation.getTeamworkAsString()+", "+
+                "proactive = "+evaluation.getProactiveAsString()+", "+
+
+                //valores
+                "punctuality = "+evaluation.getPunctualityAsString()+", "+
+                "honesty = "+evaluation.getHonestyAsString()+", "+
+                "organized = "+evaluation.getOrganizedAsString()+", "+
+                "responsibility = "+evaluation.getResponsibilityAsString()+", "+
+                "respect = "+evaluation.getRespectAsString()+", "+
+                //crecimiento Profecional
+                "efficiency = "+evaluation.getEfficiencyAsString()+", "+
+                "performance = "+evaluation.getPerformanceAsString()+", "+
+                "productivity = "+evaluation.getProductivityAsString()+", "+
+                "resource_optimization = "+evaluation.getResource_optimizationAsString()+", "+
+                "innovative = "+evaluation.getInnovativeAsString()+", "+
+
+                "comment = "+evaluation.getCommentAsValue()+", "+
+                "competitive = "+evaluation.getAvg_gradeAsString()+
+                " WHERE id = " + evaluation.getId();
+
         return change(sql);
     }
 
@@ -327,6 +405,43 @@ public class EvaluationsEntity extends BaseEntity{
     }
 
 
+
+    public boolean updateAdministracionEva(Evaluation evaluation) {
+        String sql = "UPDATE evaluations SET " +
+                "grade = "+evaluation.getGrade()+", "+
+                "grade1 = "+evaluation.getGrade1AsString()+", "+
+                "grade2 = "+evaluation.getGrade2AsString()+", "+
+                //actitud
+                "commitment_company = "+evaluation.getCommitment_companyAsString()+", "+
+                "proactive = "+evaluation.getProactiveAsString()+", "+
+                "objective = "+evaluation.getObjectiveAsString()+", "+
+                "decision_making = "+evaluation.getDecision_makingAsString()+", "+
+                "teamwork = "+evaluation.getTeamworkAsString()+", "+
+
+                //valores
+                "punctuality = "+evaluation.getPunctualityAsString()+", "+
+                "honesty = "+evaluation.getHonestyAsString()+", "+
+                "organized = "+evaluation.getOrganizedAsString()+", "+
+                "responsibility = "+evaluation.getResponsibilityAsString()+", "+
+                "respect = "+evaluation.getRespectAsString()+", "+
+                //crecimiento Profecional
+                "communication_skills = "+evaluation.getCommunication_skillsAsString()+", "+
+                "language_skills = "+evaluation.getLanguage_skillsAsString()+", "+
+                "business_skills = "+evaluation.getBusiness_skillsAsString()+", "+
+                "business_knowledge = "+evaluation.getBusiness_knowledgeAsString()+", "+
+                "resource_optimization = "+evaluation.getResource_optimizationAsString()+", "+
+                "productivity = "+evaluation.getProductivityAsString()+", "+
+                "efficiency = "+evaluation.getEfficiencyAsString()+", "+
+                "innovative = "+evaluation.getInnovativeAsString()+", "+
+
+                "comment = "+evaluation.getCommentAsValue()+", "+
+                "competitive = "+evaluation.getAvg_gradeAsString()+
+                " WHERE id = " + evaluation.getId();
+
+        return change(sql);
+    }
+
+
     public boolean addPractitioners(Evaluation evaluation) {
         String sql = "INSERT evaluations(id_evaluator,id_user_employee, " +
                 " id_company, id_area, grade, grade1, grade2," +
@@ -365,6 +480,35 @@ public class EvaluationsEntity extends BaseEntity{
                 +evaluation.getCommentAsValue()+", "
                 +evaluation.getAvg_gradeAsString()+
                 ")";
+        return change(sql);
+    }
+
+    public boolean updatePracticantesEva(Evaluation evaluation) {
+        String sql = "UPDATE evaluations SET " +
+                "grade = "+evaluation.getGrade()+", "+
+                "grade1 = "+evaluation.getGrade1AsString()+", "+
+                "grade2 = "+evaluation.getGrade2AsString()+", "+
+                //actitud
+                "commitment_company = "+evaluation.getCommitment_companyAsString()+", "+
+                "proactive = "+evaluation.getProactiveAsString()+", "+
+                "teamwork = "+evaluation.getTeamworkAsString()+", "+
+                "decision_making = "+evaluation.getDecision_makingAsString()+", "+
+                //valores
+                "punctuality = "+evaluation.getPunctualityAsString()+", "+
+                "honesty = "+evaluation.getHonestyAsString()+", "+
+                "organized = "+evaluation.getOrganizedAsString()+", "+
+                "responsibility = "+evaluation.getResponsibilityAsString()+", "+
+                "respect = "+evaluation.getRespectAsString()+", "+
+                //crecimiento Profecional
+                "performance = "+evaluation.getPerformanceAsString()+", "+
+                "efficiency = "+evaluation.getEfficiencyAsString()+", "+
+                "productivity = "+evaluation.getProductivityAsString()+", "+
+                "innovative = "+evaluation.getInnovativeAsString()+", "+
+
+                "comment = "+evaluation.getCommentAsValue()+", "+
+                "competitive = "+evaluation.getAvg_gradeAsString()+
+                " WHERE id = " + evaluation.getId();
+
         return change(sql);
     }
 

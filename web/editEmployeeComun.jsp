@@ -1,4 +1,5 @@
 
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://bootstrapjsp.org/" prefix="b" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -55,7 +56,7 @@
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Empleado <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Administrador <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li>
                         <a href="v?action=perfilCompany"><i class="fa fa-fw fa-user"></i> Perfil</a>
@@ -93,12 +94,9 @@
             </ul>
         </div>
         <!-- /.navbar-collapse -->
+        <!-- /.navbar-collapse -->
     </nav>
 
-    <div id="page-wrapper">
-
-
-        <div class="container-fluid">
 
 
 
@@ -106,11 +104,95 @@
 
 
 
+    <div class="row">
+        <div class="col-sm-12" >
+            <h1 align="center">Actualizar Datos de Empleado</h1>
+
+        </div>
     </div>
-    <!-- /.container-fluid -->
 
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 myform-cont" >
+            <div class="myform-top">
+
+
+            </div>
+            <div class="myform-bottom">
+
+                <div role="form" action="TypeEmployeeValidation" method="post" class="form-horizontal">
+
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="${employee.id}" class="form-control"
+                                <c:out value="${action == 'edit' ? 'readonly=\"readonly\"' : '' }"/>
+                        />
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <input type="hidden" name="employee_type" value="${employee.employeeType}"
+                               class="form-control"/></div>
+
+                    <div class="form-group">
+                        <label class="col-lg-2">Contraseña</label>
+                        <div class="col-lg-10">
+                            <input type="text" name="password" value="${employee.password}" class="form-control"/></div></div>
+
+                    <div class="form-group">
+                        <label class="col-lg-2">Nombre</label>
+                        <div class="col-lg-10"><input type="text" name="employee_name" value="${employee.name}" class="form-control"/></div></div>
+                    <div class="form-group">
+                        <label class="col-lg-2">Apellido Peterno</label>
+                        <div class="col-lg-10"><input type="text" name="employee_first_last_name" value="${employee.firstLastName}" class="form-control"/>
+                        </div></div>
+                    <div class="form-group">
+                        <label class="col-lg-2">Apellido Materno</label>
+                        <div class="col-lg-10"><input type="text" name="employee_second_last_name" value="${employee.secondLastName}" class="form-control"/>
+                        </div></div>
+                    <div class="form-group">
+                        <label class="col-lg-2">Dni</label>
+                        <div class="col-lg-10"><input type="text" name="dni" value="${employee.dni}" class="form-control" class="form-control"/>
+                        </div></div>
+                    <div class="form-group"><label class="col-lg-2">Teléfono</label>
+                        <div class="col-lg-10"><input type="text" name="phone_number" value="${employee.phoneNumber}" class="form-control"/>
+                        </div></div>
+                    <div class="form-group">
+                        <label class="col-lg-2">Telefono Celular</label>
+                        <div class="col-lg-10"><input type="text" name="cell_phone_number" value="${employee.cellPhoneNumber}" class="form-control"/>
+                        </div></div>
+                    <div class="form-group">
+                        <label class="col-lg-2">Dirección</label>
+                        <div class="col-lg-10"><input type="text" name="address" value="${employee.address}" class="form-control"/>
+                        </div></div>
+                    <div class="form-group">
+                        <label class="col-lg-2">Departamento</label>
+                        <div class="col-lg-10"><input type="text" name="department" value="${employee.department}" class="form-control"/>
+                        </div></div>
+
+                    <div class="form-group">
+                        <label class="col-lg-2">Fecha de Nacimiento</label>
+                        <div class="col-lg-8"><input type="date" name="birthdate" value="${employee.birthdate}" class="form-control"/>
+                        </div></div>
+
+
+
+                    <input type="hidden" value="updateEmpleadoData" name="action"/>
+                    <p align="center"><button input type="submit" class="btn btn-primary">Actualizar</button></p>
+
+
+
+
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<!-- /#page-wrapper -->
+
+
 
 </div>
 <!-- /#wrapper -->

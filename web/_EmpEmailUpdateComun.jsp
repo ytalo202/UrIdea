@@ -55,7 +55,7 @@
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Empleado <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Administrador <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li>
                         <a href="v?action=perfilCompany"><i class="fa fa-fw fa-user"></i> Perfil</a>
@@ -97,20 +97,53 @@
 
     <div id="page-wrapper">
 
-
         <div class="container-fluid">
 
 
 
 
+            <div class="row">
+                <div class="col-sm-12" >
+                    <h1 align="center"><img src="http://www.coordinadora.com/wp-content/uploads/sidebar_usuario-corporativo.png" width="50px" height="50px"> </h1>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3 myform-cont" >
+
+                    <div class="myform-bottom">
+
+
+                        <form role="form" action="TypeEmployeeValidation" method="post"  class="form-horizontal">
+
+
+                            <div class="form-group">
+                                <input type="hidden" name="idEmail" value="${employee.emailAddress.id}" placeholder="Country..." class="form-control"  required>
+
+                            </div>
+
+                            <div class="form-group"><label class="col-lg-2">Correo</label>
+                                <div class="col-lg-10"><input type="text" name="emailData" value="${employee.emailAddress.emailData}" placeholder="Correo..." class="form-control" >
+                                </div></div>
+
+                            <div class="form-group">
+                                <input type="hidden" name="idEmployee" value="${employee.id}" placeholder="Location-City..." class="form-control" >
+                            </div>
+
+
+                            <input type="hidden" value="updateEmail" name="action"/>
+                            <p align="center"><button input type="submit" class="btn btn-primary">Actualizar</button></p>
 
 
 
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- /.container-fluid -->
 
-</div>
-<!-- /#page-wrapper -->
 
 </div>
 <!-- /#wrapper -->

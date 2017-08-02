@@ -24,7 +24,8 @@ public class TypeEmployeeServlet extends HttpServlet {
     public static String MENU_INDEX_URI = "/login.jsp";
     public static String Edit_Admin_URI = "/adminEdit.jsp";
     public static String MenuRoot_URI ="/gg";
-    public static String EDItEmployee ="/editEmployee.jsp";
+    public static String EDItEmployee ="/_EmployeeForm.jsp";
+    public static String EDItEmployeeComun ="/editEmployeeComun.jsp";
     public static String outEmployee_URI = "/index.jsp";
     public static String PruebaEmployee_URI = "/prueba3.jsp";
     public static String MenuAdmin_URI = "/menuAdministrator.jsp";
@@ -33,7 +34,9 @@ public class TypeEmployeeServlet extends HttpServlet {
     public static String NuevoEmpleado_URI = "/newEmp2.jsp";
 
     public static String listaEmpleadosxArea = "/listaEmpAre.jsp";
+
     public static String  UpdateEmpEmail_URI= "/_EmpEmailUpdate.jsp";
+    public static String  UpdateEmpEmailComun_URI= "/_EmpEmailUpdateComun.jsp";
     public static String  evaluar_uri= "/_Evaluar.jsp";
     public static String  evaluarInformatica_uri= "/_EvaluarInformatica.jsp";
     public static String  evaluarInformatica2_uri= "/_EvaluarInformatica2.jsp";
@@ -56,11 +59,19 @@ public class TypeEmployeeServlet extends HttpServlet {
     public static String  addCv_uri= "/_NCv.jsp";
 
     public static String perfilEmployee_uri = "/PerfilPrueba1.jsp";
+    public static String perfilEmployee_Adminuri = "/PerfilPrueba2.jsp";
     public static String perfilHistorialEvaluEmployee_uri = "/PerfilHistorialEvaluation1.jsp";
     public static String perfilHistoEvaluAdminitracionEmployee_uri = "/PerfilHistorialEvaluationAdministracion.jsp";
     public static String perfilHistoEvaluInformaticaEmployee_uri = "/PerfilHistorialEvaluationInformatica.jsp";
     public static String perfilHistoEvaluMarketingEmployee_uri = "/PerfilHistorialEvaluationMarketing.jsp";
     public static String perfilHistoProduccionEmployee_uri = "/PerfilHistorialEvaluationProduccion.jsp";
+
+
+    public static String perfilHistorialEvaluEmployee2_uri = "/PerfilHistorialEvaluationAdmin.jsp";
+    public static String perfilHistoEvaluAdminitracionEmployee2_uri = "/PerfilHistorialEvaluationAdministracionAdmin.jsp";
+    public static String perfilHistoEvaluInformaticaEmployee2_uri = "/PerfilHistorialEvaluationInformaticaAdmin.jsp";
+    public static String perfilHistoEvaluMarketingEmployee2_uri = "/PerfilHistorialEvaluationMarketingAdmin.jsp";
+    public static String perfilHistoProduccionEmployee2_uri = "/PerfilHistorialEvaluationProduccionAdmin.jsp";
 
     String email;
 
@@ -963,8 +974,14 @@ public class TypeEmployeeServlet extends HttpServlet {
                         = service.getEmployeeById(idE);
                 request.setAttribute("employee", employee);
                 request.setAttribute("action", "editEmployee");
+                if (employeeType==1){
                 actionUri =  EDItEmployee;
-                break;
+                break;}
+                else{
+                    actionUri =  EDItEmployeeComun;
+                    break;}
+
+
             }
             case "out": {
 
@@ -998,9 +1015,13 @@ public class TypeEmployeeServlet extends HttpServlet {
 
                 request.setAttribute("employee", employee);
                 request.setAttribute("action", "edit");
-                actionUri = MenuAdmin_URI;
-                break;
 
+                if (employeeType==1){
+                    actionUri = MenuAdmin_URI;
+                    break;}
+                else{
+                    actionUri =  MenuEmp_URI;
+                    break;}
 
             }
 
@@ -1011,8 +1032,15 @@ public class TypeEmployeeServlet extends HttpServlet {
 
                 request.setAttribute("employee", employee);
                 request.setAttribute("action", "edit");
-                actionUri = UpdateEmpEmail_URI;
-                break;
+
+                if (employeeType==1){
+                    actionUri = UpdateEmpEmail_URI;
+                    break;}
+                else{
+                    actionUri =  UpdateEmpEmailComun_URI;
+                    break;}
+
+
             }
 
             case "evaluar": {
@@ -1056,7 +1084,7 @@ public class TypeEmployeeServlet extends HttpServlet {
                 Employee employee = service.getEmployeeById(EmpPerfil);
                 request.setAttribute("employee", employee);
                 request.setAttribute("action", "Perfil");
-                actionUri = perfilEmployee_uri;
+                actionUri = perfilEmployee_Adminuri;
                 break;
             }
 
@@ -1097,6 +1125,38 @@ public class TypeEmployeeServlet extends HttpServlet {
                     actionUri = perfilHistoEvaluInformaticaEmployee_uri;
                     break;}
             }
+
+            case "EvaluationHistorialAdmin": {
+                EmpEvaluado =Integer.parseInt(request.getParameter("idEmployee"));
+                areaId =Integer.parseInt(request.getParameter("idArea"));
+
+                Employee employee = service.getEmployeeById(EmpEvaluado);
+                request.setAttribute("employee", employee);
+                request.setAttribute("action", "Perfil");
+                if (areaId ==5){
+
+                    actionUri = perfilHistorialEvaluEmployee2_uri;
+                    break;}
+                if (areaId ==4){
+
+                    actionUri = perfilHistoEvaluAdminitracionEmployee2_uri;
+                    break;}
+                if (areaId ==3){
+
+                    actionUri = perfilHistoProduccionEmployee2_uri;
+                    break;}
+                if (areaId ==2){
+
+                    actionUri = perfilHistoEvaluMarketingEmployee2_uri;
+                    break;}
+                else{
+
+                    actionUri = perfilHistoEvaluInformaticaEmployee2_uri;
+                    break;}
+            }
+
+
+
 
 
 
