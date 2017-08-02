@@ -117,7 +117,7 @@
                 <div class="myform-bottom">
 
 
-                    <form role="form" action="TypeEmployeeValidation" method="post"  class="form-horizontal">
+                    <form action="TypeEmployeeValidation" method="post"  class="form-horizontal">
 
 
                         <div class="form-group">

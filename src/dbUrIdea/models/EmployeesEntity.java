@@ -184,7 +184,6 @@ public class EmployeesEntity extends BaseEntity {
     }
     public boolean update(Employee employee) {
         String sql = "UPDATE employees SET " +
-                "employee_type = "+employee.getEmployeeTypeAsString()+ ", " +
                 "password = "+employee.getPasswordAsValue()+ ", " +
                 "employee_name = " +employee.getNameAsValue()+ ", " +
                 "employee_first_last_name = " + employee.getFirstLastNameAsValue()+ ", " +

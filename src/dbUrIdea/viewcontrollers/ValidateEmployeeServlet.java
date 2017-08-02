@@ -27,9 +27,9 @@ public class ValidateEmployeeServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String email = request.getParameter("txtemail");
+        String email = new String(request.getParameter("txtemail").getBytes(),"UTF-8");
         String usuario = "";
-        String password = request.getParameter("txtpassword");
+        String password = new String(request.getParameter("txtpassword").getBytes(),"UTF-8");
         EmployeesEntity e = new EmployeesEntity();
         CompaniesEntity c = new CompaniesEntity();
 

@@ -121,35 +121,38 @@
                 </div>
                 <div class="myform-bottom">
 
-                    <div role="form" action="TypeEmployeeValidation" method="post" class="form-horizontal">
-
-                        <div class="form-group">
-                        <input type="hidden" name="id" value="${employee.id}" class="form-control"
-                                    <c:out value="${action == 'edit' ? 'readonly=\"readonly\"' : '' }"/>
-                            />
-                        </div>
+                    <form action="TypeEmployeeValidation" method="post" class="form-horizontal">
 
 
-                        <div class="form-group">
 
-                            <input type="hidden" name="employee_type" value="${employee.employeeType}"
-                                   class="form-control"/></div>
+
+
+
 
                         <div class="form-group">
                         <label class="col-lg-2">Contraseña</label>
                             <div class="col-lg-10">
-                                <input type="text" name="password" value="${employee.password}" class="form-control"/></div></div>
+                                <input type="text" name="password"
+                                       value="${employee.password}"
+                                       class="form-control"/>
+                            </div></div>
 
                         <div class="form-group">
                          <label class="col-lg-2">Nombre</label>
-                            <div class="col-lg-10"><input type="text" name="employee_name" value="${employee.name}" class="form-control"/></div></div>
+                            <div class="col-lg-10">
+                                <input type="text" name="employee_name" value="${employee.name}"
+                                       class="form-control"/></div></div>
                         <div class="form-group">
                           <label class="col-lg-2">Apellido Peterno</label>
-                            <div class="col-lg-10"><input type="text" name="employee_first_last_name" value="${employee.firstLastName}" class="form-control"/>
+                            <div class="col-lg-10"><input type="text" name="employee_first_last_name"
+                                                          value="${employee.firstLastName}" class="form-control"/>
                             </div></div>
                         <div class="form-group">
                             <label class="col-lg-2">Apellido Materno</label>
-                            <div class="col-lg-10"><input type="text" name="employee_second_last_name" value="${employee.secondLastName}" class="form-control"/>
+                            <div class="col-lg-10">
+                                <input type="text" name="employee_second_last_name"
+                                       value="${employee.secondLastName}"
+                                       class="form-control"/>
                             </div></div>
                         <div class="form-group">
                             <label class="col-lg-2">Dni</label>
@@ -173,7 +176,8 @@
 
                         <div class="form-group">
                          <label class="col-lg-2">Fecha de Nacimiento</label>
-                            <div class="col-lg-8"><input type="date" name="birthdate" value="${employee.birthdate}" class="form-control"/>
+                            <div class="col-lg-10">
+                                <input type="date" name="birthdate" value="${employee.birthdate}" class="form-control"/>
                             </div></div>
 
 

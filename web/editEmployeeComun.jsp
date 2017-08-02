@@ -119,7 +119,7 @@
             </div>
             <div class="myform-bottom">
 
-                <div role="form" action="TypeEmployeeValidation" method="post" class="form-horizontal">
+                <form action="TypeEmployeeValidation" method="post" class="form-horizontal">
 
                     <div class="form-group">
                         <input type="hidden" name="id" value="${employee.id}" class="form-control"

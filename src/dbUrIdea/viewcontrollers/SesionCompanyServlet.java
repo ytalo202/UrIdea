@@ -105,13 +105,13 @@ public class SesionCompanyServlet extends HttpServlet {
 
                 Company company= new Company();
                 company.setId(codCom);
-                company.setPassword(request.getParameter("password"));
-                nameCompany=request.getParameter("nameCompany");
+                company.setPassword(new String(request.getParameter("password").getBytes(),"UTF-8"));
+                nameCompany=new String(request.getParameter("nameCompany").getBytes(),"UTF-8");
                 company.setNameCompany(nameCompany);
-                company.setDescription(request.getParameter("description"));
+                company.setDescription(new String(request.getParameter("description").getBytes(),"UTF-8"));
                 company.setCompanyState(Integer.parseInt
                         (request.getParameter("companyState")));
-                company.setAddress(request.getParameter("address"));
+                company.setAddress(new String(request.getParameter("address").getBytes(),"UTF-8"));
                 company.setPhoneNumber(Integer.parseInt
                         (request.getParameter("phoneNumber")));
                 String message = service.updateCompany(company) ?
@@ -218,8 +218,8 @@ public class SesionCompanyServlet extends HttpServlet {
                 EmailAddress emailAddress =new EmailAddress();
                 Company company =new Company();
                 //company.setId(Integer.parseInt(request.getParameter("id")));
-                company.setPassword(request.getParameter("password"));
-                company.setNameCompany(request.getParameter("nameCompany"));
+                company.setPassword(new String(request.getParameter("password").getBytes(),"UTF-8"));
+                company.setNameCompany(new String(request.getParameter("nameCompany").getBytes(),"UTF-8"));
                 company.setCompanyState
                         (1);
 
@@ -261,7 +261,7 @@ public class SesionCompanyServlet extends HttpServlet {
 
             case "createCompEmail":{
                 EmailAddress emailAddress1= new EmailAddress();
-                email=request.getParameter("emailData");
+                email=new String(request.getParameter("emailData").getBytes(),"UTF-8");
                 emailAddress1.setEmailData(email);
                 String message = service.createEmail(emailAddress1) ?
                         "Create success" :
@@ -298,8 +298,8 @@ public class SesionCompanyServlet extends HttpServlet {
 
 
                 Company company = service.getIdByCompany(
-                        request.getParameter("txtusuario"),
-                        request.getParameter("txtclave"));
+                        new String(request.getParameter("txtusuario").getBytes(),"UTF-8"),
+                        new String(request.getParameter("txtclave").getBytes(),"UTF-8"));
 
                 request.setAttribute("company", company);
                 request.setAttribute("action", "menu");
@@ -330,7 +330,7 @@ public class SesionCompanyServlet extends HttpServlet {
 
                 int  idC = Integer.parseInt(request.getParameter("idCompany"));
                 codCom = idC;
-                nameCompany = request.getParameter("nameCompany");
+                nameCompany = new String(request.getParameter("nameCompany").getBytes(),"UTF-8");
 
                 Company company = service.getCompanyById(idC);
 
@@ -349,7 +349,7 @@ public class SesionCompanyServlet extends HttpServlet {
                 //EmailAddress emailAddress = service.getEmailAddressById(Integer.parseInt(request.getParameter("id")));
 
                 emailAddress.setId(Integer.parseInt(request.getParameter("idEmail")));
-                emailAddress.setEmailData(request.getParameter("emailData"));
+                emailAddress.setEmailData(new String(request.getParameter("emailData").getBytes(),"UTF-8"));
                 String message = service.updateEmail(emailAddress) ?
                         "Update success" :
                         "Error while updating";
@@ -372,7 +372,7 @@ public class SesionCompanyServlet extends HttpServlet {
 
             case "createEmail": {
                 EmailAddress emailAddress1= new EmailAddress();
-                email=request.getParameter("emailData");
+                email=new String(request.getParameter("emailData").getBytes(),"UTF-8");
                 emailAddress1.setEmailData(email);
 
 
@@ -426,8 +426,8 @@ public class SesionCompanyServlet extends HttpServlet {
 
 
 
-              employee.setPassword(request.getParameter("password"));
-              employee.setName(request.getParameter("employee_name"));
+              employee.setPassword(new String(request.getParameter("password").getBytes(),"UTF-8"));
+              employee.setName(new String(request.getParameter("employee_name").getBytes(),"UTF-8"));
               employee.setDni(Integer.parseInt(request.getParameter("dni")));
               String message = service.createEmployee2(employee) ?
                       "Create success" :
