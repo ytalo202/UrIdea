@@ -34,9 +34,25 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
+
+    <style>
+        th{
+            height: 24px;
+            line-height: 24px;
+            color: #dbdbdb;
+            background-color: darkmagenta;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+
+    </style>
+
+
 </head>
 
-<body style="background-image:url(http://img.freepik.com/free-vector/modern-medical-background_1035-8989.jpg?size=338&ext=jpg)" class="fa-home">
+<body style="background-image:url(https://previews.123rf.com/images/vska/vska1302/vska130200153/18156383-abstract-circuit-cyber-high-technology-business-background-Stock-Vector.jpg)" class="fa-home">
 
 <div id="wrapper">
 
@@ -50,7 +66,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="image/logo.jpg" width="40" height="30"></a>
+            <a class="navbar-brand" href="#"><img src="image/logo.jpg" width="70" height="30"></a>
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
@@ -97,68 +113,86 @@
         <!-- /.navbar-collapse -->
     </nav>
 
-    <div id="page-wrapper">
-
-        <div class="container-fluid">
 
 
 
-<h1>Evaluacion de Crecimiento Profesional  Marketing</h1>
 
-<form action="TypeEmployeeValidation" method="post">
+<h1></h1>
 
-    <table border="1">
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" align="center">Evaluación de Crecimiento Profesional</h3>
+                    </div>
+                    <div class="panel-body">
+
+
+
+            <form action="TypeEmployeeValidation" method="post">
+<div class="table-responsive">
+    <table class="table table-bordered">
 
         <tr>
+
+            <th>Característica</th>
+            <th>Bajo</th>
+            <th>Medio</th>
+            <th>Alta</th>
+        </tr>
+        <tr>
             <td>Tiene estudios de otros idiomas</td>
-            <td> <input type="radio" name="language_skills" value="1">bajo
-                <input type="radio" name="language_skills" value="2">medio
-                <input type="radio" name="language_skills" value="4.77">alta
+            <td align="center"> <input type="radio" name="language_skills" value="1"></td>
+            <td align="center"><input type="radio" name="language_skills" value="2"></td>
+               <td align="center"> <input type="radio" name="language_skills" value="4.77">
             </td>
         </tr>
 
         <tr>
             <td>sabe de negocios</td>
-            <td> <input type="radio" name="business_skills" value="1">bajo
-                <input type="radio" name="business_skills" value="2">medio
-                <input type="radio" name="business_skills" value="4.77">alto
+            <td align="center"> <input type="radio" name="business_skills" value="1"></td>
+            <td align="center">  <input type="radio" name="business_skills" value="2"></td>
+              <td align="center">  <input type="radio" name="business_skills" value="4.77">
             </td>
         </tr>
 
         <tr>
             <td>Cumplio con todas sus tareas</td>
-            <td> <input type="radio" name="business_knowledge" value="1">bajo
-                <input type="radio" name="business_knowledge" value="2">medio
-                <input type="radio" name="business_knowledge" value="4.77">alto
+            <td align="center"> <input type="radio" name="business_knowledge" value="1"></td>
+            <td align="center"><input type="radio" name="business_knowledge" value="2"></td>
+                <td align="center"><input type="radio" name="business_knowledge" value="4.77">
             </td>
         </tr>
         <tr>
-            <td>actualiza sus conocimientos de mercado</td>
-            <td> <input type="radio" name="market_knowledge" value="1">bajo
-                <input type="radio" name="market_knowledge" value="2">medio
-                <input type="radio" name="market_knowledge" value="4.77">alto
+            <td >actualiza sus conocimientos de mercado</td>
+            <td align="center"> <input type="radio" name="market_knowledge" value="1"></td>
+            <td align="center"> <input type="radio" name="market_knowledge" value="2"></td>
+              <td align="center">  <input type="radio" name="market_knowledge" value="4.77">
             </td>
         </tr>
         <tr>
             <td>fue productivo</td>
-            <td> <input type="radio" name="productivity" value="1">bajo
-                <input type="radio" name="productivity" value="2">medio
-                <input type="radio" name="productivity" value="4.77">alto
+            <td align="center"> <input type="radio" name="productivity" value="1"></td>
+            <td align="center">  <input type="radio" name="productivity" value="2"></td>
+            <td align="center">    <input type="radio" name="productivity" value="4.77">
             </td>
         </tr>
         <tr>
             <td>mejoro sus habilidades de comunicacion</td>
-            <td> <input type="radio" name="communication_skills" value="1">bajo
-                <input type="radio" name="communication_skills" value="2">medio
-                <input type="radio" name="communication_skills" value="4.77">alto
+            <td align="center"> <input type="radio" name="communication_skills" value="1"></td>
+            <td align="center"> <input type="radio" name="communication_skills" value="2"></td>
+            <td align="center">    <input type="radio" name="communication_skills" value="4.77">
             </td>
         </tr>
 
         <tr>
             <td>Innovo ?</td>
-            <td> <input type="radio" name="innovative" value="1">bajo
-                <input type="radio" name="innovative" value="2">medio
-                <input type="radio" name="innovative" value="4.77">alto
+            <td align="center"> <input type="radio" name="innovative" value="1"></td>
+            <td align="center">   <input type="radio" name="innovative" value="2"></td>
+              <td align="center">  <input type="radio" name="innovative" value="4.77">
             </td>
         </tr>
 
@@ -167,20 +201,28 @@
 
 
     </table>
+<br>
+    <div class="form-group"><label class="col-lg-2">Comentario</label>
+      <div class="col-lg-10"><textarea name="comment"
+                  cols="20" rows="5" class="form-control col-lg-8"></textarea>
+      </div></div>
 
-    <p>Comentario
-        <textarea name="comment"
-                  cols="30" rows="10"></textarea>
-    </p>
-    <input type="hidden" value="createEvaluationMarketing3" name="action"/>
-    <input type="submit"/>
+
+</div>
+                <br>
+                <input type="hidden" value="createEvaluationMarketing3" name="action"/>
+
+                <p align="center"><button input type="submit" class="btn btn-primary">Terminar y Guardar</button></p>
 </form>
 
-        </div>
-        <!-- /.container-fluid -->
 
-    </div>
-    <!-- /#page-wrapper -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
 </div>
 <!-- /#wrapper -->

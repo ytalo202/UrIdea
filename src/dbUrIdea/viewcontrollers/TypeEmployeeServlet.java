@@ -1069,7 +1069,7 @@ public class TypeEmployeeServlet extends HttpServlet {
 
                 Employee employee = service.getEmployeeById(EmpEvaluado);
                 request.setAttribute("employee", employee);
-                request.setAttribute("action", "Perfil");
+                request.setAttribute("action", "idEmpleado");
 
                 if (idA ==5){
 

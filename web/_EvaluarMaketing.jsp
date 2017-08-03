@@ -33,11 +33,25 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
     <![endif]-->
+
+    <style>
+        th{
+            height: 24px;
+            line-height: 24px;
+            color: #dbdbdb;
+            background-color: darkmagenta;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+
+    </style>
 
 </head>
 
-<body style="background-image:url(http://img.freepik.com/free-vector/modern-medical-background_1035-8989.jpg?size=338&ext=jpg)" class="fa-home">
+<body style="background-image:url(https://previews.123rf.com/images/vska/vska1302/vska130200153/18156383-abstract-circuit-cyber-high-technology-business-background-Stock-Vector.jpg)" class="fa-home">
 
 <div id="wrapper">
 
@@ -51,7 +65,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="image/logo.jpg" width="40" height="30"></a>
+            <a class="navbar-brand" href="#"><img src="image/logo.jpg" width="70" height="30"></a>
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
@@ -98,87 +112,102 @@
         <!-- /.navbar-collapse -->
     </nav>
 
-    <div id="page-wrapper">
-
-
-        <div class="container-fluid">
 
 
 
 
 
-<h1>Evaluacion Para El Area de Marketing</h1>
-<h2>Evaluacion de Actitud </h2>
+
+<h1 align="center">Evaluacion Para El Area de Marketing</h1>
+
 
             <c:forEach var="employee" items="${service.findAllEmployeeById(employee.id)}">
 
-            <p>Nombre </p>
-            <c:out value="${employee.name} "/>
+            <p align="center">Nombre  <c:out value="${employee.name} "/></p>
+
             </c:forEach>
 
 
+    <section class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" align="center">Evaluación de Actitud</h3>
+                    </div>
+                    <div class="panel-body">
 
 
 
 
+<form action="TypeEmployeeValidation" method="post" >
+<div class="table-responsive" >
+    <table class="table table-bordered">
+<tr>
+    <th align="center">Características</th>
+    <th align="center">Pocas veces</th>
+    <th align="center">Regularmente</th>
+    <th align="center">Siempre</th>
 
-<form action="TypeEmployeeValidation" method="post">
-
-    <table border="1">
-
+</tr>
         <tr>
-            <td>Mostro su compromiso a la Empresa en Mcuhas Ocaciones</td>
-            <td> <input type="radio" name="commitment_company" value="1">bajo
-                <input type="radio" name="commitment_company" value="3">medio
-                <input type="radio" name="commitment_company" value="6.66">alto
+            <td>Muestra compromiso con la Empresa en Muchas Ocaciones</td>
+            <td align="center"> <input type="radio" name="commitment_company" value="1"></td>
+            <td align="center">   <input type="radio" name="commitment_company" value="3"></td>
+               <td align="center"> <input type="radio" name="commitment_company" value="6.66">
             </td>
         </tr>
 
         <tr>
-            <td>Es bueno liderando</td>
-            <td>  <input type="radio" name="leadership" value="1">pocas veces
-                <input type="radio" name="leadership" value="3">regularmente
-                <input type="radio" name="leadership" value="6.66">siempre
+            <td>Es bueno liderando equipos de trabajo</td>
+            <td align="center">  <input type="radio" name="leadership" value="1"></td>
+            <td align="center">   <input type="radio" name="leadership" value="3"></td>
+           <td align="center">     <input type="radio" name="leadership" value="6.66">
             </td>
         </tr>
 
         <tr>
-            <td>fue analitico</td>
-            <td> <input type="radio" name="analytical" value="1">bajo
-                <input type="radio" name="analytical" value="3">medio
-                <input type="radio" name="analytical" value="6.66">alto
+            <td>fue analitico al momento de resolver algun problema </td>
+            <td align="center"> <input type="radio" name="analytical" value="1"></td>
+            <td align="center">  <input type="radio" name="analytical" value="3"></td>
+             <td align="center">   <input type="radio" name="analytical" value="6.66">
             </td>
         </tr>
 
 
         <tr>
-            <td>es obajetivo</td>
-            <td> <input type="radio" name="objective" value="1">pocas veces
-                <input type="radio" name="objective" value="3">regularmente
-                <input type="radio" name="objective" value="6.66">siempre
+            <td>es objetivo al momento de tomar decisiones</td>
+            <td align="center"><input type="radio" name="objective" value="1"></td>
+            <td align="center"><input type="radio" name="objective" value="3"></td>
+                <td align="center"><input type="radio" name="objective" value="6.66">
             </td>
         </tr>
 
         <tr>
             <td>Tomo decisiones importantes en el proyecto</td>
-            <td> <input type="radio" name="decision_making" value="1">pocas veces
-                <input type="radio" name="decision_making" value="3">regularmente
-                <input type="radio" name="decision_making" value="6.66">siempre
+            <td align="center"> <input type="radio" name="decision_making" value="1"></td>
+            <td align="center">     <input type="radio" name="decision_making" value="3"></td>
+             <td align="center">   <input type="radio" name="decision_making" value="6.66">
             </td>
         </tr>
 
 
     </table>
+    <br>
+
+</div>
+    <br>
     <input type="hidden" value="createEvaluationMarketing1" name="action"/>
-    <input type="submit" />
+    <p align="center"><button input type="submit" class="btn btn-primary">siguiente</button></p>
 </form>
 
 
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- /.container-fluid -->
+    </section>
 
-    </div>
-    <!-- /#page-wrapper -->
 
 </div>
 <!-- /#wrapper -->

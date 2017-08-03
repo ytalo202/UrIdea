@@ -33,10 +33,25 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+<style>
+    th{
+    height: 24px;
+    line-height: 24px;
+        color: #e2e2e2;
+        background-color: #ac2925;
+    text-align: center;
+    vertical-align: middle;
+    }
+
+
+    </style>
+
+
+
 
 </head>
 
-<body style="background-image:url(http://img.freepik.com/free-vector/modern-medical-background_1035-8989.jpg?size=338&ext=jpg)" class="fa-home">
+<body style="background-image:url(https://previews.123rf.com/images/vska/vska1302/vska130200153/18156383-abstract-circuit-cyber-high-technology-business-background-Stock-Vector.jpg)" class="fa-home">
 
 <div id="wrapper">
 
@@ -50,7 +65,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="image/logo.jpg" width="40" height="30"></a>
+            <a class="navbar-brand" href="#"><img src="image/logo.jpg" width="70" height="30"></a>
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
@@ -97,46 +112,67 @@
         <!-- /.navbar-collapse -->
     </nav>
 
-    <div id="page-wrapper">
-
-        <div class="container-fluid">
 
 
 
 
-<h1>Evaluacion de Valores Informatica</h1>
+
+
+
+
+
+    <c:forEach var="employee" items="${service.findAllEmployeeById(employee.id)}">
+
+    <p align="center">Nombre  <c:out value="${employee.name} "/></p>
+
+    </c:forEach>
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" align="center">Evaluación de Valores</h3>
+                    </div>
+                    <div class="panel-body">
 
 <form action="TypeEmployeeValidation" method="post">
-
-    <table border="1">
-
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <tr>
+        <th>Características</th>
+        <th>Bajo</th>
+        <th>Medio</th>
+        <th>Alto</th>
+        </tr>
         <tr>
             <td>Es Honesto</td>
-            <td> <input type="radio" name="honesty" value="1">bajo
-                <input type="radio" name="honesty" value="5">medio
-                <input type="radio" name="honesty" value="8.325">alto
+            <td align="center"> <input type="radio" name="honesty" value="1"></td>
+            <td align="center">  <input type="radio" name="honesty" value="5"></td>
+             <td align="center">   <input type="radio" name="honesty" value="8.325">
             </td>
         </tr>
         <tr>
             <td>Comparte el logro con su equipo de trabajo</td>
-            <td> <input type="radio" name="organized" value="1">bajo
-                <input type="radio" name="organized" value="5">medio
-                <input type="radio" name="organized" value="8.325">alto
+            <td align="center"> <input type="radio" name="organized" value="1"></td>
+            <td align="center"><input type="radio" name="organized" value="5"></td>
+            <td align="center">    <input type="radio" name="organized" value="8.325">
             </td>
         </tr>
 
         <tr>
             <td>Usa de manera responsable los recursos de empresa</td>
-            <td> <input type="radio" name="responsibility" value="1">bajo
-                <input type="radio" name="responsibility" value="5">medio
-                <input type="radio" name="responsibility" value="8.325">alto
+            <td align="center"> <input type="radio" name="responsibility" value="1"></td>
+             <td align="center">   <input type="radio" name="responsibility" value="5">
+              <td align="center">  <input type="radio" name="responsibility" value="8.325">
             </td>
         </tr>
         <tr>
             <td>Muestra Transparencia y Confianza al encargarle alguna compra</td>
-            <td> <input type="radio" name="respect" value="1">bajo
-                <input type="radio" name="respect" value="5">medio
-                <input type="radio" name="respect" value="8.325">alto
+            <td align="center"> <input type="radio" name="respect" value="1"></td>
+            <td align="center">     <input type="radio" name="respect" value="5"></td>
+               <td align="center"> <input type="radio" name="respect" value="8.325">
             </td>
         </tr>
 
@@ -147,16 +183,22 @@
 
 
     </table>
+
+</div>
+    <br>
     <input type="hidden" value="createEvaluationIformatica2" name="action"/>
-    <input type="submit"/>
+    <p align="center"><button input type="submit" class="btn btn-primary">Siguiente</button></p>
 </form>
 
 
-</div>
-<!-- /.container-fluid -->
 
-</div>
-<!-- /#page-wrapper -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 </div>
 <!-- /#wrapper -->

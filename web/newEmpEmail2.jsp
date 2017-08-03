@@ -36,7 +36,7 @@
 
 </head>
 
-<body style="background-image:url(http://img.freepik.com/free-vector/modern-medical-background_1035-8989.jpg?size=338&ext=jpg)" class="fa-home">
+<body style="background-image:url(https://previews.123rf.com/images/vska/vska1302/vska130200153/18156383-abstract-circuit-cyber-high-technology-business-background-Stock-Vector.jpg" class="fa-home">
 
 <div id="wrapper">
 
@@ -50,7 +50,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="image/logo.jpg" width="40" height="30"></a>
+            <a class="navbar-brand" href="#"><img src="image/logo.jpg" width="70" height="30"></a>
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">

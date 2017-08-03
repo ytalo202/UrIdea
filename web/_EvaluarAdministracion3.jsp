@@ -34,9 +34,22 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+        th{
+            height: 24px;
+            line-height: 24px;
+            color: #d5d5d5;
+            background-color:#3b5998;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+
+
+
 </head>
 
-<body style="background-image:url(http://img.freepik.com/free-vector/modern-medical-background_1035-8989.jpg?size=338&ext=jpg)" class="fa-home">
+<body style="background-image:url(https://previews.123rf.com/images/vska/vska1302/vska130200153/18156383-abstract-circuit-cyber-high-technology-business-background-Stock-Vector.jpg)" class="fa-home">
 
 <div id="wrapper">
 
@@ -50,7 +63,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="image/logo.jpg" width="40" height="30"></a>
+            <a class="navbar-brand" href="#"><img src="image/logo.jpg" width="70" height="30"></a>
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
@@ -97,9 +110,6 @@
         <!-- /.navbar-collapse -->
     </nav>
 
-    <div id="page-wrapper">
-
-        <div class="container-fluid">
 
 
 
@@ -113,94 +123,117 @@
 
 
 
-        <h1>Evaluacion Para El Area Administracion</h1>
-<h2>Evaluacion de Crecimiento Profecional </h2>
+
+
+
+
+
+    <c:forEach var="employee" items="${service.findAllEmployeeById(employee.id)}">
+
+    <p align="center">Nombre  <c:out value="${employee.name} "/></p>
+
+    </c:forEach>
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" align="center">Evaluación de Crecimiento Profesional</h3>
+                    </div>
+                    <div class="panel-body">
+
+
+
 
 <form action="TypeEmployeeValidation" method="post">
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <tr>
+            <th>Características</th>
+            <th>pocas veces</th>
+            <th>regularmente</th>
+            <th>siempre</th>
+        </tr>
 
-    <table border="1">
+
+
         <tr>
             <td>Mostro su compromiso a la Empresa en Mcuhas Ocaciones</td>
-            <td> <input type="radio" name="communication_skills" value="1">bajo
-                <input type="radio" name="communication_skills" value="2">medio
-                <input type="radio" name="communication_skills" value="4.175">alto
+            <td align="center"> <input type="radio" name="communication_skills" value="1"></td>
+            <td align="center">   <input type="radio" name="communication_skills" value="2"></td>
+              <td align="center">  <input type="radio" name="communication_skills" value="4.175">
             </td>
         </tr>
 
         <tr>
             <td>Tomo Decisiones para resolver distintos Problemas Ocurridos</td>
-            <td>  <input type="radio" name="language_skills" value="1">pocas veces
-                <input type="radio" name="language_skills" value="2">regularmente
-                <input type="radio" name="language_skills" value="4.175">siempre
+            <td align="center">  <input type="radio" name="language_skills" value="1"></td>
+            <td align="center">  <input type="radio" name="language_skills" value="2"></td>
+             <td align="center">   <input type="radio" name="language_skills" value="4.175">
             </td>
         </tr>
 
         <tr>
             <td>Trabajo en Equipo de manera Adecuada Sin Demasiados percances</td>
-            <td> <input type="radio" name="business_skills" value="1">bajo
-                <input type="radio" name="business_skills" value="2">medio
-                <input type="radio" name="business_skills" value="4.175">alto
+            <td align="center"> <input type="radio" name="business_skills" value="1"></td>
+            <td align="center">   <input type="radio" name="business_skills" value="2"></td>
+            <td align="center">    <input type="radio" name="business_skills" value="4.175">
             </td>
         </tr>
 
 
         <tr>
             <td>Tomo la Iniciativa Para Empezar el Trabajo</td>
-            <td> <input type="radio" name="business_knowledge" value="1">pocas veces
-                <input type="radio" name="business_knowledge" value="2">regularmente
-                <input type="radio" name="business_knowledge" value="4.175">siempre
+            <td align="center"> <input type="radio" name="business_knowledge" value="1"></td>
+            <td align="center"> <input type="radio" name="business_knowledge" value="2"></td>
+            <td align="center">    <input type="radio" name="business_knowledge" value="4.175">
             </td>
         </tr>
 
         <tr>
-            <td>Tomo la Iniciativa Para Empezar el Trabajo</td>
-            <td> <input type="radio" name="resource_optimization" value="1">pocas veces
-                <input type="radio" name="resource_optimization" value="2">regularmente
-                <input type="radio" name="resource_optimization" value="4.175">siempre
+            <td>Es una persona proactiva</td>
+            <td align="center"> <input type="radio" name="resource_optimization" value="1"></td>
+            <td align="center">    <input type="radio" name="resource_optimization" value="2"></td>
+             <td align="center">   <input type="radio" name="resource_optimization" value="4.175">
             </td>
         </tr>
         <tr>
-            <td>Tomo la Iniciativa Para Empezar el Trabajo</td>
-            <td> <input type="radio" name="efficiency" value="1">pocas veces
-                <input type="radio" name="efficiency" value="2">regularmente
-                <input type="radio" name="efficiency" value="4.175">siempre
+            <td>Es un empleado que trabaja en equipo para alcanzar los objetivos</td>
+            <td align="center"> <input type="radio" name="efficiency" value="1"></td>
+            <td align="center">   <input type="radio" name="efficiency" value="2"></td>
+             <td align="center">   <input type="radio" name="efficiency" value="4.175">
             </td>
         </tr>
-        <tr>
-            <td>Tomo la Iniciativa Para Empezar el Trabajo</td>
-            <td> <input type="radio" name="productivity" value="1">pocas veces
-                <input type="radio" name="productivity" value="2">regularmente
-                <input type="radio" name="productivity" value="4.175">siempre
-            </td>
-        </tr>
-        <tr>
-            <td>Tomo la Iniciativa Para Empezar el Trabajo</td>
-            <td> <input type="radio" name="innovative" value="1">pocas veces
-                <input type="radio" name="innovative" value="2">regularmente
-                <input type="radio" name="innovative" value="4.175">siempre
-            </td>
-        </tr>
+
 
 
 
     </table>
+    <br>
+    <div class="form-group"><label class="col-lg-2">Comentario</label>
+        <div class="col-lg-10"><textarea name="comment"
+                                         cols="20" rows="5" class="form-control col-lg-8"></textarea>
+        </div></div>
 
-    <p>Comentario
-        <textarea name="comment"
-                  cols="30" rows="10"></textarea>
-    </p>
+
+
+</div>
+<br>
     <input type="hidden" value="createEvaluationAdministracion3" name="action"/>
-    <input type="submit" />
+    <p align="center"><button input type="submit" class="btn btn-primary" >Guardar y Terminar</button></p>
 </form>
 
 
-
-
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- /.container-fluid -->
+    </section>
 
-    </div>
-    <!-- /#page-wrapper -->
+
+
 
 </div>
 <!-- /#wrapper -->

@@ -33,10 +33,26 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        th{
+            height: 24px;
+            line-height: 24px;
+            color: #d5d5d5;
+            background-color: #255625;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+
+    </style>
+
+
+
+
 
 </head>
 
-<body style="background-image:url(http://img.freepik.com/free-vector/modern-medical-background_1035-8989.jpg?size=338&ext=jpg)" class="fa-home">
+<body style="background-image:url(https://previews.123rf.com/images/vska/vska1302/vska130200153/18156383-abstract-circuit-cyber-high-technology-business-background-Stock-Vector.jpg)" class="fa-home">
 
 <div id="wrapper">
 
@@ -50,7 +66,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="image/logo.jpg" width="40" height="30"></a>
+            <a class="navbar-brand" href="#"><img src="image/logo.jpg" width="70" height="30"></a>
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
@@ -97,46 +113,74 @@
         <!-- /.navbar-collapse -->
     </nav>
 
-    <div id="page-wrapper">
 
-        <div class="container-fluid">
 
-<h1>Evaluacion Para El Area de Produccion</h1>
-<h2>Evaluacion de Actitud </h2>
 
-<form action="TypeEmployeeValidation" method="post">
 
-    <table border="1">
+<h1 align="center">Evaluacion Para El Area de Produccion</h1>
+
+
+
+    <c:forEach var="employee" items="${service.findAllEmployeeById(employee.id)}">
+
+    <p align="center">Nombre  <c:out value="${employee.name} "/></p>
+
+    </c:forEach>
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" align="center">Evaluación de Actitud</h3>
+                    </div>
+                    <div class="panel-body">
+
+
+
+
+                    <form action="TypeEmployeeValidation" method="post">
+                        <div class="table-responsive">
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Características</th>
+            <th>Pocas Veces</th>
+            <th>Regularmente</th>
+            <th>Siempre</th>
+
+        </tr>
         <tr>
             <td>Mostro su compromiso a la Empresa en Mcuhas Ocaciones</td>
-            <td> <input type="radio" name="commitment_company" value="3">bajo
-                <input type="radio" name="commitment_company" value="5">medio
-                <input type="radio" name="commitment_company" value="8.325">alto
+            <td align="center"> <input type="radio" name="commitment_company" value="3"></td>
+            <td align="center">   <input type="radio" name="commitment_company" value="5"></td>
+            <td align="center">    <input type="radio" name="commitment_company" value="8.325">
             </td>
         </tr>
 
         <tr>
             <td>bajo presion</td>
-            <td>  <input type="radio" name="work_under_pressure" value="3">pocas veces
-                <input type="radio" name="work_under_pressure" value="5">regularmente
-                <input type="radio" name="work_under_pressure" value="8.325">siempre
+            <td align="center">  <input type="radio" name="work_under_pressure" value="3"></td>
+            <td align="center"><input type="radio" name="work_under_pressure" value="5"></td>
+            <td align="center"><input type="radio" name="work_under_pressure" value="8.325">
             </td>
         </tr>
 
         <tr>
             <td>trabajo en equipo</td>
-            <td> <input type="radio" name="teamwork" value="3">bajo
-                <input type="radio" name="teamwork" value="5">medio
-                <input type="radio" name="teamwork" value="8.325">alto
+            <td align="center"> <input type="radio" name="teamwork" value="3"></td>
+            <td align="center">   <input type="radio" name="teamwork" value="5"></td>
+            <td align="center">    <input type="radio" name="teamwork" value="8.325">
             </td>
         </tr>
 
 
         <tr>
             <td>proactividad</td>
-            <td> <input type="radio" name="proactive" value="3">pocas veces
-                <input type="radio" name="proactive" value="5">regularmente
-                <input type="radio" name="proactive" value="8.325">siempre
+            <td align="center"> <input type="radio" name="proactive" value="3"></td>
+            <td align="center">    <input type="radio" name="proactive" value="5"></td>
+             <td align="center">   <input type="radio" name="proactive" value="8.325">
             </td>
         </tr>
 
@@ -144,15 +188,22 @@
 
 
     </table>
-    <input type="hidden" value="createEvaluationProduccion1" name="action"/>
-    <input type="submit" />
+
+
+                        </div>
+                        <br>
+                        <input type="hidden" value="createEvaluationProduccion1" name="action"/>
+                        <p align="center"><button input type="submit" class="btn btn-primary">Siguiente</button></p>
 </form>
 
-</div>
-<!-- /.container-fluid -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</div>
-<!-- /#page-wrapper -->
+
+
 
 </div>
 <!-- /#wrapper -->
