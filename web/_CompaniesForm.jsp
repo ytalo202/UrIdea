@@ -42,7 +42,7 @@
 
 
 
-<body>
+<body style="background-image:url(http://img.freepik.com/free-vector/modern-medical-background_1035-8989.jpg?size=338&ext=jpg)" class="fa-home">
 
 <div id="wrapper">
 
@@ -208,9 +208,7 @@
         <!-- /.navbar-collapse -->
     </nav>
 
-    <div id="page-wrapper" style="background-image:url(http://img.freepik.com/free-vector/modern-medical-background_1035-8989.jpg?size=338&ext=jpg)" class="home">
 
-        <div class="container-fluid" >
 
             <!-- Page Heading -->
 
@@ -315,11 +313,7 @@
 
             <!-- /.row -->
 
-        </div>
-        <!-- /.container-fluid -->
 
-    </div>
-    <!-- /#page-wrapper -->
 
 </div>
 <!-- /#wrapper -->

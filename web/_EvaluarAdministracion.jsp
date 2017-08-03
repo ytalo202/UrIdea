@@ -153,7 +153,7 @@
             </td>
         </tr>
         <tr>
-            <td>proactivo</td>
+            <td>Proactividad</td>
             <td align="center">  <input type="radio" name="proactive" value="1"></td>
             <td align="center">  <input type="radio" name="proactive" value="3"></td>
             <td align="center">    <input type="radio" name="proactive" value="6.66">
@@ -169,7 +169,7 @@
         </tr>
 
         <tr>
-            <td>toma decision</td>
+            <td>Toma decision</td>
             <td align="center"> <input type="radio" name="decision_making" value="1"></td>
             <td align="center">   <input type="radio" name="decision_making" value="3"></td>
              <td align="center">   <input type="radio" name="decision_making" value="6.66">

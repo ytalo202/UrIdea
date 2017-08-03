@@ -207,9 +207,6 @@
         <!-- /.navbar-collapse -->
     </nav>
 
-    <div id="page-wrapper" style="background-image:url(http://img.freepik.com/free-vector/modern-medical-background_1035-8989.jpg?size=338&ext=jpg)" class="home" align="center">
-
-        <div class="container-fluid" >
 <h1 align="center">Lista Empleados</h1>
 
 

@@ -196,11 +196,7 @@
             </div>
         </div>
     </div>
-</div>
 
-
-
-</div>
 <!-- /#wrapper -->
 
 <!-- jQuery -->

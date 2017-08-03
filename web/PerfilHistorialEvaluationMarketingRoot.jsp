@@ -60,7 +60,7 @@
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Empleado <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>Root<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li>
                         <a href="TypeEmployeeValidation?action=PerfilEmpleado"><i class="fa fa-fw fa-user"></i> Perfil</a>
@@ -80,18 +80,22 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li class="active">
-                    <a href="TypeEmployeeValidation?action=regresar"><i class="fa fa-fw fa-dashboard"></i> Menú</a>
+                    <a href="v?action=regresar"><i class="fa fa-fw fa-dashboard"></i> Menú</a>
                 </li>
                 <li>
-                    <a href="TypeEmployeeValidation?action=editEmployee"><i class="fa fa-fw fa-bar-chart-o"></i> Editar Cuenta</a>
+                    <a href="v?action=edit"><i class="fa fa-fw fa-bar-chart-o"></i> Editar Empresa</a>
                 </li>
                 <li>
-                    <a href="TypeEmployeeValidation?action=editCorre"><i class="fa fa-fw fa-table"></i> Editar Email</a>
+                    <a href="v?action=creEmail"><i class="fa fa-fw fa-table"></i> Crear Administrador</a>
                 </li>
-
-
                 <li>
-                    <a  href="TypeEmployeeValidation?action=PerfilEmpleado"><i class="fa fa-fw fa-wrench"></i> Perfil y Evaluaciones</a>
+                    <a href="v?action=lista"><i class="fa fa-fw fa-edit"></i> Listar Administradores</a>
+                </li>
+                <li>
+                    <a href="v?action=seleccionEmpleados"><i class="fa fa-fw fa-desktop"></i> Lista de Empleados</a>
+                </li>
+                <li>
+                    <a href="v?action=editCorre"><i class="fa fa-fw fa-wrench"></i> Editar Email</a>
                 </li>
 
 
@@ -100,11 +104,7 @@
         <!-- /.navbar-collapse -->
     </nav>
 
-
-
-    <br>
-    <br>
-<h1>Historial de Evaluacion de Informatico</h1>
+<h1>Historial de Evaluacion de Marketing</h1>
 <div class="col-sm-4">
     <c:forEach var="evaluation" items="${service.findListEvaluatsById((employee.id))}">
 
@@ -143,39 +143,40 @@
                 </tr>
                 <tr>
                     <td>Compromiso: </td> <td><c:out value=" ${evaluation.commitment_company}"/></td>
+                    <td>Puntualidad: </td><td><c:out value=" ${evaluation.punctuality}"/></td>
+                    <td>Habilidad de Idiomas: </td><td><c:out value=" ${evaluation.language_skills}"/></td>
+                </tr>
+                <tr>
+                    <td>Liderasgo: </td><td><c:out value=" ${evaluation.leadership}"/></td>
                     <td>Honestidad: </td><td><c:out value=" ${evaluation.honesty}"/></td>
-                    <td>Habilidad Idiomas: </td><td><c:out value=" ${evaluation.language_skills}"/></td>
+                    <td>Habilidad de Negocios: </td><td><c:out value=" ${evaluation.business_skills}"/></td>
                 </tr>
                 <tr>
-                    <td>Competitivo: </td><td><c:out value=" ${evaluation.competitive}"/></td>
-                    <td>Organizado: </td><td><c:out value=" ${evaluation.organized}"/></td>
-                    <td>Habilidad de Computacion: </td><td><c:out value=" ${evaluation.computer_skills}"/></td>
+                    <td>Analitico: </td><td><c:out value=" ${evaluation.analytical}"/></td>
+                    <td>Organizacion: </td><td><c:out value=" ${evaluation.organized}"/></td>
+                    <td>Conocimientos de Negocio: </td><td><c:out value=" ${evaluation.business_knowledge}"/></td>
                 </tr>
                 <tr>
-                    <td>Trabajo bajo Presion: </td><td><c:out value=" ${evaluation.work_under_pressure}"/></td>
+                    <td>Objetivo: </td><td><c:out value=" ${evaluation.objective}"/></td>
                     <td>Responsabilidad: </td><td><c:out value=" ${evaluation.responsibility}"/></td>
-                    <td>Actualizaciones: </td><td><c:out value=" ${evaluation.market_knowledge}"/></td>
+                    <td>Conocimientos de Mercado: </td><td><c:out value=" ${evaluation.market_knowledge}"/></td>
                 </tr>
                 <tr>
-                    <td>Proactivo: </td><td><c:out value=" ${evaluation.proactive}"/></td>
+                    <td>Toma de decisiones: </td><td><c:out value=" ${evaluation.decision_making}"/></td>
                     <td>Respeto: </td><td><c:out value=" ${evaluation.respect}"/></td>
-                    <td>Productivo: </td><td><c:out value=" ${evaluation.productivity}"/></td>
+                    <td>Productividad: </td><td><c:out value=" ${evaluation.productivity}"/></td>
                 </tr>
                 <tr>
                     <td></td><td></td>
                     <td></td><td></td>
-                    <td>Eficiente: </td><td><c:out value=" ${evaluation.efficiency}"/></td>
-                </tr>
-                <tr>
-                    <td></td><td></td>
-                    <td></td><td></td>
-                    <td>Dar Soluciones: </td><td><c:out value=" ${evaluation.give_successful_solutions}"/></td>
+                    <td>Comunicacion: </td><td><c:out value=" ${evaluation.communication_skills}"/></td>
                 </tr>
                 <tr>
                     <td></td><td></td>
                     <td></td><td></td>
                     <td>Innovacion: </td><td><c:out value=" ${evaluation.innovative}"/></td>
                 </tr>
+
             </table>
             <br>
             <p>Comentario: <c:out value=" ${evaluation.comment}"/></p>
@@ -187,7 +188,16 @@
     </c:forEach>
 
 </div>
+
+
+
+
 </div>
+<!-- /#wrapper -->
+
+
 
 </body>
+
 </html>
+

@@ -63,11 +63,11 @@ public class SesionCompanyServlet extends HttpServlet {
 
     public static String perfilEmployee_uri = "/PerfilPrueba.jsp";
 
-    public static String perfilHistorialEvaluEmployee_uri = "/PerfilHistorialEvaluation1.jsp";;
-    public static String perfilHistoEvaluAdminitracionEmployee_uri = "/PerfilHistorialEvaluationAdministracion.jsp";
-    public static String perfilHistoEvaluInformaticaEmployee_uri = "/PerfilHistorialEvaluationInformatica.jsp";
-    public static String perfilHistoEvaluMarketingEmployee_uri = "/PerfilHistorialEvaluationMarketing.jsp";
-    public static String perfilHistoProduccionEmployee_uri = "/PerfilHistorialEvaluationProduccion.jsp";
+    public static String perfilHistorialEvaluEmployee_uri = "/PerfilHistorialEvaluation1Root.jsp";;
+    public static String perfilHistoEvaluAdminitracionEmployee_uri = "/PerfilHistorialEvaluationAdministracionRoot.jsp";
+    public static String perfilHistoEvaluInformaticaEmployee_uri = "/PerfilHistorialEvaluationInformaticaRoot.jsp";
+    public static String perfilHistoEvaluMarketingEmployee_uri = "/PerfilHistorialEvaluationMarketingRoot.jsp";
+    public static String perfilHistoProduccionEmployee_uri = "/PerfilHistorialEvaluationProduccionRoot.jsp";
 
     public static String listaAreaEmployee_uri = "/listaXarea.jsp";
     public static String perfilCompany_uri = "/PerfilCompañia.jsp";

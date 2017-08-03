@@ -37,7 +37,7 @@
 
 </head>
 
-<body style="background-image:url(http://img.freepik.com/free-vector/modern-medical-background_1035-8989.jpg?size=338&ext=jpg)" class="fa-home">
+<body style="background-image:url(https://previews.123rf.com/images/vska/vska1302/vska130200057/17854770-gran-luz-tecnolog-a-futurista-ordenador-negocio-bandera-Foto-de-archivo.jpg)" class="fa-home">
 
 <div id="wrapper">
 
@@ -51,12 +51,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="image/logo.jpg" width="40" height="30"></a>
+            <a class="navbar-brand" href="#"><img src="image/logo.jpg" width="70" height="30"></a>
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Administrador <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Empleado<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li>
                         <a href="TypeEmployeeValidation?action=PerfilEmpleado"><i class="fa fa-fw fa-user"></i> Perfil</a>
@@ -189,8 +189,7 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
+
 
 
 

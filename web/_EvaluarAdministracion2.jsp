@@ -180,7 +180,7 @@
             </td>
         </tr>
         <tr>
-            <td>Comparte el logro con su equipo de trabajo</td>
+            <td>Organización</td>
             <td align="center"> <input type="radio" name="organized" value="1"></td>
             <td align="center">   <input type="radio" name="organized" value="3"></td>
              <td align="center">   <input type="radio" name="organized" value="6.66">
@@ -188,14 +188,14 @@
         </tr>
 
         <tr>
-            <td>Usa de manera responsable los recursos de empresa</td>
+            <td>Responsabilidad</td>
             <td align="center"> <input type="radio" name="responsibility" value="1"></td>
             <td align="center"><input type="radio" name="responsibility" value="3"></td>
                 <td align="center"><input type="radio" name="responsibility" value="6.66">
             </td>
         </tr>
         <tr>
-            <td>Muestra Transparencia y Confianza al encargarle alguna compra</td>
+            <td>Respeto</td>
             <td align="center"> <input type="radio" name="respect" value="1"></td>
             <td align="center">   <input type="radio" name="respect" value="3"></td>
               <td align="center">  <input type="radio" name="respect" value="6.66">

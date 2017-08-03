@@ -160,7 +160,7 @@
 
 
         <tr>
-            <td>Mostro su compromiso a la Empresa en Mcuhas Ocaciones</td>
+            <td>Habilidad de Comunicación</td>
             <td align="center"> <input type="radio" name="communication_skills" value="1"></td>
             <td align="center">   <input type="radio" name="communication_skills" value="2"></td>
               <td align="center">  <input type="radio" name="communication_skills" value="4.175">
@@ -168,7 +168,7 @@
         </tr>
 
         <tr>
-            <td>Tomo Decisiones para resolver distintos Problemas Ocurridos</td>
+            <td>Habilidad de Idiomas</td>
             <td align="center">  <input type="radio" name="language_skills" value="1"></td>
             <td align="center">  <input type="radio" name="language_skills" value="2"></td>
              <td align="center">   <input type="radio" name="language_skills" value="4.175">
@@ -176,7 +176,7 @@
         </tr>
 
         <tr>
-            <td>Trabajo en Equipo de manera Adecuada Sin Demasiados percances</td>
+            <td>Habilidad de Negocios</td>
             <td align="center"> <input type="radio" name="business_skills" value="1"></td>
             <td align="center">   <input type="radio" name="business_skills" value="2"></td>
             <td align="center">    <input type="radio" name="business_skills" value="4.175">
@@ -185,7 +185,7 @@
 
 
         <tr>
-            <td>Tomo la Iniciativa Para Empezar el Trabajo</td>
+            <td>Conocimiento de Negocio</td>
             <td align="center"> <input type="radio" name="business_knowledge" value="1"></td>
             <td align="center"> <input type="radio" name="business_knowledge" value="2"></td>
             <td align="center">    <input type="radio" name="business_knowledge" value="4.175">
@@ -193,19 +193,37 @@
         </tr>
 
         <tr>
-            <td>Es una persona proactiva</td>
+            <td>Optimización de Recursos</td>
             <td align="center"> <input type="radio" name="resource_optimization" value="1"></td>
             <td align="center">    <input type="radio" name="resource_optimization" value="2"></td>
              <td align="center">   <input type="radio" name="resource_optimization" value="4.175">
             </td>
         </tr>
         <tr>
-            <td>Es un empleado que trabaja en equipo para alcanzar los objetivos</td>
+            <td>Eficiencia</td>
             <td align="center"> <input type="radio" name="efficiency" value="1"></td>
             <td align="center">   <input type="radio" name="efficiency" value="2"></td>
              <td align="center">   <input type="radio" name="efficiency" value="4.175">
             </td>
         </tr>
+
+        <tr>
+            <td>Productividad</td>
+            <td align="center"> <input type="radio" name="productivity" value="1"></td>
+            <td align="center">    <input type="radio" name="productivity" value="2"></td>
+            <td align="center">   <input type="radio" name="productivity" value="4.175">
+            </td>
+        </tr>
+        <tr>
+            <td>Innovación</td>
+            <td align="center"> <input type="radio" name="innovative" value="1"></td>
+            <td align="center">   <input type="radio" name="innovative" value="2"></td>
+            <td align="center">   <input type="radio" name="innovative" value="4.175">
+            </td>
+        </tr>
+
+
+
 
 
 
@@ -222,7 +240,7 @@
 </div>
 <br>
     <input type="hidden" value="createEvaluationAdministracion3" name="action"/>
-    <p align="center"><button input type="submit" class="btn btn-primary" >Guardar y Terminar</button></p>
+    <p align="center"><button type="submit" class="btn btn-primary">Guardar y Terminar</button></p>
 </form>
 
 
