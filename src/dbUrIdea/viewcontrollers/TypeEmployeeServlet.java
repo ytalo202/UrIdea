@@ -80,6 +80,7 @@ public class TypeEmployeeServlet extends HttpServlet {
     int EmailId;
     int idCom;
     int idA;
+    int idEvaluacion;
 
     int EmpEvaluado;
     int EmpCv;
@@ -1173,6 +1174,30 @@ public class TypeEmployeeServlet extends HttpServlet {
                 else{
 
                     actionUri = perfilHistoEvaluInformaticaEmployee2_uri;
+                    break;}
+            }
+
+            case "EditarEvaluacion": {
+                idEvaluacion =Integer.parseInt(request.getParameter("idEvaluacion"));
+
+                if (idA ==5){
+                    actionUri = evaluar_uri;
+                    break;}
+                if (idA ==4){
+
+                    actionUri = evaluarAdministracion_uri;
+                    break;}
+                if (idA ==3){
+
+                    actionUri = evaluarProduccion_uri;
+                    break;}
+                if (idA ==2){
+
+                    actionUri = evaluarMarketing_uri;
+                    break;}
+                else{
+
+                    actionUri = evaluarInformatica_uri;
                     break;}
             }
 

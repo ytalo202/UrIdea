@@ -130,7 +130,8 @@
             <div class="row">
                 <div class="col-lg-12">
 
-
+<h1><c:out value="${time}"/> hora</h1>
+                    <h1><c:out value="${time3}"/> hora</h1>
 
                     <div class="mydescription">
                         <p> </p>

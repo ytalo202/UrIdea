@@ -111,7 +111,10 @@
             </table>
             <br>
             <p>Comentario: <c:out value=" ${evaluation.comment}"/></p>
-            <p>Si desea Editar la Evaluacion :</p>
+            <p align="center">
+                <a href="TypeEmployeeValidation?action=EditarEvaluacion&idEvaluacion=<c:out value="${evaluation.id}"/>">
+                    Si desea Editar la Evaluacion:</a>
+            </p>
 
         </div>
         <br>

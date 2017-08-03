@@ -58,7 +58,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Empleado <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="v?action=perfilCompany"><i class="fa fa-fw fa-user"></i> Perfil</a>
+                        <a href="TypeEmployeeValidation?action=PerfilEmpleado"><i class="fa fa-fw fa-user"></i> Perfil</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-fw fa-envelope"></i> Mensaje</a>

@@ -49,27 +49,15 @@ public class CompaniesServlet extends HttpServlet {
                 break;
             }
             case "create": {
-
-
-                //Company company= service.getComanyByEmailId(Integer.parseInt(request.getParameter("EmailId")));
                EmailAddress emailAddress =new EmailAddress();
-                Company company =new Company();
-                //company.setId(Integer.parseInt(request.getParameter("id")));
+               Company company =new Company();
                 company.setPassword(request.getParameter("password"));
                 company.setNameCompany(request.getParameter("nameCompany"));
                 company.setDescription(request.getParameter("description"));
-                company.setCompanyState
-                        (Integer.parseInt(request.getParameter("companyState")));
-
-
-                ///-------------------Probando
-              company.setEmailAdress(emailAddress.setId(Integer.parseInt(request.getParameter("EmailId"))));
-
-                //
+                company.setCompanyState(Integer.parseInt(request.getParameter("companyState")));
+                company.setEmailAdress(emailAddress.setId(Integer.parseInt(request.getParameter("EmailId"))));
                 company.setAddress(request.getParameter("address"));
                 company.setPhoneNumber(Integer.parseInt(request.getParameter("phoneNumber")));
-
-
                 String message = service.createComp(company) ?
                         "Create success" :
                         "Error while creating";

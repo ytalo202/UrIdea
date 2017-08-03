@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  * Created by Yoshinon on 14/07/2017.
@@ -121,7 +122,14 @@ public class SesionCompanyServlet extends HttpServlet {
                 company = service.getCompanyById(codCom);
                 request.setAttribute("company", company);
                 request.setAttribute("action", "edit");
-                request.setAttribute("nombreCompañia",nameCompany);
+                int año =2007;
+                Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+                Timestamp timestamp3 = Timestamp.valueOf(año+"-09-23 10:10:10.0");
+                Timestamp resul;
+                //resul= timestamp-timestamp3;
+
+                request.setAttribute("time",timestamp);
+                request.setAttribute("time3",timestamp3);
 
 
                 log(message);
