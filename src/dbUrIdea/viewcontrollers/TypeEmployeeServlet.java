@@ -190,16 +190,16 @@ public class TypeEmployeeServlet extends HttpServlet {
                 Employee employee= new Employee();
                 employee.setId(idE);
                 employee.setPassword(new String(request.getParameter("password").
-                        getBytes(),"UTF-8"));
+                        getBytes("ISO-8859-1"),"UTF-8"));
                 employee.setName(new String(request.getParameter("employee_name").
-                        getBytes(), "UTF-8"));
+                        getBytes("ISO-8859-1"), "UTF-8"));
 
                 employee.setFirstLastName(new String(request.getParameter("employee_first_last_name").
-                        getBytes(), "UTF-8"));
+                        getBytes("ISO-8859-1"), "UTF-8"));
 
 
                 employee.setSecondLastName(new String(request.getParameter("employee_second_last_name").
-                        getBytes(), "UTF-8"));
+                        getBytes("ISO-8859-1"), "UTF-8"));
 
                 employee.setDni(Integer.parseInt(request.getParameter("dni")));
 
@@ -214,12 +214,12 @@ public class TypeEmployeeServlet extends HttpServlet {
 
 
                 //employee.setAddress(request.getParameter("address"));
-                employee.setAddress(new String(direccion.getBytes(), "UTF-8"));
+                employee.setAddress(new String(direccion.getBytes("ISO-8859-1"), "UTF-8"));
 
 
 
                 employee.setDepartment(new String(request.getParameter("department")
-                        .getBytes(),"UTF-8"));
+                        .getBytes("ISO-8859-1"),"UTF-8"));
                 employee.setBirthdate(Date.valueOf(request.getParameter("birthdate")));
                 String message = service.updateEmployee2(employee) ?
                         "Update success" :
@@ -269,7 +269,7 @@ public class TypeEmployeeServlet extends HttpServlet {
                 //EmailAddress emailAddress = service.getEmailAddressById(Integer.parseInt(request.getParameter("id")));
 
                 emailAddress.setId(EmailId);
-                emailAddress.setEmailData(new String(request.getParameter("emailData").getBytes(),"UTF-8"));
+                emailAddress.setEmailData(new String(request.getParameter("emailData").getBytes("ISO-8859-1"),"UTF-8"));
                 String message = service.updateEmail(emailAddress) ?
                         "Update success" :
                         "Error while updating";
@@ -314,7 +314,7 @@ public class TypeEmployeeServlet extends HttpServlet {
             case "createEmail": {
                 EmailAddress emailAddress1= new EmailAddress();
 
-                email=new String(request.getParameter("emailData").getBytes(),"UTF-8");
+                email=new String(request.getParameter("emailData").getBytes("ISO-8859-1"),"UTF-8");
                 emailAddress1.setEmailData(email);
 
                 String message = service.createEmail(emailAddress1) ?
@@ -360,8 +360,8 @@ public class TypeEmployeeServlet extends HttpServlet {
 
 
 
-                employee.setPassword(new String(request.getParameter("password").getBytes(),"UTF-8"));
-                employee.setName(new String(request.getParameter("employee_name").getBytes(),"UTF-8"));
+                employee.setPassword(new String(request.getParameter("password").getBytes("ISO-8859-1"),"UTF-8"));
+                employee.setName(new String(request.getParameter("employee_name").getBytes("ISO-8859-1"),"UTF-8"));
                 employee.setDni(Integer.parseInt(request.getParameter("dni")));
                 String message = service.createEmployee2(employee) ?
                         "Create success" :
@@ -496,7 +496,7 @@ public class TypeEmployeeServlet extends HttpServlet {
                 evaluation.setCommunication_skills(comunicacion);
                 evaluation.setInnovative(innovacion);
                 evaluation.setAvg_grade(avg);
-                evaluation.setComment(new String(request.getParameter("comment").getBytes(),"UTF-8"));
+                evaluation.setComment(new String(request.getParameter("comment").getBytes("ISO-8859-1"),"UTF-8"));
 
                 String message = service.createEvaluationAdministracion(evaluation) ?
                         "Create success" :
@@ -622,7 +622,7 @@ public class TypeEmployeeServlet extends HttpServlet {
                 evaluation.setResource_optimization(optimisar);
                 evaluation.setInnovative(innovacion);
                 evaluation.setAvg_grade(avg);
-                evaluation.setComment(new String(request.getParameter("comment").getBytes(),"UTF-8"));
+                evaluation.setComment(new String(request.getParameter("comment").getBytes("ISO-8859-1"),"UTF-8"));
 
                 String message = service.createEvaluationProduccion(evaluation) ?
                         "Create success" :
@@ -792,7 +792,7 @@ public class TypeEmployeeServlet extends HttpServlet {
                 evaluation.setCommunication_skills(comunicacion);
                 evaluation.setInnovative(innovacion);
                 evaluation.setAvg_grade(avg);
-                evaluation.setComment(new String(request.getParameter("comment").getBytes(),"UTF-8"));
+                evaluation.setComment(new String(request.getParameter("comment").getBytes("ISO-8859-1"),"UTF-8"));
 
                 String message = service.createEvaluationMarketing(evaluation) ?
                         "Create success" :
@@ -865,7 +865,7 @@ public class TypeEmployeeServlet extends HttpServlet {
                 evaluation.setGive_successful_solutions(soluciones);
                 evaluation.setInnovative(innovacion);
                 evaluation.setAvg_grade(avg);
-                evaluation.setComment(new String(request.getParameter("comment").getBytes(),"UTF-8"));
+                evaluation.setComment(new String(request.getParameter("comment").getBytes("ISO-8859-1"),"UTF-8"));
 
                 String message = service.createEvaluationInformatica(evaluation) ?
                         "Create success" :
@@ -931,7 +931,7 @@ public class TypeEmployeeServlet extends HttpServlet {
                 evaluation.setProductivity(productividad);
                 evaluation.setInnovative(innovacion);
                 evaluation.setAvg_grade(avg);
-                evaluation.setComment(new String(request.getParameter("comment").getBytes(),"UTF-8"));
+                evaluation.setComment(new String(request.getParameter("comment").getBytes("ISO-8859-1"),"UTF-8"));
 
                 String message = service.createEvaluationPracticantes(evaluation) ?
                         "Create success" :
@@ -958,7 +958,7 @@ public class TypeEmployeeServlet extends HttpServlet {
                 cv.setEmployee(employee.setId(EmpCv));
 
                 cv.setCvType(Integer.parseInt(request.getParameter("cv_type")));
-                cv.setDescription(new String(request.getParameter("description").getBytes(),"UTF-8"));
+                cv.setDescription(new String(request.getParameter("description").getBytes("ISO-8859-1"),"UTF-8"));
                 String message = service.createCv(cv) ?
                         "Create success" :
                         "Error while creating";
