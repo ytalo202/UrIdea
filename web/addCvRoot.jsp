@@ -205,26 +205,29 @@
 
 
     <!-- Page Heading -->
+<h1>Agregar Informacion al Cv</h1>
+
+    <div align="center">
+
+        <form action="v" method="post">
+
+            <h1>Agregar Caracteristicas A Cv</h1>
+
+            <p><select name="cv_type">
+                <option value="1" >Experienza</option>
+                <option value="2" >Estudios</option>
+            </select></p>
+
+            <p >description
+                <textarea name="description"
+                          cols="30" rows="10"></textarea>
+            </p>
 
 
-    <form action="v" method="post">
-
-
-
-        <select name="cv_type">
-            <option value="1" >Experienza</option>
-            <option value="2" >Estudios</option>
-        </select>
-
-        <p>description
-            <textarea name="description"
-                      cols="30" rows="10"></textarea>
-        </p>
-
-
-        <input type="hidden" value="addCv2" name="action"/>
-        <input type="submit"/>
-    </form>
+            <input type="hidden" value="addCv2" name="action"/>
+            <p>  <button input type="submit" class="btn btn-primary">Guardar</button></p>
+        </form>
+    </div>
 
 
 

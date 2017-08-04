@@ -97,6 +97,7 @@
         </div>
         <!-- /.navbar-collapse -->
     </nav>
+    <h1>Agregar Informacion al Cv</h1>
 
 <div align="center">
 
