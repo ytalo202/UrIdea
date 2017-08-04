@@ -54,6 +54,16 @@ public class CvsEntity extends BaseEntity {
                 emailAddressesEntity,areasEntity);
     }
 
+    public List<Cv> findByCvFecha(int id,
+                                         EmployeesEntity employeesEntity,
+                                         CompaniesEntity companiesEntity,
+                                         EmailAddressesEntity emailAddressesEntity,AreasEntity areasEntity
+    ) {
+        String criteria = "id = " + id;
+        return findByCriteriaFecha(criteria, employeesEntity, companiesEntity,
+                emailAddressesEntity,areasEntity);
+    }
+
     public List<Cv> findByCriteria(String criteria, EmployeesEntity employeesEntity,
                                    CompaniesEntity companiesEntity,
                                    EmailAddressesEntity emailAddressesEntity,AreasEntity areasEntity
@@ -65,6 +75,26 @@ public class CvsEntity extends BaseEntity {
             ResultSet rs = getConnection().createStatement().executeQuery(sql);
             if(rs == null) return null;
             while(rs.next()) cvs.add(Cv.build(rs, employeesEntity, companiesEntity,  emailAddressesEntity,areasEntity
+            ));
+            return cvs;
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return cvs;
+    }
+
+
+    public List<Cv> findByCriteriaFecha(String criteria, EmployeesEntity employeesEntity,
+                                   CompaniesEntity companiesEntity,
+                                   EmailAddressesEntity emailAddressesEntity,AreasEntity areasEntity
+    ) {
+        String sql = getDefaultCv() +
+                (criteria.equalsIgnoreCase("") ? "" : " WHERE " + criteria);
+        List<Cv> cvs = new ArrayList<>();
+        try {
+            ResultSet rs = getConnection().createStatement().executeQuery(sql);
+            if(rs == null) return null;
+            while(rs.next()) cvs.add(Cv.buildFecha(rs, employeesEntity, companiesEntity,  emailAddressesEntity,areasEntity
             ));
             return cvs;
         } catch(SQLException e) {

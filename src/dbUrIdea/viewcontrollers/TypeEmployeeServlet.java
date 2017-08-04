@@ -100,9 +100,16 @@ public class TypeEmployeeServlet extends HttpServlet {
     public static String PerfilAdmin_uri = "/PerfilAdmin.jsp";
     public static String PerfilAdminEmpleado_uri = "/PerfilAdminEmpleado.jsp";
     public static String Notime_uri = "/timeF.jsp";
+    public static String PerfilAdmin_Empleadouri = "/PerfilAdminEmpleado.jsp";
+
+    public static String noTimeCv = "/noTimeCvEmpleado.jsp";
+    public static String EditarCv = "/CvAdmEditarEmpleado.jsp";
+
+
 
     String email;
 
+    int evaluador;
     int idE ;
     int employeeType;
     int EmailId;
@@ -114,6 +121,7 @@ public class TypeEmployeeServlet extends HttpServlet {
     int EmpCv;
     int EmpPerfil;
     int areaId;
+    int idCv;
 
 
 
@@ -165,6 +173,30 @@ public class TypeEmployeeServlet extends HttpServlet {
         String action = request.getParameter("action");
         switch(action) {
 
+
+            case "EditarCv2": {
+
+                Cv cv= new Cv();
+                cv.setId(idCv);
+                cv.setCvType(Integer.parseInt(request.getParameter("cv_type")));
+                cv.setDescription(new String(request.getParameter("description").getBytes("ISO-8859-1"),"UTF-8"));
+                String message = service.updateCv(cv) ?
+                        "Update success" :
+                        "Error while updating";
+                log(message);
+
+                Employee employee1 = service.getEmployeeById(idE);
+
+                request.setAttribute("employee", employee1);
+                request.setAttribute("action", "edit");
+
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(MenuAdmin_URI );
+                dispatcher.forward(request, response);
+                break;
+
+            }
 
             case "select": {
                 employeeType = Integer.parseInt(request.getParameter("EmployeeType"));
@@ -1760,6 +1792,17 @@ public class TypeEmployeeServlet extends HttpServlet {
                 break;
             }
 
+
+            case "PerfilAdmin2": {
+                evaluador =Integer.parseInt(request.getParameter("idEmployee"));
+
+                Employee employee = service.getEmployeeById(evaluador);
+                request.setAttribute("employee", employee);
+                request.setAttribute("action", "Perfil");
+                actionUri = PerfilAdmin_Empleadouri;
+                break;
+            }
+
             case "EditarEvaluacion": {
                 idEvaluacion =Integer.parseInt(request.getParameter("idEvaluacion"));
                 int year = Integer.parseInt(request.getParameter("year"));
@@ -1840,6 +1883,49 @@ public class TypeEmployeeServlet extends HttpServlet {
 
 
 
+            }
+
+
+            case "EditarCvEmpleado": {
+                idCv = Integer.parseInt(request.getParameter("idCv"));
+                int year = Integer.parseInt(request.getParameter("year"));
+                int month = Integer.parseInt(request.getParameter("month"));
+                int day = Integer.parseInt(request.getParameter("day"));
+
+
+                if (month == 12) {
+                    month = 1;
+                    year++;
+                    Timestamp timeNow = new Timestamp(System.currentTimeMillis());
+                    Timestamp timeLimite = Timestamp.valueOf(year + "-" + month + "-" + day + " 0:0:0.0");
+                    if (timeNow.before(timeLimite)) {
+
+                        actionUri = EditarCv;
+                        break;
+
+                    } else {
+                        actionUri = noTimeCv;
+                        break;
+                    }
+
+
+                } else {
+                    month++;
+                    Timestamp timeNow = new Timestamp(System.currentTimeMillis());
+                    Timestamp timeLimite = Timestamp.valueOf(year + "-" + month + "-" + day + " 0:0:0.0");
+
+                    if (timeNow.before(timeLimite)) {
+                        actionUri = EditarCv;
+                        break;
+
+
+                    } else {
+                        actionUri = noTimeCv;
+                        break;
+                    }
+
+
+                }
             }
 
 

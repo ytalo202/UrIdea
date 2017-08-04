@@ -529,6 +529,15 @@ public class HRDataStore {
     }
 
 
+    public List<Cv> findCvFecha(int id) {
+
+        return getCvsEntity().findByCvFecha(id,
+                getEmployeesEntity(),
+                getCompaniesEntity(),
+                getEmailAddressesEntity(),getAreasEntity());
+    }
+
+
 
 }
 

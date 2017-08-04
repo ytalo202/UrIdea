@@ -399,4 +399,11 @@ public class HRService {
         return getDataStore().findCvByIdEmployeeTypo(id,type);
     }
 
+    public List<Cv> findCvFecha(int id) {
+
+        return getDataStore().findCvFecha(id);
+    }
+
+
+
 }

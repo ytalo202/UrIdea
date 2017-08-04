@@ -21,6 +21,10 @@ public class BaseEntity {
             " from_unixtime( UNIX_TIMESTAMP(  evaluation_date_and_time),'%m'),from_unixtime( UNIX_TIMESTAMP(  evaluation_date_and_time),'%d')" +
             " from ";
 
+    private static String Base_Cv= "SELECT id,from_unixtime( UNIX_TIMESTAMP(date_cv),'%Y')," +
+            " from_unixtime( UNIX_TIMESTAMP(date_cv),'%m'),from_unixtime( UNIX_TIMESTAMP(date_cv),'%d')" +
+            " from ";
+
 
     private String tableName;
 
@@ -78,6 +82,14 @@ public class BaseEntity {
         Base_Evaluation = base_Evaluation;
     }
 
+    public static String getBase_Cv() {
+        return Base_Cv;
+    }
+
+    public static void setBase_Cv(String base_Cv) {
+        Base_Cv = base_Cv;
+    }
+
 
     public Connection getConnection() {
         return connection;
@@ -116,6 +128,10 @@ public class BaseEntity {
     public String getDefaultAgvQuery() {
 
         return  Base_Avg+ getTableName();
+    }
+    public String getDefaultCv() {
+
+        return  Base_Cv+ getTableName();
     }
 
     public String getDefaultEmailQuery() {

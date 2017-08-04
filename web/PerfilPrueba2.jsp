@@ -224,11 +224,37 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <h1>Cv</h1>
-                                <c:forEach var="cv" items="${service.findAllCvsByIdEmployee((employee.id))}">
+                                <h2>Estudios</h2>
+                                <c:forEach var="cv" items="${service.findCvByIdEmployeeTypo(employee.id,2)}">
 
                                     <p>
-                                        <c:out value="${cv.description}"/>
+                                        <c:out value="${cv.description} -> "/>
+                                        <c:out value="${cv.date_cv} -> "/>
+                                        <c:forEach var="cv" items="${service.findCvFecha(cv.id)}">
+
+                                            <a href="TypeEmployeeValidation?action=EditarCvAdmin&idCv=<c:out value="${cv.id}"/>&year=<c:out value="${cv.year}"/>&month=<c:out value="${cv.month}"/>&day=<c:out value="${cv.day}"/>">
+                                                Si desea Editar El Cv:
+                                            </a>
+
+                                        </c:forEach>
+
+
+                                    </p>
+                                </c:forEach>
+
+                                <h2>Experienzas</h2>
+                                <c:forEach var="cv" items="${service.findCvByIdEmployeeTypo(employee.id,1)}">
+                                    <p>
+                                        <c:out value="${cv.description} -> "/>
+                                        <c:out value="${cv.date_cv} -> "/>
+                                        <c:forEach var="cv" items="${service.findCvFecha(cv.id)}">
+
+                                            <a href="TypeEmployeeValidation?action=EditarCvEmpleado&idCv=<c:out value="${cv.id}"/>&year=<c:out value="${cv.year}"/>&month=<c:out value="${cv.month}"/>&day=<c:out value="${cv.day}"/>">
+                                                Si desea Editar El Cv:
+                                            </a>
+
+                                        </c:forEach>
+
 
                                     </p>
                                 </c:forEach>

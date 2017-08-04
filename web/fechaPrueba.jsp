@@ -18,11 +18,12 @@
 <b:jumbotron>
     <jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
 
-    <c:forEach var="evaluation" items="${service.findFechaEvaluation(1)}">
-        <c:out value="${evaluation.id}"/><br>
-        <p><c:out value="${evaluation.year}"/>-
-        <c:out value="${evaluation.month}"/>-
-        <c:out value="${evaluation.day}"/></p>
+    <c:forEach var="cv" items="${service.findCvFecha(1)}">
+
+        <a href="v?action=EditarCvAdmin&idCv=<c:out value="${cv.id}"/>&year=<c:out value="${cv.year}"/>&month=<c:out value="${cv.month}"/>&day=<c:out value="${cv.day}"/>">
+            Si desea Editar El Cv:
+        </a>
+        <p><c:out value="${cv.id}"/>----<c:out value="${cv.year}"/>/<c:out value="${cv.month}"/>/<c:out value="${cv.day}"/></p>
 
     </c:forEach>
 

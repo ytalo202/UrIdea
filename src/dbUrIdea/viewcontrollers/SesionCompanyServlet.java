@@ -59,6 +59,8 @@ public class SesionCompanyServlet extends HttpServlet {
     public static String ChangeEmpl_URI = "/changeEmployee.jsp";
 
     public static String perfilEmployee_uri = "/PerfilPrueba.jsp";
+    public static String perfilAdmin_uri = "/PerfilAdminRoot.jsp";
+
 
     public static String perfilHistorialEvaluEmployee_uri = "/PerfilHistorialEvaluation1Root.jsp";;
     public static String perfilHistoEvaluAdminitracionEmployee_uri = "/PerfilHistorialEvaluationAdministracionRoot.jsp";
@@ -72,6 +74,8 @@ public class SesionCompanyServlet extends HttpServlet {
     public static String changeAreaEmpl_uri = "/CambioArea.jsp";
     public static String addCv_uri = "/addCvRoot.jsp";
 
+    public static String noTimeCv = "/noTimeCv.jsp";
+    public static String EditarCv = "/CvAdmEditar.jsp";
 
 
     int codCom;
@@ -82,6 +86,7 @@ public class SesionCompanyServlet extends HttpServlet {
     int areaId;
     int changeEmpl;
     int  EmpCv;
+    int idCv;
 
 
 
@@ -132,6 +137,28 @@ public class SesionCompanyServlet extends HttpServlet {
                 break;
 
 
+            }
+
+
+            case "EditarCv2": {
+
+                Cv cv= new Cv();
+                cv.setId(idCv);
+                cv.setCvType(Integer.parseInt(request.getParameter("cv_type")));
+                cv.setDescription(new String(request.getParameter("description").getBytes("ISO-8859-1"),"UTF-8"));
+                String message = service.updateCv(cv) ?
+                        "Update success" :
+                        "Error while updating";
+                log(message);
+
+                Company company = service.getCompanyById(codCom);
+                request.setAttribute("company", company);
+                request.setAttribute("action", "edit");
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(MenuRoot_URI);
+                dispatcher.forward(request, response);
+                break;
             }
 
             case "addCv2": {
@@ -645,6 +672,16 @@ public class SesionCompanyServlet extends HttpServlet {
                 break;
             }
 
+            case "PerfilAdmin": {
+                EmpEvaluado =Integer.parseInt(request.getParameter("idEmployee"));
+
+                Employee employee = service.getEmployeeById(EmpEvaluado);
+                request.setAttribute("employee", employee);
+                request.setAttribute("action", "Perfil");
+                actionUri = perfilAdmin_uri;
+                break;
+            }
+
             case "EvaluationHistorial": {
                 EmpEvaluado =Integer.parseInt(request.getParameter("idEmployee"));
                 areaId =Integer.parseInt(request.getParameter("idArea"));
@@ -689,6 +726,49 @@ public class SesionCompanyServlet extends HttpServlet {
                 EmpCv =Integer.parseInt(request.getParameter("idEmpleado"));
                 actionUri = addCv_uri;
                 break;
+            }
+
+
+            case "EditarCvAdmin": {
+                idCv = Integer.parseInt(request.getParameter("idCv"));
+                int year = Integer.parseInt(request.getParameter("year"));
+                int month = Integer.parseInt(request.getParameter("month"));
+                int day = Integer.parseInt(request.getParameter("day"));
+
+
+                if (month == 12) {
+                    month = 1;
+                    year++;
+                    Timestamp timeNow = new Timestamp(System.currentTimeMillis());
+                    Timestamp timeLimite = Timestamp.valueOf(year + "-" + month + "-" + day + " 0:0:0.0");
+                    if (timeNow.before(timeLimite)) {
+
+                        actionUri = EditarCv;
+                        break;
+
+                    } else {
+                        actionUri = noTimeCv;
+                        break;
+                    }
+
+
+                } else {
+                    month++;
+                    Timestamp timeNow = new Timestamp(System.currentTimeMillis());
+                    Timestamp timeLimite = Timestamp.valueOf(year + "-" + month + "-" + day + " 0:0:0.0");
+
+                    if (timeNow.before(timeLimite)) {
+                        actionUri = EditarCv;
+                        break;
+
+
+                    } else {
+                        actionUri = noTimeCv;
+                        break;
+                    }
+
+
+                }
             }
 
 

@@ -158,7 +158,9 @@
             <p>Fecha: <c:out value=" ${evaluation.date}"/></p>
                                 <p>Evaluador: <c:out value=" ${evaluation.idEvaluator.name}"/></p>
                                 <p> Apellido Paterno  <c:out value=" ${evaluation.idEvaluator.firstLastName}"/></p>
-             <p> Apellido Materno<c:out value=" ${evaluation.idEvaluator.secondLastName}"/></p>
+             <p> Apellido Materno<c:out value=" ${evaluation.idEvaluator.secondLastName} "/> <a href="TypeEmployeeValidation?action=PerfilAdmin2&idEmployee=<c:out value="${evaluation.idEvaluator.id}"/>">
+                 <img src="https://userscontent2.emaze.com/images/26a5e505-30d9-4e65-aafe-1e6943cb2c0b/9dfd4e2547adb3530209ae02a0623a44.png" width="20px" height="20px" alt="Cambiar a Administrador" class="img-responsive">
+             </a></p>
                                 <div class="table-responsive">
             <table class="table table-bordered">
                 <tr>

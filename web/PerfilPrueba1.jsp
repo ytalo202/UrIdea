@@ -225,11 +225,24 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <h1>Cv</h1>
-                                <c:forEach var="cv" items="${service.findAllCvsByIdEmployee((employee.id))}">
+                                <h2>Estudios</h2>
+                                <c:forEach var="cv" items="${service.findCvByIdEmployeeTypo(employee.id,2)}">
 
                                     <p>
-                                        <c:out value="${cv.description}"/>
+                                        <c:out value="${cv.description} -> "/>
+                                        <c:out value="${cv.date_cv}"/>
+
+
+                                    </p>
+                                </c:forEach>
+
+                                <h2>Experienzas</h2>
+                                <c:forEach var="cv" items="${service.findCvByIdEmployeeTypo(employee.id,1)}">
+                                    <p>
+                                        <c:out value="${cv.description} -> "/>
+                                        <c:out value="${cv.date_cv}"/>
+
+
 
                                     </p>
                                 </c:forEach>

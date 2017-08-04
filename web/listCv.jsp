@@ -19,6 +19,7 @@
     <p><c:out value="${cv.employee.name}"/>
         <c:out value="${cv.cvType}"/>
         <c:out value="${cv.description}"/>
+        <c:out value="${cv.date_cv}"/>
         <a href="cV?action=edit&id=<c:out value="${cv.id}"/>">
             Edit
         </a>
