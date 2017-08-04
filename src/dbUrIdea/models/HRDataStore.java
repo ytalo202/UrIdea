@@ -489,6 +489,14 @@ public class HRDataStore {
         );
     }
 
+    public List<Cv> findCvByIdEmployeeTypo(int id,int type) {
+
+        return getCvsEntity().findByIdEmployeeTypo(id,type,
+                getEmployeesEntity(),getCompaniesEntity(),
+                getEmailAddressesEntity(),getAreasEntity()
+        );
+    }
+
     public List<Evaluation> findAllEvaluations() {
 
         return getEvaluationsEntity().findAll(

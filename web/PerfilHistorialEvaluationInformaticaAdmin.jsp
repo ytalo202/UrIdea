@@ -119,7 +119,7 @@
         <!-- /.navbar-collapse -->
     </nav>
 
-<br>
+    <br>
     <br>
 <h1 align="center">Historial de Evaluacion de Informatico</h1>
 <div class="col-sm-4">
@@ -219,18 +219,23 @@
                 </p>
 
             </c:forEach>
-
-
-        </div>
-        <br>
-
-    </c:forEach>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+
+
             </section>
         </div>
+
+    </c:forEach>
+
+
+</div>
+
+
+
 </div>
 
 </div>

@@ -1,8 +1,8 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://bootstrapjsp.org/" prefix="b" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
+<jsp:include page="bootstrap.jsp"/>
 <html lang="es">
 
 <head>
@@ -14,6 +14,10 @@
     <meta name="author" content="">
 
     <title>SB Admin - Bootstrap Admin Template</title>
+
+
+
+
 
     <!-- Bootstrap Core CSS -->
     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin/css/bootstrap.min.css" rel="stylesheet">
@@ -34,20 +38,27 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
+
+
     <style>
         th{
             height: 24px;
             line-height: 24px;
-            color: #c7ddef;
-            background-color:#3b5998;
+            color: #e2e2e2;
+            background-color: #ac2925;
             text-align: center;
             vertical-align: middle;
         }
+
+
     </style>
+
+
 
 </head>
 
-<body style="background-image:url(https://previews.123rf.com/images/vska/vska1302/vska130200057/17854770-gran-luz-tecnolog-a-futurista-ordenador-negocio-bandera-Foto-de-archivo.jpg)" class="fa-home">
+<body style="background-image:url(https://previews.123rf.com/images/vska/vska1302/vska130200153/18156383-abstract-circuit-cyber-high-technology-business-background-Stock-Vector.jpg)" class="fa-home">
 
 <div id="wrapper">
 
@@ -66,10 +77,10 @@
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Empleado <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Administrador <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="TypeEmployeeValidation?action=PerfilEmpleado"><i class="fa fa-fw fa-user"></i> Perfil</a>
+                        <a href="v?action=perfilCompany"><i class="fa fa-fw fa-user"></i> Perfil</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-fw fa-envelope"></i> Mensaje</a>
@@ -86,18 +97,20 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li class="active">
-                    <a href="TypeEmployeeValidation?action=regresar"><i class="fa fa-fw fa-dashboard"></i> Menú</a>
+                    <a href="v?action=regresar"><i class="fa fa-fw fa-dashboard"></i> Menú</a>
                 </li>
                 <li>
                     <a href="TypeEmployeeValidation?action=editEmployee"><i class="fa fa-fw fa-bar-chart-o"></i> Editar Cuenta</a>
                 </li>
                 <li>
-                    <a href="TypeEmployeeValidation?action=editCorre"><i class="fa fa-fw fa-table"></i> Editar Email</a>
+                    <a href="newEmpEmail2.jsp"><i class="fa fa-fw fa-table"></i> Agregar Empleado</a>
+                </li>
+                <li>
+                    <a href="TypeEmployeeValidation?action=lista"><i class="fa fa-fw fa-edit"></i> Listar Empleados</a>
                 </li>
 
-
                 <li>
-                    <a  href="TypeEmployeeValidation?action=PerfilEmpleado"><i class="fa fa-fw fa-wrench"></i> Perfil y Evaluaciones</a>
+                    <a href="TypeEmployeeValidation?action=editCorre"><i class="fa fa-fw fa-wrench"></i> Editar Email</a>
                 </li>
 
 
@@ -105,10 +118,6 @@
         </div>
         <!-- /.navbar-collapse -->
     </nav>
-<br>
-    <br>
-
-
 <h1 align="center">Historial de Evaluacion del Area de  Administracion</h1>
 <div class="col-sm-4">
     <c:forEach var="evaluation" items="${service.findListEvaluatsById((employee.id))}">
@@ -206,22 +215,25 @@
             <br>
             <p>Comentario: <c:out value=" ${evaluation.comment}"/></p>
 
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </section>
         </div>
         <br>
 
     </c:forEach>
 
-</div>
 
-                    </div>
-                </div>
-
-            </section>
-        </div>
 </div>
 
 </div>
+
 </div>
 <!-- /#wrapper -->
 

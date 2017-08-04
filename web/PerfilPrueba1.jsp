@@ -208,7 +208,7 @@
 
 
 
-                                <a href="v?action=EvaluationHistorial&idEmployee=
+                                <a href="TypeEmployeeValidation?action=EvaluationHistorial&idEmployee=
 <c:out value="${evaluation.idUserEmployee.id}"/>&idArea=<c:out value="${evaluation.idUserEmployee.area.id}"/>">
                                     Ver Historial de Evaluaciones
                                 </a>

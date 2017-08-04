@@ -147,7 +147,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        <a href="v?action=perfilCompany"><i class="fa fa-fw fa-user"></i> Profile</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
@@ -157,7 +157,7 @@
                     </li>
                     <li class="divider"></li>
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        <a href="index.jsp"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                     </li>
                 </ul>
             </li>
@@ -166,7 +166,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li class="active">
-                    <a href="menuRoot.jsp"><i class="fa fa-fw fa-dashboard"></i> Menú</a>
+                    <a href="#"><i class="fa fa-fw fa-dashboard"></i> Menú</a>
                 </li>
                 <li>
                     <a href="v?action=edit"><i class="fa fa-fw fa-bar-chart-o"></i> Editar Empresa</a>
@@ -245,8 +245,9 @@
                                             <th>Dni</th>
                                             <th>Correo Electrónico</th>
                                             <th>Área</th>
-                                            <th>Cambiar</th>
-                                            <th>Agregar Cararteristica</th>
+                                            <th>Promover a Admin</th>
+                                            <th>Perfil</th>
+                                            <th>Cambiar de Area</th>
                                         </tr>
 
 
@@ -259,13 +260,19 @@
     <td><c:out value="${employee.emailAddress.emailData}"/></td>
     <td><c:out value="${employee.area.nameArea}"/></td>
 
-    <td> <a href="v?action=editTypeAdmin&idEmployee=<c:out value="${employee.id}"/>">
+    <td><a href="v?action=editTypeAdmin&idEmployee=<c:out value="${employee.id}"/>">
         <img src="https://userscontent2.emaze.com/images/26a5e505-30d9-4e65-aafe-1e6943cb2c0b/9dfd4e2547adb3530209ae02a0623a44.png" width="20px" height="20px" alt="Cambiar a Administrador" class="img-responsive">
     </a></td>
 
-   <td><a href="TypeEmployeeValidation?action=addCv&idEmpleado=<c:out value="${employee.id}"/>">
-       <img src="https://userscontent2.emaze.com/images/26a5e505-30d9-4e65-aafe-1e6943cb2c0b/9dfd4e2547adb3530209ae02a0623a44.png" width="20px" height="20px" alt="Cambiar a Administrador" class="img-responsive">
-   </a></td>
+    <td> <a href="v?action=Perfil&idEmployee=<c:out value="${employee.id}"/>">
+        <img src="https://userscontent2.emaze.com/images/26a5e505-30d9-4e65-aafe-1e6943cb2c0b/9dfd4e2547adb3530209ae02a0623a44.png" width="20px" height="20px" alt="Cambiar a Administrador" class="img-responsive">
+    </a></td>
+    <td align="center">
+        <a href="v?action=editChangeArea&idEmployee=
+<c:out value="${employee.id}" />" >
+            <img src="https://userscontent2.emaze.com/images/26a5e505-30d9-4e65-aafe-1e6943cb2c0b/9dfd4e2547adb3530209ae02a0623a44.png" width="20px" height="20px" alt="Cambiar a Empleado" class="img-responsive">
+        </a>
+    </td>
 
 
 </c:forEach>

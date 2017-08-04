@@ -108,8 +108,7 @@
         </div>
         <!-- /.navbar-collapse -->
     </nav>
-
-<br>
+    <br>
     <br>
 
 <h1 align="center">Historial de Evaluacion de Practicante</h1>
@@ -190,26 +189,30 @@
                     <td></td><td></td>
                 </tr>
         </table>
-            <br>
+                                </div>
+                                <br>
+
             <p>Comentario: <c:out value=" ${evaluation.comment}"/></p>
+                                </div>
 
-        </div>
-<br>
-
-</c:forEach>
-
-</div>
+                            </div>
                         </div>
                     </div>
 
+
+
             </section>
         </div>
-</div>
+    <br>
+
+</c:forEach>
+
 
 </div>
 
+</div>
 
-       </div>
+</div>
 <!-- /#wrapper -->
 
 <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/jquery.js"></script>

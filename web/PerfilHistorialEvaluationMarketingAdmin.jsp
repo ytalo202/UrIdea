@@ -19,7 +19,6 @@
 
 
 
-
     <!-- Bootstrap Core CSS -->
     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin/css/bootstrap.min.css" rel="stylesheet">
 
@@ -39,21 +38,21 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
+
+
     <style>
         th{
             height: 24px;
             line-height: 24px;
-            color: #dbdbdb;
-            background-color: darkmagenta;
+            color: #e2e2e2;
+            background-color: #ac2925;
             text-align: center;
             vertical-align: middle;
         }
 
 
     </style>
-
-
-
 
 
 
@@ -119,135 +118,146 @@
         </div>
         <!-- /.navbar-collapse -->
     </nav>
+
     <br>
     <br>
-<h1 align="center">Historial de Evaluacion del Area de Marketing</h1>
-<div class="col-sm-4">
-    <c:forEach var="evaluation" items="${service.findListEvaluatsById((employee.id))}">
+    <h1 align="center">Historial de Evaluacion del Area de Marketing</h1>
+    <div class="col-sm-4">
+        <c:forEach var="evaluation" items="${service.findListEvaluatsById((employee.id))}">
 
 
-        <a href="#<c:out value="${evaluation.id}"/>" data-toggle="collapse">
-            <div class="progress">
-                <div class="progress-bar progress-bar-success"
-                     style="width: <c:out value="${evaluation.grade}"/>%">
-                    <span class="sr-only">35% Complete (success)</span>
-                    <c:out value="${evaluation.grade}"/>%
+            <a href="#<c:out value="${evaluation.id}"/>" data-toggle="collapse">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success"
+                         style="width: <c:out value="${evaluation.grade}"/>%">
+                        <span class="sr-only">35% Complete (success)</span>
+                        <c:out value="${evaluation.grade}"/>%
+                    </div>
+                    <div class="progress-bar progress-bar-striped active" style="width: <c:out value=" ${evaluation.grade1}"/>%">
+                        <span class="sr-only">20% Complete (warning)</span>
+                        <c:out value="${evaluation.grade1}"/>%
+                    </div>
+                    <div class="progress-bar progress-bar-danger" style="width: <c:out value=" ${evaluation.grade2}"/>%">
+                        <span class="sr-only">10% Complete (danger)</span>
+                        <c:out value="${evaluation.grade2}"/>%
+                    </div>
                 </div>
-                <div class="progress-bar progress-bar-striped active" style="width: <c:out value=" ${evaluation.grade1}"/>%">
-                    <span class="sr-only">20% Complete (warning)</span>
-                    <c:out value="${evaluation.grade1}"/>%
-                </div>
-                <div class="progress-bar progress-bar-danger" style="width: <c:out value=" ${evaluation.grade2}"/>%">
-                    <span class="sr-only">10% Complete (danger)</span>
-                    <c:out value="${evaluation.grade2}"/>%
-                </div>
+
+            </a>
+            <div id="<c:out value="${evaluation.id}"/>" class="collapse">
+
+                <section class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title" align="center">Descripción</h3>
+                                </div>
+                                <div class="panel-body">
+
+
+                                    <p>promedio: <c:out value="${evaluation.avg_grade}"/></p>
+                                    <p>Fecha: <c:out value=" ${evaluation.date}"/></p>
+                                    <p>Evaluador: <c:out value=" ${evaluation.idEvaluator.name}"/></p>
+                                    <p>Apellido Paterno     <c:out value=" ${evaluation.idEvaluator.firstLastName}"/></p>
+                                    <p>Apellido Materno    <c:out value=" ${evaluation.idEvaluator.secondLastName}"/></p>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <tr>
+                                                <th >Evaluacion de Actitud</th>
+                                                <th >Puntaje </th>
+                                                <th >Evaluacion de Valores</th>
+                                                <th >Puntaje </th>
+                                                <th >Evaluacion de Crecimiento Profecional</th>
+                                                <th >Puntaje </th>
+                                            </tr>
+                                            <tr>
+                                                <td>Compromiso: </td> <td><c:out value=" ${evaluation.commitment_company}"/></td>
+                                                <td>Puntualidad: </td><td><c:out value=" ${evaluation.punctuality}"/></td>
+                                                <td>Habilidad de Idiomas: </td><td><c:out value=" ${evaluation.language_skills}"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Liderasgo: </td><td><c:out value=" ${evaluation.leadership}"/></td>
+                                                <td>Honestidad: </td><td><c:out value=" ${evaluation.honesty}"/></td>
+                                                <td>Habilidad de Negocios: </td><td><c:out value=" ${evaluation.business_skills}"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Analitico: </td><td><c:out value=" ${evaluation.analytical}"/></td>
+                                                <td>Organizacion: </td><td><c:out value=" ${evaluation.organized}"/></td>
+                                                <td>Conocimientos de Negocio: </td><td><c:out value=" ${evaluation.business_knowledge}"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Objetivo: </td><td><c:out value=" ${evaluation.objective}"/></td>
+                                                <td>Responsabilidad: </td><td><c:out value=" ${evaluation.responsibility}"/></td>
+                                                <td>Conocimientos de Mercado: </td><td><c:out value=" ${evaluation.market_knowledge}"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Toma de decisiones: </td><td><c:out value=" ${evaluation.decision_making}"/></td>
+                                                <td>Respeto: </td><td><c:out value=" ${evaluation.respect}"/></td>
+                                                <td>Productividad: </td><td><c:out value=" ${evaluation.productivity}"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td><td></td>
+                                                <td></td><td></td>
+                                                <td>Comunicacion: </td><td><c:out value=" ${evaluation.communication_skills}"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td><td></td>
+                                                <td></td><td></td>
+                                                <td>Innovacion: </td><td><c:out value=" ${evaluation.innovative}"/></td>
+                                            </tr>
+
+                                        </table>
+                                    </div>
+                                    <br>
+                                    <p>Comentario: <c:out value=" ${evaluation.comment}"/></p>
+
+                                    <c:forEach var="evaluation" items="${service.findFechaEvaluation(evaluation.id)}">
+                                        <p align="center">
+                                            <a href="TypeEmployeeValidation?action=EditarEvaluacion&idEvaluacion=<c:out value="${evaluation.id}"/>&year=<c:out value="${evaluation.year}"/>&month=<c:out value="${evaluation.month}"/>&day=<c:out value="${evaluation.day}"/>">
+                                                Si desea Editar la Evaluacion:
+                                            </a>
+                                        </p>
+
+                                    </c:forEach>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </section>
             </div>
 
-        </a>
-        <div id="<c:out value="${evaluation.id}"/>" class="collapse">
+        </c:forEach>
+
+
+    </div>
 
 
 
-            <section class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title" align="center">Descripción</h3>
-                            </div>
-                            <div class="panel-body">
+</div>
+
+</div>
 
 
+</div>
+<!-- /#wrapper -->
 
+<!-- jQuery -->
 
+<!-- Morris Charts JavaScript -->
 
-            <p>promedio: <c:out value="${evaluation.avg_grade}"/></p>
-            <p>Fecha: <c:out value=" ${evaluation.date}"/></p>
-            <p>Evaluador: <c:out value=" ${evaluation.idEvaluator.name}"/> <c:out value=" ${evaluation.idEvaluator.firstLastName}"/> <c:out value=" ${evaluation.idEvaluator.secondLastName}"/></p>
-                                <div class="table-responsive">
-            <table class="table table-responsive">
-                <tr>
-                    <th >Evaluacion de Actitud</th>
-                    <th >Puntaje </th>
-                    <th >Evaluacion de Valores</th>
-                    <th >Puntaje </th>
-                    <th >Evaluacion de Crecimiento Profecional</th>
-                    <th >Puntaje </th>
-                </tr>
-                <tr>
-                    <td>Compromiso: </td> <td><c:out value=" ${evaluation.commitment_company}"/></td>
-                    <td>Puntualidad: </td><td><c:out value=" ${evaluation.punctuality}"/></td>
-                    <td>Habilidad de Idiomas: </td><td><c:out value=" ${evaluation.language_skills}"/></td>
-                </tr>
-                <tr>
-                    <td>Liderasgo: </td><td><c:out value=" ${evaluation.leadership}"/></td>
-                    <td>Honestidad: </td><td><c:out value=" ${evaluation.honesty}"/></td>
-                    <td>Habilidad de Negocios: </td><td><c:out value=" ${evaluation.business_skills}"/></td>
-                </tr>
-                <tr>
-                    <td>Analitico: </td><td><c:out value=" ${evaluation.analytical}"/></td>
-                    <td>Organizacion: </td><td><c:out value=" ${evaluation.organized}"/></td>
-                    <td>Conocimientos de Negocio: </td><td><c:out value=" ${evaluation.business_knowledge}"/></td>
-                </tr>
-                <tr>
-                    <td>Objetivo: </td><td><c:out value=" ${evaluation.objective}"/></td>
-                    <td>Responsabilidad: </td><td><c:out value=" ${evaluation.responsibility}"/></td>
-                    <td>Conocimientos de Mercado: </td><td><c:out value=" ${evaluation.market_knowledge}"/></td>
-                </tr>
-                <tr>
-                    <td>Toma de decisiones: </td><td><c:out value=" ${evaluation.decision_making}"/></td>
-                    <td>Respeto: </td><td><c:out value=" ${evaluation.respect}"/></td>
-                    <td>Productividad: </td><td><c:out value=" ${evaluation.productivity}"/></td>
-                </tr>
-                <tr>
-                    <td></td><td></td>
-                    <td></td><td></td>
-                    <td>Comunicacion: </td><td><c:out value=" ${evaluation.communication_skills}"/></td>
-                </tr>
-                <tr>
-                    <td></td><td></td>
-                    <td></td><td></td>
-                    <td>Innovacion: </td><td><c:out value=" ${evaluation.innovative}"/></td>
-                </tr>
+<script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/jquery.js"></script>
 
-            </table>
-                                </div>
-            <br>
-            <p>Comentario: <c:out value=" ${evaluation.comment}"/></p>
-            <c:forEach var="evaluation" items="${service.findFechaEvaluation(evaluation.id)}">
-                <p align="center">
-                    <a href="TypeEmployeeValidation?action=EditarEvaluacion&idEvaluacion=<c:out value="${evaluation.id}"/>&year=<c:out value="${evaluation.year}"/>&month=<c:out value="${evaluation.month}"/>&day=<c:out value="${evaluation.day}"/>">
-                        Si desea Editar la Evaluacion:
-                    </a>
-                </p>
+<!-- Bootstrap Core JavaScript -->
+<script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/bootstrap.min.js"></script>
 
-            </c:forEach>
+<script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/raphael.min.js"></script>
+<script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/morris.min.js"></script>
+<script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/morris-data.js"></script>
 
-        </div>
-        <br>
-
-    </c:forEach>
-
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-
-
-                <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/jquery.js"></script>
-
-                <!-- Bootstrap Core JavaScript -->
-                <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/bootstrap.min.js"></script>
-
-                <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/raphael.min.js"></script>
-                <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/morris.min.js"></script>
-                <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/morris-data.js"></script>
 </body>
+
 </html>

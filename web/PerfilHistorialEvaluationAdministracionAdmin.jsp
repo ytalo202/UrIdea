@@ -218,25 +218,35 @@
 
             </c:forEach>
 
-        </div>
-        <br>
-
-    </c:forEach>
-
-</div>
-
-
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+
+
             </section>
         </div>
+
+    </c:forEach>
+
+
+</div>
+
+
+
 </div>
 
 </div>
+
 
 </div>
 <!-- /#wrapper -->
+
+<!-- jQuery -->
+
+<!-- Morris Charts JavaScript -->
+
 <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->

@@ -199,26 +199,24 @@
                 <p>Comentario: <c:out value=" ${evaluation.comment}"/></p>
 
 
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </section>
             </div>
             <br>
 
         </c:forEach>
 
+
     </div>
 
-
-                        </div>
-                    </div>
-
-                </section>
-            </div>
-    </div>
-
-
-
-
-
-
+</div>
 
 </div>
 <!-- /#wrapper -->

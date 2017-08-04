@@ -252,6 +252,25 @@
 
 
 
+    <br>
+    <h2>Estudios</h2>
+    <c:forEach var="cv" items="${service.findCvByIdEmployeeTypo(employee.id,2)}">
+
+        <p>
+            <c:out value="${cv.description}"/>
+
+        </p>
+    </c:forEach>
+
+    <h2>Experienzas</h2>
+    <c:forEach var="cv" items="${service.findCvByIdEmployeeTypo(employee.id,1)}">
+
+        <p>
+            <c:out value="${cv.description}"/>
+
+        </p>
+    </c:forEach>
+
 
 
 </div>

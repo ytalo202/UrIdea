@@ -44,6 +44,16 @@ public class CvsEntity extends BaseEntity {
         return findByCriteria(criteria, employeesEntity, companiesEntity,  emailAddressesEntity,areasEntity);
     }
 
+    public List<Cv> findByIdEmployeeTypo(int id,int type,
+                                     EmployeesEntity employeesEntity,
+                                     CompaniesEntity companiesEntity,
+                                     EmailAddressesEntity emailAddressesEntity,AreasEntity areasEntity
+    ) {
+        String criteria = "id_employee = " + id +" and cv_type = " + type;
+        return findByCriteria(criteria, employeesEntity, companiesEntity,
+                emailAddressesEntity,areasEntity);
+    }
+
     public List<Cv> findByCriteria(String criteria, EmployeesEntity employeesEntity,
                                    CompaniesEntity companiesEntity,
                                    EmailAddressesEntity emailAddressesEntity,AreasEntity areasEntity

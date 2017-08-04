@@ -204,72 +204,27 @@
 
 
 
-            <!-- Page Heading -->
-
-            <h1 align="center">lista Administradores</h1>
+    <!-- Page Heading -->
 
 
-
-            <section class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"></h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-
-                                        <tr>
-                                            <th>Contraseña</th>
-                                            <th>Nombre</th>
-                                            <th>Tipo de Empleado</th>
-                                            <th>Dni</th>
-                                            <th>Correo Electrónico</th>
-                                            <th>Área</th>
-                                            <th>Cambiar a Empleado</th>
-                                            <th>Cambiar de Area</th>
-                                            <th>Agregar Datos a Cv</th>
-                                        </tr>
-
-                                        <c:forEach var="employee"
-                                                   items="${service.findAdmin(1,company.id)}">
-                                        <tr>
-
-                                            <td><c:out value="${employee.password}"  /></td>
-                                            <td><c:out value="${employee.name}"/></td>
-
-                                            <td>   <c:out value="${employee.employeeType}"/></td>
-                                            <td> <c:out value="${employee.dni}"/></td>
-                                            <td> <c:out value="${employee.emailAddress.emailData}"/></td>
-                                            <td><c:out value="${employee.area.nameArea}"/></td>
-                                            <td align="center"> <a href="v?action=editTypeEmployee&idEmployee=<c:out value="${employee.id}" />" >
-                                            <img src="https://userscontent2.emaze.com/images/26a5e505-30d9-4e65-aafe-1e6943cb2c0b/9dfd4e2547adb3530209ae02a0623a44.png" width="20px" height="20px" alt="Cambiar a Empleado" class="img-responsive">
-                                        </a>
-                                        </td>
-
-                                            <td align="center">
-                                                <a href="v?action=editChangeArea&idEmployee=
-<c:out value="${employee.id}" />" >
-                                                <img src="https://userscontent2.emaze.com/images/26a5e505-30d9-4e65-aafe-1e6943cb2c0b/9dfd4e2547adb3530209ae02a0623a44.png" width="20px" height="20px" alt="Cambiar a Empleado" class="img-responsive">
-                                            </a>
-                                            </td>
+    <form action="v" method="post">
 
 
-                                            <td><a href="v?action=addCv&idEmpleado=<c:out value="${employee.id}"/>">
-                                                <img src="http://2.bp.blogspot.com/-stEgYqulp1g/T-9Jy5ovv9I/AAAAAAAACWw/_IqfWNkp3MA/s1600/Icono_Registro.png" width="20px" height="20px">
-                                            </a></td>
-                                        </tr>
-                                            </c:forEach>
 
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <select name="cv_type">
+            <option value="1" >Experienza</option>
+            <option value="2" >Estudios</option>
+        </select>
+
+        <p>description
+            <textarea name="description"
+                      cols="30" rows="10"></textarea>
+        </p>
+
+
+        <input type="hidden" value="addCv2" name="action"/>
+        <input type="submit"/>
+    </form>
 
 
 
@@ -279,12 +234,9 @@
 
 
 
-           <p align="center"><a href="v?action=regresar">
+    <!-- /.row -->
 
-               Regresar</a></p>
-            <!-- /.row -->
-
-            <!-- /.row -->
+    <!-- /.row -->
 
 
 </div>

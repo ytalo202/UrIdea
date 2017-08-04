@@ -38,14 +38,14 @@
         th{
             height: 24px;
             line-height: 24px;
-            color: #dbdbdb;
-            background-color: darkmagenta;
+            color: #d5d5d5;
+            background-color:#000000;
             text-align: center;
             vertical-align: middle;
         }
-
-
     </style>
+
+
 
 
 </head>
@@ -108,7 +108,7 @@
         </div>
         <!-- /.navbar-collapse -->
     </nav>
-<br>
+    <br>
     <br>
 <h1 align="center">Historial de Evaluacion del Area de  Marketing</h1>
 <div class="col-sm-4">
@@ -203,21 +203,24 @@
             <br>
             <p>Comentario: <c:out value=" ${evaluation.comment}"/></p>
 
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </section>
         </div>
         <br>
 
     </c:forEach>
 
+
 </div>
 
-                    </div>
-                </div>
-
-            </section>
-        </div>
 </div>
-
 
 </div>
 <!-- /#wrapper -->

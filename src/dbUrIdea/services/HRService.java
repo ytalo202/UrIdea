@@ -41,12 +41,13 @@ public class HRService {
         }
 
     }
+
     private Connection getConnection() {
         return connection;
     }
 
     private HRDataStore getDataStore() {
-        if(dataStore == null) {
+        if (dataStore == null) {
             dataStore = new HRDataStore(getConnection());
         }
         return dataStore;
@@ -56,7 +57,10 @@ public class HRService {
 
         return getDataStore().findAllCompanies();
     }
-    public int getCompanyCount() {return getCompanies().size();}
+
+    public int getCompanyCount() {
+        return getCompanies().size();
+    }
 
     public boolean addComp2(Company company) {
 
@@ -72,8 +76,7 @@ public class HRService {
     }
 
 
-
-    public List<PaymentsType> getPaymentsTypes(){
+    public List<PaymentsType> getPaymentsTypes() {
         return getDataStore().findAllPaymentsType();
     }
 
@@ -87,21 +90,21 @@ public class HRService {
     }
 
     ///----------evaluation
-    public List<Evaluation> getEvaluations(){
+    public List<Evaluation> getEvaluations() {
 
         return getDataStore().findAllEvaluations();
     }
 
-    public  List<Employee> getEmployees(){
+    public List<Employee> getEmployees() {
         return getDataStore().findAllEmployees();
     }
-    public  List<Payment> getAllPayments(){
+
+    public List<Payment> getAllPayments() {
         return getDataStore().findAllPayments();
 
     }
 
-    public List<Employee> findAllEmployeeById(int id)
-    {
+    public List<Employee> findAllEmployeeById(int id) {
         return getDataStore().findAllEmployeeById(id);
     }
 
@@ -116,6 +119,7 @@ public class HRService {
                 id);
 
     }
+
     public boolean updateEmail(EmailAddress emailAddress) {
 
         return getDataStore().updateEmail(emailAddress);
@@ -126,13 +130,10 @@ public class HRService {
     }
 
 
-
-
     public PaymentsType getPaymentsTypeById(int id) {
 
         return getDataStore().findPaymentsTypeById(id);
     }
-
 
 
     public boolean updatePaymentsType(PaymentsType paymentsType) {
@@ -141,10 +142,7 @@ public class HRService {
     }
 
 
-
     //----------------
-
-
 
 
     public Company getCompanyById(int id) {
@@ -161,18 +159,20 @@ public class HRService {
 
         return getDataStore().createEmail(emailAddress);
     }
+
     public boolean deleteEmailById(EmailAddress emailAddress) {
 
         return getDataStore().deleteEmailById(emailAddress);
     }
-//-----------
+
+    //-----------
     public boolean createComp(Company company) {
 
         return getDataStore().createCompany(company);
     }
 //---------------------------------
 
-//{{{{{
+    //{{{{{
     public boolean createEmployee(Employee employee) {
 
         return getDataStore().createEmployee(employee);
@@ -197,7 +197,6 @@ public class HRService {
     }
 
 
-
     public Evaluation getEvaluationById(int id) {
 
         return getDataStore().findEvaluationById(id);
@@ -214,23 +213,26 @@ public class HRService {
 
         return getDataStore().createEvaluationAdministration(evaluation);
     }
+
     public boolean createEvaluationInformatica(Evaluation evaluation) {
 
         return getDataStore().createEvaluationInformatica(evaluation);
     }
+
     public boolean createEvaluationMarketing(Evaluation evaluation) {
 
         return getDataStore().createEvaluationMarketing(evaluation);
     }
+
     public boolean createEvaluationPracticantes(Evaluation evaluation) {
 
         return getDataStore().createEvaluationPracticantes(evaluation);
     }
+
     public boolean createEvaluationProduccion(Evaluation evaluation) {
 
         return getDataStore().createEvaluationProduction(evaluation);
     }
-
 
 
     public boolean createPayment(Payment payment) {
@@ -240,7 +242,6 @@ public class HRService {
 
 
     //public boolean validarCompany(String nom,String clave) {return getDataStore().validarCompany(nom,clave);}
-
 
 
     public Cv getCvById(int id) {
@@ -261,16 +262,16 @@ public class HRService {
 
     //----Company login
     public Company getIdByCompany
-            (String name,String pass) {
+    (String name, String pass) {
 
-        return getDataStore().findIdByCompany(name,pass);
+        return getDataStore().findIdByCompany(name, pass);
     }
 
     //----empleado login
 
     public Employee getIdByEmployee
-            (String email,String password) {
-        return getDataStore().findIdByEmployee(email,password);
+            (String email, String password) {
+        return getDataStore().findIdByEmployee(email, password);
     }
 //-----------
 
@@ -278,17 +279,16 @@ public class HRService {
         return getDataStore().findId2ByEmail(email);
     }
 
-//--------------
+    //--------------
     public List<Employee> findAdmin(
-            int type ,int id_company
+            int type, int id_company
     ) {
         return getDataStore().findAllAdmin(
-                type,id_company
+                type, id_company
         );
     }
 
-    public List<Employee> findAllxArea(int type ,int id_company,int are)
-    {
+    public List<Employee> findAllxArea(int type, int id_company, int are) {
         return getDataStore().findAllxArea(type, id_company, are);
     }
 
@@ -323,8 +323,6 @@ public class HRService {
     }
 
 
-
-
     public boolean changeEmployee(Employee employee) {
         return getDataStore().changeEmployee(employee);
     }
@@ -334,7 +332,8 @@ public class HRService {
 
         return getDataStore().findAllAreas();
     }
-    public Area getAreaById(int id){
+
+    public Area getAreaById(int id) {
         return getDataStore().findAreById(id);
     }
 
@@ -363,8 +362,7 @@ public class HRService {
         return getDataStore().findEvaluationAgv(id);
     }
 
-    public List<Cv> findAllCvsByIdEmployee(int idEmployee)
-    {
+    public List<Cv> findAllCvsByIdEmployee(int idEmployee) {
 
         return getDataStore().findAllCvsById(idEmployee);
     }
@@ -379,10 +377,12 @@ public class HRService {
 
         return getDataStore().updatePracticantesEva(evaluation);
     }
+
     public boolean updateProductividadEva(Evaluation evaluation) {
 
         return getDataStore().updateProductividadEva(evaluation);
     }
+
     public boolean updateInformaticoEva(Evaluation evaluation) {
 
         return getDataStore().updateInformaticoEva(evaluation);
@@ -393,5 +393,10 @@ public class HRService {
         return getDataStore().updateMarketiongEva(evaluation);
     }
 
+
+    public List<Cv> findCvByIdEmployeeTypo(int id,int type) {
+
+        return getDataStore().findCvByIdEmployeeTypo(id,type);
+    }
 
 }

@@ -1,9 +1,6 @@
 package dbUrIdea.viewcontrollers;
 
-import dbUrIdea.models.Area;
-import dbUrIdea.models.Company;
-import dbUrIdea.models.EmailAddress;
-import dbUrIdea.models.Employee;
+import dbUrIdea.models.*;
 import dbUrIdea.services.HRService;
 
 import javax.servlet.RequestDispatcher;
@@ -73,6 +70,8 @@ public class SesionCompanyServlet extends HttpServlet {
     public static String perfilCompany_uri = "/PerfilCompañia.jsp";
 
     public static String changeAreaEmpl_uri = "/CambioArea.jsp";
+    public static String addCv_uri = "/addCvRoot.jsp";
+
 
 
     int codCom;
@@ -82,6 +81,7 @@ public class SesionCompanyServlet extends HttpServlet {
     String nameCompany;
     int areaId;
     int changeEmpl;
+    int  EmpCv;
 
 
 
@@ -122,14 +122,7 @@ public class SesionCompanyServlet extends HttpServlet {
                 company = service.getCompanyById(codCom);
                 request.setAttribute("company", company);
                 request.setAttribute("action", "edit");
-                int año =2007;
-                Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-                Timestamp timestamp3 = Timestamp.valueOf(año+"-09-23 10:10:10.0");
-                Timestamp resul;
-                //resul= timestamp-timestamp3;
 
-                request.setAttribute("time",timestamp);
-                request.setAttribute("time3",timestamp3);
 
 
                 log(message);
@@ -138,6 +131,29 @@ public class SesionCompanyServlet extends HttpServlet {
                 dispatcher.forward(request, response);
                 break;
 
+
+            }
+
+            case "addCv2": {
+                Cv cv= new Cv();
+                Employee employee=new Employee();
+                cv.setEmployee(employee.setId(EmpCv));
+
+                cv.setCvType(Integer.parseInt(request.getParameter("cv_type")));
+                cv.setDescription(new String(request.getParameter("description").getBytes("ISO-8859-1"),"UTF-8"));
+                String message = service.createCv(cv) ?
+                        "Create success" :
+                        "Error while creating";
+                log(message);
+
+                Company company = service.getCompanyById(codCom);
+                request.setAttribute("company", company);
+                request.setAttribute("action", "edit");
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(MenuRoot_URI);
+                dispatcher.forward(request, response);
+                break;
 
             }
 
@@ -665,6 +681,13 @@ public class SesionCompanyServlet extends HttpServlet {
                 request.setAttribute("company", company);
                 request.setAttribute("action", "edit");
                 actionUri = perfilCompany_uri;
+                break;
+            }
+
+            case "addCv": {
+
+                EmpCv =Integer.parseInt(request.getParameter("idEmpleado"));
+                actionUri = addCv_uri;
                 break;
             }
 

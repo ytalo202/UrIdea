@@ -135,10 +135,11 @@
 
 
             <div id="dem" class="collapse">
-                <form action="" method="post" class="w3-bar-item w3-button w3-wide"
+                <form action="search" method="post" class="w3-bar-item w3-button w3-wide"
                       style="height:38px" style="width:80px">
-                    <input type="text" name="compañiaCode" size="10" style="height:30px">
-                    <input type="hidden"  value="edit" name="action">
+                    <input type="text" name="cod" size="10" style="height:30px">
+
+                    <input type="hidden"  value="Buscar" name="action">
                     <input type="submit" value="Buscar" size="5"  style="height:30px">
                 </form>
                 </div>
