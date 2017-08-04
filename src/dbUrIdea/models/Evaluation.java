@@ -50,6 +50,9 @@ private Company company;
     private float efficiency;
     private float productivity;
     private float innovative;
+    private int year;
+    private int month;
+    private int day;
 
 
 
@@ -64,7 +67,7 @@ private Company company;
     public Evaluation() {
     }
 
-    public Evaluation(int id, Employee idEvaluator, Employee idUserEmployee, Company company, Area area, float grade, float grade1, float grade2, String comment, Timestamp date, float avg_grade, float competitive, float commitment_company, float teamwork, float proactive, float work_under_pressure, float objective, float analytical, float decision_making, float leadership, float responsibility, float punctuality, float honesty, float respect, float organized, float language_skills, float computer_skills, float give_successful_solutions, float communication_skills, float business_skills, float business_knowledge, float resource_optimization, float market_knowledge, float performance, float efficiency, float productivity, float innovative) {
+    public Evaluation(int id, Employee idEvaluator, Employee idUserEmployee, Company company, Area area, float grade, float grade1, float grade2, String comment, Timestamp date, float avg_grade, float competitive, float commitment_company, float teamwork, float proactive, float work_under_pressure, float objective, float analytical, float decision_making, float leadership, float responsibility, float punctuality, float honesty, float respect, float organized, float language_skills, float computer_skills, float give_successful_solutions, float communication_skills, float business_skills, float business_knowledge, float resource_optimization, float market_knowledge, float performance, float efficiency, float productivity, float innovative, int year, int month, int day) {
         this.id = id;
         this.idEvaluator = idEvaluator;
         this.idUserEmployee = idUserEmployee;
@@ -102,6 +105,9 @@ private Company company;
         this.efficiency = efficiency;
         this.productivity = productivity;
         this.innovative = innovative;
+        this.year = year;
+        this.month = month;
+        this.day = day;
     }
 
 
@@ -144,6 +150,7 @@ private Company company;
     public String getCompetitiveAsString() {
         return String.valueOf(getCompetitive());
     }
+
     public String getCommitment_companyAsString() {
         return String.valueOf(getCommitment_company());
     }
@@ -328,6 +335,26 @@ private Company company;
 
 
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+
+    public static Evaluation build3(ResultSet rs,
+                                    EmployeesEntity employeesEntity,
+                                    CompaniesEntity companiesEntity,
+                                    EmailAddressesEntity emailAddressesEntity,
+                                    AreasEntity areasEntity
+    ) {
+        try {
+            return (new Evaluation())
+                    .setId(rs.getInt("id"))
+                    .setYear(rs.getInt("from_unixtime( UNIX_TIMESTAMP(  evaluation_date_and_time),'%Y')"))
+                    .setMonth(rs.getInt("from_unixtime( UNIX_TIMESTAMP(  evaluation_date_and_time),'%m')"))
+                    .setDay(rs.getInt("from_unixtime( UNIX_TIMESTAMP(  evaluation_date_and_time),'%d')"));
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -665,6 +692,33 @@ private Company company;
 
     public Evaluation setInnovative(float innovative) {
         this.innovative = innovative;
+        return this;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public Evaluation setYear(int year) {
+        this.year = year;
+        return this;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public Evaluation setMonth(int month) {
+        this.month = month;
+        return this;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public Evaluation setDay(int day) {
+        this.day = day;
         return this;
     }
 }

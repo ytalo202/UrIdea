@@ -303,6 +303,12 @@ public class HRService {
     }
 
 
+    public List<Evaluation> findFechaEvaluation(int id) {
+
+        return getDataStore().findFechaEvaluation(id);
+    }
+
+
     public boolean changeArea(Employee employee) {
         return getDataStore().changeArea(employee);
     }
@@ -359,7 +365,32 @@ public class HRService {
 
     public List<Cv> findAllCvsByIdEmployee(int idEmployee)
     {
+
         return getDataStore().findAllCvsById(idEmployee);
+    }
+
+
+    public boolean updateAdministracionEva(Evaluation evaluation) {
+
+        return getDataStore().updateAdministracionEva(evaluation);
+    }
+
+    public boolean updatePracticantesEva(Evaluation evaluation) {
+
+        return getDataStore().updatePracticantesEva(evaluation);
+    }
+    public boolean updateProductividadEva(Evaluation evaluation) {
+
+        return getDataStore().updateProductividadEva(evaluation);
+    }
+    public boolean updateInformaticoEva(Evaluation evaluation) {
+
+        return getDataStore().updateInformaticoEva(evaluation);
+    }
+
+    public boolean updateMarketiongEva(Evaluation evaluation) {
+
+        return getDataStore().updateMarketiongEva(evaluation);
     }
 
 

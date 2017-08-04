@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  * Created by Magnus on 7/15/2017.
@@ -37,25 +38,48 @@ public class TypeEmployeeServlet extends HttpServlet {
 
     public static String  UpdateEmpEmail_URI= "/_EmpEmailUpdate.jsp";
     public static String  UpdateEmpEmailComun_URI= "/_EmpEmailUpdateComun.jsp";
+
     public static String  evaluar_uri= "/_Evaluar.jsp";
+    public static String  evaluar2_uri= "/_Evaluar2.jsp";
+    public static String  evaluar3_uri= "/_Evaluar3.jsp";
+
+    public static String  evaluar_uriEditar= "/_EvaluarEditar.jsp";
+    public static String  evaluar2_uriEditar= "/_Evaluar2Editar.jsp";
+    public static String  evaluar3_uriEditar= "/_Evaluar3Editar.jsp";
+
     public static String  evaluarInformatica_uri= "/_EvaluarInformatica.jsp";
     public static String  evaluarInformatica2_uri= "/_EvaluarInformatica2.jsp";
     public static String  evaluarInformatica3_uri= "/_EvaluarInformatica3.jsp";
+
+    public static String  evaluarInformatica_uriEditar= "/_EvaluarInformaticaEditar.jsp";
+    public static String  evaluarInformatica2_uriEditar= "/_EvaluarInformatica2Editar.jsp";
+    public static String  evaluarInformatica3_uriEditar= "/_EvaluarInformatica3Editar.jsp";
 
     public static String  evaluarAdministracion_uri= "/_EvaluarAdministracion.jsp";
     public static String  evaluarAdministracion2_uri= "/_EvaluarAdministracion2.jsp";
     public static String  evaluarAdministracion3_uri= "/_EvaluarAdministracion3.jsp";
 
+    public static String  evaluarAdministracion_uriEditar= "/_EvaluarAdministracionEditar.jsp";
+    public static String  evaluarAdministracion2_uriEditar= "/_EvaluarAdministracion2Editar.jsp";
+    public static String  evaluarAdministracion3_uriEditar= "/_EvaluarAdministracion3Editar.jsp";
+
     public static String  evaluarProduccion_uri= "/_EvaluarProduccion.jsp";
     public static String  evaluarProduccion2_uri= "/_EvaluarProduccion2.jsp";
     public static String  evaluarProduccion3_uri= "/_EvaluarProduccion3.jsp";
+
+    public static String  evaluarProduccion_uriEditar= "/_EvaluarProduccionEditar.jsp";
+    public static String  evaluarProduccion2_uriEditar= "/_EvaluarProduccion2Editar.jsp";
+    public static String  evaluarProduccion3_uriEditar= "/_EvaluarProduccion3Editar.jsp";
 
     public static String  evaluarMarketing_uri= "/_EvaluarMaketing.jsp";
     public static String  evaluarMarketing2_uri= "/_EvaluarMaketing2.jsp";
     public static String  evaluarMarketing3_uri= "/_EvaluarMaketing3.jsp";
 
-    public static String  evaluar2_uri= "/_Evaluar2.jsp";
-    public static String  evaluar3_uri= "/_Evaluar3.jsp";
+    public static String  evaluarMarketing_uriEditar= "/_EvaluarMaketingEditar.jsp";
+    public static String  evaluarMarketing2_uriEditar= "/_EvaluarMaketing2Editar.jsp";
+    public static String  evaluarMarketing3_uriEditar= "/_EvaluarMaketing3Editar.jsp";
+
+
     public static String  addCv_uri= "/_NCv.jsp";
 
     public static String perfilEmployee_uri = "/PerfilPrueba1.jsp";
@@ -72,6 +96,8 @@ public class TypeEmployeeServlet extends HttpServlet {
     public static String perfilHistoEvaluInformaticaEmployee2_uri = "/PerfilHistorialEvaluationInformaticaAdmin.jsp";
     public static String perfilHistoEvaluMarketingEmployee2_uri = "/PerfilHistorialEvaluationMarketingAdmin.jsp";
     public static String perfilHistoProduccionEmployee2_uri = "/PerfilHistorialEvaluationProduccionAdmin.jsp";
+
+    public static String Notime_uri = "/timeF.jsp";
 
     String email;
 
@@ -93,6 +119,7 @@ public class TypeEmployeeServlet extends HttpServlet {
 
     //evaluacion1
     float competitivo;
+    float competif;
     float presion;
     float compromiso;
     float trabajoEquipo;
@@ -978,10 +1005,545 @@ public class TypeEmployeeServlet extends HttpServlet {
 
             }
 
+            //------------------
+            //Edicionn ---------------
+            case "createEvaluation1Editar": {
+
+
+                compromiso= Float.parseFloat(request.getParameter("commitment_company"));
+                trabajoEquipo= Float.parseFloat(request.getParameter("teamwork"));
+                tomaDesicion= Float.parseFloat(request.getParameter("decision_making"));
+                proactivo= Float.parseFloat(request.getParameter("proactive"));
+                grade = compromiso+trabajoEquipo+tomaDesicion+proactivo;
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(evaluar2_uriEditar);
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+            case "createEvaluationIformatica1Editar": {
+
+
+                compromiso= Float.parseFloat(request.getParameter("commitment_company"));
+                competif=Float.parseFloat(request.getParameter("competitive"));
+                presion= Float.parseFloat(request.getParameter("work_under_pressure"));
+                proactivo= Float.parseFloat(request.getParameter("proactive"));
+                grade = compromiso+ competif+presion+proactivo;
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(evaluarInformatica2_uriEditar);
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+            case "createEvaluationAdministracion2Editar": {
+
+                honesto= Float.parseFloat(request.getParameter("honesty"));
+                organizado= Float.parseFloat(request.getParameter("organized"));
+                responsable= Float.parseFloat(request.getParameter("responsibility"));
+                respeto= Float.parseFloat(request.getParameter("respect"));
+                puntual=Float.parseFloat(request.getParameter("punctuality"));
+                grade1 = honesto+responsable+organizado+respeto+puntual;
+
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(evaluarAdministracion3_uriEditar);
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+            case "createEvaluationAdministracion3Editar": {
 
 
 
-        }
+
+                Evaluation evaluation = new Evaluation();
+
+                comunicacion= Float.parseFloat(request.getParameter("communication_skills"));
+                idiomas= Float.parseFloat(request.getParameter("language_skills"));
+                negocioSkills= Float.parseFloat(request.getParameter("business_skills"));
+
+                negociosC= Float.parseFloat(request.getParameter("business_knowledge"));
+                optimisar= Float.parseFloat(request.getParameter("resource_optimization"));
+                eficiencia= Float.parseFloat(request.getParameter("efficiency"));
+                productividad= Float.parseFloat(request.getParameter("productivity"));
+                innovacion= Float.parseFloat(request.getParameter("innovative"));
+                grade2 = comunicacion+idiomas+negociosC+negocioSkills+optimisar+eficiencia
+                        +productividad+innovacion;
+
+                float avg =grade2+grade1+grade;
+
+
+
+
+
+
+                evaluation.setId(idEvaluacion);
+                evaluation.setGrade(grade);
+                evaluation.setGrade1(grade1);
+                evaluation.setGrade2(grade2);
+                //actitud
+
+
+
+                evaluation.setCommitment_company(compromiso);
+                evaluation.setProactive(proactivo);
+                evaluation.setObjective(objetivo);
+                evaluation.setDecision_making(tomaDesicion);
+                evaluation.setTeamwork(trabajoEquipo);
+
+                //valores
+                evaluation.setPunctuality(puntual);
+                evaluation.setHonesty(honesto);
+                evaluation.setOrganized(organizado);
+                evaluation.setResponsibility(responsable);
+                evaluation.setRespect(respeto);
+                //crecimiento profecional
+
+                evaluation.setLanguage_skills(idiomas);
+                evaluation.setBusiness_skills(negocioSkills);
+                evaluation.setBusiness_knowledge(negociosC);
+                evaluation.setProductivity(productividad);
+                evaluation.setResource_optimization(optimisar);
+                evaluation.setEfficiency(eficiencia);
+                evaluation.setCommunication_skills(comunicacion);
+                evaluation.setInnovative(innovacion);
+                evaluation.setAvg_grade(avg);
+                evaluation.setComment(new String(request.getParameter("comment").getBytes("ISO-8859-1"),"UTF-8"));
+
+                String message = service.updateAdministracionEva(evaluation) ?
+                        "Create success" :
+                        "Error while creating";
+                log(message);
+
+                Employee employee1 = service.getEmployeeById(idE);
+
+                request.setAttribute("employee", employee1);
+                request.setAttribute("action", "edit");
+
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(MenuAdmin_URI );
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+
+            case "createEvaluationAdministracion1Editar": {
+
+                compromiso= Float.parseFloat(request.getParameter("commitment_company"));
+                proactivo=Float.parseFloat(request.getParameter("proactive"));
+                tomaDesicion=Float.parseFloat(request.getParameter("decision_making"));
+                objetivo= Float.parseFloat(request.getParameter("objective"));
+                trabajoEquipo= Float.parseFloat(request.getParameter("teamwork"));
+                grade = compromiso+objetivo+trabajoEquipo+proactivo+tomaDesicion;
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(evaluarAdministracion2_uriEditar);
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+
+            case "createEvaluationProduccion1Editar": {
+                compromiso= Float.parseFloat(request.getParameter("commitment_company"));
+                presion=Float.parseFloat(request.getParameter("work_under_pressure"));
+                trabajoEquipo= Float.parseFloat(request.getParameter("teamwork"));
+                proactivo= Float.parseFloat(request.getParameter("proactive"));
+                grade = compromiso+presion+trabajoEquipo+proactivo;
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(evaluarProduccion2_uriEditar);
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+            case "createEvaluationProduccion2Editar": {
+
+                puntual= Float.parseFloat(request.getParameter("punctuality"));
+                honesto= Float.parseFloat(request.getParameter("honesty"));
+                organizado= Float.parseFloat(request.getParameter("organized"));
+                responsable= Float.parseFloat(request.getParameter("responsibility"));
+                respeto= Float.parseFloat(request.getParameter("respect"));
+                grade1 = honesto+responsable+organizado+respeto+puntual;
+
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(evaluarProduccion3_uriEditar);
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+
+            case "createEvaluationProduccion3Editar": {
+
+
+
+
+                Evaluation evaluation = new Evaluation();
+                evaluation.setId(idEvaluacion);
+
+
+                eficiencia= Float.parseFloat(request.getParameter("efficiency"));
+                desempeño= Float.parseFloat(request.getParameter("performance"));
+                productividad= Float.parseFloat(request.getParameter("productivity"));
+                optimisar= Float.parseFloat(request.getParameter("resource_optimization"));
+
+                innovacion= Float.parseFloat(request.getParameter("innovative"));
+                grade2 = desempeño+optimisar+eficiencia+productividad+innovacion;
+                float avg =grade2+grade1+grade;
+                evaluation.setGrade(grade);
+                evaluation.setGrade1(grade1);
+                evaluation.setGrade2(grade2);
+                //actitud
+                evaluation.setCommitment_company(compromiso);
+                evaluation.setWork_under_pressure(presion);
+                evaluation.setTeamwork(trabajoEquipo);
+                evaluation.setProactive(proactivo);
+                //valores
+                evaluation.setHonesty(honesto);
+                evaluation.setOrganized(organizado);
+                evaluation.setPunctuality(puntual);
+                evaluation.setResponsibility(responsable);
+                evaluation.setRespect(respeto);
+                //crecimiento profecional
+
+
+                //crecimiento Profecional
+                evaluation.setEfficiency(eficiencia);
+                evaluation.setPerformance(desempeño);
+                evaluation.setProductivity(productividad);
+                evaluation.setResource_optimization(optimisar);
+                evaluation.setInnovative(innovacion);
+                evaluation.setAvg_grade(avg);
+                evaluation.setComment(new String(request.getParameter("comment").getBytes("ISO-8859-1"),"UTF-8"));
+
+                String message = service.updateProductividadEva(evaluation) ?
+                        "Create success" :
+                        "Error while creating";
+                log(message);
+
+                Employee employee1 = service.getEmployeeById(idE);
+
+                request.setAttribute("employee", employee1);
+                request.setAttribute("action", "edit");
+
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(MenuAdmin_URI );
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+            case "createEvaluationMarketing1Editar": {
+
+
+
+                compromiso= Float.parseFloat(request.getParameter("commitment_company"));
+                liderasgo=Float.parseFloat(request.getParameter("leadership"));
+                analitico=Float.parseFloat(request.getParameter("analytical"));
+                objetivo= Float.parseFloat(request.getParameter("objective"));
+                tomaDesicion= Float.parseFloat(request.getParameter("decision_making"));
+                grade = compromiso+liderasgo+analitico+objetivo+tomaDesicion;
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(evaluarMarketing2_uriEditar);
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+
+            case "createEvaluationIformatica2Editar": {
+
+                honesto= Float.parseFloat(request.getParameter("honesty"));
+                organizado= Float.parseFloat(request.getParameter("organized"));
+                responsable= Float.parseFloat(request.getParameter("responsibility"));
+                respeto= Float.parseFloat(request.getParameter("respect"));
+                grade1 = honesto+responsable+organizado+respeto;
+
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(evaluarInformatica3_uriEditar);
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+
+            case "createEvaluationMarketing2Editar": {
+
+                puntual= Float.parseFloat(request.getParameter("punctuality"));
+                honesto= Float.parseFloat(request.getParameter("honesty"));
+                organizado= Float.parseFloat(request.getParameter("organized"));
+                responsable= Float.parseFloat(request.getParameter("responsibility"));
+                respeto= Float.parseFloat(request.getParameter("respect"));
+                grade1 = honesto+responsable+organizado+respeto+puntual;
+
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(evaluarMarketing3_uriEditar);
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+
+            case "createEvaluation2Editar": {
+
+
+                /*
+                Company company =new Company();
+                Evaluation evaluation = new Evaluation();
+                Employee employee =new Employee();
+                evaluation.setCompany(company.setId(idCom));
+                evaluation.setIdEmployee(employee.setId(idE));
+                evaluation.setIdUserEmployee(employee.setId(EmpEvaluado));
+
+                */
+
+                puntual= Float.parseFloat(request.getParameter("punctuality"));
+
+                honesto= Float.parseFloat(request.getParameter("honesty"));
+                organizado= Float.parseFloat(request.getParameter("organized"));
+                responsable= Float.parseFloat(request.getParameter("responsibility"));
+                respeto= Float.parseFloat(request.getParameter("respect"));
+                grade1 = puntual+honesto+responsable+organizado+respeto;
+
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(evaluar3_uriEditar);
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+
+
+            case "createEvaluationMarketing3Editar": {
+
+
+
+
+                Evaluation evaluation = new Evaluation();
+                evaluation.setId(idEvaluacion);
+
+
+                idiomas= Float.parseFloat(request.getParameter("language_skills"));
+                negocioSkills= Float.parseFloat(request.getParameter("business_skills"));
+                negociosC= Float.parseFloat(request.getParameter("business_knowledge"));
+
+                conocimientos= Float.parseFloat(request.getParameter("market_knowledge"));
+                productividad= Float.parseFloat(request.getParameter("productivity"));
+                comunicacion= Float.parseFloat(request.getParameter("communication_skills"));
+                innovacion= Float.parseFloat(request.getParameter("innovative"));
+                grade2 = idiomas+negocioSkills+negociosC+conocimientos
+                        +productividad+comunicacion+innovacion;
+
+                float avg =grade2+grade1+grade;
+
+
+
+
+
+
+
+
+                evaluation.setGrade(grade);
+                evaluation.setGrade1(grade1);
+                evaluation.setGrade2(grade2);
+                //actitud
+
+
+
+                evaluation.setCommitment_company(compromiso);
+                evaluation.setLeadership(liderasgo);
+                evaluation.setAnalytical(analitico);
+                evaluation.setObjective(objetivo);
+                evaluation.setDecision_making(tomaDesicion);
+
+                //valores
+                evaluation.setPunctuality(puntual);
+                evaluation.setHonesty(honesto);
+                evaluation.setOrganized(organizado);
+                evaluation.setResponsibility(responsable);
+                evaluation.setRespect(respeto);
+                //crecimiento profecional
+
+
+
+                evaluation.setLanguage_skills(idiomas);
+                evaluation.setBusiness_skills(negocioSkills);
+                evaluation.setBusiness_knowledge(negociosC);
+                evaluation.setMarket_knowledge(conocimientos);
+                evaluation.setProductivity(productividad);
+                evaluation.setCommunication_skills(comunicacion);
+                evaluation.setInnovative(innovacion);
+                evaluation.setAvg_grade(avg);
+                evaluation.setComment(new String(request.getParameter("comment").getBytes("ISO-8859-1"),"UTF-8"));
+
+                String message = service.updateMarketiongEva(evaluation) ?
+                        "Create success" :
+                        "Error while creating";
+                log(message);
+
+                Employee employee1 = service.getEmployeeById(idE);
+
+                request.setAttribute("employee", employee1);
+                request.setAttribute("action", "edit");
+
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(MenuAdmin_URI );
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+
+            case "createEvaluationIformatica3Editar": {
+
+
+
+
+                Evaluation evaluation = new Evaluation();
+
+                idiomas= Float.parseFloat(request.getParameter("language_skills"));
+                computadora= Float.parseFloat(request.getParameter("computer_skills"));
+                conocimientos= Float.parseFloat(request.getParameter("market_knowledge"));
+                productividad= Float.parseFloat(request.getParameter("productivity"));
+                eficiencia= Float.parseFloat(request.getParameter("efficiency"));
+                soluciones= Float.parseFloat(request.getParameter("give_successful_solutions"));
+                innovacion= Float.parseFloat(request.getParameter("innovative"));
+                grade2 = idiomas+computadora+conocimientos+eficiencia+productividad+soluciones+innovacion;
+                float avg =grade2+grade1+grade;
+
+
+
+
+                evaluation.setId(idEvaluacion);
+
+
+
+                evaluation.setGrade(grade);
+                evaluation.setGrade1(grade1);
+                evaluation.setGrade2(grade2);
+                //actitud
+
+
+                evaluation.setCompetitive(competif);
+                evaluation.setCommitment_company(compromiso);
+                evaluation.setWork_under_pressure(presion);
+                evaluation.setProactive(proactivo);
+                //valores
+                evaluation.setHonesty(honesto);
+                evaluation.setOrganized(organizado);
+                evaluation.setResponsibility(responsable);
+                evaluation.setRespect(respeto);
+                //crecimiento profecional
+                evaluation.setLanguage_skills(idiomas);
+                evaluation.setComputer_skills(computadora);
+                evaluation.setMarket_knowledge(conocimientos);
+                evaluation.setProductivity(productividad);
+                evaluation.setEfficiency(eficiencia);
+                evaluation.setGive_successful_solutions(soluciones);
+                evaluation.setInnovative(innovacion);
+                evaluation.setAvg_grade(avg);
+                evaluation.setComment(new String
+                        (request.getParameter("comment").
+                                getBytes("ISO-8859-1"),"UTF-8"));
+
+                String message = service.updateInformaticoEva(evaluation) ?
+                        "Create success" :
+                        "Error while creating";
+                log(message);
+
+                Employee employee1 = service.getEmployeeById(idE);
+
+                request.setAttribute("employee", employee1);
+                request.setAttribute("action", "edit");
+
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(MenuAdmin_URI );
+                dispatcher.forward(request, response);
+                break;
+
+            }
+
+
+            case "createEvaluation3Editar": {
+
+
+
+                Evaluation evaluation = new Evaluation();
+
+
+                desempeño = Float.parseFloat(request.getParameter("performance"));
+                eficiencia = Float.parseFloat(request.getParameter("efficiency"));
+                productividad = Float.parseFloat(request.getParameter("productivity"));
+                innovacion = Float.parseFloat(request.getParameter("innovative"));
+                grade2 = desempeño + eficiencia + productividad + innovacion;
+                float avg = grade2 + grade1 + grade;
+
+
+                evaluation.setId(idEvaluacion);
+                evaluation.setGrade(grade);
+                evaluation.setGrade1(grade1);
+                evaluation.setGrade2(grade2);
+                //actitud
+                evaluation.setCommitment_company(compromiso);
+                evaluation.setProactive(proactivo);
+                evaluation.setTeamwork(trabajoEquipo);
+                evaluation.setDecision_making(tomaDesicion);
+                //valores
+                evaluation.setPunctuality(puntual);
+                evaluation.setHonesty(honesto);
+                evaluation.setOrganized(organizado);
+                evaluation.setResponsibility(responsable);
+                evaluation.setRespect(respeto);
+                //crecimiento profecional
+
+
+                evaluation.setPerformance(desempeño);
+                evaluation.setEfficiency(eficiencia);
+                evaluation.setProductivity(productividad);
+                evaluation.setInnovative(innovacion);
+                evaluation.setAvg_grade(avg);
+                evaluation.setComment(new String(request.getParameter("comment").getBytes("ISO-8859-1"), "UTF-8"));
+
+                String message = service.updatePracticantesEva(evaluation) ?
+                        "Create success" :
+                        "Error while creating";
+                log(message);
+
+                Employee employee1 = service.getEmployeeById(idE);
+
+                request.setAttribute("employee", employee1);
+                request.setAttribute("action", "edit");
+
+
+                RequestDispatcher dispatcher =
+                        request.getRequestDispatcher(MenuAdmin_URI);
+                dispatcher.forward(request, response);
+                break;
+            }
+
+
+
+
+
+
+            }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -1179,140 +1741,82 @@ public class TypeEmployeeServlet extends HttpServlet {
 
             case "EditarEvaluacion": {
                 idEvaluacion =Integer.parseInt(request.getParameter("idEvaluacion"));
-
-                if (idA ==5){
-                    actionUri = evaluar_uri;
-                    break;}
-                if (idA ==4){
-
-                    actionUri = evaluarAdministracion_uri;
-                    break;}
-                if (idA ==3){
-
-                    actionUri = evaluarProduccion_uri;
-                    break;}
-                if (idA ==2){
-
-                    actionUri = evaluarMarketing_uri;
-                    break;}
-                else{
-
-                    actionUri = evaluarInformatica_uri;
-                    break;}
-            }
+                int year = Integer.parseInt(request.getParameter("year"));
+                int month = Integer.parseInt(request.getParameter("month"));
+                int day = Integer.parseInt(request.getParameter("day"));
 
 
+                if(month==12) {
+                    month=1;
+                    year++;
+                    Timestamp timeNow = new Timestamp(System.currentTimeMillis());
+                    Timestamp timeLimite = Timestamp.valueOf(year + "-" + month + "-" + day + " 0:0:0.0");
+                    if (timeNow.before(timeLimite)){
+
+                        if (idA ==5){
+                            actionUri = evaluar_uriEditar;
+                            break;}
+                        if (idA ==4){
+
+                            actionUri = evaluarAdministracion_uriEditar;
+                            break;}
+                        if (idA ==3){
+
+                            actionUri = evaluarProduccion_uriEditar;
+                            break;}
+                        if (idA ==2){
+
+                            actionUri = evaluarMarketing_uriEditar;
+                            break;}
+                        else{
+
+                            actionUri = evaluarInformatica_uriEditar;
+                            break;}
+
+                    }
+                    else{
+                        actionUri=Notime_uri;
+                        break;
+                    }
 
 
+                }else {
+                    month++;
+                    Timestamp timeNow = new Timestamp(System.currentTimeMillis());
+                    Timestamp timeLimite = Timestamp.valueOf(year + "-" + month + "-" + day + " 0:0:0.0");
+
+                    if (timeNow.before(timeLimite)){
+
+                        if (idA ==5){
+                            actionUri = evaluar_uriEditar;
+                            break;}
+                        if (idA ==4){
+
+                            actionUri = evaluarAdministracion_uriEditar;
+                            break;}
+                        if (idA ==3){
+
+                            actionUri = evaluarProduccion_uriEditar;
+                            break;}
+                        if (idA ==2){
+
+                            actionUri = evaluarMarketing_uriEditar;
+                            break;}
+                        else{
+
+                            actionUri = evaluarInformatica_uriEditar;
+                            break;}
+
+                    }
+                    else{
+                        actionUri=Notime_uri;
+                        break;
+                    }
 
 
-
-
-/*
-            case "editCorre": {
-                Company company = service.getCompanyById(
-                        codCom
-                        //Integer.parseInt(request.getParameter("idCompany"))
-                );
-                request.setAttribute("company", company);
-                request.setAttribute("action", "editCorre");
-                actionUri = UpdateCompanyEmail_URI;
-                break;
-            }
-
-
-            case "seleccion": {
-
-
-                Company company = service.getCompanyById(
-                        codCom
-                        //Integer.parseInt(request.getParameter("idCompany"))
-
-                );
-                request.setAttribute("company", company);
-                request.setAttribute("action", "seleccion");
-                actionUri = Adm_URI;
-                break;
-            }
-
-            case "seleccionEmpleados": {
-
-
-                Company company = service.getCompanyById(
-                        codCom
-                        //Integer.parseInt(request.getParameter("idCompany"))
-
-                );
-                request.setAttribute("company", company);
-                request.setAttribute("action", "seleccion");
-                actionUri = ListEmpleados_URI;
-                break;
-            }
-
-            case "regresar": {
-                Company company = service.getCompanyById(
-                        codCom
-                        //Integer.parseInt(request.getParameter("idCompany"))
-                );
-                request.setAttribute("company", company);
-                request.setAttribute("action", "edit");
-                actionUri = MenuRoot_URI;
-                break;
-
+                }
 
             }
-
-            case "creEmail": {
-                Company company = service.getCompanyById(
-                        codCom
-                        //Integer.parseInt(request.getParameter("idCompany"))
-
-                );
-                request.setAttribute("company", company);
-                request.setAttribute("action", "edit");
-                actionUri = NuevoEmailEmp_URI;
-                break;
-            }
-
-            case "lista": {
-                Company company = service.getCompanyById(
-                        codCom
-                        //Integer.parseInt(request.getParameter("idCompany"))
-                );
-
-
-                request.setAttribute("company", company);
-                request.setAttribute("action", "edit");
-                actionUri = listaAdministradores;
-                break;
-            }
-
-            case "editTypeEmployee": {
-                Employee employee = service.getEmployeeById(
-                        //codCom
-                        Integer.parseInt(request.getParameter("idEmployee"))
-                );
-                request.setAttribute("employee", employee);
-                request.setAttribute("action", "editTypeEmployee");
-                actionUri =ChangeEmpl_URI;
-                break;
-            }
-
-
-            case "editTypeAdmin": {
-                Employee employee = service.getEmployeeById(
-                        //codCom
-                        Integer.parseInt(request.getParameter("idEmployee"))
-                );
-                request.setAttribute("employee", employee);
-                request.setAttribute("action", "editTypeAdmin");
-                actionUri = ChangeAdm_URI;
-                break;
-            }
-*/
-
-
-
 
             default:
                 actionUri = MenuRoot_URI;

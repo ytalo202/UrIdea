@@ -472,6 +472,15 @@ public class HRDataStore {
         );
     }
 
+
+    public List<Evaluation> findFechaEvaluation(int id) {
+
+        return getEvaluationsEntity().fechafindbyId(id,
+                getEmployeesEntity(),getCompaniesEntity(),
+                getEmailAddressesEntity(),getAreasEntity()
+        );
+    }
+
     public List<Evaluation> findListEvaluationById(int id) {
 
         return getEvaluationsEntity().findbyIdEmpleadoListado(id,
@@ -487,6 +496,31 @@ public class HRDataStore {
                 getCompaniesEntity(),
                 getEmailAddressesEntity(),getAreasEntity());
     }
+
+    public boolean updateAdministracionEva(Evaluation evaluation) {
+
+        return getEvaluationsEntity().updateAdministracionEva(evaluation);
+    }
+
+    public boolean updatePracticantesEva(Evaluation evaluation) {
+
+        return getEvaluationsEntity().updatePracticantesEva(evaluation);
+    }
+    public boolean updateProductividadEva(Evaluation evaluation) {
+
+        return getEvaluationsEntity().updateProduccionEva(evaluation);
+    }
+    public boolean updateInformaticoEva(Evaluation evaluation) {
+
+        return getEvaluationsEntity().updateInformaticaEva(evaluation);
+    }
+
+    public boolean updateMarketiongEva(Evaluation evaluation) {
+
+        return getEvaluationsEntity().updateMarketingEva(evaluation);
+    }
+
+
 
 }
 

@@ -189,10 +189,14 @@
             </table>
             <br>
             <p>Comentario: <c:out value=" ${evaluation.comment}"/></p>
-            <p align="center">
-                <a href="TypeEmployeeValidation?action=EditarEvaluacion&idEvaluacion=<c:out value="${evaluation.id}"/>">
-                    Si desea Editar la Evaluacion:</a>
-            </p>
+            <c:forEach var="evaluation" items="${service.findFechaEvaluation(evaluation.id)}">
+                <p align="center">
+                    <a href="TypeEmployeeValidation?action=EditarEvaluacion&idEvaluacion=<c:out value="${evaluation.id}"/>&year=<c:out value="${evaluation.year}"/>&month=<c:out value="${evaluation.month}"/>&day=<c:out value="${evaluation.day}"/>">
+                        Si desea Editar la Evaluacion:
+                    </a>
+                </p>
+
+            </c:forEach>
 
         </div>
         <br>

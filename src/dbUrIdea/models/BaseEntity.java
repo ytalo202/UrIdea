@@ -17,6 +17,9 @@ public class BaseEntity {
 
     private static String Base_Email= "select id from ";
 
+    private static String Base_Evaluation= "SELECT id,from_unixtime( UNIX_TIMESTAMP(  evaluation_date_and_time),'%Y')," +
+            " from_unixtime( UNIX_TIMESTAMP(  evaluation_date_and_time),'%m'),from_unixtime( UNIX_TIMESTAMP(  evaluation_date_and_time),'%d')" +
+            " from ";
 
 
     private String tableName;
@@ -67,6 +70,14 @@ public class BaseEntity {
         Base_Email = base_Email;
     }
 
+    public static String getBase_Evaluation() {
+        return Base_Evaluation;
+    }
+
+    public static void setBase_Evaluation(String base_Evaluation) {
+        Base_Evaluation = base_Evaluation;
+    }
+
 
     public Connection getConnection() {
         return connection;
@@ -110,6 +121,11 @@ public class BaseEntity {
     public String getDefaultEmailQuery() {
 
         return  Base_Email+ getTableName();
+    }
+
+    public String getDefaultEvaluationQuery() {
+
+        return  Base_Evaluation+ getTableName();
     }
 
 

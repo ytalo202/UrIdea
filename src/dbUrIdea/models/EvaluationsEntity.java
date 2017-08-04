@@ -81,6 +81,21 @@ public class EvaluationsEntity extends BaseEntity{
 
 
 
+    public List<Evaluation> fechafindbyId(int id,EmployeesEntity employeesEntity,
+                                             CompaniesEntity companiesEntity,
+
+                                             EmailAddressesEntity
+                                                     emailAddressesEntity,AreasEntity areasEntity
+    ) {
+
+        String criteria = "id = " +id;
+
+        return findBySeparado(criteria, employeesEntity, companiesEntity,
+                emailAddressesEntity,areasEntity);
+    }
+
+
+
     public Evaluation findByFirstLastName(String userEmployee,
                                         EmployeesEntity employeesEntity,
                                         CompaniesEntity companiesEntity,
@@ -109,6 +124,30 @@ public class EvaluationsEntity extends BaseEntity{
             ResultSet rs = getConnection().createStatement().executeQuery(sql);
             if(rs == null) return null;
             while(rs.next()) evaluations.add(Evaluation.build(rs,
+                    employeesEntity, companiesEntity,
+                    emailAddressesEntity,areasEntity));
+
+            return evaluations;
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return evaluations;
+    }
+
+
+
+    public List<Evaluation> findBySeparado(String criteria,
+                                           EmployeesEntity employeesEntity,
+                                           CompaniesEntity companiesEntity,
+                                           EmailAddressesEntity emailAddressesEntity,AreasEntity areasEntity
+    ) {
+
+        String sql = getDefaultEvaluationQuery() + (criteria.equalsIgnoreCase("") ? "" : " WHERE " + criteria);
+        List<Evaluation> evaluations = new ArrayList<>();
+        try {
+            ResultSet rs = getConnection().createStatement().executeQuery(sql);
+            if(rs == null) return null;
+            while(rs.next()) evaluations.add(Evaluation.build3(rs,
                     employeesEntity, companiesEntity,
                     emailAddressesEntity,areasEntity));
 
@@ -180,8 +219,9 @@ public class EvaluationsEntity extends BaseEntity{
                 "grade1 = "+evaluation.getGrade1AsString()+", "+
                 "grade2 = "+evaluation.getGrade2AsString()+", "+
                 //actitud
+                "competitive = "+evaluation.getCompetitiveAsString()+", "+
                 "commitment_company = "+evaluation.getCommitment_companyAsString()+", "+
-                "competitive = "+evaluation.getCompetitiveAsString()+ ", "+
+
                 "work_under_pressure = "+evaluation.getWork_under_pressureAsString()+", "+
                 "proactive = "+evaluation.getProactiveAsString()+", "+
                 //valores
@@ -199,7 +239,7 @@ public class EvaluationsEntity extends BaseEntity{
                 "innovative = "+evaluation.getInnovativeAsString()+", "+
 
                 "comment = "+evaluation.getCommentAsValue()+", "+
-                "competitive = "+evaluation.getAvg_gradeAsString()+
+                "avg_grade = "+evaluation.getAvg_gradeAsString()+
                 " WHERE id = " + evaluation.getId();
 
         return change(sql);
@@ -278,7 +318,7 @@ public class EvaluationsEntity extends BaseEntity{
                 "innovative = "+evaluation.getInnovativeAsString()+", "+
 
                 "comment = "+evaluation.getCommentAsValue()+", "+
-                "competitive = "+evaluation.getAvg_gradeAsString()+
+                "avg_grade = "+evaluation.getAvg_gradeAsString()+
                 " WHERE id = " + evaluation.getId();
 
         return change(sql);
@@ -352,7 +392,7 @@ public class EvaluationsEntity extends BaseEntity{
                 "innovative = "+evaluation.getInnovativeAsString()+", "+
 
                 "comment = "+evaluation.getCommentAsValue()+", "+
-                "competitive = "+evaluation.getAvg_gradeAsString()+
+                "avg_grade = "+evaluation.getAvg_gradeAsString()+
                 " WHERE id = " + evaluation.getId();
 
         return change(sql);
