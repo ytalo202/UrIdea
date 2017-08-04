@@ -59,7 +59,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Administrador <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="v?action=perfilCompany"><i class="fa fa-fw fa-user"></i> Perfil</a>
+                        <a href="TypeEmployeeValidation?action=PerfilAdmin"><i class="fa fa-fw fa-user"></i> Perfil</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-fw fa-envelope"></i> Mensaje</a>
@@ -76,7 +76,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li class="active">
-                    <a href="v?action=regresar"><i class="fa fa-fw fa-dashboard"></i> Menú</a>
+                    <a href="TypeEmployeeValidation?action=regresar"><i class="fa fa-fw fa-dashboard"></i> Menú</a>
                 </li>
                 <li>
                     <a href="TypeEmployeeValidation?action=editEmployee"><i class="fa fa-fw fa-bar-chart-o"></i> Editar Cuenta</a>
@@ -98,18 +98,18 @@
         <!-- /.navbar-collapse -->
     </nav>
 
-
+<div align="center">
 
 <form action="TypeEmployeeValidation" method="post">
 
 <h1>Agregar Caracteristicas A Cv</h1>
 
-    <p align="center"><select name="cv_type"></select></p>
+    <p><select name="cv_type">
         <option value="1" >Experienza</option>
         <option value="2" >Estudios</option>
-    </select>
-<br>
-    <p align="center">description
+    </select></p>
+
+    <p >description
         <textarea name="description"
                   cols="30" rows="10"></textarea>
     </p>
@@ -118,6 +118,8 @@
     <input type="hidden" value="addCv2" name="action"/>
   <p>  <button input type="submit" class="btn btn-primary">Guardar</button></p>
 </form>
+</div>
+
 
 </div>
 <!-- /.container-fluid -->

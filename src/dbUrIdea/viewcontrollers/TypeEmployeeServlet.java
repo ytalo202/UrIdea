@@ -97,6 +97,8 @@ public class TypeEmployeeServlet extends HttpServlet {
     public static String perfilHistoEvaluMarketingEmployee2_uri = "/PerfilHistorialEvaluationMarketingAdmin.jsp";
     public static String perfilHistoProduccionEmployee2_uri = "/PerfilHistorialEvaluationProduccionAdmin.jsp";
 
+    public static String PerfilAdmin_uri = "/PerfilAdmin.jsp";
+    public static String PerfilAdminEmpleado_uri = "/PerfilAdminEmpleado.jsp";
     public static String Notime_uri = "/timeF.jsp";
 
     String email;
@@ -1739,6 +1741,25 @@ public class TypeEmployeeServlet extends HttpServlet {
                     break;}
             }
 
+            case "PerfilAdmin": {
+
+
+                Employee employee = service.getEmployeeById(idE);
+                request.setAttribute("employee", employee);
+                request.setAttribute("action", "Perfil");
+                actionUri = PerfilAdmin_uri;
+                break;
+            }
+            case "PerfilAdminFempleado": {
+
+
+                Employee employee = service.getEmployeeById(idE);
+                request.setAttribute("employee", employee);
+                request.setAttribute("action", "Perfil");
+                actionUri = perfilEmployee_Adminuri;
+                break;
+            }
+
             case "EditarEvaluacion": {
                 idEvaluacion =Integer.parseInt(request.getParameter("idEvaluacion"));
                 int year = Integer.parseInt(request.getParameter("year"));
@@ -1816,7 +1837,12 @@ public class TypeEmployeeServlet extends HttpServlet {
 
                 }
 
+
+
+
             }
+
+
 
             default:
                 actionUri = MenuRoot_URI;

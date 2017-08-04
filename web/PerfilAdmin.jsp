@@ -2,6 +2,7 @@
 <%@ taglib uri="http://bootstrapjsp.org/" prefix="b" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="service" class="dbUrIdea.services.HRService"/>
+<jsp:include page="bootstrap.jsp"/>
 <html lang="es">
 
 <head>
@@ -13,6 +14,10 @@
     <meta name="author" content="">
 
     <title>SB Admin - Bootstrap Admin Template</title>
+
+
+
+
 
     <!-- Bootstrap Core CSS -->
     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin/css/bootstrap.min.css" rel="stylesheet">
@@ -34,6 +39,20 @@
     <![endif]-->
 
 
+
+
+    <style>
+        th{
+            height: 24px;
+            line-height: 24px;
+            color: #e2e2e2;
+            background-color: #ac2925;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+
+    </style>
 
 
 
@@ -99,7 +118,6 @@
         </div>
         <!-- /.navbar-collapse -->
     </nav>
-
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <div class="container">
@@ -177,45 +195,7 @@
                     </div>
 
 
-                    <div class="bs-callout bs-callout-danger">
 
-                        <h4>Evaluación</h4>
-                        <ul class="list-group">
-
-                            <c:forEach var="evaluation" items="${service.findEvaluationAgv((employee.id))}">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-success"
-                                         style="width: <c:out value="${evaluation.grade}"/>%">
-                                        <span class="sr-only">35% Complete (success)</span>
-                                        <c:out value="${evaluation.grade}"/>%
-                                    </div>
-                                    <div class="progress-bar progress-bar-striped active" style="width: <c:out value=" ${evaluation.grade1}"/>%">
-                                        <span class="sr-only">20% Complete (warning)</span>
-                                        <c:out value="${evaluation.grade1}"/>%
-                                    </div>
-                                    <div class="progress-bar progress-bar-danger" style="width: <c:out value=" ${evaluation.grade2}"/>%">
-                                        <span class="sr-only">10% Complete (danger)</span>
-                                        <c:out value="${evaluation.grade2}"/>%
-                                    </div>
-                                </div>
-
-
-                                <div >
-
-
-                                </div>
-                                <h1>Promedio General</h1>
-                                <c:out value="${evaluation.avg_grade}"/>
-
-                                <a href="TypeEmployeeValidation?action=EvaluationHistorialAdmin&idEmployee=
-<c:out value="${evaluation.idUserEmployee.id}"/>&idArea=<c:out value="${evaluation.idUserEmployee.area.id}"/>">
-                                    Ver Historial de Evaluaciones
-                                </a>
-
-                            </c:forEach>
-
-                        </ul>
-                    </div>
                     <div class="bs-callout bs-callout-danger">
 
                         <table class="table table-striped table-responsive ">
@@ -252,40 +232,52 @@
 
 
 
-    <br>
-    <h2>Estudios</h2>
-    <c:forEach var="cv" items="${service.findCvByIdEmployeeTypo(employee.id,2)}">
+<br>
+<h2>Estudios</h2>
+<c:forEach var="cv" items="${service.findCvByIdEmployeeTypo(employee.id,2)}">
 
-        <p>
-            <c:out value="${cv.description}"/>
+    <p>
+        <c:out value="${cv.description}"/>
 
-        </p>
-    </c:forEach>
+    </p>
+</c:forEach>
 
-    <h2>Experienzas</h2>
-    <c:forEach var="cv" items="${service.findCvByIdEmployeeTypo(employee.id,1)}">
+<h2>Experienzas</h2>
+<c:forEach var="cv" items="${service.findCvByIdEmployeeTypo(employee.id,1)}">
 
-        <p>
-            <c:out value="${cv.description}"/>
+    <p>
+        <c:out value="${cv.description}"/>
 
-        </p>
-    </c:forEach>
+    </p>
+</c:forEach>
+
 
 
 
 </div>
+
+
+
+</div>
+
+</div>
+
+
+</div>
 <!-- /#wrapper -->
+
+<!-- jQuery -->
+
+<!-- Morris Charts JavaScript -->
+
 <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/bootstrap.min.js"></script>
 
-<!-- Morris Charts JavaScript -->
 <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/raphael.min.js"></script>
 <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/morris.min.js"></script>
 <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/morris-data.js"></script>
-
-<!-- jQuery -->
 
 </body>
 

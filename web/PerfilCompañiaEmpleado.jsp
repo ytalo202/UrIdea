@@ -25,11 +25,8 @@
     <p>Correo: <c:out value="${company.emailAdress.emailData}"/></p>
     <p>Direccion: <c:out value="${company.address}"/></p>
     <p>Numero Telefonico: <c:out value="${company.phoneNumber}"/></p>
-    <p>Descripxion: <c:out value="${company.description}"/></p>
+    <p>Descripcion: <c:out value="${company.description}"/></p>
 
-    <a href="v?action=edit">
-        Editar Datos
-    </a>
 
 </c:forEach>
 
