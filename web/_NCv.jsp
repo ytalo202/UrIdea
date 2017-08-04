@@ -98,37 +98,31 @@
         <!-- /.navbar-collapse -->
     </nav>
 
-    <div id="page-wrapper">
 
-
-        <div class="container-fluid">
 
 <form action="TypeEmployeeValidation" method="post">
 
+<h1>Agregar Caracteristicas A Cv</h1>
 
-
-    <select name="cv_type">
+    <p align="center"><select name="cv_type"></select></p>
         <option value="1" >Experienza</option>
         <option value="2" >Estudios</option>
     </select>
-
-    <p>description
+<br>
+    <p align="center">description
         <textarea name="description"
                   cols="30" rows="10"></textarea>
     </p>
 
 
     <input type="hidden" value="addCv2" name="action"/>
-    <input type="submit"/>
+  <p>  <button input type="submit" class="btn btn-primary">Guardar</button></p>
 </form>
 
 </div>
 <!-- /.container-fluid -->
 
-</div>
-<!-- /#page-wrapper -->
 
-</div>
 <!-- /#wrapper -->
 
 <!-- jQuery -->

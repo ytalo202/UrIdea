@@ -38,11 +38,18 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        th{
+            height: 24px;
+            line-height: 24px;
+            color: #d5d5d5;
+            background-color: #255625;
+            text-align: center;
+            vertical-align: middle;
+        }
 
+
+    </style>
 
 
 
@@ -118,11 +125,12 @@
     </nav>
 
 
+<br>
+    <br>
 
 
 
-
-    <h1>Historial de Evaluacion de Produccion</h1>
+    <h1 align="center">Historial de Evaluacion del Area de  Producción</h1>
 <div class="col-sm-4">
     <c:forEach var="evaluation" items="${service.findListEvaluatsById((employee.id))}">
 
@@ -146,11 +154,24 @@
 
         </a>
         <div id="<c:out value="${evaluation.id}"/>" class="collapse">
-            <h5>Descripcion</h5>
+
+            <section class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title" align="center">Descripción</h3>
+                            </div>
+                            <div class="panel-body">
+
+
             <p>promedio: <c:out value="${evaluation.avg_grade}"/></p>
             <p>Fecha: <c:out value=" ${evaluation.date}"/></p>
-            <p>Evaluador: <c:out value=" ${evaluation.idEvaluator.name}"/> <c:out value=" ${evaluation.idEvaluator.firstLastName}"/> <c:out value=" ${evaluation.idEvaluator.secondLastName}"/></p>
-            <table border="1">
+                                <p>Evaluador: <c:out value=" ${evaluation.idEvaluator.name}"/></p>
+                                <p> Apellido Paterno   <c:out value=" ${evaluation.idEvaluator.firstLastName}"/></p>
+             <p>  Apellido Materno <c:out value=" ${evaluation.idEvaluator.secondLastName}"/></p>
+                                <div class="table-responsive">
+            <table class="table table-bordered">
                 <tr>
                     <th >Evaluacion de Actitud</th>
                     <th >Puntaje </th>
@@ -187,6 +208,7 @@
 
 
             </table>
+                                </div>
             <br>
             <p>Comentario: <c:out value=" ${evaluation.comment}"/></p>
             <c:forEach var="evaluation" items="${service.findFechaEvaluation(evaluation.id)}">
@@ -204,7 +226,22 @@
     </c:forEach>
 
 </div>
+                        </div>
+                    </div>
 
+            </section>
+        </div>
 </div>
+</div>
+
+<script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/bootstrap.min.js"></script>
+
+<script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/raphael.min.js"></script>
+<script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/morris.min.js"></script>
+<script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/morris-data.js"></script>
+
 </body>
 </html>

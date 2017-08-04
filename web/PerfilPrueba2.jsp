@@ -101,92 +101,161 @@
     </nav>
 
 
-<h1>Perfil</h1>
-<c:forEach var="employee" items="${service.findAllEmployeeById(employee.id)}">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="container">
+        <div class="row">
+            <h1 align="center">Perfil del Empleado</h1>
+            <div class="col-sm-11">
 
-    <p>Nombre </p>
-    <c:out value="${employee.name} "/>
-    <c:out value="${employee.firstLastName} "/>
-    <c:out value="${employee.secondLastName}"/>
-    <br>
-    <p>Trabaja Para </p>
-    <c:out value="${employee.company.nameCompany} -> "/>
-    <br>
-    <p>Su Correo </p>
-    <c:out value="${employee.emailAddress.emailData} -> "/>
-    <br>
-    <p>Recidencia </p>
-    <c:out value="${employee.department}"/>
-    <br>
-    <p>Dni </p>
-    <c:out value="${employee.dni} -> "/>
-    <br>
-    <p>Direccion de Domicilio </p>
-    <c:out value="${employee.address} -> "/>
-    <br>
-    <p>Cumpleaños </p>
-    <c:out value="${employee.birthdate} -> "/>
-    <br>
-    <p>Telefono
-        <c:out value="${employee.phoneNumber}"/></p>
-    <br>
-    <p>Celular
-        <c:out value="${employee.cellPhoneNumber}"/></p>
-    <br>
-    <p>Area
-        <c:out value="${employee.area.nameArea}"/></p>
+                <!-- resumt -->
+                <div class="panel panel-default">
+                    <div class="panel-heading resume-heading">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="col-xs-12 col-sm-4">
+                                    <figure>
+                                        <img class="img-circle img-responsive" alt="" src="http://2.bp.blogspot.com/-NcUqzr5Eyyc/ToNMmTHrY2I/AAAAAAAAA4E/WVw3bWlLi_o/s1600/terno_cc_2.jpg">
+                                    </figure>
+                                    <div class="row">
+                                        <div class="col-xs-12 social-btns">
+                                            <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
+                                                <a href="#" class="btn btn-social btn-block btn-google">
+                                                    <i class="fa fa-google"></i> </a>
+                                            </div>
+                                            <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
+                                                <a href="#" class="btn btn-social btn-block btn-facebook">
+                                                    <i class="fa fa-facebook"></i> </a>
+                                            </div>
+                                            <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
+                                                <a href="#" class="btn btn-social btn-block btn-twitter">
+                                                    <i class="fa fa-twitter"></i> </a>
+                                            </div>
+                                            <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
+                                                <a href="#" class="btn btn-social btn-block btn-linkedin">
+                                                    <i class="fa fa-linkedin"></i> </a>
+                                            </div>
+                                            <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
+                                                <a href="#" class="btn btn-social btn-block btn-github">
+                                                    <i class="fa fa-github"></i> </a>
+                                            </div>
+                                            <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
+                                                <a href="#" class="btn btn-social btn-block btn-stackoverflow">
+                                                    <i class="fa fa-stack-overflow"></i> </a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-8" >
+                                    <ul class="list-group">
+                                        <c:forEach var="employee" items="${service.findAllEmployeeById(employee.id)}">
+
+                                            <li class="list-group-item">Nombre :  <c:out value="${employee.name}"/></li>
+                                            <li class="list-group-item">Apellido Paterno :  <c:out value="${employee.firstLastName} "/></li>
+                                            <li class="list-group-item">Apellido Materno :   <c:out value="${employee.secondLastName}"/></li>
+                                            <li class="list-group-item">Empresa : <c:out value="${employee.company.nameCompany}"/></li>
+                                            <li class="list-group-item">Residencia <c:out value="${employee.department}"/></li>
+                                            <li class="list-group-item">Dni : <c:out value="${employee.dni} "/></li>
+                                            <li class="list-group-item">Direccion : <c:out value="${employee.address} "/></li>
+                                            <li class="list-group-item">Cumpleaños : <c:out value="${employee.birthdate} "/></li>
+                                            <li class="list-group-item">Area : <c:out value="${employee.area.nameArea}"/></li>
+                                            <li class="list-group-item"><i class="fa fa-envelope"></i> <c:out value="${employee.emailAddress.emailData} "/></li>
+                                            <li class="list-group-item"><i class="fa fa-phone"></i> <c:out value="${employee.phoneNumber}"/></li>
+                                            <li class="list-group-item"><i class="fa fa-mobile-phone"></i> <c:out value="${employee.cellPhoneNumber}"/></li>
+
+
+                                        </c:forEach>
 
 
 
 
-</c:forEach>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-<h1>Evaluacion</h1>
-<c:forEach var="evaluation" items="${service.findEvaluationAgv((employee.id))}">
-    <div class="progress">
-        <div class="progress-bar progress-bar-success"
-             style="width: <c:out value="${evaluation.grade}"/>%">
-            <span class="sr-only">35% Complete (success)</span>
-            <c:out value="${evaluation.grade}"/>%
-        </div>
-        <div class="progress-bar progress-bar-striped active" style="width: <c:out value=" ${evaluation.grade1}"/>%">
-            <span class="sr-only">20% Complete (warning)</span>
-            <c:out value="${evaluation.grade1}"/>%
-        </div>
-        <div class="progress-bar progress-bar-danger" style="width: <c:out value=" ${evaluation.grade2}"/>%">
-            <span class="sr-only">10% Complete (danger)</span>
-            <c:out value="${evaluation.grade2}"/>%
+
+                    <div class="bs-callout bs-callout-danger">
+
+                        <h4>Evaluación</h4>
+                        <ul class="list-group">
+
+                            <c:forEach var="evaluation" items="${service.findEvaluationAgv((employee.id))}">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success"
+                                         style="width: <c:out value="${evaluation.grade}"/>%">
+                                        <span class="sr-only">35% Complete (success)</span>
+                                        <c:out value="${evaluation.grade}"/>%
+                                    </div>
+                                    <div class="progress-bar progress-bar-striped active" style="width: <c:out value=" ${evaluation.grade1}"/>%">
+                                        <span class="sr-only">20% Complete (warning)</span>
+                                        <c:out value="${evaluation.grade1}"/>%
+                                    </div>
+                                    <div class="progress-bar progress-bar-danger" style="width: <c:out value=" ${evaluation.grade2}"/>%">
+                                        <span class="sr-only">10% Complete (danger)</span>
+                                        <c:out value="${evaluation.grade2}"/>%
+                                    </div>
+                                </div>
+
+
+                                <div >
+
+
+                                </div>
+                                <h1>Promedio General</h1>
+                                <c:out value="${evaluation.avg_grade}"/>
+
+                                <a href="TypeEmployeeValidation?action=EvaluationHistorialAdmin&idEmployee=
+<c:out value="${evaluation.idUserEmployee.id}"/>&idArea=<c:out value="${evaluation.idUserEmployee.area.id}"/>">
+                                    Ver Historial de Evaluaciones
+                                </a>
+
+                            </c:forEach>
+
+                        </ul>
+                    </div>
+                    <div class="bs-callout bs-callout-danger">
+
+                        <table class="table table-striped table-responsive ">
+                            <thead>
+
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <h1>Cv</h1>
+                                <c:forEach var="cv" items="${service.findAllCvsByIdEmployee((employee.id))}">
+
+                                    <p>
+                                        <c:out value="${cv.description}"/>
+
+                                    </p>
+                                </c:forEach>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- resume -->
+
         </div>
     </div>
-
-
-    <h1>Promedio General</h1>
-    <c:out value="${evaluation.avg_grade}"/>
-
-    <a href="TypeEmployeeValidation?action=EvaluationHistorialAdmin&idEmployee=
-<c:out value="${evaluation.idUserEmployee.id}"/>&idArea=<c:out value="${evaluation.idUserEmployee.area.id}"/>">
-        Ver Historial de Evaluaciones
-    </a>
-
-</c:forEach>
+</div>
 
 
 
-<h1>Cv</h1>
-<c:forEach var="cv" items="${service.findAllCvsByIdEmployee((employee.id))}">
 
-    <p>
-        <c:out value="${cv.description}"/>
 
-    </p>
-</c:forEach>
+
+
 
 
 
 </div>
 <!-- /#wrapper -->
-
-<!-- jQuery -->
 <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
@@ -196,6 +265,8 @@
 <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/raphael.min.js"></script>
 <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/morris.min.js"></script>
 <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/plugins/morris/morris-data.js"></script>
+
+<!-- jQuery -->
 
 </body>
 
