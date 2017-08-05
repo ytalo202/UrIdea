@@ -10,10 +10,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 
-<html lang="en">
+<html lang="es">
 <head>
     <!-- Theme Made By www.w3schools.com - No Copyright -->
-    <title>Evap</title>
+    <title>Perfil</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -27,108 +27,32 @@
 
 
     <script src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monserrat">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
     <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 
-
-
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 
     <style>
-
-
-
-        .carousel-inner img {
-
-
-            width: 100%; /* Set width to 100% */
-            margin: auto;
-        }
-
-
-        h3, h4 {
-            margin: 10px 0 30px 0;
-            letter-spacing: 10px;
-            font-size: 20px;
-            color: #111;
-        }
-        .person {
-
-            margin-bottom: 25px;
-            width: 50%;
-            height: 30%;
-
-        }
-
-
-        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
-        @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
-        ul,li{
-            padding:0;
-            margin:0;
-        }
-        li{
-            list-style-type:none;
-        }
-
-
-
-        footer { background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', sans-serif; }
-        .footer-col { margin-top:50px; }
-        .logofooter { margin-bottom:10px; font-size:25px; color:#fff; font-weight:700;}
-
-        .footer-col p { color:#fff; font-size:12px; font-family: 'Open Sans', sans-serif; margin-bottom:15px;}
-        .footer-col p i { width:20px; color:#999;}
-
-        .footer-ul { list-style-type:none;  padding-left:0; margin-left:2px;}
-        .footer-ul li { line-height:29px; font-size:12px;}
-        .footer-ul li a { color:#a0a3a4; transition: color 0.2s linear 0s, background 0.2s linear 0s; }
-        .footer-ul i { margin-right:10px;}
-        .footer-ul li a:hover {transition: color 0.2s linear 0s, background 0.2s linear 0s; color:#ff670f; }
-
-        .copyright { min-height:40px; background-color:#000000;}
-        .copyright p { text-align:left; color:#FFF; padding:10px 0; margin-bottom:0;}
-        .heading7 { font-size:21px; font-weight:700; color:#d9d6d6; margin-bottom:22px;}
-        .post p { font-size:12px; color:#FFF; line-height:20px;}
-        .post p span { display:block; color:#8f8f8f;}
-        .bottom_ul { list-style-type:none; float:right; margin-bottom:0;}
-        .bottom_ul li { float:left; line-height:40px;}
-        .bottom_ul li:after { content:"/"; color:#FFF; margin-right:8px; margin-left:8px;}
-        .bottom_ul li a { color:#FFF;  font-size:12px;}
-        .social-icon {
-            width: 30px;
-            height: 30px;
-            font-size: 15px;
-            background-color: blue;
-            color: #fff;
+        th{
+            height: 24px;
+            line-height: 24px;
+            color: #e2e2e2;
+            background-color: #ac2925;
             text-align: center;
-            margin-right: 10px;
-            padding-top: 7px;
-            border-radius: 50%;
+            vertical-align: middle;
         }
-        .footer-social li{
-            float:left;
-        }
-        .linked-in{
-            background-color:#007bb6;
-        }
-        .facebook{
-            background-color:#3b5998;
-        }
-        .twitter{
-            background-color:#1da1f2;
-        }
-        .google{
-            background-color:#f63e28;
-        }
-        .form-control {
-            border-radius: 0;
-        }
+
 
     </style>
+
+
+
+
+
+
 </head>
-<body>
+<body style="background-image:url(https://previews.123rf.com/images/vska/vska1302/vska130200057/17854770-gran-luz-tecnolog-a-futurista-ordenador-negocio-bandera-Foto-de-archivo.jpg)" class="fa-home">
 
 
 <div class="navbar navbar-default navbar-fixed-top">
@@ -176,7 +100,7 @@
     </div>
 </div>
 
-</nav>
+
 
 
 
@@ -201,13 +125,7 @@
 
 <!-- Sidebar on small screens when clicking the menu icon -->
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+
 
     <!-- Compañia Datos -->
 
@@ -223,26 +141,48 @@
 
     <br>
 
-    <h1>Compañia <c:out value="${company.nameCompany}"/></h1>
 
-    <p>Correo: <c:out value="${company.emailAdress.emailData}"/></p>
-    <p>Direccion: <c:out value="${company.address}"/></p>
-    <p>Numero Telefonico: <c:out value="${company.phoneNumber}"/></p>
-    <p>Descripxion: <c:out value="${company.description}"/></p>
+            <h1 align="center">Compañia <c:out value="${company.nameCompany}"/></h1>
+<p align="center"><a href="#1" data-toggle="collapse">
+    <img src="http://e.rpp-noticias.io/normal/2016/09/26/111411_252455.png"
+         class="img-circle person" alt="Random Name" width="255" height="255"> </a></p>
+<div id="1" class="collapse">
+    <div align="center">
+    <div class="col-xs-12 col-sm-12">
+        <ul class="list-group">
+            <li class="list-group-item" >Correo: <c:out value="${company.emailAdress.emailData}"/></li>
+            <li class="list-group-item">Direccion: <c:out value="${company.address}"/></li>
+    <li class="list-group-item" >Numero Telefonico: <c:out value="${company.phoneNumber}"/></li>
+    <li class="list-group-item">Descripxion: <c:out value="${company.description}"/></li>
 
-
-
+        </ul>
+    </div>
     </c:forEach>
+    </div>
+</div>
 
 
-
-    <h2>Empleados Administradores</h2>
-
-    <table>
+    <h1 align="center">Empleados Administradores</h1>
+    <p align="center"><a href="#2" data-toggle="collapse">
+        <img src="http://carmenpareja.com/wp-content/uploads/2015/09/junta_socios-300x200.jpg"
+             class="img-circle person" alt="Random Name" width="255" height="255"> </a></p>
+    <div id="2" class="collapse">
+    <section class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" align="center">Descripción</h3>
+                    </div>
+                    <div class="panel-body">
+<div class="table-responsive">
+    <table class="table table-bordered">
 
         <tr>
 
             <th>Nombre Completo</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
             <th>Dni</th>
             <th>Correo Electrónico</th>
             <th>Área</th>
@@ -257,8 +197,9 @@
 
         <c:forEach var="employee" items="${service.findAdmin(1,company.id)}">
             <tr>
-                <td><c:out value="${employee.name} "/><c:out value="${employee.firstLastName} "/>
-                    <c:out value="${employee.secondLastName}"/></td>
+                <td><c:out value="${employee.name} "/></td>
+                <td>     <c:out value="${employee.firstLastName} "/></td>
+                 <td>   <c:out value="${employee.secondLastName}"/></td>
                 <td> <c:out value="${employee.dni}"/></td>
                 <td> <c:out value="${employee.emailAddress.emailData}"/></td>
                 <td><c:out value="${employee.area.nameArea}"/></td>
@@ -277,19 +218,40 @@
         </c:forEach>
 
     </table>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </div>
 
 
 
 
 
-
-
-    <h2>Empleados Ordinarios</h2>
-    <table>
+    <h1 align="center">Empleados Ordinarios</h1>
+    <p align="center"><a href="#3" data-toggle="collapse">
+        <img src="https://www.actuall.com/wp-content/uploads/2016/04/empleado-discapacitado-trabaja-en-la-factoria-de-Ford-de-Almussafes-Valencia-EFE.jpg"
+                                                               class="img-circle person" alt="Random Name" width="255" height="255"> </a></p>
+    <div id="3" class="collapse">
+    <section class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" align="center">Descripción</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+    <table class="table table-bordered">
 
         <tr>
 
             <th>Nombre Completo</th>
+            <th>Apellido Paterno</th>
+            <th>Apelido Materno</th>
             <th>Dni</th>
             <th>Correo Electrónico</th>
             <th>Área</th>
@@ -304,8 +266,9 @@
 
         <c:forEach var="employee" items="${service.findAdmin(2,company.id)}">
             <tr>
-                <td><c:out value="${employee.name} "/><c:out value="${employee.firstLastName} "/>
-                    <c:out value="${employee.secondLastName}"/></td>
+                <td><c:out value="${employee.name} "/></td>
+                <td>    <c:out value="${employee.firstLastName} "/></td>
+                <td>    <c:out value="${employee.secondLastName}"/></td>
                 <td> <c:out value="${employee.dni}"/></td>
                 <td> <c:out value="${employee.emailAddress.emailData}"/></td>
                 <td><c:out value="${employee.area.nameArea}"/></td>
@@ -325,8 +288,15 @@
 
     </table>
 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    </div>
 
-</div>
+
 
 
 <script>

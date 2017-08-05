@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>Actualizar Correo</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin/css/bootstrap.min.css" rel="stylesheet">
@@ -125,7 +125,7 @@
                                 <label class="col-lg-2">Correo</label>
                                 <div class="col-lg-10">
                                     <input type="email" name="emailData" value="${employee.emailAddress.emailData}"
-                                           placeholder="Correo..." class="form-control" >
+                                           placeholder="Correo..." class="form-control" required>
                                 </div></div>
 
                             <div class="form-group">

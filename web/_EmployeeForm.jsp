@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>Datos del Empleado</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin/css/bootstrap.min.css" rel="stylesheet">
@@ -134,18 +134,18 @@
                             <div class="col-lg-10">
                                 <input type="text" name="password"
                                        value="${employee.password}"
-                                       class="form-control"/>
+                                       class="form-control" required/>
                             </div></div>
 
                         <div class="form-group">
                          <label class="col-lg-2">Nombre</label>
                             <div class="col-lg-10">
-                                <input type="text" name="employee_name" required pattern="[A-Za-z]+" value="${employee.name}"
-                                       class="form-control"/></div></div>
+                                <input type="text" name="employee_name"  pattern="[A-Za-z]+" value="${employee.name}"
+                                       class="form-control" required/></div></div>
                         <div class="form-group">
                           <label class="col-lg-2">Apellido Paterno</label>
-                            <div class="col-lg-10"><input type="text" name="employee_first_last_name" pattern="[A-Za-z]+" required
-                                                          value="${employee.firstLastName}" class="form-control"/>
+                            <div class="col-lg-10"><input type="text" name="employee_first_last_name" pattern="[A-Za-z]+"
+                                                          value="${employee.firstLastName}" class="form-control" required/>
                             </div></div>
                         <div class="form-group">
                             <label class="col-lg-2">Apellido Materno</label>

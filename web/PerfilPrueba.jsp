@@ -19,7 +19,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>Perfil</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin/css/bootstrap.min.css" rel="stylesheet">
@@ -102,23 +102,8 @@
                 <li>
                     <a href="v?action=editCorre"><i class="fa fa-fw fa-wrench"></i> Editar Email</a>
                 </li>
-                <li>
-                    <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-                    <ul id="demo" class="collapse">
-                        <li>
-                            <a href="#">Dropdown Item</a>
-                        </li>
-                        <li>
-                            <a href="#">Dropdown Item</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                </li>
-                <li>
-                    <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                </li>
+
+
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -175,7 +160,7 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-8" >
-                                    <ul class="list-group">
+                                    <ul class="list-group" >
                                         <c:forEach var="employee" items="${service.findAllEmployeeById(employee.id)}">
 
                                         <li class="list-group-item">Nombre :<c:out value="${employee.name}"/></li>

@@ -53,7 +53,7 @@
                         </div>
                         <h1>Elija Una Contraseña</h1>
                         <div class="form-group">
-                            <input type="text" name="contraseña" placeholder="Contraseña..." class="form-control" required>
+                            <input type="Contraseña" name="contraseña" placeholder="Contraseña..." class="form-control" required>
                         </div>
                         <input type="hidden" value="create" name="action"/>
                         <button type="submit" class="mybtn">Registrarme</button>

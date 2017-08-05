@@ -136,7 +136,7 @@
                     <div class="form-group">
                         <label class="col-lg-2">Contraseña</label>
                         <div class="col-lg-10">
-                            <input type="text" required name="password" value="${employee.password}" class="form-control"/></div></div>
+                            <input type="password" name="password" value="${employee.password}" class="form-control" required/></div></div>
 
                     <div class="form-group">
                         <label class="col-lg-2">Nombre</label>

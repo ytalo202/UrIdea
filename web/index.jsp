@@ -27,6 +27,11 @@
 
     <style>
 
+        @media (max-width: 600px) {
+            .carousel-caption {
+                display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+            }
+        }
 
 
         .carousel-inner img {
@@ -121,7 +126,7 @@
 <body>
 
 
-<div class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top">
 
 
     <div class="w3-top">
@@ -151,7 +156,7 @@
             <div class="w3-right w3-hide-small">
 
 
-                <a href="pagos.jsp" class="w3-bar-item w3-button">
+                <a href="index.jsp.jsp" class="w3-bar-item w3-button">
                     <i class="fa fa-home" aria-hidden="true" ></i> Inicio</a>
                 <a href="Listado.jsp" class="w3-bar-item w3-button">Nosotros</a>
 
@@ -166,9 +171,9 @@
 
         </div>
     </div>
-</div>
-
 </nav>
+
+
 
 
 
@@ -393,7 +398,7 @@
 <div class="copyright">
     <div class="container">
         <div class="col-md-6">
-            <p>© 2016 -.Derechos reservados</p>
+            <p>© 2017 -.Derechos reservados</p>
         </div>
         <div class="col-md-6">
             <ul class="bottom_ul">

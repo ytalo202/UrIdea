@@ -38,7 +38,7 @@
             <div class="col-sm-6 col-sm-offset-3 myform-cont" >
                 <div class="myform-top">
                     <div class="myform-top-left">
-                        <h3 >Root Nuevo</h3>
+                        <h3 >Nuevo Root</h3>
 
                     </div>
                     <div class="myform-top-right">

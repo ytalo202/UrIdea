@@ -38,18 +38,18 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Confirmation</h4>
+                    <h4 class="modal-title">Confirmación</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Do you want to save changes you made to document before closing?</p>
-                    <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
+                    <p>¿Estas seguro que quieres realizar esta acción?</p>
+                    <p class="text-warning"><small>Sino guarda sus cambios se perderan.</small></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" >
                         <a href="v?action=regresar">
                             Cancelar</a></button>
                     <input type="hidden" value="updatechangeEmployee" name="action"/>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                 </div>
             </div>
         </div>
