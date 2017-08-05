@@ -154,7 +154,7 @@
             </td>
         </tr>
         <tr>
-            <td>Comparte el logro con su equipo de trabajo</td>
+            <td>Organiza sus tiempos de la mejor manera</td>
             <td align="center"> <input type="radio" name="organized" value="1" checked></td>
             <td align="center"><input type="radio" name="organized" value="5"></td>
             <td align="center">    <input type="radio" name="organized" value="8.325">
@@ -169,7 +169,7 @@
             </td>
         </tr>
         <tr>
-            <td>Muestra Transparencia y Confianza al encargarle alguna compra</td>
+            <td>Muestra Respeto por los demas</td>
             <td align="center"> <input type="radio" name="respect" value="1" checked></td>
             <td align="center">     <input type="radio" name="respect" value="5"></td>
                <td align="center"> <input type="radio" name="respect" value="8.325">

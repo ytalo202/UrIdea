@@ -160,7 +160,7 @@
 
 
                                     <tr>
-                                        <td>Habilidad de Comunicación</td>
+                                        <td>Se Comunicación de manera fluida y sin timiden</td>
                                         <td align="center"> <input type="radio" name="communication_skills" value="1" checked></td>
                                         <td align="center">   <input type="radio" name="communication_skills" value="2"></td>
                                         <td align="center">  <input type="radio" name="communication_skills" value="4.175">
@@ -168,7 +168,7 @@
                                     </tr>
 
                                     <tr>
-                                        <td>Habilidad de Idiomas</td>
+                                        <td>Sabe diferentes Idiomas</td>
                                         <td align="center">  <input type="radio" name="language_skills" value="1" checked></td>
                                         <td align="center">  <input type="radio" name="language_skills" value="2"></td>
                                         <td align="center">   <input type="radio" name="language_skills" value="4.175">

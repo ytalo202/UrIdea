@@ -166,7 +166,7 @@
                                     </tr>
 
                                     <tr>
-                                        <td>Innovo ?</td>
+                                        <td>Innovo algun Proceso</td>
                                         <td align="center"> <input type="radio" name="innovative" value="1" checked></td>
                                         <td align="center">    <input type="radio" name="innovative" value="5"></td>
                                         <td align="center">   <input type="radio" name="innovative" value="8.35">

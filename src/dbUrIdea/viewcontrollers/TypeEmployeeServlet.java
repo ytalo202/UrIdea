@@ -1808,8 +1808,8 @@ public class TypeEmployeeServlet extends HttpServlet {
             }
 
 
-            case "PerfilCompañiaAdmin": {
-                Company company = service.getCompanyById(idCom);
+            case "PerfilCompaAdmin": {
+                Company company = service.getCompanyById(2);
                 request.setAttribute("company", company);
                 request.setAttribute("action", "edit");
 
@@ -1818,8 +1818,8 @@ public class TypeEmployeeServlet extends HttpServlet {
                 break;
             }
 
-            case "PerfilCompañiEmpleado": {
-                Company company = service.getCompanyById(idCom);
+            case "PerfilCompaEmpleado": {
+                Company company = service.getCompanyById(2);
                 request.setAttribute("company", company);
                 request.setAttribute("action", "edit");
 

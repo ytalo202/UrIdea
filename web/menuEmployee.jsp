@@ -61,7 +61,7 @@
                         <a href="TypeEmployeeValidation?action=PerfilEmpleado"><i class="fa fa-fw fa-user"></i> Perfil</a>
                     </li>
                     <li>
-                        <a href="TypeEmployeeValidation?action=PerfilCompañiEmpleado"><i class="fa fa-fw fa-user"></i> Perfil de Compañia</a>
+                        <a href="TypeEmployeeValidation?action=PerfilCompaEmpleado"><i class="fa fa-fw fa-user"></i> Perfil de Compañia</a>
                     </li>
 
                     <li class="divider"></li>

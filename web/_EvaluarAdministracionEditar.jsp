@@ -169,7 +169,7 @@
                                     </tr>
 
                                     <tr>
-                                        <td>Toma decision</td>
+                                        <td>Toma decision en su grupo de trabajo</td>
                                         <td align="center"> <input type="radio" name="decision_making" value="1" checked></td>
                                         <td align="center">   <input type="radio" name="decision_making" value="3"></td>
                                         <td align="center">   <input type="radio" name="decision_making" value="6.66">

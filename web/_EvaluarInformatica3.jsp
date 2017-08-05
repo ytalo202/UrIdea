@@ -170,7 +170,7 @@
             </td>
         </tr>
         <tr>
-            <td>Fue productivo</td>
+            <td>Fue productivo en el area de trabajo</td>
             <td align="center"> <input type="radio" name="productivity" value="1" checked></td>
             <td align="center">    <input type="radio" name="productivity" value="2"></td>
                <td align="center"> <input type="radio" name="productivity" value="4.77">

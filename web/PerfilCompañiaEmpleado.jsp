@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Perfil</title>
+    <title>Historial</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="https://blackrockdigital.github.io/startbootstrap-sb-admin/css/bootstrap.min.css" rel="stylesheet">
@@ -109,114 +109,190 @@
         <!-- /.navbar-collapse -->
     </nav>
 
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    <div class="container">
-        <div class="row">
-            <h1 align="center">Perfil del Empleado</h1>
-            <div class="col-sm-11">
-
-
-
-
-                <c:forEach var="company" items="${service.ListCompanyById(company.id)}">
-
-
-                <h1>Compañia <c:out value="${company.nameCompany}"/></h1>
-
-                <p>Correo: <c:out value="${company.emailAdress.emailData}"/></p>
-                <p>Direccion: <c:out value="${company.address}"/></p>
-                <p>Numero Telefonico: <c:out value="${company.phoneNumber}"/></p>
-                <p>Descripxion: <c:out value="${company.description}"/></p>
-
-
-
-                </c:forEach>
-
-
-
-                <h2>Empleados Administradores</h2>
-
-                <table>
-
-                    <tr>
-
-                        <th>Nombre Completo</th>
-                        <th>Dni</th>
-                        <th>Correo Electrónico</th>
-                        <th>Área</th>
-                        <th>Cumpleaños</th>
-                        <th>Telefono</th>
-                        <th>Celular</th>
-                        <th>Residencia</th>
-                        <th>Ciudad</th>
-
-                    </tr>
-
-                    <c:forEach var="employee" items="${service.findAdmin(1,company.id)}">
-                        <tr>
-                            <td><c:out value="${employee.name} "/><c:out value="${employee.firstLastName} "/>
-                                <c:out value="${employee.secondLastName}"/></td>
-                            <td> <c:out value="${employee.dni}"/></td>
-                            <td> <c:out value="${employee.emailAddress.emailData}"/></td>
-                            <td><c:out value="${employee.area.nameArea}"/></td>
-                            <td><c:out value="${employee.birthdate}"/></td>
-                            <td><c:out value="${employee.phoneNumber}"/></td>
-                            <td><c:out value="${employee.cellPhoneNumber}"/></td>
-                            <td><c:out value="${employee.address}"/></td>
-                            <td><c:out value="${employee.department}"/></td>
-
-
-
-                        </tr>
-                    </c:forEach>
-
-                </table>
+    <c:forEach var="company" items="${service.ListCompanyById(company.id)}">
 
 
 
 
 
+    <h1 align="center">Compañia <c:out value="${company.nameCompany}"/></h1>
+    <p align="center"><a href="#1" data-toggle="collapse">
+        <img src="http://e.rpp-noticias.io/normal/2016/09/26/111411_252455.png"
+             class="img-circle person" alt="Random Name" width="255" height="255"> </a></p>
+    <div id="1" class="collapse">
+        <div align="center">
+            <div class="col-xs-12 col-sm-12">
+                <ul class="list-group">
+                    <li class="list-group-item" >Correo: <c:out value="${company.emailAdress.emailData}"/></li>
+                    <li class="list-group-item">Direccion: <c:out value="${company.address}"/></li>
+                    <li class="list-group-item" >Numero Telefonico: <c:out value="${company.phoneNumber}"/></li>
+                    <li class="list-group-item">Descripxion: <c:out value="${company.description}"/></li>
+
+                </ul>
+            </div>
+            </c:forEach>
+        </div>
+    </div>
 
 
-                <h2>Empleados Ordinarios</h2>
-                <table>
+    <h1 align="center">Empleados Administradores</h1>
+    <p align="center"><a href="#2" data-toggle="collapse">
+        <img src="http://carmenpareja.com/wp-content/uploads/2015/09/junta_socios-300x200.jpg"
+             class="img-circle person" alt="Random Name" width="255" height="255"> </a></p>
+    <div id="2" class="collapse">
+        <section class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title" align="center">Descripción</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
 
-                    <tr>
+                                    <tr>
 
-                        <th>Nombre Completo</th>
-                        <th>Dni</th>
-                        <th>Correo Electrónico</th>
-                        <th>Área</th>
-                        <th>Cumpleaños</th>
-                        <th>Telefono</th>
-                        <th>Celular</th>
-                        <th>Residencia</th>
-                        <th>Ciudad</th>
+                                        <th>Nombre Completo</th>
+                                        <th>Apellido Paterno</th>
+                                        <th>Apellido Materno</th>
+                                        <th>Dni</th>
+                                        <th>Correo Electrónico</th>
+                                        <th>Área</th>
+                                        <th>Cumpleaños</th>
+                                        <th>Telefono</th>
+                                        <th>Celular</th>
+                                        <th>Residencia</th>
+                                        <th>Ciudad</th>
+                                        <th>Perfil</th>
 
-                    </tr>
+                                    </tr>
 
-                    <c:forEach var="employee" items="${service.findAdmin(2,company.id)}">
-                    <tr>
-                        <td><c:out value="${employee.name} "/><c:out value="${employee.firstLastName} "/>
-                            <c:out value="${employee.secondLastName}"/></td>
-                        <td> <c:out value="${employee.dni}"/></td>
-                        <td> <c:out value="${employee.emailAddress.emailData}"/></td>
-                        <td><c:out value="${employee.area.nameArea}"/></td>
-                        <td><c:out value="${employee.birthdate}"/></td>
-                        <td><c:out value="${employee.phoneNumber}"/></td>
-                        <td><c:out value="${employee.cellPhoneNumber}"/></td>
-                        <td><c:out value="${employee.address}"/></td>
-                        <td><c:out value="${employee.department}"/></td>
-
-
-
-                    </tr>
-                    </c:forEach>
-
+                                    <c:forEach var="employee" items="${service.findAdmin(1,company.id)}">
+                                        <tr>
+                                            <td><c:out value="${employee.name} "/></td>
+                                            <td>     <c:out value="${employee.firstLastName} "/></td>
+                                            <td>   <c:out value="${employee.secondLastName}"/></td>
+                                            <td> <c:out value="${employee.dni}"/></td>
+                                            <td> <c:out value="${employee.emailAddress.emailData}"/></td>
+                                            <td><c:out value="${employee.area.nameArea}"/></td>
+                                            <td><c:out value="${employee.birthdate}"/></td>
+                                            <td><c:out value="${employee.phoneNumber}"/></td>
+                                            <td><c:out value="${employee.cellPhoneNumber}"/></td>
+                                            <td><c:out value="${employee.address}"/></td>
+                                            <td><c:out value="${employee.department}"/></td>
+                                            <td><a href="search?action=PerfilAdm&codEmp=<c:out value="${employee.id}"/>">
+                                                Ver Perfil
+                                            </a></td>
 
 
-                <!-- resumt -->
 
+                                        </tr>
+                                    </c:forEach>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+
+
+
+    <h1 align="center">Empleados Ordinarios</h1>
+    <p align="center"><a href="#3" data-toggle="collapse">
+        <img src="https://www.actuall.com/wp-content/uploads/2016/04/empleado-discapacitado-trabaja-en-la-factoria-de-Ford-de-Almussafes-Valencia-EFE.jpg"
+             class="img-circle person" alt="Random Name" width="255" height="255"> </a></p>
+    <div id="3" class="collapse">
+        <section class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title" align="center">Descripción</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+
+                                    <tr>
+
+                                        <th>Nombre Completo</th>
+                                        <th>Apellido Paterno</th>
+                                        <th>Apelido Materno</th>
+                                        <th>Dni</th>
+                                        <th>Correo Electrónico</th>
+                                        <th>Área</th>
+                                        <th>Cumpleaños</th>
+                                        <th>Telefono</th>
+                                        <th>Celular</th>
+                                        <th>Residencia</th>
+                                        <th>Ciudad</th>
+                                        <th>Perfil</th>
+
+                                    </tr>
+
+                                    <c:forEach var="employee" items="${service.findAdmin(2,company.id)}">
+                                        <tr>
+                                            <td><c:out value="${employee.name} "/></td>
+                                            <td>    <c:out value="${employee.firstLastName} "/></td>
+                                            <td>    <c:out value="${employee.secondLastName}"/></td>
+                                            <td> <c:out value="${employee.dni}"/></td>
+                                            <td> <c:out value="${employee.emailAddress.emailData}"/></td>
+                                            <td><c:out value="${employee.area.nameArea}"/></td>
+                                            <td><c:out value="${employee.birthdate}"/></td>
+                                            <td><c:out value="${employee.phoneNumber}"/></td>
+                                            <td><c:out value="${employee.cellPhoneNumber}"/></td>
+                                            <td><c:out value="${employee.address}"/></td>
+                                            <td><c:out value="${employee.department}"/></td>
+                                            <td><a href="search?action=perfilEmpleado&codEmp=<c:out value="${employee.id}"/>">
+                                                Ver Perfil
+                                            </a></td>
+
+
+
+                                        </tr>
+                                    </c:forEach>
+
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+    <script>
+
+
+
+
+        var mySidebar = document.getElementById("mySidebar");
+
+        function w3_open() {
+            if (mySidebar.style.display === 'block') {
+                mySidebar.style.display = 'none';
+            } else {
+                mySidebar.style.display = 'block';
+            }
+        }
+
+        // Close the sidebar with the close button
+        function w3_close() {
+            mySidebar.style.display = "none";
+        }
+
+    </script>
 <!-- /#wrapper -->
 
 <script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/js/jquery.js"></script>

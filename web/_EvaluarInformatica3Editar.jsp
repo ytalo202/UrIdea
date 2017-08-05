@@ -178,7 +178,7 @@
                                     </tr>
 
                                     <tr>
-                                        <td>Es Eficiente</td>
+                                        <td>Es Eficiente en el trabajo</td>
                                         <td align="center"> <input type="radio" name="efficiency" value="1" checked></td>
                                         <td align="center">  <input type="radio" name="efficiency" value="2"></td>
                                         <td align="center">  <input type="radio" name="efficiency" value="4.77">
@@ -186,7 +186,7 @@
                                     </tr>
 
                                     <tr>
-                                        <td>Da Solucion a Problemas</td>
+                                        <td>Da Solucion a los Problemas Ocurridos </td>
                                         <td align="center"> <input type="radio" name="give_successful_solutions" value="1" checked></td>
                                         <td align="center">   <input type="radio" name="give_successful_solutions" value="2">
                                         <td align="center">   <input type="radio" name="give_successful_solutions" value="4.77">

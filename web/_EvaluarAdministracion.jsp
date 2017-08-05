@@ -146,7 +146,7 @@
 
 
         <tr>
-            <td>Mostro su compromiso a la Empresa en Mcuhas Ocaciones</td>
+            <td>Mostro su compromiso a la Empresa en Muchas Ocaciones</td>
             <td align="center"><input type="radio" name="commitment_company" value="1" checked></td>
             <td align="center">  <input type="radio" name="commitment_company" value="3"></td>
              <td align="center">   <input type="radio" name="commitment_company" value="6.66">
@@ -169,7 +169,7 @@
         </tr>
 
         <tr>
-            <td>Toma decision</td>
+            <td>Toma decision en su Grupo de Trabajo</td>
             <td align="center"> <input type="radio" name="decision_making" value="1" checked></td>
             <td align="center">   <input type="radio" name="decision_making" value="3"></td>
              <td align="center">   <input type="radio" name="decision_making" value="6.66">
