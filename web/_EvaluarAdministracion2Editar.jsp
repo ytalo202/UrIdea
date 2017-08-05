@@ -164,7 +164,7 @@
 
                                     <tr>
                                         <td>Puntualidad</td>
-                                        <td align="center"> <input type="radio" name="punctuality" value="1"></td>
+                                        <td align="center"> <input type="radio" name="punctuality" value="1" checked></td>
                                         <td align="center">   <input type="radio" name="punctuality" value="3"></td>
                                         <td align="center">   <input type="radio" name="punctuality" value="6.66">
                                         </td>
@@ -174,14 +174,14 @@
 
                                     <tr>
                                         <td>honestidad</td>
-                                        <td align="center"> <input type="radio" name="honesty" value="1"></td>
+                                        <td align="center"> <input type="radio" name="honesty" value="1" checked></td>
                                         <td align="center"><input type="radio" name="honesty" value="3"></td>
                                         <td align="center">   <input type="radio" name="honesty" value="6.66">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Organización</td>
-                                        <td align="center"> <input type="radio" name="organized" value="1"></td>
+                                        <td align="center"> <input type="radio" name="organized" value="1" checked></td>
                                         <td align="center">   <input type="radio" name="organized" value="3"></td>
                                         <td align="center">   <input type="radio" name="organized" value="6.66">
                                         </td>
@@ -189,14 +189,14 @@
 
                                     <tr>
                                         <td>Responsabilidad</td>
-                                        <td align="center"> <input type="radio" name="responsibility" value="1"></td>
+                                        <td align="center"> <input type="radio" name="responsibility" value="1" checked></td>
                                         <td align="center"><input type="radio" name="responsibility" value="3"></td>
                                         <td align="center"><input type="radio" name="responsibility" value="6.66">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Respeto</td>
-                                        <td align="center"> <input type="radio" name="respect" value="1"></td>
+                                        <td align="center"> <input type="radio" name="respect" value="1" checked></td>
                                         <td align="center">   <input type="radio" name="respect" value="3"></td>
                                         <td align="center">  <input type="radio" name="respect" value="6.66">
                                         </td>

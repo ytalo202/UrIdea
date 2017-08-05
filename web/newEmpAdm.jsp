@@ -229,19 +229,15 @@
                             <div class="myform-bottom">
                                 <form class="form-horizontal " action="v" method="post" role="form" >
                                     <input type="hidden" name="idCompany" value="${company.id}" />
-                                    <div class="form-group">
-                                        <label class="col-lg-2"> Cod Email</label>
-                                        <div class="col-lg-10" ><input type="text" name="CorreNum" value="${emailNum}" placeholder="Cod. Num" class="form-control"  required/>
-                                        </div></div>
 
                                     <div class="form-group">
                                         <label class="col-lg-2">Nombre</label>
-                                        <div class="col-lg-10"><input type="text" name="employee_name"  placeholder="Nombre" class="form-control" required/>
+                                        <div class="col-lg-10"><input type="text" name="employee_name"  pattern="[A-Za-z]+"   placeholder="Nombre" class="form-control" required/>
                                         </div></div>
 
                                     <div class="form-group">
                                         <label class="col-lg-2">Dni</label>
-                                        <div class="col-lg-10"><input type="text" name="dni"  placeholder="Dni" class="form-control" required/>
+                                        <div class="col-lg-10"><input type="number"  min="10000000" max="99999999" name="dni"  placeholder="Dni" class="form-control" required/>
                                         </div></div>
 
                                     <div class="form-group">
@@ -261,7 +257,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="col-lg-2">Fecha</label>
-                                        <div class="col-lg-10"><input type="date" name="cumple"   required/>
+                                        <div class="col-lg-10"><input type="date" min="1937-01-01" max="1999-01-01" name="cumple"   required/>
                                         </div></div>
 
 

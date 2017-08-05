@@ -153,7 +153,7 @@
         </tr>
         <tr>
             <td>Mostro su compromiso a la Empresa en Mcuhas Ocaciones</td>
-            <td align="center"> <input type="radio" name="commitment_company" value="3"></td>
+            <td align="center"> <input type="radio" name="commitment_company" value="3" checked></td>
             <td align="center">   <input type="radio" name="commitment_company" value="5"></td>
             <td align="center">    <input type="radio" name="commitment_company" value="8.325">
             </td>
@@ -161,7 +161,7 @@
 
         <tr>
             <td>bajo presion</td>
-            <td align="center">  <input type="radio" name="work_under_pressure" value="3"></td>
+            <td align="center">  <input type="radio" name="work_under_pressure" value="3" checked></td>
             <td align="center"><input type="radio" name="work_under_pressure" value="5"></td>
             <td align="center"><input type="radio" name="work_under_pressure" value="8.325">
             </td>
@@ -169,7 +169,7 @@
 
         <tr>
             <td>trabajo en equipo</td>
-            <td align="center"> <input type="radio" name="teamwork" value="3"></td>
+            <td align="center"> <input type="radio" name="teamwork" value="3" checked></td>
             <td align="center">   <input type="radio" name="teamwork" value="5"></td>
             <td align="center">    <input type="radio" name="teamwork" value="8.325">
             </td>
@@ -178,7 +178,7 @@
 
         <tr>
             <td>proactividad</td>
-            <td align="center"> <input type="radio" name="proactive" value="3"></td>
+            <td align="center"> <input type="radio" name="proactive" value="3" checked></td>
             <td align="center">    <input type="radio" name="proactive" value="5"></td>
              <td align="center">   <input type="radio" name="proactive" value="8.325">
             </td>

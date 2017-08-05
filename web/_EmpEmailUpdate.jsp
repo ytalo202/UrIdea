@@ -124,7 +124,7 @@
                         </div>
 
                         <div class="form-group"><label class="col-lg-2">Correo</label>
-                         <div class="col-lg-10"><input type="text" name="emailData" value="${employee.emailAddress.emailData}" placeholder="Correo..." class="form-control" >
+                         <div class="col-lg-10"><input type="email" name="emailData" value="${employee.emailAddress.emailData}" placeholder="Correo..." class="form-control" >
                          </div></div>
 
                         <div class="form-group">

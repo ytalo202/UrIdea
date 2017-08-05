@@ -155,7 +155,7 @@
 
         <tr>
             <td>Es comunicativo con sus compañeros de trabajo </td>
-            <td align="center"> <input type="radio" name="punctuality" value="1"></td>
+            <td align="center"> <input type="radio" name="punctuality" value="1" checked></td>
             <td align="center">  <input type="radio" name="punctuality" value="3"></td>
              <td align="center">   <input type="radio" name="punctuality" value="6.66">
             </td>
@@ -165,14 +165,14 @@
 
         <tr>
             <td>Es leal con sus compañeros de trabajo</td>
-            <td align="center"> <input type="radio" name="honesty" value="1"></td>
+            <td align="center"> <input type="radio" name="honesty" value="1" checked></td>
             <td align="center">   <input type="radio" name="honesty" value="3"></td>
              <td align="center">   <input type="radio" name="honesty" value="6.66">
             </td>
         </tr>
         <tr>
             <td>Comparte el logro con su equipo de trabajo</td>
-            <td align="center"> <input type="radio" name="organized" value="1"></td>
+            <td align="center"> <input type="radio" name="organized" value="1" checked></td>
             <td align="center"><input type="radio" name="organized" value="3"></td>
              <td align="center">   <input type="radio" name="organized" value="6.66">
             </td>
@@ -180,14 +180,14 @@
 
         <tr>
             <td>Usa de manera responsable los recursos de empresa</td>
-            <td align="center"> <input type="radio" name="responsibility" value="1"></td>
+            <td align="center"> <input type="radio" name="responsibility" value="1" checked></td>
             <td align="center">   <input type="radio" name="responsibility" value="3"></td>
               <td align="center">  <input type="radio" name="responsibility" value="6.66">
             </td>
         </tr>
         <tr>
             <td>Muestra Transparencia y Confianza al encargarle alguna compra</td>
-            <td align="center"> <input type="radio" name="respect" value="1"></td>
+            <td align="center"> <input type="radio" name="respect" value="1" checked></td>
             <td align="center">   <input type="radio" name="respect" value="3"></td>
              <td align="center">   <input type="radio" name="respect" value="6.66">
             </td>

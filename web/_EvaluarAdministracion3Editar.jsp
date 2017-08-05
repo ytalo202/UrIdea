@@ -161,7 +161,7 @@
 
                                     <tr>
                                         <td>Habilidad de Comunicación</td>
-                                        <td align="center"> <input type="radio" name="communication_skills" value="1"></td>
+                                        <td align="center"> <input type="radio" name="communication_skills" value="1" checked></td>
                                         <td align="center">   <input type="radio" name="communication_skills" value="2"></td>
                                         <td align="center">  <input type="radio" name="communication_skills" value="4.175">
                                         </td>
@@ -169,7 +169,7 @@
 
                                     <tr>
                                         <td>Habilidad de Idiomas</td>
-                                        <td align="center">  <input type="radio" name="language_skills" value="1"></td>
+                                        <td align="center">  <input type="radio" name="language_skills" value="1" checked></td>
                                         <td align="center">  <input type="radio" name="language_skills" value="2"></td>
                                         <td align="center">   <input type="radio" name="language_skills" value="4.175">
                                         </td>
@@ -177,7 +177,7 @@
 
                                     <tr>
                                         <td>Habilidad de Negocios</td>
-                                        <td align="center"> <input type="radio" name="business_skills" value="1"></td>
+                                        <td align="center"> <input type="radio" name="business_skills" value="1" checked></td>
                                         <td align="center">   <input type="radio" name="business_skills" value="2"></td>
                                         <td align="center">    <input type="radio" name="business_skills" value="4.175">
                                         </td>
@@ -186,7 +186,7 @@
 
                                     <tr>
                                         <td>Conocimiento de Negocio</td>
-                                        <td align="center"> <input type="radio" name="business_knowledge" value="1"></td>
+                                        <td align="center"> <input type="radio" name="business_knowledge" value="1" checked></td>
                                         <td align="center"> <input type="radio" name="business_knowledge" value="2"></td>
                                         <td align="center">    <input type="radio" name="business_knowledge" value="4.175">
                                         </td>
@@ -194,14 +194,14 @@
 
                                     <tr>
                                         <td>Optimización de Recursos</td>
-                                        <td align="center"> <input type="radio" name="resource_optimization" value="1"></td>
+                                        <td align="center"> <input type="radio" name="resource_optimization" value="1" checked></td>
                                         <td align="center">    <input type="radio" name="resource_optimization" value="2"></td>
                                         <td align="center">   <input type="radio" name="resource_optimization" value="4.175">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Eficiencia</td>
-                                        <td align="center"> <input type="radio" name="efficiency" value="1"></td>
+                                        <td align="center"> <input type="radio" name="efficiency" value="1" checked></td>
                                         <td align="center">   <input type="radio" name="efficiency" value="2"></td>
                                         <td align="center">   <input type="radio" name="efficiency" value="4.175">
                                         </td>
@@ -209,14 +209,14 @@
 
                                     <tr>
                                         <td>Productividad</td>
-                                        <td align="center"> <input type="radio" name="productivity" value="1"></td>
+                                        <td align="center"> <input type="radio" name="productivity" value="1" checked></td>
                                         <td align="center">    <input type="radio" name="productivity" value="2"></td>
                                         <td align="center">   <input type="radio" name="productivity" value="4.175">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Innovación</td>
-                                        <td align="center"> <input type="radio" name="innovative" value="1"></td>
+                                        <td align="center"> <input type="radio" name="innovative" value="1" checked></td>
                                         <td align="center">   <input type="radio" name="innovative" value="2"></td>
                                         <td align="center">   <input type="radio" name="innovative" value="4.175">
                                         </td>
@@ -231,7 +231,7 @@
                                 </table>
                                 <br>
                                 <div class="form-group"><label class="col-lg-2">Comentario</label>
-                                    <div class="col-lg-10"><textarea name="comment"
+                                    <div class="col-lg-10"><textarea required name="comment"
                                                                      cols="20" rows="5" class="form-control col-lg-8"></textarea>
                                     </div></div>
 

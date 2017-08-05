@@ -149,7 +149,7 @@
         </tr>
         <tr>
             <td>Mostro su compromiso a la Empresa en Mcuhas Ocaciones</td>
-            <td align="center"> <input type="radio" name="commitment_company" value="3"></td>
+            <td align="center"> <input type="radio" name="commitment_company" value="3" checked></td>
             <td align="center">    <input type="radio" name="commitment_company" value="5"></td>
              <td align="center">   <input type="radio" name="commitment_company" value="8.325">
             </td>
@@ -157,7 +157,7 @@
 
         <tr>
             <td>Trata de sobresalir en su grupo</td>
-            <td align="center">  <input type="radio" name="competitive" value="3"></td>
+            <td align="center">  <input type="radio" name="competitive" value="3" checked></td>
             <td align="center">    <input type="radio" name="competitive" value="5"></td>
             <td align="center">    <input type="radio" name="competitive" value="8.325">
             </td>
@@ -165,7 +165,7 @@
 
         <tr>
             <td>Trabajo bien bajo presion</td>
-            <td align="center"> <input type="radio" name="work_under_pressure" value="3"></td>
+            <td align="center"> <input type="radio" name="work_under_pressure" value="3" checked></td>
             <td align="center">  <input type="radio" name="work_under_pressure" value="5"></td>
              <td align="center">   <input type="radio" name="work_under_pressure" value="8.325">
             </td>
@@ -174,7 +174,7 @@
 
         <tr>
             <td>Tomo la Iniciativa Para Empezar el Trabajo</td>
-            <td align="center"> <input type="radio" name="proactive" value="3"></td>
+            <td align="center"> <input type="radio" name="proactive" value="3" checked></td>
             <td align="center">   <input type="radio" name="proactive" value="5"></td>
             <td align="center">    <input type="radio" name="proactive" value="8.325">
             </td>

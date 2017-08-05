@@ -240,13 +240,13 @@
                                     </div>
 
                                     <div class="form-group " ><label class="col-lg-2" >Contraseña</label>
-                                        <div class="col-lg-10"> <input type="text"  name="password"
+                                        <div class="col-lg-10"> <input type="text"  name="password" required
                                                                        value="${company.password}"  class="form-control" ></div></div>
 
 
                                     <div class="form-group">
                                         <label class="col-lg-2">Nombre</label>
-                                        <div class="col-lg-10">    <input type="text"  name="nameCompany"
+                                        <div class="col-lg-10">    <input type="text"  name="nameCompany" required
                                                                           value="${company.nameCompany}"
                                                                           placeholder="Location-City..." class="form-control" >
                                         </div>
@@ -258,7 +258,7 @@
                                     <div class="form-group">
                                         <label class="col-lg-2" >Descripcion</label>  <div class="col-lg-10">
 
-                                            <textarea name="description"
+                                            <textarea name="description" required
                                                       cols="60" rows="10" class="form-control col-xs-12">${company.description}</textarea>
 
 
@@ -272,12 +272,12 @@
 
                                     <div class="form-group">
                                         <label class="col-lg-2">Direccion</label><div class="col-lg-10">
-                                        <input type="text"   name="address" value="${company.address}" placeholder="Location-City..." class="form-control" >
+                                        <input type="text"  required name="address" value="${company.address}" placeholder="Location-City..." class="form-control" >
                                     </div></div>
 
                                     <div class="form-group">
                                         <label class="col-lg-2">Teléfono</label><div class="col-lg-10">
-                                        <input type="text"   name="phoneNumber" value="${company.phoneNumber}" placeholder="Location-City..." class="form-control" >
+                                        <input type="number" min="1000000" max="999999999" required  name="phoneNumber" value="${company.phoneNumber}" placeholder="Location-City..." class="form-control" >
                                     </div></div>
                                     <div class="form-group">
                                         <input type="hidden"  name="id_email_address" value="${company.emailAdress.id}" placeholder="Location-City..." class="form-control" >

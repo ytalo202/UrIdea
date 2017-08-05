@@ -152,7 +152,7 @@
 </tr>
         <tr>
             <td>Muestra compromiso con la Empresa en Muchas Ocaciones</td>
-            <td align="center"> <input type="radio" name="commitment_company" value="1"></td>
+            <td align="center"> <input type="radio" name="commitment_company" value="1" checked></td>
             <td align="center">   <input type="radio" name="commitment_company" value="3"></td>
                <td align="center"> <input type="radio" name="commitment_company" value="6.66">
             </td>
@@ -160,7 +160,7 @@
 
         <tr>
             <td>Es bueno liderando equipos de trabajo</td>
-            <td align="center">  <input type="radio" name="leadership" value="1"></td>
+            <td align="center">  <input type="radio" name="leadership" value="1" checked></td>
             <td align="center">   <input type="radio" name="leadership" value="3"></td>
            <td align="center">     <input type="radio" name="leadership" value="6.66">
             </td>
@@ -168,7 +168,7 @@
 
         <tr>
             <td>fue analitico al momento de resolver algun problema </td>
-            <td align="center"> <input type="radio" name="analytical" value="1"></td>
+            <td align="center"> <input type="radio" name="analytical" value="1" checked></td>
             <td align="center">  <input type="radio" name="analytical" value="3"></td>
              <td align="center">   <input type="radio" name="analytical" value="6.66">
             </td>
@@ -177,7 +177,7 @@
 
         <tr>
             <td>es objetivo al momento de tomar decisiones</td>
-            <td align="center"><input type="radio" name="objective" value="1"></td>
+            <td align="center"><input type="radio" name="objective" value="1" checked></td>
             <td align="center"><input type="radio" name="objective" value="3"></td>
                 <td align="center"><input type="radio" name="objective" value="6.66">
             </td>
@@ -185,7 +185,7 @@
 
         <tr>
             <td>Tomo decisiones importantes en el proyecto</td>
-            <td align="center"> <input type="radio" name="decision_making" value="1"></td>
+            <td align="center"> <input type="radio" name="decision_making" value="1" checked></td>
             <td align="center">     <input type="radio" name="decision_making" value="3"></td>
              <td align="center">   <input type="radio" name="decision_making" value="6.66">
             </td>

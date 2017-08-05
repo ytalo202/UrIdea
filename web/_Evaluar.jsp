@@ -149,7 +149,7 @@
 
     <tr>
     <td>Mostro su compromiso a la Empresa en Mcuhas Ocaciones</td>
-        <td align="center"> <input type="radio" name="commitment_company" value="3"></td>
+        <td align="center"> <input checked type="radio" name="commitment_company" value="3"></td>
         <td align="center"> <input type="radio" name="commitment_company" value="5"></td>
         <td align="center"><input type="radio" name="commitment_company" value="8.325">
     </td>
@@ -157,7 +157,7 @@
 
     <tr>
     <td>Tomo Decisiones para resolver distintos Problemas Ocurridos</td>
-        <td align="center">  <input type="radio" name="decision_making" value="3"></td>
+        <td align="center">  <input checked  type="radio" name="decision_making" value="3"></td>
         <td align="center"><input type="radio" name="decision_making" value="5"></td>
         <td align="center"><input type="radio" name="decision_making" value="8.325">
     </td>
@@ -165,7 +165,7 @@
 
     <tr>
         <td>Trabajo en Equipo de manera Adecuada Sin Demasiados percances</td>
-        <td align="center"> <input type="radio" name="teamwork" value="3"></td>
+        <td align="center"> <input checked  type="radio" name="teamwork" value="3"></td>
         <td align="center">   <input type="radio" name="teamwork" value="5"></td>
          <td align="center">   <input type="radio" name="teamwork" value="8.325">
         </td>
@@ -174,7 +174,7 @@
 
     <tr>
         <td>Tomo la Iniciativa Para Empezar el Trabajo</td>
-        <td align="center"> <input type="radio" name="proactive" value="3"></td>
+        <td align="center"> <input checked  type="radio" name="proactive" value="3"></td>
         <td align="center">    <input type="radio" name="proactive" value="5"></td>
          <td align="center">   <input type="radio" name="proactive" value="8.325">
         </td>

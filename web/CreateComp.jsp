@@ -9,8 +9,8 @@
 
 <form action="v" method="post">
 
-    <p>nombre<input type="text" name="nameCompany" /></p>
-    <p>contraseña<input type="text" name="password" /></p>
+    <p>nombre<input type="text" required name="nameCompany" /></p>
+    <p>contraseña<input type="text" required name="password" /></p>
     <input type="hidden" value="createComp" name="action"/>
     <input type="submit"/>
 </form>

@@ -229,7 +229,7 @@
                                         <label class="col-lg-2"></label>
                                             <div class="col-lg-10"></div>
 
-                                            <input type="text" name="emailData"  placeholder="Correo" class="form-control">
+                                            <input type="email" required name="emailData"  placeholder="Correo" class="form-control">
 
                                         </div>
 

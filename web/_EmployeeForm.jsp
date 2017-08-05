@@ -140,44 +140,44 @@
                         <div class="form-group">
                          <label class="col-lg-2">Nombre</label>
                             <div class="col-lg-10">
-                                <input type="text" name="employee_name" value="${employee.name}"
+                                <input type="text" name="employee_name" required pattern="[A-Za-z]+" value="${employee.name}"
                                        class="form-control"/></div></div>
                         <div class="form-group">
-                          <label class="col-lg-2">Apellido Peterno</label>
-                            <div class="col-lg-10"><input type="text" name="employee_first_last_name"
+                          <label class="col-lg-2">Apellido Paterno</label>
+                            <div class="col-lg-10"><input type="text" name="employee_first_last_name" pattern="[A-Za-z]+" required
                                                           value="${employee.firstLastName}" class="form-control"/>
                             </div></div>
                         <div class="form-group">
                             <label class="col-lg-2">Apellido Materno</label>
                             <div class="col-lg-10">
-                                <input type="text" name="employee_second_last_name"
+                                <input type="text" name="employee_second_last_name" pattern="[A-Za-z]+" required
                                        value="${employee.secondLastName}"
                                        class="form-control"/>
                             </div></div>
                         <div class="form-group">
                             <label class="col-lg-2">Dni</label>
-                            <div class="col-lg-10"><input type="text" name="dni" value="${employee.dni}" class="form-control" class="form-control"/>
+                            <div class="col-lg-10"><input type="number" required min="10000000" max="99999999" name="dni" value="${employee.dni}" class="form-control" class="form-control"/>
                             </div></div>
                         <div class="form-group"><label class="col-lg-2">Teléfono</label>
-                           <div class="col-lg-10"><input type="text" name="phone_number" value="${employee.phoneNumber}" class="form-control"/>
+                           <div class="col-lg-10"><input type="number" required name="phone_number" min="1000000" max="999999999" value="${employee.phoneNumber}" class="form-control"/>
                            </div></div>
                         <div class="form-group">
                         <label class="col-lg-2">Telefono Celular</label>
-                            <div class="col-lg-10"><input type="text" name="cell_phone_number" value="${employee.cellPhoneNumber}" class="form-control"/>
+                            <div class="col-lg-10"><input type="number" required name="cell_phone_number" min="900000000" max="999999999" value="${employee.cellPhoneNumber}" class="form-control"/>
                             </div></div>
                         <div class="form-group">
                           <label class="col-lg-2">Dirección</label>
-                         <div class="col-lg-10"><input type="text" name="address" value="${employee.address}" class="form-control"/>
+                         <div class="col-lg-10"><input type="text" required name="address" value="${employee.address}" class="form-control"/>
                         </div></div>
                         <div class="form-group">
                          <label class="col-lg-2">Departamento</label>
-                            <div class="col-lg-10"><input type="text" name="department" value="${employee.department}" class="form-control"/>
+                            <div class="col-lg-10"><input type="text" required name="department" pattern="[A-Za-z]+" value="${employee.department}" class="form-control"/>
                             </div></div>
 
                         <div class="form-group">
                          <label class="col-lg-2">Fecha de Nacimiento</label>
                             <div class="col-lg-10">
-                                <input type="date" name="birthdate" value="${employee.birthdate}" class="form-control"/>
+                                <input type="date" name="birthdate" required min="1937-01-01" max="1999-01-01" value="${employee.birthdate}" class="form-control"/>
                             </div></div>
 
 
