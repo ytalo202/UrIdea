@@ -176,7 +176,7 @@
 
                                 <tr>
                                     <td class="tdLogin" style="text-align: center;">
-                                        <input class="TxtUsuario" id="tcActDir" name="txtemail" REQUIRED placeholder="Correo..." type="text" value>
+                                        <input title="Ingrese una dirección de corrreo válido" class="TxtUsuario" id="tcActDir" name="txtemail" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" REQUIRED placeholder="Correo..." type="text" value>
 
                                     </td>
                                 </tr>
