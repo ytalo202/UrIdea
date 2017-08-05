@@ -188,7 +188,7 @@
     <a href="index.jsp" onclick="w3_close()" class="w3-bar-item w3-button">Inicio</a>
     <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">Nosotros</a>
 
-    <a href="register.jsp" onclick="w3_close()" class="w3-bar-item w3-button">Registrese</a>
+    <a href="CompEmail.jsp" onclick="w3_close()" class="w3-bar-item w3-button">Registrese</a>
     <a href="login.jsp" onclick="w3_close()" class="w3-bar-item w3-button">Ingresar</a>
 </nav>
 

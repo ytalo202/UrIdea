@@ -73,9 +73,7 @@
                     <li>
                         <a href="#"><i class="fa fa-fw fa-envelope"></i>Mensaje</a>
                     </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-gear"></i>Configuración</a>
-                    </li>
+
                     <li class="divider"></li>
                     <li>
                         <a href="index.jsp"><i class="fa fa-fw fa-power-off"></i>Cerrar Sesión</a>
@@ -86,7 +84,7 @@
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
-                <li class="active">
+                <li>
                     <a href="v?action=regresar"><i class="fa fa-fw fa-dashboard"></i> Menú</a>
                 </li>
                 <li>
@@ -98,7 +96,7 @@
                 <li>
                     <a href="v?action=lista"><i class="fa fa-fw fa-edit"></i> Listar Administradores</a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="v?action=seleccionEmpleados"><i class="fa fa-fw fa-desktop"></i> Lista de Empleados</a>
                 </li>
                 <li>

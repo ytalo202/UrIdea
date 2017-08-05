@@ -93,7 +93,7 @@
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
-                <li class="active">
+                <li>
                     <a href="TypeEmployeeValidation?action=regresar"><i class="fa fa-fw fa-dashboard"></i> Menú</a>
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                 </li>
 
 
-                <li>
+                <li class="active">
                     <a  href="TypeEmployeeValidation?action=PerfilEmpleado"><i class="fa fa-fw fa-wrench"></i> Perfil y Evaluaciones</a>
                 </li>
 

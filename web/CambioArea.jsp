@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>Cmbio de Area</title>
 
 
 
@@ -77,9 +77,7 @@
                     <li>
                         <a href="#"><i class="fa fa-fw fa-envelope"></i>Mensaje</a>
                     </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-gear"></i>Configuración</a>
-                    </li>
+
                     <li class="divider"></li>
                     <li>
                         <a href="#"><i class="fa fa-fw fa-power-off"></i>Cerrar Sesion</a>

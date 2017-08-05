@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>Nuevo</title>
 
 
 
@@ -91,7 +91,7 @@
                 <li>
                     <a href="v?action=edit"><i class="fa fa-fw fa-bar-chart-o"></i> Editar Empresa</a>
                 </li>
-                <li>
+                <li class="">
                     <a href="v?action=creEmail"><i class="fa fa-fw fa-table"></i> Crear Administrador</a>
                 </li>
                 <li>
