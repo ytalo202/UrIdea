@@ -105,6 +105,9 @@ public class TypeEmployeeServlet extends HttpServlet {
     public static String noTimeCv = "/noTimeCvEmpleado.jsp";
     public static String EditarCv = "/CvAdmEditarEmpleado.jsp";
 
+    public static String perfilCompanyAdmin = "/PerfilCompañiaAdmin.jsp";
+    public static String perfilCompanyEmpleado = "/PerfilCompañiaEmpleado.jsp";
+
 
 
     String email;
@@ -122,6 +125,7 @@ public class TypeEmployeeServlet extends HttpServlet {
     int EmpPerfil;
     int areaId;
     int idCv;
+
 
 
 
@@ -1800,6 +1804,27 @@ public class TypeEmployeeServlet extends HttpServlet {
                 request.setAttribute("employee", employee);
                 request.setAttribute("action", "Perfil");
                 actionUri = PerfilAdmin_Empleadouri;
+                break;
+            }
+
+
+            case "PerfilCompañiaAdmin": {
+                Company company = service.getCompanyById(idCom);
+                request.setAttribute("company", company);
+                request.setAttribute("action", "edit");
+
+               actionUri=perfilCompanyAdmin;
+
+                break;
+            }
+
+            case "PerfilCompañiEmpleado": {
+                Company company = service.getCompanyById(idCom);
+                request.setAttribute("company", company);
+                request.setAttribute("action", "edit");
+
+                actionUri=perfilCompanyEmpleado;
+
                 break;
             }
 
