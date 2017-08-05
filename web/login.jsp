@@ -169,10 +169,14 @@
                                     <td id="idlinea" height="40" valign="top"></td>
 
                                 </tr>
+                                <tr>
+                                    <td height="8" style="text-align: left"><font color="white">${requestScope.validaciones}</font>
+                                    </td>
+                                </tr>
 
                                 <tr>
                                     <td class="tdLogin" style="text-align: center;">
-                                        <input class="TxtUsuario" id="tcActDir" name="txtemail" placeholder="Codigo" type="text" value>
+                                        <input class="TxtUsuario" id="tcActDir" name="txtemail" REQUIRED placeholder="Correo..." type="text" value>
 
                                     </td>
                                 </tr>
@@ -180,8 +184,7 @@
                                 <tr>
                                     <td class="tdLogin" style="text-align: center;">
 
-                                        <input class="TxtUsuario" id="tcActPas" name="txtpassword" placeholder="contraseña" type="password" value>
-
+                                        <input class="TxtUsuario" id="tcActPas" name="txtpassword" REQUIRED placeholder="Contraseña..." type="password" value>
 
                                     </td>
                                 </tr>

@@ -125,7 +125,7 @@
 
 
     <div class="w3-top">
-        <div align="center" class="w3-bar w3-white w3-card-2" id="myNavbar">
+        <div align="left" class="w3-bar w3-white w3-card-2" id="myNavbar">
 
 
 
@@ -133,17 +133,18 @@
                 <img src="image/logo.jpg"  width="80" height="30">
             </a>
 
-
+            <font size="3" color="black">${requestScope.validaciones}</font>
             <div id="dem" class="collapse">
+
                 <form action="search" method="post" class="w3-bar-item w3-button w3-wide"
                       style="height:38px" style="width:80px">
-                    <input type="text" name="cod" size="10" style="height:30px">
+
+                    <input title="Necesita un Código Numérico mayor a 0"  placeholder="Código de la Compañía" type="number" min="1" name="cod" size="10" REQUIRED style="height:30px">
 
                     <input type="hidden"  value="Buscar" name="action">
                     <input type="submit" value="Buscar" size="5"  style="height:30px">
                 </form>
                 </div>
-
 
 
             <!-- Right-sided navbar links -->

@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.*;
 import java.io.IOException;
 
 /**
@@ -23,7 +24,7 @@ public class ValidateEmployeeServlet extends HttpServlet {
     public static String COMPANY_EDIT_URI = "/VaMensajeEntrada.jsp";
     public static String EMPLOYEE_EDIT_URI = "/loginEmployeeSuccess.jsp";
     public static String EMPLOYEE_INDEX_URI = "/login.jsp";
-
+    public static String INDEX_URI = "/index.jsp";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -32,14 +33,14 @@ public class ValidateEmployeeServlet extends HttpServlet {
         String password = new String(request.getParameter("txtpassword").getBytes("ISO-8859-1"),"UTF-8");
         EmployeesEntity e = new EmployeesEntity();
         CompaniesEntity c = new CompaniesEntity();
-
+        String validaciones = "";
         if (!request.getParameter("txtemail").
                 equalsIgnoreCase("") && !request.getParameter
                 ("txtpassword").equalsIgnoreCase("")) {
 
             try {
 
-
+                request.setAttribute("validaciones", validaciones);
                 Employee employee = service.getIdByEmployee(email, password);
                 request.setAttribute("employee", employee);
                 RequestDispatcher dispatcher = request.getRequestDispatcher
@@ -48,17 +49,18 @@ public class ValidateEmployeeServlet extends HttpServlet {
                 log("FUNCIONA EMPLOYEE");
             }
             catch (Exception a) {
-                try {
+                try {request.setAttribute("validaciones", validaciones);
                 Company company = service.getIdByCompany(email, password);
                 request.setAttribute("company", company);
                 RequestDispatcher dispatcher = request.getRequestDispatcher(COMPANY_EDIT_URI);
                 dispatcher.forward(request, response);
                 log("FUNCIONA COLMPANY");
             } catch (Exception b) {
-
+                    log("DATOS INGRESADOS ERRONEOS");
+                    validaciones="Correo y/o Contraseña Incorrectos";
+                    request.setAttribute("validaciones", validaciones);
                 RequestDispatcher dispatcher = request.getRequestDispatcher(EMPLOYEE_INDEX_URI);
                 dispatcher.forward(request, response);
-                log("DATOS INGRESADOS ERRONEOS");
             }
 
             }
@@ -66,7 +68,7 @@ public class ValidateEmployeeServlet extends HttpServlet {
 
 
                 if (e.validar(usuario, password) == false) {
-
+                    request.setAttribute("validaciones", validaciones);
                         RequestDispatcher dispatcher = request.getRequestDispatcher(EMPLOYEE_INDEX_URI);
                         dispatcher.forward(request, response);
                         log("NO HAY DATOS 1");
