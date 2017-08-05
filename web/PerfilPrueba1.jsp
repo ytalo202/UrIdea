@@ -224,6 +224,7 @@
 
                             </thead>
                             <tbody>
+                            <div align="center">
                             <tr>
                                 <h2>Estudios</h2>
                                 <c:forEach var="cv" items="${service.findCvByIdEmployeeTypo(employee.id,2)}">
@@ -247,7 +248,7 @@
                                     </p>
                                 </c:forEach>
                             </tr>
-
+                            </div>
                             </tbody>
                         </table>
                     </div>

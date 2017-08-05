@@ -68,10 +68,8 @@
             <div class="w3-right w3-hide-small">
 
 
-                <a href="pagos.jsp" class="w3-bar-item w3-button">
+                <a href="index.jsp" class="w3-bar-item w3-button">
                     <i class="fa fa-home" aria-hidden="true" ></i> Inicio</a>
-                <a href="Listado.jsp" class="w3-bar-item w3-button">Nosotros</a>
-
                 <a href="CompEmail.jsp" class="w3-bar-item w3-button"> Registrarse</a>
                 <a href="login.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i>Ingresar</a>
             </div>
@@ -98,8 +96,6 @@
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button
     w3-large w3-padding-16">Close ×</a>
     <a href="index.jsp" onclick="w3_close()" class="w3-bar-item w3-button">Inicio</a>
-    <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">Nosotros</a>
-
     <a href="register.jsp" onclick="w3_close()" class="w3-bar-item w3-button">Registrese</a>
     <a href="login.jsp" onclick="w3_close()" class="w3-bar-item w3-button">Ingresar</a>
 </nav>

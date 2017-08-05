@@ -118,9 +118,10 @@
         </div>
         <!-- /.navbar-collapse -->
     </nav>
+</div>
 
     <h1 align="center">Historial de Evaluacion de Practicante</h1>
-<div class="col-sm-4">
+<div class="col-sm-4" style="width: 500px; height: 500px;">
     <c:forEach var="evaluation" items="${service.findListEvaluatsById((employee.id))}">
 
         <a href="#<c:out value="${evaluation.id}"/>" data-toggle="collapse">
@@ -229,12 +230,8 @@
 
 
 
-</div>
-
-</div>
 
 
-</div>
 <!-- /#wrapper -->
 
 <!-- jQuery -->

@@ -176,7 +176,7 @@
                         </div>
                     </div>
 
-
+<div align="center">
                     <div class="bs-callout bs-callout-danger">
 
                         <h4>Evaluación</h4>
@@ -216,6 +216,8 @@
 
                         </ul>
                     </div>
+                    </div>
+                    <div align="center">
                     <div class="bs-callout bs-callout-danger">
 
                         <table class="table table-striped table-responsive ">
@@ -272,30 +274,6 @@
 </div>
 
 
-
-
-
-
-
-
-    <br>
-    <h2>Estudios</h2>
-    <c:forEach var="cv" items="${service.findCvByIdEmployeeTypo(employee.id,2)}">
-
-        <p>
-            <c:out value="${cv.description}"/>
-
-        </p>
-    </c:forEach>
-
-    <h2>Experienzas</h2>
-    <c:forEach var="cv" items="${service.findCvByIdEmployeeTypo(employee.id,1)}">
-
-        <p>
-            <c:out value="${cv.description}"/>
-
-        </p>
-    </c:forEach>
 
 
 

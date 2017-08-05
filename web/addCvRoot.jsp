@@ -107,40 +107,46 @@
     </nav>
 
 
-
-    <!-- Page Heading -->
-<h1>Agregar Informacion al Cv</h1>
-
     <div align="center">
 
-        <form action="v" method="post">
 
-            <h1>Agregar Caracteristicas A Cv</h1>
+        <section class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title" align="center">Agregar características a Cv</h3>
+                        </div>
+                        <div class="panel-body">
 
-            <p><select name="cv_type">
-                <option value="1" >Experienza</option>
-                <option value="2" >Estudios</option>
-            </select></p>
-
-            <p >description
-                <textarea required name="description"
-                          cols="30" rows="10"></textarea>
-            </p>
+                            <form action="v" method="post"  class="form-horizontal">
 
 
-            <input type="hidden" value="addCv2" name="action"/>
-            <p>  <button input type="submit" class="btn btn-primary">Guardar</button></p>
-        </form>
+
+                                <p><select name="cv_type">
+                                    <option value="1" >Experienza</option>
+                                    <option value="2" >Estudios</option>
+                                </select></p>
+
+
+                                <div class="form-group"><label class="col-lg-2">Comentario</label>
+                                    <div class="col-lg-10"><textarea required name="description"
+                                                                     cols="20" rows="5" class="form-control col-lg-8"></textarea></div></div>
+
+
+
+                                <input type="hidden" value="addCv2" name="action"/>
+                                <button input type="submit" class="btn btn-primary">Guardar</button>
+                            </form>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-
-
-
-
-
-
-
-
-
     <!-- /.row -->
 
     <!-- /.row -->

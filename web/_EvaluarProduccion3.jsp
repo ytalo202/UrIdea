@@ -166,7 +166,7 @@
         </tr>
 
         <tr>
-            <td>optimisa recursis</td>
+            <td>optimisa recursos de la empresa</td>
             <td align="center"><input type="radio" name="resource_optimization" value="1" checked></td>
             <td align="center"><input type="radio" name="resource_optimization" value="3"></td>
               <td align="center"><input type="radio" name="resource_optimization" value="6.68">
@@ -176,7 +176,7 @@
 
 
         <tr>
-            <td>Innovo ?</td>
+            <td>Innovo algun proceso</td>
             <td align="center"> <input type="radio" name="innovative" value="1" checked></td>
             <td align="center">   <input type="radio" name="innovative" value="3"></td>
              <td align="center">   <input type="radio" name="innovative" value="6.68">

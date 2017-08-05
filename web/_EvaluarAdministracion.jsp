@@ -153,7 +153,7 @@
             </td>
         </tr>
         <tr>
-            <td>Proactividad</td>
+            <td>Toma la Iniciativa e sus centro de labores</td>
             <td align="center">  <input type="radio" name="proactive" value="1" checked></td>
             <td align="center">  <input type="radio" name="proactive" value="3"></td>
             <td align="center">    <input type="radio" name="proactive" value="6.66">
@@ -178,7 +178,7 @@
 
 
         <tr>
-            <td>Trabaja en equipo</td>
+            <td>Trabaja en equipode manera Adecuada</td>
             <td align="center"> <input type="radio" name="teamwork" value="1" checked></td>
             <td align="center">  <input type="radio" name="teamwork" value="3"></td>
             <td align="center">    <input type="radio" name="teamwork" value="6.66">

@@ -53,11 +53,10 @@ int codEmp;
                         request.setAttribute("validaciones", validaciones);
                         RequestDispatcher dispatcher = request.getRequestDispatcher(INDEX_URI);
                         dispatcher.forward(request, response);
-                        log("DADADSDA");
+
                         break;
                     }
                 }
-                default:
 
 
             }

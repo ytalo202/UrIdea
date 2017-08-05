@@ -164,14 +164,14 @@
 
 
         <tr>
-            <td>Es leal con sus compañeros de trabajo</td>
+            <td>Es Honesto con sus compañeros de trabajo</td>
             <td align="center"> <input type="radio" name="honesty" value="1" checked></td>
             <td align="center">   <input type="radio" name="honesty" value="3"></td>
              <td align="center">   <input type="radio" name="honesty" value="6.66">
             </td>
         </tr>
         <tr>
-            <td>Comparte el logro con su equipo de trabajo</td>
+            <td>Organiza Bien su tiempo para cumplir con todas sus actividades</td>
             <td align="center"> <input type="radio" name="organized" value="1" checked></td>
             <td align="center"><input type="radio" name="organized" value="3"></td>
              <td align="center">   <input type="radio" name="organized" value="6.66">
@@ -186,7 +186,7 @@
             </td>
         </tr>
         <tr>
-            <td>Muestra Transparencia y Confianza al encargarle alguna compra</td>
+            <td>Muestra Respeto a sus compañeros</td>
             <td align="center"> <input type="radio" name="respect" value="1" checked></td>
             <td align="center">   <input type="radio" name="respect" value="3"></td>
              <td align="center">   <input type="radio" name="respect" value="6.66">

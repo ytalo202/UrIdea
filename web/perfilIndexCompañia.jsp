@@ -71,8 +71,9 @@
             <div id="dem" class="collapse">
                 <form action="search" method="post" class="w3-bar-item w3-button w3-wide"
                       style="height:38px" style="width:80px">
-                    <input type="text" name="compañiaCode" size="10" style="height:30px">
-                    <input type="hidden"  value="BuscarCodCompañi" name="action">
+                    <input title="Necesita un Código Numérico mayor a 0"  placeholder="Código de la Compañía" type="number" min="1" name="cod" size="10" REQUIRED style="height:30px">
+
+                    <input type="hidden"  value="Buscar" name="action">
                     <input type="submit" value="Buscar" size="5"  style="height:30px">
                 </form>
             </div>
@@ -83,9 +84,8 @@
             <div class="w3-right w3-hide-small">
 
 
-                <a href="pagos.jsp" class="w3-bar-item w3-button">
+                <a href="index.jsp" class="w3-bar-item w3-button">
                     <i class="fa fa-home" aria-hidden="true" ></i> Inicio</a>
-                <a href="Listado.jsp" class="w3-bar-item w3-button">Nosotros</a>
 
                 <a href="CompEmail.jsp" class="w3-bar-item w3-button"> Registrarse</a>
                 <a href="login.jsp" class="w3-bar-item w3-button"><i class="fa fa-user"></i>Ingresar</a>
@@ -113,8 +113,6 @@
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button
     w3-large w3-padding-16">Close ×</a>
     <a href="index.jsp" onclick="w3_close()" class="w3-bar-item w3-button">Inicio</a>
-    <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">Nosotros</a>
-
     <a href="register.jsp" onclick="w3_close()" class="w3-bar-item w3-button">Registrese</a>
     <a href="login.jsp" onclick="w3_close()" class="w3-bar-item w3-button">Ingresar</a>
 </nav>

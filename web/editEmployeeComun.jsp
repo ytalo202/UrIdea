@@ -140,14 +140,14 @@
 
                     <div class="form-group">
                         <label class="col-lg-2">Nombre</label>
-                        <div class="col-lg-10"><input type="text" required pattern="[A-Za-z]+" name="employee_name" value="${employee.name}" class="form-control"/></div></div>
+                        <div class="col-lg-10"><input type="text" required pattern="[A-Za-z\s\ñ\Ñ]+" name="employee_name" value="${employee.name}" class="form-control"/></div></div>
                     <div class="form-group">
                         <label class="col-lg-2">Apellido Paterno</label>
-                        <div class="col-lg-10"><input type="text" pattern="[A-Za-z]+" required name="employee_first_last_name" value="${employee.firstLastName}" class="form-control"/>
+                        <div class="col-lg-10"><input type="text" pattern="[A-Za-z\s\ñ\Ñ]+" required name="employee_first_last_name" value="${employee.firstLastName}" class="form-control"/>
                         </div></div>
                     <div class="form-group">
                         <label class="col-lg-2">Apellido Materno</label>
-                        <div class="col-lg-10"><input type="text" name="employee_second_last_name" pattern="[A-Za-z]+" required value="${employee.secondLastName}" class="form-control"/>
+                        <div class="col-lg-10"><input type="text" name="employee_second_last_name" pattern="[A-Za-z\s\ñ\Ñ]+" required value="${employee.secondLastName}" class="form-control"/>
                         </div></div>
                     <div class="form-group">
                         <label class="col-lg-2">Dni</label>
@@ -166,7 +166,7 @@
                         </div></div>
                     <div class="form-group">
                         <label class="col-lg-2">Departamento</label>
-                        <div class="col-lg-10"><input type="text" pattern="[A-Za-z]+" name="department" required value="${employee.department}" class="form-control"/>
+                        <div class="col-lg-10"><input type="text" pattern="[A-Za-z\s\ñ\Ñ]+" name="department" required value="${employee.department}" class="form-control"/>
                         </div></div>
 
                     <div class="form-group">

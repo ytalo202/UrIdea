@@ -160,7 +160,7 @@
                                     </tr>
 
                                     <tr>
-                                        <td>bajo presion</td>
+                                        <td>Trabajo de manera adecuada bajo presion</td>
                                         <td align="center">  <input type="radio" name="work_under_pressure" value="3" checked></td>
                                         <td align="center"><input type="radio" name="work_under_pressure" value="5"></td>
                                         <td align="center"><input type="radio" name="work_under_pressure" value="8.325">
