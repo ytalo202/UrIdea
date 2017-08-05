@@ -219,7 +219,7 @@
             </select></p>
 
             <p >description
-                <textarea name="description"
+                <textarea required name="description"
                           cols="30" rows="10"></textarea>
             </p>
 

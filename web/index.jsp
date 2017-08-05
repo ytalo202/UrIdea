@@ -137,7 +137,7 @@
             <div id="dem" class="collapse">
                 <form action="search" method="post" class="w3-bar-item w3-button w3-wide"
                       style="height:38px" style="width:80px">
-                    <input type="text" name="cod" size="10" style="height:30px">
+                    <input type="number" required name="cod" size="10" style="height:30px">
 
                     <input type="hidden"  value="Buscar" name="action">
                     <input type="submit" value="Buscar" size="5"  style="height:30px">

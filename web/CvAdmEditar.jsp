@@ -209,25 +209,25 @@
 
     <div align="center">
 
-        <form action="v" method="post">
+    <form action="v" method="post">
 
-            <h1>Editar Caracteristicas del Cv</h1>
+        <h1>Editar Caracteristicas del Cv</h1>
 
-            <p><select name="cv_type">
-                <option value="1" >Experienza</option>
-                <option value="2" >Estudios</option>
-            </select></p>
+        <p><select name="cv_type">
+            <option value="1" >Experienza</option>
+            <option value="2" >Estudios</option>
+        </select></p>
 
-            <p>description
-                <textarea name="description"
-                          cols="30" rows="10"></textarea>
-            </p>
+        <p>description
+            <textarea required name="description"
+                      cols="30" rows="10"></textarea>
+        </p>
 
 
-            <input type="hidden" value="EditarCv2" name="action"/>
-            <p>  <button input type="submit" class="btn btn-primary">Guardar</button></p>
-        </form>
-    </div>
+        <input type="hidden" value="EditarCv2" name="action"/>
+        <p>  <button input type="submit" class="btn btn-primary">Guardar</button></p>
+    </form>
+</div>
 
 
 

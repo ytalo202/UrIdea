@@ -145,7 +145,7 @@
                                     </tr>
                                     <tr>
                                         <td>Tiene estudios de otros idiomas</td>
-                                        <td align="center"> <input type="radio" name="language_skills" value="1"></td>
+                                        <td align="center"> <input type="radio" name="language_skills" value="1" checked></td>
                                         <td align="center"><input type="radio" name="language_skills" value="2"></td>
                                         <td align="center"> <input type="radio" name="language_skills" value="4.77">
                                         </td>
@@ -153,7 +153,7 @@
 
                                     <tr>
                                         <td>sabe de negocios</td>
-                                        <td align="center"> <input type="radio" name="business_skills" value="1"></td>
+                                        <td align="center"> <input type="radio" name="business_skills" value="1" checked></td>
                                         <td align="center">  <input type="radio" name="business_skills" value="2"></td>
                                         <td align="center">  <input type="radio" name="business_skills" value="4.77">
                                         </td>
@@ -161,28 +161,28 @@
 
                                     <tr>
                                         <td>Cumplio con todas sus tareas</td>
-                                        <td align="center"> <input type="radio" name="business_knowledge" value="1"></td>
+                                        <td align="center"> <input type="radio" name="business_knowledge" value="1" checked></td>
                                         <td align="center"><input type="radio" name="business_knowledge" value="2"></td>
                                         <td align="center"><input type="radio" name="business_knowledge" value="4.77">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td >actualiza sus conocimientos de mercado</td>
-                                        <td align="center"> <input type="radio" name="market_knowledge" value="1"></td>
+                                        <td align="center"> <input type="radio" name="market_knowledge" value="1" checked></td>
                                         <td align="center"> <input type="radio" name="market_knowledge" value="2"></td>
                                         <td align="center">  <input type="radio" name="market_knowledge" value="4.77">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>fue productivo</td>
-                                        <td align="center"> <input type="radio" name="productivity" value="1"></td>
+                                        <td align="center"> <input type="radio" name="productivity" value="1" checked></td>
                                         <td align="center">  <input type="radio" name="productivity" value="2"></td>
                                         <td align="center">    <input type="radio" name="productivity" value="4.77">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>mejoro sus habilidades de comunicacion</td>
-                                        <td align="center"> <input type="radio" name="communication_skills" value="1"></td>
+                                        <td align="center"> <input type="radio" name="communication_skills" value="1" checked></td>
                                         <td align="center"> <input type="radio" name="communication_skills" value="2"></td>
                                         <td align="center">    <input type="radio" name="communication_skills" value="4.77">
                                         </td>
@@ -190,7 +190,7 @@
 
                                     <tr>
                                         <td>Innovo ?</td>
-                                        <td align="center"> <input type="radio" name="innovative" value="1"></td>
+                                        <td align="center"> <input type="radio" name="innovative" value="1" checked></td>
                                         <td align="center">   <input type="radio" name="innovative" value="2"></td>
                                         <td align="center">  <input type="radio" name="innovative" value="4.77">
                                         </td>
@@ -203,7 +203,7 @@
                                 </table>
                                 <br>
                                 <div class="form-group"><label class="col-lg-2">Comentario</label>
-                                    <div class="col-lg-10"><textarea name="comment"
+                                    <div class="col-lg-10"><textarea required name="comment"
                                                                      cols="20" rows="5" class="form-control col-lg-8"></textarea>
                                     </div></div>
 

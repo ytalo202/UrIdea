@@ -124,19 +124,17 @@
 <form action="TypeEmployeeValidation" method="post" class="form-horizontal" role="form">
 
 
-    <div class="form-group"><label class="col-lg-2">Codigo</label><div class="col-lg-10">
-      <input type="text" name="CorreNum" value="${emailNum}" placeholder="Codigo..." class="form-control"/></div></div>
 
     <div class="form-group"><label class="col-lg-2">Nombre</label><div class="col-lg-10">
-        <input type="text" name="employee_name" placeholder="Nombre..." class="form-control"/></div></div>
+        <input type="text" name="employee_name" pattern="[A-Za-z]+" required placeholder="Nombre..." class="form-control"/></div></div>
     <div class="form-group"><label class="col-lg-2">Dni</label>
-        <div class="col-lg-10"><input type="text" name="dni" placeholder="Dni..." class="form-control"/></div></div>
+        <div class="col-lg-10"><input type="number" required min="10000000" max="99999999" name="dni" placeholder="Dni..." class="form-control"/></div></div>
 
    <div class="form-group"><label class="col-lg-2">Fecha de Nacimiento</label><div class="col-lg-10">
-       <input type="date" name="cumple"></div></div>
+       <input type="date" required min="1937-01-01" max="1999-01-01" name="cumple"></div></div>
 
     <div class="form-group"><label class="col-lg-2">Contraseña</label><div class="col-lg-10">
-        <input type="text" name="password" placeholder="Contraseña..." class="form-control"/></div></div>
+        <input type="text" name="password" required placeholder="Contraseña..." class="form-control"/></div></div>
 
 
 

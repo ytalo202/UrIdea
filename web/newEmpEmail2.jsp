@@ -123,7 +123,7 @@
 <form action="TypeEmployeeValidation" method="post" class="form-horizontal" role="form">
 
     <div class="form-group"><label class="col-lg-2">Correo</label><div class="col-lg-10">
-        <input type="text" name="emailData"  placeholder="Correo..." class="form-control"/></div></div>
+        <input type="email" required name="emailData"  placeholder="Correo..." class="form-control"/></div></div>
     <input type="hidden" value="createEmail" name="action"/>
     <p align="center"><button input type="submit" class="btn btn-primary">Siguiente</button></p>
 </form>

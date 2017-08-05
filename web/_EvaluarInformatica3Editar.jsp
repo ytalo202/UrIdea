@@ -148,7 +148,7 @@
 
                                     <tr>
                                         <td>Tiene Conocimientos de Otros idiomas</td>
-                                        <td align="center"> <input type="radio" name="language_skills" value="1"></td>
+                                        <td align="center"> <input type="radio" name="language_skills" value="1" checked></td>
                                         <td align="center">   <input type="radio" name="language_skills" value="2"></td>
                                         <td align="center">   <input type="radio" name="language_skills" value="4.77">
                                         </td>
@@ -156,7 +156,7 @@
 
                                     <tr>
                                         <td>Tiene buen manejo de la computacion</td>
-                                        <td align="center"> <input type="radio" name="computer_skills" value="1"></td>
+                                        <td align="center"> <input type="radio" name="computer_skills" value="1" checked></td>
                                         <td align="center">  <input type="radio" name="computer_skills" value="2"></td>
                                         <td align="center">  <input type="radio" name="computer_skills" value="4.77">
                                         </td>
@@ -164,14 +164,14 @@
 
                                     <tr>
                                         <td>Actualiza sus conocimientos con algun curso</td>
-                                        <td align="center"> <input type="radio" name="market_knowledge" value="1"></td>
+                                        <td align="center"> <input type="radio" name="market_knowledge" value="1" checked></td>
                                         <td align="center">    <input type="radio" name="market_knowledge" value="2"></td>
                                         <td align="center">    <input type="radio" name="market_knowledge" value="4.77">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Fue productivo</td>
-                                        <td align="center"> <input type="radio" name="productivity" value="1"></td>
+                                        <td align="center"> <input type="radio" name="productivity" value="1" checked></td>
                                         <td align="center">    <input type="radio" name="productivity" value="2"></td>
                                         <td align="center"> <input type="radio" name="productivity" value="4.77">
                                         </td>
@@ -179,7 +179,7 @@
 
                                     <tr>
                                         <td>Es Eficiente</td>
-                                        <td align="center"> <input type="radio" name="efficiency" value="1"></td>
+                                        <td align="center"> <input type="radio" name="efficiency" value="1" checked></td>
                                         <td align="center">  <input type="radio" name="efficiency" value="2"></td>
                                         <td align="center">  <input type="radio" name="efficiency" value="4.77">
                                         </td>
@@ -187,7 +187,7 @@
 
                                     <tr>
                                         <td>Da Solucion a Problemas</td>
-                                        <td align="center"> <input type="radio" name="give_successful_solutions" value="1"></td>
+                                        <td align="center"> <input type="radio" name="give_successful_solutions" value="1" checked></td>
                                         <td align="center">   <input type="radio" name="give_successful_solutions" value="2">
                                         <td align="center">   <input type="radio" name="give_successful_solutions" value="4.77">
                                         </td>
@@ -196,7 +196,7 @@
 
                                     <tr>
                                         <td>Innovo ?</td>
-                                        <td align="center"> <input type="radio" name="innovative" value="1"></td>
+                                        <td align="center"> <input type="radio" name="innovative" value="1" checked></td>
                                         <td align="center"><input type="radio" name="innovative" value="2"></td>
                                         <td align="center">   <input type="radio" name="innovative" value="4.78">
                                         </td>
@@ -210,7 +210,7 @@
 
                                 <br>
                                 <div class="form-group"><label class="col-lg-2">Comentario</label>
-                                    <div class="col-lg-10"><textarea name="comment"
+                                    <div class="col-lg-10"><textarea required name="comment"
                                                                      cols="20" rows="5" class="form-control col-lg-8"></textarea>
                                     </div></div>
 

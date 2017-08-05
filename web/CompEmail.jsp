@@ -6,7 +6,7 @@
 
 <form action="v" method="post">
 
-    <input type="text" name="emailData"/>
+    <input type="email" required name="emailData"/>
     <input type="hidden" value="createCompEmail" name="action"/>
     <input type="submit"/>
 </form>

@@ -147,14 +147,14 @@
 
         <tr>
             <td>Mostro su compromiso a la Empresa en Mcuhas Ocaciones</td>
-            <td align="center"><input type="radio" name="commitment_company" value="1"></td>
+            <td align="center"><input type="radio" name="commitment_company" value="1" checked></td>
             <td align="center">  <input type="radio" name="commitment_company" value="3"></td>
              <td align="center">   <input type="radio" name="commitment_company" value="6.66">
             </td>
         </tr>
         <tr>
             <td>Proactividad</td>
-            <td align="center">  <input type="radio" name="proactive" value="1"></td>
+            <td align="center">  <input type="radio" name="proactive" value="1" checked></td>
             <td align="center">  <input type="radio" name="proactive" value="3"></td>
             <td align="center">    <input type="radio" name="proactive" value="6.66">
             </td>
@@ -162,7 +162,7 @@
 
         <tr>
             <td>Objetivo</td>
-            <td align="center">  <input type="radio" name="objective" value="1"></td>
+            <td align="center">  <input type="radio" name="objective" value="1" checked></td>
             <td align="center">   <input type="radio" name="objective" value="3"></td>
              <td align="center">   <input type="radio" name="objective" value="6.66">
             </td>
@@ -170,7 +170,7 @@
 
         <tr>
             <td>Toma decision</td>
-            <td align="center"> <input type="radio" name="decision_making" value="1"></td>
+            <td align="center"> <input type="radio" name="decision_making" value="1" checked></td>
             <td align="center">   <input type="radio" name="decision_making" value="3"></td>
              <td align="center">   <input type="radio" name="decision_making" value="6.66">
             </td>
@@ -179,7 +179,7 @@
 
         <tr>
             <td>Trabaja en equipo</td>
-            <td align="center"> <input type="radio" name="teamwork" value="1"></td>
+            <td align="center"> <input type="radio" name="teamwork" value="1" checked></td>
             <td align="center">  <input type="radio" name="teamwork" value="3"></td>
             <td align="center">    <input type="radio" name="teamwork" value="6.66">
             </td>
