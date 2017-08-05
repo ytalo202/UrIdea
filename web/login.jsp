@@ -264,18 +264,18 @@
 
     <div class="row">
         <div class="col-xs-11">
-            <img style="margin:0 auto;" class="img-responsive" src="https://portalestudiante.utp.edu.pe/Images/responsive/UTP_Movil_3.png" />
+            <img style="margin:0 auto;" class="img-responsive" src="https://www.melider.com.mx/wp-content/uploads/2016/09/evaluacion-personal.jpg" />
         </div>
     </div>
 
     <div class="row">
         <div class="col-xs-5">
             <a href="https://itunes.apple.com/fj/app/utp/id1065104276?mt=8" target="_blank"><img style="margin:0 auto;" class="img-responsive"
-                                                                                                 src="https://portalestudiante.utp.edu.pe/Images/responsive/App_Store.png" /></a>
+                                                                                                 src="" /></a>
         </div>
         <div class="col-xs-5">
             <a href="https://play.google.com/store/apps/details?id=com.vidautp.projects.utpmovil"
-               target="_blank"><img style="margin:0 auto;" class="img-responsive" src="https://portalestudiante.utp.edu.pe/Images/responsive/Google_Play.png" /></a>
+               target="_blank"><img style="margin:0 auto;" class="img-responsive" src="" /></a>
         </div>
 
     </div>

@@ -55,7 +55,7 @@
                         <p>Bienvenido a Evap  ...</p>
 
                         <input type="hidden" value="servis" name="action"/>
-                        <button input type="submit" class="btn btn-primary">Next</button>
+                        <button input type="submit" class="btn btn-primary">Siguiente</button>
                     </form>
 
 

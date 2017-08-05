@@ -36,7 +36,7 @@
 
 </head>
 
-<body style="background-image:url(https://previews.123rf.com/images/vska/vska1302/vska130200057/17854770-gran-luz-tecnolog-a-futurista-ordenador-negocio-bandera-Foto-de-archivo.jpg)" class="fa-home">
+<body style="background-image:url(http://weissenberg-solutions.de/wp-content/uploads/sites/2/2016/08/Lebenslauf_09-2015.jpg)" class="fa-home">
 
 <div id="wrapper">
 

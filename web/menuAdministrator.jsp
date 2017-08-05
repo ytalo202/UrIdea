@@ -36,7 +36,7 @@
 
 </head>
 
-<body style="background-image:url(https://previews.123rf.com/images/vska/vska1302/vska130200153/18156383-abstract-circuit-cyber-high-technology-business-background-Stock-Vector.jpg)" class="fa-home">
+<body style="background-image:url(http://www.grupomanum.com/wp-content/uploads/2014/05/Assessment_Management-Audit1-1024x682.jpg)" class="fa-home">
 
 <div id="wrapper">
 

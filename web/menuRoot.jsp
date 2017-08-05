@@ -42,7 +42,7 @@
 
 </head>
 
-<body style="background-image:url(http://img.freepik.com/free-vector/modern-medical-background_1035-8989.jpg?size=338&ext=jpg)" class="fa-home">
+<body style="background-image:url(https://www.esan.edu.pe/conexion/actualidad/2015/06/28/evaluacion_cualitativa_desempeno_figura_principal.jpg)" class="fa-home">
 
 <div id="wrapper">
 
@@ -106,6 +106,11 @@
         </div>
 
     </nav>
+
+
+
+
+
 
 
 
